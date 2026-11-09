@@ -1,0 +1,130 @@
+
+/* CasoAberto company identity and evidence-led editorial system.
+   Brand status is an integrated card, not a full-bleed alarm banner. */
+.company-identity{padding:34px 0 0;background:#f2f4ee;border-bottom:1px solid #d8e1d8}
+.company-identity-top{display:flex;align-items:center;justify-content:space-between;gap:15px;border-bottom:1px solid #cedbd0;padding:0 0 22px}
+.company-identity-top .eyebrow{margin:0}
+.company-identity-top>span:last-child{font-size:.78rem;font-weight:700;color:#718176}
+.company-identity-grid{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(300px,.82fr);gap:55px;padding:39px 0 35px;align-items:stretch}
+.company-identity-copy{min-width:0}
+.company-brand-lockup{display:flex;align-items:center;gap:15px;margin-bottom:28px}
+.company-brand-logo{background:#fff;display:flex;align-items:center;justify-content:center;border:1px solid #d9e2d9;padding:11px 15px;min-width:135px;height:63px;max-width:185px;border-radius:5px}
+.company-brand-logo img{display:block;max-height:45px;max-width:145px;object-fit:contain}
+.company-brand-monogram{width:64px;height:64px;border:1px solid #b8cabe;background:#fff;display:grid;place-items:center;font-size:1.8rem;font-weight:850}
+.company-brand-lockup>span:last-child{display:flex;flex-direction:column;gap:2px;line-height:1.3}
+.company-brand-lockup strong{font-size:1.1rem}
+.company-brand-lockup small{font-size:.77rem;color:#607167}
+.company-verdict-line{display:flex;align-items:center;gap:11px;flex-wrap:wrap;margin-bottom:15px}
+.company-verdict-pill{font-size:.72rem;letter-spacing:.065em;text-transform:uppercase;font-weight:880;padding:8px 11px;border:1px solid #d9b0a9;color:#973c31;background:#fff4ef;border-radius:4px}
+.company-verdict-pill.status-cautela{color:#79571d;background:#fcf1db;border-color:#d7c18f}
+.company-verdict-pill.status-recomendamos{color:#245d43;background:#e5f4e9;border-color:#b5d4c0}
+.company-verdict-date{font-size:.74rem;color:#607064;font-weight:720}
+.company-identity h1{font-size:clamp(2.5rem,4.05vw,4.8rem);letter-spacing:-.075em;line-height:1.04;margin:0 0 22px;max-width:780px}
+.company-identity-heading-tail{font-weight:490;color:#5b7163}
+.company-profile-summary{max-width:710px;font-size:1.02rem;line-height:1.6;color:#54665b;margin:0 0 23px}
+.company-verdict-integrated{display:flex;gap:17px;background:#fff;padding:21px;border:1px solid #d6e0d6;margin:17px 0 25px;max-width:740px}
+.company-verdict-rail{width:4px;flex-shrink:0;background:#ab4236}
+.company-verdict-integrated strong{font-size:clamp(1.15rem,1.5vw,1.5rem);letter-spacing:-.035em;line-height:1.3;display:block}
+.company-verdict-integrated p{font-size:.96rem;line-height:1.5;font-weight:740;color:#23362b;margin:9px 0}
+.company-verdict-integrated small{font-size:.75rem;line-height:1.5;color:#718174;display:block}
+.company-identity-actions{display:flex;align-items:center;flex-wrap:wrap;gap:10px 14px}
+.company-inline-link{font-size:.84rem;font-weight:790;text-decoration:underline;text-underline-offset:4px;color:#375344}
+.company-identity-visual{min-width:0;display:flex;flex-direction:column}
+.company-photo-card{margin:0;background:#1b3026;min-height:100%;display:flex;flex-direction:column;overflow:hidden}
+.company-photo-card>img{width:100%;height:clamp(300px,30vw,465px);display:block;object-fit:cover}
+.company-photo-card figcaption{color:#f4f6ef;padding:17px 19px 19px;display:flex;flex-direction:column;gap:5px;line-height:1.35}
+.company-photo-card figcaption strong{font-size:.93rem}
+.company-photo-card figcaption span{font-size:.77rem;color:#c6d5c7}
+.company-photo-card figcaption small{font-size:.72rem;color:#a9c2ae}
+.company-photo-card figcaption a{font-size:.78rem;font-weight:750;color:#fdb6a3;margin-top:9px}
+.company-photo-empty{background:#dfe6df;min-height:380px;padding:35px;display:flex;flex-direction:column;justify-content:end;color:#203d2b}
+.company-photo-empty strong{font-size:1.7rem;max-width:420px;line-height:1.2}
+.company-photo-empty p{font-size:.92rem;max-width:450px}
+.company-visual-source{font-size:.8rem;color:#3c6148;margin-top:9px;font-weight:800}
+.company-identity-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid #d2ddd1;padding:0 0 25px}
+.company-identity-metrics>div{padding:23px 18px 18px;border-right:1px solid #d2ddd1;min-width:0}
+.company-identity-metrics>div:first-child{padding-left:0}
+.company-identity-metrics>div:last-child{border-right:0}
+.company-identity-metrics strong{display:block;font-size:clamp(1.4rem,2.1vw,2.5rem);font-weight:870;letter-spacing:-.07em;line-height:1.17;overflow-wrap:anywhere}
+.company-identity-metrics span{display:block;font-size:.81rem;color:#53685b;margin-top:10px;max-width:235px;line-height:1.38}
+.company-brand-footnote{font-size:.76rem;color:#647468;border-top:1px solid #d2ddd1;margin:0;padding:14px 0 17px}
+.company-brand-footnote a{color:#99402f;font-weight:780}
+.company-recognition{background:#fff}
+.company-recognition .section-heading{margin-bottom:27px}
+.company-recognition .section-heading p{max-width:800px;color:#69776b}
+.company-recognition-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.company-recognition-grid article{background:#f6f7f2;border:1px solid #dbe4d8;min-width:0}
+.recognition-art{height:218px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#e6ebe4}
+.recognition-art>img{width:100%;height:100%;object-fit:cover}
+.recognition-brand .recognition-art>img{width:66%;height:auto;max-height:78px;object-fit:contain}
+.recognition-brand .recognition-art{background:#fdfdfb}
+.recognition-brand .recognition-art strong{font-size:3rem;letter-spacing:-.08em}
+.recognition-meta{padding:19px 20px}
+.recognition-meta>span{font-size:.7rem;font-weight:860;color:#ad4535;letter-spacing:.075em}
+.recognition-meta h3{font-size:1.12rem;line-height:1.23;margin:10px 0}
+.recognition-meta p{font-size:.81rem;line-height:1.55;color:#627364}
+.recognition-meta a{color:#ad4333;font-size:.79rem;font-weight:800}
+.recognition-website-preview{align-items:stretch;justify-content:stretch;flex-direction:column;background:#dee6dd}
+.recognition-browser-top{display:flex;gap:5px;align-items:center;background:#d2ddd0;padding:13px}
+.recognition-browser-top i{width:7px;height:7px;border:1px solid #819688;border-radius:50%}
+.recognition-browser-top small{margin-left:10px;max-width:calc(100% - 55px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:.68rem;color:#4d6754}
+.recognition-browser-body{padding:25px 18px;display:flex;justify-content:center;align-items:flex-start;flex-direction:column;flex:1}
+.recognition-browser-body strong{font-size:1.3rem}
+.recognition-browser-body p{font-size:.84rem;color:#415a49}
+.recognition-browser-body span{font-size:.7rem;color:#7c907d}
+.contract-scope{background:#f2f4ee}
+.contract-slots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.contract-slot{border-top:5px solid #3e6250;background:#fff;border-left:1px solid #d9e0d5;border-right:1px solid #d9e0d5;border-bottom:1px solid #d9e0d5;padding:25px}
+.contract-slot h3{font-size:1.5rem;margin:14px 0}
+.contract-slot p{font-size:.91rem;color:#526254}
+.contract-pending{display:inline-block;background:#f3e9d6;color:#6f5824;padding:8px 11px;font-size:.75rem;font-weight:780}
+.contract-disclaimer{font-size:.8rem;color:#6a7b6c;margin:20px 0 12px}
+.contract-directors{padding-top:13px;border-top:1px solid #dce5dd;margin-top:17px}
+.contract-directors h4{font-size:1.07rem}
+.company-identity + .impact-teaser{padding-top:44px}
+.company-identity + .impact-teaser .impact-teaser-head h2{font-size:clamp(1.65rem,2.5vw,2.8rem)}
+/* Make existing case verdicts editorial panels, not overwhelming red banners. */
+.editorial-verdict,.verdict-hero{background:#f7f8f2!important;color:#1a2a21!important;padding:30px 0!important;border-bottom:1px solid #dae3da}
+.editorial-verdict .verdict-grid{grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);gap:27px;background:#fff;border:1px solid #dde4da;padding:24px 28px;align-items:start}
+.editorial-verdict .verdict-eyebrow{color:#a74c3b;font-size:.7rem}
+.editorial-verdict .verdict-status{background:#fae4dc;color:#953529;padding:7px 12px;font-size:.79rem;margin-bottom:6px}
+.editorial-verdict h2{color:#182820!important;font-size:clamp(1.48rem,2.15vw,2.5rem);letter-spacing:-.05em;line-height:1.18;margin:9px 0}
+.editorial-verdict .verdict-lead{color:#2e4234;font-size:1rem;line-height:1.46;font-weight:700}
+.editorial-verdict .verdict-scope{color:#647166;font-size:.78rem}
+.editorial-verdict .verdict-context{border-left:1px solid #dce4dd;padding-left:22px}
+.editorial-verdict .verdict-context h3{color:#30483a;font-size:1.1rem;margin:5px 0 9px}
+.editorial-verdict .verdict-context p{color:#5d6e60;font-size:.84rem}
+.editorial-verdict .verdict-links{gap:8px}
+.editorial-verdict .verdict-links a:not(.button){color:#a23d2e;font-size:.8rem}
+.editorial-verdict .verdict-links .button{background:#17382a;color:#fff;font-size:.78rem;padding:9px 13px}
+@media(max-width:1050px){.company-identity-grid{gap:28px}.company-recognition-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.company-identity-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.company-identity-metrics>div:nth-child(2){border-right:0}}
+@media(max-width:760px){.company-identity-grid{grid-template-columns:1fr;gap:20px;padding:25px 0}.company-identity h1{font-size:clamp(2.2rem,8vw,3.4rem)}.company-photo-card>img{height:330px}.company-photo-card{min-height:0}.company-brand-lockup{margin-bottom:18px}.company-recognition-grid,.contract-slots{grid-template-columns:1fr}.editorial-verdict .verdict-grid{grid-template-columns:1fr;padding:20px}.editorial-verdict .verdict-context{border-left:0;border-top:1px solid #dce4dd;padding:17px 0 0}}
+@media(max-width:470px){.company-identity-metrics{grid-template-columns:1fr 1fr}.company-identity-metrics>div{padding:15px 12px}.company-identity-metrics strong{font-size:1.45rem}.company-identity-top{flex-direction:column;align-items:start}.company-identity-actions .button{width:100%;text-align:center}.company-verdict-integrated{padding:15px}.company-brand-logo{min-width:112px;max-width:130px}.company-brand-logo img{max-width:100px}}
+
+/* Case pages: recognizable company reference, never masquerading as case evidence. */
+.case-company-reference{background:#f6f8f2;padding:23px 0;border-block:1px solid #dbe3d9}
+.case-company-layout{display:grid;grid-template-columns:1fr 190px auto;gap:20px;align-items:center}
+.case-company-brand{display:flex;align-items:center;gap:16px;min-width:0}
+.case-company-brand>img{max-width:120px;width:110px;height:52px;object-fit:contain;border:1px solid #dbe3d9;background:#fff;padding:10px}
+.case-company-brand .eyebrow{font-size:.7rem}
+.case-company-brand h2{font-size:clamp(1.2rem,1.75vw,1.75rem);margin:5px 0;letter-spacing:-.04em}
+.case-company-brand p{font-size:.8rem;color:#566a5b;margin:2px 0}
+.case-company-brand .company-verdict-pill{font-size:.68rem;padding:5px}
+.case-company-thumb{margin:0;display:flex;align-items:center;gap:9px}
+.case-company-thumb img{width:94px;height:68px;object-fit:cover}
+.case-company-thumb figcaption{font-size:.65rem;line-height:1.4;color:#67756b}
+.case-company-thumb figcaption a{color:#a03f32}
+.case-company-action .button{font-size:.81rem;padding:10px 14px}
+@media(max-width:900px){.case-company-layout{grid-template-columns:1fr auto}.case-company-thumb{display:none}}
+@media(max-width:620px){.case-company-layout{grid-template-columns:1fr}.case-company-brand{align-items:flex-start}.case-company-action .button{display:block;text-align:center}}
+
+/* Identity in directory and case cards. */
+.rating-brand-identity{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 17px;padding:0 0 12px;border-bottom:1px solid #dde5db}
+.rating-brand-identity img{width:112px;height:48px;object-fit:contain;max-width:56%;background:#fff;padding:5px}
+.rating-brand-identity>span{font-size:.63rem;letter-spacing:.07em;color:#708172;font-weight:900}
+.case-brand-logo{height:35px;width:90px;object-fit:contain;max-width:90px;padding:5px;background:#fff;border:1px solid #dce4db}
+.company-accountability-end{background:#e7eee5}
+.company-accountability-end h2{max-width:900px}
+.company-editorial-scope{background:#fff}
+.company-context-note{background:#f5f6ef}
+.company-context-note h2{font-size:clamp(2rem,3vw,3.4rem);line-height:1.1}

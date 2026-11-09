@@ -156,3 +156,7 @@ The brand-neutrality regression check lives in `scripts/validate-structure.mjs`,
 - `scripts/validate-data.mjs` e `scripts/validate-structure.mjs`: validam formatos, fontes, recortes, datas e rotas.
 
 A home institucional não recebe o alerta de uma empresa. Medições do Reclame Aqui não são tráfego do CasoAberto; reclamações respondidas não são necessariamente resolvidas; pagamentos não são perdas definitivas; notificações e protocolos não são ações judiciais. Todas as projeções possuem premissas explícitas e os registros não são somados quando se sobrepõem.
+
+## Perfis empresariais visuais e CNPJs do contrato
+
+A identidade visual da empresa/unidade e o arquivo de mídia têm fonte em `src/data/company-media.json`. Os dois papéis contratuais de CA-001 permanecem pendentes em `src/data/case-contract-entities.json`, até receber os CNPJs reais. Componentes: `CompanyIdentityHero`, `CompanyRecognitionGallery`, `CaseContractScope`, `CaseCompanyReference`. Instruções em `docs/company-visual-contract-entities.md`. Nenhum screenshot é fabricado; as referências à loja são datadas e atribuídas.

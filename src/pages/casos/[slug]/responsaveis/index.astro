@@ -2,28 +2,17 @@
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
 import CaseNav from '../../../../components/CaseNav.astro';
-import LeadershipDirectory from '../../../../components/LeadershipDirectory.astro';
-import { cases, casePath, crumbFor, brl, type Case } from '../../../../lib/cases';
-export function getStaticPaths() { return cases.filter(item=>item.id==='CA-001').map(item => ({params:{slug:item.slug},props:{item}})); }
-interface Props { item: Case }
-const {item} = Astro.props;
-const crumbs = [...crumbFor(item), {label:'Quem responde', href:`${casePath(item)}responsaveis/`}];
+import CaseContractScope from '../../../../components/CaseContractScope.astro';
+import {cases,casePath,crumbFor,brl,type Case} from '../../../../lib/cases';
+export function getStaticPaths(){return cases.filter(item=>item.id==='CA-001').map(item=>({params:{slug:item.slug},props:{item}}));}
+interface Props{item:Case}
+const {item}=Astro.props;
+const crumbs=[...crumbFor(item),{label:'Entidades do contrato',href:casePath(item)+'responsaveis/'}];
 ---
-<BaseLayout
-  title={`Quem responde por um pedido de ${item.valor_brl?brl(item.valor_brl):'alto valor'} sem entrega no prazo? | ${item.empresa_resumo}`}
-  description="Mapa institucional público: fabricante versus franquia, papéis reportados na imprensa e canais oficiais para resposta documentada — sem assédio pessoal."
-  type="article"
-  dateModified={item.status_data}
-  breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}
->
-  <Breadcrumbs items={crumbs} />
-  <header class="pagehead"><div class="container">
-    <div class="eyebrow">ACCOUNTABILITY INSTITUCIONAL</div>
-    <h1>Quem responde por um pedido de {item.valor_brl?brl(item.valor_brl):'alto valor'} que não foi entregue no prazo?</h1>
-    <p>A pergunta é de responsabilidade institucional. Listar papéis públicos não implica que cada executivo tenha operado ou causado o atraso deste pedido específico.</p>
-  </div></header>
-  <CaseNav item={item} current="responsaveis" />
-  <section class="section"><div class="container">
-    <LeadershipDirectory />
-  </div></section>
+<BaseLayout title={'Quem deve responder pelo contrato '+item.id+'? CNPJs e documentos | CasoAberto'} description={'Identificação das pessoas jurídicas citadas no contrato do caso '+item.id+' e respectivos administradores apenas após conferência com documento e QSA.'} type="article" dateModified={item.status_data} breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}>
+ <Breadcrumbs items={crumbs}/>
+ <section class="pagehead"><div class="container"><span class="eyebrow">DOCUMENTAÇÃO DO CONTRATO · {item.id}</span><h1>Quem responde pelo pedido de {item.valor_brl?brl(item.valor_brl):'alto valor'}?</h1><p>O vínculo jurídico não é inferido pelo nome da marca ou pela localização da loja. Esta página reúne exclusivamente as pessoas jurídicas que o titular identificar no contrato, acompanhadas das fontes cadastrais.</p></div></section>
+ <CaseNav item={item} current="responsaveis"/>
+ <CaseContractScope caseId={item.id}/>
+ <section class="section"><div class="container narrow editorial"><span class="eyebrow">COMO FAREMOS A VERIFICAÇÃO</span><h2>Do contrato ao CNPJ e ao QSA</h2><ol><li>Confirmar os dois CNPJs legíveis no contrato e a função de cada contratada.</li><li>Confrontar os documentos fiscais e comprovantes de pagamento.</li><li>Emitir ou consultar cadastro e quadro societário de cada CNPJ com data de verificação.</li><li>Exibir apenas administradores diretamente cadastrados nessas entidades, com o cargo e a fonte.</li><li>Separar as perguntas institucionais dos nomes de pessoas não vinculadas à contratação.</li></ol><p><a href="https://www.gov.br/pt-br/servicos/consultar-cadastro-nacional-de-pessoas-juridicas" target="_blank" rel="noopener noreferrer">Consulta oficial de CNPJ e quadro de sócios na Receita Federal ↗</a></p><p>O índice documental do caso mantém contrato e comprovantes como material privado, a ser acessado somente pelo titular ou representantes autorizados.</p><a class="button button-dark" href={casePath(item)+'evidencias/'}>Conferir índice de evidências ↗</a></div></section>
 </BaseLayout>

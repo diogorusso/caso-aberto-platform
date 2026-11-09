@@ -1,0 +1,23 @@
+---
+import contractData from '../data/case-contract-entities.json';
+import registries from '../data/company-profiles.json';
+import {cases,casePath} from '../lib/cases';
+interface Props {caseId:string; compact?:boolean}
+const {caseId,compact=false}=Astro.props;
+const entry=(contractData.cases as Record<string,any>)[caseId];
+const businessFor=(cnpj:string)=>registries.entities.find(e=>e.cnpj.replace(/\D/g,'')===cnpj.replace(/\D/g,''));
+const linkedCase=cases.find(c=>c.id===caseId);
+const responsibleRoute=linkedCase?casePath(linkedCase)+'responsaveis/':'/casos/';
+---
+<section class="contract-scope section" id="entidades-do-contrato"><div class="container">
+  <div class="section-heading"><div><span class="eyebrow">RESPONSABILIDADE CONTRATUAL · {caseId}</span><h2>Quais CNPJs aparecem no contrato?</h2><p>Fábrica, montadora e administradores só são atribuídos ao pedido mediante identificação da pessoa jurídica nos documentos. Cadastros de empresas no mesmo endereço não bastam.</p></div></div>
+  <div class="contract-slots">
+   {entry?.slots?.map((slot:any)=><article class="contract-slot">
+    <span class="eyebrow">{slot.contract_role}</span>
+    {slot.cnpj&&slot.display_name&&slot.verified_at?<><h3>{slot.display_name}</h3><p><strong>CNPJ:</strong> {slot.cnpj}</p><p><strong>Conferido em:</strong> {slot.verified_at.split('-').reverse().join('/')}</p>{slot.verification_source_url&&<a href={slot.verification_source_url} target="_blank" rel="noopener noreferrer">Fonte da verificação ↗</a>}{slot.directors?.length>0&&<div class="contract-directors"><h4>Administradores vinculados ao CNPJ confirmado</h4>{slot.directors.map((person:any)=><p><strong>{person.name}</strong> — {person.role} · <a href={person.source_url} target="_blank" rel="noopener noreferrer">QSA ↗</a></p>)}</div>}
+    {businessFor(slot.cnpj)&&<p><a href={'/cnpj/'+slot.cnpj.replace(/\D/g,'')+'/'}>Perfil cadastral ↗</a></p>}</>:<><h3>Identificação aguardando conferência</h3><p>Razão social e CNPJ serão exibidos após validação do documento contratual da função indicada.</p><span class="contract-pending">Dado ainda não confirmado — nenhum administrador atribuído</span></>}
+   </article>)}
+  </div>
+  <p class="contract-disclaimer">{entry?.public_contact_note||'Atribuições vinculadas ao contrato dependem de comprovação.'}</p>
+  {compact&&<a class="text-link" href={responsibleRoute}>Como conferimos as entidades do caso ↗</a>}
+</div></section>

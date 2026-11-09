@@ -25,3 +25,7 @@ Scope: a static Brazilian consumer-case publishing website. GitHub is the source
 17. Impact data is in `src/data/impact-models.json`; each observed metric must have a named source and dated period; consumer amounts stay attributed. Null audience or court case counts must not be rendered as real zero or made-up positive numbers.
 18. Impact summaries in brand/unit/case pages use `ImpactTeaser.astro` and the full `ImpactDashboard.astro`; isolate hypothetical projections in `ImpactSimulator.tsx` with adjacent explicit labels. Never put a company-specific impact panel on the platform home.
 19. Keep external brand-wide Reclame Aqui totals, complaint samples, status categories, unique source URLs and unit-specific complaints in separate denominators; do not sum overlapping samples or treat answered complaints as resolved.
+
+20. Perfis corporativos usam `company-media.json` e `CompanyIdentityHero.astro` para logo, estabelecimento e fonte. Não apresentar screenshots sem captura real e metadados. Manter home institucional neutra.
+21. As entidades contratuais ficam em `case-contract-entities.json`. Administradores só aparecem como vinculados ao pedido quando razão social, CNPJ, fonte e data forem confirmados no documento contratual e QSA. Cadastros ou endereço similares não confirmam participação no pedido.
+22. A recomendação editorial pode abranger novas compras independentemente da forma de pagamento, mas exige fundamento documental e não equivale à comprovação de insolvência ou falência da marca.

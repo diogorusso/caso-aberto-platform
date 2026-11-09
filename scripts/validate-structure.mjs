@@ -78,5 +78,11 @@ for(const route of impactRoutes){
 const impactStyles=resolve(src,'styles/impact.css');
 if(!existsSync(impactStyles)){console.error('Missing impact dashboard CSS');bad++;}
 
+// Reusable company identity and case-scoped responsibility.
+for(const name of ['CompanyIdentityHero.astro','CompanyRecognitionGallery.astro','CaseContractScope.astro','CaseCompanyReference.astro']){
+ if(!existsSync(resolve(src,'components',name))){console.error('Missing company identity component',name);bad++;}
+}
+const contractedPage=readFileSync(resolve(src,'pages/casos/[slug]/responsaveis/index.astro'),'utf8');
+if(/<LeadershipDirectory\b/.test(contractedPage)){console.error('Case responsibility cannot expose executives without contract linkage');bad++;}
 if (bad) process.exit(1);
 console.log(`OK: ${files.length} TS/Astro files; imports resolved; ${all.size} planned routes.`);

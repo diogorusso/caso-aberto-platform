@@ -12,7 +12,7 @@ const crumbs = [...crumbFor(item), {label:'Alerta Roma Mobili', href:`${casePath
 ---
 <BaseLayout
   title={`${roma.title} | ${item.empresa_resumo} | CasoAberto`}
-  description="Comparação editorial entre a falência documentada da Roma Mobili e o risco do pagamento antecipado no caso Florense Ipanema — sem alegar insolvência da Florense."
+  description="Comparação entre a falência documentada da Roma Mobili e os riscos contratuais para compradores de móveis, independentemente da forma de pagamento, sem alegar insolvência da Florense."
   type="article"
   dateModified={item.status_data}
   breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}

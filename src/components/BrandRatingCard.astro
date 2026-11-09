@@ -1,13 +1,16 @@
 ---
 import {brandPath,unitPath,statusLabel,type Brand,type BrandUnit} from '../lib/brands';
 import {brandImpactPath,unitImpactPath} from '../lib/impact';
+import media from '../data/company-media.json';
 interface Props {brand:Brand; unit?:BrandUnit}
 const {brand,unit}=Astro.props;
 const rated=unit||brand;
 const verdict=rated.verdict;
 const href=unit?unitPath(brand,unit):brandPath(brand);
+const identity=(media.brands as Record<string,any>)[brand.slug];
 ---
 <article class:list={['brand-rating-card','rating-'+verdict.status]}>
+ <div class="rating-brand-identity">{identity?.logo?.src&&<img src={identity.logo.src} alt={identity.logo.alt} width="112" height="48" loading="lazy"/>}<span>{unit?'UNIDADE':'PERFIL DE MARCA'}</span></div>
  <div class="rating-head"><span class="rating-label">{statusLabel(verdict.status)}</span><time datetime={verdict.valid_as_of}>Revisão: {verdict.valid_as_of.split('-').reverse().join('/')}</time></div>
  <h3><a href={href}>{rated.name}</a></h3>
  <p class="rating-location">{unit?unit.location:brand.location} · {brand.segment}</p>

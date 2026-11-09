@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "updated_at": "2026-11-09",
+  "policy": "Somente apontar como 'parte do contrato' entidade identificada no contrato/NF/comprovante pelo titular. Administradores só aparecem no caso depois de conferência do CNPJ com documentação e QSA fonte datada. Registros empresariais associados à marca não provam participação no contrato.",
+  "cases": {
+    "CA-001": {
+      "status": "awaiting_contract_documents",
+      "slots": [
+        {
+          "slot_id": "FABRICANTE_CONTRATO",
+          "contract_role": "Fabricante / fornecimento",
+          "display_name": null,
+          "cnpj": null,
+          "document_reference": null,
+          "verified_at": null,
+          "verification_source_url": null,
+          "directors": []
+        },
+        {
+          "slot_id": "MONTADORA_CONTRATO",
+          "contract_role": "Montagem / instalação",
+          "display_name": null,
+          "cnpj": null,
+          "document_reference": null,
+          "verified_at": null,
+          "verification_source_url": null,
+          "directors": []
+        }
+      ],
+      "pending_questions": [
+        "Razão social e CNPJ da fabricante conforme documento contratual",
+        "Razão social e CNPJ da montadora/instaladora conforme documento contratual",
+        "Conferência da nota fiscal e identificação do beneficiário do pagamento",
+        "QSA e administradores exclusivamente desses CNPJs, com fonte e data de consulta"
+      ],
+      "public_contact_note": "Contatos institucionais das empresas podem ser listados em perfis corporativos separados; não apresentar dirigentes de outros CNPJs como responsáveis por este pedido."
+    }
+  }
+}

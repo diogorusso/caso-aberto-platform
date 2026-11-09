@@ -16,6 +16,7 @@ import EditorialVerdict from '../../../components/EditorialVerdict.astro';
 import {verdictForCase} from '../../../lib/brands';
 import EvidenceIndex from '../../../components/EvidenceIndex.astro';
 import ImpactTeaser from '../../../components/ImpactTeaser.astro';
+import CaseCompanyReference from '../../../components/CaseCompanyReference.astro';
 import { cases, casePath, crumbFor, dateBR, reportsFor, type Case } from '../../../lib/cases';
 export function getStaticPaths() { return cases.map(item => ({params:{slug:item.slug},props:{item}})); }
 interface Props { item: Case }
@@ -37,6 +38,7 @@ const related = reportsFor(item).filter(r => r.destaque || (r.cidade||'').includ
   {caseVerdict && <EditorialVerdict verdict={caseVerdict} subject={item.empresa_resumo} prominence="hero" caseHref={base+'evidencias/'}/>}
   <CaseIntro item={item}/>
   <CaseNav item={item}/>
+  <CaseCompanyReference item={item}/>
   <ImpactTeaser caseItem={item}/>
 
   <section class="section"><div class="container">
@@ -72,7 +74,7 @@ const related = reportsFor(item).filter(r => r.destaque || (r.cidade||'').includ
 
   {item.id==='CA-001' && <section class="section"><div class="container">
     <span class="eyebrow">ALERTA AO CONSUMIDOR</span>
-    <h2>Por que o risco do pagamento antecipado importa neste caso</h2>
+    <h2>Por que não recomendamos novas compras sem uma solução confirmada?</h2>
     <ConsumerRiskWarning href={base+'risco-roma-mobili/'} />
   </div></section>}
 

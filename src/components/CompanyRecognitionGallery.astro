@@ -1,0 +1,28 @@
+---
+import media from '../data/company-media.json';
+import type {Brand,BrandUnit} from '../lib/brands';
+interface Props {brand:Brand;unit?:BrandUnit}
+const {brand,unit}=Astro.props;
+const visual=(media.brands as Record<string,any>)[brand.slug];
+const unitVisual=unit?visual?.units?.[unit.slug]:undefined;
+const shots=unit?unitVisual?.website_capture:visual?.website_capture;
+const photo=unitVisual?.image||(!unit&&visual?.units?Object.values(visual.units).map((v:any)=>v.image).find(Boolean):undefined) as any;
+const logo=visual?.logo;
+---
+<section class="company-recognition section" id="identificacao-visual"><div class="container">
+ <div class="section-heading"><div><span class="eyebrow">ARQUIVO VISUAL COM ORIGEM</span><h2>Reconheça a empresa e confira os canais oficiais.</h2><p>Identidade visual, fachada e website com URLs e metadados para não confundir empresas ou unidades. O material é de referência editorial, não de publicidade.</p></div></div>
+ <div class="company-recognition-grid">
+  <article class="recognition-brand">
+   <div class="recognition-art">{logo?.src?<img src={logo.src} alt={logo.alt} loading="lazy"/>:<strong>{brand.name}</strong>}</div>
+   <div class="recognition-meta"><span>01 / IDENTIDADE VISUAL</span><h3>{brand.name}</h3><p>Marca exibida para identificação; não indica associação ou endosso.</p>{logo?.source_url&&<a href={logo.source_url} target="_blank" rel="noopener noreferrer">Fonte do símbolo ↗</a>}</div>
+  </article>
+  <article class="recognition-store">
+   <div class="recognition-art">{photo?.src?<img src={photo.src} alt={photo.alt} loading="lazy"/>:<span>Imagem com fonte ainda não catalogada</span>}</div>
+   <div class="recognition-meta"><span>02 / ESTABELECIMENTO</span><h3>{photo?.title||'Foto da loja pendente'}</h3><p>{photo?.address||unit?.location||brand.location}</p>{photo?.credit&&<p>Origem: {photo.credit}. Data da foto não confirmada.</p>}{photo?.source_url&&<a href={photo.source_url} target="_blank" rel="noopener noreferrer">Fotografia original ↗</a>}</div>
+  </article>
+  <article class="recognition-website">
+   <div class="recognition-art recognition-website-preview"><div class="recognition-browser-top"><i></i><i></i><i></i><small>{shots?.page_url||visual?.website||'Website oficial'}</small></div><div class="recognition-browser-body"><strong>Website oficial</strong><p>Captura de tela em arquivo: {shots?.captured_at||'ainda não registrada'}</p><span>Visualização do site original disponível no link abaixo.</span></div></div>
+   <div class="recognition-meta"><span>03 / PRESENÇA DIGITAL</span><h3>{shots?.title||'Site da empresa'}</h3><p>Não exibimos screenshot inventado: a captura arquivada deve guardar URL, data, e arquivo original.</p><a href={shots?.page_url||visual?.website||'#identificacao-visual'} target="_blank" rel="noopener noreferrer">Abrir site oficial ↗</a></div>
+  </article>
+ </div>
+</div></section>

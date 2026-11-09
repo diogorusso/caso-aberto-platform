@@ -1,7 +1,8 @@
 ---
 import {cases,casePath,reports} from '../lib/cases';
 import {brandPath,unitPath,statusLabel,type Brand,type BrandUnit} from '../lib/brands';
-import EditorialVerdict from './EditorialVerdict.astro';
+import CompanyIdentityHero from './CompanyIdentityHero.astro';
+import CompanyRecognitionGallery from './CompanyRecognitionGallery.astro';
 import CompanyProfiles from './CompanyProfiles.astro';
 import CaseCard from './CaseCard.astro';
 import CompanyCaseMatrix from './CompanyCaseMatrix.astro';
@@ -15,7 +16,7 @@ const uniqueReports=reports.filter(r=>linkedCases.some(c=>c.id===r.case_id) && (
 const scopedProfiles=unit?unit.company_profile_ids:brand.primary_company_profile_ids;
 const canonicalPath=unit?unitPath(brand,unit):brandPath(brand);
 ---
-<EditorialVerdict subject={rated.name} verdict={rated.verdict} prominence="hero" caseHref={linkedCases[0]?casePath(linkedCases[0]):undefined}/>
+<CompanyIdentityHero brand={brand} unit={unit}/>
 <section class="section"><div class="container">
  <div class="section-heading"><div><span class="eyebrow">PERFIL EDITORIAL · {brand.segment}</span><h2>{rated.name}: situação documentada</h2></div><a class="text-link" href="/empresas/">Todas as empresas ↗</a></div>
  <p class="dossier-intro">{unit?unit.summary:brand.summary}</p>
@@ -26,6 +27,7 @@ const canonicalPath=unit?unitPath(brand,unit):brandPath(brand);
 <ImpactTeaser brand={brand} unit={unit}/>
 <CompanyCaseMatrix brand={brand} unit={unit}/>
 <CompanyProfiles only={scopedProfiles} title={unit?'Cadastro da unidade em fontes públicas':'Pessoas jurídicas vinculadas à marca'} />
+<CompanyRecognitionGallery brand={brand} unit={unit}/>
 <CompanyRanking currentBrand={brand.slug} currentUnit={unit?.slug}/>
 {!unit&&brand.units.length>0&&<section class="section"><div class="container"><span class="eyebrow">UNIDADES</span><h2>Pesquise a unidade específica</h2><div class="brand-unit-list">{brand.units.filter(u=>u.published).map(u=><a href={unitPath(brand,u)}><strong>{u.name}</strong><span>{u.location} · {statusLabel(u.verdict.status)}</span></a>)}</div></div></section>}
 {!unit&&brand.faq.length>0&&<section class="section section-soft"><div class="container narrow"><span class="eyebrow">PERGUNTAS FREQUENTES</span><h2>Dúvidas sobre {brand.name}</h2>{brand.faq.map(f=><details class="brand-faq"><summary>{f.question}</summary><p>{f.answer}</p></details>)}</div></section>}

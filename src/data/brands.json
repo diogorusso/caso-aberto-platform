@@ -45,11 +45,11 @@
       ],
       "verdict": {
         "status": "nao_recomendamos",
-        "scope": "Novos pagamentos integrais antecipados de alto valor sem garantias de produção, entrega e montagem verificáveis; a avaliação não se estende automaticamente a todos os contratos ou unidades.",
-        "headline": "Não recomendamos antecipar valores elevados à rede sem garantias concretas.",
-        "lead": "Não assuma esse risco. Na dúvida, procure outro fornecedor. O risco de ficar sem os móveis e sem o dinheiro existe.",
-        "question": "A Florense pode repetir o caso Roma?",
-        "context": "A Roma Mobili teve falência decretada em 2025. No caso Florense Ipanema, há relato documentado de R$ 190 mil pagos e entrega fora do prazo; são fatos distintos. A comparação evidencia um risco de consumo, não comprova falência nem prevê insolvência da Florense.",
+        "scope": "Novas contratações com a marca enquanto o caso CA-001 permanecer sem solução confirmada e sem resposta documental suficiente; trata-se de posição editorial baseada nesse caso, não de diagnóstico financeiro nem de imputação automática a todas as unidades.",
+        "headline": "Não recomendamos contratar a Florense sem esclarecimento verificável das pendências deste dossiê.",
+        "lead": "Não assuma esse risco. Na dúvida, procure outro fornecedor. O consumidor precisa de clareza sobre a entrega e sobre quem responde pelo contrato, independentemente da forma de pagamento.",
+        "question": "O que a Florense precisa esclarecer antes de uma nova contratação?",
+        "context": "Existe uma reclamação documentada envolvendo R$ 190 mil pagos e atraso na unidade Ipanema. A falência da Roma Mobili ocorreu em outra empresa e ilustra consequências graves possíveis no setor; não há neste arquivo comprovação de falência ou insolvência da Florense.",
         "basis": [
           "Caso CA-001: consumidor relata pagamento integral de R$ 190 mil e prazo de entrega da primeira semana de outubro de 2026 não cumprido.",
           "Notificação extrajudicial de 30/10/2026, reclamação pública de 03/11/2026 e protocolo Procon/RJ informado.",
@@ -84,11 +84,11 @@
           "summary": "Unidade de Ipanema mencionada em reclamação de pagamento integral de R$ 190 mil e atraso na entrega e montagem. Outro caso público de 2026 da unidade foi posteriormente resolvido.",
           "verdict": {
             "status": "nao_recomendamos",
-            "scope": "Novas contratações desta unidade enquanto o pedido CA-001 não tiver conclusão e resposta documentadas.",
-            "headline": "Não recomendamos contratar a Florense Ipanema neste momento.",
-            "lead": "Não assuma esse risco. Na dúvida, procure outro fornecedor. O risco de ficar sem os móveis e sem o dinheiro existe.",
-            "question": "O consumidor corre o risco de ficar sem os móveis e sem o dinheiro?",
-            "context": "O consumidor relata quitação integral e atraso na entrega. O caso Roma documenta o risco extremo do setor quando há falência; não há evidência neste arquivo de que a Florense esteja insolvente.",
+            "scope": "Novas compras e contratações da unidade de Ipanema, seja qual for a forma de pagamento, até conclusão verificável do caso CA-001 e esclarecimento das obrigações da empresa.",
+            "headline": "Não recomendamos comprar na Florense Ipanema enquanto o caso não tiver solução confirmada.",
+            "lead": "Na dúvida, procure outro fornecedor. Um consumidor relata R$ 190 mil pagos, prazo descumprido e entrega ainda não confirmada neste dossiê.",
+            "question": "Quem responde pelo pedido e quando a entrega será concluída?",
+            "context": "A avaliação considera este pedido e os registros associados à unidade. O caso Roma Mobili é uma comparação sobre riscos no setor de móveis sob encomenda, não prova de crise financeira ou falência da Florense.",
             "basis": [
               "R$ 190 mil pagos integralmente, segundo o consumidor, em julho de 2026.",
               "Entrega prometida para a primeira semana de outubro de 2026 e agendamentos posteriormente frustrados.",
@@ -118,8 +118,8 @@
           "answer": "A Ipanema Representações e Serviços de Móveis Ltda. (CNPJ 39.526.757/0001-59) consta em cadastro empresarial no endereço da loja. A pessoa jurídica que assinou o contrato CA-001 depende de conferência do contrato, nota fiscal e comprovantes."
         },
         {
-          "question": "Por que CasoAberto não recomenda antecipar grandes pagamentos?",
-          "answer": "Porque o caso CA-001 relata R$ 190 mil quitados e descumprimento de prazo de entrega, com conclusão ainda não confirmada no dossiê. A recomendação se refere ao risco documentado e pode mudar mediante novas provas."
+          "question": "Por que o CasoAberto não recomenda contratar a Florense neste momento?",
+          "answer": "Pelo caso CA-001, envolvendo valor relevante relatado como pago, descumprimento de prazo e ausência de conclusão confirmada na revisão do dossiê. É uma avaliação editorial de contratação, independentemente da forma de pagamento, revisável com novos documentos e respostas."
         },
         {
           "question": "Onde ver as outras reclamações Florense?",

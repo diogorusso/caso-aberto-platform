@@ -149,6 +149,49 @@ for(const snapshot of impact.external_brand_snapshots||[]){
  if(!/^\d{4}-\d{2}-\d{2}$/.test(snapshot.as_of)){console.error('External snapshot date missing',snapshot.brand_slug);bad++;}
 }
 
+
+// Company identity photos/logos require origin metadata; no fabricated website screenshots.
+const visuals=read('company-media'),contractEntities=read('case-contract-entities');
+const secureUrl=x=>typeof x==='string'&&/^https:\/\//.test(x);
+for(const [slug,asset] of Object.entries(visuals.brands||{})){
+  const brand=brandsData.brands.find(b=>b.slug===slug);
+  if(!brand){console.error('Media belongs to unknown brand',slug);bad++;continue;}
+  if(!secureUrl(asset.website)){console.error('Company website URL missing',slug);bad++;}
+  if(asset.logo?.src&&!secureUrl(asset.logo.src)){console.error('Company logo invalid URL',slug);bad++;}
+  if(asset.logo?.src&&(!secureUrl(asset.logo.source_url)||!asset.logo.alt||!asset.logo.credit)){console.error('Company logo missing attribution',slug);bad++;}
+  const checkCapture=(capture,context)=>{
+    if(!capture)return;
+    if(!secureUrl(capture.page_url)){console.error('Website capture missing original page URL',context);bad++;}
+    if(capture.status==='pending_verified_capture'){
+      if(capture.src||capture.captured_at){console.error('Pending screenshot cannot claim saved image or capture date',context);bad++;}
+    }else if(!capture.src||!capture.captured_at||!capture.credit){console.error('Verified screenshot missing image/date/credit',context);bad++;}
+  };
+  checkCapture(asset.website_capture,slug);
+  for(const [unitSlug,unitAsset] of Object.entries(asset.units||{})){
+    if(!brand.units.some(u=>u.slug===unitSlug)){console.error('Media references unknown unit',slug,unitSlug);bad++;}
+    if(unitAsset.image?.src&&(!secureUrl(unitAsset.image.src)||!secureUrl(unitAsset.image.source_url)||!unitAsset.image.alt||!unitAsset.image.credit||!unitAsset.image.collected_at)){
+      console.error('Store photo missing provenance metadata',slug,unitSlug);bad++;
+    }
+    checkCapture(unitAsset.website_capture,slug+'/'+unitSlug);
+  }
+}
+for(const [caseId,record] of Object.entries(contractEntities.cases||{})){
+  if(!cases.some(c=>c.id===caseId)){console.error('Contract entity refers to unknown case',caseId);bad++;}
+  const slots=new Set();
+  for(const slot of record.slots||[]){
+    if(slots.has(slot.slot_id)){console.error('Duplicate contract role',caseId,slot.slot_id);bad++;}
+    slots.add(slot.slot_id);
+    const complete=Boolean(slot.display_name&&slot.cnpj&&slot.verified_at&&slot.verification_source_url);
+    const partial=Boolean(slot.display_name||slot.cnpj||slot.verified_at||slot.verification_source_url);
+    if(partial&&!complete){console.error('Partial contract identity cannot be published',caseId,slot.slot_id);bad++;}
+    if(complete&&(!validCnpj(slot.cnpj)||!secureUrl(slot.verification_source_url))){console.error('Invalid verified contracted company',caseId,slot.slot_id);bad++;}
+    if(!complete&&(slot.directors||[]).length){console.error('Unverified contract role cannot publish directors',caseId,slot.slot_id);bad++;}
+    for(const director of slot.directors||[]){
+      if(!director.name||!director.role||!secureUrl(director.source_url)){console.error('Contract director missing evidence',caseId,slot.slot_id);bad++;}
+    }
+  }
+}
+
 const counted=metrics.cases?.['CA-001']?.public_complaints_indexed;
 if (counted != null && counted !== reports.filter(r=>r.case_id==='CA-001').length) {
   console.error('metrics public_complaints_indexed mismatch', counted, reports.length); bad++;

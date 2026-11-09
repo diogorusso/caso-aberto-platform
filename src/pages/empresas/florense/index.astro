@@ -1,56 +1,34 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import CompanyIdentityHero from '../../../components/CompanyIdentityHero.astro';
+import CompanyRecognitionGallery from '../../../components/CompanyRecognitionGallery.astro';
 import CompanyDossier from '../../../components/CompanyDossier.astro';
 import CompanyProfiles from '../../../components/CompanyProfiles.astro';
-import EditorialVerdict from '../../../components/EditorialVerdict.astro';
-import {findBrand} from '../../../lib/brands';
 import CompanyCaseMatrix from '../../../components/CompanyCaseMatrix.astro';
 import CompanyRanking from '../../../components/CompanyRanking.astro';
 import ImpactTeaser from '../../../components/ImpactTeaser.astro';
-import { cases, reports, brl, casePath } from '../../../lib/cases';
-const item = cases[0];
-const brand = findBrand('florense');
-const crumbs = [{label:'Início',href:'/'},{label:'Empresas',href:'/empresas/florense/'},{label:'Florense',href:'/empresas/florense/'}];
-const byTheme = reports.reduce((acc: Record<string, number>, r) => { acc[r.tema]=(acc[r.tema]||0)+1; return acc; }, {});
+import {findBrand,brandPath} from '../../../lib/brands';
+import {cases,casePath} from '../../../lib/cases';
+const brand=findBrand('florense');
+if(!brand)throw Error('Florense must have a published brand profile');
+const caseItem=cases.find(c=>brand.case_ids.includes(c.id));
+const crumbs=[{label:'Início',href:'/'},{label:'Empresas',href:'/empresas/'},{label:brand.name,href:brandPath(brand)}];
+const schema={'@context':'https://schema.org','@type':'WebPage',name:'Florense — perfil empresarial e arquivo de casos',about:{'@type':'Organization',name:brand.name,url:'https://florense.com.br/',logo:'https://images.squarespace-cdn.com/content/v1/64e8cc485611b24469ae7ad6/6224d17d-4408-418f-9700-cc4d34e2e886/florensewithback-removebg-preview%2B2.png'},dateModified:brand.last_reviewed};
 ---
-<BaseLayout
-  title="Florense — arquivo público de reclamações e dossiês | CasoAberto"
-  description="Página empresarial do CasoAberto sobre a Florense: distinção fábrica/franquia, dossiê CA-001, arquivo de reclamações públicas e alertas ao consumidor."
-  breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}
->
-  <Breadcrumbs items={crumbs} />
-  {brand && <EditorialVerdict verdict={brand.verdict} subject={brand.name} prominence="hero" caseHref={casePath(item)} />}
-  <header class="pagehead"><div class="container">
-    <div class="eyebrow">EMPRESA · ARQUIVO PÚBLICO</div>
-    <h1>Florense</h1>
-    <p>Indústria de móveis planejados com sede em Flores da Cunha/RS e rede de franquias. O CasoAberto separa fabricante, unidades e reclamações por local/status.</p>
-  </div></header>
-  {brand && <ImpactTeaser brand={brand}/>}
-  <section class="section"><div class="container two-col">
-    <div>
-      <h2>Caso em destaque</h2>
-      <p><strong>{item.titulo}</strong></p>
-      <p>Exposição informada: {item.valor_brl ? brl(item.valor_brl) : '—'}. Status: {item.status}.</p>
-      <a class="button button-dark" href={casePath(item)}>Abrir dossiê CA-001 ↗</a>
-      <a class="text-link" href="/empresas/florense/ipanema-rj/">Unidade Ipanema (RJ) ↗</a>
-    </div>
-    <aside class="info-panel">
-      <h3>Arquivo indexado</h3>
-      <p>{reports.length} relatos públicos vinculados neste repositório.</p>
-      <ul>{Object.entries(byTheme).map(([k,v]) => <li>{k}: {v}</li>)}</ul>
-      <a class="text-link" href={`${casePath(item)}reclamacoes-publicas/`}>Explorar com filtros ↗</a>
-    </aside>
-  </div></section>
-  <section class="section section-soft"><div class="container narrow">
-    <h2>Florense está falindo?</h2>
-    <p>Até a verificação de 09/11/2026, <strong>não há neste arquivo registro de falência da Florense</strong>. O alerta Roma Mobili discute risco de pagamento antecipado, não prognóstico de insolvência da marca.</p>
-    <a class="text-link" href="/guias/risco-pagamento-antecipado-moveis-planejados/">Ler o alerta completo ↗</a>
-  </div></section>
-  <section class="section section-soft"><div class="container"><span class="eyebrow">UNIDADES COM AVALIAÇÃO PUBLICADA</span><h2>Analise a unidade antes de contratar.</h2><div class="brand-unit-list"><a href="/empresas/florense/ipanema-rj/"><strong>Florense Ipanema (RJ)</strong><span>Não recomendamos novas contratações enquanto o caso CA-001 não tiver desfecho confirmado ↗</span></a></div></div></section>
-  {brand && <CompanyCaseMatrix brand={brand} />}
-  {brand && <CompanyRanking currentBrand={brand.slug} heading="Como a Florense aparece no diretório editorial" />}
-  <CompanyDossier />
-  <CompanyProfiles />
-  <section class="dossier-feature"><div class="container"><span class="eyebrow">O CASO POR TRÁS DA INVESTIGAÇÃO</span><h2>R$ 190 mil pagos. Entrega prometida para outubro. Perguntas sem resposta.</h2><p>O dossiê reúne pagamento, prazos, notificações, reclamações, pessoas jurídicas e o risco do adiantamento.</p><div class="feature-links"><a class="button button-dark" href="/casos/florense-ipanema-rj-atraso-moveis-planejados/">Dossiê Florense Ipanema ↗</a><a class="button button-subtle" href="/casos/florense-ipanema-rj-atraso-moveis-planejados/risco-roma-mobili/">Comparar com o caso Roma ↗</a></div></div></section>
+<BaseLayout title="Florense: reclamações, CNPJ, risco, casos e avaliação | CasoAberto" description="Perfil editorial da Florense com imagem oficial, dados societários, reclamações catalogadas e caso de R$ 190 mil em Ipanema. Leia fontes, histórico e análise." dateModified={brand.last_reviewed} breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))} schema={schema}>
+ <Breadcrumbs items={crumbs}/>
+ <CompanyIdentityHero brand={brand}/>
+ <ImpactTeaser brand={brand}/>
+ <section class="section company-editorial-scope"><div class="container">
+  <div class="section-heading"><div><span class="eyebrow">POR QUE ESSA AVALIAÇÃO?</span><h2>Uma recomendação com perguntas e documentos.</h2><p>O caso de Ipanema fundamenta a avaliação editorial atual. Esse recorte não transforma problemas de uma unidade em prova automática sobre todos os pedidos da rede.</p></div></div>
+  <div class="rating-evidence"><article><h3>Fundamentos publicados</h3><ol>{brand.verdict.basis.map(x=><li>{x}</li>)}</ol></article><article><h3>O que pode alterar a recomendação?</h3><ol>{brand.verdict.review_triggers.map(x=><li>{x}</li>)}</ol></article></div>
+  <div class="company-identity-actions">{caseItem&&<a class="button button-dark" href={casePath(caseItem)}>Acessar caso documentado ↗</a>}<a class="button button-subtle" href="/empresas/florense/ipanema-rj/">Examinar unidade de Ipanema ↗</a><a class="company-inline-link" href="/metodologia/#avaliacao-editorial">Critérios editoriais ↗</a></div>
+ </div></section>
+ <CompanyCaseMatrix brand={brand}/>
+ <CompanyRecognitionGallery brand={brand}/>
+ <CompanyDossier/>
+ <CompanyProfiles only={[...brand.primary_company_profile_ids,...brand.related_company_profile_ids]} title="Cadastros e vínculos societários da rede"/>
+ <CompanyRanking currentBrand={brand.slug} heading="Avaliações editoriais: marca e unidades publicadas"/>
+ <section class="section company-accountability-end"><div class="container"><span class="eyebrow">RESPOSTA INSTITUCIONAL</span><h2>O que a Florense tem a dizer sobre o caso?</h2><p>O dossiê reúne perguntas documentadas sobre a entrega e mantém espaço para registrar manifestação verificável, solução ou atualização.</p><div class="company-identity-actions">{caseItem&&<a class="button button-dark" href={casePath(caseItem)+'imprensa/'}>Perguntas, documentos e imprensa ↗</a>}<a class="button button-subtle" href="/empresas/">Outras empresas avaliadas ↗</a></div></div></section>
 </BaseLayout>

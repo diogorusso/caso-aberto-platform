@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "updated_at": "2026-11-09",
+  "notes": "Arquivo editorial de reconhecimento visual. Fotos de estabelecimentos e logotipos pertencem a seus titulares; links remetem às origens. Datas de fotografia desconhecidas não devem ser apresentadas como atuais. Nenhuma captura fictícia de website.",
+  "brands": {
+    "florense": {
+      "brand_name": "Florense",
+      "website": "https://florense.com.br/",
+      "display_wordmark": "FLORENSE",
+      "logo": {
+        "type": "logo",
+        "src": "https://images.squarespace-cdn.com/content/v1/64e8cc485611b24469ae7ad6/6224d17d-4408-418f-9700-cc4d34e2e886/florensewithback-removebg-preview%2B2.png",
+        "source_url": "https://www.salus-homes.com/premium-luxury-design-brands",
+        "alt": "Identidade visual FLORENSE em catálogo de marcas de design",
+        "credit": "Salus Homes — catálogo público de marcas",
+        "captured_at": null,
+        "published_at": null,
+        "editorial_use": "Reconhecimento visual e identificação de marca; não representa endosso do CasoAberto."
+      },
+      "website_capture": {
+        "type": "website_screenshot",
+        "src": null,
+        "page_url": "https://florense.com.br/",
+        "captured_at": null,
+        "status": "pending_verified_capture",
+        "title": "Página inicial da Florense",
+        "credit": "Florense — site institucional",
+        "alt": "Captura fiel do website oficial, pendente de arquivamento",
+        "capture_instruction": "Capturar página real, registrar data/hora, preservar arquivo original e gerar imagem derivada para exibição. Não criar mockup no lugar de screenshot."
+      },
+      "units": {
+        "ipanema-rj": {
+          "store_name": "Florense Ipanema",
+          "address": "Rua Joana Angélica, 169 — Ipanema, Rio de Janeiro/RJ, CEP 22420-030",
+          "website": "https://florense.com.br/franquias/ipanema",
+          "official_instagram": "https://www.instagram.com/florenseipanema/",
+          "image": {
+            "type": "store_photo",
+            "src": "https://repos.flomagazine.com.br/media/imagem/unidadenegocio/67_IPANEMA.jpg",
+            "fallback_src": "https://florense.com/_next/image?q=75&url=https%3A%2F%2Frepos.flomagazine.com.br%2Fmedia%2Fimagem%2Funidadenegocio%2F67_IPANEMA.jpg&w=3840",
+            "source_url": "https://florense.com.br/franquias/ipanema",
+            "alt": "Imagem do showroom Florense Ipanema divulgada pela própria marca; fachada com letreiro FLORENSE e vitrines",
+            "title": "Showroom Florense Ipanema — imagem de divulgação",
+            "credit": "Florense — página oficial da unidade",
+            "photographed_at": null,
+            "collected_at": "2026-11-09",
+            "address": "Rua Joana Angélica, 169, Ipanema, Rio de Janeiro/RJ",
+            "context": "Foto institucional de referência para identificar a unidade. Não é fotografia do ocorrido, não confirma configuração atual da fachada."
+          },
+          "website_capture": {
+            "type": "website_screenshot",
+            "src": null,
+            "page_url": "https://florense.com.br/franquias/ipanema",
+            "captured_at": null,
+            "status": "pending_verified_capture",
+            "title": "Página oficial da unidade Florense Ipanema",
+            "credit": "Florense — site oficial",
+            "alt": "Captura integral verificável da página da unidade, ainda não arquivada",
+            "capture_instruction": "Exigir screenshot real, data UTC e URL permanente para arquivo. Até então apresentar link para a página original."
+          }
+        }
+      }
+    }
+  }
+}
