@@ -4,7 +4,6 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import {cases} from '../../lib/cases';
 import raw from '../../data/action-scenarios.json';
 import {printKitForCase,printKitPath} from '../../lib/print-kits';
-const scenarios=raw.scenarios.length;
 ---
 <BaseLayout title="Explore cenários: impacto e cobrança de respostas | CasoAberto" description="Entenda como um problema de consumo pode escalar, quais fatos mudam o caso e quais caminhos podem exigir resposta das empresas. Cenários organizados a partir de dossiês documentados." dateModified={raw.updated_at} breadcrumbs={[{name:'Início',item:'/'},{name:'Cenários',item:'/cenarios/'}]}>
  <Breadcrumbs items={[{label:'Início',href:'/'},{label:'Cenários',href:'/cenarios/'}]}/>

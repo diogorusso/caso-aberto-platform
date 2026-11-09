@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import {cases,casePath} from '../../lib/cases';
-import {printKits,printableCases,printKitPath,printReviewedAt} from '../../lib/print-kits';
+import {printableCases,printKitPath,printReviewedAt} from '../../lib/print-kits';
 const items=printableCases(cases);
 const steps=[
  {id:'01',title:'Verifique antes de distribuir',description:'Leia a revisão mais recente, confirme o status do caso e os links de evidência. Peças antigas podem permanecer circulando depois de uma solução.'},
