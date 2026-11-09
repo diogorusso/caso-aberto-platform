@@ -2,7 +2,7 @@
 import evidence from '../data/evidence-index.json';
 interface Props { caseId: string; slug: string; compact?: boolean }
 const { caseId, slug, compact=false }=Astro.props;
-const rows=evidence.items.filter(x=>evidence.case_id===caseId);
+const rows=evidence.items.filter(x=>x.case_id===caseId);
 const publicRows=rows.filter(x=>x.visibility==='publico');
 const privateRows=rows.filter(x=>x.visibility==='privado');
 const statusLabel=(s:string)=>({publico_localizado:'Registro público localizado',solicitar_original:'Original a reunir',documento_fornecido_na_conversa:'Documento fornecido — integral privado',protocolo_informado:'Protocolo informado pelo titular'} as Record<string,string>)[s]||s;

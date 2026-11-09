@@ -1,0 +1,16 @@
+---
+import {brands,brandPath,unitPath,statusLabel,statusRank,type Brand,type BrandUnit} from '../lib/brands';
+interface Props {currentBrand?:string; currentUnit?:string; heading?:string}
+const {currentBrand,currentUnit,heading='Avaliações publicadas e comparáveis'}=Astro.props;
+const entries=brands.flatMap(b=>[
+ {brand:b,unit:undefined as BrandUnit|undefined,name:b.name,location:b.location,verdict:b.verdict,caseCount:b.case_ids.length,href:brandPath(b),scope:'Marca e rede',key:b.slug},
+ ...b.units.filter(u=>u.published).map(u=>({brand:b,unit:u as BrandUnit|undefined,name:u.name,location:u.location,verdict:u.verdict,caseCount:u.case_ids.length,href:unitPath(b,u),scope:'Unidade específica',key:b.slug+'/'+u.slug}))
+]).sort((a,b)=>statusRank(a.verdict.status)-statusRank(b.verdict.status)||a.name.localeCompare(b.name,'pt-BR'));
+const currentKey=currentBrand?(currentUnit?currentBrand+'/'+currentUnit:currentBrand):null;
+---
+<section class="company-ranking section" id="ranking-editorial"><div class="container">
+ <div class="section-heading"><div><span class="eyebrow">COMPARATIVO EDITORIAL · DIRETÓRIO ATUAL</span><h2>{heading}</h2><p>Ordem por faixa editorial, da maior cautela à recomendação mais favorável. Não é ranking financeiro nem de todo o mercado: considera apenas os perfis já publicados no CasoAberto, com escopo e data de cada avaliação.</p></div></div>
+ <div class="company-report-table"><table><thead><tr><th>Faixa</th><th>Empresa / unidade</th><th>Escopo</th><th>Casos</th><th>Revisão</th></tr></thead>
+  <tbody>{entries.map(e=><tr class:list={[{'company-current':e.key===currentKey}]}><td><span class:list={['ranking-status','ranking-'+e.verdict.status]}>{statusLabel(e.verdict.status)}</span></td><td><a href={e.href}><strong>{e.name}</strong></a><small>{e.location}</small></td><td>{e.scope}</td><td>{e.caseCount}</td><td>{e.verdict.valid_as_of.split('-').reverse().join('/')}</td></tr>)}</tbody></table></div>
+ <p class="muted">A ordenação por faixa não significa posição numérica de risco, nem transfere automaticamente a avaliação de uma unidade a toda a rede. <a href="/metodologia/#avaliacao-editorial">Ver metodologia e critérios de revisão ↗</a>.</p>
+</div></section>

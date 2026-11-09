@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
+import BrandOverview from '../../../../components/BrandOverview.astro';
+import {brands,unitPath,brandPath,type Brand,type BrandUnit} from '../../../../lib/brands';
+export function getStaticPaths(){return brands.flatMap(brand=>brand.units.filter(unit=>unit.published&&!(brand.slug==='florense'&&unit.slug==='ipanema-rj')).map(unit=>({params:{slug:brand.slug,unit:unit.slug},props:{brand,unit}})));}
+interface Props {brand:Brand;unit:BrandUnit}
+const {brand,unit}=Astro.props;
+---
+<BaseLayout title={unit.name+': reclamações, CNPJ e recomendação | CasoAberto'} description={unit.summary} dateModified={unit.last_reviewed} breadcrumbs={[{name:'Início',item:'/'},{name:'Empresas',item:'/empresas/'},{name:brand.name,item:brandPath(brand)},{name:unit.name,item:unitPath(brand,unit)}]}>
+ <Breadcrumbs items={[{label:'Início',href:'/'},{label:'Empresas',href:'/empresas/'},{label:brand.name,href:brandPath(brand)},{label:unit.name,href:unitPath(brand,unit)}]}/>
+ <BrandOverview brand={brand} unit={unit}/>
+</BaseLayout>

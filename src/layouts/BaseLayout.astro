@@ -4,6 +4,8 @@ import SiteFooter from '../components/SiteFooter.astro';
 import '../styles/global.css';
 import '../styles/dossier.css';
 import '../styles/evidence.css';
+import '../styles/ratings.css';
+import '../styles/company-matrix.css';
 interface Props {
   title: string;
   description: string;
@@ -12,6 +14,7 @@ interface Props {
   type?: 'website' | 'article';
   image?: string;
   breadcrumbs?: { name: string; item: string }[];
+  schema?: Record<string,unknown>;
 }
 const {
   title,
@@ -21,6 +24,7 @@ const {
   type = 'website',
   image = '/og-default.svg',
   breadcrumbs,
+  schema,
 } = Astro.props;
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : undefined;
 const ogImage = Astro.site ? new URL(image, Astro.site).toString() : image;
@@ -85,6 +89,7 @@ const crumbLd = breadcrumbs?.length
     <script type="application/ld+json" set:html={JSON.stringify(org).replace(/</g, '\\u003c')} />
     <script type="application/ld+json" set:html={JSON.stringify(pageLd).replace(/</g, '\\u003c')} />
     {crumbLd && <script type="application/ld+json" set:html={JSON.stringify(crumbLd).replace(/</g, '\\u003c')} />}
+    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\\u003c')} />}
   </head>
   <body>
     <a class="skip" href="#conteudo">Pular para conteúdo</a>

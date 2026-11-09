@@ -15,5 +15,5 @@ const updateCount = updatesFor(item).length;
     <div><small>Apoios verificados publicados</small><strong>{m?.verified_support_submissions ?? 0}</strong></div>
     <div><small>Pageviews / visitantes</small><strong>{m?.pageviews == null ? 'Ainda sem medição pública' : m.pageviews}</strong></div>
   </div>
-  <p class="metrics-note">{m?.measurement_period}. Contadores de audiência só aparecem com exportação documentada do Cloudflare Web Analytics — nunca números inventados.</p>
+  <p class="metrics-note">{m?.measurement_period||'Contagens vinculadas ao caso nesta revisão'}. Contadores de audiência só aparecem com exportação documentada do Cloudflare Web Analytics — nunca números inventados.</p>
 </section>

@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BrandRatingCard from '../../components/BrandRatingCard.astro';
+import CompanyRanking from '../../components/CompanyRanking.astro';
+import {brands} from '../../lib/brands';
+const selected=brands.filter(b=>b.verdict.status==='nao_recomendamos');
+---
+<BaseLayout title="Empresas que não recomendamos contratar agora: alertas e provas | CasoAberto" description="Lista editorial das empresas para as quais o CasoAberto não recomenda determinada contratação no momento. Veja o alcance exato da recomendação, casos, fontes e critérios de revisão.">
+ <Breadcrumbs items={[{label:'Início',href:'/'},{label:'Empresas',href:'/empresas/'},{label:'Não recomendamos',href:'/avaliacoes/nao-recomendamos/'}]}/>
+ <section class="directory-hero"><div class="container"><span class="eyebrow light">ALERTA DE CONTRATAÇÃO · CASOABERTO</span><h1>Empresas que não recomendamos neste momento.</h1><p>Cada recomendação informa que tipo de contratação está em questão, o motivo documentado e o que precisa mudar. O objetivo é ajudar o consumidor a evitar exposição financeira enquanto conflitos relevantes permanecem sem desfecho confirmado.</p><a class="button button-white" href="/metodologia/#avaliacao-editorial">Como avaliamos empresas ↗</a></div></section>
+ <section class="section"><div class="container"><div class="section-heading"><div><span class="eyebrow">DOSSIÊS PUBLICADOS</span><h2>{selected.length} empresa(s) neste recorte editorial</h2></div></div><div class="brand-directory-grid">{selected.map(b=><BrandRatingCard brand={b}/>)}</div></div></section>
+ <CompanyRanking heading="Comparativo de marcas e unidades cadastradas" />
+ <section class="section section-soft"><div class="container narrow editorial"><h2>Por que recomendamos cautela antes de pagar antecipadamente?</h2><p>No caso CA-001, o consumidor relata o pagamento integral de R$ 190 mil antes da entrega e atraso em relação ao cronograma original. O risco de não receber móveis pagos é concreto no setor de encomendas e o processo da Roma Mobili documenta um desfecho extremo ocorrido com outra empresa. Isso não comprova que a Florense esteja falindo.</p><h2>O que deve ser verificado antes de contratar?</h2><ol><li>Razão social e CNPJ no contrato e no comprovante de pagamento.</li><li>Fabricação, expedição e instalação com marcos verificáveis.</li><li>Histórico da unidade específica, separando reclamações resolvidas e não resolvidas.</li><li>Garantias proporcionais aos valores adiantados.</li><li>Respostas escritas a conflitos relevantes que permaneçam sem conclusão.</li></ol><p>Uma classificação pode mudar quando surgirem provas de solução, esclarecimentos e histórico atualizado. O CasoAberto publica as fontes para que cada leitor avalie as informações por si.</p></div></section>
+</BaseLayout>

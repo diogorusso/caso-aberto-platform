@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import BrandOverview from '../../../components/BrandOverview.astro';
+import {brands,brandPath,type Brand} from '../../../lib/brands';
+export function getStaticPaths(){return brands.filter(b=>b.slug!=='florense').map(brand=>({params:{slug:brand.slug},props:{brand}}));}
+interface Props {brand:Brand}
+const {brand}=Astro.props;
+---
+<BaseLayout title={brand.name+': reclamações, empresas, CNPJ e recomendação | CasoAberto'} description={brand.summary} dateModified={brand.last_reviewed} breadcrumbs={[{name:'Início',item:'/'},{name:'Empresas',item:'/empresas/'},{name:brand.name,item:brandPath(brand)}]}>
+ <Breadcrumbs items={[{label:'Início',href:'/'},{label:'Empresas',href:'/empresas/'},{label:brand.name,href:brandPath(brand)}]}/>
+ <BrandOverview brand={brand}/>
+</BaseLayout>

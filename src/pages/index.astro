@@ -2,6 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CaseCard from '../components/CaseCard.astro';
 import ConsumerRiskWarning from '../components/ConsumerRiskWarning.astro';
+import EditorialVerdict from '../components/EditorialVerdict.astro';
+import {brands} from '../lib/brands';
 import { cases, brl, reports, metrics, updates, dateBR } from '../lib/cases';
 const featured = cases[0];
 const reportCount = reports.length;
@@ -12,6 +14,7 @@ const updateCount = updates.length;
   description="Publicação independente que transforma reclamações documentadas em dossiês públicos, com evidências, cronologia, impacto financeiro e perguntas institucionais."
   breadcrumbs={[{name:'Início', item:'/'}]}
 >
+  {brands[0] && <EditorialVerdict verdict={brands[0].verdict} subject={brands[0].name} prominence="hero" caseHref="/casos/florense-ipanema-rj-atraso-moveis-planejados/" />}
   <section class="home-hero">
     <div class="container">
       <div class="eyebrow light"><span class="signal"></span> PUBLICAÇÃO INDEPENDENTE DE ACCOUNTABILITY</div>
@@ -42,7 +45,7 @@ const updateCount = updates.length;
           <div class="eyebrow">CASO EM ANDAMENTO</div>
           <h2>Florense Ipanema — R$ 190 mil em disputa de entrega</h2>
         </div>
-        <a href="/casos/" class="text-link">Arquivo de casos ↗</a>
+        <a href="/empresas/" class="text-link">Avaliações das empresas ↗</a>
       </div>
       {featured && <CaseCard item={featured} featured />}
       <p class="evidence-legend">Distinção editorial: fatos documentados (protocolos, links públicos, datas) ≠ relatos do consumidor ≠ hipóteses não verificadas.</p>

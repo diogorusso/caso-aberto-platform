@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BrandRatingCard from '../../components/BrandRatingCard.astro';
+import CompanyRanking from '../../components/CompanyRanking.astro';
+import {brands,ratingDefinitions,statusLabel} from '../../lib/brands';
+const reviewed=brands.slice().sort((a,b)=>a.verdict.valid_as_of<b.verdict.valid_as_of?1:-1);
+---
+<BaseLayout title="Empresas avaliadas: recomendamos, cautela e não recomendamos | CasoAberto" description="Consulte avaliações editoriais fundamentadas, empresas, unidades, CNPJs, casos documentados e decisões de contratação. A classificação informa alcance, evidências e revisão.">
+ <Breadcrumbs items={[{label:'Início',href:'/'},{label:'Empresas avaliadas',href:'/empresas/'}]} />
+ <section class="directory-hero"><div class="container"><span class="eyebrow light">DIRETÓRIO DE AVALIAÇÕES · CASOABERTO</span><h1>Antes de contratar, veja o que os casos mostram.</h1><p>Recomendamos, cautela ou não recomendamos: classificações editoriais fundamentadas em evidências publicadas e revisáveis. Consulte a unidade específica, as pessoas jurídicas e as reclamações originais.</p><div class="verdict-directory-stats"><span><strong>{reviewed.length}</strong> empresas avaliadas</span><span><strong>{reviewed.reduce((n,b)=>n+b.units.filter(u=>u.published).length,0)}</strong> unidades identificadas</span><span><strong>{reviewed.filter(b=>b.verdict.status==='nao_recomendamos').length}</strong> não recomendamos</span></div></div></section>
+ {ratingDefinitions.slice().sort((a,b)=>a.sort-b.sort).map(r=>{
+  const selected=reviewed.filter(b=>b.verdict.status===r.code);
+  return <section class="section editorial-directory"><div class="container"><div class="section-heading"><div><span class="eyebrow">CLASSIFICAÇÃO EDITORIAL</span><h2>{r.label} <small>({selected.length})</small></h2><p>{r.explanation}</p></div>{r.code==='nao_recomendamos'&&<a class="text-link" href="/avaliacoes/nao-recomendamos/">Ver análise das empresas não recomendadas ↗</a>}</div>
+    {selected.length>0?<div class="brand-directory-grid">{selected.map(brand=><BrandRatingCard brand={brand}/>)}</div>:<p class="muted">Nenhuma empresa classificada nesta categoria na revisão atual.</p>}
+   </div></section>;
+ })}
+ <CompanyRanking heading="Ranking editorial das empresas e unidades publicadas" />
+ <section class="section section-soft"><div class="container narrow"><h2>Como ler uma classificação?</h2><p>O status é uma recomendação editorial sobre risco documentado, não um selo oficial, laudo financeiro, previsão de falência ou sentença. Abrimos a evidência, o escopo e a data da análise. Uma nova prova ou solução confirmada pode alterar a classificação.</p><a class="button button-dark" href="/metodologia/#avaliacao-editorial">Consultar critérios de publicação e revisão ↗</a></div></section>
+</BaseLayout>

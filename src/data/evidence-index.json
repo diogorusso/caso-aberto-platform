@@ -5,6 +5,7 @@
   "notes": "Catálogo editorial de referências. Não anexa documentos privados, não certifica autenticidade e não substitui a preservação do original. IDs estáveis para referência em imprensa, negociações e análise profissional.",
   "items": [
     {
+      "case_id": "CA-001",
       "id": "CA001-E001",
       "kind": "contratual",
       "title": "Contrato assinado e anexos do projeto",
@@ -18,6 +19,7 @@
       "relation": "Objeto e obrigação contratual"
     },
     {
+      "case_id": "CA-001",
       "id": "CA001-E002",
       "kind": "financeiro",
       "title": "Pagamento integral informado de R$ 190 mil",
@@ -31,6 +33,7 @@
       "relation": "Desembolso relatado"
     },
     {
+      "case_id": "CA-001",
       "id": "CA001-E003",
       "kind": "contratual",
       "title": "Confirmação do prazo da primeira semana de outubro",
@@ -44,6 +47,7 @@
       "relation": "Prazo originalmente prometido"
     },
     {
+      "case_id": "CA-001",
       "id": "CA001-E004",
       "kind": "operacional",
       "title": "Reagendamentos e não comparecimento",
@@ -57,6 +61,7 @@
       "relation": "Cumprimento e execução"
     },
     {
+      "case_id": "CA-001",
       "id": "CA001-E005",
       "kind": "comunicacao",
       "title": "Notificação extrajudicial de 30/10/2026",
@@ -70,6 +75,7 @@
       "relation": "Formalização da cobrança"
     },
     {
+      "case_id": "CA-001",
       "id": "CA001-E006",
       "kind": "reclamacao",
       "title": "Reclamação principal no Reclame Aqui",
@@ -83,6 +89,7 @@
       "relation": "Manifestação pública do consumidor"
     },
     {
+      "case_id": "CA-001",
       "id": "CA001-E007",
       "kind": "reclamacao",
       "title": "Reclamação pública PROTESTE",
@@ -96,6 +103,7 @@
       "relation": "Histórico de reclamação"
     },
     {
+      "case_id": "CA-001",
       "id": "CA001-E008",
       "kind": "administrativo",
       "title": "Registro Procon/RJ — protocolo informado",
@@ -109,6 +117,7 @@
       "relation": "Trâmite administrativo"
     },
     {
+      "case_id": "CA-001",
       "id": "CA001-E009",
       "kind": "financeiro",
       "title": "Custos adicionais e impacto familiar",
@@ -122,6 +131,7 @@
       "relation": "Prejuízos relatados"
     },
     {
+      "case_id": "CA-001",
       "id": "CA001-E010",
       "kind": "empresarial",
       "title": "Cadastro da Fábrica de Móveis Florense Ltda.",
@@ -135,6 +145,7 @@
       "relation": "Identificação corporativa"
     },
     {
+      "case_id": "CA-001",
       "id": "CA001-E011",
       "kind": "empresarial",
       "title": "Cadastro da empresa no endereço Florense Ipanema",
@@ -148,6 +159,7 @@
       "relation": "Identificação da unidade"
     },
     {
+      "case_id": "CA-001",
       "id": "CA001-E012",
       "kind": "empresa",
       "title": "Página oficial da loja Florense Ipanema",
@@ -161,6 +173,7 @@
       "relation": "Vínculo comercial com a marca"
     },
     {
+      "case_id": "CA-001",
       "id": "CA001-E013",
       "kind": "declaracao",
       "title": "Declarações sobre fila de produção e metas",
@@ -174,6 +187,7 @@
       "relation": "Contexto setorial e pergunta institucional"
     },
     {
+      "case_id": "CA-001",
       "id": "CA001-E014",
       "kind": "declaracao",
       "title": "Dados sobre rede franqueada e fabricação",
@@ -187,6 +201,7 @@
       "relation": "Escala e capacidade declarada"
     },
     {
+      "case_id": "CA-001",
       "id": "CA001-E015",
       "kind": "comparativo",
       "title": "Falência da Roma Mobili — caso independente",
@@ -200,6 +215,7 @@
       "relation": "Risco geral em pagamentos antecipados"
     },
     {
+      "case_id": "CA-001",
       "id": "CA001-E016",
       "kind": "reclamacao",
       "title": "Outra reclamação Florense Ipanema — resolvida",

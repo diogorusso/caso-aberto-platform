@@ -4,7 +4,7 @@ import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
 import CaseNav from '../../../../components/CaseNav.astro';
 import LeadershipDirectory from '../../../../components/LeadershipDirectory.astro';
 import { cases, casePath, crumbFor, brl, type Case } from '../../../../lib/cases';
-export function getStaticPaths() { return cases.map(item => ({params:{slug:item.slug},props:{item}})); }
+export function getStaticPaths() { return cases.filter(item=>item.id==='CA-001').map(item => ({params:{slug:item.slug},props:{item}})); }
 interface Props { item: Case }
 const {item} = Astro.props;
 const crumbs = [...crumbFor(item), {label:'Quem responde', href:`${casePath(item)}responsaveis/`}];

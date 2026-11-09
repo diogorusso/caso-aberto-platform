@@ -1,0 +1,28 @@
+---
+import {statusLabel,type Verdict} from '../lib/brands';
+interface Props {verdict:Verdict; subject:string; caseHref?:string; prominence?:'hero'|'default'}
+const {verdict,subject,caseHref,prominence='default'}=Astro.props;
+const label=statusLabel(verdict.status);
+const roma='https://gomesdemattos.com.br/admjudicial/lista-de-processos/roma-mobili-industria-ltda-e-rm-projetos-e-montagens-de-moveis-ltda-epp/';
+---
+<section class:list={['editorial-verdict','verdict-'+verdict.status,'verdict-'+prominence]} aria-labelledby="verdict-title">
+  <div class="container verdict-grid">
+   <div class="verdict-main">
+    <span class="verdict-eyebrow">RECOMENDAÇÃO EDITORIAL · {subject} · {verdict.valid_as_of.split('-').reverse().join('/')}</span>
+    <span class="verdict-status">{label}</span>
+    <h2 id="verdict-title">{verdict.headline}</h2>
+    <p class="verdict-lead">{verdict.lead}</p>
+    <p class="verdict-scope"><strong>Alcance da avaliação:</strong> {verdict.scope}</p>
+   </div>
+   <aside class="verdict-context">
+    <h3>{verdict.question}</h3>
+    <p>{verdict.context}</p>
+    <div class="verdict-links">
+     {caseHref && <a class="button button-white" href={caseHref}>Ver dossiê e fontes ↗</a>}
+     <a href={roma} target="_blank" rel="noopener noreferrer">Processo judicial Roma Mobili ↗</a>
+     <a href="https://www.instagram.com/reel/DVr3jaCkdWq/" target="_blank" rel="noopener noreferrer">Vídeo sobre o caso Roma ↗</a>
+     <a href="/metodologia/#avaliacao-editorial">Critérios e revisão ↗</a>
+    </div>
+   </aside>
+  </div>
+</section>

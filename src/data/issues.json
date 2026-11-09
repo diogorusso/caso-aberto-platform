@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "updated_at": "2026-11-09",
+  "items": [
+    {
+      "slug": "atraso-na-entrega-moveis-planejados",
+      "theme": "Atraso e entrega",
+      "title": "Atraso na entrega de móveis planejados: relatos, causas documentadas e como agir",
+      "description": "Reclamações públicas sobre prazos de móveis planejados, fabricação e montagem: locais, status e fontes originais.",
+      "intro": "Um prazo contratual pode envolver aprovação de projeto, entrada em produção, expedição e montagem. Os relatos públicos aqui listados mostram atrasos percebidos pelos consumidores em diferentes unidades e períodos. O arquivo permite distinguir uma resposta da empresa da conclusão efetiva de cada caso.",
+      "what_to_check": [
+        "Identifique data da assinatura, pagamento e confirmação do projeto executivo.",
+        "Separe os marcos para fabricação, transporte e instalação; confirme o responsável por cada etapa.",
+        "Documente promessas de novas datas e comparecimento de equipes antes de preparar o imóvel.",
+        "Confira a situação específica da franquia e verifique se cada reclamação foi resolvida.",
+        "Evite inferir de uma reclamação o desempenho de toda a rede; confira amostra e período."
+      ],
+      "related_guide": "/guias/o-que-fazer-atraso-moveis-planejados/"
+    },
+    {
+      "slug": "montagem-pecas-moveis-planejados",
+      "theme": "Montagem e peças",
+      "title": "Montagem incompleta e peças faltantes: reclamações públicas de móveis planejados",
+      "description": "Relatos públicos de peças faltantes, erros de acabamento e montagem de móveis planejados, com cronologia e fontes originais.",
+      "intro": "A entrega física dos móveis nem sempre encerra a prestação do serviço. Peças ausentes, componentes errados e necessidade de novas visitas são temas recorrentes nos relatos vinculados ao arquivo. O status de cada reclamação é apresentado separadamente.",
+      "what_to_check": [
+        "Compare o projeto executivo aprovado com o material instalado.",
+        "Liste peças faltantes, medidas divergentes e acabamento defeituoso com fotografias datadas.",
+        "Solicite ordem de serviço de cada visita e documentos de recebimento.",
+        "Evite assinar conclusão integral se houver pendências não descritas na vistoria.",
+        "Registre por escrito a nova data e a pessoa jurídica responsável pela conclusão."
+      ],
+      "related_guide": "/guias/o-que-fazer-atraso-moveis-planejados/"
+    },
+    {
+      "slug": "problemas-pos-venda-moveis-planejados",
+      "theme": "Pós-venda",
+      "title": "Pós-venda de móveis planejados: garantia, suporte e reclamações públicas",
+      "description": "Casos documentados sobre atendimento, garantia e assistência depois da contratação de móveis planejados; consulte as fontes.",
+      "intro": "A qualidade do atendimento depois da entrega depende da capacidade de rastrear solicitações, peças, garantia e responsáveis entre franquia e fábrica. Os registros abaixo reúnem experiências publicadas e devem ser avaliados em seu contexto individual.",
+      "what_to_check": [
+        "Solicite número de protocolo e identificação de quem recebe o pedido.",
+        "Registre os defeitos com fotos, data e descrição objetiva.",
+        "Peça prazo escrito de resposta, envio de peça e execução da visita.",
+        "Guarde todas as respostas e indique se houve solução ou apenas promessa.",
+        "Verifique os termos de garantia do fabricante e o contrato da unidade específica."
+      ],
+      "related_guide": "/guias/o-que-fazer-atraso-moveis-planejados/"
+    }
+  ]
+}

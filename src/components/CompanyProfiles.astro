@@ -23,7 +23,7 @@ const brl=(n:number|null)=> n==null ? 'Não informado no levantamento' : new Int
    {p.additional_cnaes && <div class="registry-sub"><h4>Atividades secundárias</h4><ul>{p.additional_cnaes.map(s=><li>{s}</li>)}</ul></div>}
    {p.qsa.length>0 && <div class="registry-sub"><h4>Quadro de sócios e administradores — cadastro consultado</h4><div class="registry-qsa">{p.qsa.map(q=><div><strong>{q.name}</strong><span>{q.role}{q.entered ? ' · desde ' + q.entered.split('-').reverse().join('/') : ''}</span></div>)}</div></div>}
    <div class="registry-sub"><h4>Notas de verificação</h4><ul>{p.notes.map(n=><li>{n}</li>)}</ul></div>
-   <footer><strong>Fontes documentais</strong>{p.sources.map(s=><a href={s.url} target="_blank" rel="noopener noreferrer">{s.label} ↗</a>)}</footer>
+   <footer><strong>Ficha individual e fontes</strong><a href={"/cnpj/"+p.cnpj.replace(/\D/g,"")+"/"}>Ver perfil CNPJ com QSA e vínculos ↗</a>{p.sources.map(s=><a href={s.url} target="_blank" rel="noopener noreferrer">{s.label} ↗</a>)}</footer>
   </article>)}</div>
   <p class="registry-disclaimer">Atualizado em {profiles.updated_at.split('-').reverse().join('/')}. Fontes agregadoras informam dados da Receita Federal; emissão oficial deve ser realizada pelo serviço público. Capital social não é saldo, faturamento, patrimônio líquido ou medida de solvência.</p>
  </div>

@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import registries from '../../data/company-profiles.json';
+const items=registries.entities.slice().sort((a,b)=>a.name.localeCompare(b.name,'pt-BR'));
+const money=(v:number|null)=>v==null?'Não divulgado':new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0}).format(v);
+---
+<BaseLayout title="Consulta de CNPJ: empresas, QSA, CNAE, capital e fontes | CasoAberto" description="Arquivo de CNPJ, sócios e administradores, CNAE e capital social das empresas documentadas no CasoAberto, com vínculos à marca e casos." dateModified={registries.updated_at}>
+ <Breadcrumbs items={[{label:'Início',href:'/'},{label:'Empresas',href:'/empresas/'},{label:'Arquivo CNPJ',href:'/cnpj/'}]}/>
+ <section class="pagehead"><div class="container"><span class="eyebrow">ARQUIVO CADASTRAL</span><h1>CNPJ, sócios, atividades e relações empresariais.</h1><p>Registros públicos utilizados para identificar quem fabrica, comercializa, administra ou participa de empresas mencionadas nos dossiês. Uma relação societária não comprova responsabilidade direta por qualquer contrato individual.</p></div></section>
+ <section class="section"><div class="container"><div class="brand-directory-grid">{items.map(p=><article class="brand-rating-card"><span class="eyebrow">{p.scope}</span><h3><a href={'/cnpj/'+p.cnpj.replace(/\D/g,'')+'/'}>{p.name}</a></h3><p><strong>CNPJ:</strong> {p.cnpj}</p><p><strong>Atividade:</strong> {p.main_activity}</p><p><strong>Capital cadastrado:</strong> {money(p.capital_brl)}</p><p>{p.relationship}</p><a class="text-link" href={'/cnpj/'+p.cnpj.replace(/\D/g,'')+'/'}>Ficha individual CNPJ e fontes ↗</a></article>)}</div><div class="dossier-provenance"><p>Cadastros consultados em {registries.updated_at.split('-').reverse().join('/')}. As informações podem mudar; emita comprovante oficial atualizado antes de instruir procedimento.</p><a href={registries.registry_verification_url} target="_blank" rel="noopener noreferrer">Consultar Receita Federal ↗</a></div></div></section>
+</BaseLayout>

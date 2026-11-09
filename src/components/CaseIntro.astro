@@ -13,7 +13,7 @@ const base = `/casos/${item.slug}/`;
     <div class="hero-buttons">
       <a class="button button-primary" href={`${base}linha-do-tempo/`}>Cronologia ↗</a>
       <a class="button button-ghost" href={`${base}reclamacoes-publicas/`}>Fontes públicas ↗</a>
-      <a class="button button-outline" href={`${base}risco-roma-mobili/`}>Alerta Roma ↗</a>
+      {item.id==='CA-001' && <a class="button button-outline" href={base+'risco-roma-mobili/'}>Alerta Roma ↗</a>}
       <a class="button button-outline" href="#apoiar">Apoiar este caso</a>
     </div>
     <EvidenceSummary item={item} />

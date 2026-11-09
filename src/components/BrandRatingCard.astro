@@ -1,0 +1,16 @@
+---
+import {brandPath,unitPath,statusLabel,type Brand,type BrandUnit} from '../lib/brands';
+interface Props {brand:Brand; unit?:BrandUnit}
+const {brand,unit}=Astro.props;
+const rated=unit||brand;
+const verdict=rated.verdict;
+const href=unit?unitPath(brand,unit):brandPath(brand);
+---
+<article class:list={['brand-rating-card','rating-'+verdict.status]}>
+ <div class="rating-head"><span class="rating-label">{statusLabel(verdict.status)}</span><time datetime={verdict.valid_as_of}>Revisão: {verdict.valid_as_of.split('-').reverse().join('/')}</time></div>
+ <h3><a href={href}>{rated.name}</a></h3>
+ <p class="rating-location">{unit?unit.location:brand.location} · {brand.segment}</p>
+ <p>{verdict.headline}</p>
+ <p class="rating-scope">{verdict.scope}</p>
+ <div class="rating-foot"><span>{rated.case_ids.length} caso(s) relacionado(s)</span><a class="text-link" href={href}>Ler avaliação e fontes ↗</a></div>
+</article>

@@ -7,6 +7,7 @@ import { cases } from '../../lib/cases';
 <BaseLayout title="Casos documentados de consumidores | CasoAberto" description="Dossiês de consumo organizados em páginas públicas com prazos, reclamações, documentos, respostas e acompanhamento.">
   <Breadcrumbs items={[{label:'Início',href:'/'},{label:'Casos',href:'/casos/'}]} />
   <section class="pagehead"><div class="container"><span class="eyebrow">ARQUIVO DE CASOS</span><h1>Casos que merecem resposta.</h1><p>Cada história tem sua própria cronologia, perguntas, fontes e espaço para registrar o desfecho.</p></div></section>
+  <section class="press-actionbar"><div class="container"><a class="button button-dark" href="/empresas/">Consultar recomendações por empresa ↗</a><a class="button button-subtle" href="/avaliacoes/nao-recomendamos/">Empresas que não recomendamos ↗</a></div></section>
   <section class="section listing"><div class="container case-list">{cases.map((item)=><CaseCard item={item}/>)}</div></section>
 </BaseLayout>
 <style>.case-list {display:grid;gap:20px}</style>

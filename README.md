@@ -96,7 +96,7 @@ Keep each complaint's source, date, geographic scope, status and updates distinc
 - Analytics can be added using Cloudflare Web Analytics, with no customer account system.
 - SEO has canonical URLs when the verified site origin is configured. Noindex unpublished drafts through content workflow (not by publishing them to `main`).
 
-**Status:** live on GitHub (`diogorusso/caso-aberto-platform`) and Cloudflare Pages (`https://casoaberto.pages.dev`). Git auto-builds are not connected yet — current deploys use Wrangler direct upload.
+**Status:** live on GitHub (`diogorusso/caso-aberto-platform`) and Cloudflare Pages (`https://casoaberto.pages.dev`). Deploys are triggered by commits to `main` through GitHub Actions and Wrangler direct upload to Cloudflare Pages.
 
 ## Dossiê corporativo Florense — pesquisa pública (09/11/2026)
 
@@ -116,3 +116,25 @@ Os números do Reclame Aqui usam recortes temporais distintos: histórico da mar
 - `scripts/build-evidence-manifest.mjs` computes SHA-256 manifests for local private files, without network or upload. See `docs/evidence-pack/README.md`.
 
 Never publish private contracts, payment statements or personal identifiers to Cloudflare or the public repository. A corporate registry record confirms a registered entity, but not by itself a contract or liability. The historic Brasmoveis entry is kept explicitly separate from any confirmed contracting party.
+
+## pSEO platform, company rankings and reusable case profiles (2026-11-09)
+
+Full source and onboarding procedure: **[`docs/pseo-platform.md`](docs/pseo-platform.md)**.
+
+- `/empresas/` — directory of reviewed companies, sorted by editorial recommendation band.
+- `/avaliacoes/nao-recomendamos/` — sourced recommendations with explicit scope and review conditions.
+- `/empresas/:slug/`, `/empresas/:slug/:unit/` — data-driven profiles with verdict, linked cases, local public complaints, CNPJs, QSA, corporate relationships and FAQ.
+- `/cnpj/`, `/cnpj/:digits/` — registry index and individual public company records, separately linked to brands/cases when supported.
+- `/problemas/`, `/problemas/:slug/` — substantive source-backed complaint-topic hubs (only when at least two records exist).
+- `/casos/:slug/fact-sheet.txt` — generated, case-specific static press fact sheet; no copy of case CA-001 for future cases.
+- Reusable Astro components: `EditorialVerdict`, `BrandRatingCard`, `BrandOverview`, `CompanyCaseMatrix`, `CompanyRanking`, and `CompanyProfiles`.
+
+Create a **non-public** new-company draft without duplicating pages:
+
+```bash
+npm run new:company -- --slug exemplo --name "Empresa Exemplo" --segment "Construção" --location "São Paulo, SP"
+```
+
+Edit `src/data/brands.json` to supply verified primary CNPJ, related cases, documented verdict rationale, sources and review triggers. `published: false` keeps a draft out of routes. The production site uses Github Actions -> Wrangler Pages direct-upload, triggered by `main`; Cloudflare Pages is still static, no server and no database.
+
+The editorial categories do not represent a nationwide numerical solvency ranking. The site compares only the companies and units published, with source, date, scope, and individually linked cases.

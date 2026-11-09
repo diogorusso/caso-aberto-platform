@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import CompanyProfiles from '../../../components/CompanyProfiles.astro';
+import CompanyRanking from '../../../components/CompanyRanking.astro';
+import {cases,casePath} from '../../../lib/cases';
+import {brands,brandPath,unitPath} from '../../../lib/brands';
+import profiles from '../../../data/company-profiles.json';
+export function getStaticPaths(){return profiles.entities.map(entity=>({params:{cnpj:entity.cnpj.replace(/\D/g,'')},props:{entity}}));}
+interface Props {entity:(typeof profiles.entities)[number]}
+const {entity}=Astro.props;
+const cnpjDigits=entity.cnpj.replace(/\D/g,'');
+const asBrand=brands.filter(b=>b.primary_company_profile_ids.includes(entity.id));
+const asUnit=brands.flatMap(b=>b.units.filter(u=>u.company_profile_ids.includes(entity.id)).map(u=>({brand:b,unit:u})));
+const caseIds=[...asBrand.flatMap(b=>b.case_ids),...asUnit.flatMap(x=>x.unit.case_ids)];
+const linked=cases.filter(c=>caseIds.includes(c.id));
+const href='/cnpj/'+cnpjDigits+'/';
+const schema={'@context':'https://schema.org','@type':'Organization',name:entity.name,legalName:entity.name,taxID:entity.cnpj,description:entity.main_activity};
+---
+<BaseLayout title={entity.name+' — CNPJ '+entity.cnpj+', QSA, atividade e fontes | CasoAberto'} description={'Perfil cadastral independente de '+entity.name+': CNPJ '+entity.cnpj+', CNAE '+entity.main_cnae+', capital social, administradores e vínculos documentados.'} dateModified={profiles.updated_at} breadcrumbs={[{name:'Início',item:'/'},{name:'Empresas',item:'/empresas/'},{name:entity.name,item:href}]} schema={schema}>
+ <Breadcrumbs items={[{label:'Início',href:'/'},{label:'Empresas',href:'/empresas/'},{label:entity.name,href}]}/>
+ <section class="pagehead"><div class="container"><span class="eyebrow">CONSULTA EMPRESARIAL · CNPJ {entity.cnpj}</span><h1>{entity.name}</h1><p>Dados cadastrais, quadro societário, atividade econômica, capital social e vínculos com empresas e casos documentados. Cadastro público não determina responsabilidade contratual isoladamente.</p></div></section>
+ <CompanyProfiles only={[entity.id]} title={'Perfil documental · '+entity.name}/>
+ <section class="section"><div class="container"><span class="eyebrow">RELAÇÕES PUBLICADAS</span><h2>Marcas, unidades e casos associados diretamente</h2>
+   {asBrand.map(b=><p><a class="text-link" href={brandPath(b)}>Marca {b.name}: dossiê editorial e classificação ↗</a></p>)}
+   {asUnit.map(x=><p><a class="text-link" href={unitPath(x.brand,x.unit)}>Unidade {x.unit.name}: dados e relatos locais ↗</a></p>)}
+   {linked.map(c=><p><a class="text-link" href={casePath(c)}>Caso {c.id}: {c.titulo} ↗</a></p>)}
+   {asBrand.length===0&&asUnit.length===0&&<p>Não há caso atribuído diretamente a esta pessoa jurídica no arquivo atual. Participação societária, nome semelhante ou registro histórico não estabelecem por si só vínculo contratual com um consumidor.</p>}
+   <p class="muted">A última revisão cadastral foi {profiles.updated_at.split('-').reverse().join('/')}. Para certidão atualizada, use o serviço oficial do CNPJ.</p>
+   <a href={profiles.registry_verification_url} target="_blank" rel="noopener noreferrer">Consulta oficial CNPJ / QSA ↗</a>
+ </div></section>
+  <CompanyRanking heading="Avaliações editoriais e casos relacionados" />
+</BaseLayout>

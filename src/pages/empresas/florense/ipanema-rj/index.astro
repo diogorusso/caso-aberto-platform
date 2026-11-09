@@ -1,61 +1,62 @@
 ---
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
-import dossier from '../../../../data/florense-dossier.json';
+import EditorialVerdict from '../../../../components/EditorialVerdict.astro';
+import CompanyCaseMatrix from '../../../../components/CompanyCaseMatrix.astro';
 import CompanyProfiles from '../../../../components/CompanyProfiles.astro';
-import { cases, reports, casePath, leadership, brl } from '../../../../lib/cases';
-const item = cases[0];
-const cad = dossier.entidades[1];
-const local = reports.filter(r => (r.cidade||'').toLowerCase().includes('ipanema') || r.unit === 'Ipanema');
-const crumbs = [
-  {label:'Início',href:'/'},
-  {label:'Florense',href:'/empresas/florense/'},
-  {label:'Ipanema RJ',href:'/empresas/florense/ipanema-rj/'},
+import CompanyRanking from '../../../../components/CompanyRanking.astro';
+import {findBrand,brandPath,unitPath} from '../../../../lib/brands';
+import {cases,casePath,leadership,brl,dateBR} from '../../../../lib/cases';
+import registries from '../../../../data/company-profiles.json';
+const brand=findBrand('florense');
+const unit=brand?.units.find(u=>u.slug==='ipanema-rj');
+const item=cases.find(c=>c.id==='CA-001');
+const business=registries.entities.find(x=>x.id==='ipanema-representacoes');
+if(!brand||!unit||!item||!business)throw new Error('Editorial Florense Ipanema data unavailable');
+const crumbs=[
+ {label:'Início',href:'/'},{label:'Empresas',href:'/empresas/'},
+ {label:brand.name,href:brandPath(brand)},{label:unit.name,href:unitPath(brand,unit)}
 ];
+const schema={
+ '@context':'https://schema.org','@type':'WebPage',
+ name:'Florense Ipanema — avaliação editorial, reclamações e CNPJ',
+ about:{'@type':'LocalBusiness',name:unit.name,address:{'@type':'PostalAddress',streetAddress:'Rua Joana Angélica, 169',addressLocality:'Rio de Janeiro',addressRegion:'RJ',addressCountry:'BR'}},
+ mentions:[{'@type':'Organization',name:business.name,taxID:business.cnpj},{'@type':'Article',headline:item.titulo,url:'https://casoaberto.pages.dev'+casePath(item)}],
+ dateModified:unit.last_reviewed
+};
 ---
-<BaseLayout
-  title="Florense Ipanema (RJ) — reclamações e dossiê | CasoAberto"
-  description="Unidade franqueada Florense Ipanema: contatos públicos, dossiê CA-001 de R$ 190 mil e reclamações locais indexadas."
-  breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}
->
-  <Breadcrumbs items={crumbs} />
-  <header class="pagehead"><div class="container">
-    <div class="eyebrow">FRANQUIA · RIO DE JANEIRO</div>
-    <h1>Florense Ipanema</h1>
-    <p>{leadership.franchise.address}. Contatos públicos conforme página oficial da rede.</p>
-  </div></header>
-  <section class="section"><div class="container two-col">
-    <div>
-      <h2>Dossiê CA-001</h2>
-      <p>{item.chamada}</p>
-      <p>Valor informado: {item.valor_brl?brl(item.valor_brl):'—'}. Protocolo Procon/RJ informado: {item.procon_protocol}.</p>
-      <a class="button button-dark" href={casePath(item)}>Abrir dossiê ↗</a>
-    </div>
-    <aside class="info-panel">
-      <h3>Contato público da unidade</h3>
-      <p>Tel.: {leadership.franchise.phone_public}</p>
-      <p>{leadership.franchise.email_public}</p>
-      <a class="text-link" href={leadership.franchise.official_page} target="_blank" rel="noopener noreferrer">Página oficial ↗</a>
-      <p class="muted">{leadership.franchise.notes}</p>
-    </aside>
-  </div></section>
-  <section class="section section-soft"><div class="container">
-    <h2>Reclamações públicas ligadas a Ipanema</h2>
-    <div class="reports-grid">
-      {local.map(r => (
-        <article class="record">
-          <div class="record-top"><span>{r.data}</span><span>·</span><span>{r.status}</span></div>
-          <h3>{r.titulo}</h3>
-          <p>{r.resumo}</p>
-          <a class="text-link" href={r.url} target="_blank" rel="noopener noreferrer">Fonte ↗</a>
-        </article>
-      ))}
-    </div>
-  </div></section>
-<section class="dossier-shell"><div class="container"><span class="eyebrow">CADASTRO EMPRESARIAL · REGISTRO PÚBLICO</span><h2>Quem opera no endereço comercial da Florense Ipanema?</h2>
-<div class="dossier-entities"><article class="dossier-box"><h3>{cad.nome}</h3><dl><div><dt>CNPJ</dt><dd>{cad.cnpj}</dd></div><div><dt>Cadastro</dt><dd>{cad.situacao}</dd></div><div><dt>Abertura</dt><dd>{cad.abertura}</dd></div><div><dt>Capital social registrado</dt><dd>{cad.capital}</dd></div><div><dt>Atividade principal</dt><dd>{cad.cnae}</dd></div><div><dt>Local</dt><dd>{cad.local}</dd></div></dl><a href={cad.fonte} class="text-link" target="_blank" rel="noopener noreferrer">Consultar cadastro original ↗</a></article>
-<article class="dossier-box"><h3>Administradores do cadastro consultado</h3><p><strong>Adolfo Gilmar Fuzinatto</strong> — sócio-administrador.</p><p><strong>Silvana Ines de Azambuja Fuzinatto</strong> — sócia-administradora.</p><p>Ambos constam no cadastro da pessoa jurídica situada no endereço da loja. Isso não determina, por si só, qual empresa assinou o contrato do pedido CA-001.</p><a href="/casos/florense-ipanema-rj-atraso-moveis-planejados/responsaveis/" class="text-link">Mapa completo de responsáveis institucionais ↗</a></article></div>
-<div class="dossier-heading dossier-subhead"><h2>Uma diferença de nomes que precisa ser esclarecida</h2><p>O relato no Reclame Aqui cita Brasmóveis Serviços de Instalações de Móveis Ltda.; a reclamação pública na PROTESTE cita a fabricante Florense e Ipanema Representações. Os documentos do contrato, comprovante de pagamento e nota fiscal podem esclarecer o papel exato de cada pessoa jurídica.</p><div class="dossier-links"><a href="https://www.reclameaqui.com.br/florense-moveis/nao-recebi-meus-moveis-planejados-e-a-loja-nao-cumpre-prazos_LaK42QhQaVqRLA5s/" target="_blank" rel="noopener noreferrer">Reclamação Reclame Aqui ↗</a><a href="https://www.proteste.org.br/reclame/lista-de-reclamacoes-publicas/reclamacoes-publicas?referenceid=CPTBR02190532-78" target="_blank" rel="noopener noreferrer">Reclamação pública PROTESTE ↗</a></div></div>
-</div></section>
-  <CompanyProfiles only={['ipanema-representacoes','brasmoveis-historico']} title="Cadastro da unidade e registro histórico citado nos relatos" />
+<BaseLayout title="Florense Ipanema RJ: não recomendamos, reclamações, CNPJ e caso R$ 190 mil | CasoAberto"
+ description="Avaliação Florense Ipanema RJ: não recomendamos contratar enquanto o caso CA-001 permanecer sem conclusão comprovada. Veja R$ 190 mil, CNPJ, reclamações e fontes."
+ dateModified={unit.last_reviewed} breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))} schema={schema}>
+ <Breadcrumbs items={crumbs}/>
+ <EditorialVerdict verdict={unit.verdict} subject={unit.name} prominence="hero" caseHref={casePath(item)} />
+ <section class="pagehead"><div class="container">
+  <div class="eyebrow">PERFIL DA FRANQUIA · IPANEMA · RIO DE JANEIRO</div>
+  <h1>Florense Ipanema (RJ): avaliação, CNPJ, reclamações e casos.</h1>
+  <p>{unit.summary}</p>
+  <div class="hero-buttons"><a class="button button-dark" href={casePath(item)}>Abrir dossiê CA-001 ↗</a><a class="button button-subtle" href="#casos-associados">Ver os casos associados ↗</a><a class="button button-subtle" href="#perfis-cnpj">Consultar CNPJ ↗</a></div>
+ </div></section>
+ <section class="section section-soft"><div class="container">
+  <span class="eyebrow">QUADRO DE VERIFICAÇÃO · REVISADO EM {dateBR(item.status_data)}</span><h2>O que sabemos sobre o caso desta unidade?</h2>
+  <div class="brand-scope-grid">
+   <div><strong>{brl(item.valor_brl||0)}</strong><span>Pagamento integral informado</span></div>
+   <div><strong>Out/2026</strong><span>Entrega originalmente prometida</span></div>
+   <div><strong>{item.procon_protocol||'—'}</strong><span>Protocolo Procon/RJ informado</span></div>
+   <div><strong>{item.status}</strong><span>Estado na revisão do dossiê</span></div>
+  </div>
+  <div class="rating-evidence">
+   <article><h3>Fatos relatados com documentação</h3><ol><li>Contratação para cozinha e área de serviço em julho de 2026.</li><li>Pagamento informado de R$ 190 mil integralmente.</li><li>Compromisso de entrega para a primeira semana de outubro.</li><li>Reagendamentos frustrados, segundo o consumidor.</li><li>Notificação extrajudicial de 30/10/2026 e reclamação pública.</li></ol></article>
+   <article><h3>O que precisa ser esclarecido pela empresa?</h3><ol>{item.imprensa_perguntas?.slice(0,5).map(q=><li>{q}</li>)}</ol><a class="text-link" href={casePath(item)+'imprensa/'}>Todas as perguntas e fontes ↗</a></article>
+  </div>
+ </div></section>
+ <CompanyCaseMatrix brand={brand} unit={unit} />
+ <section class="section"><div class="container two-col">
+  <div><span class="eyebrow">REGISTRO CADASTRAL DA UNIDADE</span><h2>Quem está cadastrado no endereço da loja?</h2><p><strong>{business.name}</strong> aparece em registro empresarial no endereço da unidade divulgado pela rede. É preciso confrontar o CNPJ com contrato, nota fiscal e beneficiário do pagamento para confirmar a pessoa jurídica responsável pelo pedido.</p>
+   <p><strong>CNPJ:</strong> {business.cnpj} · <strong>Capital social cadastrado:</strong> {brl(business.capital_brl||0)}</p>
+   <a class="button button-dark" href={'/cnpj/'+business.cnpj.replace(/\D/g,'')+'/'}>Ver ficha CNPJ e QSA ↗</a></div>
+  <aside class="info-panel"><span class="eyebrow">CANAL PÚBLICO DA UNIDADE</span><h3>{leadership.franchise.address}</h3><p>Telefone institucional divulgado: {leadership.franchise.phone_public}</p><p>{leadership.franchise.email_public}</p><a class="text-link" href={leadership.franchise.official_page} target="_blank" rel="noopener noreferrer">Página oficial da rede ↗</a><p class="muted">Contato e cadastro não significam comprovação de identidade da parte contratada no caso específico.</p></aside>
+ </div></section>
+ <CompanyProfiles only={['ipanema-representacoes','brasmoveis-historico']} title="CNPJ da empresa no endereço da unidade e cadastro histórico de nome semelhante" />
+ <section class="dossier-feature"><div class="container"><span class="eyebrow">RISCO DO CONSUMIDOR · ROMA MOBILI</span><h2>Não assuma esse risco. Na dúvida, procure outro fornecedor.</h2><p>O processo de falência da Roma Mobili mostra que o risco de ficar sem móveis e dinheiro existe. O caso Florense Ipanema envolve atraso e pagamento integral informado, mas o desfecho da Roma não prova falência da Florense.</p><div class="feature-links"><a class="button button-dark" href={casePath(item)+'risco-roma-mobili/'}>Ler comparação e processo Roma ↗</a><a class="button button-subtle" href={casePath(item)+'evidencias/'}>Conferir índice probatório ↗</a></div></div></section>
+ <CompanyRanking currentBrand={brand.slug} currentUnit={unit.slug} heading="Como Ipanema aparece nas avaliações editoriais publicadas" />
 </BaseLayout>

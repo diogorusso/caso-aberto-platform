@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "updated_at": "2026-11-09",
+  "ratings_methodology_url": "/metodologia/#avaliacao-editorial",
+  "ratings": [
+    {
+      "code": "recomendamos",
+      "label": "Recomendamos",
+      "explanation": "Histórico documentado suficiente e resposta transparente a eventuais conflitos relevantes, conforme critérios editoriais; não é garantia futura.",
+      "sort": 3
+    },
+    {
+      "code": "cautela",
+      "label": "Cautela",
+      "explanation": "Há lacunas relevantes, informações insuficientes ou reclamações que exigem verificações adicionais antes de contratar.",
+      "sort": 2
+    },
+    {
+      "code": "nao_recomendamos",
+      "label": "Não recomendamos",
+      "explanation": "Há evidência documentada de exposição relevante do consumidor e pendências substanciais sem desfecho confirmado no período analisado.",
+      "sort": 1
+    }
+  ],
+  "brands": [
+    {
+      "slug": "florense",
+      "name": "Florense",
+      "segment": "Móveis planejados",
+      "location": "Rede nacional · fabricante em Flores da Cunha/RS",
+      "summary": "Fabricante e rede de franquias de móveis planejados. O CasoAberto acompanha o contrato contestado na unidade Ipanema e relaciona os dados corporativos e outras reclamações públicas, distinguindo unidades e status.",
+      "published": true,
+      "last_reviewed": "2026-11-09",
+      "first_published": "2026-11-09",
+      "primary_company_profile_ids": [
+        "florense-fabricante"
+      ],
+      "related_company_profile_ids": [
+        "ipanema-representacoes",
+        "angelo-corradi-holding",
+        "castellan-holding"
+      ],
+      "case_ids": [
+        "CA-001"
+      ],
+      "verdict": {
+        "status": "nao_recomendamos",
+        "scope": "Novos pagamentos integrais antecipados de alto valor sem garantias de produção, entrega e montagem verificáveis; a avaliação não se estende automaticamente a todos os contratos ou unidades.",
+        "headline": "Não recomendamos antecipar valores elevados à rede sem garantias concretas.",
+        "lead": "Não assuma esse risco. Na dúvida, procure outro fornecedor. O risco de ficar sem os móveis e sem o dinheiro existe.",
+        "question": "A Florense pode repetir o caso Roma?",
+        "context": "A Roma Mobili teve falência decretada em 2025. No caso Florense Ipanema, há relato documentado de R$ 190 mil pagos e entrega fora do prazo; são fatos distintos. A comparação evidencia um risco de consumo, não comprova falência nem prevê insolvência da Florense.",
+        "basis": [
+          "Caso CA-001: consumidor relata pagamento integral de R$ 190 mil e prazo de entrega da primeira semana de outubro de 2026 não cumprido.",
+          "Notificação extrajudicial de 30/10/2026, reclamação pública de 03/11/2026 e protocolo Procon/RJ informado.",
+          "Arquivo reúne reclamações adicionais de outras unidades, com datas, locais e status individualizados.",
+          "Ausência de conclusão integral confirmada neste dossiê na revisão de 09/11/2026."
+        ],
+        "review_triggers": [
+          "Documentar entrega e instalação completas do pedido CA-001 e desfecho dos prejuízos reportados.",
+          "Publicar cronograma e resposta atribuíveis à contratada identificada por CNPJ.",
+          "Atualizar o histórico com resposta verificável e mudanças de status."
+        ],
+        "source_urls": [
+          "https://www.reclameaqui.com.br/florense-moveis/nao-recebi-meus-moveis-planejados-e-a-loja-nao-cumpre-prazos_LaK42QhQaVqRLA5s/",
+          "https://www.proteste.org.br/reclame/lista-de-reclamacoes-publicas/reclamacoes-publicas?referenceid=CPTBR02190532-78",
+          "https://gomesdemattos.com.br/admjudicial/lista-de-processos/roma-mobili-industria-ltda-e-rm-projetos-e-montagens-de-moveis-ltda-epp/"
+        ],
+        "valid_as_of": "2026-11-09"
+      },
+      "units": [
+        {
+          "slug": "ipanema-rj",
+          "name": "Florense Ipanema",
+          "location": "Ipanema, Rio de Janeiro/RJ",
+          "published": true,
+          "company_profile_ids": [
+            "ipanema-representacoes"
+          ],
+          "case_ids": [
+            "CA-001"
+          ],
+          "last_reviewed": "2026-11-09",
+          "summary": "Unidade de Ipanema mencionada em reclamação de pagamento integral de R$ 190 mil e atraso na entrega e montagem. Outro caso público de 2026 da unidade foi posteriormente resolvido.",
+          "verdict": {
+            "status": "nao_recomendamos",
+            "scope": "Novas contratações desta unidade enquanto o pedido CA-001 não tiver conclusão e resposta documentadas.",
+            "headline": "Não recomendamos contratar a Florense Ipanema neste momento.",
+            "lead": "Não assuma esse risco. Na dúvida, procure outro fornecedor. O risco de ficar sem os móveis e sem o dinheiro existe.",
+            "question": "O consumidor corre o risco de ficar sem os móveis e sem o dinheiro?",
+            "context": "O consumidor relata quitação integral e atraso na entrega. O caso Roma documenta o risco extremo do setor quando há falência; não há evidência neste arquivo de que a Florense esteja insolvente.",
+            "basis": [
+              "R$ 190 mil pagos integralmente, segundo o consumidor, em julho de 2026.",
+              "Entrega prometida para a primeira semana de outubro de 2026 e agendamentos posteriormente frustrados.",
+              "Notificação extrajudicial de 30/10/2026 e reclamações Procon/RJ, Reclame Aqui e PROTESTE.",
+              "A conclusão do pedido não estava confirmada na revisão de 09/11/2026."
+            ],
+            "review_triggers": [
+              "Comprovação da montagem integral conforme contrato e correção de pendências.",
+              "Cronograma e resposta escritos da pessoa jurídica contratada.",
+              "Registro da solução e dos custos adicionais comprovados."
+            ],
+            "source_urls": [
+              "https://www.reclameaqui.com.br/florense-moveis/nao-recebi-meus-moveis-planejados-e-a-loja-nao-cumpre-prazos_LaK42QhQaVqRLA5s/",
+              "https://www.proteste.org.br/reclame/lista-de-reclamacoes-publicas/reclamacoes-publicas?referenceid=CPTBR02190532-78"
+            ],
+            "valid_as_of": "2026-11-09"
+          }
+        }
+      ],
+      "faq": [
+        {
+          "question": "A Florense está falindo?",
+          "answer": "Até a revisão de 09/11/2026, este arquivo não identifica decisão de falência ou prova de insolvência da Florense. O alerta Roma descreve o risco de não receber móveis pagos e o processo de falência de outra empresa."
+        },
+        {
+          "question": "Qual é a empresa por trás da Florense Ipanema?",
+          "answer": "A Ipanema Representações e Serviços de Móveis Ltda. (CNPJ 39.526.757/0001-59) consta em cadastro empresarial no endereço da loja. A pessoa jurídica que assinou o contrato CA-001 depende de conferência do contrato, nota fiscal e comprovantes."
+        },
+        {
+          "question": "Por que CasoAberto não recomenda antecipar grandes pagamentos?",
+          "answer": "Porque o caso CA-001 relata R$ 190 mil quitados e descumprimento de prazo de entrega, com conclusão ainda não confirmada no dossiê. A recomendação se refere ao risco documentado e pode mudar mediante novas provas."
+        },
+        {
+          "question": "Onde ver as outras reclamações Florense?",
+          "answer": "O arquivo de reclamações públicas permite consultar local, data, tema e estado informado no link original, sem tratar todas as unidades como uma só."
+        }
+      ]
+    }
+  ]
+}

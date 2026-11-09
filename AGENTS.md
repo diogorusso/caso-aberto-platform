@@ -13,3 +13,8 @@ Scope: a static Brazilian consumer-case publishing website. GitHub is the source
 8. `src/data/company-profiles.json` holds sourced CNPJ/QSA profiles; keep the manufacturer's own shareholders separate from franchise and unrelated historical entities.
 9. `src/data/evidence-index.json` holds stable public/private evidence IDs; public CSV and printable pages are generated from this manifest. Never commit unredacted private originals.
 10. Media assets are in `public/media/`. The hash inventory script in `scripts/build-evidence-manifest.mjs` must be run locally, not in production.
+
+11. Editorial verdicts and published brands/units live in `src/data/brands.json`, with one recommendation band, scope, date, evidence and review triggers per brand/unit. Render them using `src/components/EditorialVerdict.astro` and `CompanyRanking.astro`.
+12. `src/pages/empresas/[slug]/` and `src/pages/empresas/[slug]/[unit]/` are generic pSEO templates. Florense static pages take precedence and must reuse the same components, not duplicate UI logic. Never replace established URLs.
+13. The brand must have linked published cases and source-backed review before `published:true`; new drafts are created with `npm run new:company -- ...`. Case, brand, unit, evidence and company registry IDs must resolve in `npm run verify:data`.
+14. Topic pages in `src/data/issues.json` require distinct editorial context and at least two linked original source records. Do not generate empty/near-duplicate pages.

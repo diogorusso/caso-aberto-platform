@@ -10,7 +10,7 @@ const {item}=Astro.props;
 const crumbs=[...crumbFor(item),{label:'Imprensa',href:`${casePath(item)}imprensa/`}];
 const n=reportsFor(item).length;
 ---
-<BaseLayout title={`${item.empresa_resumo}: kit para imprensa | CasoAberto`} description={`Fact sheet público do caso ${item.id}: valores, datas, fontes, Procon, alerta Roma e perguntas à empresa.`} dateModified={item.status_data} type="article" breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}>
+<BaseLayout title={`${item.empresa_resumo}: kit para imprensa | CasoAberto`} description={'Fact sheet público do caso '+item.id+': valores, datas, fontes verificáveis, cronologia e perguntas à empresa.'} dateModified={item.status_data} type="article" breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}>
   <Breadcrumbs items={crumbs}/>
   <section class="pagehead"><div class="container"><span class="eyebrow">KIT IMPRENSA · {item.id}</span><h1>Fact sheet — {item.empresa_resumo}</h1><p>Material verificável para jornalistas. CasoAberto é publicação independente — não somos órgão oficial nem assessoria jurídica.</p></div></section>
   <CaseNav item={item} current="imprensa" />
@@ -22,9 +22,9 @@ const n=reportsFor(item).length;
     <ul>
       <li>Valor informado como pago: {item.valor_brl?brl(item.valor_brl):'não informado'}</li>
       <li>Prazo original: {item.prazo_original}</li>
-      <li>Notificação extrajudicial: 30/10/2026</li>
+      {item.id==='CA-001' && <li>Notificação extrajudicial: 30/10/2026</li>}
       <li>Publicação no Reclame Aqui: {dateBR(item.data_publicacao)}</li>
-      <li>Procon/RJ (informado): {item.procon_protocol || '—'}</li>
+      {item.procon_protocol && <li>Protocolo administrativo informado: {item.procon_protocol}</li>}
       <li>Status do dossiê em {dateBR(item.status_data)}: {item.status}</li>
       <li>Relatos públicos indexados neste arquivo: {n}</li>
     </ul>
@@ -32,10 +32,8 @@ const n=reportsFor(item).length;
     <p><a href={item.fontes[0]?.url} target="_blank" rel="noopener noreferrer">{item.fontes[0]?.url}</a></p>
     <h2>Perguntas submetidas à empresa</h2>
     <ol class="editor-list">{(item.imprensa_perguntas||[]).map(q=><li>{q}</li>)}</ol>
-    <h2>Comparação Roma Mobili (alerta de risco)</h2>
-    <p>{roma.disclaimer}</p>
-    <p>Processo {roma.proceeding.number} — falência decretada em 19/12/2025. <a href={`${casePath(item)}risco-roma-mobili/`}>Página completa da comparação</a>.</p>
-    <h2>Pesquisa corporativa adicional</h2><p>Identificação do fabricante, CNPJs, empresa no endereço da unidade Ipanema, administradores, histórico público de reclamações, rede franqueada e declarações industriais de 2026: <a href="/empresas/florense/">consultar dossiê corporativo completo</a>.</p><h2>Arquivo e documentos</h2>
+    {item.id==='CA-001' && <><h2>Comparação Roma Mobili (alerta de risco)</h2><p>{roma.disclaimer}</p><p>Processo {roma.proceeding.number} — falência decretada em 19/12/2025. <a href={casePath(item)+'risco-roma-mobili/'}>Página completa da comparação</a>.</p></>}
+    {item.id==='CA-001' && <><h2>Pesquisa corporativa adicional</h2><p>Identificação da fabricante, CNPJs, empresa da unidade Ipanema, administradores, reclamações, rede franqueada e declarações industriais de 2026: <a href="/empresas/florense/">consultar dossiê corporativo completo</a>.</p></>}<h2>Arquivo e documentos</h2>
     <SourceList items={item.fontes}/>
     <p><a class="text-link" href={`${casePath(item)}reclamacoes-publicas/`}>Arquivo ampliado de reclamações públicas ↗</a></p>
     <h2>Canal para resposta da empresa</h2>
