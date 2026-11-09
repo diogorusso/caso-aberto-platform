@@ -36,7 +36,7 @@ Case content is escaped by Astro/React and sent to pages as text, not injected w
 
 ## Cloudflare Pages — one-time connection
 
-Create a **public** repo named `diogorusso/casoaberto` (or your preferred name), upload/commit this project's source files, then:
+Public repo: [`diogorusso/caso-aberto-platform`](https://github.com/diogorusso/caso-aberto-platform). To connect Cloudflare Pages:
 
 1. Cloudflare dashboard → **Workers & Pages** → **Create application** → **Pages** → **Connect to Git**.
 2. Select the GitHub repository.
@@ -96,4 +96,4 @@ Keep each complaint's source, date, geographic scope, status and updates distinc
 - Analytics can be added using Cloudflare Web Analytics, with no customer account system.
 - SEO has canonical URLs when the verified site origin is configured. Noindex unpublished drafts through content workflow (not by publishing them to `main`).
 
-**Status:** this is a complete, local Astro source migration packaged for upload. It has not been pushed to `diogorusso/casoaberto` or deployed to Cloudflare.
+**Status:** live on GitHub (`diogorusso/caso-aberto-platform`) and Cloudflare Pages (`https://casoaberto.pages.dev`). Git auto-builds are not connected yet — current deploys use Wrangler direct upload.
