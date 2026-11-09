@@ -5,6 +5,7 @@ import EditorialVerdict from '../../../../components/EditorialVerdict.astro';
 import CompanyCaseMatrix from '../../../../components/CompanyCaseMatrix.astro';
 import CompanyProfiles from '../../../../components/CompanyProfiles.astro';
 import CompanyRanking from '../../../../components/CompanyRanking.astro';
+import ImpactTeaser from '../../../../components/ImpactTeaser.astro';
 import {findBrand,brandPath,unitPath} from '../../../../lib/brands';
 import {cases,casePath,leadership,brl,dateBR} from '../../../../lib/cases';
 import registries from '../../../../data/company-profiles.json';
@@ -49,6 +50,7 @@ const schema={
    <article><h3>O que precisa ser esclarecido pela empresa?</h3><ol>{item.imprensa_perguntas?.slice(0,5).map(q=><li>{q}</li>)}</ol><a class="text-link" href={casePath(item)+'imprensa/'}>Todas as perguntas e fontes ↗</a></article>
   </div>
  </div></section>
+ <ImpactTeaser brand={brand} unit={unit}/>
  <CompanyCaseMatrix brand={brand} unit={unit} />
  <section class="section"><div class="container two-col">
   <div><span class="eyebrow">REGISTRO CADASTRAL DA UNIDADE</span><h2>Quem está cadastrado no endereço da loja?</h2><p><strong>{business.name}</strong> aparece em registro empresarial no endereço da unidade divulgado pela rede. É preciso confrontar o CNPJ com contrato, nota fiscal e beneficiário do pagamento para confirmar a pessoa jurídica responsável pelo pedido.</p>

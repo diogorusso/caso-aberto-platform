@@ -6,6 +6,7 @@ const p = casePath(item);
 const tabs = [
   {key:'resumo', label:'Dossiê', href:p},
   {key:'linha-do-tempo', label:'Cronologia', href:`${p}linha-do-tempo/`},
+  {key:'impacto',label:'Impacto em números',href:p+'impacto/'},
   {key:'reclamacoes-publicas', label:'Fontes públicas', href:`${p}reclamacoes-publicas/`},
   ...(item.id==='CA-001'?[{key:'risco-roma-mobili',label:'Alerta Roma',href:p+'risco-roma-mobili/'},{key:'responsaveis',label:'Quem responde',href:p+'responsaveis/'}]:[]),
   {key:'atualizacoes', label:'Atualizações', href:`${p}atualizacoes/`},

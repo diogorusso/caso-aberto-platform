@@ -15,6 +15,7 @@ import ParticipationCTA from '../../../components/ParticipationCTA.astro';
 import EditorialVerdict from '../../../components/EditorialVerdict.astro';
 import {verdictForCase} from '../../../lib/brands';
 import EvidenceIndex from '../../../components/EvidenceIndex.astro';
+import ImpactTeaser from '../../../components/ImpactTeaser.astro';
 import { cases, casePath, crumbFor, dateBR, reportsFor, type Case } from '../../../lib/cases';
 export function getStaticPaths() { return cases.map(item => ({params:{slug:item.slug},props:{item}})); }
 interface Props { item: Case }
@@ -36,6 +37,7 @@ const related = reportsFor(item).filter(r => r.destaque || (r.cidade||'').includ
   {caseVerdict && <EditorialVerdict verdict={caseVerdict} subject={item.empresa_resumo} prominence="hero" caseHref={base+'evidencias/'}/>}
   <CaseIntro item={item}/>
   <CaseNav item={item}/>
+  <ImpactTeaser caseItem={item}/>
 
   <section class="section"><div class="container">
     <CaseMetrics item={item} />

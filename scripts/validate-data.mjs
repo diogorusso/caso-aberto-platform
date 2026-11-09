@@ -112,6 +112,43 @@ for(const e of evidence.items){
   if(!cases.some(c=>c.id===e.case_id)){console.error('Evidence item unlinked to case',e.id,e.case_id);bad++;}
 }
 
+
+const impact=read('impact-models');
+const impactIds=new Set(Object.keys(impact.case_models||{}));
+for(const id of impactIds){
+ const c=cases.find(x=>x.id===id);
+ if(!c){console.error('Impact model references unknown case',id);bad++;continue;}
+ const m=impact.case_models[id];
+ const iso=(x)=>/^\d{4}-\d{2}-\d{2}$/.test(String(x))&&new Date(x+'T00:00:00Z').toISOString().slice(0,10)===x;
+ for(const key of ['snapshot_date','payment_date_reported','original_due_window_start','original_due_window_end']){
+   if(!iso(m[key])){console.error('Impact model invalid date',id,key,m[key]);bad++;}
+ }
+ if(iso(m.snapshot_date)&&iso(m.original_due_window_end)&&m.snapshot_date<m.original_due_window_end){console.error('Impact snapshot before original due date',id);bad++;}
+ if(iso(m.original_due_window_start)&&iso(m.original_due_window_end)&&m.original_due_window_end<m.original_due_window_start){console.error('Impact due window reversed',id);bad++;}
+ if(iso(m.snapshot_date)&&m.snapshot_date>c.status_data){console.error('Impact snapshot newer than case status; review needed',id);bad++;}
+ if(m.confirmed_added_costs_brl!==null&&(!Number.isFinite(m.confirmed_added_costs_brl)||m.confirmed_added_costs_brl<0)){console.error('Invalid confirmed additional costs',id);bad++;}
+ for(const key of ['actual_site_views','actual_site_unique_visitors','actual_social_impressions','verified_judicial_filings']){
+  if(m[key]!==null&&(!Number.isSafeInteger(m[key])||m[key]<0)){console.error('Invalid observed impact count',id,key);bad++;}
+ }
+ for(const [key,value] of Object.entries(m.scenario_defaults||{})){
+   if(!Number.isFinite(value)||value<0){console.error('Invalid scenario assumption',id,key);bad++;}
+ }
+ for(const key of ['purchase_ready_share_pct','decision_change_share_pct']){
+   if(m.scenario_defaults[key]>100){console.error('Scenario percentage out of bounds',id,key);bad++;}
+ }
+ if(!m.reference_urls?.length||!m.reference_urls.every(x=>/^https:\/\//.test(x))){console.error('Impact model missing source links',id);bad++;}
+}
+const impactBrands=new Set();
+for(const snapshot of impact.external_brand_snapshots||[]){
+ if(impactBrands.has(snapshot.brand_slug)){console.error('Duplicate external brand snapshot',snapshot.brand_slug);bad++;}
+ impactBrands.add(snapshot.brand_slug);
+ if(!brandsData.brands.some(b=>b.slug===snapshot.brand_slug)){console.error('External snapshot brand unknown',snapshot.brand_slug);bad++;}
+ if(!/^https:\/\//.test(snapshot.page_url)){console.error('External snapshot missing source',snapshot.brand_slug);bad++;}
+ if(snapshot.delivery_delay_category_records>snapshot.total_active_records){console.error('External category count exceeds total',snapshot.brand_slug);bad++;}
+ if(snapshot.total_active_records<0||snapshot.delivery_delay_category_records<0){console.error('External snapshot counts invalid',snapshot.brand_slug);bad++;}
+ if(!/^\d{4}-\d{2}-\d{2}$/.test(snapshot.as_of)){console.error('External snapshot date missing',snapshot.brand_slug);bad++;}
+}
+
 const counted=metrics.cases?.['CA-001']?.public_complaints_indexed;
 if (counted != null && counted !== reports.filter(r=>r.case_id==='CA-001').length) {
   console.error('metrics public_complaints_indexed mismatch', counted, reports.length); bad++;

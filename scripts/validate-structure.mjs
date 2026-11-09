@@ -65,5 +65,18 @@ if(existsSync(homeFile)){
 const header=readFileSync(resolve(src,'components/SiteHeader.astro'),'utf8');
 if(/Caso CA-001|\/casos\/florense-/i.test(header)){console.error('Global header must be platform-neutral');bad++;}
 
+
+const impactRoutes=[
+ 'casos/[slug]/impacto/index.astro',
+ 'empresas/[slug]/impacto/index.astro',
+ 'empresas/[slug]/[unit]/impacto/index.astro'
+];
+for(const route of impactRoutes){
+ const path=resolve(src,'pages',route);
+ if(!existsSync(path)||!readFileSync(path,'utf8').includes('getStaticPaths')){console.error('Missing impact pSEO route',route);bad++;}
+}
+const impactStyles=resolve(src,'styles/impact.css');
+if(!existsSync(impactStyles)){console.error('Missing impact dashboard CSS');bad++;}
+
 if (bad) process.exit(1);
 console.log(`OK: ${files.length} TS/Astro files; imports resolved; ${all.size} planned routes.`);

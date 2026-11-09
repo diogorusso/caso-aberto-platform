@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
+import ImpactDashboard from '../../../../components/ImpactDashboard.astro';
+import {brands,brandPath,type Brand} from '../../../../lib/brands';
+import {brandImpactPath} from '../../../../lib/impact';
+export function getStaticPaths(){return brands.map(brand=>({params:{slug:brand.slug},props:{brand}}));}
+interface Props {brand:Brand}
+const {brand}=Astro.props;
+const crumbs=[{label:'Início',href:'/'},{label:'Empresas',href:'/empresas/'},{label:brand.name,href:brandPath(brand)},{label:'Radar de impacto',href:brandImpactPath(brand)}];
+---
+<BaseLayout title={brand.name+': exposição financeira, reclamações públicas, fontes e cenários | CasoAberto'} description={'Painel de impacto editorial da marca '+brand.name+': histórico público separado de casos documentados, pagamentos relatados, indicadores por fonte e simulações identificadas.'} dateModified={brand.last_reviewed}
+ breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}>
+ <Breadcrumbs items={crumbs}/>
+ <ImpactDashboard brand={brand}/>
+ <section class="section section-soft"><div class="container narrow"><h2>Marca não é uma única loja.</h2><p>Os números históricos da plataforma externa abrangem a marca em diferentes lugares e períodos. As reclamações do arquivo CasoAberto formam um conjunto editorial próprio; não somamos os universos nem atribuímos automaticamente cada relato a uma franquia. O painel é atualizado por commit.</p><a class="text-link" href={brandPath(brand)}>Voltar ao perfil da empresa ↗</a></div></section>
+</BaseLayout>

@@ -21,3 +21,7 @@ Scope: a static Brazilian consumer-case publishing website. GitHub is the source
 
 15. The homepage (`src/pages/index.astro`) belongs to the CasoAberto **platform**, not to any company: its hero, navigation and final CTA must be company-neutral. Show cases only as curated links/cards in the case section; editorial verdicts, Roma comparisons and warnings belong to brand, unit and case pages. Enforced in `scripts/validate-structure.mjs` during `npm run verify:data`.
 16. Global header/footer navigation must be platform-centric. Do not hardcode one company's case or a sector-specific alert as the primary site-wide CTA. Company-specific pSEO content stays on `/empresas/:slug/`, `/empresas/:slug/:unit/` and `/casos/:slug/`.
+
+17. Impact data is in `src/data/impact-models.json`; each observed metric must have a named source and dated period; consumer amounts stay attributed. Null audience or court case counts must not be rendered as real zero or made-up positive numbers.
+18. Impact summaries in brand/unit/case pages use `ImpactTeaser.astro` and the full `ImpactDashboard.astro`; isolate hypothetical projections in `ImpactSimulator.tsx` with adjacent explicit labels. Never put a company-specific impact panel on the platform home.
+19. Keep external brand-wide Reclame Aqui totals, complaint samples, status categories, unique source URLs and unit-specific complaints in separate denominators; do not sum overlapping samples or treat answered complaints as resolved.

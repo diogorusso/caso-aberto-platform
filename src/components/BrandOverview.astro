@@ -6,6 +6,7 @@ import CompanyProfiles from './CompanyProfiles.astro';
 import CaseCard from './CaseCard.astro';
 import CompanyCaseMatrix from './CompanyCaseMatrix.astro';
 import CompanyRanking from './CompanyRanking.astro';
+import ImpactTeaser from './ImpactTeaser.astro';
 interface Props{brand:Brand;unit?:BrandUnit}
 const {brand,unit}=Astro.props;
 const rated=unit||brand;
@@ -22,6 +23,7 @@ const canonicalPath=unit?unitPath(brand,unit):brandPath(brand);
  <div class="rating-evidence"><div><h3>Por que essa recomendação?</h3><ol>{rated.verdict.basis.map(x=><li>{x}</li>)}</ol></div><div><h3>O que pode mudar a avaliação?</h3><ol>{rated.verdict.review_triggers.map(x=><li>{x}</li>)}</ol></div></div>
  <div class="dossier-links">{rated.verdict.source_urls.map((url,i)=><a href={url} target="_blank" rel="noopener noreferrer">Fonte da avaliação {i+1} ↗</a>)}</div>
  </div></section>
+<ImpactTeaser brand={brand} unit={unit}/>
 <CompanyCaseMatrix brand={brand} unit={unit}/>
 <CompanyProfiles only={scopedProfiles} title={unit?'Cadastro da unidade em fontes públicas':'Pessoas jurídicas vinculadas à marca'} />
 <CompanyRanking currentBrand={brand.slug} currentUnit={unit?.slug}/>

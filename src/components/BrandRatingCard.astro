@@ -1,5 +1,6 @@
 ---
 import {brandPath,unitPath,statusLabel,type Brand,type BrandUnit} from '../lib/brands';
+import {brandImpactPath,unitImpactPath} from '../lib/impact';
 interface Props {brand:Brand; unit?:BrandUnit}
 const {brand,unit}=Astro.props;
 const rated=unit||brand;
@@ -12,5 +13,5 @@ const href=unit?unitPath(brand,unit):brandPath(brand);
  <p class="rating-location">{unit?unit.location:brand.location} · {brand.segment}</p>
  <p>{verdict.headline}</p>
  <p class="rating-scope">{verdict.scope}</p>
- <div class="rating-foot"><span>{rated.case_ids.length} caso(s) relacionado(s)</span><a class="text-link" href={href}>Ler avaliação e fontes ↗</a></div>
+ <div class="rating-foot"><span>{rated.case_ids.length} caso(s) relacionado(s)</span><a class="text-link" href={href}>Ler avaliação ↗</a><a class="text-link" href={unit?unitImpactPath(brand,unit):brandImpactPath(brand)}>Painel de impacto ↗</a></div>
 </article>

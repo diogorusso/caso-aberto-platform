@@ -144,3 +144,15 @@ The editorial categories do not represent a nationwide numerical solvency rankin
 The root route `/` now describes **CasoAberto as a multi-company publishing and research platform**, with generic company lookup, case exploration, CNPJ registry, editorial status methodology and real archive counters. Its homepage hero no longer repeats the Florense recommendation or Roma Mobili warning. This content remains on `/empresas/florense/`, `/empresas/florense/ipanema-rj/` and the specific CA-001 dossier.
 
 The brand-neutrality regression check lives in `scripts/validate-structure.mjs`, automatically included in `npm run verify:data` and the GitHub CI build. The shared header/footer are also company-neutral. The home stylesheet is `src/styles/home-platform.css`.
+
+## Painéis de impacto e exposição documentada (2026-11-09)
+
+- `src/data/impact-models.json`: recortes datados da marca em plataformas externas, valor e prazo relatados pelo consumidor, datas de apuração, métricas indisponíveis como `null`, fontes e premissas para cenários.
+- `src/lib/impact.ts`: calcula URLs únicas, reclamações por status, intervalos e vínculos de empresa, unidade e caso.
+- `src/components/ImpactTeaser.astro`: indicadores e CTA nos perfis de empresas, unidades e casos.
+- `src/components/ImpactDashboard.astro`: separa dados do arquivo, contextos de terceiros, estados das reclamações, fontes e chamadas de ação.
+- `src/components/ImpactSimulator.tsx`: React island com cenários financeiros, comerciais e de demandas ajustáveis. Valores simulados não são perdas ou previsões verificadas.
+- `/casos/:slug/impacto/`, `/empresas/:slug/impacto/`, `/empresas/:slug/:unit/impacto/`: páginas SEO geradas automaticamente.
+- `scripts/validate-data.mjs` e `scripts/validate-structure.mjs`: validam formatos, fontes, recortes, datas e rotas.
+
+A home institucional não recebe o alerta de uma empresa. Medições do Reclame Aqui não são tráfego do CasoAberto; reclamações respondidas não são necessariamente resolvidas; pagamentos não são perdas definitivas; notificações e protocolos não são ações judiciais. Todas as projeções possuem premissas explícitas e os registros não são somados quando se sobrepõem.

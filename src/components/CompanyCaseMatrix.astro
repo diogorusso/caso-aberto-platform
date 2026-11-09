@@ -1,6 +1,7 @@
 ---
 import {cases,casePath,reports,brl,dateBR,type Case} from '../lib/cases';
 import {brands,brandPath,unitPath,statusLabel,type Brand,type BrandUnit} from '../lib/brands';
+import {brandImpactPath,unitImpactPath} from '../lib/impact';
 interface Props {brand:Brand;unit?:BrandUnit;compact?:boolean}
 const {brand,unit,compact=false}=Astro.props;
 const subject=unit||brand;
@@ -23,6 +24,6 @@ const title=unit?'Registros relacionados à unidade':'Casos documentados e recla
    </article>)}
   </div>
   {classified.length>0 && <div class="company-external-report-list"><h3>Arquivo de reclamações públicas associadas a este recorte</h3><div class="company-report-table"><table><thead><tr><th>Data e local</th><th>Relato</th><th>Situação</th><th>Fonte</th></tr></thead><tbody>{classified.slice(0,compact?6:24).map(r=><tr><td><time datetime={r.data}>{r.data.split('-').reverse().join('/')}</time><small>{r.cidade}</small></td><td><strong>{r.titulo}</strong><small>{r.tema}</small></td><td>{r.status}</td><td><a href={r.url} target="_blank" rel="noopener noreferrer">Abrir publicação ↗</a></td></tr>)}</tbody></table></div><p class="muted">Total exibido: {Math.min(classified.length,compact?6:24)} de {classified.length} registros deste recorte. Reclamações resolvidas permanecem identificadas como resolvidas.</p></div>}
-  <div class="company-matrix-actions"><a class="button button-dark" href="/empresas/">Comparar com outras empresas ↗</a><a class="button button-subtle" href="/problemas/">Explorar por tipo de problema ↗</a>{!unit&&brand.units.filter(u=>u.published).map(u=><a class="button button-subtle" href={unitPath(brand,u)}>Ver {u.name} ↗</a>)}</div>
+  <div class="company-matrix-actions"><a class="button button-dark" href={unit?unitImpactPath(brand,unit):brandImpactPath(brand)}>Painel de impacto e fontes ↗</a><a class="button button-subtle" href="/empresas/">Comparar empresas ↗</a><a class="button button-subtle" href="/problemas/">Explorar por tipo de problema ↗</a>{!unit&&brand.units.filter(u=>u.published).map(u=><a class="button button-subtle" href={unitPath(brand,u)}>Ver {u.name} ↗</a>)}</div>
  </div>
 </section>

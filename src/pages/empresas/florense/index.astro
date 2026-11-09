@@ -7,6 +7,7 @@ import EditorialVerdict from '../../../components/EditorialVerdict.astro';
 import {findBrand} from '../../../lib/brands';
 import CompanyCaseMatrix from '../../../components/CompanyCaseMatrix.astro';
 import CompanyRanking from '../../../components/CompanyRanking.astro';
+import ImpactTeaser from '../../../components/ImpactTeaser.astro';
 import { cases, reports, brl, casePath } from '../../../lib/cases';
 const item = cases[0];
 const brand = findBrand('florense');
@@ -25,6 +26,7 @@ const byTheme = reports.reduce((acc: Record<string, number>, r) => { acc[r.tema]
     <h1>Florense</h1>
     <p>Indústria de móveis planejados com sede em Flores da Cunha/RS e rede de franquias. O CasoAberto separa fabricante, unidades e reclamações por local/status.</p>
   </div></header>
+  {brand && <ImpactTeaser brand={brand}/>}
   <section class="section"><div class="container two-col">
     <div>
       <h2>Caso em destaque</h2>

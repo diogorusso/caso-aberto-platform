@@ -1,0 +1,80 @@
+---
+import {brl,casePath,type Case} from '../lib/cases';
+import {type Brand,type BrandUnit,brandPath,unitPath,findBrand} from '../lib/brands';
+import {impactForSelection,brandSnapshot,caseImpactPath,brandImpactPath,statusGroups} from '../lib/impact';
+import ImpactSimulator from './ImpactSimulator.tsx';
+interface Props {caseItem?:Case;brand?:Brand;unit?:BrandUnit}
+const {caseItem,brand,unit}=Astro.props;
+const data=impactForSelection({caseItem,brand,unit});
+const snapshotBrand=brand||(caseItem?.empresa_slug?findBrand(caseItem.empresa_slug):undefined);
+const snapshot=snapshotBrand&&!unit?brandSnapshot(snapshotBrand):null;
+const label=caseItem?caseItem.empresa_resumo:unit?.name||brand?.name||'CasoAberto';
+const linkedCase=data.relatedCases[0];
+const caseHref=linkedCase?casePath(linkedCase):'/casos/';
+const sourceRoute=caseHref==='/'?'/casos/':caseHref+'reclamacoes-publicas/';
+const evidenceRoute=linkedCase?caseHref+'evidencias/':'/casos/';
+const modeled=data.model;
+const sample=data.reports.slice().sort((a,b)=>b.data.localeCompare(a.data)).slice(0,7);
+const fresh=data.latestStatus||modeled?.snapshot_date||'2026-11-09';
+const docRows=statusGroups.map(g=>({...g,value:data.statuses[g.key]})).filter(g=>g.value>0);
+const daysWindow=data.delayMin==null?'—':data.delayMin===data.delayMax?data.delayMin+' dias':data.delayMin+'–'+data.delayMax+' dias';
+const scopeText=caseItem?'este caso':unit?'esta unidade':'esta marca e seus casos vinculados';
+---
+<div class="impact-full">
+ <section class="impact-dashboard-head"><div class="container">
+  <span class="eyebrow light">RADAR DE EXPOSIÇÃO · REVISÃO {fresh.split('-').reverse().join('/')}</span>
+  <h2>O impacto em números: {label}.</h2>
+  <p>O que mostram pagamentos relatados, dias transcorridos, reclamações públicas, documentos e decisões ainda pendentes. Cada número aponta para um recorte ou uma fonte.</p>
+  <div class="impact-dashboard-actions"><a class="button button-white" href="#painel-observado">Ver os indicadores ↗</a><a class="button button-outline" href="#simulador-impacto">Calcular cenários ↗</a><a class="button button-outline" href={evidenceRoute}>Ver documentos ↗</a></div>
+ </div></section>
+ <section class="section impact-observed" id="painel-observado"><div class="container">
+  <div class="impact-section-heading"><span class="eyebrow">01 · DADOS PUBLICADOS</span><h2>Valores altos. Perguntas que exigem resposta.</h2><p>Contagens do arquivo deste dossiê; dados históricos externos aparecem separadamente.</p></div>
+  <div class="impact-hero-grid">
+   <article><span class="impact-data-label">Valor pago, segundo consumidor(es)</span><strong>{data.reportedPaymentTotal>0?brl(data.reportedPaymentTotal):'Não informado'}</strong><small>Valor envolvido nos contratos relatados, sem inferir perda definitiva</small></article>
+   <article><span class="impact-data-label">Tempo desde pagamento relatado</span><strong>{data.holdDays==null?'Não informado':data.holdDays+' dias'}</strong><small>{modeled?'De '+modeled.payment_date_reported.split('-').reverse().join('/')+' a '+modeled.snapshot_date.split('-').reverse().join('/'):'Até a última atualização publicada'}</small></article>
+   <article><span class="impact-data-label">Atraso desde o prazo original</span><strong>{daysWindow}</strong><small>Prazo informado pelo consumidor; intervalo até a revisão documental</small></article>
+   <article><span class="impact-data-label">URLs distintas citadas</span><strong>{data.sourceCount.toLocaleString('pt-BR')}</strong><small>Reclamações, registros, reportagens e outras referências; alguns links exigem autenticação e nem todos são menções negativas</small></article>
+  </div>
+  <div class="impact-secondary-grid">
+   <article><strong>{data.indexedReportCount}</strong><span>Relatos externos catalogados no recorte, inclusive resolvidos</span><a href={sourceRoute}>Abrir arquivo ↗</a></article>
+   <article><strong>{data.evidenceItems.length}</strong><span>Itens no índice de evidências, públicos e privados</span><a href={evidenceRoute}>Conferir índice ↗</a></article>
+   <article><strong>{data.recordedCompanyResponses}</strong><span>Respostas institucionais específicas registradas no dossiê</span><a href={caseHref+'atualizacoes/'}>Histórico ↗</a></article>
+   <article><strong>{data.verifiedSupportTotal}</strong><span>Apoios com consentimento revisados para publicação</span><a href={caseHref+'#apoiar'}>Enviar relato ↗</a></article>
+  </div>
+  <p class="impact-period-note">Período: recorte editorial revisado em {fresh.split('-').reverse().join('/')}. “0” significa nenhum registro identificado neste arquivo, não inexistência no mundo real.</p>
+ </div></section>
+ {snapshot&&<section class="section impact-external"><div class="container">
+  <div class="impact-section-heading"><span class="eyebrow">02 · FONTE EXTERNA · {snapshot.platform}</span><h2>O histórico geral da marca amplia o contexto.</h2></div>
+  <div class="impact-external-grid">
+   <div><strong>{snapshot.total_active_records.toLocaleString('pt-BR')}</strong><span>Reclamações ativas no histórico da marca</span></div>
+   <div><strong>{snapshot.delivery_delay_category_records.toLocaleString('pt-BR')}</strong><span>Classificadas como atraso de entrega</span></div>
+   <div><strong>{snapshot.company_profile_views_display}</strong><span>Visualizações exibidas pelo perfil externo, não tráfego do CasoAberto</span></div>
+   <div><strong>{snapshot.six_month_received}</strong><span>Reclamações recebidas de {snapshot.six_month_period}</span></div>
+  </div>
+  <div class="impact-external-bottom"><p>{snapshot.notes} Os recortes e unidades são distintos; não são somente reclamações do caso CA-001 e não podem ser somados. A fonte exibe {snapshot.six_month_answered_pct}% de respostas no período de seis meses, o que não é taxa de resolução.</p><a class="button button-dark" href={snapshot.page_url} target="_blank" rel="noopener noreferrer">Examinar perfil original ↗</a></div>
+ </div></section>}
+ <section class="section impact-status-section"><div class="container">
+  <div class="impact-section-heading"><span class="eyebrow">03 · DESFECHO DAS RECLAMAÇÕES CATALOGADAS</span><h2>Resposta não é o mesmo que solução.</h2><p>Classificação dos relatos individualmente reunidos para {scopeText}, conforme status exibido na última consulta registrada.</p></div>
+  <div class="impact-status-rows">
+   {docRows.map(row=><div class="impact-status-row"><div class="impact-status-line"><strong>{row.label}</strong><span>{row.value} / {data.indexedReportCount}</span></div><div class="impact-status-track"><span style={'width:'+(data.indexedReportCount>0?row.value/data.indexedReportCount*100:0)+'%'}></span></div></div>)}
+   {docRows.length===0&&<p>Não há reclamações externas catalogadas neste recorte.</p>}
+  </div>
+  <a class="text-link" href={sourceRoute}>Ler cada reclamação e confirmar o estado atual ↗</a>
+ </div></section>
+ {modeled&&<section class="section impact-scenarios" id="simulador-impacto"><div class="container">
+  <ImpactSimulator client:load reportedPayment={data.reportedPaymentTotal} daysHeld={data.holdDays||0} daysDelay={data.delayMin||0} asOf={modeled.snapshot_date} defaults={modeled.scenario_defaults}/>
+ </div></section>}
+ <section class="section impact-sources"><div class="container">
+  <div class="impact-section-heading"><span class="eyebrow">04 · TRILHA DOCUMENTAL</span><h2>Veja as referências por trás das manchetes.</h2><p>O registro individual de cada reclamação importa tanto quanto o total.</p></div>
+  <div class="impact-mentions">
+   {sample.map(r=><article><div class="impact-mention-meta"><span>{r.data.split('-').reverse().join('/')}</span><span>{r.cidade}</span><span>{r.status}</span></div><h3>{r.titulo}</h3><p>{r.resumo}</p><a href={r.url} target="_blank" rel="noopener noreferrer">Ver reclamação e atualização na origem ↗</a></article>)}
+   {sample.length===0&&<p>Não há menções externas catalogadas neste recorte.</p>}
+  </div>
+  <div class="impact-actions">
+   <a class="button button-dark" href={evidenceRoute}>Índice documental e exportação ↗</a>
+   <a class="button button-subtle" href={caseHref+'materiais-imprensa/'}>Material de imprensa ↗</a>
+   <a class="button button-subtle" href={caseHref+'#apoiar'}>Enviar relato relacionado ↗</a>
+  </div>
+ </div></section>
+ <section class="impact-close"><div class="container"><span class="eyebrow light">PRESTAÇÃO DE CONTAS</span><h2>O que aconteceu com o dinheiro? Quando o serviço será concluído?</h2><p>O acompanhamento público exige respostas verificáveis. Este painel reúne fatos, indicadores editoriais e uma área de simulação separada — não substitui documentos originais nem determina responsabilidade judicial.</p><a class="button button-white" href={caseHref}>Voltar ao dossiê e perguntas da empresa ↗</a></div></section>
+</div>

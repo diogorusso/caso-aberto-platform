@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "updated_at": "2026-11-09",
+  "definitions": {
+    "observed": "Contagem em fonte pública ou no arquivo de evidências revisado; datas e cobertura podem divergir.",
+    "reported": "Valor, prazo ou gasto descrito pelo consumidor e ainda sujeito a confrontação com originais.",
+    "modeled": "Cenário hipotético, sem medição de audiência, perda de vendas, causa judicial ou probabilidade.",
+    "exposure": "Valor pago e ainda sem conclusão confirmada no dossiê; não representa dinheiro definitivamente perdido.",
+    "unique_sources": "URLs externas únicas relacionadas ao dossiê após eliminar links repetidos, incluindo registros, fontes corporativas e comparação Roma; não significa menções negativas.",
+    "public_mentions": "Links individuais de reclamação catalogados no arquivo, inclusive resolvidos; não equivale a todo o universo de comentários na internet."
+  },
+  "external_brand_snapshots": [
+    {
+      "brand_slug": "florense",
+      "platform": "Reclame Aqui",
+      "as_of": "2026-11-09",
+      "page_url": "https://www.reclameaqui.com.br/empresa/florense-moveis/lista-reclamacoes/",
+      "total_active_records": 383,
+      "delivery_delay_category_records": 56,
+      "company_profile_views_displayed_floor": 18000,
+      "company_profile_views_display": "mais de 18 mil",
+      "category_period": "Histórico de reclamações ativas exibido em 09/11/2026; a interface também apresenta recortes de seis meses",
+      "viewed_period": "Acumulado/intervalo não especificado pela página; não corresponde a público do CasoAberto",
+      "six_month_period": "01/05/2026–31/10/2026",
+      "six_month_received": 7,
+      "six_month_answered_pct": 100,
+      "six_month_rated": 4,
+      "notes": "Não somar 383 às 16 reclamações já indexadas: a amostra CasoAberto pode conter registros contidos no histórico da plataforma. 56 são registros classificados como atraso, não 56 ações judiciais. '+18 mil' refere-se à plataforma Reclame Aqui e não informa visitantes únicos."
+    }
+  ],
+  "case_models": {
+    "CA-001": {
+      "snapshot_date": "2026-11-09",
+      "payment_date_reported": "2026-07-20",
+      "payment_date_basis": "Data mencionada na notificação extrajudicial fornecida pelo consumidor; não é declaração de extrato bancário auditado.",
+      "original_due_window_start": "2026-10-01",
+      "original_due_window_end": "2026-10-07",
+      "window_basis": "'Primeira semana de outubro de 2026', segundo o consumidor.",
+      "confirmed_added_costs_brl": null,
+      "confirmed_added_costs_note": "O consumidor relata custos de moradia e preparação do imóvel; valor consolidado ainda não validado nem exibido.",
+      "actual_site_views": null,
+      "actual_site_unique_visitors": null,
+      "actual_social_impressions": null,
+      "verified_judicial_filings": null,
+      "judicial_basis": "Protocolo Procon/RJ informado e notificação extrajudicial não são ações judiciais. Não há contagem de ações judiciais verificadas nesta base.",
+      "scenario_defaults": {
+        "incremental_cost_per_delay_day_brl": 400,
+        "opportunity_cost_monthly_rate_pct": 1,
+        "illustration_reach": 100000,
+        "purchase_ready_share_pct": 1,
+        "decision_change_share_pct": 5,
+        "illustrative_contract_ticket_brl": 100000,
+        "other_disputes_hypothetical": 5,
+        "illustrative_claim_value_brl": 190000
+      },
+      "scenarios_note": "Parâmetros de simulação didáticos, escolhidos para permitir análises de sensibilidade; não são estimativas estatísticas, benchmarks da Florense ou previsões.",
+      "reference_urls": [
+        "https://www.reclameaqui.com.br/florense-moveis/nao-recebi-meus-moveis-planejados-e-a-loja-nao-cumpre-prazos_LaK42QhQaVqRLA5s/",
+        "https://www.proteste.org.br/reclame/lista-de-reclamacoes-publicas/reclamacoes-publicas?referenceid=CPTBR02190532-78"
+      ]
+    }
+  }
+}

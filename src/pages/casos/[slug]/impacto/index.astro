@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
+import CaseNav from '../../../../components/CaseNav.astro';
+import ImpactDashboard from '../../../../components/ImpactDashboard.astro';
+import {cases,casePath,crumbFor,type Case} from '../../../../lib/cases';
+import {impactForSelection,caseImpactPath} from '../../../../lib/impact';
+export function getStaticPaths(){return cases.map(item=>({params:{slug:item.slug},props:{item}}));}
+interface Props {item:Case}
+const {item}=Astro.props;
+const data=impactForSelection({caseItem:item});
+const crumbs=[...crumbFor(item),{label:'Radar de impacto',href:caseImpactPath(item)}];
+---
+<BaseLayout title={'Impacto em números: '+item.empresa_resumo+' — dinheiro, atraso, reclamações e cenários | CasoAberto'}
+ description={'Dados públicos e cenários de exposição do caso '+item.id+': pagamento informado, dias sem conclusão confirmada, reclamações, fontes e cenários financeiros com premissas editáveis.'}
+ dateModified={item.status_data} type="article" breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}>
+ <Breadcrumbs items={crumbs}/>
+ <CaseNav item={item} current="impacto"/>
+ <ImpactDashboard caseItem={item}/>
+ <section class="section section-soft"><div class="container narrow"><span class="eyebrow">SOBRE A ANÁLISE</span><h2>Como ler os números?</h2><p>O painel considera a última revisão documental de {item.status_data.split('-').reverse().join('/')}, não o horário atual. O valor informado como pago está separado de custos adicionais ainda não comprovados. As projeções de alcance comercial e conflitos não são medições sobre a empresa.</p><p>Dados de outras lojas não demonstram o comportamento de todas as unidades. Use os links originais para conferir mudanças de status após a data do levantamento.</p></div></section>
+</BaseLayout>
