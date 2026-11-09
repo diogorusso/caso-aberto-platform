@@ -80,9 +80,6 @@ const crumbLd = breadcrumbs?.length
     <meta name="twitter:image" content={ogImage} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="alternate" type="application/rss+xml" title="CasoAberto — atualizações" href="/rss.xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
     <script type="application/ld+json" set:html={JSON.stringify(org).replace(/</g, '\\u003c')} />
     <script type="application/ld+json" set:html={JSON.stringify(pageLd).replace(/</g, '\\u003c')} />
     {crumbLd && <script type="application/ld+json" set:html={JSON.stringify(crumbLd).replace(/</g, '\\u003c')} />}
