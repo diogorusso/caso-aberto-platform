@@ -76,7 +76,7 @@ npm run build        # outputs dist/
 npm run preview      # preview built static site
 ```
 
-The project declares Astro 6 + its official React and sitemap integrations (Node.js 22.23.4 or higher). npm must have network access on the developer machine or Cloudflare builder to install dependencies. This handoff's environment cannot contact the npm registry, so the **actual Astro compiler build was not verified here**; structural/data tests were run instead. Before going live, make a successful Cloudflare build and inspect one mobile and one desktop deployment preview.
+The project declares Astro 7 + its official React and sitemap integrations (Node.js 22.23.4 or higher). npm must have network access on the developer machine or Cloudflare builder to install dependencies.
 
 ## Design system and interaction boundaries
 
