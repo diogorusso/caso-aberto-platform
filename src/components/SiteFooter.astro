@@ -1,42 +1,33 @@
 ---
 import Identity from './Identity.astro';
-import { cases, casePath, dateBR } from '../lib/cases';
-const featured = cases[0];
+import { cases, dateBR } from '../lib/cases';
 const latest = cases.reduce((a, b) => (a > b.status_data ? a : b.status_data), '');
 ---
 <footer class="site-footer">
   <div class="container footer-grid">
     <div>
       <Identity footer />
-      <p>Publicação independente de accountability do consumidor. Organizamos evidências públicas, cronologias e perguntas institucionais — sem ser governo, tribunal ou escritório de advocacia.</p>
+      <p>Publicação independente para dar visibilidade a casos documentados, reunir fontes públicas, comparar avaliações editoriais e cobrar respostas verificáveis.</p>
     </div>
     <div>
-      <strong>Plataforma</strong>
-      <a href="/casos/">Todos os casos</a>
-      <a href="/empresas/">Avaliações de empresas</a>
-      <a href="/cnpj/">Consulta CNPJ</a>
-      <a href="/problemas/">Tipos de reclamação</a>
+      <strong>Pesquise</strong>
+      <a href="/empresas/">Perfis e avaliações de empresas</a>
+      <a href="/casos/">Casos documentados</a>
       <a href="/avaliacoes/nao-recomendamos/">Não recomendamos</a>
-      <a href="/empresas/florense/">Dossiê Florense</a>
-      <a href="/guias/risco-pagamento-antecipado-moveis-planejados/">Risco do pagamento antecipado</a>
-      <a href="/guias/o-que-fazer-atraso-moveis-planejados/">O que fazer em atraso</a>
-      <a href="/como-funciona/">Como funciona</a>
-      <a href="/metodologia/">Metodologia</a>
-      <a href="/rss.xml">RSS</a>
+      <a href="/cnpj/">Consulta de CNPJ</a>
+      <a href="/problemas/">Tipos de problema</a>
     </div>
-    {featured && (
-      <div>
-        <strong>Caso em destaque</strong>
-        <a href={casePath(featured)}>{featured.empresa_resumo}</a>
-        <a href={`${casePath(featured)}risco-roma-mobili/`}>Alerta Roma Mobili</a>
-        <a href={`${casePath(featured)}responsaveis/`}>Quem responde</a>
-        <a href={`${casePath(featured)}imprensa/`}>Kit imprensa</a>
-        <a href={`${casePath(featured)}evidencias/`}>Índice de evidências</a>
-      </div>
-    )}
+    <div>
+      <strong>Entenda o projeto</strong>
+      <a href="/como-funciona/">Como funciona</a>
+      <a href="/metodologia/">Critérios e metodologia</a>
+      <a href="/guias/risco-pagamento-antecipado-moveis-planejados/">Riscos de pagamento antecipado</a>
+      <a href="/guias/o-que-fazer-atraso-moveis-planejados/">Como documentar atrasos</a>
+      <a href="/rss.xml">Atualizações (RSS)</a>
+    </div>
   </div>
   <div class="container footer-bottom">
     <span>© {new Date().getFullYear()} CasoAberto. Projeto editorial independente.</span>
-    <span>Última revisão: {dateBR(latest)} · Brasil</span>
+    {latest && <span>Arquivo atualizado em {dateBR(latest)} · Brasil</span>}
   </div>
 </footer>

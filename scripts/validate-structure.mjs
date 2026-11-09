@@ -44,5 +44,26 @@ for(const brand of brands.filter(b=>b.published)){
 for(const c of ids)all.add('/cnpj/'+c.cnpj.replace(/\D/g,'')+'/');
 for(const topic of issued)all.add('/problemas/'+topic.slug+'/');
 
+
+// The platform landing page must never turn into the dossier of its first company.
+const homeFile=resolve(src,'pages/index.astro');
+if(existsSync(homeFile)){
+ const home=readFileSync(homeFile,'utf8');
+ const forbidden=[
+  ['full editorial verdict on homepage',/<EditorialVerdict\b/],
+  ['company-specific risk notice on homepage',/<ConsumerRiskWarning\b/],
+  ['hard-coded first case on homepage',/\bCA-001\b|\/casos\/florense-/i],
+  ['hard-coded company name in homepage layout',/\bFlorense\b|\bRoma Mobili\b/i],
+  ['company verdict promoted as homepage brand',/\bbrands\[0\]\.verdict\b/]
+ ];
+ for(const [description,pattern] of forbidden){
+  if(pattern.test(home)){console.error('Homepage must be company-neutral:',description);bad++;}
+ }
+ const needed=['/empresas/','/casos/','/metodologia/'];
+ for(const path of needed)if(!home.includes(path)){console.error('Missing primary platform CTA',path);bad++;}
+}
+const header=readFileSync(resolve(src,'components/SiteHeader.astro'),'utf8');
+if(/Caso CA-001|\/casos\/florense-/i.test(header)){console.error('Global header must be platform-neutral');bad++;}
+
 if (bad) process.exit(1);
 console.log(`OK: ${files.length} TS/Astro files; imports resolved; ${all.size} planned routes.`);

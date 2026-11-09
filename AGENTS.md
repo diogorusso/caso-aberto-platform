@@ -18,3 +18,6 @@ Scope: a static Brazilian consumer-case publishing website. GitHub is the source
 12. `src/pages/empresas/[slug]/` and `src/pages/empresas/[slug]/[unit]/` are generic pSEO templates. Florense static pages take precedence and must reuse the same components, not duplicate UI logic. Never replace established URLs.
 13. The brand must have linked published cases and source-backed review before `published:true`; new drafts are created with `npm run new:company -- ...`. Case, brand, unit, evidence and company registry IDs must resolve in `npm run verify:data`.
 14. Topic pages in `src/data/issues.json` require distinct editorial context and at least two linked original source records. Do not generate empty/near-duplicate pages.
+
+15. The homepage (`src/pages/index.astro`) belongs to the CasoAberto **platform**, not to any company: its hero, navigation and final CTA must be company-neutral. Show cases only as curated links/cards in the case section; editorial verdicts, Roma comparisons and warnings belong to brand, unit and case pages. Enforced in `scripts/validate-structure.mjs` during `npm run verify:data`.
+16. Global header/footer navigation must be platform-centric. Do not hardcode one company's case or a sector-specific alert as the primary site-wide CTA. Company-specific pSEO content stays on `/empresas/:slug/`, `/empresas/:slug/:unit/` and `/casos/:slug/`.

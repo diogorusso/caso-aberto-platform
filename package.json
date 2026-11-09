@@ -8,8 +8,9 @@
     "build": "npm run verify:data && astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "verify:data": "node scripts/validate-data.mjs",
-    "new:company": "node scripts/new-company.mjs"
+    "verify:data": "node scripts/validate-data.mjs && node scripts/validate-structure.mjs",
+    "new:company": "node scripts/new-company.mjs",
+    "verify:structure": "node scripts/validate-structure.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^7.1.5",

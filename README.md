@@ -138,3 +138,9 @@ npm run new:company -- --slug exemplo --name "Empresa Exemplo" --segment "Constr
 Edit `src/data/brands.json` to supply verified primary CNPJ, related cases, documented verdict rationale, sources and review triggers. `published: false` keeps a draft out of routes. The production site uses Github Actions -> Wrangler Pages direct-upload, triggered by `main`; Cloudflare Pages is still static, no server and no database.
 
 The editorial categories do not represent a nationwide numerical solvency ranking. The site compares only the companies and units published, with source, date, scope, and individually linked cases.
+
+## Platform landing page boundary (2026-11-09)
+
+The root route `/` now describes **CasoAberto as a multi-company publishing and research platform**, with generic company lookup, case exploration, CNPJ registry, editorial status methodology and real archive counters. Its homepage hero no longer repeats the Florense recommendation or Roma Mobili warning. This content remains on `/empresas/florense/`, `/empresas/florense/ipanema-rj/` and the specific CA-001 dossier.
+
+The brand-neutrality regression check lives in `scripts/validate-structure.mjs`, automatically included in `npm run verify:data` and the GitHub CI build. The shared header/footer are also company-neutral. The home stylesheet is `src/styles/home-platform.css`.

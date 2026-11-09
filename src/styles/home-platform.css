@@ -1,0 +1,46 @@
+
+/* Platform home: company-neutral by design. Case recommendations belong on brand/unit/case pages. */
+.platform-hero{min-height:650px;padding-top:112px;padding-bottom:90px}
+.platform-hero .hero-lead{max-width:790px}
+.platform-hero-proof{position:relative;z-index:2;color:#a7bcb1;display:flex;gap:12px;flex-wrap:wrap;font-size:.85rem;font-weight:650;margin-top:43px}
+.platform-hero-proof span{color:#ff9585}
+.platform-stats{background:#f2f4ee;padding:0 0 34px}
+.platform-stats .home-stats{padding-top:34px}
+.platform-stats .home-stats>div{border-top:3px solid #1b4332}
+.platform-stats .home-stats span{display:block;margin-top:7px;font-size:.78rem;color:#64746a}
+.platform-stats-caption{margin-top:20px;font-size:.84rem;color:#657368}
+.platform-stats-caption a{color:#9e3c2c;text-decoration:underline;font-weight:780}
+.platform-pathways{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:33px}
+.platform-path{border:1px solid #d7e0d6;background:#fff;padding:24px 22px 26px;display:flex;flex-direction:column;min-height:240px}
+.platform-path-number{font-size:.7rem;letter-spacing:.095em;color:#b34735;font-weight:900}
+.platform-path h3{font-size:1.55rem;margin:26px 0 12px}
+.platform-path p{color:#5b6b61;margin:0 0 20px;font-size:.91rem;line-height:1.55;flex:1}
+.platform-path a,.platform-service-link{color:#a43e30;text-decoration:none;font-weight:850;font-size:.87rem}
+.platform-path a:hover,.platform-service-link:hover{text-decoration:underline}
+.platform-value .section-top h2 em{font-style:normal;color:#ae4835}
+.platform-value .service-grid article{min-height:340px;display:flex;flex-direction:column}
+.platform-value .service-grid h3{margin-top:28px}
+.platform-value .service-grid p{flex:1}
+.platform-service-link{display:inline-block;margin-top:22px}
+.platform-section-lead{color:#607066;max-width:840px;line-height:1.55;font-size:1rem}
+.platform-status-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:32px}
+.platform-status{background:#f4f6f1;border-top:5px solid #5f7363;padding:25px;min-height:220px;display:flex;flex-direction:column}
+.platform-status.status-nao_recomendamos{border-top-color:#b14839}
+.platform-status.status-cautela{border-top-color:#ba8a38}
+.platform-status.status-recomendamos{border-top-color:#377d5a}
+.platform-status-label{font-size:1.12rem;font-weight:850}
+.platform-status p{color:#56665c;line-height:1.55;font-size:.92rem;flex:1}
+.platform-status a{color:#a13e30;font-weight:800;font-size:.85rem}
+.platform-cases .featured-case{margin-top:32px}
+.platform-cases>.case-card{margin-top:14px}
+.platform-research{background:#fff}
+.platform-research-layout{display:grid;grid-template-columns:1.5fr .8fr;gap:80px;align-items:center}
+.platform-research-layout h2{max-width:760px}
+.platform-research-layout>div>p{color:#55675a;font-size:1.1rem;max-width:720px;line-height:1.6}
+.platform-research-note{border-left:4px solid #dc6350;background:#f2f4ec;padding:30px}
+.platform-research-note p{color:#5b685e;line-height:1.6}
+.platform-final p{color:#d5e3da;font-size:1.08rem;max-width:740px}
+.platform-final h2{max-width:1000px}
+@media(max-width:1050px){.platform-pathways{grid-template-columns:repeat(2,minmax(0,1fr))}.platform-research-layout{gap:35px}}
+@media(max-width:900px){.platform-status-grid{grid-template-columns:1fr}.platform-research-layout{grid-template-columns:1fr}.platform-value .service-grid article{min-height:unset}}
+@media(max-width:620px){.platform-hero{min-height:0;padding-top:62px;padding-bottom:67px}.platform-hero-proof{gap:8px;line-height:1.5}.platform-stats .home-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.platform-stats .home-stats>div{padding:17px 13px}.platform-stats .home-stats strong{font-size:1.6rem}.platform-pathways{grid-template-columns:1fr}.platform-path{min-height:0}.platform-path h3{margin-top:16px}.platform-research-note{padding:23px}.platform-status{min-height:0}.platform-final h2{font-size:2.8rem}}
