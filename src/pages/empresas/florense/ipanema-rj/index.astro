@@ -2,6 +2,7 @@
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
 import dossier from '../../../../data/florense-dossier.json';
+import CompanyProfiles from '../../../../components/CompanyProfiles.astro';
 import { cases, reports, casePath, leadership, brl } from '../../../../lib/cases';
 const item = cases[0];
 const cad = dossier.entidades[1];
@@ -56,4 +57,5 @@ const crumbs = [
 <article class="dossier-box"><h3>Administradores do cadastro consultado</h3><p><strong>Adolfo Gilmar Fuzinatto</strong> — sócio-administrador.</p><p><strong>Silvana Ines de Azambuja Fuzinatto</strong> — sócia-administradora.</p><p>Ambos constam no cadastro da pessoa jurídica situada no endereço da loja. Isso não determina, por si só, qual empresa assinou o contrato do pedido CA-001.</p><a href="/casos/florense-ipanema-rj-atraso-moveis-planejados/responsaveis/" class="text-link">Mapa completo de responsáveis institucionais ↗</a></article></div>
 <div class="dossier-heading dossier-subhead"><h2>Uma diferença de nomes que precisa ser esclarecida</h2><p>O relato no Reclame Aqui cita Brasmóveis Serviços de Instalações de Móveis Ltda.; a reclamação pública na PROTESTE cita a fabricante Florense e Ipanema Representações. Os documentos do contrato, comprovante de pagamento e nota fiscal podem esclarecer o papel exato de cada pessoa jurídica.</p><div class="dossier-links"><a href="https://www.reclameaqui.com.br/florense-moveis/nao-recebi-meus-moveis-planejados-e-a-loja-nao-cumpre-prazos_LaK42QhQaVqRLA5s/" target="_blank" rel="noopener noreferrer">Reclamação Reclame Aqui ↗</a><a href="https://www.proteste.org.br/reclame/lista-de-reclamacoes-publicas/reclamacoes-publicas?referenceid=CPTBR02190532-78" target="_blank" rel="noopener noreferrer">Reclamação pública PROTESTE ↗</a></div></div>
 </div></section>
+  <CompanyProfiles only={['ipanema-representacoes','brasmoveis-historico']} title="Cadastro da unidade e registro histórico citado nos relatos" />
 </BaseLayout>

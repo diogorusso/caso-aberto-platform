@@ -11,6 +11,7 @@ const tabs = [
   {key:'responsaveis', label:'Quem responde', href:`${p}responsaveis/`},
   {key:'atualizacoes', label:'Atualizações', href:`${p}atualizacoes/`},
   {key:'imprensa', label:'Imprensa', href:`${p}imprensa/`},
+  ...(item.id==='CA-001'?[{key:'evidencias',label:'Evidências',href:p+'evidencias/'},{key:'materiais-imprensa',label:'Materiais',href:p+'materiais-imprensa/'}]:[]),
 ];
 ---
 <nav class="case-nav" aria-label="Seções do caso">

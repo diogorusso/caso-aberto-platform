@@ -5,3 +5,8 @@ dist/
 .env.*
 !.env.example
 .DS_Store
+
+# Local-only originals and SHA-256 inventories
+evidence-private/
+private-evidence/
+*.private-evidence.json

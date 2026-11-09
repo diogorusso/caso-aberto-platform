@@ -103,3 +103,16 @@ Keep each complaint's source, date, geographic scope, status and updates distinc
 `src/data/florense-dossier.json` concentra o cadastro de fabricantes/empresa no endereço da loja de Ipanema, administradores profissionais, rede de franquias, métricas históricas de reclamações, estrutura fabril e declarações públicas com URLs de origem. A página `/empresas/florense/` exibe esses dados por meio de `src/components/CompanyDossier.astro` e `src/styles/dossier.css`. A página `/empresas/florense/ipanema-rj/` expõe dados específicos da unidade e divergências nas razões sociais reportadas.
 
 Os números do Reclame Aqui usam recortes temporais distintos: histórico da marca e período de seis meses, e não representam automaticamente a situação da franqueada Ipanema. Capital social é valor cadastral, não caixa. A documentação da falência da Roma é sobre outra empresa.
+
+## Corporate profiles, documentary exports and media assets
+
+- `src/data/company-profiles.json` contains five sourced CNPJ profiles (manufacturer, company at Ipanema, two corporate shareholders and a historical similarly named entity).
+- `src/components/CompanyProfiles.astro` renders records, QSA, CNAE, dates, capital and source links; CNPJ verification through Receita Federal is linked.
+- `src/data/evidence-index.json` contains 16 stable reference IDs for case CA-001, distinguishing publicly linked records and private originals still to collect.
+- `/casos/:slug/evidencias/` prints the public evidence index or saves via browser print-to-PDF.
+- `/casos/:slug/indice-evidencias.csv` is an Astro-generated static CSV for document review.
+- `/casos/:slug/materiais-imprensa/` serves free media cards, editorial fact sheet and documentary links.
+- `public/media/` has standalone SVG artwork and plain-text fact sheet.
+- `scripts/build-evidence-manifest.mjs` computes SHA-256 manifests for local private files, without network or upload. See `docs/evidence-pack/README.md`.
+
+Never publish private contracts, payment statements or personal identifiers to Cloudflare or the public repository. A corporate registry record confirms a registered entity, but not by itself a contract or liability. The historic Brasmoveis entry is kept explicitly separate from any confirmed contracting party.

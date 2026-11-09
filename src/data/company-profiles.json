@@ -1,0 +1,222 @@
+{
+  "updated_at": "2026-11-09",
+  "source_policy": "Registros cadastrais públicos reproduzidos de agregadores com indicação da Receita Federal como fonte; emissão de comprovantes oficiais é oferecida separadamente. Vínculo societário não implica responsabilidade pelo contrato CA-001.",
+  "registry_verification_url": "https://www.gov.br/pt-br/servicos/consultar-cadastro-nacional-de-pessoas-juridicas",
+  "entities": [
+    {
+      "id": "florense-fabricante",
+      "name": "Fábrica de Móveis Florense Ltda.",
+      "cnpj": "89.962.294/0001-46",
+      "scope": "Fabricante",
+      "relationship": "Empresa industrial associada à marca Florense; sócias pessoas jurídicas listadas no QSA",
+      "registration": "Ativa na última fonte cadastral consultada",
+      "opened": "1966-08-01",
+      "status_since": "2005-11-03",
+      "type": "206-2 — Sociedade empresária limitada",
+      "main_cnae": "31.01-2/00",
+      "main_activity": "Fabricação de móveis com predominância de madeira",
+      "capital_brl": 32705959,
+      "address": "Avenida 25 de Julho, 4090, São Pedro, Flores da Cunha/RS",
+      "tax_regime": "Não optante pelo Simples Nacional segundo cadastro",
+      "qsa": [
+        {
+          "name": "Angelo Corradi Participações Ltda.",
+          "role": "Sócia pessoa jurídica",
+          "entered": "1984-07-26",
+          "entity_id": "angelo-corradi-holding"
+        },
+        {
+          "name": "Lourenço Darcy Castellan Administ. e Participações Ltda.",
+          "role": "Sócia pessoa jurídica",
+          "entered": "1984-07-26",
+          "entity_id": "castellan-holding"
+        },
+        {
+          "name": "Ézio José Ribeiro de Salles",
+          "role": "Administrador",
+          "entered": "2000-03-16"
+        },
+        {
+          "name": "Mateus Augusto Corradi",
+          "role": "Administrador",
+          "entered": "2014-01-16"
+        },
+        {
+          "name": "Felipe Luís Corradi",
+          "role": "Administrador",
+          "entered": "2018-01-11"
+        },
+        {
+          "name": "Roberta Castellan",
+          "role": "Administrador",
+          "entered": "2019-04-15"
+        },
+        {
+          "name": "Fábrica de Móveis Florense Ltda.",
+          "role": "Cotas em tesouraria",
+          "entered": "2018-01-11"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ficha cadastral / QSA",
+          "url": "https://casadosdados.com.br/solucao/cnpj/fabrica-de-moveis-florense-ltda-89962294000146"
+        },
+        {
+          "label": "Comprovante oficial por CNPJ (emitir)",
+          "url": "https://solucoes.receita.fazenda.gov.br/Servicos/cnpjreva/"
+        },
+        {
+          "label": "QSA e CNPJs relacionados",
+          "url": "https://fontedata.com/cnpj/89962294000146-fabrica-de-moveis-florense-ltda"
+        }
+      ],
+      "notes": [
+        "Capital social não representa liquidez ou caixa.",
+        "Registro empresarial e status não comprovam situação de pedidos individuais.",
+        "Evitar inferir responsabilidade automática dos administradores por atos de franqueados."
+      ]
+    },
+    {
+      "id": "ipanema-representacoes",
+      "name": "Ipanema Representações e Serviços de Móveis Ltda.",
+      "cnpj": "39.526.757/0001-59",
+      "scope": "Empresa cadastrada no mesmo endereço comercial da Florense Ipanema",
+      "relationship": "Endereço coincide com loja no localizador oficial; contratante do caso CA-001 depende de contrato, pagamento e documentos fiscais",
+      "registration": "Ativa em consulta RFB 13/09/2026",
+      "opened": "2020-10-22",
+      "status_since": "2026-07-02",
+      "type": "206-2 — Sociedade empresária limitada",
+      "main_cnae": "46.15-0/00",
+      "main_activity": "Representação comercial de móveis e artigos de uso doméstico",
+      "additional_cnaes": [
+        "33.29-5/01 — Montagem de móveis",
+        "43.30-4/02 — Instalação de armários embutidos",
+        "71.19-7/03 — Desenho técnico"
+      ],
+      "capital_brl": 10000,
+      "address": "Rua Joana Angélica, 169, Ipanema, Rio de Janeiro/RJ",
+      "tax_regime": "Não optante do Simples desde 31/12/2021, segundo cadastro",
+      "qsa": [
+        {
+          "name": "Adolfo Gilmar Fuzinatto",
+          "role": "Sócio-administrador",
+          "entered": "2022-01-05"
+        },
+        {
+          "name": "Silvana Ines de Azambuja Fuzinatto",
+          "role": "Sócia-administradora",
+          "entered": "2022-01-05"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Cadastro da empresa",
+          "url": "https://casadosdados.com.br/solucao/cnpj/ipanema-representacoes-e-servicos-de-moveis-ltda-39526757000159"
+        },
+        {
+          "label": "Página oficial da Florense Ipanema",
+          "url": "https://www.florense.com.br/franquias/ipanema"
+        },
+        {
+          "label": "Consulta oficial RFB",
+          "url": "https://solucoes.receita.fazenda.gov.br/Servicos/cnpjreva/"
+        }
+      ],
+      "notes": [
+        "Razão social e cadastro são públicos; contratante efetiva não confirmada nesta pesquisa.",
+        "CNAE secundário inclui montagem de móveis, potencialmente útil para identificar o escopo declarado de atividades."
+      ]
+    },
+    {
+      "id": "angelo-corradi-holding",
+      "name": "Angelo Corradi Participações Ltda.",
+      "cnpj": "89.992.424/0001-93",
+      "scope": "Sócia pessoa jurídica da fabricante",
+      "relationship": "Figura no QSA da Fábrica de Móveis Florense Ltda.; não é prova de participação na contratação em Ipanema",
+      "registration": "Ativa em fonte RFB 2026",
+      "opened": "1984-05-22",
+      "status_since": "2001-02-25",
+      "type": "206-2 — Sociedade empresária limitada",
+      "main_cnae": "64.62-0/00",
+      "main_activity": "Holdings de instituições não financeiras",
+      "capital_brl": 7996750,
+      "address": "Flores da Cunha/RS",
+      "qsa": [],
+      "sources": [
+        {
+          "label": "Ficha da holding — 2026",
+          "url": "https://fontedata.com/cnpj/89992424000193-angelo-corradi-participacoes-ltda"
+        },
+        {
+          "label": "Dados cadastrais",
+          "url": "https://pesquisaempresas.com.br/consultando-empresa/89992424000193-angelo-corradi-participacoes-ltda"
+        }
+      ],
+      "notes": [
+        "Não confundir o capital social da holding com o da fabricante.",
+        "Não implica responsabilidade contratual direta pelo pedido CA-001."
+      ]
+    },
+    {
+      "id": "castellan-holding",
+      "name": "Lourenço Darcy Castellan Administ. e Participações Ltda.",
+      "cnpj": "89.992.440/0001-86",
+      "scope": "Sócia pessoa jurídica da fabricante",
+      "relationship": "Figura no QSA da Fábrica de Móveis Florense Ltda.; participação societária indireta",
+      "registration": "Ativa em fonte RFB 2026",
+      "opened": "1984-05-22",
+      "status_since": "2001-02-25",
+      "type": "206-2 — Sociedade empresária limitada",
+      "main_cnae": "64.62-0/00",
+      "main_activity": "Holdings de instituições não financeiras",
+      "capital_brl": 15993500,
+      "address": "Flores da Cunha/RS",
+      "qsa": [],
+      "sources": [
+        {
+          "label": "Ficha da holding",
+          "url": "https://fontedata.com/empresa/89992440-lourenco-darcy-castellan-administ-e-participacoes-ltda"
+        },
+        {
+          "label": "Dados cadastrais com CNPJ completo",
+          "url": "https://cnpj.biz/89992440000186"
+        }
+      ],
+      "notes": [
+        "O QSA da holding não estabelece responsabilidade individual pelo pedido da unidade franqueada.",
+        "Cadastro não comprova patrimônio líquido ou ativos realizáveis."
+      ]
+    },
+    {
+      "id": "brasmoveis-historico",
+      "name": "Brasmoveis Serviços de Instalações de Móveis Ltda.",
+      "cnpj": "87.655.791/0005-08",
+      "scope": "Cadastro histórico com fantasia Florense / Leblon",
+      "relationship": "Razão social semelhante à mencionada na reclamação principal; não foi demonstrado que o estabelecimento histórico identificado tenha participado do contrato em Ipanema em 2026",
+      "registration": "Inativa no provedor consultado; situação atual exige verificação na Receita",
+      "opened": "1990-11-29",
+      "type": "Cadastro de filial histórica (conforme provedor)",
+      "main_cnae": "47.54-7/01",
+      "main_activity": "Comércio varejista de móveis",
+      "capital_brl": null,
+      "address": "Rua General Urquiza, 71, Leblon, Rio de Janeiro/RJ (endereço histórico)",
+      "qsa": [],
+      "sources": [
+        {
+          "label": "Registro histórico da filial",
+          "url": "https://www.econodata.com.br/consulta-empresa/87655791000508-brasmoveis-servicos-de-instalacoes-de-moveis-ltda"
+        },
+        {
+          "label": "Consulta oficial RFB",
+          "url": "https://solucoes.receita.fazenda.gov.br/Servicos/cnpjreva/"
+        }
+      ],
+      "notes": [
+        "Não atribuir identidade ou continuidade societária com base apenas em nome semelhante.",
+        "É necessário consultar o CNPJ no contrato, NF e comprovante bancário para identificar a parte contratada.",
+        "Não usar cadastro histórico como prova de insolvência da marca atual."
+      ]
+    }
+  ]
+}

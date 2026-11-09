@@ -1,0 +1,30 @@
+---
+import profiles from '../data/company-profiles.json';
+interface Props { only?: string[]; title?: string }
+const { only, title='Mapa societário e cadastros das empresas' } = Astro.props;
+const entities=profiles.entities.filter(p=>!only||only.includes(p.id));
+const brl=(n:number|null)=> n==null ? 'Não informado no levantamento' : new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:2}).format(n);
+---
+<section class="company-registry section" id="perfis-cnpj">
+ <div class="container">
+  <div class="registry-heading"><span class="eyebrow">CADASTRO EMPRESARIAL · RECEITA FEDERAL / QSA</span><h2>{title}</h2>
+  <p>Fichas cadastrais com referências. O quadro de sócios e administradores indica relações formais, não identifica automaticamente o responsável pelo pedido de Ipanema. Emita o comprovante oficial atualizado antes de instruir um processo.</p>
+  <a class="text-link" href={profiles.registry_verification_url} target="_blank" rel="noopener noreferrer">Consultar CNPJ e QSA na Receita Federal ↗</a></div>
+  <div class="registry-list">{entities.map((p)=><article class:list={['registry-card',{'registry-historical':p.id==='brasmoveis-historico'}]} id={'cnpj-' + p.id}>
+   <header><div><span class="eyebrow">{p.scope}</span><h3>{p.name}</h3><p>{p.relationship}</p></div><div class="registry-cnpj"><small>CNPJ</small><strong>{p.cnpj}</strong><small>{p.registration}</small></div></header>
+   <dl class="registry-fields">
+    <div><dt>Abertura</dt><dd>{p.opened.split('-').reverse().join('/')}</dd></div>
+    <div><dt>Capital social declarado</dt><dd>{brl(p.capital_brl)}</dd></div>
+    <div><dt>CNAE principal</dt><dd>{p.main_cnae} · {p.main_activity}</dd></div>
+    <div><dt>Natureza jurídica</dt><dd>{p.type}</dd></div>
+    <div><dt>Localidade comercial</dt><dd>{p.address}</dd></div>
+    {p.tax_regime && <div><dt>Regime tributário cadastrado</dt><dd>{p.tax_regime}</dd></div>}
+   </dl>
+   {p.additional_cnaes && <div class="registry-sub"><h4>Atividades secundárias</h4><ul>{p.additional_cnaes.map(s=><li>{s}</li>)}</ul></div>}
+   {p.qsa.length>0 && <div class="registry-sub"><h4>Quadro de sócios e administradores — cadastro consultado</h4><div class="registry-qsa">{p.qsa.map(q=><div><strong>{q.name}</strong><span>{q.role}{q.entered ? ' · desde ' + q.entered.split('-').reverse().join('/') : ''}</span></div>)}</div></div>}
+   <div class="registry-sub"><h4>Notas de verificação</h4><ul>{p.notes.map(n=><li>{n}</li>)}</ul></div>
+   <footer><strong>Fontes documentais</strong>{p.sources.map(s=><a href={s.url} target="_blank" rel="noopener noreferrer">{s.label} ↗</a>)}</footer>
+  </article>)}</div>
+  <p class="registry-disclaimer">Atualizado em {profiles.updated_at.split('-').reverse().join('/')}. Fontes agregadoras informam dados da Receita Federal; emissão oficial deve ser realizada pelo serviço público. Capital social não é saldo, faturamento, patrimônio líquido ou medida de solvência.</p>
+ </div>
+</section>

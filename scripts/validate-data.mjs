@@ -22,6 +22,30 @@ for (const r of reports) {
 for (const u of updates) {
   if(!cases.some(c=>c.id===u.case_id)) {console.error('Update unknown case',u.id);bad++;}
 }
+
+const profiles=read('company-profiles'), evidence=read('evidence-index');
+const validCnpj=(raw)=>{
+  const v=String(raw).replace(/\D/g,'');
+  if(!/^\d{14}$/.test(v)||/^(\d)\1+$/.test(v))return false;
+  const digit=(base,weights)=>{const remainder=base.split('').reduce((sum,d,i)=>sum+Number(d)*weights[i],0)%11;const check=11-remainder;return check>=10?0:check;};
+  return Number(v[12])===digit(v.slice(0,12),[5,4,3,2,9,8,7,6,5,4,3,2]) &&
+         Number(v[13])===digit(v.slice(0,13),[6,5,4,3,2,9,8,7,6,5,4,3,2]);
+};
+const companyIds=new Set(),companyCnpjs=new Set();
+for(const c of profiles.entities){
+  if(companyIds.has(c.id)){console.error('Duplicate company profile',c.id);bad++;}companyIds.add(c.id);
+  if(!validCnpj(c.cnpj)){console.error('Invalid CNPJ',c.cnpj);bad++;}
+  if(companyCnpjs.has(c.cnpj)){console.error('Duplicate CNPJ',c.cnpj);bad++;}companyCnpjs.add(c.cnpj);
+  if(!c.sources?.length||!c.sources.every(s=>/^https:\/\//.test(s.url))){console.error('Company source URL missing',c.id);bad++;}
+}
+const evidenceIds=new Set();
+for(const e of evidence.items){
+  if(evidenceIds.has(e.id)){console.error('Duplicate evidence ID',e.id);bad++;}evidenceIds.add(e.id);
+  if(!cases.some(c=>c.id===evidence.case_id)){console.error('Evidence unknown case',e.id);bad++;}
+  if(e.visibility==='publico' && !/^https:\/\//.test(e.source_url||'')){console.error('Public evidence missing URL',e.id);bad++;}
+  if(e.visibility==='privado' && e.source_url){console.error('Private evidence published URL',e.id);bad++;}
+}
+
 const counted=metrics.cases?.['CA-001']?.public_complaints_indexed;
 if (counted != null && counted !== reports.length) {
   console.error('metrics public_complaints_indexed mismatch', counted, reports.length); bad++;
