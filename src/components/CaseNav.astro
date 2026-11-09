@@ -1,6 +1,8 @@
 ---
 import { type Case, casePath } from '../lib/cases';
 import {linkageForCase} from '../lib/precedents';
+import {printKitForCase} from '../lib/print-kits';
+import scenarioData from '../data/action-scenarios.json';
 interface Props { item: Case; current?: string }
 const { item, current = 'resumo' } = Astro.props;
 const p = casePath(item);
@@ -8,11 +10,13 @@ const tabs = [
   {key:'resumo', label:'Dossiê', href:p},
   {key:'linha-do-tempo', label:'Cronologia', href:`${p}linha-do-tempo/`},
   {key:'impacto',label:'Impacto em números',href:p+'impacto/'},
+  ...(scenarioData.cases.some(x=>x.case_id===item.id)?[{key:'cenarios',label:'Explore cenários',href:p+'cenarios/'}]:[]),
   ...(linkageForCase(item.id)?[{key:'precedentes',label:'Precedentes',href:p+'precedentes/'}]:[]),
   {key:'reclamacoes-publicas', label:'Fontes públicas', href:`${p}reclamacoes-publicas/`},
   ...(item.id==='CA-001'?[{key:'risco-roma-mobili',label:'Alerta Roma',href:p+'risco-roma-mobili/'},{key:'responsaveis',label:'Quem responde',href:p+'responsaveis/'}]:[]),
   {key:'atualizacoes', label:'Atualizações', href:`${p}atualizacoes/`},
   {key:'imprensa', label:'Imprensa', href:`${p}imprensa/`},
+  ...(printKitForCase(item)?[{key:'kit-boca-a-boca',label:'Kit Boca a Boca',href:p+'kit-boca-a-boca/'}]:[]),
   ...(item.id==='CA-001'?[{key:'evidencias',label:'Evidências',href:p+'evidencias/'},{key:'materiais-imprensa',label:'Materiais',href:p+'materiais-imprensa/'}]:[]),
 ];
 ---

@@ -1,0 +1,134 @@
+{
+  "version": 1,
+  "updated_at": "2026-11-09",
+  "method": "Ensaio de decisão estruturado a partir de documentos do CasoAberto; não executa MiroFish, agentes autônomos ou previsão probabilística.",
+  "actor_roles": [
+    {
+      "id": "cliente",
+      "label": "Pessoa consumidora",
+      "role": "Relata fatos, oferece comprovantes sob controle e confirma as atualizações."
+    },
+    {
+      "id": "empresa",
+      "label": "Empresa contratada",
+      "role": "Responde às perguntas, comprova marcos de produção/entrega e oferece solução."
+    },
+    {
+      "id": "comunidade",
+      "label": "Comunidade e leitores",
+      "role": "Compartilham o link correto e questionam os fatos, sem atacar indivíduos."
+    },
+    {
+      "id": "mediadores",
+      "label": "Canais oficiais e mediação",
+      "role": "Acompanham reclamações e providências, conforme as regras próprias."
+    },
+    {
+      "id": "imprensa",
+      "label": "Imprensa e sociedade civil",
+      "role": "Conferem provas, pedem contraditório e reportam mudanças de status."
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "CA-001",
+      "scenario_ids": [
+        "resposta-documentada",
+        "sem-solucao-confirmada",
+        "novos-relatos",
+        "resolucao-comprovada"
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "resposta-documentada",
+      "title": "A empresa apresenta uma resposta documentada",
+      "label": "Resposta verificável",
+      "evidence_trigger": "Recebimento de cronograma, nota de produção, entrega, restituição ou comprovação de conclusão.",
+      "next_steps": [
+        "Conferir os documentos com o titular e as datas do contrato.",
+        "Publicar a resposta com data, fonte e escopo.",
+        "Verificar se as obrigações foram efetivamente cumpridas antes de mudar o status editorial."
+      ],
+      "actors": [
+        "cliente",
+        "empresa",
+        "mediadores"
+      ],
+      "observe": [
+        "Datas e responsáveis comprovados",
+        "Entrega, montagem, solução financeira e pendências remanescentes"
+      ],
+      "not_a_forecast": "Caminho de encaminhamento, não garantia de resolução."
+    },
+    {
+      "id": "sem-solucao-confirmada",
+      "title": "A pendência continua sem solução confirmada",
+      "label": "Monitoramento e nova cobrança",
+      "evidence_trigger": "Na data de uma nova revisão, persiste a ausência de conclusão documental da obrigação.",
+      "next_steps": [
+        "Atualizar dias transcorridos e status do caso com data da revisão.",
+        "Reenviar perguntas institucionais pertinentes com prazo para resposta voluntária.",
+        "Redistribuir somente peças impressas revistas, com QR para o dossiê e data visível."
+      ],
+      "actors": [
+        "cliente",
+        "empresa",
+        "comunidade"
+      ],
+      "observe": [
+        "Comunicações novas",
+        "Prazos oferecidos e faltas confirmadas",
+        "Atualização do status da reclamação"
+      ],
+      "not_a_forecast": "Novas cobranças exigem atualização documental; o silêncio não basta para afirmar insolvência."
+    },
+    {
+      "id": "novos-relatos",
+      "title": "Outras pessoas apresentam casos próprios",
+      "label": "Amostra ampliada",
+      "evidence_trigger": "Chegada de novos relatos com links públicos individuais, consentimento e datas.",
+      "next_steps": [
+        "Validar autenticidade, unidade, CNPJ e desfecho de cada ocorrência.",
+        "Publicar casos como registros separados, sem contar duplicatas.",
+        "Analisar padrões comparáveis e solicitar manifestação para cada pessoa jurídica adequada."
+      ],
+      "actors": [
+        "cliente",
+        "comunidade",
+        "empresa",
+        "imprensa"
+      ],
+      "observe": [
+        "Fontes únicas vs. duplicatas",
+        "Denominadores por marca e unidade",
+        "Casos resolvidos e pendentes"
+      ],
+      "not_a_forecast": "Relatos precisam ser confirmados e classificados por empresa e unidade."
+    },
+    {
+      "id": "resolucao-comprovada",
+      "title": "O caso recebe comprovação de resolução",
+      "label": "Correção e encerramento",
+      "evidence_trigger": "Entrega integral aceita ou solução acordada com comprovação e consentimento do consumidor.",
+      "next_steps": [
+        "Atualizar imediatamente o dossiê e retirar materiais desatualizados de circulação quando possível.",
+        "Marcar como resolvido no site, corrigindo resumos e recomendações.",
+        "Publicar cronologia final, inclusive manifestações da empresa e pendências que ainda existam."
+      ],
+      "actors": [
+        "cliente",
+        "empresa",
+        "comunidade",
+        "mediadores"
+      ],
+      "observe": [
+        "Termo ou confirmação verificável da solução",
+        "Mudança de classificação editorial",
+        "Arquivamento das peças antigas"
+      ],
+      "not_a_forecast": "Caminho de correção responsável, não supressão da história documental."
+    }
+  ]
+}

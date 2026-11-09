@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
+import CaseNav from '../../../../components/CaseNav.astro';
+import ScenarioRehearsal from '../../../../components/islands/ScenarioRehearsal.tsx';
+import {cases,casePath,crumbFor,type Case,dateBR} from '../../../../lib/cases';
+import {printKitForCase,printKitPath} from '../../../../lib/print-kits';
+import model from '../../../../data/action-scenarios.json';
+export function getStaticPaths(){return cases.filter(c=>model.cases.some(x=>x.case_id===c.id)).map(item=>({params:{slug:item.slug},props:{item}}));}
+interface Props{item:Case}
+const {item}=Astro.props;
+const crumbs=[...crumbFor(item),{label:'Cenários e próximos passos',href:casePath(item)+'cenarios/'}];
+---
+<BaseLayout title={'Cenários de risco, impacto e resposta — '+item.empresa_resumo+' | CasoAberto'} description={'Explore como pode avançar a disputa de '+item.empresa_resumo+': respostas, atrasos, novos documentos e solução. Cenários conectados ao dossiê e a registros públicos.'} dateModified={model.updated_at} type="article" breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}>
+ <Breadcrumbs items={crumbs}/>
+ <header class="kit-hero"><div class="container"><span class="eyebrow">CASO {item.id} / O QUE ACONTECE AGORA?</span><h1>O prazo foi descumprido. <em>O que a empresa precisa fazer?</em></h1><p>{item.empresa_resumo}: {item.resumo}</p><div class="kit-head-actions"><a class="button button-primary" href="#explorar">Explorar os cenários ↓</a><a class="button button-ghost" href={casePath(item)+'impacto/'}>Ver impacto em números ↗</a></div></div></header>
+ <CaseNav item={item} current="cenarios"/>
+ <section class="kit-section" id="explorar"><div class="container"><span class="eyebrow">DECISÕES QUE IMPORTAM / ATUALIZAÇÃO {dateBR(item.status_data)}</span><h2>Quatro caminhos. A mesma pergunta: qual solução será comprovada?</h2><p>Selecione um cenário para ver o que precisa acontecer, quem deve se manifestar e quais fatos mudam o desfecho.</p><ScenarioRehearsal caseId={item.id} client:visible/></div></section>
+ <section class="kit-method"><div class="container kit-method-grid"><div><span class="eyebrow">EXIGIMOS RESPOSTAS OBJETIVAS</span><h2>Sem comprovação, a pendência continua.</h2><p>Uma promessa de entrega não é entrega. Uma resposta em plataforma não é solução. O dossiê precisa documentar o cumprimento efetivo das obrigações assumidas.</p><div class="kit-head-actions"><a class="button button-dark" href={casePath(item)+'evidencias/'}>Examinar evidências ↗</a><a class="button button-subtle" href={casePath(item)+'precedentes/'}>Processos semelhantes ↗</a></div></div><aside class="kit-method-note"><h3>Leve os fatos adiante.</h3><p>O material impresso mostra o valor e a pendência do caso, com QR para consulta e revisão datada.</p>{printKitForCase(item)&&<a class="button button-dark" href={printKitPath(item)}>Abrir Kit Boca a Boca ↗</a>}</aside></div></section>
+</BaseLayout>

@@ -174,3 +174,9 @@ Diferencial do produto: transformar dossiês de consumo em análises de risco do
 - Documentação e tabela de datas: `docs/precedent-observatory.md`.
 
 **Conferência obrigatória:** Roma e Lojas KD têm falência decretada; Kitchens tinha processamento de RJ deferido em 03/11/2026 e **não** era uma falência registrada nesta revisão. A diferença entre data de reportagem, pedido de RJ, encerramento, sentença e prazo de ressarcimento deve ser preservada. `npm run verify:data` confere a aritmética e as fontes antes de publicar.
+
+## Kit Boca a Boca & cenários (2026-11-09)
+
+O CasoAberto agora transforma dossiês em informação pública impressa. A área `/kit-boca-a-boca/` e a rota gerada `/casos/:slug/kit-boca-a-boca/` oferecem cartaz A4, ficha A4, dois folhetos A5 por folha e quatro cartões A6 por folha, além de roteiro do organizador, colorido ou P&B. QR codes gerados e validados são arquivos SVG locais. A área `/cenarios/` e a rota `/casos/:slug/cenarios/` exploram respostas, efeitos e ações baseadas nos fatos de cada caso. Tudo estático, nenhum serviço em tempo de execução.
+
+Dados: `src/data/print-kits.json` e `src/data/action-scenarios.json`; componentes: `PrintKitStudio.astro` e `islands/ScenarioRehearsal.tsx`. Para criar QR de um novo caso: `python3 -m pip install qrcode`, depois `python3 scripts/generate-print-qrs.py` localmente. Leia `docs/kit-boca-a-boca.md`. Publique por commit após `npm run verify:data && npm run check && npm run build`.

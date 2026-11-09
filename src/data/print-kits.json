@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "updated_at": "2026-11-09",
+  "public_url_origin": "https://casoaberto.pages.dev",
+  "policy": {
+    "facts": "Use dados do caso, atribua declarações ao reclamante e inclua data de revisão. Um kit impresso pode circular depois de uma solução: revisar antes de cada tiragem.",
+    "privacy": "Não imprimir nome completo, CPF, documentos privados, residência, telefones pessoais nem nomes de executivos como alvo de campanhas.",
+    "distribution": "Distribua somente em locais autorizados, respeite regras locais e recuse assédio, perseguição ou confronto.",
+    "outcome": "Divulgação é convite à verificação, não prova de solvência ou falência, nem instrução para atacar pessoas."
+  },
+  "cases": [
+    {
+      "case_id": "CA-001",
+      "published": true,
+      "headline": "R$ 190 mil pagos. Prazo descumprido. Onde estão os móveis?",
+      "short_headline": "R$ 190 mil pagos. Entrega sem conclusão confirmada.",
+      "editorial_warning": "Não recomendamos contratar a Florense Ipanema enquanto este caso não tiver solução comprovada. Não assuma esse risco.",
+      "call_to_action": "O caso exige respostas. Leia o dossiê, os comprovantes catalogados e a posição da empresa.",
+      "print_question": "R$ 190 mil pagos. Quem responde pela entrega?",
+      "source_note": "O consumidor relata pagamento de R$ 190 mil e prazo descumprido; até 09/11/2026, a entrega integral não estava confirmada no dossiê.",
+      "qr_svg": "/media/print/ca-001-qr.svg",
+      "organizer_notes": "Caso CA-001: evite atribuir à rede inteira obrigações não verificadas da franquia; não reproduza alegação de falência como fato.",
+      "formats": [
+        "cartaz-a4",
+        "ficha-a4",
+        "panfletos-a5",
+        "cartoes-a6",
+        "organizador-a4"
+      ],
+      "source_urls": [
+        "https://www.reclameaqui.com.br/florense-moveis/nao-recebi-meus-moveis-planejados-e-a-loja-nao-cumpre-prazos_LaK42QhQaVqRLA5s/",
+        "https://gomesdemattos.com.br/admjudicial/lista-de-processos/roma-mobili-industria-ltda-e-rm-projetos-e-montagens-de-moveis-ltda-epp/"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+---
+import type {Case} from '../lib/cases';
+import {brl,dateBR} from '../lib/cases';
+import type {PrintKit} from '../lib/print-kits';
+import {printCaseUrl} from '../lib/print-kits';
+interface Props {item:Case;kit:PrintKit}
+const {item,kit}=Astro.props;
+const url=printCaseUrl(item);
+const date=dateBR(item.status_data);
+const amount=item.valor_brl?brl(item.valor_brl):null;
+const original=item.fontes.find(s=>s.url.includes('reclameaqui.com.br/'))||item.fontes[0];
+const cards=Array.from({length:4},(_,i)=>i);
+const flyers=Array.from({length:2},(_,i)=>i);
+const basics=[['VALOR INFORMADO',amount||'Não informado'],['STATUS DO DOSSIÊ',item.status],['REVISADO EM',date]];
+---
+<div class="kit-studio">
+ <div class="kit-toolbar">
+  <div class="kit-control"><label for="kit-format">Formato</label><select id="kit-format">
+   <option value="cartaz-a4">Cartaz de impacto · A4</option>
+   <option value="ficha-a4">Ficha de fatos e fontes · A4</option>
+   <option value="panfletos-a5">2 panfletos por folha · A5</option>
+   <option value="cartoes-a6">4 cartões por folha · A6</option>
+   <option value="organizador-a4">Plano do organizador · A4</option>
+  </select></div>
+  <div class="kit-control"><label for="kit-color">Tipo de tinta</label><select id="kit-color"><option value="cor">Colorido</option><option value="pb">Preto e branco · econômico</option></select></div>
+  <button id="kit-print" type="button" class="button button-primary">Imprimir / salvar PDF ↗</button>
+ </div>
+ <p class="kit-toolbar-note" id="kit-print-status" aria-live="polite">Selecione o modelo e as cores. O navegador permite imprimir ou salvar como PDF.</p>
+ <div id="kit-print-root" class="print-stage" data-format="cartaz-a4" data-ink="cor">
+  <section class="print-sheet print-poster" data-print="cartaz-a4" aria-label="Cartaz A4">
+   <div class="print-brandline"><strong>CASO<span>ABERTO</span></strong><small>ARQUIVO DE CONSUMO / {item.id}</small></div>
+   <div class="print-poster-main"><span class="print-overline">CONHEÇA OS FATOS ANTES DE CONTRATAR</span><h2>{kit.headline}</h2>
+    <div class="print-huge-number">{amount||'CASO DOCUMENTADO'}</div><p class="print-number-label">{amount?'Valor pago segundo relato do consumidor':'Reclamação de consumo documentada'}</p>
+    <div class="print-rule"></div><h3>{kit.print_question}</h3><p class="print-lead">{item.empresa_resumo} · {item.local}. {kit.source_note}</p>
+    <p class="print-warning">{kit.editorial_warning}</p>
+   </div>
+   <div class="print-poster-bottom"><div><strong>NÃO CONTRATE SEM CONHECER OS FATOS.</strong><p>{kit.call_to_action}</p><small>Fonte: {original?.titulo||'Dossiê público'} · Situação revisada em {date} · Publicação independente.</small></div><div class="print-qr-block">{kit.qr_svg&&<img src={kit.qr_svg} alt="QR do dossiê" width="125" height="125"/>}<span>LEIA O CASO</span></div></div>
+   <p class="print-long-url">{url}</p>
+  </section>
+  <section class="print-sheet print-facts" data-print="ficha-a4" aria-label="Ficha de fatos A4">
+   <div class="print-brandline"><strong>CASO<span>ABERTO</span></strong><small>FATOS E FONTES / {item.id}</small></div>
+   <div class="print-facts-title"><span class="print-overline">O QUE SE SABE E O QUE PRECISA SER RESPONDIDO</span><h2>{item.empresa_resumo}: fatos e perguntas verificáveis.</h2><p>Resumo atribuído ao consumidor. Situação revisada em {date}.</p></div>
+   <div class="print-fact-grid">{basics.map(row=><div><span>{row[0]}</span><strong>{row[1]}</strong></div>)}</div>
+   <div class="print-facts-body"><h3>Relato</h3><p>{item.resumo}</p><h3>O que precisa ser esclarecido?</h3><ol>{item.pedidos.slice(0,4).map(p=><li><strong>{p.titulo}:</strong> {p.texto}</li>)}</ol><h3>Fontes originais</h3><p>{original?.titulo||'Consulte o dossiê público'}. Use o QR code e confira também a cronologia, os documentos disponíveis e eventuais atualizações.</p></div>
+   <div class="print-facts-bottom">{kit.qr_svg&&<img src={kit.qr_svg} alt="QR do caso" width="110" height="110"/>}<p><strong>Leia as provas, as datas e as respostas.</strong><span>{url}</span><small>O registro não equivale a decisão judicial ou prova de situação financeira da empresa.</small></p></div>
+  </section>
+  <section class="print-sheet print-flyers" data-print="panfletos-a5" aria-label="Dois panfletos A5">
+   {flyers.map(()=><article class="print-flyer"><div class="print-brandline"><strong>CASO<span>ABERTO</span></strong><small>{item.id} / {date}</small></div>
+     <span class="print-overline">CONSUMIDORES MERECEM RESPOSTAS</span><h2>{kit.short_headline}</h2>
+     <p>{item.empresa_resumo}: reclamação pública sobre entrega ou montagem. {kit.source_note}</p>
+     <div class="print-flyer-bottom"><div><strong>Antes de contratar, veja a denúncia.</strong><small>{url}</small></div>{kit.qr_svg&&<img src={kit.qr_svg} alt="QR do caso" width="92" height="92"/>}</div>
+     <span class="print-tiny">Informação independente com fonte; confira o status atualizado.</span>
+    </article>)}
+  </section>
+  <section class="print-sheet print-mini-cards" data-print="cartoes-a6" aria-label="Quatro cartões A6">
+   {cards.map(()=><article class="print-mini"><div class="print-brandline"><strong>CASO<span>ABERTO</span></strong><small>{item.id}</small></div>
+    <span class="print-overline">O QUE ESTÁ ACONTECENDO?</span><h2>{kit.print_question}</h2><p>{item.empresa_resumo} · Reclamação documentada.</p>
+    <div class="print-mini-bottom"><strong>Leia o caso, as fontes e a atualização.</strong>{kit.qr_svg&&<img src={kit.qr_svg} alt="QR para o dossiê" width="76" height="76"/>}</div>
+    <small class="print-mini-url">{url}</small></article>)}
+  </section>
+  <section class="print-sheet print-organizer" data-print="organizador-a4" aria-label="Plano impresso de coordenação">
+   <div class="print-brandline"><strong>CASO<span>ABERTO</span></strong><small>COORDENAÇÃO / {item.id}</small></div>
+   <h2>Plano de distribuição responsável.</h2><p>Material revisado em {date}. Verifique novamente o caso antes de cada tiragem.</p>
+   <div class="print-organizer-fields">{['Data da ação','Área / bairro','Ponto autorizado','Responsável pela revisão da peça','Modelo e quantidade prevista','Cópias distribuídas e restantes'].map(label=><div><strong>{label}</strong><span>_____________________________________</span></div>)}</div>
+   <h3>Antes de imprimir e distribuir</h3><ul class="print-checkboxes">
+    <li>☐ Conferi o status e as datas no dossiê.</li><li>☐ Testei o link e o QR code.</li>
+    <li>☐ A peça não expõe nomes ou dados privados.</li><li>☐ O local autoriza a distribuição.</li>
+    <li>☐ A equipe está orientada a informar sem assediar ninguém.</li><li>☐ Defini como recolher ou atualizar peças desatualizadas.</li>
+   </ul><h3>Registro agregado</h3><p>Impressos: ______  Distribuídos: ______  Restantes: ______</p><p>Notas e dúvidas a verificar: _________________________________________</p><p>_______________________________________________________________</p>
+   <div class="print-organizer-bottom">{kit.qr_svg&&<img src={kit.qr_svg} alt="QR do caso" width="94" height="94"/>}<div><strong>O objetivo é informação verificável e resolução.</strong><p>Não recolher dados pessoais de leitores sem necessidade ou consentimento.</p><small>{url}</small></div></div>
+  </section>
+ </div>
+ <p class="kit-stage-caption">Prévia da folha A4. A5: duas peças por folha; A6: quatro cartões por folha, com marcas de corte.</p>
+</div>
+<script>
+ const root=document.getElementById('kit-print-root');
+ const format=document.getElementById('kit-format') as HTMLSelectElement|null;
+ const color=document.getElementById('kit-color') as HTMLSelectElement|null;
+ const button=document.getElementById('kit-print');
+ const status=document.getElementById('kit-print-status');
+ const formats=new Set(['cartaz-a4','ficha-a4','panfletos-a5','cartoes-a6','organizador-a4']);
+ const sync=()=>{
+  if(!root||!format||!color)return;
+  const f=formats.has(format.value)?format.value:'cartaz-a4';
+  const ink=color.value==='pb'?'pb':'cor';
+  root.dataset.format=f;root.dataset.ink=ink;
+  const p=new URLSearchParams(window.location.search);p.set('modelo',f);p.set('tinta',ink);
+  window.history.replaceState(null,'',window.location.pathname+'?'+p.toString()+window.location.hash);
+  if(status)status.textContent='Pronto: '+format.selectedOptions[0]?.text+' · '+(ink==='pb'?'Preto e branco':'Colorido')+'. Use papel A4 e escala 100%.';
+ };
+ const q=new URLSearchParams(window.location.search);
+ if(format&&formats.has(q.get('modelo')||''))format.value=q.get('modelo')!;
+ if(color&&q.get('tinta')==='pb')color.value='pb';
+ format?.addEventListener('change',sync);color?.addEventListener('change',sync);
+ button?.addEventListener('click',()=>window.print());
+ sync();
+</script>

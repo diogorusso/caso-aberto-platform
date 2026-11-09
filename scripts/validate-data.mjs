@@ -1,4 +1,4 @@
-import {readFileSync} from 'node:fs';
+import {readFileSync,existsSync} from 'node:fs';
 const read = name => JSON.parse(readFileSync(new URL(`../src/data/${name}.json`,import.meta.url),'utf8'));
 const cases=read('casos'), reports=read('relatos'), updates=read('updates'), metrics=read('metrics');
 let bad=0;
@@ -233,6 +233,37 @@ for(const relation of precedentData.case_links){
  if(sourceCase.empresa_slug!==relation.brand_slug||sourceCase.unidade_slug!==relation.unit_slug){console.error('Precedent relation mismatches linked company/unit',relation.case_id);bad++;}
  if(!relation.precedent_ids?.length||!relation.precedent_ids.every(id=>precedentIds.has(id))){console.error('Case relation has unknown precedent',relation.case_id);bad++;}
  if(!relation.established_similarities?.length||!relation.established_differences?.length){console.error('Precedent linkage missing similarities or distinctions',relation.case_id);bad++;}
+}
+
+
+// Print kits are published only for existing cases with actual source and QR assets.
+const printKits=read('print-kits'), actionScenarios=read('action-scenarios');
+const seenPrintCases=new Set();
+for(const k of printKits.cases||[]){
+ if(seenPrintCases.has(k.case_id)){console.error('Duplicate print kit',k.case_id);bad++;}seenPrintCases.add(k.case_id);
+ if(!cases.some(c=>c.id===k.case_id)){console.error('Print kit has unknown case',k.case_id);bad++;}
+ if(!k.published)continue;
+ for(const key of ['headline','short_headline','source_note','editorial_warning','call_to_action','print_question']){
+  if(!String(k[key]||'').trim()){console.error('Published print kit missing',k.case_id,key);bad++;}
+ }
+ for(const format of ['cartaz-a4','ficha-a4','panfletos-a5','cartoes-a6','organizador-a4']){
+  if(!k.formats?.includes(format)){console.error('Print kit format missing',k.case_id,format);bad++;}
+ }
+ if(!k.source_urls?.length||k.source_urls.some(u=>!/^https:\/\//.test(u))){console.error('Print kit lacks valid sources',k.case_id);bad++;}
+ if(!k.qr_svg?.startsWith('/media/print/')||k.qr_svg.includes('..')){console.error('Invalid print QR path',k.case_id);bad++;}
+ else if(!existsSync(new URL('../public'+k.qr_svg,import.meta.url))){console.error('QR file missing',k.case_id,k.qr_svg);bad++;}
+}
+if(!/^https:\/\//.test(printKits.public_url_origin||'')){console.error('Print kit lacks site URL');bad++;}
+const actorIds=new Set(actionScenarios.actor_roles.map(x=>x.id));
+const scenarioIds=new Set();
+for(const s of actionScenarios.scenarios){
+ if(scenarioIds.has(s.id)){console.error('Duplicate scenario',s.id);bad++;}scenarioIds.add(s.id);
+ if(!s.title||!s.evidence_trigger||!s.next_steps?.length||!s.observe?.length){console.error('Scenario missing content',s.id);bad++;}
+ if(s.actors?.some(id=>!actorIds.has(id))){console.error('Scenario has unknown actor',s.id);bad++;}
+}
+for(const v of actionScenarios.cases){
+ if(!cases.some(c=>c.id===v.case_id)){console.error('Scenario linked to unknown case',v.case_id);bad++;}
+ if(!v.scenario_ids?.length||v.scenario_ids.some(id=>!scenarioIds.has(id))){console.error('Unknown linked scenario',v.case_id);bad++;}
 }
 
 const counted=metrics.cases?.['CA-001']?.public_complaints_indexed;

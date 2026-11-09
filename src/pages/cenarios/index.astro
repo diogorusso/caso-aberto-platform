@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import {cases} from '../../lib/cases';
+import raw from '../../data/action-scenarios.json';
+import {printKitForCase,printKitPath} from '../../lib/print-kits';
+const scenarios=raw.scenarios.length;
+---
+<BaseLayout title="Explore cenários: impacto e cobrança de respostas | CasoAberto" description="Entenda como um problema de consumo pode escalar, quais fatos mudam o caso e quais caminhos podem exigir resposta das empresas. Cenários organizados a partir de dossiês documentados." dateModified={raw.updated_at} breadcrumbs={[{name:'Início',item:'/'},{name:'Cenários',item:'/cenarios/'}]}>
+ <Breadcrumbs items={[{label:'Início',href:'/'},{label:'Cenários',href:'/cenarios/'}]}/>
+ <section class="kit-hero"><div class="container"><span class="eyebrow">CENÁRIOS DE IMPACTO / PONTOS DE DECISÃO</span><h1>O problema não desaparece porque <em>a empresa não responde.</em></h1><p>Mostramos como cada fato documentado afeta o consumidor, quais decisões exigem resposta e como um caso pode avançar. Uma reclamação sem solução tem consequência real na vida de quem pagou e não recebeu.</p><div class="kit-head-actions"><a class="button button-primary" href="#casos">Explorar casos e cenários ↗</a><a class="button button-ghost" href="/precedentes/">Ver processos e precedentes ↗</a></div></div></section>
+ <section class="kit-directory" id="casos"><div class="container"><span class="eyebrow">CASOS COM CENÁRIOS ORGANIZADOS</span><h2>Fatos, atores envolvidos e caminhos de cobrança.</h2><div class="kit-case-list">
+ {cases.filter(c=>raw.cases.some(x=>x.case_id===c.id)).map(c=><article><span class="eyebrow">CASO {c.id} · {c.status_data.split('-').reverse().join('/')}</span><h3>{c.empresa_resumo}</h3><p>{c.titulo}</p><p>{raw.cases.find(x=>x.case_id===c.id)?.scenario_ids.length||0} cenários de evolução e resposta organizados neste dossiê.</p><a class="button button-dark" href={'/casos/'+c.slug+'/cenarios/'}>Explore os cenários ↗</a>{printKitForCase(c)&&<a class="text-link" href={printKitPath(c)}>Mobilização e impressão ↗</a>}</article>)}
+ </div></div></section>
+ <section class="kit-method"><div class="container kit-method-grid"><div><span class="eyebrow">DO PROBLEMA À AÇÃO</span><h2>Dados viram perguntas. Perguntas exigem respostas.</h2><ul><li>Identifique quem assumiu cada obrigação contratual e qual prazo foi combinado.</li><li>Compare promessas, documentos e o que foi efetivamente entregue.</li><li>Explore o efeito de respostas, novos atrasos, novas evidências e resolução.</li><li>Registre mudanças e cobre de cada parte uma resposta objetiva, sem generalizações.</li></ul></div><aside class="kit-method-note"><h3>O que esta ferramenta entrega?</h3><p>Um roteiro interativo de decisão baseado em dados do dossiê: fatores que alteram o caso, atores envolvidos e ações possíveis. Não há agentes autônomos ou previsão automatizada nesta versão estática.</p><a class="text-link" href="/como-funciona/">Entenda o método ↗</a></aside></div></section>
+</BaseLayout>

@@ -18,6 +18,7 @@ import EvidenceIndex from '../../../components/EvidenceIndex.astro';
 import ImpactTeaser from '../../../components/ImpactTeaser.astro';
 import CaseCompanyReference from '../../../components/CaseCompanyReference.astro';
 import PrecedentComparison from '../../../components/PrecedentComparison.astro';
+import {printKitForCase,printKitPath} from '../../../lib/print-kits';
 import { cases, casePath, crumbFor, dateBR, reportsFor, type Case } from '../../../lib/cases';
 export function getStaticPaths() { return cases.map(item => ({params:{slug:item.slug},props:{item}})); }
 interface Props { item: Case }
@@ -130,6 +131,7 @@ const related = reportsFor(item).filter(r => r.destaque || (r.cidade||'').includ
 
   {item.id === 'CA-001' && <section class="dossier-feature"><div class="container"><span class="eyebrow">INVESTIGAÇÃO CORPORATIVA · FLORENSE</span><h2>383 reclamações no histórico. Rede com 69 lojas declaradas. Quem responde pelo pedido?</h2><p>Reunimos CNPJs, estrutura industrial, empresa no endereço de Ipanema, administradores, capital social e declarações executivas. O histórico de reclamações abrange diferentes unidades e períodos.</p><div class="feature-links"><a class="button button-dark" href="/empresas/florense/">Ler dossiê corporativo ↗</a><a class="button button-subtle" href="/empresas/florense/ipanema-rj/">Empresa em Ipanema ↗</a></div></div></section>}
   {item.id==='CA-001' && <EvidenceIndex caseId={item.id} slug={item.slug} compact />}
+  {printKitForCase(item) && <section class="section kit-case-promo"><div class="container kit-case-promo-inner"><div><span class="eyebrow">AÇÃO COM DOCUMENTOS · KIT BOCA A BOCA</span><h2>Uma denúncia desse tamanho não pode desaparecer.</h2><p>R$ 190 mil informados como pagos. Prazo descumprido. Sem conclusão confirmada nesta revisão. Imprima cartazes e panfletos com os fatos, QR code e links para as fontes.</p></div><a class="button button-dark" href={printKitPath(item)}>Abrir modelos para imprimir ↗</a></div></section>}
   <section class="press-actionbar"><div class="container"><a class="button button-dark" href={base+'evidencias/'}>Índice de evidências ↗</a><a class="button button-subtle" href={base+'materiais-imprensa/'}>Materiais de mídia ↗</a><a class="button button-subtle" href={base+'indice-evidencias.csv'}>Exportar CSV</a></div></section>
   <div id="apoiar"><ParticipationCTA item={item} /></div>
   <ShareActions />

@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
+import CaseNav from '../../../../components/CaseNav.astro';
+import PrintKitStudio from '../../../../components/PrintKitStudio.astro';
+import ScenarioRehearsal from '../../../../components/islands/ScenarioRehearsal.tsx';
+import {cases,casePath,crumbFor,dateBR,type Case} from '../../../../lib/cases';
+import {printKitForCase,printableCases,printKitPath,printCaseUrl,printPolicy,printReviewedAt,type PrintKit} from '../../../../lib/print-kits';
+export function getStaticPaths(){return printableCases(cases).map(item=>({params:{slug:item.slug},props:{item,kit:printKitForCase(item)}}));}
+interface Props{item:Case;kit:PrintKit}
+const {item,kit}=Astro.props;
+const crumbs=[...crumbFor(item),{label:'Kit Boca a Boca',href:printKitPath(item)}];
+const instructions=[
+ {n:'01',title:'Atualize as informações',text:'Leia o status mais recente e as fontes do caso. O material contém a data da revisão; confira se ainda representa os fatos.'},
+ {n:'02',title:'Selecione peça e tinta',text:'Escolha cartaz, ficha, dois A5, quatro A6 ou plano do organizador. Compare colorido com preto e branco na prévia.'},
+ {n:'03',title:'Imprima em A4',text:'Clique em “Imprimir / salvar PDF”. Use A4 em retrato, escala 100%, margens padrão do documento. Para o colorido habilite gráficos de fundo no navegador quando necessário.'},
+ {n:'04',title:'Teste e recorte',text:'Confira o QR em um celular. O A5 oferece duas peças por folha; o A6, quatro. Corte nas linhas pontilhadas sem remover texto ou QR.'},
+ {n:'05',title:'Distribua com autorização',text:'Escolha locais onde a atividade seja permitida; a conversa deve convidar a conferir o dossiê, sem confrontar pessoas ou fazer alegações extras.'},
+ {n:'06',title:'Registre e revise',text:'Anote quantidades agregadas em uma planilha ou no plano impresso. Recolha materiais se houver resolução ou correção relevante.'}
+];
+---
+<BaseLayout title={'Kit Boca a Boca '+item.id+': cartazes A4, panfletos A5 e cartões A6 | CasoAberto'} description={'Peças para imprimir em cores ou preto e branco sobre '+item.empresa_resumo+': QR do caso, fatos com origem, cartaz, folhetos e roteiro de distribuição responsável.'} dateModified={printReviewedAt} breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}>
+ <Breadcrumbs items={crumbs}/>
+ <header class="kit-hero"><div class="container"><span class="eyebrow">KIT BOCA A BOCA / {item.id} / {dateBR(item.status_data)}</span><h1>A denúncia não termina na tela. <em>Leve os fatos para mais pessoas.</em></h1><p>{item.empresa_resumo}: {kit.source_note} Uma empresa precisa responder pelos compromissos assumidos. Mostre o valor informado, o prazo e as perguntas sem solução com peças prontas para impressão. O QR abre documentos e atualizações.</p><div class="kit-head-actions"><a class="button button-primary" href="#estudio">Preparar impressão ↓</a><a class="button button-ghost" href={casePath(item)}>Conferir dossiê ↗</a><a class="button button-ghost" href="/kit-boca-a-boca/">Guia de distribuição ↗</a></div></div></header>
+ <CaseNav item={item} current="kit-boca-a-boca"/>
+ <section class="kit-studio-section" id="estudio"><div class="container"><span class="eyebrow">ESTÚDIO DE IMPRESSÃO / SEM LOGIN, SEM SERVIDOR</span><h2>Pronto para imprimir — em cores ou preto e branco.</h2><p>O texto é gerado a partir do caso e dos dados editoriais deste kit. Em novos casos, a mesma página é gerada sem duplicar o layout.</p><PrintKitStudio item={item} kit={kit}/></div></section>
+ <section class="kit-section"><div class="container"><span class="eyebrow">INSTRUÇÕES PRÁTICAS</span><h2>Da revisão ao papel — sem perder as fontes.</h2><div class="kit-steps">{instructions.map(s=><article class="kit-step"><span>{s.n} / ETAPA</span><h3>{s.title}</h3><p>{s.text}</p></article>)}</div><div class="kit-activity-links"><a href="/kit-boca-a-boca/registro.csv" download>Baixar registro de distribuição (CSV) ↗</a><a href={casePath(item)+'materiais-imprensa/'}>Artes digitais e imprensa ↗</a></div></div></section>
+ <section class="kit-method" id="cenarios"><div class="container"><span class="eyebrow">ENSAIO DE CENÁRIOS / DECISÕES SOB INCERTEZA</span><h2>Explore cenários: como a empresa pode responder e o caso pode avançar.</h2><p>Quando um caso se prolonga, cada nova informação muda as possibilidades de resolução e a forma de cobrar respostas. Explore os caminhos possíveis, os fatos que disparam cada ação e o que verificar.</p><ScenarioRehearsal caseId={item.id} client:visible/><p class="muted">O tom da denúncia vem dos fatos. Acompanhe a resposta, publique atualizações e registre o que a empresa efetivamente fez — ou deixou de fazer.</p></div></section>
+ <section class="kit-section"><div class="container"><span class="eyebrow">CONTROLE EDITORIAL</span><h2>Quem imprime também responde pelo contexto.</h2><p>O material é um convite à consulta do caso. {kit.organizer_notes}</p><p><strong>Endereço permanente:</strong> <a href={printCaseUrl(item)}>{printCaseUrl(item)}</a></p><div class="kit-method-note"><h3>Boas práticas</h3><p>{printPolicy.facts} {printPolicy.privacy} {printPolicy.distribution}</p></div><a class="button button-dark" href={casePath(item)+'evidencias/'}>Revisar fontes públicas do caso ↗</a></div></section>
+</BaseLayout>

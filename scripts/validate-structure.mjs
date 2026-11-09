@@ -98,5 +98,15 @@ for(const p of precedentRaw.precedents){
  if(!p.sources?.length){console.error('Precedent pSEO page lacks citations',p.id);bad++;}
 }
 
+
+for(const route of ['kit-boca-a-boca/index.astro','cenarios/index.astro','casos/[slug]/kit-boca-a-boca/index.astro','casos/[slug]/cenarios/index.astro']){
+ const f=resolve(src,'pages',route);
+ if(!existsSync(f)){console.error('Missing print/scenario route',route);bad++;}
+ else if(route.includes('[slug]')&&!readFileSync(f,'utf8').includes('getStaticPaths')){console.error('Print/scenario route not data-based',route);bad++;}
+}
+for(const name of ['print-kit.css','scenario-rehearsal.css']){
+ if(!existsSync(resolve(src,'styles',name))){console.error('Missing print CSS',name);bad++;}
+}
+
 if (bad) process.exit(1);
 console.log(`OK: ${files.length} TS/Astro files; imports resolved; ${all.size} planned routes.`);
