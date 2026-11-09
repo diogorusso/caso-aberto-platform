@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
+import CaseNav from '../../../../components/CaseNav.astro';
+import SourceList from '../../../../components/SourceList.astro';
+import { cases, casePath, crumbFor, type Case } from '../../../../lib/cases';
+export function getStaticPaths() {return cases.map(item=>({params:{slug:item.slug},props:{item}}));}
+interface Props {item: Case}
+const {item}=Astro.props;
+---
+<BaseLayout title={`${item.empresa_resumo}: dossiê para imprensa | CasoAberto`} description={`Resumo público do caso ${item.id}, cronologia, perguntas e publicações de origem para consulta de jornalistas e consumidores.`} dateModified={item.status_data} type="article">
+  <Breadcrumbs items={[...crumbFor(item),{label:'Imprensa',href:`${casePath(item)}imprensa/`}]}/>
+  <section class="pagehead"><div class="container"><span class="eyebrow">DOSSIÊ PARA IMPRENSA · {item.id}</span><h1>{item.titulo}</h1><p>Resumo público com cronologia, perguntas objetivas e links de origem para consulta.</p></div></section>
+  <CaseNav item={item} current="imprensa" />
+  <section class="section"><div class="container narrow editorial"><h2>Resumo</h2><p>{item.resumo}</p><p>Os detalhes do histórico estão registrados na <a href={`${casePath(item)}linha-do-tempo/`}>cronologia pública</a>.</p><h2>Perguntas à empresa</h2>
+    <ol class="editor-list">{(item.imprensa_perguntas?.length ? item.imprensa_perguntas : item.pedidos.map(p=>p.titulo)).map(q=><li>{q}</li>)}</ol>
+    <h2>Documentação e publicações</h2><SourceList items={item.fontes}/>
+    <p>Documentos privados integrais, incluindo dados pessoais, não são publicados neste site. A situação descrita corresponde aos relatos e às fontes identificadas, sujeitos a atualização.</p>
+  </div></section>
+</BaseLayout>

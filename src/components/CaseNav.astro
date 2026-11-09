@@ -1,0 +1,18 @@
+---
+import { type Case, casePath } from '../lib/cases';
+interface Props { item: Case; current?: string }
+const { item, current = 'resumo' } = Astro.props;
+const p = casePath(item);
+const tabs = [
+  {key:'resumo', label:'Resumo', href:p},
+  {key:'linha-do-tempo', label:'Cronologia', href:`${p}linha-do-tempo/`},
+  {key:'reclamacoes-publicas', label:'Fontes públicas', href:`${p}reclamacoes-publicas/`},
+  {key:'imprensa', label:'Imprensa', href:`${p}imprensa/`},
+];
+---
+<nav class="case-nav" aria-label="Seções do caso">
+  {tabs.map(tab => <a href={tab.href} aria-current={current===tab.key?'page':undefined}>{tab.label}</a>)}
+</nav>
+<style>
+  .case-nav a[aria-current="page"] {border-bottom-color:var(--accent);color:var(--ink)}
+</style>

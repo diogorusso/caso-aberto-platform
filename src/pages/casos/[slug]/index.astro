@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import CaseNav from '../../../components/CaseNav.astro';
+import CaseIntro from '../../../components/CaseIntro.astro';
+import Requests from '../../../components/Requests.astro';
+import SourceList from '../../../components/SourceList.astro';
+import ShareActions from '../../../components/ShareActions.astro';
+import { cases, casePath, crumbFor, dateBR, type Case } from '../../../lib/cases';
+export function getStaticPaths() { return cases.map(item => ({params:{slug:item.slug},props:{item}})); }
+interface Props { item: Case }
+const {item} = Astro.props;
+const base = casePath(item);
+---
+<BaseLayout title={`${item.titulo} | CasoAberto`} description={item.resumo} dateModified={item.status_data} type="article">
+  <Breadcrumbs items={crumbFor(item)} />
+  <CaseIntro item={item}/>
+  <CaseNav item={item}/>
+  <section class="section"><div class="container two-col">
+    <div><span class="eyebrow">O QUE ACONTECEU</span><h2>Da promessa de entrega à cobrança por solução.</h2><p>{item.resumo}</p><p>O dossiê reúne a cronologia descrita pelo consumidor, os links de origem e os pedidos de resolução. O acompanhamento é datado e pode ser atualizado quando surgir uma resposta verificável.</p><a href={`${base}linha-do-tempo/`} class="text-link">Ler a cronologia completa ↗</a></div>
+    <aside class="info-panel"><span class="eyebrow">ACOMPANHAMENTO</span><h3>{item.status}</h3><p>Status do dossiê em {dateBR(item.status_data)}. A situação pode ter mudado desde a última verificação.</p><div class="divider"></div><strong>Dados do caso</strong><p>{item.categoria} · {item.local}</p>{item.prazo_posterior && <><strong>Previsão posterior relatada</strong><p>{item.prazo_posterior}</p></>}</aside>
+  </div></section>
+  <section class="section section-soft"><div class="container"><span class="eyebrow">PEDIDOS DE SOLUÇÃO</span><h2>O que precisa ser respondido?</h2><Requests items={item.pedidos}/></div></section>
+  <section class="section"><div class="container two-col"><div><span class="eyebrow">PUBLICAÇÕES E DOCUMENTOS</span><h2>Fontes para consulta.</h2><p>Acesse os registros citados no dossiê. Reclamações de outras unidades são identificadas separadamente e podem apresentar atualizações posteriores.</p><a class="button button-dark" href={`${base}reclamacoes-publicas/`}>Ver reclamações públicas ↗</a></div><div class="info-panel"><span class="eyebrow">FONTES DESTE CASO</span><SourceList items={item.fontes}/></div></div></section>
+  <ShareActions />
+</BaseLayout>

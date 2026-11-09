@@ -1,0 +1,17 @@
+---
+import Identity from './Identity.astro';
+import { cases, casePath, dateBR } from '../lib/cases';
+const featured = cases[0];
+const latest = cases.reduce((a, b) => a > b.status_data ? a : b.status_data, '');
+---
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <Identity footer />
+      <p>Histórias que precisam de resposta. Informação pública, fontes abertas e acompanhamento de resoluções.</p>
+    </div>
+    <div><strong>Plataforma</strong><a href="/casos/">Todos os casos</a><a href="/como-funciona/">Como funciona</a><a href="/metodologia/">Metodologia editorial</a></div>
+    {featured && <div><strong>Primeiro caso</strong><a href={casePath(featured)}>{featured.empresa_resumo}</a><a href={`${casePath(featured)}reclamacoes-publicas/`}>Reclamações públicas</a><a href={`${casePath(featured)}imprensa/`}>Dossiê para imprensa</a></div>}
+  </div>
+  <div class="container footer-bottom"><span>© {new Date().getFullYear()} CasoAberto. Projeto independente.</span><span>Última revisão: {dateBR(latest)} · Brasil</span></div>
+</footer>

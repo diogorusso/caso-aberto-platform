@@ -1,0 +1,29 @@
+---
+interface Props { title?: string }
+const { title='Compartilhe o dossiê público e suas fontes' } = Astro.props;
+---
+<section class="share-band">
+  <div class="container">
+    <div><span class="eyebrow light">AJUDE A TORNAR O CASO VISÍVEL</span><h2>Um link para acompanhar tudo.</h2><p>{title}</p></div>
+    <div class="action-row"><button type="button" class="button button-white" data-share>Compartilhar caso</button><button type="button" class="button button-outline" data-whatsapp>Enviar por WhatsApp ↗</button></div>
+  </div>
+</section>
+<script>
+  document.addEventListener('click', async (event) => {
+    const el = event.target;
+    if (!(el instanceof HTMLElement)) return;
+    const button = el.closest('[data-share], [data-whatsapp]');
+    if (!(button instanceof HTMLButtonElement)) return;
+    const url = location.href.split('#')[0];
+    if (button.hasAttribute('data-whatsapp')) {
+      const message = `Acompanhe este dossiê público com cronologia e fontes: ${url}`;
+      window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+      return;
+    }
+    if (navigator.share) {
+      try { await navigator.share({ title: document.title, url }); return; } catch { /* fallback */ }
+    }
+    try { await navigator.clipboard.writeText(url); button.textContent = 'Link copiado ✓'; }
+    catch { window.prompt('Copie o link:', url); }
+  });
+</script>

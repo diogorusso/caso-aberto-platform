@@ -1,0 +1,36 @@
+---
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import '../styles/global.css';
+interface Props { title: string; description: string; dateModified?: string; type?: 'website'|'article' }
+const { title, description, dateModified='2026-11-09', type='website' } = Astro.props;
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : undefined;
+const ld = { '@context':'https://schema.org', '@type': type==='article' ? 'Article':'WebPage', headline:title, name:title, description, inLanguage:'pt-BR', dateModified, isAccessibleForFree:true, ...(canonical ? {url:canonical} : {})};
+---
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#121b18" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="CasoAberto" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {canonical && <><link rel="canonical" href={canonical}/><meta property="og:url" content={canonical}/></>}
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script type="application/ld+json" set:html={JSON.stringify(ld).replace(/</g, "\\u003c")} />
+  </head>
+  <body>
+    <a class="skip" href="#conteudo">Pular para conteúdo</a>
+    <SiteHeader />
+    <main id="conteudo"><slot /></main>
+    <SiteFooter />
+  </body>
+</html>

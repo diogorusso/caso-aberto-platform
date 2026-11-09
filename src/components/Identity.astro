@@ -1,0 +1,8 @@
+---
+interface Props { footer?: boolean }
+const { footer = false } = Astro.props;
+---
+<a href="/" class:list={['identity', { 'footer-identity': footer }]} aria-label="CasoAberto, início">
+  <span class="logo-mark" aria-hidden="true">C<span>•</span></span>
+  <span class="logo-word">CASO<strong>ABERTO</strong></span>
+</a>

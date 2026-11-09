@@ -1,0 +1,8 @@
+---
+import type {Moment} from '../lib/cases';
+interface Props { items: Moment[] }
+const {items} = Astro.props;
+---
+<ol class="timeline-detail">{items.map(entry =>
+  <li><div class="timeline-when">{entry.data}</div><div><h3>{entry.titulo}</h3><p>{entry.texto}</p></div></li>
+)}</ol>

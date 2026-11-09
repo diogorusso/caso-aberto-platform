@@ -1,0 +1,46 @@
+[
+  {
+    "id": "CA-001",
+    "slug": "florense-ipanema-rj-atraso-moveis-planejados",
+    "empresa": "Florense Móveis — Ipanema",
+    "empresa_resumo": "Florense Ipanema",
+    "local": "Rio de Janeiro, RJ",
+    "categoria": "Móveis planejados",
+    "titulo": "Florense Ipanema: R$ 190 mil pagos e entrega de móveis planejados atrasada",
+    "chamada": "R$ 190 mil pagos. O prazo passou. Onde estão os móveis?",
+    "resumo": "Consumidor relata pagamento integral em julho de 2026, prazo de entrega e montagem prometido para a primeira semana de outubro e sucessivos reagendamentos sem conclusão.",
+    "status": "Aguardando solução confirmada",
+    "status_data": "2026-11-09",
+    "valor_brl": 190000,
+    "data_publicacao": "2026-11-03",
+    "prazo_original": "Primeira semana de outubro de 2026",
+    "prazo_posterior": "15 de dezembro de 2026 (previsão mencionada na notificação de 30/10; não é confirmação de entrega)",
+    "cronologia": [
+      {"data":"Julho de 2026", "titulo":"Contrato e pagamento", "texto":"O consumidor informa ter contratado móveis para cozinha e área de serviço e pago R$ 190 mil integralmente. A notificação menciona pagamento em 20 de julho de 2026."},
+      {"data":"Primeira semana de outubro", "titulo":"Entrega e montagem prometidas", "texto":"Prazo originalmente informado pelo consumidor como determinante da contratação."},
+      {"data":"Outubro de 2026", "titulo":"Agendamentos frustrados", "texto":"O relato descreve novas medições e pelo menos dois agendamentos em que a equipe não compareceu após a preparação do imóvel."},
+      {"data":"30/10/2026", "titulo":"Notificação extrajudicial", "texto":"Notificação assinada e fornecida para organização do caso; menciona uma previsão posterior de montagem até 15/12/2026, contestada pelo consumidor."},
+      {"data":"03/11/2026", "titulo":"Publicação no Reclame Aqui", "texto":"O consumidor formalizou publicamente sua experiência e pediu entrega, cronograma e tratamento dos prejuízos."},
+      {"data":"08/11/2026", "titulo":"Procon/RJ", "texto":"Protocolo informado pelo consumidor: 202611080341."}
+    ],
+    "pedidos": [
+      {"titulo":"Cronograma por escrito", "texto":"Informação verificável sobre fabricação, entrega, montagem e os responsáveis por cada etapa."},
+      {"titulo":"Conclusão integral do serviço", "texto":"Entrega e instalação dos itens contratados, com confirmação das datas e da equipe."},
+      {"titulo":"Resposta aos prejuízos", "texto":"Manifestação sobre os custos adicionais que o consumidor afirma ter sofrido e puder comprovar."},
+      {"titulo":"Atualização pública", "texto":"Registro de resposta da empresa e da efetiva conclusão, caso ocorram."}
+    ],
+    "fontes": [
+      {"titulo":"Reclamação principal no Reclame Aqui", "tipo":"Publicação aberta", "url":"https://www.reclameaqui.com.br/florense-moveis/nao-recebi-meus-moveis-planejados-e-a-loja-nao-cumpre-prazos_LaK42QhQaVqRLA5s/"},
+      {"titulo":"Registro na PROTESTE", "tipo":"Link informado pelo reclamante; pode exigir login", "url":"https://www.proteste.org.br/reclame/minhas-reclamacoes/detalhes-da-reclamacao?referenceid=CPTBR02190532-78"},
+      {"titulo":"Outra reclamação envolvendo a unidade de Ipanema (resolvida)", "tipo":"Reclame Aqui — 16/03/2026", "url":"https://www.reclameaqui.com.br/florense-moveis/descumprimento-de-prazo-na-entrega-de-marcenaria-florense_yv_EetTkC951tEH1/"},
+      {"titulo":"Listagem pública de reclamações Florense", "tipo":"Reclame Aqui — consultar situação atual", "url":"https://www.reclameaqui.com.br/empresa/florense-moveis/lista-reclamacoes/"}
+    ],
+    "imprensa_perguntas": [
+      "Qual é a data definitiva, por escrito, para entrega e montagem integral desse pedido?",
+      "Qual o estágio atual de fabricação, expedição, transporte e instalação dos itens?",
+      "Como a empresa pretende evitar novos agendamentos sem comparecimento?",
+      "Como se divide a responsabilidade entre fabricante, revenda e instaladores?",
+      "Qual resposta será oferecida aos custos que o consumidor afirma ter comprovado?"
+    ]
+  }
+]

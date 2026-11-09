@@ -1,0 +1,18 @@
+---
+import { type Case, brl } from '../lib/cases';
+interface Props { item: Case }
+const { item } = Astro.props;
+---
+<section class="case-hero">
+  <div class="container">
+    <div class="case-eyebrow">{item.id} / {item.empresa} / {item.local}</div>
+    <h1>{item.chamada}</h1>
+    <p>{item.resumo}</p>
+    <div class="hero-buttons"><a class="button button-primary" href={`/casos/${item.slug}/linha-do-tempo/`}>Conhecer a cronologia ↗</a><a class="button button-ghost" href={`/casos/${item.slug}/reclamacoes-publicas/`}>Consultar fontes ↗</a></div>
+    <div class="case-metrics">
+      <div><small>Valor informado como pago</small><strong>{item.valor_brl ? brl(item.valor_brl) : 'Não informado'}</strong></div>
+      <div><small>Prazo originalmente contratado</small><strong>{item.prazo_original || 'Consultar cronologia'}</strong></div>
+      <div><small>Estado na última revisão</small><strong>{item.status}</strong></div>
+    </div>
+  </div>
+</section>

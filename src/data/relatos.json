@@ -1,0 +1,125 @@
+[
+  {
+    "id": "caso-001",
+    "data": "2026-11-03",
+    "cidade": "Rio de Janeiro / Ipanema",
+    "tema": "Atraso e entrega",
+    "status": "Não resolvida na consulta inicial",
+    "destaque": true,
+    "titulo": "R$ 190 mil pagos à vista; cliente relata atraso na entrega de móveis da Florense Ipanema",
+    "resumo": "Consumidor relata contrato em julho de 2026, previsão de entrega e instalação na primeira semana de outubro e sucessivos reagendamentos sem comparecimento da equipe. Reclamação pública aberta em novembro.",
+    "url": "https://www.reclameaqui.com.br/florense-moveis/nao-recebi-meus-moveis-planejados-e-a-loja-nao-cumpre-prazos_LaK42QhQaVqRLA5s/",
+    "case_id": "CA-001"
+  },
+  {
+    "id": "ipanema-marco",
+    "data": "2026-03-16",
+    "cidade": "Rio de Janeiro / Ipanema",
+    "tema": "Atraso e entrega",
+    "status": "Resolvida em junho de 2026",
+    "destaque": true,
+    "titulo": "Outra reclamação da Florense Ipanema: prazo descumprido, atraso superior a um mês",
+    "resumo": "Consumidora relatou atraso na marcenaria contratada na unidade de Ipanema; em junho confirmou a chegada do material, elogiou a montagem e encerrou o caso como resolvido.",
+    "url": "https://www.reclameaqui.com.br/florense-moveis/descumprimento-de-prazo-na-entrega-de-marcenaria-florense_yv_EetTkC951tEH1/",
+    "case_id": "CA-001"
+  },
+  {
+    "id": "osasco-setembro",
+    "data": "2026-09-15",
+    "cidade": "Osasco / SP",
+    "tema": "Atraso e entrega",
+    "status": "Respondida",
+    "titulo": "Projeto incompleto, comunicação falha e nova prorrogação de uma porta de armário",
+    "resumo": "Consumidora relatou obra de marcenaria ainda pendente próximo da mudança e mudança de previsão de setembro para novembro.",
+    "url": "https://www.reclameaqui.com.br/florense-moveis/meu-projeto-de-marcenaria-com-a-florense-esta-atrasado-e-o-pos-venda-e-falho_7Hux0SS_oj2h71My/",
+    "case_id": "CA-001"
+  },
+  {
+    "id": "belem-nf",
+    "data": "2026-08-25",
+    "cidade": "Belém / PA",
+    "tema": "Pós-venda",
+    "status": "Consultar atualização na origem",
+    "titulo": "Relato de falta de nota fiscal e prejuízo na abertura de sinistro residencial",
+    "resumo": "Consumidor declarou ter solicitado repetidamente nota fiscal sem retorno oportuno e relatou impacto no prazo de seguro residencial.",
+    "url": "https://www.reclameaqui.com.br/florense-moveis/loja-nao-envia-nota-fiscal-impedindo-cliente-de-acionar-seguro-e-causando-prejuizo_wr3ctqfrsnHm8t_w/",
+    "case_id": "CA-001"
+  },
+  {
+    "id": "niteroi-maio",
+    "data": "2026-05-11",
+    "cidade": "Niterói / RJ",
+    "tema": "Montagem e peças",
+    "status": "Respondida",
+    "titulo": "Entrega parcial, defeitos e dificuldade para concluir instalação",
+    "resumo": "Reclamação da unidade Niterói menciona itens incompletos, divergência em relação ao projeto e falta de retorno aos contatos.",
+    "url": "https://www.reclameaqui.com.br/florense-moveis/falha-na-prestacao-do-servico-e-dificuldade-em-manter-contato-para-resolucao-dos-problemas_Uxew3mjmrE1i_TCT/",
+    "case_id": "CA-001"
+  },
+  {
+    "id": "manaus-abril",
+    "data": "2026-04-28",
+    "cidade": "Manaus / AM",
+    "tema": "Pós-venda",
+    "status": "Em réplica na consulta",
+    "titulo": "Consumidor questiona atendimento de garantia e prazos de substituição",
+    "resumo": "Relato de dificuldade para conseguir prazo de manutenção ou troca de peça em garantia, incluindo alegações de falha no fluxo loja-fábrica.",
+    "url": "https://www.reclameaqui.com.br/florense-moveis/empresa-florense-pessimo-pos-vendas-e-prazos-absurdos_xH8hV6KpEddZi8Pi/",
+    "case_id": "CA-001"
+  },
+  {
+    "id": "sp-abril-posvenda",
+    "data": "2026-04-22",
+    "cidade": "São Paulo / SP",
+    "tema": "Montagem e peças",
+    "status": "Em réplica na consulta",
+    "titulo": "Montagem de portas de geladeira não concluída após nova visita",
+    "resumo": "Cliente relatou atrasos e problemas de acabamento, além de visita de montagem sem finalização do serviço previsto.",
+    "url": "https://www.reclameaqui.com.br/florense-moveis/decepcao-com-o-pos-venda-da-florense-atrasos-problemas-de-acabamento-e-descaso-com-o-cliente_ypQywkm5Wb4NK-Sr/",
+    "case_id": "CA-001"
+  },
+  {
+    "id": "sp-abril-quitacao",
+    "data": "2026-04-02",
+    "cidade": "São Paulo / SP",
+    "tema": "Atraso e entrega",
+    "status": "Respondida",
+    "titulo": "Quitação integral e relato de entregas parciais e pendências meses após o prazo",
+    "resumo": "Consumidor afirmou ter contratado em novembro de 2024, com conclusão esperada até setembro de 2025, e relatou pendências ainda em abril de 2026.",
+    "url": "https://www.reclameaqui.com.br/florense-moveis/atraso-na-entrega-e-ma-qualidade-de-moveis-planejados-florense_QshPtZZwh8ytpyQe/",
+    "case_id": "CA-001"
+  },
+  {
+    "id": "recife-dezembro",
+    "data": "2025-12-03",
+    "cidade": "Recife / PE",
+    "tema": "Atraso e entrega",
+    "status": "Respondida",
+    "titulo": "Contrato quitado em julho de 2025; consumidor relata atraso e erros no projeto",
+    "resumo": "Segundo reclamação, contrato foi quitado em julho de 2025, mas em dezembro não havia data definida para entrega e montagem.",
+    "url": "https://www.reclameaqui.com.br/florense-moveis/atraso-na-entrega-e-erros-no-projeto-da-florense-apos-quitacao-total-do-contrato_A4zPx-gUntF0_Uye/",
+    "case_id": "CA-001"
+  },
+  {
+    "id": "poa-junho",
+    "data": "2025-06-04",
+    "cidade": "Porto Alegre / RS",
+    "tema": "Montagem e peças",
+    "status": "Em réplica na consulta",
+    "titulo": "Prazo de montagem e peças faltantes após meses de espera",
+    "resumo": "Consumidora relatou aquisição em setembro de 2024, atraso na montagem até junho de 2025 e portas ainda ausentes, com respostas posteriores da marca.",
+    "url": "https://www.reclameaqui.com.br/florense-moveis/atraso-na-entrega-e-montagem-de-moveis-planejados-florense_Z8xlPdddOH4HTsDj/",
+    "case_id": "CA-001"
+  },
+  {
+    "id": "sp-abril-2025",
+    "data": "2025-04-04",
+    "cidade": "São Paulo / SP",
+    "tema": "Atraso e entrega",
+    "status": "Respondida",
+    "titulo": "Reclamação sobre descumprimento de prazos e falta de cronograma na Alameda Gabriel",
+    "resumo": "Cliente descreveu sucessivas postergações de projeto, entrega, ajustes e montagem; a empresa publicou resposta informando contato com a franquia.",
+    "url": "https://www.reclameaqui.com.br/florense-moveis/florense-nao-cumpre-prazo-de-entrega_wwXKM4OsCEzqYGkl/",
+    "case_id": "CA-001"
+  }
+]

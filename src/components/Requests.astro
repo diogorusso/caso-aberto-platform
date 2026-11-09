@@ -1,0 +1,6 @@
+---
+import type {Request} from '../lib/cases';
+interface Props { items: Request[] }
+const {items} = Astro.props;
+---
+<ol class="request-grid">{items.map(item => <li><strong>{item.titulo}</strong><span>{item.texto}</span></li>)}</ol>

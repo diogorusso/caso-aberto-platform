@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+---
+<BaseLayout title="Metodologia editorial e fontes | CasoAberto" description="Como CasoAberto estrutura reclamações, registros públicos, atualizações, fontes e resolução de casos de consumidores.">
+  <Breadcrumbs items={[{label:'Início',href:'/'},{label:'Metodologia',href:'/metodologia/'}]}/>
+  <section class="pagehead"><div class="container"><span class="eyebrow">METODOLOGIA EDITORIAL</span><h1>A força de um caso está no que pode ser verificado.</h1><p>Publicamos dossiês de consumo em linguagem clara e com indicação de origem. Uma atualização deve ser tão visível quanto a reclamação inicial.</p></div></section>
+  <section class="section"><div class="container narrow editorial"><h2>Como registramos informações</h2><p>Identificamos o que é relato de consumidor, o que consta em fonte pública e o que depende de confirmação. Publicações de terceiros recebem links, datas, localidades e status quando disponíveis.</p><h2>Atualizações e respostas</h2><p>Um caso pode receber resposta, correção ou confirmação de resolução. Registramos novas informações e indicamos quando os fatos foram consultados.</p><h2>Privacidade e publicação</h2><p>Documentos privados com dados pessoais não são publicados integralmente. Utilizamos apenas resumos necessários à compreensão e identificadores de protocolos quando apropriado.</p><h2>Independência</h2><p>O CasoAberto é um projeto independente, não afiliado às empresas envolvidas nem às plataformas citadas.</p><a class="text-link" href="/casos/">Conhecer os casos ↗</a></div></section>
+</BaseLayout>

@@ -1,0 +1,8 @@
+---
+import type {Source} from '../lib/cases';
+interface Props { items: Source[] }
+const {items} = Astro.props;
+---
+{items.length ? <ul class="source-links">{items.map(src =>
+  <li><a href={src.url} target="_blank" rel="noopener noreferrer">{src.titulo} ↗</a><span>{src.tipo || 'Fonte pública'}</span></li>
+)}</ul> : <p>Não há fontes públicas vinculadas neste momento.</p>}
