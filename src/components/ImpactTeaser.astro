@@ -4,6 +4,8 @@ import {type Brand,type BrandUnit} from '../lib/brands';
 import {impactForSelection,caseImpactPath,brandImpactPath,unitImpactPath,brandSnapshot} from '../lib/impact';
 import SectionBlock from './ui/SectionBlock.astro';
 import KpiTile from './ui/KpiTile.astro';
+import { buttonVariants } from './ui/button';
+import { cn } from '../lib/utils';
 interface Props {caseItem?:Case;brand?:Brand;unit?:BrandUnit}
 const {caseItem,brand,unit}=Astro.props;
 const data=impactForSelection({caseItem,brand,unit});
@@ -12,7 +14,7 @@ const title=caseItem?caseItem.empresa_resumo:unit?.name||brand?.name||'Arquivo';
 const snapshot=brand&&!unit&&!caseItem?brandSnapshot(brand):null;
 ---
 <SectionBlock id="impacto-em-numeros" variant="editorial" eyebrow={`RADAR DE EXPOSIÇÃO · ${title}`} title="O tamanho do problema, em números." description="Dinheiro envolvido, tempo transcorrido, reclamações e fontes — com datas, recortes e documentação.">
-  <div class="ca-kpi-grid ca-kpi-grid--4">
+  <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
     <KpiTile label="Valor já pago, segundo consumidor(es)" value={data.reportedPaymentTotal>0?brl(data.reportedPaymentTotal):'Sem valor informado'}/>
     <KpiTile label="Reclamações públicas neste recorte" value={data.indexedReportCount.toLocaleString('pt-BR')} note="Inclui relatos resolvidos"/>
     <KpiTile label="URLs externas distintas" value={data.sourceCount.toLocaleString('pt-BR')} note="Reclamações, cadastros e publicações"/>
@@ -25,6 +27,6 @@ const snapshot=brand&&!unit&&!caseItem?brandSnapshot(brand):null;
     </div>
   )}
   <div class="impact-actions">
-    <a class="button button-dark" href={target}>Abrir painel completo ↗</a>
+    <a class={cn(buttonVariants({ variant: 'default' }))} href={target}>Abrir painel completo ↗</a>
   </div>
 </SectionBlock>
