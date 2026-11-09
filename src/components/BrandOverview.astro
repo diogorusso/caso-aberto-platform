@@ -26,7 +26,7 @@ const canonicalPath=unit?unitPath(brand,unit):brandPath(brand);
  </div></section>
 <ImpactTeaser brand={brand} unit={unit}/>
 <CompanyCaseMatrix brand={brand} unit={unit}/>
-<CompanyProfiles only={scopedProfiles} title={unit?'Cadastro da unidade em fontes públicas':'Pessoas jurídicas vinculadas à marca'} />
+<CompanyProfiles only={scopedProfiles} hidePeople={Boolean(unit)} title={unit?'Cadastro da unidade em fontes públicas':'Pessoas jurídicas vinculadas à marca'} />
 <CompanyRecognitionGallery brand={brand} unit={unit}/>
 <CompanyRanking currentBrand={brand.slug} currentUnit={unit?.slug}/>
 {!unit&&brand.units.length>0&&<section class="section"><div class="container"><span class="eyebrow">UNIDADES</span><h2>Pesquise a unidade específica</h2><div class="brand-unit-list">{brand.units.filter(u=>u.published).map(u=><a href={unitPath(brand,u)}><strong>{u.name}</strong><span>{u.location} · {statusLabel(u.verdict.status)}</span></a>)}</div></div></section>}

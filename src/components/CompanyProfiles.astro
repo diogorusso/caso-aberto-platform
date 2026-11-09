@@ -1,14 +1,14 @@
 ---
 import profiles from '../data/company-profiles.json';
-interface Props { only?: string[]; title?: string }
-const { only, title='Mapa societário e cadastros das empresas' } = Astro.props;
+interface Props { only?: string[]; title?: string; hidePeople?: boolean }
+const { only, title='Mapa societário e cadastros das empresas', hidePeople=false } = Astro.props;
 const entities=profiles.entities.filter(p=>!only||only.includes(p.id));
 const brl=(n:number|null)=> n==null ? 'Não informado no levantamento' : new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:2}).format(n);
 ---
 <section class="company-registry section" id="perfis-cnpj">
  <div class="container">
   <div class="registry-heading"><span class="eyebrow">CADASTRO EMPRESARIAL · RECEITA FEDERAL / QSA</span><h2>{title}</h2>
-  <p>Fichas cadastrais com referências. O quadro de sócios e administradores indica relações formais, não identifica automaticamente o responsável pelo pedido de Ipanema. Emita o comprovante oficial atualizado antes de instruir um processo.</p>
+  <p>Fichas cadastrais com referências. O quadro de sócios e administradores indica relações formais, não identifica automaticamente a parte responsável por um contrato específico. Emita o comprovante oficial atualizado antes de instruir um processo.</p>
   <a class="text-link" href={profiles.registry_verification_url} target="_blank" rel="noopener noreferrer">Consultar CNPJ e QSA na Receita Federal ↗</a></div>
   <div class="registry-list">{entities.map((p)=><article class:list={['registry-card',{'registry-historical':p.id==='brasmoveis-historico'}]} id={'cnpj-' + p.id}>
    <header><div><span class="eyebrow">{p.scope}</span><h3>{p.name}</h3><p>{p.relationship}</p></div><div class="registry-cnpj"><small>CNPJ</small><strong>{p.cnpj}</strong><small>{p.registration}</small></div></header>
@@ -21,7 +21,8 @@ const brl=(n:number|null)=> n==null ? 'Não informado no levantamento' : new Int
     {p.tax_regime && <div><dt>Regime tributário cadastrado</dt><dd>{p.tax_regime}</dd></div>}
    </dl>
    {p.additional_cnaes && <div class="registry-sub"><h4>Atividades secundárias</h4><ul>{p.additional_cnaes.map(s=><li>{s}</li>)}</ul></div>}
-   {p.qsa.length>0 && <div class="registry-sub"><h4>Quadro de sócios e administradores — cadastro consultado</h4><div class="registry-qsa">{p.qsa.map(q=><div><strong>{q.name}</strong><span>{q.role}{q.entered ? ' · desde ' + q.entered.split('-').reverse().join('/') : ''}</span></div>)}</div></div>}
+   {!hidePeople && p.qsa.length>0 && <div class="registry-sub"><h4>Quadro de sócios e administradores — cadastro consultado</h4><div class="registry-qsa">{p.qsa.map(q=><div><strong>{q.name}</strong><span>{q.role}{q.entered ? ' · desde ' + q.entered.split('-').reverse().join('/') : ''}</span></div>)}</div></div>}
+   {hidePeople&&p.qsa.length>0&&<div class="registry-sub"><p>Os administradores de um cadastro no endereço comercial não serão atribuídos a este caso até a conferência dos CNPJs presentes no contrato. A ficha cadastral original continua acessível pela fonte.</p></div>}
    <div class="registry-sub"><h4>Notas de verificação</h4><ul>{p.notes.map(n=><li>{n}</li>)}</ul></div>
    <footer><strong>Ficha individual e fontes</strong><a href={"/cnpj/"+p.cnpj.replace(/\D/g,"")+"/"}>Ver perfil CNPJ com QSA e vínculos ↗</a>{p.sources.map(s=><a href={s.url} target="_blank" rel="noopener noreferrer">{s.label} ↗</a>)}</footer>
   </article>)}</div>

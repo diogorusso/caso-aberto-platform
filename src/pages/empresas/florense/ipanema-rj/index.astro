@@ -29,7 +29,7 @@ const schema={'@context':'https://schema.org','@type':'WebPage',name:'Florense I
  </div></section>
  <CompanyCaseMatrix brand={brand} unit={unit}/>
  <CaseContractScope caseId={item.id} compact/>
- <CompanyProfiles only={unit.company_profile_ids} title="Pessoa jurídica cadastrada no endereço da loja — não necessariamente a contratada"/>
+ <CompanyProfiles only={unit.company_profile_ids} hidePeople title="Pessoa jurídica cadastrada no endereço da loja — não necessariamente a contratada"/>
  <CompanyRecognitionGallery brand={brand} unit={unit}/>
  <section class="section company-context-note"><div class="container narrow"><span class="eyebrow">ALERTA DOCUMENTADO · ROMA MOBILI</span><h2>O risco de ficar sem móveis e sem recursos exige atenção.</h2><p>A falência da Roma Mobili é um fato judicial relacionado a outra empresa. A comparação informa sobre consequências possíveis no mercado de móveis; não comprova que a Florense esteja falindo. A recomendação editorial deste perfil decorre dos fatos atribuídos ao caso Ipanema.</p><a class="text-link" href={casePath(item)+'risco-roma-mobili/'}>Conferir processo judicial e comparação completa ↗</a></div></section>
  <CompanyRanking currentBrand={brand.slug} currentUnit={unit.slug} heading="Como Ipanema aparece nas avaliações editoriais"/>
