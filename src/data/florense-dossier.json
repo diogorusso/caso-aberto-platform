@@ -1,0 +1,226 @@
+{
+  "atualizado_em": "2026-11-09",
+  "case_id": "CA-001",
+  "resumo": "Dossiê corporativo da Florense: fabricante, rede de franquias, unidade de Ipanema, administradores públicos, indicadores setoriais e reclamações publicadas. Dados consultados em novembro de 2026.",
+  "entidades": [
+    {
+      "nome": "Fábrica de Móveis Florense Ltda.",
+      "papel": "Fabricante e titular da operação industrial associada à marca",
+      "cnpj": "89.962.294/0001-46",
+      "situacao": "Ativa no cadastro consultado",
+      "abertura": "01/08/1966",
+      "fundacao_marca": "1953",
+      "capital": "R$ 32.705.959",
+      "cnae": "31.01-2/00 — fabricação de móveis com predominância de madeira",
+      "local": "Flores da Cunha, RS",
+      "fonte": "https://casadosdados.com.br/solucao/cnpj/fabrica-de-moveis-florense-ltda-89962294000146"
+    },
+    {
+      "nome": "Ipanema Representações e Serviços de Móveis Ltda.",
+      "papel": "Empresa com endereço comercial coincidente com a unidade Florense Ipanema; mencionada na reclamação PROTESTE",
+      "cnpj": "39.526.757/0001-59",
+      "situacao": "Ativa na consulta de 13/09/2026",
+      "abertura": "22/10/2020",
+      "capital": "R$ 10.000",
+      "cnae": "46.15-0/00 — representação comercial de móveis e artigos domésticos",
+      "local": "Rua Joana Angélica, 169 — Ipanema, Rio de Janeiro, RJ",
+      "fonte": "https://casadosdados.com.br/solucao/cnpj/ipanema-representacoes-e-servicos-de-moveis-ltda-39526757000159"
+    }
+  ],
+  "rede": [
+    {
+      "valor": "1953",
+      "rotulo": "Fundação da marca",
+      "detalhe": "Data informada pela própria Florense.",
+      "fonte": "https://www.florense.com.br/desde-1953"
+    },
+    {
+      "valor": "55",
+      "rotulo": "Lojas franqueadas no Brasil",
+      "detalhe": "Número apresentado por Felipe Corradi na ForMóbile 2026.",
+      "fonte": "https://digital.formobile.com.br/gestao/73-anos-de-historia-design-e-inspiracao-no-mercado-moveleiro-brasileiro/"
+    },
+    {
+      "valor": "14",
+      "rotulo": "Lojas nas Américas",
+      "detalhe": "Além das 55 lojas no Brasil, segundo apresentação na ForMóbile 2026.",
+      "fonte": "https://digital.formobile.com.br/gestao/73-anos-de-historia-design-e-inspiracao-no-mercado-moveleiro-brasileiro/"
+    },
+    {
+      "valor": "~2.500",
+      "rotulo": "Pessoas na rede de franquias",
+      "detalhe": "Estimativa apresentada na ForMóbile 2026; não equivale ao quadro de empregados da fábrica.",
+      "fonte": "https://digital.formobile.com.br/gestao/73-anos-de-historia-design-e-inspiracao-no-mercado-moveleiro-brasileiro/"
+    },
+    {
+      "valor": "+12%",
+      "rotulo": "Desempenho frente à meta",
+      "detalhe": "Afirmação atribuída a Gelson Castellan sobre 2026 em entrevista de 13/09/2026; não é dado financeiro auditado.",
+      "fonte": "https://spacofm.com.br/setor-moveleiro-vive-momento-de-contrastes-em-meio-a-crise-do-grande-varejo/"
+    },
+    {
+      "valor": "68 mil m²",
+      "rotulo": "Área fabril construída",
+      "detalhe": "Área apresentada por Felipe Corradi na ForMóbile Digital, setembro de 2026.",
+      "fonte": "https://digital.formobile.com.br/gestao/73-anos-de-historia-design-e-inspiracao-no-mercado-moveleiro-brasileiro/"
+    },
+    {
+      "valor": "+500",
+      "rotulo": "Tipos de superfície para acabamentos",
+      "detalhe": "Número declarado pelo diretor industrial na palestra de 2026.",
+      "fonte": "https://digital.formobile.com.br/gestao/73-anos-de-historia-design-e-inspiracao-no-mercado-moveleiro-brasileiro/"
+    },
+    {
+      "valor": "30–40%",
+      "rotulo": "Trabalho artesanal na mão de obra fabril",
+      "detalhe": "Estimativa declarada na cobertura industrial; não é índice auditado.",
+      "fonte": "https://digital.formobile.com.br/gestao/73-anos-de-historia-design-e-inspiracao-no-mercado-moveleiro-brasileiro/"
+    }
+  ],
+  "reclamacoes": [
+    {
+      "valor": "383",
+      "rotulo": "Reclamações ativas no histórico da marca",
+      "detalhe": "Total mostrado na listagem pública do Reclame Aqui em 09/11/2026; reúne diferentes datas, localidades e situações.",
+      "fonte": "https://www.reclameaqui.com.br/empresa/florense-moveis/lista-reclamacoes/"
+    },
+    {
+      "valor": "7",
+      "rotulo": "Recebidas no recorte de 6 meses",
+      "detalhe": "Painel Reclame Aqui de 01/05/2026 a 31/10/2026; período distinto do histórico completo.",
+      "fonte": "https://www.reclameaqui.com.br/empresa/florense-moveis/"
+    },
+    {
+      "valor": "100%",
+      "rotulo": "Respondidas no mesmo recorte",
+      "detalhe": "Taxa de resposta exibida no painel de 01/05/2026 a 31/10/2026; resposta não é sinônimo de resolução.",
+      "fonte": "https://www.reclameaqui.com.br/empresa/florense-moveis/"
+    },
+    {
+      "valor": "4",
+      "rotulo": "Reclamações avaliadas no recorte",
+      "detalhe": "Número insuficiente para a plataforma definir reputação no período exibido.",
+      "fonte": "https://www.reclameaqui.com.br/empresa/florense-moveis/"
+    }
+  ],
+  "administradores": [
+    {
+      "nome": "Mateus Augusto Corradi",
+      "papel": "CEO da Florense; administrador cadastral da fabricante",
+      "escopo": "Fabricante / grupo",
+      "fonte": "https://pt.linkedin.com/posts/florense_florenseoficial-decor-arquiteturadeinteriores-activity-7033396057233338369-KifU"
+    },
+    {
+      "nome": "Felipe Luís Corradi",
+      "papel": "Diretor industrial; administrador cadastral da fabricante",
+      "escopo": "Fabricante / operação industrial",
+      "fonte": "https://digital.formobile.com.br/gestao/73-anos-de-historia-design-e-inspiracao-no-mercado-moveleiro-brasileiro/",
+      "perfil": "https://br.linkedin.com/in/felipe-corradi-a27b449b"
+    },
+    {
+      "nome": "Gelson Castellan",
+      "papel": "Presidente do Conselho de Acionistas, conforme comunicação corporativa; entrevistado em setembro de 2026",
+      "escopo": "Grupo / conselho",
+      "fonte": "https://pt.linkedin.com/posts/florense_florenseoficial-decor-arquiteturadeinteriores-activity-7033396057233338369-KifU"
+    },
+    {
+      "nome": "Roberta Castellan",
+      "papel": "Diretora criativa; administradora cadastral da fabricante",
+      "escopo": "Fabricante / marca",
+      "fonte": "https://pt.linkedin.com/posts/florense_florenseoficial-decor-arquiteturadeinteriores-activity-7033396057233338369-KifU"
+    },
+    {
+      "nome": "Ézio José Ribeiro de Salles",
+      "papel": "Diretor jurídico citado pela marca em publicação anterior; administrador cadastral da fabricante",
+      "escopo": "Fabricante / área jurídica",
+      "fonte": "https://pt.linkedin.com/posts/florense_florenseoficial-decor-arquiteturadeinteriores-activity-7087884628681703425-nl4u"
+    },
+    {
+      "nome": "Adolfo Gilmar Fuzinatto",
+      "papel": "Sócio-administrador registrado da Ipanema Representações e Serviços de Móveis Ltda.",
+      "escopo": "Empresa no endereço da unidade Ipanema",
+      "fonte": "https://casadosdados.com.br/solucao/cnpj/ipanema-representacoes-e-servicos-de-moveis-ltda-39526757000159"
+    },
+    {
+      "nome": "Silvana Ines de Azambuja Fuzinatto",
+      "papel": "Sócia-administradora registrada da Ipanema Representações e Serviços de Móveis Ltda.",
+      "escopo": "Empresa no endereço da unidade Ipanema",
+      "fonte": "https://casadosdados.com.br/solucao/cnpj/ipanema-representacoes-e-servicos-de-moveis-ltda-39526757000159"
+    }
+  ],
+  "declaracoes": [
+    {
+      "data": "14/09/2026",
+      "origem": "Spaço FM — reportagem com Gelson Castellan",
+      "conteudo": "A entrevista relata desempenho aproximadamente 12% acima da meta para 2026 e produção comprometida até dezembro; pedidos da rede feitos a partir de agosto teriam entrega prevista a partir de janeiro de 2027.",
+      "pergunta": "Se a programação de produção estava integralmente comprometida, qual posição de fábrica foi reservada ao pedido de Ipanema pago em julho, cuja entrega havia sido prometida para a primeira semana de outubro?",
+      "fonte": "https://spacofm.com.br/setor-moveleiro-vive-momento-de-contrastes-em-meio-a-crise-do-grande-varejo/"
+    },
+    {
+      "data": "03/09/2026",
+      "origem": "ForMóbile Digital — apresentação de Felipe Corradi",
+      "conteudo": "Segundo a apresentação, a rede contava com 55 lojas no Brasil e 14 nas Américas, cerca de 2.500 pessoas vinculadas à rede e modelo de franquias implantado em 1988.",
+      "pergunta": "Quais mecanismos contratuais e de acompanhamento garantem que o padrão prometido pela marca seja cumprido pela unidade franqueada de Ipanema?",
+      "fonte": "https://digital.formobile.com.br/gestao/73-anos-de-historia-design-e-inspiracao-no-mercado-moveleiro-brasileiro/"
+    },
+    {
+      "data": "03/09/2026",
+      "origem": "ForMóbile Digital — produção sob medida",
+      "conteudo": "O diretor industrial descreveu fabricação sob demanda, sem estoque de produtos prontos, com 68 mil m² de área construída e diversos processos de acabamento, incluindo manufatura artesanal.",
+      "pergunta": "Qual era o estágio real da fabricação do pedido de Ipanema quando as equipes marcaram a instalação para o início de outubro?",
+      "fonte": "https://digital.formobile.com.br/gestao/73-anos-de-historia-design-e-inspiracao-no-mercado-moveleiro-brasileiro/"
+    }
+  ],
+  "divergencias": [
+    {
+      "titulo": "Quem é a contratada?",
+      "detalhe": "O Reclame Aqui identifica Brasmóveis Serviços de Instalações de Móveis Ltda.; a reclamação PROTESTE menciona Fábrica de Móveis Florense Ltda. e Ipanema Representações e Serviços de Móveis Ltda. O cadastro de outra sociedade com o nome Brasmóveis registra matrizes/filiais históricas baixadas; nome semelhante não demonstra identidade, sucessão nem responsabilidade. Contrato, CNPJ da nota fiscal e comprovante de pagamento devem esclarecer a cadeia contratual.",
+      "fontes": [
+        "https://www.reclameaqui.com.br/florense-moveis/nao-recebi-meus-moveis-planejados-e-a-loja-nao-cumpre-prazos_LaK42QhQaVqRLA5s/",
+        "https://www.proteste.org.br/reclame/lista-de-reclamacoes-publicas/reclamacoes-publicas?referenceid=CPTBR02190532-78",
+        "https://www.econodata.com.br/consulta-empresa/87655791000508-brasmoveis-servicos-de-instalacoes-de-moveis-ltda"
+      ]
+    },
+    {
+      "titulo": "Onde está o pedido na fábrica?",
+      "detalhe": "A declaração de setembro sobre fila de produção até janeiro deve ser confrontada com a data em que o pedido de julho entrou na programação, se o projeto executivo foi validado e quais itens estavam efetivamente fabricados no início de outubro.",
+      "fontes": [
+        "https://spacofm.com.br/setor-moveleiro-vive-momento-de-contrastes-em-meio-a-crise-do-grande-varejo/"
+      ]
+    },
+    {
+      "titulo": "O que significa o capital social?",
+      "detalhe": "R$ 32,7 milhões é o capital social cadastrado da fabricante, enquanto R$ 10 mil é o da Ipanema Representações. Capital social não representa saldo bancário, liquidez, patrimônio disponível ou capacidade de cumprir um contrato específico.",
+      "fontes": [
+        "https://casadosdados.com.br/solucao/cnpj/fabrica-de-moveis-florense-ltda-89962294000146",
+        "https://casadosdados.com.br/solucao/cnpj/ipanema-representacoes-e-servicos-de-moveis-ltda-39526757000159"
+      ]
+    }
+  ],
+  "roma": {
+    "titulo": "O alerta Roma Mobili",
+    "numero": "3016855-24.2025.8.19.0001",
+    "pedido": "17/10/2025",
+    "decretacao": "19/12/2025",
+    "fonte": "https://gomesdemattos.com.br/admjud/lista-de-processos/roma-mobili-industria-ltda-e-rm-projetos-e-montagens-de-moveis-ltda-epp/",
+    "video": "https://www.instagram.com/reel/DVr3jaCkdWq/"
+  },
+  "canais": [
+    {
+      "nome": "Florense — localizador oficial da loja de Ipanema",
+      "url": "https://florense.com.br/franquias/ipanema"
+    },
+    {
+      "nome": "Florense — website oficial",
+      "url": "https://www.florense.com.br/"
+    },
+    {
+      "nome": "Reclame Aqui — perfil da marca",
+      "url": "https://www.reclameaqui.com.br/empresa/florense-moveis/"
+    },
+    {
+      "nome": "Florense — LinkedIn corporativo",
+      "url": "https://br.linkedin.com/company/florense"
+    }
+  ]
+}

@@ -117,6 +117,7 @@ const related = reportsFor(item).filter(r => r.destaque || (r.cidade||'').includ
     </div>
   </div></section>
 
+  {item.id === 'CA-001' && <section class="dossier-feature"><div class="container"><span class="eyebrow">INVESTIGAÇÃO CORPORATIVA · FLORENSE</span><h2>383 reclamações no histórico. Rede com 69 lojas declaradas. Quem responde pelo pedido?</h2><p>Reunimos CNPJs, estrutura industrial, empresa no endereço de Ipanema, administradores, capital social e declarações executivas. O histórico de reclamações abrange diferentes unidades e períodos.</p><div class="feature-links"><a class="button button-dark" href="/empresas/florense/">Ler dossiê corporativo ↗</a><a class="button button-subtle" href="/empresas/florense/ipanema-rj/">Empresa em Ipanema ↗</a></div></div></section>}
   <div id="apoiar"><ParticipationCTA item={item} /></div>
   <ShareActions />
 </BaseLayout>

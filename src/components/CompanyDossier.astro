@@ -1,0 +1,50 @@
+---
+import dossier from '../data/florense-dossier.json';
+const { entidades, rede, reclamacoes, administradores, declaracoes, divergencias, canais } = dossier;
+---
+<section class="dossier-shell">
+  <div class="container">
+    <div class="dossier-heading">
+      <span class="eyebrow">OBSERVATÓRIO DE EMPRESAS · PESQUISA PÚBLICA</span>
+      <h2>Florense em números, registros e declarações públicas.</h2>
+      <p>Um panorama da fabricante, rede franqueada e histórico de atendimento. Cada dado tem origem para consulta. Atualizado em <strong>09/11/2026</strong>.</p>
+    </div>
+    <div class="dossier-stat-grid">
+      {reclamacoes.map(s=><article class="dossier-stat">
+        <strong>{s.valor}</strong><span>{s.rotulo}</span><p>{s.detalhe}</p><a href={s.fonte} target="_blank" rel="noopener noreferrer">Fonte oficial da métrica ↗</a>
+      </article>)}
+    </div>
+    <div class="dossier-heading dossier-subhead"><span class="eyebrow">ESTRUTURA DO NEGÓCIO</span><h2>Quem fabrica, quem comercializa e quem instala?</h2></div>
+    <div class="dossier-entities">
+      {entidades.map(e=><article class="dossier-box">
+        <span class="eyebrow">{e.papel}</span><h3>{e.nome}</h3><dl>
+          <div><dt>CNPJ</dt><dd>{e.cnpj}</dd></div>
+          <div><dt>Situação consultada</dt><dd>{e.situacao}</dd></div>
+          <div><dt>Início do cadastro</dt><dd>{e.abertura}</dd></div>
+          <div><dt>Capital social registrado</dt><dd>{e.capital}</dd></div>
+          <div><dt>Atividade principal</dt><dd>{e.cnae}</dd></div>
+          <div><dt>Localidade</dt><dd>{e.local}</dd></div>
+        </dl><a class="text-link" href={e.fonte} rel="noopener noreferrer" target="_blank">Consultar cadastro ↗</a>
+      </article>)}
+    </div>
+    <div class="dossier-heading dossier-subhead"><span class="eyebrow">ESCALA DECLARADA PELA MARCA</span><h2>Uma rede nacional com presença internacional.</h2></div>
+    <div class="dossier-stat-grid">
+      {rede.map(s=><article class="dossier-stat"><strong>{s.valor}</strong><span>{s.rotulo}</span><p>{s.detalhe}</p><a href={s.fonte} target="_blank" rel="noopener noreferrer">Ver publicação ↗</a></article>)}
+    </div>
+    <div class="dossier-heading dossier-subhead"><span class="eyebrow">DECLARAÇÕES PÚBLICAS × ENTREGA CONTESTADA</span><h2>O que a empresa disse. O que o consumidor precisa saber.</h2></div>
+    <div class="dossier-declarations">
+      {declaracoes.map(d=><article class="dossier-box"><div class="dossier-date">{d.data} · {d.origem}</div><p>{d.conteudo}</p><h3>Pergunta que permanece</h3><p>{d.pergunta}</p><a class="text-link" href={d.fonte} target="_blank" rel="noopener noreferrer">Ler a publicação ↗</a></article>)}
+    </div>
+    <div class="dossier-heading dossier-subhead"><span class="eyebrow">RESPONSABILIDADE INSTITUCIONAL</span><h2>Direção e administradores identificados publicamente.</h2><p>Cargos e vínculos extraídos de comunicações corporativas e cadastros públicos. Identificação profissional não equivale a responsabilização individual pelo pedido.</p></div>
+    <div class="dossier-people">
+      {administradores.map(a=><article class="dossier-person"><strong>{a.nome}</strong><span>{a.papel}</span><small>{a.escopo}</small><div><a href={a.fonte} target="_blank" rel="noopener noreferrer">Fonte do vínculo ↗</a>{a.perfil && <a href={a.perfil} target="_blank" rel="noopener noreferrer">Perfil profissional ↗</a>}</div></article>)}
+    </div>
+    <div class="dossier-heading dossier-subhead"><span class="eyebrow">PONTOS A ESCLARECER</span><h2>Questões societárias e operacionais abertas.</h2></div>
+    <div class="dossier-questions">
+      {divergencias.map((d,i)=><article class="dossier-box"><span class="eyebrow">QUESTÃO 0{i+1}</span><h3>{d.titulo}</h3><p>{d.detalhe}</p><div class="dossier-links">{d.fontes.map((f,j)=><a href={f} target="_blank" rel="noopener noreferrer">Documento {j+1} ↗</a>)}</div></article>)}
+    </div>
+    <div class="dossier-heading dossier-subhead"><span class="eyebrow">CANAIS INSTITUCIONAIS</span><h2>Fontes e canais de manifestação da empresa.</h2></div>
+    <div class="dossier-links">{canais.map(c=><a href={c.url} target="_blank" rel="noopener noreferrer">{c.nome} ↗</a>)}</div>
+    <p class="dossier-method">O cadastro empresarial, as declarações executivas e os indicadores do Reclame Aqui medem coisas distintas. Não se pode inferir solvência, falência ou causalidade entre indicadores sem documentação específica. O objetivo desta página é expor os registros e permitir escrutínio público.</p>
+  </div>
+</section>

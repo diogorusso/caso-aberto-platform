@@ -97,3 +97,9 @@ Keep each complaint's source, date, geographic scope, status and updates distinc
 - SEO has canonical URLs when the verified site origin is configured. Noindex unpublished drafts through content workflow (not by publishing them to `main`).
 
 **Status:** live on GitHub (`diogorusso/caso-aberto-platform`) and Cloudflare Pages (`https://casoaberto.pages.dev`). Git auto-builds are not connected yet — current deploys use Wrangler direct upload.
+
+## Dossiê corporativo Florense — pesquisa pública (09/11/2026)
+
+`src/data/florense-dossier.json` concentra o cadastro de fabricantes/empresa no endereço da loja de Ipanema, administradores profissionais, rede de franquias, métricas históricas de reclamações, estrutura fabril e declarações públicas com URLs de origem. A página `/empresas/florense/` exibe esses dados por meio de `src/components/CompanyDossier.astro` e `src/styles/dossier.css`. A página `/empresas/florense/ipanema-rj/` expõe dados específicos da unidade e divergências nas razões sociais reportadas.
+
+Os números do Reclame Aqui usam recortes temporais distintos: histórico da marca e período de seis meses, e não representam automaticamente a situação da franqueada Ipanema. Capital social é valor cadastral, não caixa. A documentação da falência da Roma é sobre outra empresa.

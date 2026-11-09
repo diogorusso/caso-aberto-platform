@@ -63,8 +63,8 @@
           "published_at": "2026-09-03"
         }
       ],
-      "linkedin_url": null,
-      "notes": null
+      "linkedin_url": "https://br.linkedin.com/in/felipe-corradi-a27b449b",
+      "notes": "Perfil profissional que publica atividades da Florense; papel industrial documentado na ForMóbile em 2026."
     },
     {
       "name": "Roberta Castellan",
@@ -105,8 +105,19 @@
     "phone_public": "+55 21 2247-9488",
     "email_public": "florense@florenseipanema.com.br",
     "official_page": "https://www.florense.com.br/franquias/ipanema",
-    "operators_public": [],
-    "notes": "Operadores/franqueados nominais da unidade Ipanema não foram confirmados por biografia corporativa pública nesta verificação. Contatos listados vêm da página oficial de franquia.",
+    "operators_public": [
+      {
+        "name": "Adolfo Gilmar Fuzinatto",
+        "role": "Sócio-administrador de Ipanema Representações e Serviços de Móveis Ltda.",
+        "source": "https://casadosdados.com.br/solucao/cnpj/ipanema-representacoes-e-servicos-de-moveis-ltda-39526757000159"
+      },
+      {
+        "name": "Silvana Ines de Azambuja Fuzinatto",
+        "role": "Sócia-administradora de Ipanema Representações e Serviços de Móveis Ltda.",
+        "source": "https://casadosdados.com.br/solucao/cnpj/ipanema-representacoes-e-servicos-de-moveis-ltda-39526757000159"
+      }
+    ],
+    "notes": "Cadastro público identifica administradores da pessoa jurídica localizada no endereço da unidade. A identificação de quem assinou o contrato CA-001 depende do instrumento e dos documentos fiscais.",
     "last_verified_at": "2026-11-09"
   },
   "channels": [
@@ -128,6 +139,7 @@
     "Qual o estágio atual, por escrito, de fabricação, expedição, transporte e montagem deste pedido?",
     "Como se divide a responsabilidade operacional entre franquia, fábrica e instaladores neste contrato?",
     "Há cronograma vinculante e nominado para conclusão integral, com datas e responsáveis?",
-    "Qual canal oficial receberá e responderá publicamente às perguntas deste dossiê?"
+    "Qual canal oficial receberá e responderá publicamente às perguntas deste dossiê?",
+    "Como conciliar a programação industrial declarada em setembro com a promessa de entregar o pedido pago em julho já em outubro?"
   ]
 }

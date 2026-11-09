@@ -17,7 +17,7 @@ import { leadership } from '../lib/cases';
             <li><a href={s.url} target="_blank" rel="noopener noreferrer">{s.title} ↗</a>{s.published_at && <span> · {s.published_at}</span>}</li>
           ))}
         </ul>
-        {!person.linkedin_url && <p class="muted">LinkedIn não listado — URL não confirmada nesta verificação.</p>}
+        {person.linkedin_url ? <p><a class="text-link" href={person.linkedin_url} target="_blank" rel="noopener noreferrer">Perfil profissional ↗</a></p> : <p class="muted">LinkedIn não listado — URL não confirmada nesta verificação.</p>}
       </article>
     ))}
   </div>
@@ -28,6 +28,7 @@ import { leadership } from '../lib/cases';
     <p>E-mail público: {leadership.franchise.email_public}</p>
     <a class="text-link" href={leadership.franchise.official_page} target="_blank" rel="noopener noreferrer">Página oficial da franquia ↗</a>
     <p class="muted">{leadership.franchise.notes}</p>
+    {leadership.franchise.operators_public?.length > 0 && <><h4>Administradores registrados da empresa no endereço da unidade</h4><ul class="source-links">{leadership.franchise.operators_public.map(o => <li><strong>{o.name}</strong> — {o.role} · <a href={o.source} target="_blank" rel="noopener noreferrer">Cadastro ↗</a></li>)}</ul></>}
   </aside>
   <div class="section" style="padding-top:40px">
     <h3>Perguntas institucionais em aberto</h3>
