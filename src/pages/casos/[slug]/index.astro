@@ -17,6 +17,7 @@ import {verdictForCase} from '../../../lib/brands';
 import EvidenceIndex from '../../../components/EvidenceIndex.astro';
 import ImpactTeaser from '../../../components/ImpactTeaser.astro';
 import CaseCompanyReference from '../../../components/CaseCompanyReference.astro';
+import PrecedentComparison from '../../../components/PrecedentComparison.astro';
 import { cases, casePath, crumbFor, dateBR, reportsFor, type Case } from '../../../lib/cases';
 export function getStaticPaths() { return cases.map(item => ({params:{slug:item.slug},props:{item}})); }
 interface Props { item: Case }
@@ -40,6 +41,7 @@ const related = reportsFor(item).filter(r => r.destaque || (r.cidade||'').includ
   <CaseNav item={item}/>
   <CaseCompanyReference item={item}/>
   <ImpactTeaser caseItem={item}/>
+  <PrecedentComparison item={item} compact/>
 
   <section class="section"><div class="container">
     <CaseMetrics item={item} />

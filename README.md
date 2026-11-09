@@ -160,3 +160,17 @@ A home institucional não recebe o alerta de uma empresa. Medições do Reclame 
 ## Perfis empresariais visuais e CNPJs do contrato
 
 A identidade visual da empresa/unidade e o arquivo de mídia têm fonte em `src/data/company-media.json`. Os dois papéis contratuais de CA-001 permanecem pendentes em `src/data/case-contract-entities.json`, até receber os CNPJs reais. Componentes: `CompanyIdentityHero`, `CompanyRecognitionGallery`, `CaseContractScope`, `CaseCompanyReference`. Instruções em `docs/company-visual-contract-entities.md`. Nenhum screenshot é fabricado; as referências à loja são datadas e atribuídas.
+
+## Observatório de precedentes e cenários editoriais (2026-11-09)
+
+Diferencial do produto: transformar dossiês de consumo em análises de risco documentadas com precedentes judiciais, tempo entre marcos, exposição de créditos e cenários condicionais — nunca previsão automática de insolvência.
+
+- `src/data/precedents.json` — Roma Mobili, Lojas KD e Kitchens, com processos, datas, fontes, limites e relação explícita com CA-001.
+- `src/lib/precedents.ts` — consulta por caso e duração UTC entre eventos datados.
+- `src/components/PrecedentCard.astro`, `PrecedentTimeline.astro`, `PrecedentComparison.astro` — componentes pSEO reutilizáveis.
+- `/precedentes/`, `/precedentes/:slug/`, `/precedentes/indice.csv` — observatório, fichas de precedentes e CSV para imprensa ou análise documental.
+- `/casos/:slug/precedentes/` — comparação contextual vinculada ao caso por ID, com similaridades, diferenças, desfechos condicionais e links para o processo.
+- Snippets para marca/unidade/caso/impacto e diferencial institucional genérico na home. A home não se transforma em campanha de uma empresa.
+- Documentação e tabela de datas: `docs/precedent-observatory.md`.
+
+**Conferência obrigatória:** Roma e Lojas KD têm falência decretada; Kitchens tinha processamento de RJ deferido em 03/11/2026 e **não** era uma falência registrada nesta revisão. A diferença entre data de reportagem, pedido de RJ, encerramento, sentença e prazo de ressarcimento deve ser preservada. `npm run verify:data` confere a aritmética e as fontes antes de publicar.

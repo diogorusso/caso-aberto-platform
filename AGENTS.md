@@ -29,3 +29,8 @@ Scope: a static Brazilian consumer-case publishing website. GitHub is the source
 20. Perfis corporativos usam `company-media.json` e `CompanyIdentityHero.astro` para logo, estabelecimento e fonte. Não apresentar screenshots sem captura real e metadados. Manter home institucional neutra.
 21. As entidades contratuais ficam em `case-contract-entities.json`. Administradores só aparecem como vinculados ao pedido quando razão social, CNPJ, fonte e data forem confirmados no documento contratual e QSA. Cadastros ou endereço similares não confirmam participação no pedido.
 22. A recomendação editorial pode abranger novas compras independentemente da forma de pagamento, mas exige fundamento documental e não equivale à comprovação de insolvência ou falência da marca.
+
+24. Precedent evidence source of truth is `src/data/precedents.json`. Always preserve distinction between bankruptcy decree, judicial recovery, operational closure, and consumer complaint, with docket and individual source links.
+25. Use `PrecedentComparison.astro` on company/unit/case/impact pages only when `case_links` explicitly connects the precedent to the case. No case link means no inferred equivalence. Keep platform homepage generic.
+26. “Days until bankruptcy” is allowed only for two verified dated events, explicitly naming both. A first news report is not an inception date. A recovery judicial case does not have a date of bankruptcy unless there is a decree.
+27. Never infer a probability of insolvency, overall company solvency, criminality, or blame from comparators. Credit-claim totals and count of creditor lines are not verified losses or unique consumers. Link to `/metodologia/#precedentes-e-cenarios` and `docs/precedent-observatory.md`.

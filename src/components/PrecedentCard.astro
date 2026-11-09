@@ -1,0 +1,20 @@
+---
+import {precedentPath,precedentDuration,formatDate,brlCompact,type Precedent} from '../lib/precedents';
+interface Props {precedent:Precedent;compact?:boolean}
+const {precedent:p,compact=false}=Astro.props;
+const isBankrupt=p.stage==='falencia_decretada';
+const duration=precedentDuration(p);
+---
+<article class:list={['precedent-card',isBankrupt?'precedent-bankruptcy':'precedent-recovery']}>
+ <div class="precedent-card-top"><span class="precedent-stage">{p.stage_label}</span><span class="precedent-location">{p.geography}</span></div>
+ <h3><a href={precedentPath(p)}>{p.brand}</a></h3>
+ <p class="precedent-sector">{p.segment}</p>
+ <p class="precedent-headline">{p.headline}</p>
+ <div class="precedent-highlight">
+  {p.customer_amounts_documented_brl?<><strong>{brlCompact(p.customer_amounts_documented_brl)}</strong><span>Créditos de clientes ligados a móveis pagos e não entregues, segundo relação apresentada</span></>:<><strong>{duration} dias</strong><span>{p.comparison_period_kind}; não representa início da crise</span></>}
+ </div>
+ {!compact&&<p class="precedent-card-summary">{p.summary}</p>}
+ <p class="precedent-case-id">{p.process_number} · {p.court}</p>
+ <div class="precedent-card-links"><a href={precedentPath(p)}>Abrir cronologia e análise ↗</a><a href={p.sources[0].url} target="_blank" rel="noopener noreferrer">Fonte judicial / publicação ↗</a></div>
+ {p.stage==='recuperacao_judicial'&&<p class="precedent-stage-note">Recuperação judicial ≠ falência. Nenhuma data de falência é calculada.</p>}
+</article>

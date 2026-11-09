@@ -8,6 +8,7 @@ import CompanyProfiles from '../../../components/CompanyProfiles.astro';
 import CompanyCaseMatrix from '../../../components/CompanyCaseMatrix.astro';
 import CompanyRanking from '../../../components/CompanyRanking.astro';
 import ImpactTeaser from '../../../components/ImpactTeaser.astro';
+import PrecedentComparison from '../../../components/PrecedentComparison.astro';
 import {findBrand,brandPath} from '../../../lib/brands';
 import {cases,casePath} from '../../../lib/cases';
 const brand=findBrand('florense');
@@ -26,6 +27,7 @@ const schema={'@context':'https://schema.org','@type':'WebPage',name:'Florense �
   <div class="company-identity-actions">{caseItem&&<a class="button button-dark" href={casePath(caseItem)}>Acessar caso documentado ↗</a>}<a class="button button-subtle" href="/empresas/florense/ipanema-rj/">Examinar unidade de Ipanema ↗</a><a class="company-inline-link" href="/metodologia/#avaliacao-editorial">Critérios editoriais ↗</a></div>
  </div></section>
  <CompanyCaseMatrix brand={brand}/>
+ {caseItem&&<PrecedentComparison item={caseItem} compact/>}
  <CompanyRecognitionGallery brand={brand}/>
  <CompanyDossier/>
  <CompanyProfiles only={[...brand.primary_company_profile_ids,...brand.related_company_profile_ids]} title="Cadastros e vínculos societários da rede"/>

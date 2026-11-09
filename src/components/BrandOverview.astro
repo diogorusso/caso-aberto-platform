@@ -8,6 +8,7 @@ import CaseCard from './CaseCard.astro';
 import CompanyCaseMatrix from './CompanyCaseMatrix.astro';
 import CompanyRanking from './CompanyRanking.astro';
 import ImpactTeaser from './ImpactTeaser.astro';
+import PrecedentComparison from './PrecedentComparison.astro';
 interface Props{brand:Brand;unit?:BrandUnit}
 const {brand,unit}=Astro.props;
 const rated=unit||brand;
@@ -26,6 +27,7 @@ const canonicalPath=unit?unitPath(brand,unit):brandPath(brand);
  </div></section>
 <ImpactTeaser brand={brand} unit={unit}/>
 <CompanyCaseMatrix brand={brand} unit={unit}/>
+{linkedCases[0]&&<PrecedentComparison item={linkedCases[0]} compact/>}
 <CompanyProfiles only={scopedProfiles} hidePeople={Boolean(unit)} title={unit?'Cadastro da unidade em fontes públicas':'Pessoas jurídicas vinculadas à marca'} />
 <CompanyRecognitionGallery brand={brand} unit={unit}/>
 <CompanyRanking currentBrand={brand.slug} currentUnit={unit?.slug}/>

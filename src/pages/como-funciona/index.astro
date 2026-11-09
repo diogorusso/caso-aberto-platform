@@ -3,13 +3,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 const steps = [
   ['Organizar o problema','Descrever o que foi contratado, a expectativa, os prazos e as etapas posteriores com separação entre relato pessoal e registro público.'],
-  ['Dar visibilidade verificável','Criar URLs permanentes e páginas acessíveis que podem ser compartilhadas em redes, buscas e discussões pertinentes, com fontes correspondentes.'],
+  ['Investigar e comparar precedentes','Identificar processos judiciais de empresas comparáveis, reconstruir marcos e durações com fontes; distinguir litígio, recuperação, fechamento e falência sem tratar analogias como previsões.'],
+  ['Quantificar impacto e cenários','Calcular valores informados, tempo em atraso, reclamações e custos comprovados. Explorar cenários editáveis de escala de consumo, custo e visibilidade separadamente dos fatos observados.'],
+  ['Dar visibilidade verificável','Criar URLs permanentes e páginas acessíveis que possam ser compartilhadas com referências para cada dado, sem publicar documentos pessoais.'],
   ['Cobrar uma resposta objetiva','Publicar perguntas e providências necessárias e atualizar publicamente as respostas e eventuais soluções.'],
   ['Acompanhar a resolução','Manter datas visíveis e sinalizar quando um problema foi resolvido, corrigido ou permanece sem confirmação de desfecho.']
 ];
 ---
 <BaseLayout title="Como funciona o CasoAberto | Casos e respostas públicas" description="Entenda o CasoAberto: documentação, publicação de casos, visibilidade, perguntas às empresas e atualizações de resolução.">
   <Breadcrumbs items={[{label:'Início',href:'/'},{label:'Como funciona',href:'/como-funciona/'}]}/>
-  <section class="pagehead"><div class="container"><span class="eyebrow">NOSSO MODELO</span><h1>Um registro público. Um endereço. Um caminho até a resposta.</h1><p>O CasoAberto não substitui os canais formais. Ele conecta os registros que já existem e apresenta cada história em uma página independente, compreensível e compartilhável.</p></div></section>
+  <section class="pagehead"><div class="container"><span class="eyebrow">NOSSO MODELO</span><h1>Mais que uma denúncia: dados, precedentes e caminho até a resposta.</h1><p>O CasoAberto não substitui os canais formais. Conectamos contratos, cronologia, fontes públicas, precedentes judiciais e cenários de impacto em um dossiê fácil de verificar e compartilhar. <a href="/precedentes/">Conheça o observatório de precedentes</a>.</p></div></section>
   <section class="section"><div class="container steps">{steps.map(([title,desc],i)=><article><span>{String(i+1).padStart(2,'0')}</span><div><h2>{title}</h2><p>{desc}</p></div></article>)}</div></section>
 </BaseLayout>

@@ -4,6 +4,7 @@ import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
 import CaseNav from '../../../../components/CaseNav.astro';
 import ConsumerRiskWarning from '../../../../components/ConsumerRiskWarning.astro';
 import RomaComparison from '../../../../components/RomaComparison.astro';
+import {comparisonPath} from '../../../../lib/precedents';
 import { cases, casePath, crumbFor, roma, type Case } from '../../../../lib/cases';
 export function getStaticPaths() { return cases.filter(item=>item.id==='CA-001').map(item => ({params:{slug:item.slug},props:{item}})); }
 interface Props { item: Case }
@@ -25,13 +26,14 @@ const crumbs = [...crumbFor(item), {label:'Alerta Roma Mobili', href:`${casePath
   </div></header>
   <CaseNav item={item} current="risco-roma-mobili" />
   <section class="section"><div class="container narrow editorial">
-    <ConsumerRiskWarning compact href="/guias/risco-pagamento-antecipado-moveis-planejados/" />
+    <ConsumerRiskWarning compact href={comparisonPath(item.slug)} />
     <h2>O que aconteceu com a Roma Mobili</h2>
     <p>Roma Mobili Indústria Ltda. e RM Projetos e Montagens de Móveis Ltda. EPP figuram em processo de falência na 5ª Vara Empresarial do TJRJ ({roma.proceeding.number}). A Administração Judicial registra sentença de decretação em {roma.proceeding.bankruptcy_decree.split('-').reverse().join('/')}.</p>
     <p>Há relação de credores, editais e leilão de bens da massa. Isso documenta, de forma pública, o que pode ocorrer quando a cadeia de produção/entrega de móveis colapsa após o consumidor já ter desembolsado valores relevantes.</p>
     <h2>O que isso NÃO prova sobre a Florense</h2>
     <p>{roma.disclaimer}</p>
     <RomaComparison />
+    <p><a class="button button-dark" href={comparisonPath(item.slug)}>Comparar Roma, Lojas KD e Kitchens: datas, processos e valores ↗</a></p>
     <h2>Perguntas que a Florense deve responder sobre este contrato</h2>
     <ol class="editor-list">
       {(item.imprensa_perguntas||[]).map(q => <li>{q}</li>)}

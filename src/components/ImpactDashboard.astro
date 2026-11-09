@@ -3,6 +3,7 @@ import {brl,casePath,type Case} from '../lib/cases';
 import {type Brand,type BrandUnit,brandPath,unitPath,findBrand} from '../lib/brands';
 import {impactForSelection,brandSnapshot,caseImpactPath,brandImpactPath,statusGroups} from '../lib/impact';
 import ImpactSimulator from './ImpactSimulator.tsx';
+import PrecedentComparison from './PrecedentComparison.astro';
 interface Props {caseItem?:Case;brand?:Brand;unit?:BrandUnit}
 const {caseItem,brand,unit}=Astro.props;
 const data=impactForSelection({caseItem,brand,unit});
@@ -76,5 +77,6 @@ const scopeText=caseItem?'este caso':unit?'esta unidade':'esta marca e seus caso
    <a class="button button-subtle" href={caseHref+'#apoiar'}>Enviar relato relacionado ↗</a>
   </div>
  </div></section>
+ {linkedCase&&<PrecedentComparison item={linkedCase} compact/>}
  <section class="impact-close"><div class="container"><span class="eyebrow light">PRESTAÇÃO DE CONTAS</span><h2>O que aconteceu com o dinheiro? Quando o serviço será concluído?</h2><p>O acompanhamento público exige respostas verificáveis. Este painel reúne fatos, indicadores editoriais e uma área de simulação separada — não substitui documentos originais nem determina responsabilidade judicial.</p><a class="button button-white" href={caseHref}>Voltar ao dossiê e perguntas da empresa ↗</a></div></section>
 </div>

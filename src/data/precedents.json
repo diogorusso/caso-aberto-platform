@@ -1,0 +1,411 @@
+{
+  "version": 1,
+  "updated_at": "2026-11-09",
+  "title": "Precedentes documentados: móveis pagos, entregas frustradas, recuperação judicial e falência",
+  "editorial_scope": "Amostra intencional de três precedentes identificados em fontes públicas, não censo do mercado, amostra aleatória nem cálculo de probabilidade de insolvência.",
+  "stage_definitions": {
+    "falencia_decretada": "Falência judicialmente decretada, com marco e fonte judicial ou do administrador judicial.",
+    "recuperacao_judicial": "Pedido ou processamento de recuperação judicial; não equivale a falência.",
+    "encerramento_operacional": "Anúncio ou prova de encerramento de operações; não equivale à sentença de falência.",
+    "conflito_consumidor": "Reclamação/atraso documentado; por si só não demonstra crise financeira, recuperação ou falência."
+  },
+  "common_analysis": {
+    "strong_claim": "O risco de ficar sem os móveis e ter de buscar restituição é concreto: há casos públicos com clientes credores em falência e recuperação judicial.",
+    "non_inference": "A ocorrência de uma falência em outra empresa, ou um atraso num contrato, não permite concluir que a Florense esteja insolvente, em recuperação judicial ou próxima de falir.",
+    "comparison_dimensions": [
+      "Setor de móveis sob encomenda e dependência da produção/instalação",
+      "Valores pagos por consumidores antes de cumprimento integral",
+      "Reclamações públicas e dificuldades de entrega",
+      "Complexidade de pessoas jurídicas, fábrica, loja e montagem",
+      "Possível prolongamento da busca por restituição quando há processo coletivo"
+    ],
+    "limitations": [
+      "Precedentes não são seleção probabilística do setor",
+      "Datas de primeiro sinal público não são datas comprovadas de início de crise",
+      "Pedido, deferimento de recuperação, interrupção operacional e falência são fatos diferentes",
+      "Um valor nominal de crédito não significa perda definitiva ou não recuperação",
+      "As fontes não permitem estimar chance de falência de nenhuma empresa sem registros próprios"
+    ],
+    "possible_outcomes": [
+      {
+        "id": "entrega",
+        "label": "Entrega comprovada",
+        "description": "Concluir instalação, reparar falhas e documentar a solução.",
+        "status_for_CA001": "não confirmado no dossiê"
+      },
+      {
+        "id": "resolucao",
+        "label": "Acordo, devolução ou recomposição",
+        "description": "Negociação ou solução administrativa/judicial individual com documentos.",
+        "status_for_CA001": "não confirmado no dossiê"
+      },
+      {
+        "id": "litigio",
+        "label": "Disputa judicial de consumo",
+        "description": "Eventual cobrança, resolução contratual ou indenização depende de fundamentos próprios.",
+        "status_for_CA001": "ação judicial específica não verificada"
+      },
+      {
+        "id": "rj",
+        "label": "Recuperação judicial da contratada",
+        "description": "Desfecho possível em crise empresarial, não implicação automática de atrasos e reclamações.",
+        "status_for_CA001": "não identificada no dossiê"
+      },
+      {
+        "id": "falencia",
+        "label": "Falência judicial da contratada",
+        "description": "Somente é fato com decisão judicial da empresa contratada; não é previsão a partir de precedentes.",
+        "status_for_CA001": "não identificada no dossiê"
+      }
+    ]
+  },
+  "precedents": [
+    {
+      "id": "P-001",
+      "slug": "roma-mobili-falencia-2025",
+      "brand": "Roma Mobili",
+      "entities": [
+        "Roma Mobili Indústria Ltda.",
+        "RM Projetos e Montagens de Móveis Ltda. EPP"
+      ],
+      "segment": "Móveis planejados e montagem",
+      "geography": "Rio de Janeiro, RJ",
+      "stage": "falencia_decretada",
+      "stage_label": "Falência decretada",
+      "process_number": "3016855-24.2025.8.19.0001",
+      "court": "5ª Vara Empresarial da Comarca da Capital — TJRJ",
+      "start_kind": "Pedido de autofalência",
+      "start_date": "2025-10-17",
+      "bankruptcy_decree_date": "2025-12-19",
+      "comparison_period_kind": "Do protocolo do pedido de autofalência à sentença de falência",
+      "financial_exposure_reported_brl": null,
+      "customer_amounts_documented_brl": null,
+      "consumer_claim_entries": null,
+      "headline": "Em 63 dias, o pedido de autofalência chegou à sentença. Credores ainda enfrentavam etapas formais meses depois.",
+      "summary": "As duas empresas protocolaram autofalência em 17/10/2025; a decretação ocorreu em 19/12/2025. A Administração Judicial manteve procedimentos de verificação e editais de credores ao longo de 2026. Não há marco público neste arquivo para datar o início da crise antes do pedido.",
+      "timeline": [
+        {
+          "date": "2025-10-17",
+          "event": "Ajuizamento de autofalência",
+          "type": "pedido",
+          "source_url": "https://gomesdemattos.com.br/admjudicial/lista-de-processos/roma-mobili-industria-ltda-e-rm-projetos-e-montagens-de-moveis-ltda-epp/"
+        },
+        {
+          "date": "2025-12-19",
+          "event": "Sentença de decretação de falência",
+          "type": "falencia",
+          "source_url": "https://gomesdemattos.com.br/admjudicial/lista-de-processos/roma-mobili-industria-ltda-e-rm-projetos-e-montagens-de-moveis-ltda-epp/"
+        },
+        {
+          "date": "2026-04-01",
+          "event": "Publicação de edital com relação inicial de credores",
+          "type": "credores",
+          "source_url": "https://gomesdemattos.com.br/admjudicial/lista-de-processos/roma-mobili-industria-ltda-e-rm-projetos-e-montagens-de-moveis-ltda-epp/"
+        },
+        {
+          "date": "2026-09-30",
+          "event": "Edital com relação de credores da Administração Judicial",
+          "type": "credores",
+          "source_url": "https://gomesdemattos.com.br/admjudicial/lista-de-processos/roma-mobili-industria-ltda-e-rm-projetos-e-montagens-de-moveis-ltda-epp/"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "63 dias",
+          "meaning": "Pedido de autofalência → decretação judicial",
+          "kind": "calculated",
+          "basis": [
+            "2025-10-17",
+            "2025-12-19"
+          ]
+        },
+        {
+          "label": "285 dias",
+          "meaning": "Decretação → edital do AJ em 30/09/2026 (etapas processuais; não prazo de reembolso)",
+          "kind": "calculated",
+          "basis": [
+            "2025-12-19",
+            "2026-09-30"
+          ]
+        }
+      ],
+      "signals": [
+        "Pedido de autofalência formal",
+        "Sentença judicial e habilitação de créditos",
+        "Continuidade da apuração de créditos meses após a sentença"
+      ],
+      "sources": [
+        {
+          "title": "Administração Judicial — autos, sentença, editais e linha do tempo",
+          "url": "https://gomesdemattos.com.br/admjudicial/lista-de-processos/roma-mobili-industria-ltda-e-rm-projetos-e-montagens-de-moveis-ltda-epp/",
+          "kind": "administrador_judicial",
+          "checked_at": "2026-11-09"
+        },
+        {
+          "title": "TJRJ — consulta a relação nominal de credores",
+          "url": "https://www.tjrj.jus.br/consultas/relacao-nominal-de-credores/5-vara-empresarial",
+          "kind": "tribunal",
+          "checked_at": "2026-11-09"
+        }
+      ],
+      "known_limits": "Não foi verificada data documental do primeiro problema de entrega antes da autofalência; não reportar 63 dias como duração total da crise ou como tempo típico até a falência.",
+      "relevance": "Setor e praça próximos ao caso CA-001; estabelece um cenário real de falência com duas entidades de produção e montagem."
+    },
+    {
+      "id": "P-002",
+      "slug": "lojas-kd-falencia-2019",
+      "brand": "Lojas KD",
+      "entities": [
+        "LKD Comércio Eletrônico S/A"
+      ],
+      "segment": "Varejo de móveis por comércio eletrônico",
+      "geography": "Pinhais, PR / alcance nacional",
+      "stage": "falencia_decretada",
+      "stage_label": "Falência decretada",
+      "process_number": "0005276-62.2018.8.16.0033",
+      "court": "2ª Vara de Falências e Recuperação Judicial de Curitiba — TJPR",
+      "start_kind": "Primeiro alerta público de problemas de entrega identificado nesta pesquisa",
+      "start_date": "2017-11-14",
+      "recovery_request_date": "2018-05-08",
+      "operational_stop_date": "2018-12-10",
+      "bankruptcy_decree_date": "2019-02-13",
+      "comparison_period_kind": "Primeira reportagem sobre entregas frustradas → sentença de falência; não necessariamente início da crise",
+      "financial_exposure_reported_brl": 36648695.28,
+      "financial_amount_type": "valor_da_causa_na_RJ_na_sentenca",
+      "customer_amounts_documented_brl": null,
+      "consumer_claim_entries": null,
+      "headline": "De reclamações em massa à falência decretada: 456 dias entre os marcos públicos identificados.",
+      "summary": "Em 14/11/2017, reportagem registrava cerca de mil consumidores com entregas problemáticas. A recuperação judicial foi pedida em 08/05/2018; a empresa anunciou encerramento operacional em 10/12/2018; e o TJPR decretou a falência em 13/02/2019. A sentença cita clientes sem produtos mesmo após o deferimento da RJ. O valor da causa não representa automaticamente perda do consumidor.",
+      "timeline": [
+        {
+          "date": "2017-11-14",
+          "event": "Reportagem sobre aproximadamente mil consumidores com móveis não entregues",
+          "type": "alerta_publico",
+          "source_url": "https://www.gazetadopovo.com.br/curitiba/mil-clientes-compram-em-loja-da-rmc-e-nao-recebem-os-produtos-loja-pede-prazo-40e4szfhrzq9pnevbaxv36pzj/"
+        },
+        {
+          "date": "2018-05-08",
+          "event": "Pedido de recuperação judicial protocolado",
+          "type": "recuperacao",
+          "source_url": "https://www.moveisdevalor.com.br/portal/lojas-kd-protocola-pedido-de-rj"
+        },
+        {
+          "date": "2018-12-10",
+          "event": "Comunicado de encerramento das operações",
+          "type": "fechamento",
+          "source_url": "https://www.moveisdevalor.com.br/portal/lojas-kd-encerra-operacoes-de-e-commerce"
+        },
+        {
+          "date": "2019-02-13",
+          "event": "TJPR decreta falência por sentença",
+          "type": "falencia",
+          "source_url": "https://www.quadrogeralcredoreslkd.com.br/wp-content/uploads/2019/05/1-Decretada-a-fale%CC%82ncia-LKD.pdf"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "456 dias",
+          "meaning": "Primeira reportagem pesquisada → sentença de falência",
+          "kind": "calculated",
+          "basis": [
+            "2017-11-14",
+            "2019-02-13"
+          ]
+        },
+        {
+          "label": "281 dias",
+          "meaning": "Pedido de RJ → sentença de falência",
+          "kind": "calculated",
+          "basis": [
+            "2018-05-08",
+            "2019-02-13"
+          ]
+        },
+        {
+          "label": "65 dias",
+          "meaning": "Encerramento comunicado → falência decretada",
+          "kind": "calculated",
+          "basis": [
+            "2018-12-10",
+            "2019-02-13"
+          ]
+        }
+      ],
+      "signals": [
+        "Relatos numerosos de entregas não realizadas e comunicação difícil",
+        "Pedido judicial de recuperação",
+        "Encerramento operacional antes da decretação formal",
+        "Sentença que descreve reclamações de entregas não realizadas após o processamento"
+      ],
+      "sources": [
+        {
+          "title": "TJPR — sentença oficial de falência (PDF do administrador judicial)",
+          "url": "https://www.quadrogeralcredoreslkd.com.br/wp-content/uploads/2019/05/1-Decretada-a-fale%CC%82ncia-LKD.pdf",
+          "kind": "sentenca_judicial",
+          "checked_at": "2026-11-09"
+        },
+        {
+          "title": "Administração Judicial — índice de peças e quadro de credores",
+          "url": "https://www.quadrogeralcredoreslkd.com.br/andamento-processual/",
+          "kind": "administrador_judicial",
+          "checked_at": "2026-11-09"
+        },
+        {
+          "title": "Gazeta do Povo — clientes com móveis não entregues (14/11/2017)",
+          "url": "https://www.gazetadopovo.com.br/curitiba/mil-clientes-compram-em-loja-da-rmc-e-nao-recebem-os-produtos-loja-pede-prazo-40e4szfhrzq9pnevbaxv36pzj/",
+          "kind": "jornalismo",
+          "checked_at": "2026-11-09"
+        },
+        {
+          "title": "Móveis de Valor — pedido de recuperação (08/05/2018)",
+          "url": "https://www.moveisdevalor.com.br/portal/lojas-kd-protocola-pedido-de-rj",
+          "kind": "jornalismo",
+          "checked_at": "2026-11-09"
+        },
+        {
+          "title": "Móveis de Valor — encerramento (10/12/2018)",
+          "url": "https://www.moveisdevalor.com.br/portal/lojas-kd-encerra-operacoes-de-e-commerce",
+          "kind": "jornalismo",
+          "checked_at": "2026-11-09"
+        }
+      ],
+      "known_limits": "O intervalo de 456 dias inicia na primeira reportagem identificada, não no primeiro atraso real. A sentença diferencia recuperação judicial e falência. O varejo online da Lojas KD difere do modelo fabril/franqueado da Florense.",
+      "relevance": "Demonstra sequência pública de reclamações de entrega, recuperação judicial, fechamento e falência no comércio de móveis."
+    },
+    {
+      "id": "P-003",
+      "slug": "kitchens-recuperacao-judicial-2026",
+      "brand": "Grupo Kitchens",
+      "entities": [
+        "Kitchens Indústria e Comércio Ltda.",
+        "Kitchens Decorações Planejamento de Interiores e Comércio Ltda.",
+        "6S Serviços e Participações Ltda.",
+        "Kitchens Empreendimentos Imobiliários e Participações Ltda."
+      ],
+      "segment": "Móveis planejados de alto padrão",
+      "geography": "São Paulo e Guarulhos, SP",
+      "stage": "recuperacao_judicial",
+      "stage_label": "Recuperação judicial deferida — não é falência",
+      "process_number": "4213329-13.2026.8.26.0100",
+      "court": "TJSP — Foro Central Cível, vara empresarial responsável pelo processo",
+      "start_kind": "Distribuição do pedido de recuperação judicial",
+      "start_date": "2026-10-28",
+      "recovery_acceptance_date": "2026-11-03",
+      "bankruptcy_decree_date": null,
+      "comparison_period_kind": "Distribuição da RJ → deferimento de processamento; nenhum prazo até falência",
+      "financial_exposure_reported_brl": 299850000,
+      "financial_amount_type": "total_de_dividas_reportadas_em_lista_de_credores",
+      "customer_amounts_documented_brl": 190100000,
+      "consumer_claim_entries": 962,
+      "headline": "R$ 190,1 milhões ligados a móveis pagos e não entregues em 962 lançamentos de crédito. E não houve decretação de falência.",
+      "summary": "A relação de credores apresentada pelo grupo, conforme apuração de Migalhas, inclui R$ 190,1 milhões em valores de clientes relacionados a móveis pagos e não entregues, equivalentes a 63,4% dos débitos sujeitos à RJ. O processo foi distribuído em 28/10/2026 e teve processamento deferido em 03/11/2026. O número de lançamentos não deve ser interpretado como quantidade certificada de consumidores distintos.",
+      "timeline": [
+        {
+          "date": "2026-10-28",
+          "event": "Pedido de recuperação judicial distribuído",
+          "type": "recuperacao",
+          "source_url": "https://preservacred.com.br/dados/empresas/60848991000199-kitchens-industria-e-comercio"
+        },
+        {
+          "date": "2026-11-03",
+          "event": "Processamento da recuperação judicial deferido",
+          "type": "recuperacao",
+          "source_url": "https://preservacred.com.br/dados/empresas/60848991000199-kitchens-industria-e-comercio"
+        },
+        {
+          "date": "2026-11-04",
+          "event": "Apuração publicada dos créditos de clientes relativos a móveis não entregues",
+          "type": "credores",
+          "source_url": "https://www.migalhas.com.br/quentes/467807"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "R$ 190,1 mi",
+          "meaning": "Créditos de clientes por móveis pagos e não entregues na relação apresentada",
+          "kind": "reported_primary_judicial_material",
+          "source_url": "https://www.migalhas.com.br/quentes/467807"
+        },
+        {
+          "label": "63,4%",
+          "meaning": "Parcela dos débitos sujeitos à RJ atribuída a esses créditos na reportagem",
+          "kind": "reported_primary_judicial_material",
+          "source_url": "https://www.migalhas.com.br/quentes/467807"
+        },
+        {
+          "label": "962",
+          "meaning": "Lançamentos identificados na relação de créditos de clientes; não necessariamente pessoas únicas",
+          "kind": "reported_primary_judicial_material",
+          "source_url": "https://www.migalhas.com.br/quentes/467807"
+        },
+        {
+          "label": "535",
+          "meaning": "Lançamentos de clientes iguais ou acima de R$ 100 mil",
+          "kind": "reported_primary_judicial_material",
+          "source_url": "https://www.migalhas.com.br/quentes/467807"
+        },
+        {
+          "label": "6 dias",
+          "meaning": "Distribuição do pedido → deferimento do processamento, não falência",
+          "kind": "calculated",
+          "basis": [
+            "2026-10-28",
+            "2026-11-03"
+          ]
+        }
+      ],
+      "signals": [
+        "Pedidos pagos e não entregues identificados na relação apresentada",
+        "Recuperação judicial de grupo de quatro sociedades",
+        "R$ 299,85 milhões de dívidas declaradas conforme apuração jornalística",
+        "A decisão judicial de deferimento não comprova viabilidade econômica nem implica falência"
+      ],
+      "sources": [
+        {
+          "title": "Migalhas — créditos de consumidores, 962 lançamentos e decisão (04/11/2026)",
+          "url": "https://www.migalhas.com.br/quentes/467807",
+          "kind": "jornalismo_juridico",
+          "checked_at": "2026-11-09"
+        },
+        {
+          "title": "Registro processual 4213329-13.2026.8.26.0100 — pedido e deferimento",
+          "url": "https://preservacred.com.br/dados/empresas/60848991000199-kitchens-industria-e-comercio",
+          "kind": "base_judicial_secundaria",
+          "checked_at": "2026-11-09"
+        },
+        {
+          "title": "Folha de S.Paulo — decisão de processamento e passivo de R$ 299,9 milhões",
+          "url": "https://c-level.folha.uol.com.br/negocios/2026/11/justica-aceita-recuperacao-judicial-da-rede-de-moveis-de-luxo-kitchens-com-dividas-de-r-300-milhoes.shtml",
+          "kind": "jornalismo",
+          "checked_at": "2026-11-09"
+        }
+      ],
+      "known_limits": "Recuperação judicial não é falência. Valores são declarações/levantamentos sobre créditos, não cálculo de prejuízos definitivamente perdidos. Um lançamento de crédito não equivale a consumidor único. O caso não permite calcular probabilidade de falência de terceiros.",
+      "relevance": "Segmento premium de móveis planejados; mostra a escala comprovável de créditos ligados a móveis pagos e não entregues em processo de RJ recente."
+    }
+  ],
+  "case_links": [
+    {
+      "case_id": "CA-001",
+      "brand_slug": "florense",
+      "unit_slug": "ipanema-rj",
+      "precedent_ids": [
+        "P-003",
+        "P-001",
+        "P-002"
+      ],
+      "established_similarities": [
+        "Contrato envolvendo móveis sob encomenda e entrega futura",
+        "Pagamento informado e pendência de conclusão do serviço",
+        "Necessidade de distinguir fornecedor, estabelecimento comercial e agente de montagem",
+        "Possibilidade de demora adicional para restituição em processos coletivos, como mostram outros registros"
+      ],
+      "established_differences": [
+        "Não há neste dossiê decisão de recuperação judicial ou falência dos CNPJs contratados no caso CA-001",
+        "Os desfechos de Roma, KD e Kitchens dizem respeito a pessoas jurídicas e datas diferentes",
+        "Os três precedentes não representam taxa-base de falência nem permitem derivar uma probabilidade para Florense"
+      ],
+      "stance": "O fato de outras empresas do setor terem sofrido falência ou recuperação judicial justifica verificar garantias e capacidade de cumprimento. O caso CA-001 sustenta a cobrança de respostas contratuais, não uma previsão de insolvência."
+    }
+  ]
+}

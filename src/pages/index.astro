@@ -13,12 +13,12 @@ const companyStatuses = ratingDefinitions.slice().sort((a,b) => b.sort - a.sort)
 const steps = [
   {number:'01',eyebrow:'PERFIS EMPRESARIAIS',title:'Conheça quem está por trás do contrato.',description:'Razão social, CNPJ, administradores, unidades, vínculos e histórico público — com fontes para consulta.',href:'/empresas/',link:'Explorar empresas'},
   {number:'02',eyebrow:'CASOS DOCUMENTADOS',title:'Entenda os fatos antes de decidir.',description:'Valores relatados, cronologias, registros, reclamações originais, atualizações e pedidos de resposta.',href:'/casos/',link:'Explorar casos'},
-  {number:'03',eyebrow:'AVALIAÇÕES EDITORIAIS',title:'Saiba quando recomendamos cautela.',description:'Recomendação com escopo definido, fundamentos públicos, data de revisão e critérios para reavaliação.',href:'/avaliacoes/nao-recomendamos/',link:'Ver avaliações'}
+  {number:'03',eyebrow:'PRECEDENTES E CENÁRIOS',title:'Mostre onde uma disputa pode chegar.',description:'Comparamos processos de falência e recuperação, créditos de consumidores, datas e consequências reais — sem inventar previsões.',href:'/precedentes/',link:'Explorar processos e cenários'}
 ];
 const pathways = [
   {number:'01',title:'Avaliações de empresas',description:'Consulte perfis e recomendações por empresa e unidade.',href:'/empresas/',link:'Buscar empresas'},
   {number:'02',title:'Casos e reclamações',description:'Leia os dossiês, as fontes originais e o histórico.',href:'/casos/',link:'Ver casos'},
-  {number:'03',title:'Tipos de problema',description:'Pesquise atrasos, montagem, atendimento e outros temas documentados.',href:'/problemas/',link:'Explorar temas'},
+  {number:'03',title:'Precedentes judiciais',description:'Falências, recuperações e valores de contratos não entregues — com decisões e cronologias.',href:'/precedentes/',link:'Ver precedentes'},
   {number:'04',title:'Cadastro CNPJ',description:'Confira atividades, capital registrado e vínculos societários publicados.',href:'/cnpj/',link:'Consultar CNPJs'}
 ];
 ---
@@ -31,12 +31,12 @@ const pathways = [
     <div class="container">
       <div class="eyebrow light"><span class="signal" aria-hidden="true"></span> CASOABERTO · TRANSPARÊNCIA PARA O CONSUMIDOR</div>
       <h1 id="platform-home-title">Antes de contratar,<br /><em>conheça os fatos.</em></h1>
-      <p class="hero-lead">Empresas têm histórico. Consumidores merecem respostas. Reunimos perfis empresariais, reclamações, evidências e avaliações editoriais para você decidir com mais informação.</p>
+      <p class="hero-lead">Empresas têm histórico. Consumidores merecem respostas. Reunimos documentos, dados de empresas e casos, decisões judiciais comparáveis e cenários de impacto para dar visibilidade a problemas que exigem solução.</p>
       <div class="hero-buttons">
         <a class="button button-primary" href="/empresas/">Consultar empresas <span aria-hidden="true">↗</span></a>
         <a class="button button-ghost" href="/casos/">Explorar casos documentados <span aria-hidden="true">↗</span></a>
       </div>
-      <p class="platform-hero-proof">Fontes públicas verificáveis <span aria-hidden="true">·</span> Critérios transparentes <span aria-hidden="true">·</span> Histórico atualizado por caso</p>
+      <p class="platform-hero-proof">Processos judiciais verificáveis <span aria-hidden="true">·</span> Cenários de impacto <span aria-hidden="true">·</span> Casos e respostas documentados</p>
     </div>
     <div class="hero-accent" aria-hidden="true">CA</div>
   </section>
@@ -72,7 +72,7 @@ const pathways = [
     <div class="container section-top">
       <span class="eyebrow">O QUE FAZEMOS</span>
       <h2 id="platform-value-title">Não basta reclamar. <em>É preciso mostrar os fatos.</em></h2>
-      <p>Organizamos dados de empresas e casos em páginas permanentes, documentadas e fáceis de encontrar, verificar e compartilhar.</p>
+      <p>Transformamos conflitos individuais em dossiês pesquisáveis, com indicadores de impacto, precedentes judiciais comparáveis e perguntas que cobram resolução. Cada afirmação aponta para sua fonte.</p>
     </div>
     <div class="container service-grid">
       {steps.map(step => <article>

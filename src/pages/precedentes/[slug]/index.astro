@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import PrecedentTimeline from '../../../components/PrecedentTimeline.astro';
+import {precedents,precedentPath,formatDate,precedentDuration,stageDescription,type Precedent} from '../../../lib/precedents';
+import raw from '../../../data/precedents.json';
+export function getStaticPaths(){return precedents.map(precedent=>({params:{slug:precedent.slug},props:{precedent}}));}
+interface Props{precedent:Precedent}
+const {precedent:p}=Astro.props;
+const url=precedentPath(p);
+const isBankrupt=p.stage==='falencia_decretada';
+const schema={'@context':'https://schema.org','@type':'Article',headline:p.brand+': cronologia judicial e precedente de risco',dateModified:raw.updated_at,citation:p.sources.map(s=>s.url),about:{'@type':'Organization',name:p.brand}};
+---
+<BaseLayout title={p.brand+': '+p.stage_label.toLowerCase()+', processo e cronologia documentada | CasoAberto'}
+ description={p.summary.slice(0,275)} dateModified={raw.updated_at} breadcrumbs={[{name:'Início',item:'/'},{name:'Precedentes',item:'/precedentes/'},{name:p.brand,item:url}]} schema={schema}>
+ <Breadcrumbs items={[{label:'Início',href:'/'},{label:'Precedentes',href:'/precedentes/'},{label:p.brand,href:url}]}/>
+ <section class="precedent-detail-hero"><div class="container">
+  <span class="eyebrow">ARQUIVO JUDICIAL · {p.geography}</span><span class:list={['precedent-hero-stage',isBankrupt?'stage-bankrupt':'stage-recovery']}>{p.stage_label}</span>
+  <h1>{p.brand}: o que aconteceu, quando e com quais documentos?</h1><p>{p.headline}</p>
+  <div class="precedent-case-ids"><span>Processo {p.process_number}</span><span>{p.court}</span><span>Pesquisa revisada em {formatDate(raw.updated_at)}</span></div>
+  <div class="precedent-detail-actions"><a class="button button-dark" href={p.sources[0].url} target="_blank" rel="noopener noreferrer">Abrir processo ou fonte judicial ↗</a><a class="button button-subtle" href="#linha-do-tempo">Ver cronologia ↓</a></div>
+ </div></section>
+ <section class="section precedent-results"><div class="container">
+  <span class="eyebrow">INDICADORES DA DOCUMENTAÇÃO</span><h2>Não é uma previsão: são marcos já registrados.</h2>
+  <div class="precedent-results-grid">{p.metrics.map(metric=><article><strong>{metric.label}</strong><p>{metric.meaning}</p>{metric.kind==='calculated'&&<small>Intervalo entre datas explicitadas nas fontes do processo</small>}{metric.source_url&&<a href={metric.source_url} target="_blank" rel="noopener noreferrer">Fonte do indicador ↗</a>}</article>)}</div>
+ </div></section>
+ <section class="section precedent-timeline-section" id="linha-do-tempo"><div class="container">
+  <span class="eyebrow">MARCO A MARCO</span><h2>Linha do tempo com documentos.</h2>
+  <PrecedentTimeline precedent={p}/>
+  <p class="precedent-limit-note"><strong>Limite da comparação:</strong> {p.known_limits}</p>
+ </div></section>
+ <section class="section precedent-findings"><div class="container two-col"><div>
+  <span class="eyebrow">REGISTRO PÚBLICO</span><h2>O que está estabelecido?</h2><p>{p.summary}</p><ul>{p.signals.map(s=><li>{s}</li>)}</ul></div>
+  <aside class="info-panel"><h3>Estágio processual</h3><p>{stageDescription(p.stage)}</p><strong>{isBankrupt?'Sentença de falência':'Recuperação judicial — sem sentença de falência'}</strong><p>{isBankrupt&&p.bankruptcy_decree_date?formatDate(p.bankruptcy_decree_date):p.recovery_acceptance_date?formatDate(p.recovery_acceptance_date):'—'}</p><strong>Por que este precedente é relevante?</strong><p>{p.relevance}</p></aside>
+ </div></section>
+ <section class="section precedent-sources"><div class="container">
+  <span class="eyebrow">AUDITORIA DE FONTES</span><h2>Documentos e reportagens para conferência.</h2>
+  <ol class="precedent-source-list">{p.sources.map(s=><li><span class="precedent-source-type">{s.kind.replaceAll('_',' ')}</span><a href={s.url} target="_blank" rel="noopener noreferrer">{s.title} ↗</a><small>Consultado em {formatDate(s.checked_at)}</small></li>)}</ol>
+  <div class="precedent-service-cta"><div><h3>Compare com o CasoAberto.</h3><p>O risco registrado em outra empresa pode orientar perguntas e investigação, mas não demonstra que uma marca distinta esteja em insolvência.</p></div><a class="button button-dark" href="/casos/florense-ipanema-rj-atraso-moveis-planejados/precedentes/">Comparação documentada com o caso CA-001 ↗</a></div>
+ </div></section>
+</BaseLayout>

@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PrecedentCard from '../../components/PrecedentCard.astro';
+import {precedents,stageDescription,formatDate} from '../../lib/precedents';
+import raw from '../../data/precedents.json';
+const bankrupt=precedents.filter(p=>p.stage==='falencia_decretada').length;
+const recovery=precedents.filter(p=>p.stage==='recuperacao_judicial').length;
+---
+<BaseLayout title="Móveis planejados: falências, recuperações judiciais e dinheiro de clientes | CasoAberto"
+ description="Observatório de precedentes: Roma Mobili, Lojas KD e Kitchens. Processos, cronologias, duração entre marcos, créditos de consumidores e fontes judiciais verificáveis." dateModified={raw.updated_at}
+ breadcrumbs={[{name:'Início',item:'/'},{name:'Precedentes',item:'/precedentes/'}]}>
+ <Breadcrumbs items={[{label:'Início',href:'/'},{label:'Precedentes',href:'/precedentes/'}]}/>
+ <section class="precedent-index-hero"><div class="container">
+   <span class="eyebrow light">OBSERVATÓRIO DE PRECEDENTES · DADOS PÚBLICOS</span>
+   <h1>Dinheiro pago. Móveis não entregues. <em>O que aconteceu depois?</em></h1>
+   <p>{raw.common_analysis.strong_claim} Leia os registros judiciais, compare datas e veja o que de fato ocorreu — inclusive quando não houve falência.</p>
+   <div class="precedent-detail-actions"><a class="button button-white" href="/precedentes/indice.csv" download>Exportar tabela dos processos (CSV) ↗</a><a class="button button-outline" href="/metodologia/#precedentes-e-cenarios">Critérios da comparação ↗</a></div>
+   <div class="precedent-index-stats">
+     <div><strong>{bankrupt}</strong><span>Precedentes com falência judicial decretada</span></div>
+     <div><strong>{recovery}</strong><span>Precedente com recuperação judicial deferida (sem falência)</span></div>
+     <div><strong>{precedents.length}</strong><span>Processos identificados e vinculados a fontes</span></div>
+   </div>
+ </div></section>
+ <section class="section precedent-index-content"><div class="container">
+   <div class="section-heading"><div><span class="eyebrow">PROCESSOS E LINHAS DO TEMPO</span><h2>O desfecho real de cada empresa.</h2><p>Os casos foram selecionados pela semelhança do setor e pela disponibilidade de documentação. Não formam uma amostra estatística do mercado.</p></div></div>
+   <div class="precedent-grid">{precedents.map(p=><PrecedentCard precedent={p}/>)}</div>
+ </div></section>
+ <section class="section precedent-contrast"><div class="container">
+   <span class="eyebrow">COMPARATIVO DE TEMPO</span><h2>Quanto tempo levou, entre quais fatos?</h2>
+   <div class="company-report-table"><table><thead><tr><th>Empresa</th><th>Primeiro marco do recorte</th><th>Desfecho formal comprovado</th><th>Intervalo</th></tr></thead>
+   <tbody>{precedents.map(p=><tr>
+    <td><a href={'/precedentes/'+p.slug+'/'}><strong>{p.brand}</strong></a></td>
+    <td><time datetime={p.start_date}>{formatDate(p.start_date)}</time><small>{p.start_kind}</small></td>
+    <td>{p.bankruptcy_decree_date?<><time datetime={p.bankruptcy_decree_date}>{formatDate(p.bankruptcy_decree_date)}</time><small>Sentença de falência</small></>:<><time datetime={p.recovery_acceptance_date||p.start_date}>{formatDate(p.recovery_acceptance_date||p.start_date)}</time><small>Deferimento de RJ, não falência</small></>}</td>
+    <td><strong>{p.metrics.find(m=>m.kind==='calculated')?.label||'—'}</strong><small>{p.comparison_period_kind}</small></td>
+   </tr>)}</tbody></table></div>
+   <p class="muted">O “primeiro marco” depende da fonte disponível: data de notícia, pedido judicial ou encerramento. Não expressa início da insolvência ou prazo esperado para qualquer empresa.</p>
+ </div></section>
+ <section class="section precedent-why"><div class="container">
+   <span class="eyebrow">A DIFERENÇA DO CASOABERTO</span><h2>Uma denúncia documentada também pode mapear o risco.</h2>
+   <div class="precedent-method-grid"><div><h3>O que o precedente comprova</h3><ul>{raw.common_analysis.comparison_dimensions.map(s=><li>{s}</li>)}</ul></div><div><h3>Onde a comparação termina</h3><ul>{raw.common_analysis.limitations.map(s=><li>{s}</li>)}</ul></div></div>
+   <div class="precedent-service-cta"><div><h3>Seu caso merece uma análise assim.</h3><p>Organizamos pagamentos, cronologia, registros públicos, pessoas jurídicas, decisões comparáveis e perguntas que precisam de resposta.</p></div><a class="button button-dark" href="/como-funciona/">Como produzimos um dossiê ↗</a></div>
+ </div></section>
+</BaseLayout>

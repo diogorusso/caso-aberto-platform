@@ -84,5 +84,19 @@ for(const name of ['CompanyIdentityHero.astro','CompanyRecognitionGallery.astro'
 }
 const contractedPage=readFileSync(resolve(src,'pages/casos/[slug]/responsaveis/index.astro'),'utf8');
 if(/<LeadershipDirectory\b/.test(contractedPage)){console.error('Case responsibility cannot expose executives without contract linkage');bad++;}
+
+const precedentRoutes=['precedentes/[slug]/index.astro','casos/[slug]/precedentes/index.astro'];
+for(const route of precedentRoutes){
+ const abs=resolve(src,'pages',route);
+ if(!existsSync(abs)||!readFileSync(abs,'utf8').includes('getStaticPaths')){console.error('Missing reusable precedent route',route);bad++;}
+}
+const precedentIndex=resolve(src,'pages/precedentes/index.astro');
+const precedentCsv=resolve(src,'pages/precedentes/indice.csv.ts');
+if(!existsSync(precedentIndex)||!existsSync(precedentCsv)){console.error('Missing precedent index or CSV export');bad++;}
+const precedentRaw=JSON.parse(readFileSync(resolve(src,'data/precedents.json'),'utf8'));
+for(const p of precedentRaw.precedents){
+ if(!p.sources?.length){console.error('Precedent pSEO page lacks citations',p.id);bad++;}
+}
+
 if (bad) process.exit(1);
 console.log(`OK: ${files.length} TS/Astro files; imports resolved; ${all.size} planned routes.`);

@@ -192,6 +192,49 @@ for(const [caseId,record] of Object.entries(contractEntities.cases||{})){
   }
 }
 
+
+const precedentData=read('precedents');
+const isoDate=(v)=>typeof v==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(v)&&!Number.isNaN(Date.parse(v+'T00:00:00Z'))&&new Date(v+'T00:00:00Z').toISOString().slice(0,10)===v;
+const precedentDays=(a,b)=>Math.round((Date.parse(b+'T00:00:00Z')-Date.parse(a+'T00:00:00Z'))/86400000);
+const precedentIds=new Set(),precedentSlugs=new Set();
+for(const p of precedentData.precedents){
+ if(precedentIds.has(p.id)||precedentSlugs.has(p.slug)){console.error('Duplicate precedent ID or slug',p.id,p.slug);bad++;}
+ precedentIds.add(p.id);precedentSlugs.add(p.slug);
+ if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(p.slug)){console.error('Invalid precedent slug',p.slug);bad++;}
+ if(!/^\d{7}-\d{2}\.\d{4}\.\d\.\d{2}\.\d{4}$/.test(p.process_number)){console.error('Invalid CNJ process number syntax',p.id,p.process_number);bad++;}
+ if(!Object.hasOwn(precedentData.stage_definitions,p.stage)){console.error('Unknown precedent court stage',p.id,p.stage);bad++;}
+ if(!isoDate(p.start_date)){console.error('Invalid precedent start date',p.id);bad++;}
+ if(p.stage==='falencia_decretada'&&!isoDate(p.bankruptcy_decree_date)){console.error('Bankruptcy precedent missing court decree date',p.id);bad++;}
+ if(p.stage==='recuperacao_judicial'&&(p.bankruptcy_decree_date!==null||!isoDate(p.recovery_acceptance_date))){console.error('Recovery must not be presented as bankruptcy',p.id);bad++;}
+ if(!p.sources?.length||!p.sources.every(s=>/^https:\/\//.test(s.url)&&isoDate(s.checked_at))){console.error('Missing source or verification date',p.id);bad++;}
+ if(!p.timeline?.length){console.error('Precedent missing timeline',p.id);bad++;}
+ for(let i=0;i<(p.timeline?.length||0);i++){
+  const ev=p.timeline[i];
+  if(!isoDate(ev.date)||!/^https:\/\//.test(ev.source_url)){console.error('Precedent event lacks dated source',p.id,i);bad++;}
+  if(i>0&&ev.date<p.timeline[i-1].date){console.error('Precedent timeline not chronological',p.id);bad++;}
+ }
+ if(isoDate(p.start_date)&&isoDate(p.bankruptcy_decree_date)&&p.start_date>p.bankruptcy_decree_date){console.error('Bankruptcy before starting event',p.id);bad++;}
+ for(const m of p.metrics||[]){
+  if(m.kind==='calculated'){
+   if(!Array.isArray(m.basis)||m.basis.length!==2||!m.basis.every(isoDate)){console.error('Calculated precedent metric missing two dates',p.id);bad++;continue;}
+   const actual=precedentDays(m.basis[0],m.basis[1]);
+   const displayed=/^(\d+) dias?$/.exec(m.label);
+   if(actual<0||!displayed||Number(displayed[1])!==actual){console.error('Inconsistent precedent-day calculation',p.id,m.label,actual);bad++;}
+  }else if(!/^https:\/\//.test(m.source_url||'')){console.error('Reported numeric precedent metric needs source',p.id,m.label);bad++;}
+ }
+ if(!p.known_limits||!p.relevance){console.error('Precedent must disclose limits',p.id);bad++;}
+}
+const precedentCases=new Set();
+for(const relation of precedentData.case_links){
+ if(precedentCases.has(relation.case_id)){console.error('Duplicate case precedent linkage',relation.case_id);bad++;}
+ precedentCases.add(relation.case_id);
+ const sourceCase=cases.find(c=>c.id===relation.case_id);
+ if(!sourceCase){console.error('Precedent relation unknown case',relation.case_id);bad++;continue;}
+ if(sourceCase.empresa_slug!==relation.brand_slug||sourceCase.unidade_slug!==relation.unit_slug){console.error('Precedent relation mismatches linked company/unit',relation.case_id);bad++;}
+ if(!relation.precedent_ids?.length||!relation.precedent_ids.every(id=>precedentIds.has(id))){console.error('Case relation has unknown precedent',relation.case_id);bad++;}
+ if(!relation.established_similarities?.length||!relation.established_differences?.length){console.error('Precedent linkage missing similarities or distinctions',relation.case_id);bad++;}
+}
+
 const counted=metrics.cases?.['CA-001']?.public_complaints_indexed;
 if (counted != null && counted !== reports.filter(r=>r.case_id==='CA-001').length) {
   console.error('metrics public_complaints_indexed mismatch', counted, reports.length); bad++;
