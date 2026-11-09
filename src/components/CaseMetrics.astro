@@ -1,0 +1,19 @@
+---
+import { type Case, metricsFor, reportsFor, updatesFor } from '../lib/cases';
+interface Props { item: Case }
+const { item } = Astro.props;
+const m = metricsFor(item);
+const reportCount = reportsFor(item).length;
+const updateCount = updatesFor(item).length;
+---
+<section class="metrics-board" aria-label="Métricas documentadas do caso">
+  <div class="metrics-grid">
+    <div><small>Reclamações públicas indexadas</small><strong>{m?.public_complaints_indexed ?? reportCount}</strong></div>
+    <div><small>Fontes primárias citadas</small><strong>{m?.primary_sources_cited ?? item.fontes.length}</strong></div>
+    <div><small>Atualizações do dossiê</small><strong>{m?.case_updates ?? updateCount}</strong></div>
+    <div><small>Respostas da empresa neste dossiê</small><strong>{m?.company_responses_on_record ?? 0}</strong></div>
+    <div><small>Apoios verificados publicados</small><strong>{m?.verified_support_submissions ?? 0}</strong></div>
+    <div><small>Pageviews / visitantes</small><strong>{m?.pageviews == null ? 'Ainda sem medição pública' : m.pageviews}</strong></div>
+  </div>
+  <p class="metrics-note">{m?.measurement_period}. Contadores de audiência só aparecem com exportação documentada do Cloudflare Web Analytics — nunca números inventados.</p>
+</section>

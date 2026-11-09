@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-11-09",
+  "note": "Números públicos abaixo são contagens verificáveis a partir dos dados publicados neste repositório. Contadores de audiência (pageviews/visitantes) só serão exibidos após conexão e exportação documentada do Cloudflare Web Analytics — nunca inventados.",
+  "cases": {
+    "CA-001": {
+      "public_complaints_indexed": 16,
+      "primary_sources_cited": 12,
+      "case_updates": 3,
+      "company_responses_on_record": 0,
+      "verified_support_submissions": 0,
+      "pageviews": null,
+      "unique_visitors": null,
+      "shares": null,
+      "measurement_period": "Snapshot editorial em 09/11/2026",
+      "definitions": {
+        "public_complaints_indexed": "Registros públicos distintos indexados em relatos.json com case_id CA-001",
+        "primary_sources_cited": "Fontes com URL https listadas no dossiê e nas páginas auxiliares",
+        "case_updates": "Entradas em updates.json",
+        "company_responses_on_record": "Respostas institucionais verificáveis endereçadas ao caso CA-001 e publicadas aqui",
+        "verified_support_submissions": "Relatos de apoio revisados e consentidos para publicação"
+      }
+    }
+  },
+  "platform": {
+    "published_cases": 1,
+    "indexed_public_reports": 16,
+    "guides": 2
+  }
+}

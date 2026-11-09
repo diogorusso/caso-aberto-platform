@@ -2,26 +2,32 @@
   {
     "id": "CA-001",
     "slug": "florense-ipanema-rj-atraso-moveis-planejados",
-    "empresa": "Florense Móveis — Ipanema",
+    "empresa": "Florense Móveis — franquia Ipanema",
     "empresa_resumo": "Florense Ipanema",
+    "empresa_slug": "florense",
+    "unidade_slug": "ipanema-rj",
     "local": "Rio de Janeiro, RJ",
     "categoria": "Móveis planejados",
-    "titulo": "Florense Ipanema: R$ 190 mil pagos e entrega de móveis planejados atrasada",
-    "chamada": "R$ 190 mil pagos. O prazo passou. Onde estão os móveis?",
-    "resumo": "Consumidor relata pagamento integral em julho de 2026, prazo de entrega e montagem prometido para a primeira semana de outubro e sucessivos reagendamentos sem conclusão.",
+    "titulo": "Florense Ipanema: R$ 190 mil pagos. Prazo descumprido. Onde estão os móveis?",
+    "chamada": "Florense Ipanema: R$ 190 mil pagos. Prazo descumprido. Onde estão os móveis?",
+    "resumo": "Consumidor relata pagamento integral de R$ 190 mil em julho de 2026 por móveis planejados de cozinha e área de serviço na Florense Ipanema, com entrega e montagem prometidas para a primeira semana de outubro. Descreve reagendamentos, ausência da equipe e notificação extrajudicial em 30/10/2026. Até 09/11/2026 não há resolução confirmada neste dossiê.",
+    "impacto": "Além do valor quitado, o consumidor relata transtorno doméstico e custos adicionais de acomodação/imóvel associados à falta dos móveis. Valores de custos extras não foram publicados integralmente aqui e dependem de comprovação do reclamante.",
     "status": "Aguardando solução confirmada",
     "status_data": "2026-11-09",
     "valor_brl": 190000,
     "data_publicacao": "2026-11-03",
     "prazo_original": "Primeira semana de outubro de 2026",
-    "prazo_posterior": "15 de dezembro de 2026 (previsão mencionada na notificação de 30/10; não é confirmação de entrega)",
+    "prazo_posterior": "15 de dezembro de 2026 (previsão mencionada na notificação de 30/10; contestada pelo consumidor; não é confirmação de entrega)",
+    "procon_protocol": "202611080341",
+    "legal_entity_note": "A página oficial trata Ipanema como franquia da rede Florense (Flores da Cunha/RS). Fabricante, franquia e instaladores são elos distintos; este dossiê não funde identidades jurídicas sem documento.",
     "cronologia": [
       {"data":"Julho de 2026", "titulo":"Contrato e pagamento", "texto":"O consumidor informa ter contratado móveis para cozinha e área de serviço e pago R$ 190 mil integralmente. A notificação menciona pagamento em 20 de julho de 2026."},
       {"data":"Primeira semana de outubro", "titulo":"Entrega e montagem prometidas", "texto":"Prazo originalmente informado pelo consumidor como determinante da contratação."},
       {"data":"Outubro de 2026", "titulo":"Agendamentos frustrados", "texto":"O relato descreve novas medições e pelo menos dois agendamentos em que a equipe não compareceu após a preparação do imóvel."},
       {"data":"30/10/2026", "titulo":"Notificação extrajudicial", "texto":"Notificação assinada e fornecida para organização do caso; menciona uma previsão posterior de montagem até 15/12/2026, contestada pelo consumidor."},
       {"data":"03/11/2026", "titulo":"Publicação no Reclame Aqui", "texto":"O consumidor formalizou publicamente sua experiência e pediu entrega, cronograma e tratamento dos prejuízos."},
-      {"data":"08/11/2026", "titulo":"Procon/RJ", "texto":"Protocolo informado pelo consumidor: 202611080341."}
+      {"data":"08/11/2026", "titulo":"Procon/RJ", "texto":"Protocolo informado pelo consumidor: 202611080341."},
+      {"data":"09/11/2026", "titulo":"Dossiê CasoAberto ampliado", "texto":"Arquivo público de reclamações expandido, alerta Roma Mobili, mapa institucional e guias ao consumidor publicados. Sem confirmação de entrega integral até esta data."}
     ],
     "pedidos": [
       {"titulo":"Cronograma por escrito", "texto":"Informação verificável sobre fabricação, entrega, montagem e os responsáveis por cada etapa."},
@@ -33,14 +39,17 @@
       {"titulo":"Reclamação principal no Reclame Aqui", "tipo":"Publicação aberta", "url":"https://www.reclameaqui.com.br/florense-moveis/nao-recebi-meus-moveis-planejados-e-a-loja-nao-cumpre-prazos_LaK42QhQaVqRLA5s/"},
       {"titulo":"Registro na PROTESTE", "tipo":"Link informado pelo reclamante; pode exigir login", "url":"https://www.proteste.org.br/reclame/minhas-reclamacoes/detalhes-da-reclamacao?referenceid=CPTBR02190532-78"},
       {"titulo":"Outra reclamação envolvendo a unidade de Ipanema (resolvida)", "tipo":"Reclame Aqui — 16/03/2026", "url":"https://www.reclameaqui.com.br/florense-moveis/descumprimento-de-prazo-na-entrega-de-marcenaria-florense_yv_EetTkC951tEH1/"},
-      {"titulo":"Listagem pública de reclamações Florense", "tipo":"Reclame Aqui — consultar situação atual", "url":"https://www.reclameaqui.com.br/empresa/florense-moveis/lista-reclamacoes/"}
+      {"titulo":"Listagem pública de reclamações Florense", "tipo":"Reclame Aqui — consultar situação atual", "url":"https://www.reclameaqui.com.br/empresa/florense-moveis/lista-reclamacoes/"},
+      {"titulo":"Franquia Florense Ipanema (página oficial)", "tipo":"Institucional", "url":"https://www.florense.com.br/franquias/ipanema"},
+      {"titulo":"Alerta Roma Mobili — Administração Judicial", "tipo":"Registro falimentar (comparação de risco)", "url":"https://gomesdemattos.com.br/admjudicial/lista-de-processos/roma-mobili-industria-ltda-e-rm-projetos-e-montagens-de-moveis-ltda-epp/"}
     ],
     "imprensa_perguntas": [
       "Qual é a data definitiva, por escrito, para entrega e montagem integral desse pedido?",
       "Qual o estágio atual de fabricação, expedição, transporte e instalação dos itens?",
       "Como a empresa pretende evitar novos agendamentos sem comparecimento?",
-      "Como se divide a responsabilidade entre fabricante, revenda e instaladores?",
-      "Qual resposta será oferecida aos custos que o consumidor afirma ter comprovado?"
+      "Como se divide a responsabilidade entre fabricante, revenda/franquia e instaladores?",
+      "Qual resposta será oferecida aos custos que o consumidor afirma ter comprovado?",
+      "Qual razão social recebeu os R$ 190 mil e emite a nota fiscal correspondente?"
     ]
   }
 ]

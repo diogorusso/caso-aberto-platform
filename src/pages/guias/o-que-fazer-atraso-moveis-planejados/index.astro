@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+const crumbs = [
+  {label:'Início', href:'/'},
+  {label:'Guias', href:'/guias/o-que-fazer-atraso-moveis-planejados/'},
+  {label:'Atraso na entrega', href:'/guias/o-que-fazer-atraso-moveis-planejados/'},
+];
+---
+<BaseLayout
+  title="O que fazer quando móveis planejados atrasam | CasoAberto"
+  description="Passos práticos para documentar atraso de móveis planejados, preservar provas e buscar resposta — sem substituir orientação jurídica individual."
+  type="article"
+  breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}
+>
+  <Breadcrumbs items={crumbs} />
+  <header class="pagehead"><div class="container">
+    <div class="eyebrow">GUIA PRÁTICO</div>
+    <h1>O que fazer quando a entrega de móveis planejados atrasa</h1>
+    <p>Orientação editorial geral. Não substitui advogado, Procon ou decisão judicial no seu caso concreto.</p>
+  </div></header>
+  <section class="section"><div class="container narrow editorial">
+    <h2>1. Preserve evidências</h2>
+    <ul class="checklist">
+      <li>Contrato, proposta, comprovantes de pagamento e NF</li>
+      <li>Mensagens com prazos, reagendamentos e nomes de atendentes</li>
+      <li>Fotos do imóvel preparado e de visitas não realizadas</li>
+      <li>Protocolos (RA, PROTESTE, Procon, consumidor.gov.br)</li>
+    </ul>
+    <h2>2. Peça cronograma por escrito</h2>
+    <p>Solicite datas de fabricação, expedição, entrega e montagem, com responsável por cada etapa e razão social que recebeu o pagamento.</p>
+    <h2>3. Separe franquia, fábrica e montagem</h2>
+    <p>Em redes franqueadas, o ponto de venda e a indústria podem ser entidades distintas. Peça clareza sobre quem responde por cada atraso.</p>
+    <h2>4. Formalize a cobrança</h2>
+    <p>Notificação extrajudicial, reclamação pública e órgãos de defesa do consumidor são caminhos usados por muitos consumidores. Avalie com assessoria o que cabe ao seu caso.</p>
+    <h2>5. Evite expor dados privados</h2>
+    <p>Não publique CPF, endereço residencial completo, telefone particular ou documentos assinados integrais em redes abertas.</p>
+    <h2>6. Acompanhe o status</h2>
+    <p>Registre cada nova promessa com data. Se houver resolução, documente a entrega efetiva — não apenas uma previsão.</p>
+    <p><a class="button button-dark" href="/casos/florense-ipanema-rj-atraso-moveis-planejados/">Ver exemplo de dossiê CA-001 ↗</a>
+    <a class="button button-subtle" href="/guias/risco-pagamento-antecipado-moveis-planejados/">Ler alerta de pagamento antecipado</a></p>
+  </div></section>
+</BaseLayout>

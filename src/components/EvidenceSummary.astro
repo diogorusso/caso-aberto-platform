@@ -1,0 +1,14 @@
+---
+import { type Case, brl, reportsFor } from '../lib/cases';
+interface Props { item: Case }
+const { item } = Astro.props;
+const n = reportsFor(item).length;
+---
+<div class="evidence-strip">
+  <div><span>Caso</span><strong>{item.id}</strong></div>
+  <div><span>Valor informado</span><strong>{item.valor_brl ? brl(item.valor_brl) : '—'}</strong></div>
+  <div><span>Prazo original</span><strong>{item.prazo_original || '—'}</strong></div>
+  <div><span>Status</span><strong>{item.status}</strong></div>
+  <div><span>Arquivo público</span><strong>{n} relatos indexados</strong></div>
+  {item.procon_protocol && <div><span>Procon/RJ</span><strong>{item.procon_protocol}</strong></div>}
+</div>

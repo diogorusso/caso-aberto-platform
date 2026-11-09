@@ -1,0 +1,16 @@
+---
+import { type Case, updatesFor, dateBR } from '../lib/cases';
+interface Props { item: Case; limit?: number }
+const { item, limit } = Astro.props;
+const list = limit ? updatesFor(item).slice(0, limit) : updatesFor(item);
+---
+<ol class="updates-list">
+  {list.map((u) => (
+    <li>
+      <time datetime={u.date}>{dateBR(u.date)}</time>
+      <h3>{u.title}</h3>
+      <p>{u.summary}</p>
+      {u.source_url && <a class="text-link" href={u.source_url} target="_blank" rel="noopener noreferrer">Fonte ↗</a>}
+    </li>
+  ))}
+</ol>

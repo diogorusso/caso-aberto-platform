@@ -4,9 +4,12 @@ interface Props { item: Case; current?: string }
 const { item, current = 'resumo' } = Astro.props;
 const p = casePath(item);
 const tabs = [
-  {key:'resumo', label:'Resumo', href:p},
+  {key:'resumo', label:'Dossiê', href:p},
   {key:'linha-do-tempo', label:'Cronologia', href:`${p}linha-do-tempo/`},
   {key:'reclamacoes-publicas', label:'Fontes públicas', href:`${p}reclamacoes-publicas/`},
+  {key:'risco-roma-mobili', label:'Alerta Roma', href:`${p}risco-roma-mobili/`},
+  {key:'responsaveis', label:'Quem responde', href:`${p}responsaveis/`},
+  {key:'atualizacoes', label:'Atualizações', href:`${p}atualizacoes/`},
   {key:'imprensa', label:'Imprensa', href:`${p}imprensa/`},
 ];
 ---

@@ -1,0 +1,16 @@
+---
+import { statements, dateBR } from '../lib/cases';
+---
+<div class="statements">
+  {statements.map((s) => (
+    <article class="statement-card">
+      <p class="meta">{s.outlet} · {dateBR(s.published_at)}</p>
+      <h3>{s.speaker}</h3>
+      <p class="muted">{s.role_as_published}</p>
+      <ul>{s.claims.map((c) => <li>{c}</li>)}</ul>
+      <p><strong>Relação com o caso:</strong> {s.relation_to_case}</p>
+      <a class="text-link" href={s.url} target="_blank" rel="noopener noreferrer">Ler fonte original ↗</a>
+      <p class="muted">Verificado em {dateBR(s.checked_at)}</p>
+    </article>
+  ))}
+</div>

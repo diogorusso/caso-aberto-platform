@@ -2,10 +2,60 @@
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import '../styles/global.css';
-interface Props { title: string; description: string; dateModified?: string; type?: 'website'|'article' }
-const { title, description, dateModified='2026-11-09', type='website' } = Astro.props;
+interface Props {
+  title: string;
+  description: string;
+  dateModified?: string;
+  datePublished?: string;
+  type?: 'website' | 'article';
+  image?: string;
+  breadcrumbs?: { name: string; item: string }[];
+}
+const {
+  title,
+  description,
+  dateModified = '2026-11-09',
+  datePublished,
+  type = 'website',
+  image = '/og-default.svg',
+  breadcrumbs,
+} = Astro.props;
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : undefined;
-const ld = { '@context':'https://schema.org', '@type': type==='article' ? 'Article':'WebPage', headline:title, name:title, description, inLanguage:'pt-BR', dateModified, isAccessibleForFree:true, ...(canonical ? {url:canonical} : {})};
+const ogImage = Astro.site ? new URL(image, Astro.site).toString() : image;
+const org = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'CasoAberto',
+  url: Astro.site?.toString() || 'https://casoaberto.pages.dev/',
+  description: 'Publicação independente de accountability do consumidor no Brasil. Não é órgão do governo, regulador, tribunal ou escritório de advocacia.',
+  inLanguage: 'pt-BR',
+};
+const pageLd = {
+  '@context': 'https://schema.org',
+  '@type': type === 'article' ? 'Article' : 'WebPage',
+  headline: title,
+  name: title,
+  description,
+  inLanguage: 'pt-BR',
+  dateModified,
+  ...(datePublished ? { datePublished } : {}),
+  isAccessibleForFree: true,
+  publisher: { '@type': 'Organization', name: 'CasoAberto' },
+  ...(canonical ? { url: canonical } : {}),
+  ...(ogImage ? { image: ogImage } : {}),
+};
+const crumbLd = breadcrumbs?.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: breadcrumbs.map((b, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: b.name,
+        item: Astro.site ? new URL(b.item, Astro.site).toString() : b.item,
+      })),
+    }
+  : null;
 ---
 <!doctype html>
 <html lang="pt-BR">
@@ -22,10 +72,20 @@ const ld = { '@context':'https://schema.org', '@type': type==='article' ? 'Artic
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
     {canonical && <><link rel="canonical" href={canonical}/><meta property="og:url" content={canonical}/></>}
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <script type="application/ld+json" set:html={JSON.stringify(ld).replace(/</g, "\\u003c")} />
+    <link rel="alternate" type="application/rss+xml" title="CasoAberto — atualizações" href="/rss.xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <script type="application/ld+json" set:html={JSON.stringify(org).replace(/</g, '\\u003c')} />
+    <script type="application/ld+json" set:html={JSON.stringify(pageLd).replace(/</g, '\\u003c')} />
+    {crumbLd && <script type="application/ld+json" set:html={JSON.stringify(crumbLd).replace(/</g, '\\u003c')} />}
   </head>
   <body>
     <a class="skip" href="#conteudo">Pular para conteúdo</a>

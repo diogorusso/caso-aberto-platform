@@ -1,34 +1,103 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CaseCard from '../components/CaseCard.astro';
-import { cases } from '../lib/cases';
+import ConsumerRiskWarning from '../components/ConsumerRiskWarning.astro';
+import { cases, brl, reports, metrics, updates, dateBR } from '../lib/cases';
 const featured = cases[0];
+const reportCount = reports.length;
+const updateCount = updates.length;
 ---
-<BaseLayout title="CasoAberto | Reclamações documentadas e defesa do consumidor no Brasil" description="CasoAberto organiza casos de consumidores no Brasil com cronologia, fontes públicas, acompanhamento e perguntas claras às empresas.">
+<BaseLayout
+  title="CasoAberto | O consumidor tem voz. A empresa precisa responder."
+  description="Publicação independente que transforma reclamações documentadas em dossiês públicos, com evidências, cronologia, impacto financeiro e perguntas institucionais."
+  breadcrumbs={[{name:'Início', item:'/'}]}
+>
   <section class="home-hero">
     <div class="container">
-      <div class="eyebrow light"><span class="signal"></span> CONSUMIDORES MERECEM RESPOSTAS</div>
-      <h1>Quando ninguém resolve,<br /><em>o caso fica aberto.</em></h1>
-      <p class="hero-lead">Transformamos histórias de consumo não resolvidas em páginas públicas, organizadas e fáceis de compartilhar. Para que um problema não desapareça no silêncio.</p>
-      <div class="hero-buttons"><a class="button button-primary" href="/casos/">Conhecer os casos ↗</a><a class="button button-ghost" href="/como-funciona/">Entender a plataforma</a></div>
-      <div class="hero-note"><span>01</span><span>Começamos com um caso real. Projetado para muitos outros.</span></div>
-    </div><div class="hero-accent" aria-hidden="true">!</div>
+      <div class="eyebrow light"><span class="signal"></span> PUBLICAÇÃO INDEPENDENTE DE ACCOUNTABILITY</div>
+      <h1>O consumidor tem voz.<br /><em>A empresa precisa responder.</em></h1>
+      <p class="hero-lead">Transformamos reclamações documentadas em dossiês públicos, organizamos evidências, acompanhamos respostas e damos visibilidade a problemas que não podem ser simplesmente ignorados.</p>
+      <div class="hero-buttons">
+        <a class="button button-primary" href="/casos/florense-ipanema-rj-atraso-moveis-planejados/">Abrir dossiê CA-001 ↗</a>
+        <a class="button button-ghost" href="/guias/risco-pagamento-antecipado-moveis-planejados/">Alerta: pagamento antecipado</a>
+      </div>
+      <div class="hero-note"><span>!</span><span>Não somos governo, Procon, tribunal nem escritório de advocacia. Somos uma redação independente de evidências públicas.</span></div>
+    </div>
+    <div class="hero-accent" aria-hidden="true">CA</div>
   </section>
-  <section class="section intro-section">
-    <div class="container section-top"><span class="eyebrow">POR QUE EXISTIMOS</span><h2>Reclamar deveria ser o começo da solução. <em>Não o fim da conversa.</em></h2><p>O CasoAberto dá continuidade ao que normalmente fica disperso: reclamações, documentos, prazos, notícias e perguntas sem resposta. Cada caso tem seu próprio endereço e acompanhamento público.</p></div>
-    <div class="container service-grid">
-      <article><span class="service-n">01 / VISIBILIDADE</span><h3>Uma página para cada caso</h3><p>Um endereço público para entender o problema, acessar as fontes e compartilhar os fatos sem depender de capturas de tela.</p></article>
-      <article><span class="service-n">02 / EVIDÊNCIAS</span><h3>Documentação organizada</h3><p>Cronologia, links de origem, registros públicos e a separação entre relatos e respostas confirmadas.</p></article>
-      <article><span class="service-n">03 / ACOMPANHAMENTO</span><h3>Pressão por respostas</h3><p>Perguntas claras, atualizações datadas e espaço para registrar providências e resoluções efetivas.</p></article>
+
+  <section class="section">
+    <div class="container home-stats">
+      <div><small>Casos publicados</small><strong>{metrics.platform.published_cases}</strong></div>
+      <div><small>Relatos públicos indexados</small><strong>{reportCount}</strong></div>
+      <div><small>Atualizações editoriais</small><strong>{updateCount}</strong></div>
+      <div><small>Exposição no caso destaque</small><strong>{featured?.valor_brl ? brl(featured.valor_brl) : '—'}</strong></div>
     </div>
   </section>
-  <section class="section case-section"><div class="container">
-    <div class="section-heading"><div><div class="eyebrow">PRIMEIRO DOSSIÊ</div><h2>Casos em destaque</h2></div><a href="/casos/" class="text-link">Todos os casos ↗</a></div>
-    {featured && <CaseCard item={featured} featured />}
-  </div></section>
-  <section class="section principles"><div class="container principles-grid">
-    <div><div class="eyebrow">NOSSA ABORDAGEM</div><h2>Informação que circula.<br />Respostas que ficam registradas.</h2></div>
-    <div><p>Cada página é pensada para ser encontrada em mecanismos de busca, compartilhada em redes e consultada por consumidores, jornalistas e pelas próprias empresas.</p><ul class="checklist"><li>Fontes e datas visíveis</li><li>Perguntas objetivas e possibilidade de atualização</li><li>Endereços permanentes por empresa e caso</li><li>Sem cadastro para ler ou compartilhar</li></ul><a class="text-link" href="/metodologia/">Ver metodologia editorial ↗</a></div>
-  </div></section>
-  <section class="final-cta"><div class="container"><span class="eyebrow light">A HISTÓRIA NÃO TERMINA NA RECLAMAÇÃO</span><h2>Um caso aberto merece uma resposta pública.</h2><a class="button button-white" href="/casos/">Explorar os casos ↗</a></div></section>
+
+  <section class="section case-section">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">CASO EM ANDAMENTO</div>
+          <h2>Florense Ipanema — R$ 190 mil em disputa de entrega</h2>
+        </div>
+        <a href="/casos/" class="text-link">Arquivo de casos ↗</a>
+      </div>
+      {featured && <CaseCard item={featured} featured />}
+      <p class="evidence-legend">Distinção editorial: fatos documentados (protocolos, links públicos, datas) ≠ relatos do consumidor ≠ hipóteses não verificadas.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <ConsumerRiskWarning />
+    </div>
+  </section>
+
+  <section class="section intro-section">
+    <div class="container section-top">
+      <span class="eyebrow">COMO INVESTIGAMOS</span>
+      <h2>Dossiê permanente. Evidência rastreável. Pressão por resposta.</h2>
+      <p>Cada caso reúne cronologia, fontes, impacto financeiro informado, liderança pública verificável e perguntas em aberto — pronto para busca, imprensa e compartilhamento.</p>
+    </div>
+    <div class="container service-grid">
+      <article><span class="service-n">01 / DOSSIÊ</span><h3>Endereço indexável</h3><p>Uma URL permanente por caso, com SEO, compartilhamento e histórico de status.</p></article>
+      <article><span class="service-n">02 / EVIDÊNCIAS</span><h3>Fontes com data e status</h3><p>Reclamações públicas, protocolos e registros institucionais, sem inventar depoimentos.</p></article>
+      <article><span class="service-n">03 / ACCOUNTABILITY</span><h3>Quem pode responder</h3><p>Mapa de papéis públicos, canais oficiais e perguntas objetivas — sem assédio pessoal.</p></article>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container two-col">
+      <div>
+        <span class="eyebrow">ÚLTIMAS ATUALIZAÇÕES</span>
+        <h2>O que mudou no arquivo</h2>
+        <ul class="home-updates">
+          {updates.slice().sort((a,b)=>b.date.localeCompare(a.date)).slice(0,3).map((u) => (
+            <li><time datetime={u.date}>{dateBR(u.date)}</time><strong>{u.title}</strong><span>{u.summary}</span></li>
+          ))}
+        </ul>
+        <a class="text-link" href="/casos/florense-ipanema-rj-atraso-moveis-planejados/atualizacoes/">Ver todas as atualizações ↗</a>
+      </div>
+      <div>
+        <span class="eyebrow">PARTICIPE</span>
+        <h2>Também foi afetado?</h2>
+        <p>Envie um relato factual com links públicos. Publicamos apenas após revisão e consentimento.</p>
+        <a class="button button-dark" href="/casos/florense-ipanema-rj-atraso-moveis-planejados/#apoiar">Apoiar / enviar evidência ↗</a>
+        <p class="muted" style="margin-top:18px">Imprensa: use o kit em cada dossiê. Empresas: respondam pelos canais oficiais documentados.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container">
+      <span class="eyebrow light">NÃO IGNORE O RISCO</span>
+      <h2>Na dúvida, procure outro fornecedor.</h2>
+      <div class="hero-buttons">
+        <a class="button button-white" href="/guias/risco-pagamento-antecipado-moveis-planejados/">Ler alerta Roma Mobili ↗</a>
+        <a class="button button-outline" href="/casos/florense-ipanema-rj-atraso-moveis-planejados/imprensa/">Kit para imprensa</a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

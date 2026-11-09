@@ -1,0 +1,21 @@
+---
+import { roma } from '../lib/cases';
+---
+<section class="roma-compare">
+  <div class="compare-grid">
+    <article>
+      <h3>O que os registros da Roma estabelecem</h3>
+      <ul>{roma.facts.map((f) => <li>{f}</li>)}</ul>
+    </article>
+    <article>
+      <h3>Semelhanças observáveis com CA-001</h3>
+      <ul>{roma.similarities_to_florense_case.map((f) => <li>{f}</li>)}</ul>
+      <h3>Diferenças relevantes</h3>
+      <ul>{roma.differences.map((f) => <li>{f}</li>)}</ul>
+    </article>
+  </div>
+  <div class="checklist-box">
+    <h3>Checklist antes de pagar à vista por móveis planejados</h3>
+    <ul class="checklist">{roma.checklist.map((c) => <li>{c}</li>)}</ul>
+  </div>
+</section>

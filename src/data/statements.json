@@ -1,0 +1,31 @@
+[
+  {
+    "id": "stmt-gelson-spacofm-2026-09",
+    "speaker": "Gelson Castellan",
+    "role_as_published": "Diretor da Móveis Florense (conforme Spaço FM)",
+    "outlet": "Spaço FM",
+    "published_at": "2026-09-14",
+    "url": "https://spacofm.com.br/setor-moveleiro-vive-momento-de-contrastes-em-meio-a-crise-do-grande-varejo/",
+    "claims": [
+      "Florense registrava desempenho aproximadamente 12% acima da meta prevista para 2026.",
+      "Pedidos da rede a partir de agosto teriam entrega prevista somente para janeiro de 2027.",
+      "Produção até o fim de 2026 estaria totalmente comprometida/programada."
+    ],
+    "relation_to_case": "Não prova nem refuta o atraso do pedido CA-001. Serve para contrastar narrativa pública de carteira cheia/produção comprometida com a experiência de um consumidor que afirma ter pago R$ 190 mil e não recebido no prazo.",
+    "checked_at": "2026-11-09"
+  },
+  {
+    "id": "stmt-felipe-formobile-2026-09",
+    "speaker": "Felipe Luís Corradi",
+    "role_as_published": "Diretor Industrial do Grupo Florense",
+    "outlet": "ForMóbile Digital",
+    "published_at": "2026-09-03",
+    "url": "https://digital.formobile.com.br/gestao/73-anos-de-historia-design-e-inspiracao-no-mercado-moveleiro-brasileiro/",
+    "claims": [
+      "Florense descrita com parque fabril verticalizado e rede de franquias (cerca de 55 lojas no Brasil e 14 nas Américas, segundo a reportagem).",
+      "Ênfase em valores de ética, transparência e excelência do atendimento ao pós-venda/instalação."
+    ],
+    "relation_to_case": "Material institucional/industrial. Não substitui cronograma do contrato de Ipanema nem responde às perguntas do dossiê CA-001.",
+    "checked_at": "2026-11-09"
+  }
+]

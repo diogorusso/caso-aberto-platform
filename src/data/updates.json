@@ -1,0 +1,26 @@
+[
+  {
+    "id": "upd-001-01",
+    "case_id": "CA-001",
+    "date": "2026-11-03",
+    "title": "Publicação da reclamação principal no Reclame Aqui",
+    "summary": "Consumidor publicou o relato do atraso na Florense Ipanema, citando pagamento integral e prazos descumpridos.",
+    "source_url": "https://www.reclameaqui.com.br/florense-moveis/nao-recebi-meus-moveis-planejados-e-a-loja-nao-cumpre-prazos_LaK42QhQaVqRLA5s/"
+  },
+  {
+    "id": "upd-001-02",
+    "case_id": "CA-001",
+    "date": "2026-11-08",
+    "title": "Protocolo Procon/RJ informado",
+    "summary": "Consumidor informou o protocolo 202611080341 no Procon/RJ. Conteúdo integral do protocolo não foi anexado ao dossiê público.",
+    "source_url": null
+  },
+  {
+    "id": "upd-001-03",
+    "case_id": "CA-001",
+    "date": "2026-11-09",
+    "title": "Dossiê CasoAberto expandido",
+    "summary": "Publicação do dossiê com cronologia, arquivo ampliado de reclamações públicas, alerta Roma Mobili, mapa institucional e guias ao consumidor. Sem resolução confirmada até esta data.",
+    "source_url": "https://casoaberto.pages.dev/casos/florense-ipanema-rj-atraso-moveis-planejados/"
+  }
+]

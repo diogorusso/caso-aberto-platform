@@ -1,0 +1,76 @@
+{
+  "slug": "risco-roma-mobili",
+  "title": "O alerta da Roma Mobili: o que acontece quando o consumidor paga pelos móveis e não recebe?",
+  "campaign_line": "NÃO ASSUMA ESSE RISCO.",
+  "campaign_sub": "Na dúvida, procure outro fornecedor. O risco de ficar sem os móveis e sem o dinheiro existe. O caso Roma mostra por quê.",
+  "florense_bridge": "R$ 190 mil pagos. Entrega atrasada. Por que o consumidor precisa avaliar o risco antes de contratar móveis planejados?",
+  "disclaimer": "Não há evidência neste dossiê de que a Florense esteja falida ou insolvente. A comparação com a Roma Mobili é um alerta sobre exposição do consumidor a pagamento antecipado — não uma previsão de insolvência da Florense.",
+  "entities": [
+    "Roma Mobili Indústria Ltda.",
+    "RM Projetos e Montagens de Móveis Ltda. EPP"
+  ],
+  "proceeding": {
+    "number": "3016855-24.2025.8.19.0001",
+    "court": "5ª Vara Empresarial da Comarca da Capital — TJRJ",
+    "bankruptcy_decree": "2025-12-19",
+    "filing_or_start_noted": "2025-10-17"
+  },
+  "facts": [
+    "A Administração Judicial Gomes de Mattos publica página específica da falência das duas empresas, com cronograma processual.",
+    "Sentença de decretação da falência registrada em 19/12/2025 no processo 3016855-24.2025.8.19.0001.",
+    "Edital da relação de credores da Administração Judicial divulgado no DJE em 30/09/2026; prazo de impugnação citado até 13/10/2026.",
+    "Há leilão eletrônico de bens vinculados à massa falida (máquinas, estoque, veículo), com editais públicos de leiloeiro.",
+    "Consulta Serasa Experian pública identifica a razão social com marcação de falido no CNPJ consultado."
+  ],
+  "consumer_lessons": [
+    "Pagamento antecipado elevado concentra risco no consumidor se a cadeia de produção/entrega falhar.",
+    "Em falência, o consumidor pode precisar habilitar crédito e aguardar ordem concursal — sem garantia de recuperação integral ou rápida dos móveis.",
+    "Documentar contrato, comprovantes, prazos e comunicações é essencial antes e durante qualquer disputa.",
+    "Distinguir fabricante, franquia e montadora importa para saber quem deve entregar e quem responde."
+  ],
+  "similarities_to_florense_case": [
+    "Ambos envolvem móveis planejados e expectativa de entrega futura após desembolso relevante.",
+    "O caso CA-001 documenta pagamento integral informado de R$ 190 mil com prazo descumprido — exposição financeira concentrada no consumidor."
+  ],
+  "differences": [
+    "Roma Mobili tem falência decretada com registros judiciais públicos; Florense não tem, neste dossiê, registro equivalente de falência.",
+    "CA-001 é um conflito contratual/atendimento em andamento, não um processo falimentar.",
+    "Florense opera rede de franquias e indústria verticalizada com cobertura pública recente de desempenho operacional — fatos distintos da massa falida Roma."
+  ],
+  "checklist": [
+    "Identifique a razão social que recebe o pagamento e a que fabrica/monta.",
+    "Exija cronograma escrito com marcos de medição, produção, entrega e montagem.",
+    "Evite quitar 100% antes de marcos verificáveis de produção/entrega, quando negociável.",
+    "Guarde NF, contrato, e-mails, WhatsApp e protocolos (Procon, RA, PROTESTE).",
+    "Pesquise reclamações públicas recentes da unidade e da marca antes de contratar.",
+    "Pergunte o que acontece se a fábrica ou a franquia atrasar: multa, depósito, substituição, rescisão."
+  ],
+  "sources": [
+    {
+      "title": "Administração Judicial — página Roma Mobili / RM Projetos",
+      "url": "https://gomesdemattos.com.br/admjudicial/lista-de-processos/roma-mobili-industria-ltda-e-rm-projetos-e-montagens-de-moveis-ltda-epp/",
+      "checked_at": "2026-11-09"
+    },
+    {
+      "title": "TJRJ — 5ª Vara Empresarial (relação nominal de credores)",
+      "url": "https://www.tjrj.jus.br/consultas/relacao-nominal-de-credores/5-vara-empresarial",
+      "checked_at": "2026-11-09"
+    },
+    {
+      "title": "Serasa Experian — consulta pública ROMA MOBILI INDUSTRIA LTDA FALIDO",
+      "url": "https://empresas.serasaexperian.com.br/consulta-gratis/ROMA-MOBILI-INDUSTRIA-LTDA-FALIDO-09178665000326",
+      "checked_at": "2026-11-09"
+    },
+    {
+      "title": "Edital/catálogo de leilão — bens da massa (leiloeiro)",
+      "url": "https://sindicatodosleiloeirosrj.com.br/editais/falencia-de-roma-mobili-industria-ltda-maquinas-equipamentos-moveis-utensilios-itens-de-estoque-e-veiculo-caminhao-hyundai/",
+      "checked_at": "2026-11-09"
+    },
+    {
+      "title": "Vídeo explicativo (Instagram) — link fornecido pelo cliente",
+      "url": "https://www.instagram.com/reel/DVr3jaCkdWq/",
+      "checked_at": "2026-11-09",
+      "notes": "Conteúdo de rede social; usar como referência audiovisual, não como prova judicial."
+    }
+  ]
+}

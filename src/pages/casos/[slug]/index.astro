@@ -6,21 +6,117 @@ import CaseIntro from '../../../components/CaseIntro.astro';
 import Requests from '../../../components/Requests.astro';
 import SourceList from '../../../components/SourceList.astro';
 import ShareActions from '../../../components/ShareActions.astro';
-import { cases, casePath, crumbFor, dateBR, type Case } from '../../../lib/cases';
+import ConsumerRiskWarning from '../../../components/ConsumerRiskWarning.astro';
+import CorporateStatements from '../../../components/CorporateStatements.astro';
+import CaseMetrics from '../../../components/CaseMetrics.astro';
+import CaseUpdates from '../../../components/CaseUpdates.astro';
+import CaseQuestions from '../../../components/CaseQuestions.astro';
+import ParticipationCTA from '../../../components/ParticipationCTA.astro';
+import { cases, casePath, crumbFor, dateBR, reportsFor, type Case } from '../../../lib/cases';
 export function getStaticPaths() { return cases.map(item => ({params:{slug:item.slug},props:{item}})); }
 interface Props { item: Case }
 const {item} = Astro.props;
 const base = casePath(item);
+const crumbs = crumbFor(item);
+const related = reportsFor(item).filter(r => r.destaque || (r.cidade||'').includes('Ipanema')).slice(0,4);
 ---
-<BaseLayout title={`${item.titulo} | CasoAberto`} description={item.resumo} dateModified={item.status_data} type="article">
-  <Breadcrumbs items={crumbFor(item)} />
+<BaseLayout
+  title={`${item.titulo} | CasoAberto`}
+  description={item.resumo}
+  dateModified={item.status_data}
+  datePublished={item.data_publicacao}
+  type="article"
+  breadcrumbs={crumbs.map(c => ({name:c.label, item:c.href}))}
+>
+  <Breadcrumbs items={crumbs} />
   <CaseIntro item={item}/>
   <CaseNav item={item}/>
-  <section class="section"><div class="container two-col">
-    <div><span class="eyebrow">O QUE ACONTECEU</span><h2>Da promessa de entrega à cobrança por solução.</h2><p>{item.resumo}</p><p>O dossiê reúne a cronologia descrita pelo consumidor, os links de origem e os pedidos de resolução. O acompanhamento é datado e pode ser atualizado quando surgir uma resposta verificável.</p><a href={`${base}linha-do-tempo/`} class="text-link">Ler a cronologia completa ↗</a></div>
-    <aside class="info-panel"><span class="eyebrow">ACOMPANHAMENTO</span><h3>{item.status}</h3><p>Status do dossiê em {dateBR(item.status_data)}. A situação pode ter mudado desde a última verificação.</p><div class="divider"></div><strong>Dados do caso</strong><p>{item.categoria} · {item.local}</p>{item.prazo_posterior && <><strong>Previsão posterior relatada</strong><p>{item.prazo_posterior}</p></>}</aside>
+
+  <section class="section"><div class="container">
+    <CaseMetrics item={item} />
   </div></section>
-  <section class="section section-soft"><div class="container"><span class="eyebrow">PEDIDOS DE SOLUÇÃO</span><h2>O que precisa ser respondido?</h2><Requests items={item.pedidos}/></div></section>
-  <section class="section"><div class="container two-col"><div><span class="eyebrow">PUBLICAÇÕES E DOCUMENTOS</span><h2>Fontes para consulta.</h2><p>Acesse os registros citados no dossiê. Reclamações de outras unidades são identificadas separadamente e podem apresentar atualizações posteriores.</p><a class="button button-dark" href={`${base}reclamacoes-publicas/`}>Ver reclamações públicas ↗</a></div><div class="info-panel"><span class="eyebrow">FONTES DESTE CASO</span><SourceList items={item.fontes}/></div></div></section>
+
+  <section class="section"><div class="container two-col">
+    <div>
+      <span class="eyebrow">RESUMO EXECUTIVO</span>
+      <h2>Da promessa de entrega à cobrança por solução.</h2>
+      <p>{item.resumo}</p>
+      {item.impacto && <p><strong>Impacto relatado:</strong> {item.impacto}</p>}
+      {item.legal_entity_note && <p class="note-inline">{item.legal_entity_note}</p>}
+      <a href={`${base}linha-do-tempo/`} class="text-link">Ler a cronologia completa ↗</a>
+    </div>
+    <aside class="info-panel">
+      <span class="eyebrow">ACOMPANHAMENTO</span>
+      <h3>{item.status}</h3>
+      <p>Status do dossiê em {dateBR(item.status_data)}. A situação pode ter mudado desde a última verificação.</p>
+      <div class="divider"></div>
+      <strong>Categoria · Local</strong>
+      <p>{item.categoria} · {item.local}</p>
+      {item.prazo_posterior && <><strong>Previsão posterior relatada</strong><p>{item.prazo_posterior}</p></>}
+      {item.procon_protocol && <><strong>Procon/RJ</strong><p>{item.procon_protocol}</p></>}
+    </aside>
+  </div></section>
+
+  <section class="section section-soft"><div class="container">
+    <span class="eyebrow">PEDIDOS DE SOLUÇÃO</span>
+    <h2>O que precisa ser respondido?</h2>
+    <Requests items={item.pedidos}/>
+  </div></section>
+
+  <section class="section"><div class="container">
+    <span class="eyebrow">ALERTA AO CONSUMIDOR</span>
+    <h2>Por que o risco do pagamento antecipado importa neste caso</h2>
+    <ConsumerRiskWarning href={`${base}risco-roma-mobili/`} />
+  </div></section>
+
+  <section class="section section-soft"><div class="container">
+    <span class="eyebrow">DECLARAÇÕES PÚBLICAS × EXPERIÊNCIA RELATADA</span>
+    <h2>O que a empresa diz em público — e o que este dossiê pergunta</h2>
+    <p class="muted">Não inventamos nexo causal. Mostramos o contraste entre falas institucionais datadas e as perguntas em aberto do pedido de Ipanema.</p>
+    <CorporateStatements />
+  </div></section>
+
+  <section class="section"><div class="container two-col">
+    <div>
+      <span class="eyebrow">ARQUIVO RELACIONADO</span>
+      <h2>Outras reclamações públicas</h2>
+      <p>Inclui registros de Ipanema e de outras unidades. Status resolvido permanece explícito.</p>
+      <div class="reports-grid">
+        {related.map(r => (
+          <article class="record">
+            <div class="record-top"><span>{r.data.split('-').reverse().join('/')}</span><span>·</span><span>{r.cidade}</span></div>
+            <span class="tag">{r.tema}</span>
+            <h3>{r.titulo}</h3>
+            <p>{r.resumo}</p>
+            <small>{r.status}</small>
+            <a class="text-link" href={r.url} target="_blank" rel="noopener noreferrer">Fonte original ↗</a>
+          </article>
+        ))}
+      </div>
+      <a class="button button-dark" href={`${base}reclamacoes-publicas/`}>Abrir arquivo completo ↗</a>
+    </div>
+    <div class="info-panel">
+      <span class="eyebrow">FONTES DESTE CASO</span>
+      <SourceList items={item.fontes}/>
+      <div class="divider"></div>
+      <a class="text-link" href={`${base}responsaveis/`}>Quem responde institucionalmente? ↗</a>
+    </div>
+  </div></section>
+
+  <section class="section section-soft"><div class="container two-col">
+    <div>
+      <span class="eyebrow">PERGUNTAS EM ABERTO</span>
+      <h2>O que a empresa ainda precisa esclarecer</h2>
+      <CaseQuestions questions={item.imprensa_perguntas || []} />
+    </div>
+    <div>
+      <span class="eyebrow">ÚLTIMAS ATUALIZAÇÕES</span>
+      <h2>Linha editorial recente</h2>
+      <CaseUpdates item={item} limit={3} />
+      <a class="text-link" href={`${base}atualizacoes/`}>Histórico completo ↗</a>
+    </div>
+  </div></section>
+
+  <div id="apoiar"><ParticipationCTA item={item} /></div>
   <ShareActions />
 </BaseLayout>

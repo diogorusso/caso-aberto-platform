@@ -16,12 +16,17 @@ for (const file of files) {
   }
 }
 const cases=JSON.parse(readFileSync(resolve(src,'data/casos.json'),'utf8'));
-const patterns=['casos/[slug]/index.astro','casos/[slug]/linha-do-tempo/index.astro','casos/[slug]/reclamacoes-publicas/index.astro','casos/[slug]/imprensa/index.astro'];
+const patterns=['casos/[slug]/index.astro','casos/[slug]/linha-do-tempo/index.astro','casos/[slug]/reclamacoes-publicas/index.astro','casos/[slug]/imprensa/index.astro','casos/[slug]/risco-roma-mobili/index.astro','casos/[slug]/responsaveis/index.astro','casos/[slug]/atualizacoes/index.astro'];
 for (const pattern of patterns) {
   const path=resolve(src,'pages',pattern);
   if (!existsSync(path) || !readFileSync(path,'utf8').includes('getStaticPaths')) {console.error('Missing static case route',pattern);bad++;}
 }
-const all=new Set(['/', '/casos/', '/como-funciona/', '/metodologia/']);
-for (const c of cases) for (const suffix of ['', 'linha-do-tempo/','reclamacoes-publicas/','imprensa/']) all.add(`/casos/${c.slug}/${suffix}`);
+const platform=['/', '/casos/', '/como-funciona/', '/metodologia/', '/empresas/florense/', '/empresas/florense/ipanema-rj/', '/guias/risco-pagamento-antecipado-moveis-planejados/', '/guias/o-que-fazer-atraso-moveis-planejados/', '/rss.xml'];
+for (const p of platform) {
+  const file = p === '/' ? 'pages/index.astro' : p === '/rss.xml' ? 'pages/rss.xml.ts' : `pages${p}index.astro`;
+  if (!existsSync(resolve(src, file))) {console.error('Missing platform route file', file);bad++;}
+}
+const all=new Set(platform);
+for (const c of cases) for (const suffix of ['', 'linha-do-tempo/','reclamacoes-publicas/','imprensa/','risco-roma-mobili/','responsaveis/','atualizacoes/']) all.add(`/casos/${c.slug}/${suffix}`);
 if (bad) process.exit(1);
-console.log(`OK: ${files.length} TS/Astro files; imports resolved; ${all.size} planned routes (4 platform + 4 per case).`);
+console.log(`OK: ${files.length} TS/Astro files; imports resolved; ${all.size} planned routes.`);

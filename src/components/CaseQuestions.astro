@@ -1,0 +1,7 @@
+---
+interface Props { questions: string[] }
+const { questions } = Astro.props;
+---
+<ol class="editor-list questions-list">
+  {questions.map((q) => <li>{q}</li>)}
+</ol>

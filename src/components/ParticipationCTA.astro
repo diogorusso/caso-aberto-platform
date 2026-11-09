@@ -1,0 +1,27 @@
+---
+import { type Case, casePath } from '../lib/cases';
+interface Props { item?: Case }
+const { item } = Astro.props;
+const subject = item ? encodeURIComponent(`Apoio / relato — ${item.id} ${item.empresa_resumo}`) : encodeURIComponent('Apoio / relato — CasoAberto');
+const body = encodeURIComponent(`Quero apoiar ou enviar um relato relacionado.\n\nConsentimento para publicação anonimizada: SIM/NÃO\nCidade/UF:\nResumo factual (sem dados pessoais sensíveis):\nLink de fonte pública (se houver):\n\nNão envie CPF, endereço residencial, telefone particular, contratos assinados completos ou documentos privados por este canal público.`);
+const mail = `mailto:redacao@casoaberto.org?subject=${subject}&body=${body}`;
+---
+<section class="participation">
+  <div class="container participation-grid">
+    <div>
+      <span class="eyebrow light">Participação</span>
+      <h2>Apoie este caso. Ou envie seu relato.</h2>
+      <p>Também teve problemas documentados com esta empresa? Envie um resumo factual e links públicos. Publicamos apenas o que for revisado, com consentimento, sem expor dados privados.</p>
+      <ul class="checklist">
+        <li>Consentimento explícito para publicar (anônimo ou identificado)</li>
+        <li>Preferência por fontes já públicas (RA, Procon, notícias)</li>
+        <li>Sem anexos privados por padrão</li>
+      </ul>
+    </div>
+    <div class="participation-actions">
+      <a class="button button-primary" href={mail}>Apoiar / enviar relato ↗</a>
+      {item && <a class="button button-ghost" href={`${casePath(item)}reclamacoes-publicas/`}>Ver relatos públicos ↗</a>}
+      <p class="muted">Canal provisório por e-mail até a configuração de formulário hospedado. Contagens de apoio só sobem após revisão humana.</p>
+    </div>
+  </div>
+</section>

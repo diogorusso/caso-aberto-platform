@@ -1,0 +1,133 @@
+{
+  "company": "Florense / Grupo Florense",
+  "manufacturer_note": "A indústria Florense opera a partir de Flores da Cunha (RS). Lojas como Ipanema são franquias da rede — entidades comerciais distintas da fábrica. Nomes abaixo referem-se a papéis públicos reportados sobre a fabricante/grupo, não a comprovação de que tenham tratado o pedido CA-001.",
+  "last_verified_at": "2026-11-09",
+  "people": [
+    {
+      "name": "Mateus Corradi",
+      "role": "CEO (terceira geração)",
+      "organization": "Florense / Grupo Florense",
+      "scope": "Fabricante / grupo",
+      "status": "Papel público reportado",
+      "sources": [
+        {
+          "title": "Sucessão na Florense: Mateus Corradi assume de CEO",
+          "url": "https://glamurama.com.br/notas/sucessao-na-florense-mateus-corradi-assume-de-ceo-da-fabrica-de-moveis/",
+          "published_at": "2019-04-18"
+        },
+        {
+          "title": "Florense celebra 70 anos de história (Pioneiro / GaúchaZH)",
+          "url": "https://gauchazh.clicrbs.com.br/pioneiro/economia/conteudo-de-marca/2023/05/florense-celebra-70-anos-de-historia-clhuy7iz4007y0165ge3konrx.html",
+          "published_at": "2023-05"
+        }
+      ],
+      "linkedin_url": null,
+      "notes": "URL de LinkedIn não publicada aqui porque não foi confirmada por fonte oficial nesta verificação."
+    },
+    {
+      "name": "Gelson Castellan",
+      "role": "Presidente do Conselho de Acionistas; citado como diretor em cobertura setorial de 2026",
+      "organization": "Florense / Grupo Florense",
+      "scope": "Fabricante / grupo",
+      "status": "Papel público reportado",
+      "sources": [
+        {
+          "title": "Florense celebra 70 anos de história",
+          "url": "https://gauchazh.clicrbs.com.br/pioneiro/economia/conteudo-de-marca/2023/05/florense-celebra-70-anos-de-historia-clhuy7iz4007y0165ge3konrx.html",
+          "published_at": "2023-05"
+        },
+        {
+          "title": "Setor moveleiro vive momento de contrastes (Spaço FM)",
+          "url": "https://spacofm.com.br/setor-moveleiro-vive-momento-de-contrastes-em-meio-a-crise-do-grande-varejo/",
+          "published_at": "2026-09-14"
+        }
+      ],
+      "linkedin_url": null,
+      "notes": "Em 2019, cobertura apontou transição do cargo de CEO para Mateus Corradi. Em 2026, Spaço FM o identifica como diretor da Móveis Florense ao comentar desempenho."
+    },
+    {
+      "name": "Felipe Corradi / Felipe Luís Corradi",
+      "role": "CTO e diretor industrial",
+      "organization": "Grupo Florense",
+      "scope": "Fabricante / grupo",
+      "status": "Papel público reportado",
+      "sources": [
+        {
+          "title": "Evento em Caxias discute sucessão empresarial com diretores da Florense",
+          "url": "https://gauchazh.clicrbs.com.br/pioneiro/colunistas/juliana-bevilaqua/noticia/2023/10/evento-em-caxias-discute-sucessao-empresarial-com-diretores-da-florense-clo2xvz8r003b013hoo6lc7y9.html",
+          "published_at": "2023-10-23"
+        },
+        {
+          "title": "73 anos de história — ForMóbile Digital",
+          "url": "https://digital.formobile.com.br/gestao/73-anos-de-historia-design-e-inspiracao-no-mercado-moveleiro-brasileiro/",
+          "published_at": "2026-09-03"
+        }
+      ],
+      "linkedin_url": null,
+      "notes": null
+    },
+    {
+      "name": "Roberta Castellan",
+      "role": "Diretora criativa (produto, marketing e gestão da marca)",
+      "organization": "Florense / Grupo Florense",
+      "scope": "Fabricante / grupo",
+      "status": "Papel público reportado",
+      "sources": [
+        {
+          "title": "Florense celebra 70 anos de história",
+          "url": "https://gauchazh.clicrbs.com.br/pioneiro/economia/conteudo-de-marca/2023/05/florense-celebra-70-anos-de-historia-clhuy7iz4007y0165ge3konrx.html",
+          "published_at": "2023-05"
+        }
+      ],
+      "linkedin_url": null,
+      "notes": null
+    },
+    {
+      "name": "Ézio de Salles / Ezio de Salles",
+      "role": "Diretor jurídico (segunda/terceira geração citada em materiais institucionais)",
+      "organization": "Florense / Grupo Florense",
+      "scope": "Fabricante / grupo",
+      "status": "Papel público reportado",
+      "sources": [
+        {
+          "title": "Florense celebra 70 anos de história",
+          "url": "https://gauchazh.clicrbs.com.br/pioneiro/economia/conteudo-de-marca/2023/05/florense-celebra-70-anos-de-historia-clhuy7iz4007y0165ge3konrx.html",
+          "published_at": "2023-05"
+        }
+      ],
+      "linkedin_url": null,
+      "notes": "Grafia varia entre Ézio e Ezio nas fontes consultadas."
+    }
+  ],
+  "franchise": {
+    "unit": "Florense Ipanema",
+    "address": "Rua Joana Angélica, 169 — Ipanema, Rio de Janeiro/RJ, CEP 22420-030",
+    "phone_public": "+55 21 2247-9488",
+    "email_public": "florense@florenseipanema.com.br",
+    "official_page": "https://www.florense.com.br/franquias/ipanema",
+    "operators_public": [],
+    "notes": "Operadores/franqueados nominais da unidade Ipanema não foram confirmados por biografia corporativa pública nesta verificação. Contatos listados vêm da página oficial de franquia.",
+    "last_verified_at": "2026-11-09"
+  },
+  "channels": [
+    {
+      "label": "Página oficial da franquia Ipanema",
+      "url": "https://www.florense.com.br/franquias/ipanema"
+    },
+    {
+      "label": "Site institucional Florense",
+      "url": "https://www.florense.com.br/"
+    },
+    {
+      "label": "Listagem pública de reclamações (Reclame Aqui)",
+      "url": "https://www.reclameaqui.com.br/empresa/florense-moveis/lista-reclamacoes/"
+    }
+  ],
+  "institutional_questions": [
+    "Qual entidade jurídica contratou e recebeu os R$ 190 mil do pedido CA-001 — franquia Ipanema, fabricante ou outra?",
+    "Qual o estágio atual, por escrito, de fabricação, expedição, transporte e montagem deste pedido?",
+    "Como se divide a responsabilidade operacional entre franquia, fábrica e instaladores neste contrato?",
+    "Há cronograma vinculante e nominado para conclusão integral, com datas e responsáveis?",
+    "Qual canal oficial receberá e responderá publicamente às perguntas deste dossiê?"
+  ]
+}

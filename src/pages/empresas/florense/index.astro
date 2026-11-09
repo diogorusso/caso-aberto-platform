@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import { cases, reports, brl, casePath } from '../../../lib/cases';
+const item = cases[0];
+const crumbs = [{label:'Início',href:'/'},{label:'Empresas',href:'/empresas/florense/'},{label:'Florense',href:'/empresas/florense/'}];
+const byTheme = reports.reduce((acc: Record<string, number>, r) => { acc[r.tema]=(acc[r.tema]||0)+1; return acc; }, {});
+---
+<BaseLayout
+  title="Florense — arquivo público de reclamações e dossiês | CasoAberto"
+  description="Página empresarial do CasoAberto sobre a Florense: distinção fábrica/franquia, dossiê CA-001, arquivo de reclamações públicas e alertas ao consumidor."
+  breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}
+>
+  <Breadcrumbs items={crumbs} />
+  <header class="pagehead"><div class="container">
+    <div class="eyebrow">EMPRESA · ARQUIVO PÚBLICO</div>
+    <h1>Florense</h1>
+    <p>Indústria de móveis planejados com sede em Flores da Cunha/RS e rede de franquias. O CasoAberto separa fabricante, unidades e reclamações por local/status.</p>
+  </div></header>
+  <section class="section"><div class="container two-col">
+    <div>
+      <h2>Caso em destaque</h2>
+      <p><strong>{item.titulo}</strong></p>
+      <p>Exposição informada: {item.valor_brl ? brl(item.valor_brl) : '—'}. Status: {item.status}.</p>
+      <a class="button button-dark" href={casePath(item)}>Abrir dossiê CA-001 ↗</a>
+      <a class="text-link" href="/empresas/florense/ipanema-rj/">Unidade Ipanema (RJ) ↗</a>
+    </div>
+    <aside class="info-panel">
+      <h3>Arquivo indexado</h3>
+      <p>{reports.length} relatos públicos vinculados neste repositório.</p>
+      <ul>{Object.entries(byTheme).map(([k,v]) => <li>{k}: {v}</li>)}</ul>
+      <a class="text-link" href={`${casePath(item)}reclamacoes-publicas/`}>Explorar com filtros ↗</a>
+    </aside>
+  </div></section>
+  <section class="section section-soft"><div class="container narrow">
+    <h2>Florense está falindo?</h2>
+    <p>Até a verificação de 09/11/2026, <strong>não há neste arquivo registro de falência da Florense</strong>. O alerta Roma Mobili discute risco de pagamento antecipado, não prognóstico de insolvência da marca.</p>
+    <a class="text-link" href="/guias/risco-pagamento-antecipado-moveis-planejados/">Ler o alerta completo ↗</a>
+  </div></section>
+</BaseLayout>

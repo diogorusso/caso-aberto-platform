@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
+import CaseNav from '../../../../components/CaseNav.astro';
+import CaseUpdates from '../../../../components/CaseUpdates.astro';
+import { cases, casePath, crumbFor, type Case } from '../../../../lib/cases';
+export function getStaticPaths() { return cases.map(item => ({params:{slug:item.slug},props:{item}})); }
+interface Props { item: Case }
+const {item} = Astro.props;
+const crumbs = [...crumbFor(item), {label:'Atualizações', href:`${casePath(item)}atualizacoes/`}];
+---
+<BaseLayout
+  title={`Atualizações — ${item.empresa_resumo} | CasoAberto`}
+  description={`Histórico datado de atualizações do dossiê ${item.id}.`}
+  type="article"
+  dateModified={item.status_data}
+  breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}
+>
+  <Breadcrumbs items={crumbs} />
+  <header class="pagehead"><div class="container">
+    <div class="eyebrow">HISTÓRICO DO DOSSIÊ</div>
+    <h1>Atualizações de {item.empresa_resumo}</h1>
+    <p>Registro editorial datado. Cada entrada distingue o que foi publicado ou informado — não inventa resolução.</p>
+  </div></header>
+  <CaseNav item={item} current="atualizacoes" />
+  <section class="section"><div class="container narrow">
+    <CaseUpdates item={item} />
+  </div></section>
+</BaseLayout>

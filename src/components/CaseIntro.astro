@@ -1,14 +1,22 @@
 ---
+import EvidenceSummary from './EvidenceSummary.astro';
 import { type Case, brl } from '../lib/cases';
 interface Props { item: Case }
 const { item } = Astro.props;
+const base = `/casos/${item.slug}/`;
 ---
 <section class="case-hero">
   <div class="container">
-    <div class="case-eyebrow">{item.id} / {item.empresa} / {item.local}</div>
+    <div class="case-eyebrow">{item.id} · {item.empresa} · {item.local}</div>
     <h1>{item.chamada}</h1>
     <p>{item.resumo}</p>
-    <div class="hero-buttons"><a class="button button-primary" href={`/casos/${item.slug}/linha-do-tempo/`}>Conhecer a cronologia ↗</a><a class="button button-ghost" href={`/casos/${item.slug}/reclamacoes-publicas/`}>Consultar fontes ↗</a></div>
+    <div class="hero-buttons">
+      <a class="button button-primary" href={`${base}linha-do-tempo/`}>Cronologia ↗</a>
+      <a class="button button-ghost" href={`${base}reclamacoes-publicas/`}>Fontes públicas ↗</a>
+      <a class="button button-outline" href={`${base}risco-roma-mobili/`}>Alerta Roma ↗</a>
+      <a class="button button-outline" href="#apoiar">Apoiar este caso</a>
+    </div>
+    <EvidenceSummary item={item} />
     <div class="case-metrics">
       <div><small>Valor informado como pago</small><strong>{item.valor_brl ? brl(item.valor_brl) : 'Não informado'}</strong></div>
       <div><small>Prazo originalmente contratado</small><strong>{item.prazo_original || 'Consultar cronologia'}</strong></div>

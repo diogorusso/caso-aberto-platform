@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
+import CaseNav from '../../../../components/CaseNav.astro';
+import LeadershipDirectory from '../../../../components/LeadershipDirectory.astro';
+import { cases, casePath, crumbFor, brl, type Case } from '../../../../lib/cases';
+export function getStaticPaths() { return cases.map(item => ({params:{slug:item.slug},props:{item}})); }
+interface Props { item: Case }
+const {item} = Astro.props;
+const crumbs = [...crumbFor(item), {label:'Quem responde', href:`${casePath(item)}responsaveis/`}];
+---
+<BaseLayout
+  title={`Quem responde por um pedido de ${item.valor_brl?brl(item.valor_brl):'alto valor'} sem entrega no prazo? | ${item.empresa_resumo}`}
+  description="Mapa institucional público: fabricante versus franquia, papéis reportados na imprensa e canais oficiais para resposta documentada — sem assédio pessoal."
+  type="article"
+  dateModified={item.status_data}
+  breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}
+>
+  <Breadcrumbs items={crumbs} />
+  <header class="pagehead"><div class="container">
+    <div class="eyebrow">ACCOUNTABILITY INSTITUCIONAL</div>
+    <h1>Quem responde por um pedido de {item.valor_brl?brl(item.valor_brl):'alto valor'} que não foi entregue no prazo?</h1>
+    <p>A pergunta é de responsabilidade institucional. Listar papéis públicos não implica que cada executivo tenha operado ou causado o atraso deste pedido específico.</p>
+  </div></header>
+  <CaseNav item={item} current="responsaveis" />
+  <section class="section"><div class="container">
+    <LeadershipDirectory />
+  </div></section>
+</BaseLayout>

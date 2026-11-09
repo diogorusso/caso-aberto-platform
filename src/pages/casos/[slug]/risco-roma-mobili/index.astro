@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
+import CaseNav from '../../../../components/CaseNav.astro';
+import ConsumerRiskWarning from '../../../../components/ConsumerRiskWarning.astro';
+import RomaComparison from '../../../../components/RomaComparison.astro';
+import { cases, casePath, crumbFor, roma, type Case } from '../../../../lib/cases';
+export function getStaticPaths() { return cases.map(item => ({params:{slug:item.slug},props:{item}})); }
+interface Props { item: Case }
+const {item} = Astro.props;
+const crumbs = [...crumbFor(item), {label:'Alerta Roma Mobili', href:`${casePath(item)}risco-roma-mobili/`}];
+---
+<BaseLayout
+  title={`${roma.title} | ${item.empresa_resumo} | CasoAberto`}
+  description="Comparação editorial entre a falência documentada da Roma Mobili e o risco do pagamento antecipado no caso Florense Ipanema — sem alegar insolvência da Florense."
+  type="article"
+  dateModified={item.status_data}
+  breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}
+>
+  <Breadcrumbs items={crumbs} />
+  <header class="pagehead"><div class="container">
+    <div class="eyebrow">COMPARAÇÃO EDITORIAL · RISCO DO CONSUMIDOR</div>
+    <h1>{roma.title}</h1>
+    <p>{roma.florense_bridge}</p>
+  </div></header>
+  <CaseNav item={item} current="risco-roma-mobili" />
+  <section class="section"><div class="container narrow editorial">
+    <ConsumerRiskWarning compact href="/guias/risco-pagamento-antecipado-moveis-planejados/" />
+    <h2>O que aconteceu com a Roma Mobili</h2>
+    <p>Roma Mobili Indústria Ltda. e RM Projetos e Montagens de Móveis Ltda. EPP figuram em processo de falência na 5ª Vara Empresarial do TJRJ ({roma.proceeding.number}). A Administração Judicial registra sentença de decretação em {roma.proceeding.bankruptcy_decree.split('-').reverse().join('/')}.</p>
+    <p>Há relação de credores, editais e leilão de bens da massa. Isso documenta, de forma pública, o que pode ocorrer quando a cadeia de produção/entrega de móveis colapsa após o consumidor já ter desembolsado valores relevantes.</p>
+    <h2>O que isso NÃO prova sobre a Florense</h2>
+    <p>{roma.disclaimer}</p>
+    <RomaComparison />
+    <h2>Perguntas que a Florense deve responder sobre este contrato</h2>
+    <ol class="editor-list">
+      {(item.imprensa_perguntas||[]).map(q => <li>{q}</li>)}
+    </ol>
+    <h2>Fontes judiciais e públicas</h2>
+    <ul class="source-links">
+      {roma.sources.map(s => (
+        <li>
+          <a href={s.url} target="_blank" rel="noopener noreferrer">{s.title}</a>
+          <span>Verificado em {s.checked_at}{s.notes ? ` · ${s.notes}` : ''}</span>
+        </li>
+      ))}
+    </ul>
+    <p><a class="button button-dark" href="https://www.instagram.com/reel/DVr3jaCkdWq/" target="_blank" rel="noopener noreferrer">Abrir vídeo explicativo no Instagram ↗</a></p>
+    <p class="muted">O Instagram não é prova judicial; use-o como material explicativo complementar aos registros oficiais.</p>
+  </div></section>
+</BaseLayout>

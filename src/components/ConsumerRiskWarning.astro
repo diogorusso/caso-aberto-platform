@@ -1,0 +1,13 @@
+---
+import { roma } from '../lib/cases';
+interface Props { compact?: boolean; href?: string }
+const { compact = false, href = '/guias/risco-pagamento-antecipado-moveis-planejados/' } = Astro.props;
+---
+<aside class:list={['risk-banner', compact && 'risk-banner-compact']} role="note">
+  <p class="risk-kicker">Alerta ao consumidor</p>
+  <p class="risk-line">{roma.campaign_line}</p>
+  <p class="risk-sub">{roma.campaign_sub}</p>
+  {!compact && <p class="risk-bridge">{roma.florense_bridge}</p>}
+  <p class="risk-disc">{roma.disclaimer}</p>
+  <a class="button button-primary" href={href}>Ler o alerta completo ↗</a>
+</aside>
