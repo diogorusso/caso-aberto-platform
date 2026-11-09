@@ -1,5 +1,6 @@
 ---
 import {statusLabel, type Verdict} from '../lib/brands';
+import VerdictStatusBadge from './VerdictStatusBadge.tsx';
 interface Props {
   verdict: Verdict;
   compact?: boolean;
@@ -13,7 +14,7 @@ const reviewed = verdict.valid_as_of.split('-').reverse().join('/');
 <aside class:list={['verdict-panel', compact && 'verdict-panel--compact', `verdict-panel--${verdict.status}`]} aria-label="Resumo da recomendação editorial">
   {showMeta && (
     <div class="verdict-panel__meta">
-      <span class={'company-verdict-pill status-'+verdict.status}>{label}</span>
+      <VerdictStatusBadge status={verdict.status} label={label} />
       <span class="verdict-panel__date">{subject ? `${subject} · ` : ''}Revisão {reviewed}</span>
     </div>
   )}
