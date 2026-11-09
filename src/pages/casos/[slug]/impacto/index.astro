@@ -3,12 +3,11 @@ import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
 import CaseNav from '../../../../components/CaseNav.astro';
 import ImpactDashboard from '../../../../components/ImpactDashboard.astro';
-import {cases,casePath,crumbFor,type Case} from '../../../../lib/cases';
-import {impactForSelection,caseImpactPath} from '../../../../lib/impact';
+import {cases,crumbFor,type Case} from '../../../../lib/cases';
+import {caseImpactPath} from '../../../../lib/impact';
 export function getStaticPaths(){return cases.map(item=>({params:{slug:item.slug},props:{item}}));}
 interface Props {item:Case}
 const {item}=Astro.props;
-const data=impactForSelection({caseItem:item});
 const crumbs=[...crumbFor(item),{label:'Radar de impacto',href:caseImpactPath(item)}];
 ---
 <BaseLayout title={'Impacto em números: '+item.empresa_resumo+' — dinheiro, atraso, reclamações e cenários | CasoAberto'}
