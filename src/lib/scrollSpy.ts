@@ -1,8 +1,8 @@
-/** Fixed site header height — keep in sync with `.site-header` / `.navline`. */
-export const NAV_SCROLL_OFFSET = 79;
+/** Sticky site header height (h-16 in SiteHeader.astro). */
+export const NAV_SCROLL_OFFSET = 64;
 
 /** Sticky section rail height allowance for scroll-margin pairing. */
-export const SECTION_RAIL_OFFSET = 48;
+export const SECTION_RAIL_OFFSET = 52;
 
 function sectionTop(el: HTMLElement) {
   return el.getBoundingClientRect().top + window.scrollY;

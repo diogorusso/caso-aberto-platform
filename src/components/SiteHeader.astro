@@ -1,17 +1,30 @@
 ---
 import Identity from './Identity.astro';
+import MobileNav from './MobileNav';
+import { primaryNav } from '@/lib/navigation';
+import { cn } from '@/lib/utils';
+const current = Astro.url.pathname;
 ---
-<header class="site-header">
-  <div class="container navline">
+<header class="sticky top-0 z-40 border-b border-white/10 bg-primary text-primary-foreground" data-print-hide>
+  <div class="container flex h-16 items-center justify-between gap-6">
     <Identity />
-    <nav aria-label="Principal">
-      <a href="/casos/">Casos</a>
-      <a href="/empresas/">Empresas</a>
-      <a href="/avaliacoes/nao-recomendamos/">Não recomendamos</a>
-      <a href="/precedentes/">Precedentes</a>
-      <a href="/cenarios/">Explore cenários</a>
-      <a href="/kit-boca-a-boca/">Kit Boca a Boca</a>
-      <a class="nav-accent" href="/cnpj/">Consultar CNPJ <span aria-hidden="true">↗</span></a>
+    <nav aria-label="Principal" class="site-nav hidden items-center gap-1 lg:flex">
+      {primaryNav.map((item) => (
+        <a
+          href={item.href}
+          aria-current={current.startsWith(item.href) ? 'page': undefined}
+          class={cn(
+            'px-3 py-2 text-sm font-medium whitespace-nowrap text-white/70 no-underline transition-colors hover:bg-white/10 hover:text-white',
+            current.startsWith(item.href) && 'bg-white/10 text-white',
+          )}
+        >{item.label}</a>
+      ))}
     </nav>
+    <div class="lg:hidden">
+      <MobileNav client:media="(max-width: 1023px)" items={primaryNav} current={current} />
+    </div>
   </div>
+  <noscript>
+    <style>.site-nav{display:flex!important;overflow-x:auto}@media(max-width:1023px){.site-nav{position:absolute;left:0;right:0;top:4rem;background:#121b18;padding:.5rem 1rem}}</style>
+  </noscript>
 </header>

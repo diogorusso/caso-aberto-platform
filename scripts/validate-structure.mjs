@@ -75,8 +75,10 @@ for(const route of impactRoutes){
  const path=resolve(src,'pages',route);
  if(!existsSync(path)||!readFileSync(path,'utf8').includes('getStaticPaths')){console.error('Missing impact pSEO route',route);bad++;}
 }
-const impactStyles=resolve(src,'styles/impact.css');
-if(!existsSync(impactStyles)){console.error('Missing impact dashboard CSS');bad++;}
+// Impact UI is Tailwind/shadcn; check its owning components instead of a stylesheet.
+for(const f of ['components/ImpactBody.astro','components/ImpactSimulator.tsx','components/ui/kpi-card.tsx']){
+ if(!existsSync(resolve(src,f))){console.error('Missing impact dashboard component',f);bad++;}
+}
 
 // Reusable company identity and case-scoped responsibility.
 for(const name of ['CompanyIdentityHero.astro','CompanyRecognitionGallery.astro','CaseContractScope.astro','CaseCompanyReference.astro']){
@@ -104,8 +106,8 @@ for(const route of ['kit-boca-a-boca/index.astro','cenarios/index.astro','casos/
  if(!existsSync(f)){console.error('Missing print/scenario route',route);bad++;}
  else if(route.includes('[slug]')&&!readFileSync(f,'utf8').includes('getStaticPaths')){console.error('Print/scenario route not data-based',route);bad++;}
 }
-for(const name of ['print-kit.css','scenario-rehearsal.css']){
- if(!existsSync(resolve(src,'styles',name))){console.error('Missing print CSS',name);bad++;}
+for(const name of ['styles/print-kit.css','components/islands/ScenarioRehearsal.tsx']){
+ if(!existsSync(resolve(src,name))){console.error('Missing print/scenario asset',name);bad++;}
 }
 
 if (bad) process.exit(1);

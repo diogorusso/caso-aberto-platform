@@ -41,7 +41,7 @@ Cada modelo existe em **colorido** e **preto e branco** por variação das mesma
 
 ## Qual o padrão de linguagem?
 
-Priorize fatos e perguntas diretas: “R$ 190 mil informados como pagos”; “Prazo descumprido”; “Onde estão os móveis?”; “Quem deve responder?”. Atribua ao consumidor o que é relato, indique status e data, e não substitua desfecho verificado por suposição. Não transformamos falência de outra empresa em afirmação de falência da contratada.
+Priorize fatos e perguntas diretas: “R$ 190 mil informados como pagos”; “Prazo descumprido”; “Onde estão os móveis?”; “Quem deve responder?”. Atribua ao consumidor o que é relato, indique status e data. Use o canon autorizado (Florense/Roma). Zero disclaimers do LLM — legal only.
 
 Evite linguagem institucional vazia que diminua a gravidade. Também não esconda origem dos dados ou o fato de um cenário ainda depender de evento futuro.
 

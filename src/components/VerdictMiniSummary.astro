@@ -1,41 +1,27 @@
 ---
-import {statusLabel, type Verdict} from '../lib/brands';
-import VerdictStatusBadge from './VerdictStatusBadge.tsx';
+import { statusLabel, type Verdict } from '../lib/brands';
+import VerdictStatusBadge from './VerdictStatusBadge';
 import { Alert, AlertDescription, AlertTitle } from './ui/alert';
-interface Props {
-  verdict: Verdict;
-  compact?: boolean;
-  subject?: string;
-  showMeta?: boolean;
-}
-const {verdict, compact = false, subject, showMeta = true} = Astro.props;
+import { cn } from '@/lib/utils';
+import { copy } from '@/lib/copy';
+interface Props { verdict: Verdict; compact?: boolean; subject?: string; showMeta?: boolean }
+const { verdict, compact = false, subject, showMeta = true } = Astro.props;
 const label = statusLabel(verdict.status);
 const reviewed = verdict.valid_as_of.split('-').reverse().join('/');
-const tone =
-  verdict.status === 'recomendamos' ? 'success' :
-  verdict.status === 'cautela' ? 'warning' :
-  'brand';
+const tone = verdict.status === 'recomendamos' ? 'success' : verdict.status === 'cautela' ? 'warning' : 'brand';
 ---
-<Alert
-  variant={tone}
-  className={compact ? 'max-w-none' : 'max-w-[740px]'}
-  aria-label="Resumo da recomendação editorial"
->
-  {showMeta && (
-    <div class="mb-3 flex flex-wrap items-center gap-2.5">
-      <VerdictStatusBadge status={verdict.status} label={label} />
-      <span class="text-[0.72rem] font-semibold tracking-wide text-muted-foreground">
-        {subject ? `${subject} · ` : ''}Revisão {reviewed}
+<Alert variant={tone} className={cn(compact ? 'max-w-none' : 'max-w-2xl')} aria-label="Resumo da recomendação editorial">
+  <AlertTitle className="text-base">
+    {showMeta && (
+      <span class="mb-2 flex flex-wrap items-center gap-2 font-normal">
+        <VerdictStatusBadge status={verdict.status} label={label} />
+        <span class="text-xs text-muted-foreground">{subject ? `${subject} · ` : ''}Revisão {reviewed}</span>
       </span>
-    </div>
-  )}
-  <AlertTitle className={tone === 'brand' ? 'text-brand-dark' : undefined}>
+    )}
     {verdict.headline}
   </AlertTitle>
   <AlertDescription>
-    <p class="m-0 font-semibold text-ink/85">{verdict.lead}</p>
-    <small class="mt-2 block text-[0.74rem] text-muted-foreground">
-      Recomendação referente a {verdict.scope.toLocaleLowerCase('pt-BR')}
-    </small>
+    <p class="m-0 font-medium text-foreground/85">{verdict.lead}</p>
+    <small class="text-xs text-muted-foreground">{copy.verdict.scopeLabel} {verdict.scope}</small>
   </AlertDescription>
 </Alert>

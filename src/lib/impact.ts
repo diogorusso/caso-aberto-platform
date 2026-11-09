@@ -37,14 +37,14 @@ export const impactNavItems=(opts:{hasSnapshot?:boolean;hasModel?:boolean}={})=>
 ];
 export const companyProfileNavItems=(opts:{hasPrecedent?:boolean;hasDossier?:boolean}={})=>[
   {id:'perfil-empresarial',label:'Perfil'},
+  {id:'avaliacao-editorial',label:'Avaliação'},
   {id:'analisar-impacto',label:'Impacto'},
   {id:'painel-observado',label:'Números'},
-  {id:'avaliacao-editorial',label:'Avaliação'},
   {id:'casos-associados',label:'Casos'},
   ...(opts.hasPrecedent?[{id:'precedentes-documentados',label:'Precedentes'}]:[]),
-  {id:'identificacao-visual',label:'Identidade'},
   ...(opts.hasDossier?[{id:'observatorio-empresa',label:'Observatório'}]:[]),
   {id:'perfis-cnpj',label:'CNPJs'},
+  {id:'identificacao-visual',label:'Identidade'},
   {id:'ranking-editorial',label:'Ranking'},
   {id:'resposta-institucional',label:'Resposta'},
 ];

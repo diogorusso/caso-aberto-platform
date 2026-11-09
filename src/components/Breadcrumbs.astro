@@ -1,11 +1,9 @@
 ---
-type Crumb = {label: string; href: string};
+import BreadcrumbTrail from './BreadcrumbTrail';
+type Crumb = { label: string; href: string };
 interface Props { items: Crumb[] }
 const { items } = Astro.props;
 ---
-<nav class="breadcrumbs" aria-label="Navegação estrutural">
-  {items.map((item, index) => <>
-    {index > 0 && <span aria-hidden="true">/</span>}
-    {index === items.length - 1 ? <span aria-current="page">{item.label}</span> : <a href={item.href}>{item.label}</a>}
-  </>)}
-</nav>
+<div class="border-b bg-card" data-print-hide>
+  <div class="container py-3"><BreadcrumbTrail items={items} /></div>
+</div>

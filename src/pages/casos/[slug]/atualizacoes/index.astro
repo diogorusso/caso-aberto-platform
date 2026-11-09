@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
-import CaseNav from '../../../../components/CaseNav.astro';
 import CaseUpdates from '../../../../components/CaseUpdates.astro';
 import { cases, casePath, crumbFor, type Case } from '../../../../lib/cases';
 export function getStaticPaths() { return cases.map(item => ({params:{slug:item.slug},props:{item}})); }
@@ -17,13 +16,12 @@ const crumbs = [...crumbFor(item), {label:'Atualizações', href:`${casePath(ite
   breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}
 >
   <Breadcrumbs items={crumbs} />
-  <header class="pagehead"><div class="container">
-    <div class="eyebrow">HISTÓRICO DO DOSSIÊ</div>
+  <header class="border-b bg-card py-12 md:py-16 [&_h1]:my-4 [&_p]:max-w-3xl [&_p]:text-lg [&_p]:text-muted-foreground"><div class="container">
+    <div class="eyebrow text-xs font-semibold uppercase tracking-[0.14em] text-brand-strong">HISTÓRICO DO DOSSIÊ</div>
     <h1>Atualizações de {item.empresa_resumo}</h1>
-    <p>Registro editorial datado. Cada entrada distingue o que foi publicado ou informado — não inventa resolução.</p>
+    <p>Cada movimentação, com data e origem. Não inventamos solução — nem problema.</p>
   </div></header>
-  <CaseNav item={item} current="atualizacoes" />
-  <section class="section"><div class="container narrow">
+  <section class="py-14 md:py-20"><div class="container [--container-max:52rem]">
     <CaseUpdates item={item} />
   </div></section>
 </BaseLayout>

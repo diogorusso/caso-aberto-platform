@@ -153,11 +153,14 @@ for(const snapshot of impact.external_brand_snapshots||[]){
 // Company identity photos/logos require origin metadata; no fabricated website screenshots.
 const visuals=read('company-media'),contractEntities=read('case-contract-entities');
 const secureUrl=x=>typeof x==='string'&&/^https:\/\//.test(x);
+// Local media lives in public/media (hashed inventory). Remote sources stay as attribution.
+const localMedia=x=>typeof x==='string'&&/^\/media\/[A-Za-z0-9._/-]+$/.test(x);
+const assetSrc=x=>secureUrl(x)||localMedia(x);
 for(const [slug,asset] of Object.entries(visuals.brands||{})){
   const brand=brandsData.brands.find(b=>b.slug===slug);
   if(!brand){console.error('Media belongs to unknown brand',slug);bad++;continue;}
   if(!secureUrl(asset.website)){console.error('Company website URL missing',slug);bad++;}
-  if(asset.logo?.src&&!secureUrl(asset.logo.src)){console.error('Company logo invalid URL',slug);bad++;}
+  if(asset.logo?.src&&!assetSrc(asset.logo.src)){console.error('Company logo invalid URL',slug);bad++;}
   if(asset.logo?.src&&(!secureUrl(asset.logo.source_url)||!asset.logo.alt||!asset.logo.credit)){console.error('Company logo missing attribution',slug);bad++;}
   const checkCapture=(capture,context)=>{
     if(!capture)return;
@@ -169,10 +172,33 @@ for(const [slug,asset] of Object.entries(visuals.brands||{})){
   checkCapture(asset.website_capture,slug);
   for(const [unitSlug,unitAsset] of Object.entries(asset.units||{})){
     if(!brand.units.some(u=>u.slug===unitSlug)){console.error('Media references unknown unit',slug,unitSlug);bad++;}
-    if(unitAsset.image?.src&&(!secureUrl(unitAsset.image.src)||!secureUrl(unitAsset.image.source_url)||!unitAsset.image.alt||!unitAsset.image.credit||!unitAsset.image.collected_at)){
+    if(unitAsset.image?.src&&(!assetSrc(unitAsset.image.src)||!secureUrl(unitAsset.image.source_url)||!unitAsset.image.alt||!unitAsset.image.credit||!unitAsset.image.collected_at)){
       console.error('Store photo missing provenance metadata',slug,unitSlug);bad++;
     }
     checkCapture(unitAsset.website_capture,slug+'/'+unitSlug);
+  }
+}
+// Recognition gate: a published brand/unit must be visually identifiable (logo + sourced store
+// photo + explicit editorial badge) so a text-only case never leaves the reader guessing the store
+// (AGENTS.md §20, §22). Copy lives in brands.json; images and provenance in company-media.json.
+const checkRecognition=(rec,who)=>{
+  if(!rec){console.error('Published brand/unit missing recognition copy',who);bad++;return;}
+  for(const key of ['badge','headline','cta']){
+    if(!rec[key]||!String(rec[key]).trim()){console.error('Recognition copy missing field',who,key);bad++;}
+  }
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(rec.valid_as_of||'')){console.error('Recognition copy missing review date',who);bad++;}
+};
+for(const brand of brandsData.brands){
+  if(!brand.published)continue;
+  const asset=visuals.brands?.[brand.slug];
+  if(!asset?.logo?.src){console.error('Published brand missing logo asset',brand.slug);bad++;}
+  checkRecognition(brand.recognition,brand.slug);
+  for(const unit of brand.units||[]){
+    if(!unit.published)continue;
+    if(unit.case_ids?.length&&!asset?.units?.[unit.slug]?.image?.src){
+      console.error('Published unit with cases missing store photo',brand.slug,unit.slug);bad++;
+    }
+    checkRecognition(unit.recognition||brand.recognition,brand.slug+'/'+unit.slug);
   }
 }
 for(const [caseId,record] of Object.entries(contractEntities.cases||{})){
@@ -196,12 +222,26 @@ for(const [caseId,record] of Object.entries(contractEntities.cases||{})){
 const precedentData=read('precedents');
 const isoDate=(v)=>typeof v==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(v)&&!Number.isNaN(Date.parse(v+'T00:00:00Z'))&&new Date(v+'T00:00:00Z').toISOString().slice(0,10)===v;
 const precedentDays=(a,b)=>Math.round((Date.parse(b+'T00:00:00Z')-Date.parse(a+'T00:00:00Z'))/86400000);
+const precedentSignalKeys=new Set((precedentData.signal_rows||[]).map(r=>r.key));
+if(!precedentSignalKeys.size){console.error('Precedent signal registry missing');bad++;}
+for(const row of precedentData.signal_rows||[]){
+ if(!row.key||!row.label){console.error('Invalid precedent signal row',row.key);bad++;}
+}
 const precedentIds=new Set(),precedentSlugs=new Set();
 for(const p of precedentData.precedents){
  if(precedentIds.has(p.id)||precedentSlugs.has(p.slug)){console.error('Duplicate precedent ID or slug',p.id,p.slug);bad++;}
  precedentIds.add(p.id);precedentSlugs.add(p.slug);
  if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(p.slug)){console.error('Invalid precedent slug',p.slug);bad++;}
- if(!/^\d{7}-\d{2}\.\d{4}\.\d\.\d{2}\.\d{4}$/.test(p.process_number)){console.error('Invalid CNJ process number syntax',p.id,p.process_number);bad++;}
+ if(p.process_number===null){
+  if(p.stage!=='encerramento_operacional'){console.error('Only operational closure may omit a CNJ process number',p.id);bad++;}
+  if(p.court!==null){console.error('Precedent without process cannot claim a court',p.id);bad++;}
+ }else if(!/^\d{7}-\d{2}\.\d{4}\.\d\.\d{2}\.\d{4}$/.test(p.process_number)){console.error('Invalid CNJ process number syntax',p.id,p.process_number);bad++;}
+ if(p.first_public_signal&&(!isoDate(p.first_public_signal.date)||!/^https:\/\//.test(p.first_public_signal.source_url||''))){console.error('Precedent first public signal lacks date/source',p.id);bad++;}
+ if(!Array.isArray(p.signals)||!p.signals.length){console.error('Precedent missing dated signals',p.id);bad++;}
+ for(const s of p.signals||[]){
+  if(typeof s==='string'||!s?.key||!isoDate(s.date)||!/^https:\/\//.test(s.source_url||'')){console.error('Precedent signal must carry key, date and source',p.id,s?.key||s);bad++;continue;}
+  if(!precedentSignalKeys.has(s.key)){console.error('Unknown precedent signal key',p.id,s.key);bad++;}
+ }
  if(!Object.hasOwn(precedentData.stage_definitions,p.stage)){console.error('Unknown precedent court stage',p.id,p.stage);bad++;}
  if(!isoDate(p.start_date)){console.error('Invalid precedent start date',p.id);bad++;}
  if(p.stage==='falencia_decretada'&&!isoDate(p.bankruptcy_decree_date)){console.error('Bankruptcy precedent missing court decree date',p.id);bad++;}

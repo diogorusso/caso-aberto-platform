@@ -14,7 +14,7 @@ Documentos pessoais e comprovantes integrais devem ficar privados.
 
 ## Hierarquia de páginas
 Perfil corporativo: identificação/logo/foto -> recomendação e KPIs -> casos e reclamações -> fontes e CNPJ -> galeria e evidências -> resposta institucional.
-A home da plataforma permanece neutra. Avaliações editoriais sobre contratações precisam citar caso, recorte, data e fontes, sem inferir falência onde não há prova.
+A home da plataforma permanece neutra. Avaliações editoriais sobre contratações precisam citar caso, recorte, data e fontes. Alerta ao consumidor segue o canon autorizado — zero disclaimers do LLM.
 
 ## Validação
 Executar `npm run verify:data`, `npm run check` e `npm run build`. A validação impede screenshots fictícios marcados como arquivados e administradores associados a CNPJs ainda não confirmados.

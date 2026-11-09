@@ -1,0 +1,136 @@
+---
+/*
+ * CollapseSignalsMatrix — "sinais antes do colapso".
+ * Cards resumem cada empresa; a linha do tempo pública completa abre em drawer.
+ * Só aparece quando `case_links` conecta o precedente ao caso (AGENTS.md §25).
+ */
+import Section from './layout/Section.astro';
+import PublicTimelineDrawer from './islands/PublicTimelineDrawer';
+import { copy } from '../lib/copy';
+import { casePath, type Case } from '../lib/cases';
+import {
+  linkedPrecedents, linkageForCase, collapseSpans,
+  formatDate, precedentPath, bankruptcyDurationSummary,
+} from '../lib/precedents';
+import {
+  publicTimelineRowsForPrecedent,
+  publicTimelineRowsFromMap,
+  precedentStageTone,
+} from '../lib/public-timeline';
+
+interface Props { item: Case; tone?: 'default' | 'muted' | 'card' }
+const { item, tone = 'card' } = Astro.props;
+const records = linkedPrecedents(item.id);
+const link = linkageForCase(item.id);
+const c = copy.risk;
+const m = c.matrix;
+const stats = bankruptcyDurationSummary();
+
+const caseSignals = item.collapse_signals ?? [];
+const caseByKey: Record<string, typeof caseSignals> = {};
+for (const s of caseSignals) (caseByKey[s.key] ||= []).push(s);
+
+const precedentById = new Map(records.map((p) => [p.id, p]));
+const spans = collapseSpans().filter((s) => precedentById.has(s.precedent.id));
+const maxDays = Math.max(1, ...spans.map((s) => s.days));
+
+const stageClasses: Record<string, string> = {
+  falencia_decretada: 'bg-brand text-brand-foreground',
+  recuperacao_judicial: 'bg-warning-soft text-warning',
+  encerramento_operacional: 'bg-muted text-foreground',
+  conflito_consumidor: 'bg-muted text-muted-foreground',
+};
+
+const cards = [
+  ...records.map((p) => {
+    const rows = publicTimelineRowsForPrecedent(p);
+    const documented = rows.reduce((n, row) => n + row.entries.length, 0);
+    return {
+      kind: 'precedent' as const,
+      key: p.id,
+      brand: p.brand,
+      stage: p.stage_label,
+      stageClass: stageClasses[p.stage] ?? 'bg-muted text-foreground',
+      stageTone: precedentStageTone(p.stage),
+      href: precedentPath(p),
+      rows,
+      documented,
+    };
+  }),
+  {
+    kind: 'case' as const,
+    key: item.id,
+    brand: m.columnCase,
+    stage: item.status,
+    stageClass: 'bg-brand-strong text-white',
+    stageTone: 'other' as const,
+    href: casePath(item),
+    rows: publicTimelineRowsFromMap(caseByKey),
+    documented: caseSignals.length,
+  },
+];
+---
+{records.length > 0 && (
+  <Section id="sinais-colapso" tone={tone} eyebrow={m.eyebrow} title={m.title} description={`${c.lead(stats.count, stats.avgDays)} ${c.signalsBody}`}>
+    {spans.length > 0 && (
+      <div class="mb-10 border border-border bg-background/60 p-5 md:p-6">
+        <h3 class="mt-0 mb-1 text-base font-bold uppercase tracking-wider">{m.barsTitle}</h3>
+        <p class="mt-0 mb-5 max-w-3xl text-sm text-muted-foreground">{m.barsNote}</p>
+        <div class="space-y-5">
+          {spans.map((s) => (
+            <div class="grid gap-1.5">
+              <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                <a class="font-bold no-underline hover:underline" href={precedentPath(s.precedent)}>{s.precedent.brand}</a>
+                <span class="font-mono text-sm font-semibold">{m.days(s.days)}</span>
+              </div>
+              <div class="h-3 w-full overflow-hidden bg-muted" role="img" aria-label={`${s.precedent.brand}: ${m.days(s.days)} entre ${formatDate(s.from.date)} e ${formatDate(s.to.date)}`}>
+                <div
+                  class:list={['h-full', s.to.kind === 'falencia' ? 'bg-brand-strong' : 'bg-warning']}
+                  style={`width:${Math.max(6, Math.round((s.days / maxDays) * 100))}%`}
+                ></div>
+              </div>
+              <p class="m-0 text-xs text-muted-foreground">
+                <time datetime={s.from.date}>{formatDate(s.from.date)}</time> · {s.from.label}
+                {' → '}
+                <time datetime={s.to.date}>{formatDate(s.to.date)}</time> · {s.to.label}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      {cards.map((card) => (
+        <article class:list={['flex h-full flex-col border bg-card p-4', card.kind === 'case' && 'border-brand-strong ring-1 ring-brand-strong/30']}>
+          <header class="mb-3 flex flex-wrap items-center justify-between gap-2">
+            <a class="font-bold no-underline hover:underline" href={card.href}>{card.brand}</a>
+            <span class:list={['inline-flex px-2 py-0.5 text-[0.65rem] font-semibold uppercase leading-tight', card.stageClass]}>{card.stage}</span>
+          </header>
+          <p class="m-0 mb-4 flex-1 text-sm text-muted-foreground">
+            {card.documented > 0
+              ? `${card.documented} sinal(is) público(s) documentado(s) nesta linha do tempo.`
+              : `Nenhum dos sinais da matriz está documentado para ${card.brand} neste arquivo.`}
+          </p>
+          <PublicTimelineDrawer
+            client:visible
+            brand={card.brand}
+            stageLabel={card.stage}
+            stageTone={card.stageTone}
+            detailHref={card.href}
+            rows={card.rows}
+            notDocumentedLabel={m.notDocumented}
+            sourceLabel={m.sourceLabel}
+            detailLinkLabel={m.openPrecedent}
+          />
+        </article>
+      ))}
+    </div>
+
+    <p class="mt-4 border border-warning/30 bg-warning-soft p-4 text-sm">
+      <strong>{m.caption}</strong>{' '}
+      <a class="font-semibold text-brand-strong" href="/metodologia/#precedentes-e-cenarios">Metodologia dos precedentes ↗</a>
+    </p>
+    {link && <p class="mt-3 max-w-3xl text-sm text-muted-foreground">{link.stance}</p>}
+  </Section>
+)}

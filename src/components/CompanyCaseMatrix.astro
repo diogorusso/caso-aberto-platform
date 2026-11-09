@@ -1,29 +1,64 @@
 ---
-import {cases,casePath,reports,brl,dateBR,type Case} from '../lib/cases';
-import {brands,brandPath,unitPath,statusLabel,type Brand,type BrandUnit} from '../lib/brands';
-import {brandImpactPath,unitImpactPath} from '../lib/impact';
-interface Props {brand:Brand;unit?:BrandUnit;compact?:boolean}
-const {brand,unit,compact=false}=Astro.props;
-const subject=unit||brand;
-const related=cases.filter(c=>subject.case_ids.includes(c.id));
-const complaints=reports.filter(r=>related.some(c=>r.case_id===c.id)).filter(r=>!unit||r.unit?.trim().toLowerCase()===unit.name.replace(brand.name,'').trim().toLowerCase()||(r.cidade||'').toLowerCase().includes('ipanema')&&unit.slug==='ipanema-rj');
-const classified=complaints.slice().sort((a,b)=>b.data.localeCompare(a.data));
-const title=unit?'Registros relacionados à unidade':'Casos documentados e reclamações da marca';
+import { cases, casePath, reports, brl, dateBR } from '../lib/cases';
+import { statusLabel, type Brand, type BrandUnit } from '../lib/brands';
+import { brandImpactPath, unitImpactPath } from '../lib/impact';
+import Section from './layout/Section.astro';
+import ButtonLink from './layout/ButtonLink.astro';
+import Eyebrow from './layout/Eyebrow.astro';
+import VerdictStatusBadge from './VerdictStatusBadge';
+import ReportsTable from './tables/ReportsTable';
+import BrandTag from './BrandTag.astro';
+import { KpiCard } from './ui/kpi-card';
+import { copy } from '@/lib/copy';
+import { Card, CardContent, CardFooter, CardHeader } from './ui/card';
+interface Props { brand: Brand; unit?: BrandUnit; compact?: boolean }
+const { brand, unit, compact = false } = Astro.props;
+const subject = unit || brand;
+const related = cases.filter((c) => subject.case_ids.includes(c.id));
+const complaints = reports
+  .filter((r) => related.some((c) => r.case_id === c.id))
+  .filter((r) => !unit || r.unit?.trim().toLowerCase() === unit.name.replace(brand.name, '').trim().toLowerCase() || ((r.cidade || '').toLowerCase().includes('ipanema') && unit.slug === 'ipanema-rj'));
+const classified = complaints.slice().sort((a, b) => b.data.localeCompare(a.data));
+const limit = compact ? 6 : 24;
+const t = copy.company.matrix;
+const title = unit ? t.titleUnit : t.titleBrand;
 ---
-<section class="company-case-matrix section" id="casos-associados">
- <div class="container">
-  <div class="section-heading"><div><span class="eyebrow">RASTREABILIDADE EDITORIAL</span><h2>{title}</h2><p>Um caso formal possui dossiê próprio. Reclamações em plataformas externas são registros separados e mantêm a indicação do local, da data e do status informado na consulta.</p></div></div>
-  <div class="company-matrix-stats"><div><strong>{related.length}</strong><span>Casos com dossiê publicado</span></div><div><strong>{complaints.length}</strong><span>Relatos externos no recorte</span></div><div><strong>{new Set(complaints.map(r=>r.cidade)).size}</strong><span>Localidades identificadas</span></div><div><strong>{subject.verdict.valid_as_of.split('-').reverse().join('/')}</strong><span>Data da avaliação</span></div></div>
-  <div class="company-case-list">
-   {related.map(c=><article class="company-case-feature">
-    <div class="case-feature-heading"><span class="eyebrow">{c.empresa_resumo} · {c.categoria}</span><span class="editorial-pill">{statusLabel(subject.verdict.status)}</span></div>
-    <h3><a href={casePath(c)}>{c.titulo}</a></h3>
-    <p>{c.resumo}</p>
-    <dl><div><dt>Valor relatado como pago</dt><dd>{c.valor_brl?brl(c.valor_brl):'Não informado'}</dd></div><div><dt>Situação na última revisão</dt><dd>{c.status}</dd></div><div><dt>Última revisão</dt><dd>{dateBR(c.status_data)}</dd></div></dl>
-    <div class="case-feature-links"><a class="button button-dark" href={casePath(c)}>Dossiê completo ↗</a><a class="text-link" href={casePath(c)+'linha-do-tempo/'}>Cronologia ↗</a><a class="text-link" href={casePath(c)+'evidencias/'}>Índice de documentos ↗</a></div>
-   </article>)}
+<Section id="casos-associados" eyebrow={t.eyebrow} title={title} description={t.description}>
+  <div class="mb-8 grid grid-cols-2 gap-3 lg:grid-cols-4">
+    <KpiCard tone="muted" label={t.stats.cases} value={related.length} />
+    <KpiCard tone="muted" label={t.stats.complaints} value={complaints.length} />
+    <KpiCard tone="muted" label={t.stats.places} value={new Set(complaints.map((r) => r.cidade)).size} />
+    <KpiCard tone="muted" label={t.stats.reviewed} value={subject.verdict.valid_as_of.split('-').reverse().join('/')} />
   </div>
-  {classified.length>0 && <div class="company-external-report-list"><h3>Arquivo de reclamações públicas associadas a este recorte</h3><div class="company-report-table"><table><thead><tr><th>Data e local</th><th>Relato</th><th>Situação</th><th>Fonte</th></tr></thead><tbody>{classified.slice(0,compact?6:24).map(r=><tr><td><time datetime={r.data}>{r.data.split('-').reverse().join('/')}</time><small>{r.cidade}</small></td><td><strong>{r.titulo}</strong><small>{r.tema}</small></td><td>{r.status}</td><td><a href={r.url} target="_blank" rel="noopener noreferrer">Abrir publicação ↗</a></td></tr>)}</tbody></table></div><p class="muted">Total exibido: {Math.min(classified.length,compact?6:24)} de {classified.length} registros deste recorte. Reclamações resolvidas permanecem identificadas como resolvidas.</p></div>}
-  <div class="company-matrix-actions"><a class="button button-dark" href={unit?unitImpactPath(brand,unit):brandImpactPath(brand)}>Painel de impacto e fontes ↗</a><a class="button button-subtle" href="/empresas/">Comparar empresas ↗</a><a class="button button-subtle" href="/problemas/">Explorar por tipo de problema ↗</a>{!unit&&brand.units.filter(u=>u.published).map(u=><a class="button button-subtle" href={unitPath(brand,u)}>Ver {u.name} ↗</a>)}</div>
- </div>
-</section>
+  <div class="space-y-4">
+    {related.map((c) => (
+      <Card className="border-l-4 border-l-brand-strong">
+        <CardHeader className="gap-3">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <BrandTag brand={brand} unit={brand.units.find((u: BrandUnit) => u.slug === c.unidade_slug)} size="sm" linked />
+            <Eyebrow>{c.empresa_resumo} · {c.categoria}</Eyebrow>
+            <VerdictStatusBadge status={subject.verdict.status} label={statusLabel(subject.verdict.status)} />
+          </div>
+          <h3 class="m-0 text-2xl"><a class="no-underline hover:underline" href={casePath(c)}>{c.titulo}</a></h3>
+          <p class="m-0 max-w-4xl text-muted-foreground">{c.resumo}</p>
+        </CardHeader>
+        <CardContent>
+          <dl class="m-0 grid gap-3 md:grid-cols-3">
+            <div class="bg-muted p-3"><dt class="text-xs uppercase tracking-wider text-muted-foreground">{t.paid}</dt><dd class="m-0 mt-1 font-semibold">{c.valor_brl ? brl(c.valor_brl) : 'Não informado'}</dd></div>
+            <div class="bg-muted p-3"><dt class="text-xs uppercase tracking-wider text-muted-foreground">{t.status}</dt><dd class="m-0 mt-1 font-semibold">{c.status}</dd></div>
+            <div class="bg-muted p-3"><dt class="text-xs uppercase tracking-wider text-muted-foreground">{t.reviewed}</dt><dd class="m-0 mt-1 font-semibold">{dateBR(c.status_data)}</dd></div>
+          </dl>
+        </CardContent>
+        <CardFooter><ButtonLink href={casePath(c)}>{t.caseLink} ↗</ButtonLink></CardFooter>
+      </Card>
+    ))}
+  </div>
+  {classified.length > 0 && (
+    <div class="mt-10 space-y-4">
+      <h3 class="m-0">Arquivo de reclamações públicas associadas a este recorte</h3>
+      <ReportsTable rows={classified.slice(0, limit).map((r) => ({ id: r.id, data: r.data, cidade: r.cidade, titulo: r.titulo, tema: r.tema, status: r.status, url: r.url }))} />
+      <p class="m-0 text-sm text-muted-foreground">Total exibido: {Math.min(classified.length, limit)} de {classified.length} registros deste recorte. Reclamações resolvidas permanecem identificadas como resolvidas.</p>
+    </div>
+  )}
+  <div class="mt-8"><ButtonLink variant="outline" href={unit ? unitImpactPath(brand, unit) : brandImpactPath(brand)}>Painel de impacto e fontes ↗</ButtonLink></div>
+</Section>

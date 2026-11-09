@@ -1,45 +1,7 @@
-
-/* CasoAberto / Boca a Boca: print-first campaign assets generated from verified case data. */
-.kit-hero{background:#182d23;color:#f8faf4;padding:68px 0 58px}
-.kit-hero h1{font-size:clamp(2.75rem,5.4vw,5.75rem);letter-spacing:-.078em;line-height:1.05;max-width:1050px;margin:18px 0}
-.kit-hero h1 em{font-style:normal;color:#f1a28e}
-.kit-hero p{font-size:1.09rem;max-width:840px;color:#d0e2d4;line-height:1.7}
-.kit-hero .eyebrow{color:#f7a593}
-.kit-head-actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:26px}
-.kit-intro-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#dae3d8}
-.kit-intro-strip>div{background:#f1f5ed;padding:21px}
-.kit-intro-strip span{font-size:.72rem;font-weight:900;letter-spacing:.075em;color:#a24b3c}
-.kit-intro-strip strong{display:block;font-size:1.05rem;line-height:1.35;margin:9px 0}
-.kit-intro-strip p{color:#57685a;font-size:.84rem;margin:0;line-height:1.55}
-.kit-directory{background:#f5f6f1;padding:50px 0}
-.kit-directory h2,.kit-section h2{font-size:clamp(1.8rem,3vw,3.15rem);letter-spacing:-.06em;line-height:1.13}
-.kit-case-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.kit-case-list article{padding:27px;background:#fff;border:1px solid #dde5db;border-top:5px solid #a64839}
-.kit-case-list h3{font-size:1.6rem;letter-spacing:-.04em;margin:10px 0}
-.kit-case-list .button{margin-top:14px}
-.kit-case-list p{font-size:.91rem;color:#5e6d61}
-.kit-section{background:#fff;padding:55px 0}
-.kit-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:26px}
-.kit-step{border:1px solid #dae2d7;padding:23px 24px;background:#f5f7f2}
-.kit-step>span{font-size:.8rem;color:#a33f30;letter-spacing:.06em;font-weight:900}
-.kit-step h3{font-size:1.15rem;line-height:1.28;margin:13px 0 8px}
-.kit-step p{font-size:.86rem;color:#596b5d;line-height:1.6}
-.kit-method{background:#ebf1e9;padding:53px 0}
-.kit-method-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:30px}
-.kit-method-grid ul{padding-left:20px;line-height:1.7}
-.kit-method-grid li{margin-bottom:9px}
-.kit-method-note{background:#fff;padding:25px;border-left:4px solid #ad4a39}
-.kit-method-note h3{font-size:1.25rem;margin:0 0 11px}
-.kit-studio-section{background:#e7ede5;padding:37px 0 66px}
-.kit-studio-section .container>h2{font-size:clamp(2.1rem,3vw,3.2rem);letter-spacing:-.055em}
-.kit-toolbar{display:flex;align-items:end;flex-wrap:wrap;gap:13px;padding:20px;background:#fff;border:1px solid #d9e2d7;margin:19px 0 5px}
-.kit-control{min-width:165px;flex:1}
-.kit-control:first-child{flex:1.4}
-.kit-control label{display:block;font-size:.78rem;color:#415949;font-weight:840;margin-bottom:6px}
-.kit-control select{display:block;width:100%;border:1px solid #adbfad;border-radius:4px;background:#fff;color:#18291f;padding:11px 34px 11px 11px;font:inherit;font-size:.9rem;min-height:47px}
-.kit-toolbar button{min-height:47px;flex:1}
-.kit-toolbar-note{margin:13px 0 20px;font-size:.84rem;color:#607365}
-.kit-stage-caption{max-width:190mm;margin:13px auto;font-size:.83rem;color:#526657;line-height:1.5}
+/*
+  Kit Boca a Boca physical print sheets (A4 / 2×A5 / 4×A6) in mm/pt units.
+  Screen chrome around the stage is Tailwind; this file only owns the sheets.
+*/
 .print-stage{--pk-green:#1f382c;--pk-accent:#b64c39;--pk-ink:#16241d;--pk-muted:#526356;--pk-paper:#fff;--pk-tint:#eaf1e8;--pk-stroke:#c5d4c6;max-width:190mm;margin:0 auto;color:var(--pk-ink)}
 .print-stage[data-ink="pb"]{--pk-green:#161616;--pk-accent:#111;--pk-ink:#050505;--pk-muted:#444;--pk-paper:#fff;--pk-tint:#fff;--pk-stroke:#444}
 .print-sheet{background:var(--pk-paper);border:1px solid var(--pk-stroke);box-shadow:0 20px 60px #1a281725;width:100%;height:274mm;padding:10mm;overflow:hidden;box-sizing:border-box;color:var(--pk-ink);display:none}
@@ -131,36 +93,17 @@
 .print-organizer-bottom strong{font-size:11pt}
 .print-organizer-bottom p{font-size:8pt;color:var(--pk-muted)}
 .print-organizer-bottom small{font-size:7pt;overflow-wrap:anywhere;display:block}
-.kit-activity-links{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
-.kit-activity-links a{font-weight:780;color:#a64133}
-@media(max-width:800px){.kit-steps,.kit-intro-strip{grid-template-columns:1fr}.kit-method-grid,.kit-case-list{grid-template-columns:1fr}.kit-hero{padding:43px 0}.kit-toolbar{flex-direction:column;align-items:stretch}.kit-control,.kit-control:first-child{width:100%;flex:unset}.kit-toolbar button{width:100%}.kit-studio-section>.container{width:min(100% - 20px,1190px)}}
-@media(max-width:540px){.print-stage{zoom:.67}.print-sheet{box-shadow:none}.kit-hero h1{font-size:2.7rem}}
+@media(max-width:540px){.print-stage{zoom:.67}.print-sheet{box-shadow:none}}
 @page{size:A4 portrait;margin:10mm}
 @media print{
- *{print-color-adjust:exact;-webkit-print-color-adjust:exact}
- body{background:#fff!important;margin:0!important}
- body *{visibility:hidden!important}
+ body:has(#kit-print-root) *{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+ body:has(#kit-print-root){background:#fff!important;margin:0!important}
+ body:has(#kit-print-root) *{visibility:hidden!important}
  #kit-print-root,#kit-print-root *{visibility:visible!important}
  #kit-print-root{position:absolute;top:0;left:0;width:190mm;max-width:190mm;margin:0!important;padding:0!important;zoom:1!important}
  #kit-print-root .print-sheet{box-shadow:none!important;border:0!important;width:190mm;height:276mm;margin:0!important;page-break-inside:avoid;break-inside:avoid}
- .kit-stage-caption,.kit-toolbar,.kit-toolbar-note,.site-header,.site-footer{display:none!important}
  .print-stage .print-sheet{display:none!important}
  .print-stage[data-format="cartaz-a4"] [data-print="cartaz-a4"],.print-stage[data-format="ficha-a4"] [data-print="ficha-a4"],.print-stage[data-format="panfletos-a5"] [data-print="panfletos-a5"],.print-stage[data-format="cartoes-a6"] [data-print="cartoes-a6"],.print-stage[data-format="organizador-a4"] [data-print="organizador-a4"]{display:flex!important}
  .print-stage[data-format="panfletos-a5"] [data-print="panfletos-a5"],.print-stage[data-format="cartoes-a6"] [data-print="cartoes-a6"]{display:grid!important}
  .print-stage[data-ink="pb"] *{text-shadow:none!important;box-shadow:none!important}
 }
-
-/* Institutional placement: a clear platform offer, not an accusation on the homepage. */
-.kit-home-feature{background:#1e3629;color:#fff}
-.kit-home-inner{display:grid;grid-template-columns:1.5fr .75fr;gap:50px;align-items:center}
-.kit-home-inner h2{font-size:clamp(2.3rem,4.2vw,4.6rem);line-height:1.08;letter-spacing:-.075em;color:#fff;margin:17px 0}
-.kit-home-inner p{font-size:1.05rem;color:#d1e1d5;max-width:720px;line-height:1.65}
-.kit-home-inner aside{display:flex;flex-direction:column;gap:10px;border-left:4px solid #e28970;background:#2d4838;padding:24px}
-.kit-home-inner aside span{font-size:.7rem;letter-spacing:.12em;font-weight:840;color:#edb6a2}
-.kit-home-inner aside strong{font-size:1.09rem;margin-bottom:15px;line-height:1.38}
-.kit-case-promo{background:#ecf0e8;border-top:3px solid #a64232}
-.kit-case-promo-inner{display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center}
-.kit-case-promo h2{font-size:clamp(1.8rem,2.8vw,3rem);letter-spacing:-.06em;line-height:1.1;margin:10px 0}
-.kit-case-promo p{max-width:790px;color:#526858;line-height:1.6}
-@media(max-width:850px){.kit-home-inner,.kit-case-promo-inner{grid-template-columns:1fr}.kit-home-inner{gap:21px}.kit-case-promo-inner .button{width:max-content}}
-@media print{.kit-home-feature,.kit-case-promo{display:none!important}}

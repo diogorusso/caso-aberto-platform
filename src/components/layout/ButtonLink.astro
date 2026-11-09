@@ -1,0 +1,18 @@
+---
+/* shadcn Button rendered as a link for static .astro markup (no React needed). */
+import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import type { HTMLAttributes } from 'astro/types';
+type Variant = 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link' | 'brand' | 'inverse' | 'outline-inverse';
+interface Props extends HTMLAttributes<'a'> {
+  variant?: Variant;
+  size?: 'default' | 'sm' | 'lg';
+  external?: boolean;
+}
+const { variant = 'default', size = 'default', external = false, class: className, ...rest } = Astro.props;
+---
+<a
+  class={cn(buttonVariants({ variant, size }), 'no-underline', className)}
+  {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+  {...rest}
+><slot /></a>

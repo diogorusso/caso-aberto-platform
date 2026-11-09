@@ -1,0 +1,46 @@
+---
+/*
+ * BrandTag — clear company logo (+ optional sourced store photo with the red badge).
+ * Used wherever a brand/unit is mentioned so the store is visually recognizable,
+ * never text-only. Data comes from company-media.json + brands.json; nothing hardcoded.
+ */
+import media from '../data/company-media.json';
+import { statusLabel, type Brand, type BrandUnit } from '../lib/brands';
+interface Props {
+  brand: Brand;
+  unit?: BrandUnit;
+  variant?: 'logo' | 'photo' | 'both';
+  size?: 'sm' | 'md' | 'lg';
+  linked?: boolean;
+}
+const { brand, unit, variant = 'both', size = 'md', linked = false } = Astro.props;
+const brandMedia = (media.brands as Record<string, any>)[brand.slug];
+const unitMedia = unit ? brandMedia?.units?.[unit.slug] : undefined;
+const logo = brandMedia?.logo;
+const firstUnit = brandMedia?.units ? Object.values(brandMedia.units)[0] : undefined;
+const photo = (unitMedia?.image ?? (firstUnit as any)?.image) as any;
+const recognition = (unit as any)?.recognition || (brand as any).recognition;
+const badge = recognition?.badge || statusLabel((unit || brand).verdict.status);
+const subject = unit ? unit.name : brand.name;
+const href = linked ? (unit ? `/empresas/${brand.slug}/${unit.slug}/` : `/empresas/${brand.slug}/`) : undefined;
+const logoSizes = { sm: 'h-8 min-w-[5.5rem] px-1.5', md: 'h-10 min-w-[7rem] px-2', lg: 'h-14 min-w-[9rem] px-3' };
+const imgSizes = { sm: 'max-h-5 max-w-[5rem]', md: 'max-h-7 max-w-[6.5rem]', lg: 'max-h-10 max-w-[9rem]' };
+const photoSizes = { sm: 'h-12 w-16', md: 'h-16 w-24', lg: 'h-24 w-36' };
+---
+<a
+  class="inline-flex flex-wrap items-center gap-2 no-underline"
+  href={href}
+  aria-label={linked ? `Perfil de ${subject}` : undefined}
+>
+  {variant !== 'photo' && logo?.src && (
+    <span class:list={['inline-flex items-center justify-center border border-border bg-white shadow-sm', logoSizes[size]]}>
+      <img class:list={['object-contain', imgSizes[size]]} src={logo.src} alt={logo.alt} loading="lazy" decoding="async" />
+    </span>
+  )}
+  {variant !== 'logo' && photo?.src && (
+    <span class:list={['relative inline-block shrink-0 overflow-hidden border border-border bg-muted', photoSizes[size]]}>
+      <img class="size-full object-cover" src={photo.src} alt={photo.alt} loading="lazy" decoding="async" />
+      <span class="absolute left-0 top-0 inline-flex items-center gap-1 bg-destructive px-1.5 py-0.5 text-[0.5rem] font-extrabold uppercase tracking-[0.1em] text-white" aria-hidden="true">{badge}</span>
+    </span>
+  )}
+</a>

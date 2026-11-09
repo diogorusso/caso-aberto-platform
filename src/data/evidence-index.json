@@ -197,7 +197,7 @@
       "custodian": "veiculo_publico",
       "description": "ForMóbile apresenta números declarados de 55 lojas no Brasil, 14 nas Américas e estrutura industrial.",
       "source_url": "https://digital.formobile.com.br/gestao/73-anos-de-historia-design-e-inspiracao-no-mercado-moveleiro-brasileiro/",
-      "needs": "Preservar publicação integral e data; métricas corporativas não comprovam estágio do pedido.",
+      "needs": "Preservar publicação integral e data. Discurso corporativo ≠ cronograma do pedido.",
       "relation": "Escala e capacidade declarada"
     },
     {
@@ -209,9 +209,9 @@
       "status": "publico_localizado",
       "visibility": "publico",
       "custodian": "administracao_judicial",
-      "description": "Processo nº 3016855-24.2025.8.19.0001; falência decretada em 19/12/2025. Não comprova insolvência da Florense.",
+      "description": "Processo nº 3016855-24.2025.8.19.0001; falência decretada em 19/12/2025. Precedente: quem pagou e não recebeu entrou na fila de credores.",
       "source_url": "https://gomesdemattos.com.br/admjudicial/lista-de-processos/roma-mobili-industria-ltda-e-rm-projetos-e-montagens-de-moveis-ltda-epp/",
-      "needs": "Guardar sentença e cronologia do processo como contexto comparativo, não como prova de falência da Florense.",
+      "needs": "Guardar sentença e cronologia do processo Roma como precedente documental do setor.",
       "relation": "Risco geral em pagamentos antecipados"
     },
     {

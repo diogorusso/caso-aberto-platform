@@ -82,7 +82,7 @@
         "Prazos oferecidos e faltas confirmadas",
         "Atualização do status da reclamação"
       ],
-      "not_a_forecast": "Novas cobranças exigem atualização documental; o silêncio não basta para afirmar insolvência."
+      "not_a_forecast": "Novas cobranças exigem atualização documental. Sem resposta, o consumidor continua sem móveis e sem prazo."
     },
     {
       "id": "novos-relatos",
@@ -130,5 +130,75 @@
       ],
       "not_a_forecast": "Caminho de correção responsável, não supressão da história documental."
     }
-  ]
+  ],
+  "escalation": {
+    "case_id": "CA-001",
+    "start_date": "2026-10-30",
+    "as_of": "2026-11-09",
+    "counter_label": "dias sem resposta da empresa até a última revisão",
+    "cta": "A Florense ainda pode encerrar isso: entregar, reparar, responder.",
+    "cta_note": "O caminho de saída é objetivo e verificável. Enquanto não houver conclusão comprovada, a cobrança continua.",
+    "steps": [
+      {
+        "id": "notificacao",
+        "date": "2026-10-30",
+        "status": "consumado",
+        "title": "Notificação extrajudicial entregue",
+        "description": "A empresa foi notificada formalmente e apresentou nova previsão de montagem até 15/12/2026, contestada pelo consumidor.",
+        "company_loses": "A chance de resolver em privado e a alegação de que não conhecia o problema.",
+        "effect_source": "/casos/florense-ipanema-rj-atraso-moveis-planejados/atualizacoes/",
+        "effect_source_label": "Dossiê CasoAberto — atualizações datadas"
+      },
+      {
+        "id": "reclame_aqui",
+        "date": "2026-11-03",
+        "status": "consumado",
+        "title": "Reclamação pública no Reclame Aqui",
+        "description": "O consumidor tornou o caso público, com relato de pagamento integral, prazo estourado e equipe ausente.",
+        "company_loses": "O controle da narrativa e a exposição pública da pendência, que fica registrada.",
+        "effect_source": "https://www.reclameaqui.com.br/florense-moveis/nao-recebi-meus-moveis-planejados-e-a-loja-nao-cumpre-prazos_LaK42QhQaVqRLA5s/",
+        "effect_source_label": "Reclame Aqui — reclamação principal"
+      },
+      {
+        "id": "procon",
+        "date": "2026-11-08",
+        "status": "consumado",
+        "title": "Procon/RJ acionado",
+        "description": "Protocolo 202611080341 informado pelo consumidor, além do registro público na PROTESTE.",
+        "company_loses": "A empresa passa a ter um registro formal em órgão de defesa do consumidor e fica sujeita a providências administrativas cabíveis.",
+        "effect_source": "https://www.proteste.org.br/reclame/lista-de-reclamacoes-publicas/reclamacoes-publicas?referenceid=CPTBR02190532-78",
+        "effect_source_label": "PROTESTE — reclamação pública"
+      },
+      {
+        "id": "acao_judicial",
+        "date": null,
+        "status": "possibilidade documentada",
+        "title": "Ação judicial de consumo",
+        "description": "Não verificada neste dossiê. Em casos comparáveis de móveis planejados, consumidores foram à Justiça pedir conclusão, rescisão ou devolução.",
+        "company_loses": "Exposição a condenação, custas e honorários, conforme decisões em conflitos de consumo semelhantes.",
+        "effect_source": "https://www.moveisdevalor.com.br/noticia/kitchens-enfrenta-crise-fecha-lojas-acumula-atrasos-entregas",
+        "effect_source_label": "Móveis de Valor — ações de consumidores em caso comparável"
+      },
+      {
+        "id": "imprensa",
+        "date": null,
+        "status": "possibilidade documentada",
+        "title": "Cobertura de imprensa e redes",
+        "description": "O dossiê tem cronologia, valores e fontes para pauta. Casos do setor têm sido tratados por veículos nacionais.",
+        "company_loses": "Reputação pública e alcance do alerta a novos compradores.",
+        "effect_source": "https://exame.com/negocios/tokstok-fecha-lojas-e-oferece-descontos-de-ate-70-para-liquidar-estoques/",
+        "effect_source_label": "Exame — cobertura de crise no setor de móveis"
+      },
+      {
+        "id": "novos_consumidores",
+        "date": null,
+        "status": "possibilidade documentada",
+        "title": "Outros consumidores se apresentam",
+        "description": "Cada novo relato verificado é publicado como caso separado, com data, unidade e fonte própria.",
+        "company_loses": "Multiplicação de cobranças individuais e de registros públicos, sem somar o que não pode ser somado.",
+        "effect_source": "/casos/florense-ipanema-rj-atraso-moveis-planejados/reclamacoes-publicas/",
+        "effect_source_label": "CasoAberto — arquivo de reclamações públicas"
+      }
+    ]
+  }
 }

@@ -1,6 +1,6 @@
 {
   "updated_at": "2026-11-09",
-  "source_policy": "Registros cadastrais públicos reproduzidos de agregadores com indicação da Receita Federal como fonte; emissão de comprovantes oficiais é oferecida separadamente. Vínculo societário não implica responsabilidade pelo contrato deste dossiê.",
+  "source_policy": "Registros cadastrais públicos de agregadores com indicação da Receita Federal. Emita o comprovante oficial. Quem responde pelo contrato se prova com contrato, NF e CNPJ do pagamento — não só com o nome da marca.",
   "registry_verification_url": "https://www.gov.br/pt-br/servicos/consultar-cadastro-nacional-de-pessoas-juridicas",
   "entities": [
     {
@@ -72,9 +72,9 @@
         }
       ],
       "notes": [
-        "Capital social não representa liquidez ou caixa.",
-        "Registro empresarial e status não comprovam situação de pedidos individuais.",
-        "Evitar inferir responsabilidade automática dos administradores por atos de franqueados."
+        "Capital social no cadastro ≠ liquidez ou caixa.",
+        "Status ativo no CNPJ não entrega o pedido do consumidor.",
+        "Administradores e franqueados: exija no contrato quem responde por fabricação, venda e montagem."
       ]
     },
     {
@@ -154,8 +154,8 @@
         }
       ],
       "notes": [
-        "Não confundir o capital social da holding com o da fabricante.",
-        "Não implica responsabilidade contratual direta pelo pedido deste dossiê."
+        "Capital da holding ≠ capital da fabricante.",
+        "Quem assinou e recebeu o pagamento deste pedido? Confira contrato e NF."
       ]
     },
     {
@@ -184,8 +184,8 @@
         }
       ],
       "notes": [
-        "O QSA da holding não estabelece responsabilidade individual pelo pedido da unidade franqueada.",
-        "Cadastro não comprova patrimônio líquido ou ativos realizáveis."
+        "QSA da holding ≠ assinatura do contrato da unidade.",
+        "Cadastro ≠ patrimônio líquido ou ativos realizáveis. Exija o CNPJ do pagamento."
       ]
     },
     {

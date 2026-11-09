@@ -1,8 +1,11 @@
 ---
-interface Props { footer?: boolean }
-const { footer = false } = Astro.props;
+import { cn } from '@/lib/utils';
+interface Props { class?: string }
+const { class: className } = Astro.props;
 ---
-<a href="/" class:list={['identity', { 'footer-identity': footer }]} aria-label="CasoAberto, início">
-  <span class="logo-mark" aria-hidden="true">C<span>•</span></span>
-  <span class="logo-word">CASO<strong>ABERTO</strong></span>
+<a href="/" class={cn('inline-flex items-center gap-2.5 whitespace-nowrap text-white no-underline', className)} aria-label="CasoAberto, início">
+  <span class="relative grid size-8 place-items-center border-[3px] border-[#f6ebe4] border-r-transparent text-base font-black leading-none" aria-hidden="true">
+    C<span class="absolute -right-1 -bottom-1.5 text-[1.6rem] text-brand">•</span>
+  </span>
+  <span class="text-[1.05rem] font-semibold tracking-tight">CASO<strong class="font-black text-[#ff9585]">ABERTO</strong></span>
 </a>

@@ -1,16 +1,48 @@
 ---
-import {brands,brandPath,unitPath,statusLabel,statusRank,type Brand,type BrandUnit} from '../lib/brands';
-interface Props {currentBrand?:string; currentUnit?:string; heading?:string}
-const {currentBrand,currentUnit,heading='Avaliações publicadas e comparáveis'}=Astro.props;
-const entries=brands.flatMap(b=>[
- {brand:b,unit:undefined as BrandUnit|undefined,name:b.name,location:b.location,verdict:b.verdict,caseCount:b.case_ids.length,href:brandPath(b),scope:'Marca e rede',key:b.slug},
- ...b.units.filter(u=>u.published).map(u=>({brand:b,unit:u as BrandUnit|undefined,name:u.name,location:u.location,verdict:u.verdict,caseCount:u.case_ids.length,href:unitPath(b,u),scope:'Unidade específica',key:b.slug+'/'+u.slug}))
-]).sort((a,b)=>statusRank(a.verdict.status)-statusRank(b.verdict.status)||a.name.localeCompare(b.name,'pt-BR'));
-const currentKey=currentBrand?(currentUnit?currentBrand+'/'+currentUnit:currentBrand):null;
+/*
+ * CompanyRanking — editorial ranking as responsive visual cards (no table).
+ * Each card carries the brand/unit logo and sourced store photo so the company is
+ * recognizable at a glance. Ordering is by editorial band, never a financial score.
+ */
+import { brands, brandPath, unitPath, statusLabel, statusRank, type Brand, type BrandUnit } from '../lib/brands';
+import Section from './layout/Section.astro';
+import ButtonLink from './layout/ButtonLink.astro';
+import VerdictStatusBadge from './VerdictStatusBadge';
+import BrandTag from './BrandTag.astro';
+import { Card, CardContent, CardFooter, CardHeader } from './ui/card';
+interface Props { currentBrand?: string; currentUnit?: string; heading?: string }
+const { currentBrand, currentUnit, heading = 'Avaliações publicadas e comparáveis' } = Astro.props;
+const currentKey = currentBrand ? (currentUnit ? currentBrand + '/' + currentUnit : currentBrand) : null;
+
+const entries = brands
+  .flatMap((b) => [
+    { brand: b, unit: undefined as BrandUnit | undefined, name: b.name, location: b.location, verdict: b.verdict, caseCount: b.case_ids.length, href: brandPath(b), scope: 'Marca e rede', key: b.slug },
+    ...b.units.filter((u: BrandUnit) => u.published).map((u: BrandUnit) => ({ brand: b, unit: u, name: u.name, location: u.location, verdict: u.verdict, caseCount: u.case_ids.length, href: unitPath(b, u), scope: 'Unidade específica', key: b.slug + '/' + u.slug })),
+  ])
+  .sort((a, b) => statusRank(a.verdict.status) - statusRank(b.verdict.status) || a.name.localeCompare(b.name, 'pt-BR'));
 ---
-<section class="company-ranking section" id="ranking-editorial"><div class="container">
- <div class="section-heading"><div><span class="eyebrow">COMPARATIVO EDITORIAL · DIRETÓRIO ATUAL</span><h2>{heading}</h2><p>Ordem por faixa editorial, da maior cautela à recomendação mais favorável. Não é ranking financeiro nem de todo o mercado: considera apenas os perfis já publicados no CasoAberto, com escopo e data de cada avaliação.</p></div></div>
- <div class="company-report-table"><table><thead><tr><th>Faixa</th><th>Empresa / unidade</th><th>Escopo</th><th>Casos</th><th>Revisão</th></tr></thead>
-  <tbody>{entries.map(e=><tr class:list={[{'company-current':e.key===currentKey}]}><td><span class:list={['ranking-status','ranking-'+e.verdict.status]}>{statusLabel(e.verdict.status)}</span></td><td><a href={e.href}><strong>{e.name}</strong></a><small>{e.location}</small></td><td>{e.scope}</td><td>{e.caseCount}</td><td>{e.verdict.valid_as_of.split('-').reverse().join('/')}</td></tr>)}</tbody></table></div>
- <p class="muted">A ordenação por faixa não significa posição numérica de risco, nem transfere automaticamente a avaliação de uma unidade a toda a rede. <a href="/metodologia/#avaliacao-editorial">Ver metodologia e critérios de revisão ↗</a>.</p>
-</div></section>
+<Section id="ranking-editorial" tone="muted" eyebrow="Comparativo editorial · diretório atual" title={heading} description="Da maior cautela à recomendação. Cada cartão traz escopo, data e o porquê — o que a empresa precisa responder antes de alguém assinar.">
+  <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+    {entries.map((e) => (
+      <Card className={`h-full ${e.key === currentKey ? 'border-brand-strong ring-1 ring-brand-strong/30' : ''}`}>
+        <CardHeader className="gap-3">
+          <BrandTag brand={e.brand} unit={e.unit} size="md" linked />
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <VerdictStatusBadge status={e.verdict.status} label={statusLabel(e.verdict.status)} />
+            <span class="text-xs text-muted-foreground">Revisão: {e.verdict.valid_as_of.split('-').reverse().join('/')}</span>
+          </div>
+          <h3 class="m-0 text-xl"><a class="no-underline hover:underline" href={e.href}>{e.name}</a></h3>
+          <p class="m-0 text-sm text-muted-foreground">{e.location} · {e.scope}</p>
+        </CardHeader>
+        <CardContent>
+          <p class="m-0 text-sm">{e.verdict.headline}</p>
+        </CardContent>
+        <CardFooter className="mt-auto flex-wrap items-center justify-between gap-3 border-t pt-4 text-sm">
+          <span class="text-muted-foreground">{e.caseCount} caso(s) aberto(s)</span>
+          <ButtonLink variant="link" size="sm" href={e.href} class="h-auto px-0">Ver por quê ↗</ButtonLink>
+        </CardFooter>
+      </Card>
+    ))}
+  </div>
+  <p class="mt-4 mb-0 text-sm text-muted-foreground">Cada avaliação tem escopo e data próprios. A marca que vende é a mesma. <a class="text-link" href="/metodologia/#avaliacao-editorial">Ver metodologia e critérios de revisão ↗</a></p>
+</Section>

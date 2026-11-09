@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
-import CaseNav from '../../../../components/CaseNav.astro';
 import ConsumerRiskWarning from '../../../../components/ConsumerRiskWarning.astro';
 import RomaComparison from '../../../../components/RomaComparison.astro';
+import CollapseSignalsMatrix from '../../../../components/CollapseSignalsMatrix.astro';
 import {comparisonPath} from '../../../../lib/precedents';
 import { cases, casePath, crumbFor, roma, type Case } from '../../../../lib/cases';
 export function getStaticPaths() { return cases.filter(item=>item.id==='CA-001').map(item => ({params:{slug:item.slug},props:{item}})); }
@@ -13,33 +13,31 @@ const crumbs = [...crumbFor(item), {label:'Alerta Roma Mobili', href:`${casePath
 ---
 <BaseLayout
   title={`${roma.title} | ${item.empresa_resumo} | CasoAberto`}
-  description="Comparação entre a falência documentada da Roma Mobili e os riscos contratuais para compradores de móveis, independentemente da forma de pagamento, sem alegar insolvência da Florense."
+  description="Roma Mobili faliu depois de clientes pagarem e não receberem. Na Florense Ipanema, o consumidor relata R$ 190 mil pagos e prazo descumprido. Será que você quer correr o risco?"
   type="article"
   dateModified={item.status_data}
   breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}
 >
   <Breadcrumbs items={crumbs} />
-  <header class="pagehead"><div class="container">
-    <div class="eyebrow">COMPARAÇÃO EDITORIAL · RISCO DO CONSUMIDOR</div>
+  <header class="border-b bg-card py-12 md:py-16 [&_h1]:my-4 [&_p]:max-w-3xl [&_p]:text-lg [&_p]:text-muted-foreground"><div class="container">
+    <div class="eyebrow text-xs font-semibold uppercase tracking-[0.14em] text-brand-strong">ALERTA · QUEM PAGA E NÃO RECEBE</div>
     <h1>{roma.title}</h1>
     <p>{roma.florense_bridge}</p>
   </div></header>
-  <CaseNav item={item} current="risco-roma-mobili" />
-  <section class="section"><div class="container narrow editorial">
+  <CollapseSignalsMatrix item={item} />
+  <section class="py-14 md:py-20"><div class="container [--container-max:52rem] prose prose-stone max-w-[52rem] prose-headings:tracking-tight prose-h2:mt-12 prose-h2:text-2xl prose-a:text-brand-strong">
     <ConsumerRiskWarning compact href={comparisonPath(item.slug)} />
     <h2>O que aconteceu com a Roma Mobili</h2>
     <p>Roma Mobili Indústria Ltda. e RM Projetos e Montagens de Móveis Ltda. EPP figuram em processo de falência na 5ª Vara Empresarial do TJRJ ({roma.proceeding.number}). A Administração Judicial registra sentença de decretação em {roma.proceeding.bankruptcy_decree.split('-').reverse().join('/')}.</p>
-    <p>Há relação de credores, editais e leilão de bens da massa. Isso documenta, de forma pública, o que pode ocorrer quando a cadeia de produção/entrega de móveis colapsa após o consumidor já ter desembolsado valores relevantes.</p>
-    <h2>O que isso NÃO prova sobre a Florense</h2>
-    <p>{roma.disclaimer}</p>
+    <p>Relação de credores, editais, bens da massa falida em leilão. É o registro público do que acontece quando a cadeia de produção e entrega de móveis desaba depois que o consumidor já pagou.</p>
     <RomaComparison />
-    <p><a class="button button-dark" href={comparisonPath(item.slug)}>Comparar Roma, Lojas KD e Kitchens: datas, processos e valores ↗</a></p>
+    <p><a class="inline-flex shrink-0 items-center justify-center gap-2 min-h-10 max-w-full px-5 py-2 text-center text-sm font-medium whitespace-normal sm:whitespace-nowrap no-underline transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 bg-primary text-primary-foreground hover:bg-primary/90" href={comparisonPath(item.slug)}>Comparar Roma, Lojas KD e Kitchens: datas, processos e valores ↗</a></p>
     <h2>Perguntas que a Florense deve responder sobre este contrato</h2>
-    <ol class="editor-list">
+    <ol class="list-decimal space-y-2 pl-5">
       {(item.imprensa_perguntas||[]).map(q => <li>{q}</li>)}
     </ol>
     <h2>Fontes judiciais e públicas</h2>
-    <ul class="source-links">
+    <ul class="m-0 list-none divide-y p-0 [&_li]:flex [&_li]:flex-col [&_li]:gap-1 [&_li]:py-3 [&_a]:font-semibold [&_a]:break-words [&_a]:text-brand-strong [&_span]:text-xs [&_span]:text-muted-foreground">
       {roma.sources.map(s => (
         <li>
           <a href={s.url} target="_blank" rel="noopener noreferrer">{s.title}</a>
@@ -47,7 +45,7 @@ const crumbs = [...crumbFor(item), {label:'Alerta Roma Mobili', href:`${casePath
         </li>
       ))}
     </ul>
-    <p><a class="button button-dark" href="https://www.instagram.com/reel/DVr3jaCkdWq/" target="_blank" rel="noopener noreferrer">Abrir vídeo explicativo no Instagram ↗</a></p>
-    <p class="muted">O Instagram não é prova judicial; use-o como material explicativo complementar aos registros oficiais.</p>
+    <p><a class="inline-flex shrink-0 items-center justify-center gap-2 min-h-10 max-w-full px-5 py-2 text-center text-sm font-medium whitespace-normal sm:whitespace-nowrap no-underline transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 bg-primary text-primary-foreground hover:bg-primary/90" href="https://www.instagram.com/reel/DVr3jaCkdWq/" target="_blank" rel="noopener noreferrer">Abrir vídeo explicativo no Instagram ↗</a></p>
+    <p class="text-sm text-muted-foreground">O Instagram não é prova judicial; use-o como material explicativo complementar aos registros oficiais.</p>
   </div></section>
 </BaseLayout>

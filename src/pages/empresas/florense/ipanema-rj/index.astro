@@ -1,4 +1,8 @@
 ---
+/*
+ * Unit page IA: hero → nossa posição (unit facts + open questions) → casos → números → risco
+ * → quem é (CNPJ no endereço + contrato) → resposta → continue. Words: lib/copy.ts.
+ */
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
 import CompanyIdentityHero from '../../../../components/CompanyIdentityHero.astro';
@@ -9,10 +13,14 @@ import CompanyRanking from '../../../../components/CompanyRanking.astro';
 import CaseContractScope from '../../../../components/CaseContractScope.astro';
 import ImpactDashboard from '../../../../components/ImpactDashboard.astro';
 import PrecedentComparison from '../../../../components/PrecedentComparison.astro';
-import DetailLayout from '../../../../components/ui/DetailLayout.astro';
+import CollapseSignalsMatrix from '../../../../components/CollapseSignalsMatrix.astro';
+import SectionRail from '../../../../components/SectionRail.astro';
+import Section from '../../../../components/layout/Section.astro';
+import ButtonLink from '../../../../components/layout/ButtonLink.astro';
 import {findBrand,brandPath,unitPath} from '../../../../lib/brands';
 import {cases,casePath,brl} from '../../../../lib/cases';
-import {companyProfileNavItems} from '../../../../lib/impact';
+import {companySections} from '../../../../lib/company-sections';
+import {copy} from '../../../../lib/copy';
 import media from '../../../../data/company-media.json';
 const brand=findBrand('florense');
 const unit=brand?.units.find(u=>u.slug==='ipanema-rj');
@@ -21,23 +29,37 @@ if(!brand||!unit||!item)throw Error('Editorial profile Florense Ipanema must exi
 const crumbs=[{label:'Início',href:'/'},{label:'Empresas',href:'/empresas/'},{label:brand.name,href:brandPath(brand)},{label:unit.name,href:unitPath(brand,unit)}];
 const location=media.brands.florense.units['ipanema-rj'];
 const schema={'@context':'https://schema.org','@type':'WebPage',name:'Florense Ipanema — perfil da unidade, casos e fontes',about:{'@type':'LocalBusiness',name:unit.name,address:{'@type':'PostalAddress',streetAddress:'Rua Joana Angélica, 169',addressLocality:'Rio de Janeiro',addressRegion:'RJ',addressCountry:'BR'},url:location.website,image:location.image.src},dateModified:unit.last_reviewed};
-const navItems=companyProfileNavItems({hasPrecedent:true,hasDossier:false});
+const rail=companySections({unit:true,hasPrecedent:true});
+const v=copy.verdict, u=copy.company.unitWhy, a=copy.company.answer, more=copy.company.more;
 ---
-<BaseLayout title="Florense Ipanema RJ: não recomendamos, caso R$ 190 mil, reclamações, endereço e CNPJ | CasoAberto" description="Florense Ipanema: recomendação editorial, fachada oficial, caso documentado de R$ 190 mil, atraso, reclamações da unidade, registros empresariais e fontes." dateModified={unit.last_reviewed} breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))} schema={schema}>
+<BaseLayout title="Florense Ipanema RJ: não recomendamos, caso R$ 190 mil, reclamações, endereço e CNPJ | CasoAberto" description="Não recomendamos a Florense Ipanema: consumidor relata R$ 190 mil pagos e móveis não entregues no prazo. Provas, reclamações da unidade, CNPJ e perguntas sem resposta." dateModified={unit.last_reviewed} breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))} schema={schema}>
  <Breadcrumbs items={crumbs}/>
- <DetailLayout items={navItems} title="Na unidade" railLabel="Ipanema">
-  <CompanyIdentityHero brand={brand} unit={unit}/>
-  <ImpactDashboard brand={brand} unit={unit} embedded/>
-  <PrecedentComparison item={item} compact/>
-  <section class="section company-editorial-scope" id="avaliacao-editorial"><div class="container">
-   <div class="section-heading"><div><span class="eyebrow">ANÁLISE DA UNIDADE · IPANEMA</span><h2>{brl(item.valor_brl||0)} informados como pagos. Entrega ainda sem confirmação no dossiê.</h2><p>Na revisão editorial de {item.status_data.split('-').reverse().join('/')}, o consumidor descrevia atraso, agendamentos frustrados e pendências após notificação. A recomendação de não contratar independe da modalidade de pagamento, pois o problema relatado é a execução da obrigação.</p></div></div>
-   <div class="rating-evidence"><article><h3>Fundamentos da avaliação</h3><ol>{unit.verdict.basis.map(x=><li>{x}</li>)}</ol><a class="text-link" href={casePath(item)+'evidencias/'}>Índice de evidências e status ↗</a></article><article><h3>Respostas necessárias</h3><ol>{item.imprensa_perguntas?.slice(0,5).map(q=><li>{q}</li>)}</ol><a class="text-link" href={casePath(item)+'imprensa/'}>Todos os pedidos de informação ↗</a></article></div>
-  </div></section>
-  <CompanyCaseMatrix brand={brand} unit={unit}/>
-  <CaseContractScope caseId={item.id} compact/>
-  <CompanyProfiles only={unit.company_profile_ids} hidePeople title="Pessoa jurídica cadastrada no endereço da loja — não necessariamente a contratada"/>
-  <CompanyRecognitionGallery brand={brand} unit={unit}/>
-  <CompanyRanking currentBrand={brand.slug} currentUnit={unit.slug} heading="Como Ipanema aparece nas avaliações editoriais"/>
-  <section class="section company-accountability-end" id="resposta-institucional"><div class="container"><span class="eyebrow">DOCUMENTAÇÃO PARA O CONSUMIDOR E IMPRENSA</span><h2>Confronte os números com os documentos.</h2><div class="company-identity-actions"><a class="button button-dark" href={casePath(item)}>Dossiê do caso ↗</a><a class="button button-subtle" href={casePath(item)+'materiais-imprensa/'}>Materiais de imprensa ↗</a><a class="company-inline-link" href={casePath(item)+'responsaveis/'}>CNPJs do contrato e responsabilidade ↗</a></div></div></section>
- </DetailLayout>
+ <CompanyIdentityHero brand={brand} unit={unit}/>
+ <SectionRail items={rail} label={unit.name}/>
+
+ <Section id="avaliacao-editorial" eyebrow={u.eyebrow} title={u.title(brl(item.valor_brl||0))} description={u.body(item.status_data)}>
+  <div class="grid gap-6 md:grid-cols-2">
+   <article class="rounded-xl border bg-card p-6"><h3 class="mt-0">{v.basisTitle}</h3><ol class="m-0 grid gap-2 pl-5">{unit.verdict.basis.map(x=><li>{x}</li>)}</ol></article>
+   <article class="rounded-xl border bg-card p-6"><h3 class="mt-0">{u.questionsTitle}</h3><ol class="m-0 grid gap-2 pl-5">{item.imprensa_perguntas?.slice(0,5).map(q=><li>{q}</li>)}</ol></article>
+  </div>
+  <div class="mt-6 rounded-xl border bg-muted p-6"><h3 class="mt-0">{v.triggersTitle}</h3><ol class="m-0 grid gap-2 pl-5">{unit.verdict.review_triggers.map(x=><li>{x}</li>)}</ol></div>
+  <p class="mt-5 mb-0 text-sm text-muted-foreground"><a href="/metodologia/#avaliacao-editorial">{v.methodLink} →</a></p>
+ </Section>
+
+ <CompanyCaseMatrix brand={brand} unit={unit}/>
+ <ImpactDashboard brand={brand} unit={unit} embedded/>
+ <PrecedentComparison item={item} compact/>
+ <CollapseSignalsMatrix item={item}/>
+ <CompanyProfiles only={unit.company_profile_ids} hidePeople title={copy.company.profiles.unitTitle}/>
+ <CaseContractScope caseId={item.id} compact/>
+ <CompanyRecognitionGallery brand={brand} unit={unit}/>
+
+ <Section id="resposta-institucional" tone="dark" eyebrow={a.eyebrow(unit.name)} title={a.title(unit.name)} description={a.body}>
+  <div class="flex flex-wrap gap-3"><ButtonLink variant="inverse" href={casePath(item)+'imprensa/'}>{a.pressLink} →</ButtonLink></div>
+ </Section>
+
+ <CompanyRanking currentBrand={brand.slug} currentUnit={unit.slug} heading={copy.company.ranking.unitTitle}/>
+ <Section tone="muted" size="sm" eyebrow={more.eyebrow}>
+  <div class="flex flex-wrap gap-3"><ButtonLink variant="outline" href={brandPath(brand)}>Perfil completo da {brand.name}</ButtonLink><ButtonLink variant="outline" href="/empresas/">{more.directory}</ButtonLink><ButtonLink variant="ghost" href="/avaliacoes/nao-recomendamos/">{more.notRecommended}</ButtonLink></div>
+ </Section>
 </BaseLayout>

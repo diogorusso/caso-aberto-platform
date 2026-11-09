@@ -1,11 +1,17 @@
 ---
-import {formatDate,type Precedent} from '../lib/precedents';
-interface Props {precedent:Precedent}
-const {precedent:p}=Astro.props;
+import { formatDate, type Precedent } from '../lib/precedents';
+interface Props { precedent: Precedent }
+const { precedent: p } = Astro.props;
 ---
-<ol class="precedent-timeline" aria-label={'Cronologia documentada de '+p.brand}>
- {p.timeline.map(event=><li class:list={['precedent-milestone','milestone-'+event.type]}>
-  <span class="precedent-timeline-date"><time datetime={event.date}>{formatDate(event.date)}</time></span>
-  <div class="precedent-timeline-body"><strong>{event.event}</strong><a href={event.source_url} target="_blank" rel="noopener noreferrer">Fonte do marco ↗</a></div>
- </li>)}
+<ol class="m-0 list-none p-0" aria-label={'Cronologia documentada de '+ p.brand}>
+  {p.timeline.map((event) => (
+    <li class="relative grid gap-1 border-l-2 pb-8 pl-7 last:border-transparent last:pb-0 md:grid-cols-[10rem_1fr] md:gap-6">
+      <span class:list={['absolute top-1.5 -left-[7px] size-3 ring-4 ring-background', event.type === 'falencia'|| event.type?.includes('fal') ? 'bg-brand-strong': 'bg-forest']} aria-hidden="true"></span>
+      <time datetime={event.date} class="text-sm font-semibold text-brand-strong">{formatDate(event.date)}</time>
+      <div class="space-y-1">
+        <strong class="block">{event.event}</strong>
+        <a class="text-link text-sm" href={event.source_url} target="_blank" rel="noopener noreferrer">Fonte do marco ↗</a>
+      </div>
+    </li>
+  ))}
 </ol>

@@ -4,13 +4,13 @@ interface Props { item: Case; limit?: number }
 const { item, limit } = Astro.props;
 const list = limit ? updatesFor(item).slice(0, limit) : updatesFor(item);
 ---
-<ol class="updates-list">
+<ol class="m-0 list-none divide-y border-y p-0">
   {list.map((u) => (
-    <li>
-      <time datetime={u.date}>{dateBR(u.date)}</time>
-      <h3>{u.title}</h3>
-      <p>{u.summary}</p>
-      {u.source_url && <a class="text-link" href={u.source_url} target="_blank" rel="noopener noreferrer">Fonte ↗</a>}
+    <li class="space-y-1.5 py-5">
+      <time datetime={u.date} class="text-sm font-semibold text-brand-strong">{dateBR(u.date)}</time>
+      <h3 class="m-0 text-lg">{u.title}</h3>
+      <p class="m-0 text-muted-foreground">{u.summary}</p>
+      {u.source_url && <a class="text-link text-sm" href={u.source_url} target="_blank" rel="noopener noreferrer">Fonte ↗</a>}
     </li>
   ))}
 </ol>

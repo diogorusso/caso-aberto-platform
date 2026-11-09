@@ -1,20 +1,39 @@
 ---
-import {brandPath,unitPath,statusLabel,type Brand,type BrandUnit} from '../lib/brands';
-import {brandImpactPath,unitImpactPath} from '../lib/impact';
-import media from '../data/company-media.json';
-interface Props {brand:Brand; unit?:BrandUnit}
-const {brand,unit}=Astro.props;
-const rated=unit||brand;
-const verdict=rated.verdict;
-const href=unit?unitPath(brand,unit):brandPath(brand);
-const identity=(media.brands as Record<string,any>)[brand.slug];
+import { brandPath, unitPath, statusLabel, type Brand, type BrandUnit } from '../lib/brands';
+import { brandImpactPath, unitImpactPath } from '../lib/impact';
+import VerdictStatusBadge from './VerdictStatusBadge';
+import BrandTag from './BrandTag.astro';
+import { Card, CardContent, CardFooter, CardHeader } from './ui/card';
+import { copy } from '@/lib/copy';
+const t = copy.ratingCard;
+interface Props { brand: Brand; unit?: BrandUnit }
+const { brand, unit } = Astro.props;
+const rated = unit || brand;
+const verdict = rated.verdict;
+const href = unit ? unitPath(brand, unit) : brandPath(brand);
 ---
-<article class:list={['brand-rating-card','rating-'+verdict.status]}>
- <div class="rating-brand-identity">{identity?.logo?.src&&<img src={identity.logo.src} alt={identity.logo.alt} width="112" height="48" loading="lazy"/>}<span>{unit?'UNIDADE':'PERFIL DE MARCA'}</span></div>
- <div class="rating-head"><span class="rating-label">{statusLabel(verdict.status)}</span><time datetime={verdict.valid_as_of}>Revisão: {verdict.valid_as_of.split('-').reverse().join('/')}</time></div>
- <h3><a href={href}>{rated.name}</a></h3>
- <p class="rating-location">{unit?unit.location:brand.location} · {brand.segment}</p>
- <p>{verdict.headline}</p>
- <p class="rating-scope">{verdict.scope}</p>
- <div class="rating-foot"><span>{rated.case_ids.length} caso(s) relacionado(s)</span><a class="text-link" href={href}>Ler avaliação ↗</a><a class="text-link" href={unit?unitImpactPath(brand,unit):brandImpactPath(brand)}>Painel de impacto ↗</a></div>
-</article>
+<Card className="h-full">
+  <CardHeader className="gap-3">
+    <div class="flex items-center justify-between gap-3 border-b pb-3">
+      <BrandTag brand={brand} unit={unit} size="md" linked />
+      <span class="text-[0.68rem] font-semibold uppercase tracking-wider text-muted-foreground">{unit ? 'Unidade' : 'Perfil de marca'}</span>
+    </div>
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <VerdictStatusBadge status={verdict.status} label={statusLabel(verdict.status)} />
+      <time class="text-xs text-muted-foreground" datetime={verdict.valid_as_of}>Revisão: {verdict.valid_as_of.split('-').reverse().join('/')}</time>
+    </div>
+    <h3 class="m-0 text-2xl"><a class="no-underline hover:underline" href={href}>{rated.name}</a></h3>
+    <p class="m-0 text-sm text-muted-foreground">{unit ? unit.location : brand.location} · {brand.segment}</p>
+  </CardHeader>
+  <CardContent className="space-y-2">
+    <p class="m-0 font-medium">{verdict.headline}</p>
+    <p class="m-0 text-sm text-muted-foreground">{verdict.scope}</p>
+  </CardContent>
+  <CardFooter className="mt-auto flex-wrap justify-between gap-3 border-t pt-4 text-sm">
+    <span class="text-muted-foreground">{t.cases(rated.case_ids.length)}</span>
+    <span class="flex flex-wrap gap-4">
+      <a class="text-link" href={href}>{t.link} ↗</a>
+      <a class="text-link" href={unit ? unitImpactPath(brand, unit) : brandImpactPath(brand)}>{t.impact} ↗</a>
+    </span>
+  </CardFooter>
+</Card>

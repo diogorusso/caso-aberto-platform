@@ -10,7 +10,7 @@ Link em todos: https://casoaberto.pages.dev/casos/florense-ipanema-rj-atraso-mov
 5. CTA: leia o dossiê com fontes
 
 ## 2. Alerta Roma
-Texto: NÃO ASSUMA ESSE RISCO. Pagar móveis planejados adiantado concentra risco no consumidor. A falência da Roma Mobili (TJRJ 3016855-24.2025.8.19.0001) mostra o extremo. Isso NÃO prova que a Florense está falida — prova por que cronograma e documentação importam.
+Texto: Será que seu móvel planejado será entregue? A Florense não entregou o meu. Será que está falindo como ocorreu há dois anos com a Roma? Melhor não correr o risco. Busque outro fornecedor. (Roma: TJRJ 3016855-24.2025.8.19.0001, falência decretada.)
 CTA: guia completo no link.
 
 ## 3. Cronologia em 6 slides

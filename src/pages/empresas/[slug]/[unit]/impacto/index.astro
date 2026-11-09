@@ -12,5 +12,5 @@ const crumbs=[{label:'Início',href:'/'},{label:'Empresas',href:'/empresas/'},{l
 <BaseLayout title={unit.name+': casos, reclamações locais, dinheiro e atraso | CasoAberto'} description={'Painel de impacto da unidade '+unit.name+': reclamações catalogadas especificamente para a unidade, pagamentos relatados e cenários financeiros discriminados.'} dateModified={unit.last_reviewed} breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}>
  <Breadcrumbs items={crumbs}/>
  <ImpactDashboard brand={brand} unit={unit}/>
- <section class="section section-soft"><div class="container narrow"><h2>Entenda o recorte local.</h2><p>Esta página reúne os casos vinculados a {unit.name} e reclamações expressamente identificadas como pertencentes à unidade. Reclamações de lojas de outras cidades não aparecem como ocorrências locais.</p><a class="text-link" href={unitPath(brand,unit)}>Voltar ao perfil da unidade ↗</a></div></section>
+ <section class="py-14 md:py-20 bg-muted"><div class="container [--container-max:52rem]"><h2>Entenda o recorte local.</h2><p>Esta página reúne os casos vinculados a {unit.name} e reclamações expressamente identificadas como pertencentes à unidade. Reclamações de lojas de outras cidades não aparecem como ocorrências locais.</p><a class="text-link" href={unitPath(brand,unit)}>Voltar ao perfil da unidade ↗</a></div></section>
 </BaseLayout>

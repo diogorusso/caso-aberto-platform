@@ -1,21 +1,26 @@
 ---
 import { roma } from '../lib/cases';
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 ---
-<section class="roma-compare">
-  <div class="compare-grid">
-    <article>
-      <h3>O que os registros da Roma estabelecem</h3>
-      <ul>{roma.facts.map((f) => <li>{f}</li>)}</ul>
-    </article>
-    <article>
-      <h3>Semelhanças observáveis com este dossiê</h3>
-      <ul>{roma.similarities_to_florense_case.map((f) => <li>{f}</li>)}</ul>
-      <h3>Diferenças relevantes</h3>
-      <ul>{roma.differences.map((f) => <li>{f}</li>)}</ul>
-    </article>
+<div class="space-y-4">
+  <div class="grid gap-4 md:grid-cols-2">
+    <Card>
+      <CardHeader><CardTitle className="text-lg">O que os registros da Roma estabelecem</CardTitle></CardHeader>
+      <CardContent><ul class="m-0 list-disc space-y-2 pl-5 text-sm">{roma.facts.map((f) => <li>{f}</li>)}</ul></CardContent>
+    </Card>
+    <Card>
+      <CardHeader><CardTitle className="text-lg">Semelhanças observáveis com este dossiê</CardTitle></CardHeader>
+      <CardContent className="space-y-4 text-sm">
+        <ul class="m-0 list-disc space-y-2 pl-5">{roma.similarities_to_florense_case.map((f) => <li>{f}</li>)}</ul>
+        <h4 class="m-0">Diferenças relevantes</h4>
+        <ul class="m-0 list-disc space-y-2 pl-5">{roma.differences.map((f) => <li>{f}</li>)}</ul>
+      </CardContent>
+    </Card>
   </div>
-  <div class="checklist-box">
-    <h3>Checklist antes de contratar móveis planejados</h3>
-    <ul class="checklist">{roma.checklist.map((c) => <li>{c}</li>)}</ul>
-  </div>
-</section>
+  <Card>
+    <CardHeader><CardTitle className="text-lg">Checklist antes de contratar móveis planejados</CardTitle></CardHeader>
+    <CardContent>
+      <ul class="m-0 list-none divide-y p-0 text-sm">{roma.checklist.map((c) => <li class="flex gap-3 py-2.5"><span class="font-bold text-brand-strong" aria-hidden="true">✓</span>{c}</li>)}</ul>
+    </CardContent>
+  </Card>
+</div>

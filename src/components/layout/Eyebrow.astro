@@ -1,0 +1,6 @@
+---
+import { cn } from '@/lib/utils';
+interface Props { inverse?: boolean; class?: string }
+const { inverse = false, class: className } = Astro.props;
+---
+<p class={cn('m-0 text-xs font-semibold uppercase tracking-[0.14em]', inverse ? 'text-brand' : 'text-brand-strong', className)}><slot /></p>

@@ -17,12 +17,12 @@ const crumbs = [
   breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}
 >
   <Breadcrumbs items={crumbs} />
-  <header class="pagehead"><div class="container">
-    <div class="eyebrow">GUIA AO CONSUMIDOR</div>
+  <header class="border-b bg-card py-12 md:py-16 [&_h1]:my-4 [&_p]:max-w-3xl [&_p]:text-lg [&_p]:text-muted-foreground"><div class="container">
+    <div class="eyebrow text-xs font-semibold uppercase tracking-[0.14em] text-brand-strong">GUIA AO CONSUMIDOR</div>
     <h1>Risco do pagamento antecipado em móveis planejados</h1>
     <p>{roma.campaign_sub}</p>
   </div></header>
-  <section class="section"><div class="container narrow editorial">
+  <section class="py-14 md:py-20"><div class="container [--container-max:52rem] prose prose-stone max-w-[52rem] prose-headings:tracking-tight prose-h2:mt-12 prose-h2:text-2xl prose-a:text-brand-strong">
     <ConsumerRiskWarning compact href="/casos/florense-ipanema-rj-atraso-moveis-planejados/risco-roma-mobili/" />
     <h2>Por que este guia existe</h2>
     <p>Consumidores frequentemente quitam valores altos antes de ver os móveis instalados. Quando a cadeia falha — atraso prolongado, ruptura comercial ou falência — o dinheiro já saiu da conta do consumidor.</p>
@@ -30,9 +30,9 @@ const crumbs = [
     <p>Processo {roma.proceeding.number}, {roma.proceeding.court}. Falência decretada em 19/12/2025, com administração judicial, relação de credores e leilão de bens.</p>
     <RomaComparison />
     <h2>Florense está falindo?</h2>
-    <p><strong>Não há, neste arquivo, evidência de falência ou insolvência da Florense.</strong> Perguntas do tipo “Florense está falindo?” devem ser respondidas com essa distinção: o alerta Roma trata de exposição do consumidor, não de prognóstico financeiro sobre a marca.</p>
+    <p>Uma empresa não precisa estar falindo para ser risco sério. Na Florense Ipanema, o consumidor relata R$ 190 mil pagos e prazo descumprido. Roma quebrou depois de clientes pagarem e não receberem. Será que você quer correr o mesmo risco? Melhor não. Busque outro fornecedor enquanto o caso estiver aberto.</p>
     <p><a class="text-link" href="/casos/florense-ipanema-rj-atraso-moveis-planejados/risco-roma-mobili/">Ver comparação aplicada ao dossiê Florense Ipanema ↗</a></p>
     <h2>Fontes</h2>
-    <ul class="source-links">{roma.sources.map(s => <li><a href={s.url} target="_blank" rel="noopener noreferrer">{s.title}</a></li>)}</ul>
+    <ul class="m-0 list-none divide-y p-0 [&_li]:flex [&_li]:flex-col [&_li]:gap-1 [&_li]:py-3 [&_a]:font-semibold [&_a]:break-words [&_a]:text-brand-strong [&_span]:text-xs [&_span]:text-muted-foreground">{roma.sources.map(s => <li><a href={s.url} target="_blank" rel="noopener noreferrer">{s.title}</a></li>)}</ul>
   </div></section>
 </BaseLayout>

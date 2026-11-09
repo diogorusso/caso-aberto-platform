@@ -1,0 +1,45 @@
+---
+import { cn } from '@/lib/utils';
+import Eyebrow from './Eyebrow.astro';
+export type SectionTone = 'default' | 'muted' | 'card' | 'dark' | 'contrast' | 'accent';
+interface Props {
+  id?: string;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  tone?: SectionTone;
+  size?: 'sm' | 'md' | 'lg';
+  narrow?: boolean;
+  class?: string;
+}
+const { id, eyebrow, title, description, tone = 'default', size = 'md', narrow = false, class: className } = Astro.props;
+const tones: Record<SectionTone, string> = {
+  default: 'bg-background',
+  muted: 'bg-muted',
+  card: 'bg-card',
+  dark: 'bg-forest text-forest-foreground',
+  contrast: 'bg-primary text-primary-foreground',
+  accent: 'bg-brand-strong text-white',
+};
+const sizes = { sm: 'py-10 md:py-12', md: 'py-14 md:py-20', lg: 'py-16 md:py-24' };
+const inverse = tone === 'dark' || tone === 'contrast' || tone === 'accent';
+const hasAction = Astro.slots.has('action');
+const hasTitle = Astro.slots.has('title');
+---
+<section id={id} class={cn('scroll-mt-28', tones[tone], sizes[size], className)}>
+  <div class="container">
+    <div class={cn(narrow && 'mx-auto max-w-3xl')}>
+      {(eyebrow || title || hasTitle) && (
+        <header class="mb-8 flex flex-col gap-5 md:mb-10 md:flex-row md:items-end md:justify-between">
+          <div class="max-w-3xl space-y-3">
+            {eyebrow && <Eyebrow inverse={inverse}>{eyebrow}</Eyebrow>}
+            {hasTitle ? <h2 class="m-0"><slot name="title" /></h2> : title && <h2 class="m-0">{title}</h2>}
+            {description && <p class={cn('m-0 text-lg leading-relaxed', inverse ? 'text-white/75' : 'text-muted-foreground')}>{description}</p>}
+          </div>
+          {hasAction && <div class="flex shrink-0 flex-wrap gap-2"><slot name="action" /></div>}
+        </header>
+      )}
+      <slot />
+    </div>
+  </div>
+</section>

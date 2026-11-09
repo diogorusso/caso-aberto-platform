@@ -1,13 +1,14 @@
 ---
 import { roma } from '../lib/cases';
+import ButtonLink from './layout/ButtonLink.astro';
+import { copy } from '@/lib/copy';
 interface Props { compact?: boolean; href?: string }
-const { compact = false, href = '/precedentes/' } = Astro.props;
+const { compact = false, href = '/precedentes/'} = Astro.props;
 ---
-<aside class:list={['risk-banner', compact && 'risk-banner-compact']} role="note">
-  <p class="risk-kicker">Alerta ao consumidor</p>
-  <p class="risk-line">{roma.campaign_line}</p>
-  <p class="risk-sub">{roma.campaign_sub}</p>
-  {!compact && <p class="risk-bridge">{roma.florense_bridge}</p>}
-  <p class="risk-disc">{roma.disclaimer}</p>
-  <a class="button button-primary" href={href}>Ler o alerta completo ↗</a>
+<aside role="note" class="space-y-4 border-l-4 border-brand bg-[#1a100e] p-6 text-[#f7ebe7] md:p-8">
+  <p class="m-0 text-xs font-semibold uppercase tracking-[0.16em] text-brand">{copy.riskWarning.kicker}</p>
+  <p class="m-0 text-2xl font-bold leading-tight tracking-tight md:text-4xl">{roma.campaign_line}</p>
+  <p class="m-0 max-w-3xl text-[#f0d5ce]">{roma.campaign_sub}</p>
+  {!compact && <p class="m-0 max-w-3xl text-[#f0d5ce]">{roma.florense_bridge}</p>}
+  <ButtonLink variant="brand" href={href}>{copy.riskWarning.link} ↗</ButtonLink>
 </aside>

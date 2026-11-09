@@ -1,16 +1,23 @@
 ---
 import { statements, dateBR } from '../lib/cases';
+import { Card, CardContent, CardFooter, CardHeader } from './ui/card';
 ---
-<div class="statements">
+<div class="grid gap-4 lg:grid-cols-2">
   {statements.map((s) => (
-    <article class="statement-card">
-      <p class="meta">{s.outlet} · {dateBR(s.published_at)}</p>
-      <h3>{s.speaker}</h3>
-      <p class="muted">{s.role_as_published}</p>
-      <ul>{s.claims.map((c) => <li>{c}</li>)}</ul>
-      <p><strong>Relação com o caso:</strong> {s.relation_to_case}</p>
-      <a class="text-link" href={s.url} target="_blank" rel="noopener noreferrer">Ler fonte original ↗</a>
-      <p class="muted">Verificado em {dateBR(s.checked_at)}</p>
-    </article>
+    <Card>
+      <CardHeader className="gap-1.5">
+        <p class="m-0 text-xs font-semibold uppercase tracking-wider text-brand-strong">{s.outlet} · {dateBR(s.published_at)}</p>
+        <h3 class="m-0 text-xl">{s.speaker}</h3>
+        <p class="m-0 text-sm text-muted-foreground">{s.role_as_published}</p>
+      </CardHeader>
+      <CardContent className="space-y-3 text-sm">
+        <ul class="m-0 list-disc space-y-1.5 pl-5">{s.claims.map((c) => <li>{c}</li>)}</ul>
+        <p class="m-0"><strong>Relação com o caso:</strong> {s.relation_to_case}</p>
+      </CardContent>
+      <CardFooter className="mt-auto justify-between gap-3 text-sm">
+        <a class="text-link" href={s.url} target="_blank" rel="noopener noreferrer">Ler fonte original ↗</a>
+        <span class="text-xs text-muted-foreground">Verificado em {dateBR(s.checked_at)}</span>
+      </CardFooter>
+    </Card>
   ))}
 </div>

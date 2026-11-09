@@ -1,26 +1,14 @@
 ---
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
-import '../styles/global.css';
 import '../styles/tailwind.css';
-import '../styles/dossier.css';
-
-import '../styles/evidence.css';
-import '../styles/ratings.css';
-import '../styles/company-matrix.css';
-import '../styles/home-platform.css';
-import '../styles/ui.css';
-import '../styles/impact.css';
-import '../styles/company-identity.css';
-import '../styles/precedents.css';
 import '../styles/print-kit.css';
-import '../styles/scenario-rehearsal.css';
 interface Props {
   title: string;
   description: string;
   dateModified?: string;
   datePublished?: string;
-  type?: 'website' | 'article';
+  type?: 'website'| 'article';
   image?: string;
   breadcrumbs?: { name: string; item: string }[];
   schema?: Record<string,unknown>;
@@ -47,7 +35,7 @@ const org = {
 };
 const pageLd = {
   '@context': 'https://schema.org',
-  '@type': type === 'article' ? 'Article' : 'WebPage',
+  '@type': type === 'article'? 'Article': 'WebPage',
   headline: title,
   name: title,
   description,
@@ -55,7 +43,7 @@ const pageLd = {
   dateModified,
   ...(datePublished ? { datePublished } : {}),
   isAccessibleForFree: true,
-  publisher: { '@type': 'Organization', name: 'CasoAberto' },
+  publisher: { '@type': 'Organization', name: 'CasoAberto'},
   ...(canonical ? { url: canonical } : {}),
   ...(ogImage ? { image: ogImage } : {}),
 };
@@ -101,9 +89,9 @@ const crumbLd = breadcrumbs?.length
     {schema && <script type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\\u003c')} />}
   </head>
   <body>
-    <a class="skip" href="#conteudo">Pular para conteúdo</a>
+    <a class="sr-only z-50 bg-background px-4 py-2 font-semibold focus:not-sr-only focus:fixed focus:top-2 focus:left-2" href="#conteudo">Pular para conteúdo</a>
     <SiteHeader />
-    <main id="conteudo"><slot /></main>
+    <main id="conteudo" class="min-h-[60vh]"><slot /></main>
     <SiteFooter />
   </body>
 </html>

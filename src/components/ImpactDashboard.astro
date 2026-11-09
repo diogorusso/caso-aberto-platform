@@ -1,20 +1,12 @@
 ---
-import {type Case} from '../lib/cases';
-import {type Brand,type BrandUnit,findBrand} from '../lib/brands';
-import {impactForSelection,brandSnapshot,impactNavItems} from '../lib/impact';
+import { type Case } from '../lib/cases';
+import { type Brand, type BrandUnit, findBrand } from '../lib/brands';
+import { impactForSelection, brandSnapshot } from '../lib/impact';
 import ImpactBody from './ImpactBody.astro';
-import DetailLayout from './ui/DetailLayout.astro';
-interface Props {caseItem?:Case;brand?:Brand;unit?:BrandUnit;embedded?:boolean;sidebar?:boolean}
-const {caseItem,brand,unit,embedded=false,sidebar=true}=Astro.props;
-const data=impactForSelection({caseItem,brand,unit});
-const snapshotBrand=brand||(caseItem?.empresa_slug?findBrand(caseItem.empresa_slug):undefined);
-const snapshot=snapshotBrand&&!unit?brandSnapshot(snapshotBrand):null;
-const navItems=impactNavItems({hasSnapshot:Boolean(snapshot),hasModel:Boolean(data.model)});
+interface Props { caseItem?: Case; brand?: Brand; unit?: BrandUnit; embedded?: boolean }
+const { caseItem, brand, unit } = Astro.props;
+const data = impactForSelection({ caseItem, brand, unit });
+const snapshotBrand = brand || (caseItem?.empresa_slug ? findBrand(caseItem.empresa_slug) : undefined);
+const snapshot = snapshotBrand && !unit ? brandSnapshot(snapshotBrand) : null;
 ---
-{embedded ? (
-  <ImpactBody caseItem={caseItem} brand={brand} unit={unit} />
-) : (
-  <DetailLayout items={navItems} title="No radar" railLabel="Impacto" sidebar={sidebar}>
-    <ImpactBody caseItem={caseItem} brand={brand} unit={unit} />
-  </DetailLayout>
-)}
+<ImpactBody caseItem={caseItem} brand={brand} unit={unit} />

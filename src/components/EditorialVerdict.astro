@@ -1,28 +1,39 @@
 ---
-import {statusLabel,type Verdict} from '../lib/brands';
-interface Props {verdict:Verdict; subject:string; caseHref?:string; prominence?:'hero'|'default'}
-const {verdict,subject,caseHref,prominence='default'}=Astro.props;
-const label=statusLabel(verdict.status);
-const roma='https://gomesdemattos.com.br/admjudicial/lista-de-processos/roma-mobili-industria-ltda-e-rm-projetos-e-montagens-de-moveis-ltda-epp/';
+import { statusLabel, type Brand, type BrandUnit, type Verdict } from '../lib/brands';
+import VerdictStatusBadge from './VerdictStatusBadge';
+import ButtonLink from './layout/ButtonLink.astro';
+import BrandTag from './BrandTag.astro';
+import { Card } from './ui/card';
+import { copy } from '@/lib/copy';
+interface Props { verdict: Verdict; subject: string; caseHref?: string; prominence?: 'hero' | 'default'; brand?: Brand; unit?: BrandUnit }
+const { verdict, subject, caseHref, brand, unit } = Astro.props;
+const t = copy.verdict;
+const label = statusLabel(verdict.status);
+const roma = 'https://gomesdemattos.com.br/admjudicial/lista-de-processos/roma-mobili-industria-ltda-e-rm-projetos-e-montagens-de-moveis-ltda-epp/';
 ---
-<section class:list={['editorial-verdict','verdict-'+verdict.status,'verdict-'+prominence]} aria-labelledby="verdict-title">
-  <div class="container verdict-grid">
-   <div class="verdict-main">
-    <span class="verdict-eyebrow">RECOMENDAÇÃO EDITORIAL · {subject} · {verdict.valid_as_of.split('-').reverse().join('/')}</span>
-    <span class="verdict-status">{label}</span>
-    <h2 id="verdict-title">{verdict.headline}</h2>
-    <p class="verdict-lead">{verdict.lead}</p>
-    <p class="verdict-scope"><strong>Alcance da avaliação:</strong> {verdict.scope}</p>
-   </div>
-   <aside class="verdict-context">
-    <h3>{verdict.question}</h3>
-    <p>{verdict.context}</p>
-    <div class="verdict-links">
-     {caseHref && <a class="button button-white" href={caseHref}>Ver dossiê e fontes ↗</a>}
-     <a href={roma} target="_blank" rel="noopener noreferrer">Processo judicial Roma Mobili ↗</a>
-     <a href="https://www.instagram.com/reel/DVr3jaCkdWq/" target="_blank" rel="noopener noreferrer">Vídeo sobre o caso Roma ↗</a>
-     <a href="/metodologia/#avaliacao-editorial">Critérios e revisão ↗</a>
-    </div>
-   </aside>
+<section class="border-b bg-muted py-8" aria-labelledby="verdict-title">
+  <div class="container">
+    <Card className="gap-0 overflow-hidden py-0 lg:grid lg:grid-cols-[minmax(0,1.4fr)_minmax(16rem,0.6fr)]">
+      <div class="space-y-3 p-6 md:p-8">
+        {brand && <BrandTag brand={brand} unit={unit} size="md" linked />}
+        <div class="flex flex-wrap items-center gap-2">
+          <VerdictStatusBadge status={verdict.status} label={label} />
+          <span class="text-xs font-medium text-muted-foreground">{t.eyebrow(subject, verdict.valid_as_of)}</span>
+        </div>
+        <h2 id="verdict-title" class="m-0 text-2xl md:text-3xl">{verdict.headline}</h2>
+        <p class="m-0 font-semibold leading-relaxed">{verdict.lead}</p>
+        <p class="m-0 text-sm text-muted-foreground"><strong>{t.scopeLabel}</strong> {verdict.scope}</p>
+      </div>
+      <aside class="space-y-3 border-t bg-muted/50 p-6 md:p-8 lg:border-t-0 lg:border-l">
+        <h3 class="m-0 text-base">{verdict.question}</h3>
+        <p class="m-0 text-sm leading-relaxed text-muted-foreground">{verdict.context}</p>
+        <div class="flex flex-col items-start gap-2 pt-1 text-sm">
+          {caseHref && <ButtonLink size="sm" href={caseHref}>{t.evidenceLink} ↗</ButtonLink>}
+          <a class="text-link" href={roma} target="_blank" rel="noopener noreferrer">{t.romaCaseLink} ↗</a>
+          <a class="text-link" href="https://www.instagram.com/reel/DVr3jaCkdWq/" target="_blank" rel="noopener noreferrer">{t.romaVideoLink} ↗</a>
+          <a class="text-link" href="/metodologia/#avaliacao-editorial">{t.methodLink} ↗</a>
+        </div>
+      </aside>
+    </Card>
   </div>
 </section>

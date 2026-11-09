@@ -9,6 +9,7 @@ import rawStatements from '../data/statements.json';
 export type Source = { titulo: string; tipo?: string; url: string };
 export type Moment = { data: string; titulo: string; texto: string };
 export type Request = { titulo: string; texto: string };
+export type CollapseSignal = { key: string; date: string; source_url: string; note?: string };
 export type Case = {
   id: string;
   slug: string;
@@ -34,6 +35,7 @@ export type Case = {
   pedidos: Request[];
   fontes: Source[];
   imprensa_perguntas?: string[];
+  collapse_signals?: CollapseSignal[];
 };
 export type Report = {
   id: string;

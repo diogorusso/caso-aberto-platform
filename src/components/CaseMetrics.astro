@@ -1,19 +1,22 @@
 ---
 import { type Case, metricsFor, reportsFor, updatesFor } from '../lib/cases';
+import { KpiCard } from './ui/kpi-card';
+import { copy } from '@/lib/copy';
+const t = copy.metrics;
 interface Props { item: Case }
 const { item } = Astro.props;
 const m = metricsFor(item);
 const reportCount = reportsFor(item).length;
 const updateCount = updatesFor(item).length;
 ---
-<section class="metrics-board" aria-label="Métricas documentadas do caso">
-  <div class="metrics-grid">
-    <div><small>Reclamações públicas indexadas</small><strong>{m?.public_complaints_indexed ?? reportCount}</strong></div>
-    <div><small>Fontes primárias citadas</small><strong>{m?.primary_sources_cited ?? item.fontes.length}</strong></div>
-    <div><small>Atualizações do dossiê</small><strong>{m?.case_updates ?? updateCount}</strong></div>
-    <div><small>Respostas da empresa neste dossiê</small><strong>{m?.company_responses_on_record ?? 0}</strong></div>
-    <div><small>Apoios verificados publicados</small><strong>{m?.verified_support_submissions ?? 0}</strong></div>
-    <div><small>Pageviews / visitantes</small><strong>{m?.pageviews == null ? 'Ainda sem medição pública' : m.pageviews}</strong></div>
+<section aria-label="Métricas documentadas do caso" class="space-y-4">
+  <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+    <KpiCard label={t.complaints} value={m?.public_complaints_indexed ?? reportCount} />
+    <KpiCard label={t.sources} value={m?.primary_sources_cited ?? item.fontes.length} />
+    <KpiCard label={t.updates} value={m?.case_updates ?? updateCount} />
+    <KpiCard label={t.responses} value={m?.company_responses_on_record ?? 0} />
+    <KpiCard label={t.supports} value={m?.verified_support_submissions ?? 0} />
+    <KpiCard label={t.audience} value={m?.pageviews == null ? t.audiencePending : m.pageviews} />
   </div>
-  <p class="metrics-note">{m?.measurement_period||'Contagens vinculadas ao caso nesta revisão'}. Contadores de audiência só aparecem com exportação documentada do Cloudflare Web Analytics — nunca números inventados.</p>
+  <p class="m-0 text-sm text-muted-foreground">{m?.measurement_period || 'Contagens vinculadas ao caso nesta revisão'}. {t.note}</p>
 </section>

@@ -1,6 +1,14 @@
 # Pacote Roma Mobili
 
-Mensagem central: NÃO ASSUMA ESSE RISCO. Na dúvida, procure outro fornecedor.
+Canon autorizado (sem disclaimer — disclaimers são papel do legal, não do LLM):
+
+```
+Será que seu móvel planejado será entregue?
+A Florense não entregou o meu.
+Será que está falindo como ocorreu há dois anos com a Roma?
+Melhor não correr o risco. Busque outro fornecedor.
+Saiba mais em https://casoaberto.pages.dev/casos/florense-ipanema-rj-atraso-moveis-planejados/
+```
 
 Fatos: falência Roma Mobili Indústria Ltda. e RM Projetos… processo 3016855-24.2025.8.19.0001, 5ª Vara Empresarial/TJRJ, decreto 19/12/2025.
 
@@ -14,4 +22,5 @@ Páginas CasoAberto:
 - https://casoaberto.pages.dev/casos/florense-ipanema-rj-atraso-moveis-planejados/risco-roma-mobili/
 - https://casoaberto.pages.dev/guias/risco-pagamento-antecipado-moveis-planejados/
 
-Disclaimer obrigatório: não há evidência neste arquivo de falência da Florense.
+Não inventar disclaimer. Se o legal precisar de um, o legal entrega o texto.
+

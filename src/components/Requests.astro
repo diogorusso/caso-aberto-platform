@@ -1,6 +1,14 @@
 ---
-import type {Request} from '../lib/cases';
+import type { Request } from '../lib/cases';
 interface Props { items: Request[] }
-const {items} = Astro.props;
+const { items } = Astro.props;
 ---
-<ol class="request-grid">{items.map(item => <li><strong>{item.titulo}</strong><span>{item.texto}</span></li>)}</ol>
+<ol class="m-0 grid list-none gap-4 p-0 md:grid-cols-2">
+  {items.map((item, i) => (
+    <li class="flex flex-col gap-2 border bg-card p-6 shadow-sm">
+      <span class="font-mono text-sm font-semibold text-brand-strong">{String(i + 1).padStart(2, '0')}</span>
+      <strong class="text-lg leading-snug">{item.titulo}</strong>
+      <span class="text-muted-foreground">{item.texto}</span>
+    </li>
+  ))}
+</ol>

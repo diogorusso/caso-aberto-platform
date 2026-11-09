@@ -14,14 +14,14 @@ const crumbs = [
   breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}
 >
   <Breadcrumbs items={crumbs} />
-  <header class="pagehead"><div class="container">
-    <div class="eyebrow">GUIA PRÁTICO</div>
+  <header class="border-b bg-card py-12 md:py-16 [&_h1]:my-4 [&_p]:max-w-3xl [&_p]:text-lg [&_p]:text-muted-foreground"><div class="container">
+    <div class="eyebrow text-xs font-semibold uppercase tracking-[0.14em] text-brand-strong">GUIA PRÁTICO</div>
     <h1>O que fazer quando a entrega de móveis planejados atrasa</h1>
     <p>Orientação editorial geral. Não substitui advogado, Procon ou decisão judicial no seu caso concreto.</p>
   </div></header>
-  <section class="section"><div class="container narrow editorial">
+  <section class="py-14 md:py-20"><div class="container [--container-max:52rem] prose prose-stone max-w-[52rem] prose-headings:tracking-tight prose-h2:mt-12 prose-h2:text-2xl prose-a:text-brand-strong">
     <h2>1. Preserve evidências</h2>
-    <ul class="checklist">
+    <ul class="my-6 list-none divide-y p-0 [&_li]:py-2.5">
       <li>Contrato, proposta, comprovantes de pagamento e NF</li>
       <li>Mensagens com prazos, reagendamentos e nomes de atendentes</li>
       <li>Fotos do imóvel preparado e de visitas não realizadas</li>
@@ -37,7 +37,7 @@ const crumbs = [
     <p>Não publique CPF, endereço residencial completo, telefone particular ou documentos assinados integrais em redes abertas.</p>
     <h2>6. Acompanhe o status</h2>
     <p>Registre cada nova promessa com data. Se houver resolução, documente a entrega efetiva — não apenas uma previsão.</p>
-    <p><a class="button button-dark" href="/casos/florense-ipanema-rj-atraso-moveis-planejados/">Ver exemplo de dossiê Florense Ipanema ↗</a>
-    <a class="button button-subtle" href="/guias/risco-pagamento-antecipado-moveis-planejados/">Ler alerta de pagamento antecipado</a></p>
+    <p><a class="inline-flex shrink-0 items-center justify-center gap-2 min-h-10 max-w-full px-5 py-2 text-center text-sm font-medium whitespace-normal sm:whitespace-nowrap no-underline transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 bg-primary text-primary-foreground hover:bg-primary/90" href="/casos/florense-ipanema-rj-atraso-moveis-planejados/">Ver exemplo de dossiê Florense Ipanema ↗</a>
+    <a class="inline-flex shrink-0 items-center justify-center gap-2 min-h-10 max-w-full px-5 py-2 text-center text-sm font-medium whitespace-normal sm:whitespace-nowrap no-underline transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 border bg-background text-foreground shadow-xs hover:bg-accent" href="/guias/risco-pagamento-antecipado-moveis-planejados/">Ler alerta de pagamento antecipado</a></p>
   </div></section>
 </BaseLayout>

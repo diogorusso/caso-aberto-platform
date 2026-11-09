@@ -1,94 +1,156 @@
-import {useMemo,useState} from 'react';
+import { useId, useMemo, useState } from 'react';
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Label } from '@/components/ui/label';
+import { Slider } from '@/components/ui/slider';
+import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
+import { Alert, AlertDescription } from '@/components/ui/alert';
 
-type Assumptions={
- incremental_cost_per_delay_day_brl:number;
- opportunity_cost_monthly_rate_pct:number;
- illustration_reach:number;
- purchase_ready_share_pct:number;
- decision_change_share_pct:number;
- illustrative_contract_ticket_brl:number;
- other_disputes_hypothetical:number;
- illustrative_claim_value_brl:number;
+type Assumptions = {
+  incremental_cost_per_delay_day_brl: number;
+  opportunity_cost_monthly_rate_pct: number;
+  illustration_reach: number;
+  purchase_ready_share_pct: number;
+  decision_change_share_pct: number;
+  illustrative_contract_ticket_brl: number;
+  other_disputes_hypothetical: number;
+  illustrative_claim_value_brl: number;
 };
-type Props={
- reportedPayment:number;daysHeld:number;daysDelay:number;asOf:string;defaults:Assumptions;
-};
-const brl=(value:number)=>new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0}).format(value);
-const whole=(value:number)=>new Intl.NumberFormat('pt-BR').format(value);
-const pct=(value:number)=>new Intl.NumberFormat('pt-BR',{maximumFractionDigits:2}).format(value)+'%';
-const initialScenarios=[
- {label:'10 mil impressões',reach:10000,qualified:1,shifted:5,ticket:100000},
- {label:'100 mil impressões',reach:100000,qualified:1,shifted:5,ticket:100000},
- {label:'1 milhão de impressões',reach:1000000,qualified:1,shifted:5,ticket:100000}
+type Props = { reportedPayment: number; daysHeld: number; daysDelay: number; asOf: string; defaults: Assumptions };
+
+const brl = (value: number) => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }).format(value);
+const whole = (value: number) => new Intl.NumberFormat('pt-BR').format(value);
+const pct = (value: number) => new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 2 }).format(value) + '%';
+const presets = [
+  { label: '10 mil impressões', reach: 10000, qualified: 1, shifted: 5, ticket: 100000 },
+  { label: '100 mil impressões', reach: 100000, qualified: 1, shifted: 5, ticket: 100000 },
+  { label: '1 milhão de impressões', reach: 1000000, qualified: 1, shifted: 5, ticket: 100000 },
 ];
-function ScenarioField({label,value,min,max,step,onChange,suffix}:{label:string,value:number,min:number,max:number,step:number,onChange:(n:number)=>void,suffix?:string}){
- const id='assumption-'+label.toLowerCase().replace(/\W+/g,'-');
- return <label className="impact-control" htmlFor={id}><span>{label}</span><strong>{whole(value)}{suffix||''}</strong>
-   <input id={id} type="range" min={min} max={max} step={step} value={value} onChange={e=>onChange(Number(e.currentTarget.value))}/>
- </label>;
+
+function ScenarioField({ label, value, min, max, step, onChange, suffix }: { label: string; value: number; min: number; max: number; step: number; onChange: (n: number) => void; suffix?: string }) {
+  const id = useId();
+  return (
+    <div className="grid gap-3">
+      <div className="flex items-baseline justify-between gap-4">
+        <Label htmlFor={id} className="leading-snug font-normal text-muted-foreground">{label}</Label>
+        <strong className="text-sm whitespace-nowrap tabular-nums">{whole(value)}{suffix || ''}</strong>
+      </div>
+      <Slider id={id} aria-label={label} min={min} max={max} step={step} value={[value]} onValueChange={(v) => onChange(v[0] ?? min)} />
+    </div>
+  );
 }
-export default function ImpactSimulator({reportedPayment,daysHeld,daysDelay,asOf,defaults}:Props){
- const [daily,setDaily]=useState(defaults.incremental_cost_per_delay_day_brl);
- const [monthly,setMonthly]=useState(defaults.opportunity_cost_monthly_rate_pct);
- const [reach,setReach]=useState(defaults.illustration_reach);
- const [qualified,setQualified]=useState(defaults.purchase_ready_share_pct);
- const [shifted,setShifted]=useState(defaults.decision_change_share_pct);
- const [ticket,setTicket]=useState(defaults.illustrative_contract_ticket_brl);
- const [otherDisputes,setOtherDisputes]=useState(defaults.other_disputes_hypothetical);
- const [claimValue,setClaimValue]=useState(defaults.illustrative_claim_value_brl);
- const modeledCosts=useMemo(()=>{
-  const estimatedExpense=daysDelay*daily;
-  const hypotheticalOpportunityCost=reportedPayment*(monthly/100)*(daysHeld/30);
-  return {estimatedExpense,hypotheticalOpportunityCost,total:estimatedExpense+hypotheticalOpportunityCost};
- },[daily,monthly,daysDelay,daysHeld,reportedPayment]);
- const market=useMemo(()=>{
-  const purchaseReady=reach*qualified/100;
-  const influenced=purchaseReady*shifted/100;
-  return {purchaseReady,influenced,value:influenced*ticket};
- },[reach,qualified,shifted,ticket]);
- const analogousClaims=otherDisputes*claimValue;
- const preset=(n:number)=>{
-  const s=initialScenarios[n];
-  setReach(s.reach);setQualified(s.qualified);setShifted(s.shifted);setTicket(s.ticket);
- };
- return <div className="impact-simulator">
-   <div className="impact-simulator-header">
-     <div><span className="eyebrow">SIMULAÇÃO INTERATIVA · SEM PREVISÃO ESTATÍSTICA</span><h3>Explore o tamanho possível da exposição.</h3><p>Modifique as premissas para entender a sensibilidade dos resultados. Nenhum valor deste simulador representa perda, audiência, custo ou demanda judicial comprovados.</p></div>
-     <span className="impact-scenario-stamp">Hipóteses — revisão {asOf.split('-').reverse().join('/')}</span>
-   </div>
-   <section className="impact-model-section" aria-labelledby="financial-model-title">
-     <div className="impact-model-head"><div><span className="impact-model-n">01 / CONSUMIDOR</span><h4 id="financial-model-title">Custo econômico adicional hipotético</h4><p>Gastos que precisariam ser comprovados e custo de oportunidade ilustrativo do capital. O pagamento original não é considerado prejuízo definitivo.</p></div><div className="impact-model-value"><span>Resultado do cenário</span><strong aria-live="polite">{brl(modeledCosts.total)}</strong><small>Além do valor já pago (não somar como dano apurado)</small></div></div>
-     <div className="impact-controls">
-       <ScenarioField label="Custos extras por dia de atraso" value={daily} min={0} max={3000} step={50} onChange={setDaily} suffix=" R$/dia"/>
-       <ScenarioField label="Custo do capital ilustrativo ao mês" value={monthly} min={0} max={5} step={0.25} onChange={setMonthly} suffix="%"/>
-     </div>
-     <div className="impact-formula"><span>{whole(daysDelay)} dias × {brl(daily)} = {brl(modeledCosts.estimatedExpense)}</span><span>{brl(reportedPayment)} × {pct(monthly)}/mês × {whole(daysHeld)} ÷ 30 dias = {brl(modeledCosts.hypotheticalOpportunityCost)}</span></div>
-   </section>
-   <section className="impact-model-section" aria-labelledby="market-model-title">
-     <div className="impact-model-head"><div><span className="impact-model-n">02 / ALCANCE E DECISÕES</span><h4 id="market-model-title">Volume comercial hipoteticamente influenciado</h4><p>Um teste condicional: se uma publicação alcançasse determinada audiência, e parte dela estivesse pronta para comprar e mudasse de decisão, qual volume de contratos estaria em discussão?</p></div><div className="impact-model-value"><span>Valor teórico das decisões</span><strong aria-live="polite">{brl(market.value)}</strong><small>Não é receita perdida nem estimativa de dano à empresa</small></div></div>
-     <div className="impact-preset-row" aria-label="Exemplos de alcance hipotético">
-       {initialScenarios.map((s,i)=><button key={s.label} type="button" className={'impact-preset'+(reach===s.reach&&qualified===s.qualified&&shifted===s.shifted&&ticket===s.ticket?' selected':'')} onClick={()=>preset(i)}>{s.label}</button>)}
-     </div>
-     <div className="impact-controls">
-       <ScenarioField label="Impressões hipotéticas" value={reach} min={0} max={1000000} step={10000} onChange={setReach}/>
-       <ScenarioField label="Parcela pronta para comprar" value={qualified} min={0} max={10} step={0.5} onChange={setQualified} suffix="%"/>
-       <ScenarioField label="Parcela que mudaria de decisão" value={shifted} min={0} max={30} step={1} onChange={setShifted} suffix="%"/>
-       <ScenarioField label="Ticket médio hipotético" value={ticket} min={10000} max={250000} step={5000} onChange={setTicket} suffix=" R$"/>
-     </div>
-     <div className="impact-conversion-visual" aria-label="Funil numérico hipotético">
-       <div><span>Impressões</span><strong>{whole(reach)}</strong></div><span aria-hidden="true">→</span><div><span>Potenciais compradores</span><strong>{whole(Math.round(market.purchaseReady))}</strong></div><span aria-hidden="true">→</span><div><span>Decisões hipoteticamente afetadas</span><strong>{new Intl.NumberFormat('pt-BR',{maximumFractionDigits:1}).format(market.influenced)}</strong></div>
-     </div>
-     <p className="impact-scenario-guard">Impressões não são visitantes únicos ou compradores. Os percentuais são escolhas do usuário, sem estudo de conversão da Florense. O valor não pode ser apresentado como perda efetiva de vendas.</p>
-   </section>
-   <section className="impact-model-section" aria-labelledby="claims-model-title">
-     <div className="impact-model-head"><div><span className="impact-model-n">03 / DEMANDAS E DOCUMENTAÇÃO</span><h4 id="claims-model-title">Escala nominal de conflitos hipotéticos</h4><p>Simule uma carteira fictícia de demandas comparáveis. Quantidade de ações judiciais, valores pedidos e resultados reais não foram verificados nessa base.</p></div><div className="impact-model-value"><span>Valor nominal em cenário hipotético</span><strong aria-live="polite">{brl(analogousClaims)}</strong><small>Não é passivo judicial, condenação ou provisão contábil</small></div></div>
-     <div className="impact-controls">
-       <ScenarioField label="Outras demandas hipotéticas" value={otherDisputes} min={0} max={50} step={1} onChange={setOtherDisputes}/>
-       <ScenarioField label="Valor contratual hipotético por demanda" value={claimValue} min={10000} max={250000} step={5000} onChange={setClaimValue} suffix=" R$"/>
-     </div>
-     <div className="impact-formula"><span>{whole(otherDisputes)} demandas hipotéticas × {brl(claimValue)} por contrato = {brl(analogousClaims)}</span></div>
-     <p className="impact-scenario-guard">O protocolo Procon/RJ e a notificação extrajudicial não são processos judiciais. O modelo não prevê litígios e não aplica taxas de condenação, juros, multas, honorários ou danos morais.</p>
-   </section>
-   <div className="impact-model-footer"><strong>Como interpretar:</strong> mantenha separado o que foi pago/relatado, o que consta em fontes públicas e o que depende inteiramente de premissas. Simulações servem para avaliar sensibilidade, não para publicar perdas ou audiência inexistentes.</div>
- </div>;
+
+function ModelCard({ n, title, description, resultLabel, result, resultNote, children }: { n: string; title: string; description: string; resultLabel: string; result: string; resultNote: string; children: React.ReactNode }) {
+  return (
+    <Card className="border-l-4 border-l-brand-strong">
+      <CardHeader className="gap-6 md:grid-cols-[minmax(0,1.4fr)_minmax(14rem,0.6fr)]">
+        <div className="space-y-2">
+          <span className="text-xs font-semibold tracking-wider text-brand-strong uppercase">{n}</span>
+          <CardTitle className="text-xl md:text-2xl">{title}</CardTitle>
+          <CardDescription className="leading-relaxed">{description}</CardDescription>
+        </div>
+        <div className="bg-forest p-5 text-forest-foreground">
+          <span className="text-xs tracking-wider text-white/70 uppercase">{resultLabel}</span>
+          <strong aria-live="polite" className="my-2 block text-2xl font-bold tracking-tight break-words md:text-3xl">{result}</strong>
+          <small className="block text-xs leading-snug text-white/70">{resultNote}</small>
+        </div>
+      </CardHeader>
+      <CardContent className="space-y-6">{children}</CardContent>
+    </Card>
+  );
+}
+
+export default function ImpactSimulator({ reportedPayment, daysHeld, daysDelay, asOf, defaults }: Props) {
+  const [daily, setDaily] = useState(defaults.incremental_cost_per_delay_day_brl);
+  const [monthly, setMonthly] = useState(defaults.opportunity_cost_monthly_rate_pct);
+  const [reach, setReach] = useState(defaults.illustration_reach);
+  const [qualified, setQualified] = useState(defaults.purchase_ready_share_pct);
+  const [shifted, setShifted] = useState(defaults.decision_change_share_pct);
+  const [ticket, setTicket] = useState(defaults.illustrative_contract_ticket_brl);
+  const [otherDisputes, setOtherDisputes] = useState(defaults.other_disputes_hypothetical);
+  const [claimValue, setClaimValue] = useState(defaults.illustrative_claim_value_brl);
+
+  const costs = useMemo(() => {
+    const estimatedExpense = daysDelay * daily;
+    const opportunity = reportedPayment * (monthly / 100) * (daysHeld / 30);
+    return { estimatedExpense, opportunity, total: estimatedExpense + opportunity };
+  }, [daily, monthly, daysDelay, daysHeld, reportedPayment]);
+  const market = useMemo(() => {
+    const purchaseReady = (reach * qualified) / 100;
+    const influenced = (purchaseReady * shifted) / 100;
+    return { purchaseReady, influenced, value: influenced * ticket };
+  }, [reach, qualified, shifted, ticket]);
+  const analogousClaims = otherDisputes * claimValue;
+  const activePreset = presets.find((s) => reach === s.reach && qualified === s.qualified && shifted === s.shifted && ticket === s.ticket)?.label ?? '';
+
+  return (
+    <div className="grid gap-5">
+      <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div className="max-w-3xl space-y-3">
+          <p className="m-0 text-xs font-semibold tracking-[0.14em] text-brand-strong uppercase">Simulação interativa · hipóteses separadas dos fatos</p>
+          <h2 className="m-0">Explore o tamanho possível da exposição.</h2>
+          <p className="m-0 text-lg text-muted-foreground">Mexa nas premissas. O que já foi pago e documentado fica no painel acima; aqui só entram cenários editáveis — sem inventar audiência, prejuízo ou processo.</p>
+        </div>
+        <Badge variant="outline" className="shrink-0 bg-card">Hipóteses — revisão {asOf.split('-').reverse().join('/')}</Badge>
+      </div>
+
+      <ModelCard n="01 / Consumidor" title="Custo econômico adicional hipotético" description="O dinheiro do contrato já saiu. Aqui você testa custos extras e custo de capital — só entram valores que você conseguir comprovar." resultLabel="Resultado do cenário" result={brl(costs.total)} resultNote="Além do valor já pago (cenário editável)">
+        <div className="grid gap-6 md:grid-cols-2">
+          <ScenarioField label="Custos extras por dia de atraso" value={daily} min={0} max={3000} step={50} onChange={setDaily} suffix=" R$/dia" />
+          <ScenarioField label="Custo do capital ilustrativo ao mês" value={monthly} min={0} max={5} step={0.25} onChange={setMonthly} suffix="%" />
+        </div>
+        <div className="flex flex-wrap gap-x-8 gap-y-1 border-t pt-4 font-mono text-xs text-muted-foreground">
+          <span>{whole(daysDelay)} dias × {brl(daily)} = {brl(costs.estimatedExpense)}</span>
+          <span>{brl(reportedPayment)} × {pct(monthly)}/mês × {whole(daysHeld)} ÷ 30 dias = {brl(costs.opportunity)}</span>
+        </div>
+      </ModelCard>
+
+      <ModelCard n="02 / Alcance e decisões" title="Volume comercial hipoteticamente influenciado" description="Teste condicional: se o alerta alcançasse X pessoas, e parte delas deixasse de comprar, qual volume de contratos estaria em jogo?" resultLabel="Valor teórico das decisões" result={brl(market.value)} resultNote="Cenário editável — separado do faturamento real">
+        <ToggleGroup
+          type="single"
+          variant="outline"
+          aria-label="Exemplos de alcance hipotético"
+          value={activePreset}
+          onValueChange={(label) => {
+            const s = presets.find((p) => p.label === label);
+            if (!s) return;
+            setReach(s.reach); setQualified(s.qualified); setShifted(s.shifted); setTicket(s.ticket);
+          }}
+          className="flex-wrap"
+        >
+          {presets.map((s) => <ToggleGroupItem key={s.label} value={s.label} className="px-3">{s.label}</ToggleGroupItem>)}
+        </ToggleGroup>
+        <div className="grid gap-6 md:grid-cols-2">
+          <ScenarioField label="Impressões hipotéticas" value={reach} min={0} max={1000000} step={10000} onChange={setReach} />
+          <ScenarioField label="Parcela pronta para comprar" value={qualified} min={0} max={10} step={0.5} onChange={setQualified} suffix="%" />
+          <ScenarioField label="Parcela que mudaria de decisão" value={shifted} min={0} max={30} step={1} onChange={setShifted} suffix="%" />
+          <ScenarioField label="Ticket médio hipotético" value={ticket} min={10000} max={250000} step={5000} onChange={setTicket} suffix=" R$" />
+        </div>
+        <ol aria-label="Funil numérico hipotético" className="m-0 grid list-none gap-2 p-0 md:grid-cols-3">
+          {[
+            ['Impressões', whole(reach)],
+            ['Potenciais compradores', whole(Math.round(market.purchaseReady))],
+            ['Decisões hipoteticamente afetadas', new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 1 }).format(market.influenced)],
+          ].map(([k, v], i) => (
+            <li key={k} className="relative border-t-4 border-t-brand bg-muted p-4">
+              <span className="block text-xs text-muted-foreground">{i > 0 ? '→ ': ''}{k}</span>
+              <strong className="text-xl font-bold tracking-tight tabular-nums break-words md:text-2xl">{v}</strong>
+            </li>
+          ))}
+        </ol>
+        <Alert variant="warning"><AlertDescription className="text-foreground/80">Impressões ≠ compradores. Os percentuais são sua escolha — sem inventar taxa de conversão. Não publique este número como perda de vendas medida.</AlertDescription></Alert>
+      </ModelCard>
+
+      <ModelCard n="03 / Demandas e documentação" title="Escala nominal de conflitos hipotéticos" description="Simule uma carteira fictícia de demandas comparáveis. Cada ação real exigiria processo, valor e resultado próprios — conferidos na fonte." resultLabel="Valor nominal em cenário hipotético" result={brl(analogousClaims)} resultNote="Cenário editável — não é condenação nem provisão">
+        <div className="grid gap-6 md:grid-cols-2">
+          <ScenarioField label="Outras demandas hipotéticas" value={otherDisputes} min={0} max={50} step={1} onChange={setOtherDisputes} />
+          <ScenarioField label="Valor contratual hipotético por demanda" value={claimValue} min={10000} max={250000} step={5000} onChange={setClaimValue} suffix=" R$" />
+        </div>
+        <div className="border-t pt-4 font-mono text-xs text-muted-foreground">{whole(otherDisputes)} demandas hipotéticas × {brl(claimValue)} por contrato = {brl(analogousClaims)}</div>
+        <Alert variant="warning"><AlertDescription className="text-foreground/80">Procon/RJ e notificação extrajudicial ≠ processo judicial. Este bloco não inventa condenação, juros, multa ou dano moral.</AlertDescription></Alert>
+      </ModelCard>
+
+      <Card className="py-5"><CardFooter className="block px-5 text-sm text-muted-foreground"><strong className="text-foreground">Como interpretar:</strong> separe o que foi pago/relatado, o que está em fonte pública e o que depende só de premissa. Simulação mede sensibilidade — não inventa perda nem audiência.</CardFooter></Card>
+    </div>
+  );
 }

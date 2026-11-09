@@ -1,19 +1,28 @@
 ---
-import {linkedPrecedents,linkageForCase,comparisonPath} from '../lib/precedents';
-import {casePath,type Case} from '../lib/cases';
+import { linkedPrecedents, linkageForCase, comparisonPath } from '../lib/precedents';
+import { type Case } from '../lib/cases';
 import PrecedentCard from './PrecedentCard.astro';
-interface Props {item:Case;compact?:boolean}
-const {item,compact=false}=Astro.props;
-const records=linkedPrecedents(item.id);
-const link=linkageForCase(item.id);
+import Section from './layout/Section.astro';
+import ButtonLink from './layout/ButtonLink.astro';
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+interface Props { item: Case; compact?: boolean }
+const { item, compact = false } = Astro.props;
+const records = linkedPrecedents(item.id);
+const link = linkageForCase(item.id);
 ---
-{records.length>0&&<section class:list={['precedent-comparison','section',{'precedent-comparison-compact':compact}]} id="precedentes-documentados">
- <div class="container">
-  <div class="precedent-comparison-header"><div><span class="eyebrow">INTELIGÊNCIA DE RISCO · PRECEDENTES JUDICIAIS</span><h2>Quando um pedido não é entregue, até onde a crise pode chegar?</h2><p>Três empresas, três linhas do tempo públicas. Falências decretadas, recuperação judicial e créditos de consumidores mostram consequências que já ocorreram no setor. São precedentes comparáveis, não provas sobre a situação financeira da empresa deste caso.</p></div>
-   <a class="button button-dark" href={comparisonPath(item.slug)}>Comparação completa e processos ↗</a>
-  </div>
-  <div class="precedent-grid">{records.map(p=><PrecedentCard precedent={p} compact={compact}/>)}</div>
-  {!compact&&link&&<div class="precedent-method-grid"><div><h3>O que é comparável a este dossiê?</h3><ul>{link.established_similarities.map(s=><li>{s}</li>)}</ul></div><div><h3>O que não podemos concluir?</h3><ul>{link.established_differences.map(d=><li>{d}</li>)}</ul></div></div>}
-  <div class="precedent-cta-line"><a href="/precedentes/">Ver observatório de precedentes ↗</a><a href={casePath(item)+'impacto/'}>Painel de impacto e cenários ↗</a><span>Fontes: decisões judiciais, administradores e reportagens datadas</span></div>
- </div>
-</section>}
+{records.length > 0 && (
+  <Section id="precedentes-documentados" tone="card" eyebrow="Inteligência de risco · precedentes judiciais" title={`${records.length} empresas, ${records.length} linhas do tempo públicas.`} description="Abra a linha do tempo de cada empresa: sinais públicos com data e fonte, ou explicitamente sem registro. Falência, recuperação judicial e encerramento não são a mesma coisa.">
+    <ButtonLink slot="action" href={comparisonPath(item.slug)}>Comparação completa e processos ↗</ButtonLink>
+    <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">{records.map((p) => <PrecedentCard precedent={p} compact={compact} />)}</div>
+    {!compact && link && (
+      <div class="mt-6 grid gap-4 md:grid-cols-2">
+        <Card><CardHeader><CardTitle className="text-lg">O que é comparável a este dossiê?</CardTitle></CardHeader><CardContent><ul class="m-0 list-disc space-y-2 pl-5 text-sm">{link.established_similarities.map((s) => <li>{s}</li>)}</ul></CardContent></Card>
+        <Card><CardHeader><CardTitle className="text-lg">O que o precedente exige do comprador</CardTitle></CardHeader><CardContent><ul class="m-0 list-disc space-y-2 pl-5 text-sm">{link.established_differences.map((d) => <li>{d}</li>)}</ul></CardContent></Card>
+      </div>
+    )}
+    <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+      <a class="text-link" href="/precedentes/">Ver observatório de precedentes ↗</a>
+      <span class="text-muted-foreground">Fontes: decisões judiciais, administradores e reportagens datadas</span>
+    </div>
+  </Section>
+)}

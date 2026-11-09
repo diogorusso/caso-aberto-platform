@@ -1,0 +1,7 @@
+---
+import { SectionRail as SectionRailUi, type SectionRailItem } from './ui/section-rail';
+export type { SectionRailItem };
+interface Props { items: SectionRailItem[]; label?: string }
+const { items, label = 'Nesta página' } = Astro.props;
+---
+{items.length > 1 && <SectionRailUi client:load items={items} label={label} />}

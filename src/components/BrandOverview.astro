@@ -1,7 +1,7 @@
 ---
-import {cases,reports} from '../lib/cases';
-import {brandPath,unitPath,statusLabel,type Brand,type BrandUnit} from '../lib/brands';
-import {companyProfileNavItems} from '../lib/impact';
+import { cases, reports } from '../lib/cases';
+import { brandPath, unitPath, statusLabel, type Brand, type BrandUnit } from '../lib/brands';
+import { companyProfileNavItems } from '../lib/impact';
 import CompanyIdentityHero from './CompanyIdentityHero.astro';
 import CompanyRecognitionGallery from './CompanyRecognitionGallery.astro';
 import CompanyProfiles from './CompanyProfiles.astro';
@@ -9,32 +9,73 @@ import CompanyCaseMatrix from './CompanyCaseMatrix.astro';
 import CompanyRanking from './CompanyRanking.astro';
 import ImpactDashboard from './ImpactDashboard.astro';
 import PrecedentComparison from './PrecedentComparison.astro';
-import DetailLayout from './ui/DetailLayout.astro';
-interface Props{brand:Brand;unit?:BrandUnit}
-const {brand,unit}=Astro.props;
-const rated=unit||brand;
-const linkedCases=cases.filter(c=>rated.case_ids.includes(c.id));
-const uniqueReports=reports.filter(r=>linkedCases.some(c=>c.id===r.case_id) && (!unit || r.unit===unit.name.replace(brand.name,'').trim() || r.unit===unit.slug.split('-')[0]));
-const scopedProfiles=unit?unit.company_profile_ids:brand.primary_company_profile_ids;
-const canonicalPath=unit?unitPath(brand,unit):brandPath(brand);
-const navItems=companyProfileNavItems({hasPrecedent:linkedCases.length>0,hasDossier:false});
+import SectionRail from './SectionRail.astro';
+import Section from './layout/Section.astro';
+import BrandFaq from './BrandFaq';
+import { KpiCard } from './ui/kpi-card';
+import { copy } from '@/lib/copy';
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+interface Props { brand: Brand; unit?: BrandUnit }
+const { brand, unit } = Astro.props;
+const rated = unit || brand;
+const linkedCases = cases.filter((c) => rated.case_ids.includes(c.id));
+const uniqueReports = reports.filter((r) => linkedCases.some((c) => c.id === r.case_id) && (!unit || r.unit === unit.name.replace(brand.name, '').trim() || r.unit === unit.slug.split('-')[0]));
+const scopedProfiles = unit ? unit.company_profile_ids : brand.primary_company_profile_ids;
+const canonicalPath = unit ? unitPath(brand, unit) : brandPath(brand);
+const navItems = companyProfileNavItems({ hasPrecedent: linkedCases.length > 0, hasDossier: false });
+const publishedUnits = brand.units.filter((u) => u.published);
 ---
-<DetailLayout items={navItems} title="No perfil" railLabel={rated.name}>
- <CompanyIdentityHero brand={brand} unit={unit}/>
- <section class="section" id="avaliacao-editorial"><div class="container">
-  <div class="section-heading"><div><span class="eyebrow">PERFIL EDITORIAL · {brand.segment}</span><h2>{rated.name}: situação documentada</h2></div><a class="text-link" href="/empresas/">Todas as empresas ↗</a></div>
-  <p class="dossier-intro">{unit?unit.summary:brand.summary}</p>
-  <div class="brand-scope-grid"><div><strong>{linkedCases.length}</strong><span>Dossiês relacionados</span></div><div><strong>{scopedProfiles.length}</strong><span>Cadastros CNPJ relacionados</span></div><div><strong>{uniqueReports.length}</strong><span>Relatos deste recorte</span></div><div><strong>{rated.last_reviewed.split('-').reverse().join('/')}</strong><span>Última revisão editorial</span></div></div>
-  <div class="rating-evidence"><div><h3>Por que essa recomendação?</h3><ol>{rated.verdict.basis.map(x=><li>{x}</li>)}</ol></div><div><h3>O que pode mudar a avaliação?</h3><ol>{rated.verdict.review_triggers.map(x=><li>{x}</li>)}</ol></div></div>
-  <div class="dossier-links">{rated.verdict.source_urls.map((url,i)=><a href={url} target="_blank" rel="noopener noreferrer">Fonte da avaliação {i+1} ↗</a>)}</div>
- </div></section>
- <ImpactDashboard brand={brand} unit={unit} embedded/>
- <CompanyCaseMatrix brand={brand} unit={unit}/>
- {linkedCases[0]&&<PrecedentComparison item={linkedCases[0]} compact/>}
- <CompanyProfiles only={scopedProfiles} hidePeople={Boolean(unit)} title={unit?'Cadastro da unidade em fontes públicas':'Pessoas jurídicas vinculadas à marca'} />
- <CompanyRecognitionGallery brand={brand} unit={unit}/>
- <CompanyRanking currentBrand={brand.slug} currentUnit={unit?.slug}/>
- {!unit&&brand.units.length>0&&<section class="section" id="unidades-publicadas"><div class="container"><span class="eyebrow">UNIDADES</span><h2>Pesquise a unidade específica</h2><div class="brand-unit-list">{brand.units.filter(u=>u.published).map(u=><a href={unitPath(brand,u)}><strong>{u.name}</strong><span>{u.location} · {statusLabel(u.verdict.status)}</span></a>)}</div></div></section>}
- {!unit&&brand.faq.length>0&&<section class="section section-soft"><div class="container narrow"><span class="eyebrow">PERGUNTAS FREQUENTES</span><h2>Dúvidas sobre {brand.name}</h2>{brand.faq.map(f=><details class="brand-faq"><summary>{f.question}</summary><p>{f.answer}</p></details>)}</div></section>}
- <section class="section" id="resposta-institucional"><div class="container"><a class="text-link" href={canonicalPath+'#'}>Voltar ao início ↗</a><p class="muted">A recomendação expressa uma avaliação editorial revisável sobre as evidências indicadas; não é decisão judicial ou declaração de insolvência.</p></div></section>
-</DetailLayout>
+<SectionRail items={navItems} label={rated.name} />
+<CompanyIdentityHero brand={brand} unit={unit} />
+<Section id="avaliacao-editorial" eyebrow={`Perfil editorial · ${brand.segment}`} title={`${rated.name}: o que está documentado`} description={unit ? unit.summary : brand.summary}>
+  <a slot="action" class="text-link text-sm" href="/empresas/">Todas as empresas ↗</a>
+  <div class="grid grid-cols-2 gap-3 lg:grid-cols-4">
+    <KpiCard tone="muted" label="Dossiês relacionados" value={linkedCases.length} />
+    <KpiCard tone="muted" label="Cadastros CNPJ relacionados" value={scopedProfiles.length} />
+    <KpiCard tone="muted" label="Relatos deste recorte" value={uniqueReports.length} />
+    <KpiCard tone="muted" label="Última revisão editorial" value={rated.last_reviewed.split('-').reverse().join('/')} />
+  </div>
+  <div class="mt-6 grid gap-4 md:grid-cols-2">
+    <Card>
+      <CardHeader><CardTitle className="text-lg">{rated.verdict.status === 'nao_recomendamos'? copy.verdict.basisTitle : copy.verdict.basisTitleNeutral}</CardTitle></CardHeader>
+      <CardContent><ol class="m-0 list-decimal space-y-2 pl-5 text-sm">{rated.verdict.basis.map((x) => <li>{x}</li>)}</ol></CardContent>
+    </Card>
+    <Card>
+      <CardHeader><CardTitle className="text-lg">{copy.verdict.triggersTitle}</CardTitle></CardHeader>
+      <CardContent><ol class="m-0 list-decimal space-y-2 pl-5 text-sm">{rated.verdict.review_triggers.map((x) => <li>{x}</li>)}</ol></CardContent>
+    </Card>
+  </div>
+  <div class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+    {rated.verdict.source_urls.map((url, i) => <a class="text-link" href={url} target="_blank" rel="noopener noreferrer">Fonte da avaliação {i + 1} ↗</a>)}
+  </div>
+</Section>
+<ImpactDashboard brand={brand} unit={unit} embedded />
+<CompanyCaseMatrix brand={brand} unit={unit} />
+{linkedCases[0] && <PrecedentComparison item={linkedCases[0]} compact />}
+<CompanyProfiles only={scopedProfiles} hidePeople={Boolean(unit)} title={unit ? 'Cadastro da unidade em fontes públicas': 'Pessoas jurídicas vinculadas à marca'} />
+<CompanyRecognitionGallery brand={brand} unit={unit} />
+<CompanyRanking currentBrand={brand.slug} currentUnit={unit?.slug} />
+{!unit && publishedUnits.length > 0 && (
+  <Section id="unidades-publicadas" eyebrow="Unidades" title="Pesquise a unidade específica">
+    <div class="grid gap-3 md:grid-cols-2">
+      {publishedUnits.map((u) => (
+        <a href={unitPath(brand, u)} class="group flex flex-col gap-1 border bg-card p-5 no-underline shadow-sm transition-colors hover:border-foreground/30">
+          <strong class="group-hover:underline">{u.name}</strong>
+          <span class="text-sm text-muted-foreground">{u.location} · {statusLabel(u.verdict.status)}</span>
+        </a>
+      ))}
+    </div>
+  </Section>
+)}
+{!unit && brand.faq.length > 0 && (
+  <Section tone="muted" narrow eyebrow="Perguntas frequentes" title={`Dúvidas sobre ${brand.name}`}>
+    <BrandFaq client:visible items={brand.faq} />
+    <noscript><style>[data-slot=accordion-content][data-state=closed]{display:block!important}</style></noscript>
+  </Section>
+)}
+<Section id="resposta-institucional" size="sm">
+  <div class="space-y-2">
+    <a class="text-link text-sm" href={canonicalPath + '#'}>Voltar ao início ↗</a>
+    {copy.verdict.footnote && <p class="m-0 text-sm text-muted-foreground">{copy.verdict.footnote}</p>}
+  </div>
+</Section>

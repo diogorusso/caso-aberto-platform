@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
-import CaseNav from '../../../../components/CaseNav.astro';
 import Timeline from '../../../../components/Timeline.astro';
 import { cases, casePath, crumbFor, type Case } from '../../../../lib/cases';
 export function getStaticPaths() {return cases.map(item=>({params:{slug:item.slug},props:{item}}));}
@@ -10,7 +9,6 @@ const {item}=Astro.props;
 ---
 <BaseLayout title={`${item.empresa_resumo}: cronologia do caso | CasoAberto`} description={`Linha do tempo, prazos e eventos relatados no dossiê ${item.empresa_resumo}: ${item.resumo}`} dateModified={item.status_data} type="article">
   <Breadcrumbs items={[...crumbFor(item),{label:'Linha do tempo',href:`${casePath(item)}linha-do-tempo/`}]}/>
-  <section class="pagehead"><div class="container"><span class="eyebrow">CRONOLOGIA</span><h1>{item.empresa_resumo}: linha do tempo do caso.</h1><p>Datas, prazos, compromissos e registros reunidos para acompanhar a evolução do caso.</p></div></section>
-  <CaseNav item={item} current="linha-do-tempo"/>
-  <section class="section"><div class="container narrow"><Timeline items={item.cronologia}/><div class="note"><strong>O que permanece pendente?</strong><p>{item.status}. Última revisão: {item.status_data}. {item.prazo_posterior || ''}</p></div><a class="text-link" href={casePath(item)}>Voltar ao dossiê ↗</a></div></section>
+  <section class="border-b bg-card py-12 md:py-16 [&_h1]:my-4 [&_p]:max-w-3xl [&_p]:text-lg [&_p]:text-muted-foreground"><div class="container"><span class="eyebrow text-xs font-semibold uppercase tracking-[0.14em] text-brand-strong">CRONOLOGIA</span><h1>{item.empresa_resumo}: do pagamento ao prazo estourado.</h1><p>Cada data, cada promessa, cada remarcação — registradas para que nada se perca.</p></div></section>
+  <section class="py-14 md:py-20"><div class="container [--container-max:52rem]"><Timeline items={item.cronologia}/><div class="my-8 border border-warning/25 bg-warning-soft p-5 [&_h2]:text-xl [&_p]:mb-0 [&_p]:text-muted-foreground"><strong>O que continua sem solução</strong><p>{item.status}. Última revisão: {item.status_data}. {item.prazo_posterior || ''}</p></div><a class="text-link" href={casePath(item)}>Voltar ao dossiê ↗</a></div></section>
 </BaseLayout>

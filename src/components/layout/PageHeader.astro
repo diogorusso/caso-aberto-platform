@@ -1,0 +1,23 @@
+---
+import { cn } from '@/lib/utils';
+import Eyebrow from './Eyebrow.astro';
+interface Props {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  tone?: 'default' | 'dark';
+  class?: string;
+}
+const { eyebrow, title, description, tone = 'default', class: className } = Astro.props;
+const dark = tone === 'dark';
+---
+<header class={cn('border-b py-12 md:py-16', dark ? 'border-transparent bg-forest text-forest-foreground' : 'bg-card', className)}>
+  <div class="container">
+    <div class="max-w-4xl space-y-4">
+      {eyebrow && <Eyebrow inverse={dark}>{eyebrow}</Eyebrow>}
+      <h1 class="m-0"><Fragment set:text={title} /><slot name="title-suffix" /></h1>
+      {description && <p class={cn('m-0 max-w-3xl text-lg leading-relaxed', dark ? 'text-white/75' : 'text-muted-foreground')}>{description}</p>}
+      <slot />
+    </div>
+  </div>
+</header>

@@ -2,7 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import PrecedentTimeline from '../../../components/PrecedentTimeline.astro';
-import {precedents,precedentPath,formatDate,stageDescription,type Precedent} from '../../../lib/precedents';
+import {precedents,precedentPath,formatDate,stageDescription,signalRows,type Precedent} from '../../../lib/precedents';
 import raw from '../../../data/precedents.json';
 export function getStaticPaths(){return precedents.map(precedent=>({params:{slug:precedent.slug},props:{precedent}}));}
 interface Props{precedent:Precedent}
@@ -14,28 +14,28 @@ const schema={'@context':'https://schema.org','@type':'Article',headline:p.brand
 <BaseLayout title={p.brand+': '+p.stage_label.toLowerCase()+', processo e cronologia documentada | CasoAberto'}
  description={p.summary.slice(0,275)} dateModified={raw.updated_at} breadcrumbs={[{name:'Início',item:'/'},{name:'Precedentes',item:'/precedentes/'},{name:p.brand,item:url}]} schema={schema}>
  <Breadcrumbs items={[{label:'Início',href:'/'},{label:'Precedentes',href:'/precedentes/'},{label:p.brand,href:url}]}/>
- <section class="precedent-detail-hero"><div class="container">
-  <span class="eyebrow">ARQUIVO JUDICIAL · {p.geography}</span><span class:list={['precedent-hero-stage',isBankrupt?'stage-bankrupt':'stage-recovery']}>{p.stage_label}</span>
+ <section class="bg-forest py-14 text-forest-foreground md:py-20 [&_h1]:my-4 [&_h1_em]:text-brand [&_h1_em]:not-italic [&>div>p]:max-w-3xl [&>div>p]:text-lg [&>div>p]:text-white/75 [&_.eyebrow]:text-brand"><div class="container">
+  <span class="eyebrow text-xs font-semibold uppercase tracking-[0.14em] text-brand-strong">ARQUIVO JUDICIAL · {p.geography}</span><span class:list={['ml-3 inline-flex px-2.5 py-0.5 text-xs font-semibold uppercase',isBankrupt?'bg-brand text-brand-foreground':'bg-warning-soft text-warning']}>{p.stage_label}</span>
   <h1>{p.brand}: o que aconteceu, quando e com quais documentos?</h1><p>{p.headline}</p>
-  <div class="precedent-case-ids"><span>Processo {p.process_number}</span><span>{p.court}</span><span>Pesquisa revisada em {formatDate(raw.updated_at)}</span></div>
-  <div class="precedent-detail-actions"><a class="button button-dark" href={p.sources[0].url} target="_blank" rel="noopener noreferrer">Abrir processo ou fonte judicial ↗</a><a class="button button-subtle" href="#linha-do-tempo">Ver cronologia ↓</a></div>
+  <div class="mt-6 flex flex-wrap gap-2 [&>span]:border [&>span]:border-white/20 [&>span]:px-3 [&>span]:py-1 [&>span]:text-sm [&>span]:text-white/80">{p.process_number&&<span>Processo {p.process_number}</span>}{p.court&&<span>{p.court}</span>}<span>Pesquisa revisada em {formatDate(raw.updated_at)}</span></div>
+  <div class="mt-6 flex flex-wrap gap-2.5"><a class="inline-flex shrink-0 items-center justify-center gap-2 min-h-10 max-w-full px-5 py-2 text-center text-sm font-medium whitespace-normal sm:whitespace-nowrap no-underline transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 bg-primary text-primary-foreground hover:bg-primary/90" href={p.sources[0].url} target="_blank" rel="noopener noreferrer">Abrir processo ou fonte judicial ↗</a><a class="inline-flex shrink-0 items-center justify-center gap-2 min-h-10 max-w-full px-5 py-2 text-center text-sm font-medium whitespace-normal sm:whitespace-nowrap no-underline transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 border bg-background text-foreground shadow-xs hover:bg-accent" href="#linha-do-tempo">Ver cronologia ↓</a></div>
  </div></section>
- <section class="section precedent-results"><div class="container">
-  <span class="eyebrow">INDICADORES DA DOCUMENTAÇÃO</span><h2>Não é uma previsão: são marcos já registrados.</h2>
-  <div class="precedent-results-grid">{p.metrics.map(metric=><article><strong>{metric.label}</strong><p>{metric.meaning}</p>{metric.kind==='calculated'&&<small>Intervalo entre datas explicitadas nas fontes do processo</small>}{'source_url' in metric && metric.source_url && <a href={metric.source_url} target="_blank" rel="noopener noreferrer">Fonte do indicador ↗</a>}</article>)}</div>
+ <section class="py-14 md:py-20 bg-muted"><div class="container">
+  <span class="eyebrow text-xs font-semibold uppercase tracking-[0.14em] text-brand-strong">INDICADORES DA DOCUMENTAÇÃO</span><h2>Não é uma previsão: são marcos já registrados.</h2>
+  <div class="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3 [&>article]:flex [&>article]:flex-col [&>article]:gap-2 [&>article]:border [&>article]:bg-card [&>article]:p-5 [&>article]:shadow-sm [&_strong]:text-lg [&_p]:m-0 [&_p]:text-sm [&_p]:text-muted-foreground [&_small]:text-xs [&_small]:text-muted-foreground [&_a]:text-sm [&_a]:font-semibold [&_a]:text-brand-strong">{p.metrics.map(metric=><article><strong>{metric.label}</strong><p>{metric.meaning}</p>{metric.kind==='calculated'&&<small>Intervalo entre datas explicitadas nas fontes do processo</small>}{'source_url'in metric && metric.source_url && <a href={metric.source_url} target="_blank" rel="noopener noreferrer">Fonte do indicador ↗</a>}</article>)}</div>
  </div></section>
- <section class="section precedent-timeline-section" id="linha-do-tempo"><div class="container">
-  <span class="eyebrow">MARCO A MARCO</span><h2>Linha do tempo com documentos.</h2>
+ <section class="py-14 md:py-20" id="linha-do-tempo"><div class="container">
+  <span class="eyebrow text-xs font-semibold uppercase tracking-[0.14em] text-brand-strong">MARCO A MARCO</span><h2>Linha do tempo com documentos.</h2>
   <PrecedentTimeline precedent={p}/>
-  <p class="precedent-limit-note"><strong>Limite da comparação:</strong> {p.known_limits}</p>
+  <p class="my-6 border border-warning/25 bg-warning-soft p-5 text-sm"><strong>Limite da comparação:</strong> {p.known_limits}</p>
  </div></section>
- <section class="section precedent-findings"><div class="container two-col"><div>
-  <span class="eyebrow">REGISTRO PÚBLICO</span><h2>O que está estabelecido?</h2><p>{p.summary}</p><ul>{p.signals.map(s=><li>{s}</li>)}</ul></div>
-  <aside class="info-panel"><h3>Estágio processual</h3><p>{stageDescription(p.stage)}</p><strong>{isBankrupt?'Sentença de falência':'Recuperação judicial — sem sentença de falência'}</strong><p>{isBankrupt&&p.bankruptcy_decree_date?formatDate(p.bankruptcy_decree_date):p.recovery_acceptance_date?formatDate(p.recovery_acceptance_date):'—'}</p><strong>Por que este precedente é relevante?</strong><p>{p.relevance}</p></aside>
+ <section class="py-14 md:py-20 bg-muted"><div class="container grid gap-10 lg:grid-cols-[1.4fr_0.85fr]"><div>
+  <span class="eyebrow text-xs font-semibold uppercase tracking-[0.14em] text-brand-strong">REGISTRO PÚBLICO</span><h2>O que está estabelecido?</h2><p>{p.summary}</p><ul class="m-0 grid list-none gap-4 p-0">{p.signals.map(s=>{const label=signalRows.find(r=>r.key===s.key)?.label||s.key;return <li class="border-l-2 border-brand-strong pl-4"><strong class="block">{label}</strong><time datetime={s.date} class="text-sm font-semibold text-brand-strong">{formatDate(s.date)}</time>{s.note&&<span class="block text-sm text-muted-foreground">{s.note}</span>}<a class="text-sm font-semibold text-brand-strong" href={s.source_url} target="_blank" rel="noopener noreferrer">Fonte do sinal ↗</a></li>;})}</ul></div>
+  <aside class="self-start border bg-card p-6 shadow-sm"><h3>Estágio processual</h3><p>{stageDescription(p.stage)}</p><strong>{isBankrupt?'Sentença de falência':'Recuperação judicial'}</strong><p>{isBankrupt&&p.bankruptcy_decree_date?formatDate(p.bankruptcy_decree_date):p.recovery_acceptance_date?formatDate(p.recovery_acceptance_date):'—'}</p><strong>Por que este precedente é relevante?</strong><p>{p.relevance}</p></aside>
  </div></section>
- <section class="section precedent-sources"><div class="container">
-  <span class="eyebrow">AUDITORIA DE FONTES</span><h2>Documentos e reportagens para conferência.</h2>
-  <ol class="precedent-source-list">{p.sources.map(s=><li><span class="precedent-source-type">{s.kind.replaceAll('_',' ')}</span><a href={s.url} target="_blank" rel="noopener noreferrer">{s.title} ↗</a><small>Consultado em {formatDate(s.checked_at)}</small></li>)}</ol>
-  <div class="precedent-service-cta"><div><h3>Compare com o CasoAberto.</h3><p>O risco registrado em outra empresa pode orientar perguntas e investigação, mas não demonstra que uma marca distinta esteja em insolvência.</p></div><a class="button button-dark" href="/casos/florense-ipanema-rj-atraso-moveis-planejados/precedentes/">Comparação documentada com o dossiê Florense Ipanema ↗</a></div>
+ <section class="py-14 md:py-20"><div class="container">
+  <span class="eyebrow text-xs font-semibold uppercase tracking-[0.14em] text-brand-strong">AUDITORIA DE FONTES</span><h2>Documentos e reportagens para conferência.</h2>
+  <ol class="m-0 list-none divide-y p-0 [&>li]:flex [&>li]:flex-col [&>li]:gap-1 [&>li]:py-3 [&_a]:font-semibold [&_a]:break-words [&_a]:text-brand-strong [&_small]:text-xs [&_small]:text-muted-foreground">{p.sources.map(s=><li><span class="w-fit bg-muted px-2 py-0.5 text-xs font-medium uppercase text-muted-foreground">{s.kind.replaceAll('_','')}</span><a href={s.url} target="_blank" rel="noopener noreferrer">{s.title} ↗</a><small>Consultado em {formatDate(s.checked_at)}</small></li>)}</ol>
+  <div class="mt-10 flex flex-col gap-4 bg-forest p-6 text-forest-foreground md:flex-row md:items-center md:justify-between md:p-8 [&_h3]:mt-0 [&_p]:mb-0 [&_p]:text-white/75 [&_a]:bg-white! [&_a]:text-foreground!"><div><h3>Compare com o CasoAberto.</h3><p>Quem pagou e não recebeu já entrou na fila. Será que você quer correr o mesmo risco? Melhor buscar outro fornecedor — e exigir respostas no dossiê Florense Ipanema.</p></div><a class="inline-flex shrink-0 items-center justify-center gap-2 min-h-10 max-w-full px-5 py-2 text-center text-sm font-medium whitespace-normal sm:whitespace-nowrap no-underline transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 bg-primary text-primary-foreground hover:bg-primary/90" href="/casos/florense-ipanema-rj-atraso-moveis-planejados/precedentes/">Comparação documentada com o dossiê Florense Ipanema ↗</a></div>
  </div></section>
 </BaseLayout>

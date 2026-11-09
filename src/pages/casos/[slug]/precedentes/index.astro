@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
-import CaseNav from '../../../../components/CaseNav.astro';
 import PrecedentComparison from '../../../../components/PrecedentComparison.astro';
+import CollapseSignalsMatrix from '../../../../components/CollapseSignalsMatrix.astro';
 import {cases,casePath,crumbFor,type Case} from '../../../../lib/cases';
 import {linkageForCase,linkedPrecedents,comparisonPath} from '../../../../lib/precedents';
 import raw from '../../../../data/precedents.json';
@@ -13,34 +13,34 @@ const link=linkageForCase(item.id);
 const comparable=linkedPrecedents(item.id);
 const crumbs=[...crumbFor(item),{label:'Precedentes de risco',href:comparisonPath(item.slug)}];
 ---
-<BaseLayout title={'Precedentes de falência e recuperação judicial: '+item.empresa_resumo+' | CasoAberto'}
- description={'Comparação fundamentada com os processos públicos de Roma Mobili, Lojas KD e Kitchens. Durações reais entre marcos, créditos de clientes e limites da analogia com '+item.empresa_resumo+'.'}
+<BaseLayout title={'Precedentes de falência e recuperação judicial: '+item.empresa_resumo+'| CasoAberto'}
+ description={'Roma Mobili e Lojas KD faliram; Kitchens entrou em recuperação judicial com créditos de clientes por móveis não entregues. Compare com '+item.empresa_resumo+': quem pagou e não recebeu — e o que isso exige antes de assinar.'}
  type="article" dateModified={raw.updated_at} breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}>
  <Breadcrumbs items={crumbs}/>
- <header class="precedent-detail-hero"><div class="container">
-  <span class="eyebrow">PRECEDENTES DE RISCO E ESCALONAMENTO</span>
+ <header class="bg-forest py-14 text-forest-foreground md:py-20 [&_h1]:my-4 [&_h1_em]:text-brand [&_h1_em]:not-italic [&>div>p]:max-w-3xl [&>div>p]:text-lg [&>div>p]:text-white/75 [&_.eyebrow]:text-brand"><div class="container">
+  <span class="eyebrow text-xs font-semibold uppercase tracking-[0.14em] text-brand-strong">PRECEDENTES DE RISCO E ESCALONAMENTO</span>
   <h1>A entrega pode atrasar. A disputa pode escalar. E o dinheiro?</h1>
-  <p>Roma Mobili e Lojas KD chegaram à falência; Kitchens entrou em recuperação judicial com centenas de créditos de clientes por móveis não entregues. O paralelo mostra consequências documentadas em outras empresas — não é diagnóstico de solvência da Florense.</p>
-  <div class="precedent-case-ids"><span>{comparable.filter(p=>p.stage==='falencia_decretada').length} falências decretadas em precedentes</span><span>{comparable.filter(p=>p.stage==='recuperacao_judicial').length} recuperação judicial sem falência</span><span>{comparable.length} processos públicos documentados</span></div>
+  <p>Roma Mobili e Lojas KD chegaram à falência; Kitchens entrou em recuperação judicial com centenas de créditos de clientes por móveis não entregues. Quem pagou e não recebeu já entrou na fila. Será que você quer correr o mesmo risco?</p>
+  <div class="mt-6 flex flex-wrap gap-2 [&>span]:border [&>span]:border-white/20 [&>span]:px-3 [&>span]:py-1 [&>span]:text-sm [&>span]:text-white/80"><span>{comparable.filter(p=>p.stage==='falencia_decretada').length} falências decretadas em precedentes</span><span>{comparable.filter(p=>p.stage==='recuperacao_judicial').length} recuperação judicial</span><span>{comparable.length} processos públicos documentados</span></div>
  </div></header>
- <CaseNav item={item} current="precedentes"/>
+ <CollapseSignalsMatrix item={item}/>
  <PrecedentComparison item={item}/>
- <section class="section precedent-risk-map"><div class="container">
-  <span class="eyebrow">CENÁRIOS DE RESOLUÇÃO · NÃO SÃO PREVISÕES</span><h2>Qual pode ser o próximo capítulo de um conflito contratual?</h2>
-  <p class="precedent-section-lead">O caso já tem atraso e reclamação documentados. Os demais resultados dependem de novos fatos, contratos, documentos e decisões independentes; não há uma sequência obrigatória até falência.</p>
-  <div class="precedent-outcomes">{raw.common_analysis.possible_outcomes.map((outcome,i)=><article>
-    <span class="precedent-outcome-n">{String(i+1).padStart(2,'0')}</span>
+ <section class="py-14 md:py-20 bg-muted"><div class="container">
+  <span class="eyebrow text-xs font-semibold uppercase tracking-[0.14em] text-brand-strong">CENÁRIOS DE RESOLUÇÃO · NÃO SÃO PREVISÕES</span><h2>Qual pode ser o próximo capítulo de um conflito contratual?</h2>
+  <p class="max-w-3xl text-lg text-muted-foreground">O caso já tem atraso e reclamação documentados. Sem entrega, sem prazo e sem resposta, o risco é do consumidor. Cada próximo passo exige fato novo — e a empresa ainda precisa responder.</p>
+  <div class="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3 [&>article]:flex [&>article]:flex-col [&>article]:gap-2 [&>article]:border [&>article]:bg-card [&>article]:p-6 [&>article]:shadow-sm [&_h3]:m-0 [&_p]:m-0 [&_p]:text-sm [&_p]:text-muted-foreground [&_small]:mt-auto [&_small]:text-xs [&_small]:font-medium">{raw.common_analysis.possible_outcomes.map((outcome,i)=><article>
+    <span class="font-mono text-sm font-semibold text-brand-strong">{String(i+1).padStart(2,'0')}</span>
     <h3>{outcome.label}</h3><p>{outcome.description}</p><small>Status deste dossiê: {outcome.status_for_CA001}</small>
   </article>)}</div>
  </div></section>
- {link&&<section class="section precedent-questions"><div class="container">
-  <span class="eyebrow">PERGUNTAS À CONTRATADA · EXIGEM DOCUMENTOS</span><h2>O que falta para o consumidor decidir com segurança?</h2>
-  <div class="precedent-question-grid"><article><strong>01</strong><h3>Qual empresa assumiu cada obrigação?</h3><p>Confrontar fabricante, loja e montadora com os CNPJs realmente presentes no contrato e na nota fiscal.</p></article>
+ {link&&<section class="py-14 md:py-20"><div class="container">
+  <span class="eyebrow text-xs font-semibold uppercase tracking-[0.14em] text-brand-strong">PERGUNTAS À CONTRATADA · EXIGEM DOCUMENTOS</span><h2>O que falta para o consumidor decidir com segurança?</h2>
+  <div class="mt-6 grid gap-4 md:grid-cols-2 [&>article]:border [&>article]:bg-card [&>article]:p-6 [&>article]:shadow-sm [&_strong]:font-mono [&_strong]:text-sm [&_strong]:text-brand-strong [&_h3]:mt-2 [&_h3]:mb-2 [&_p]:m-0 [&_p]:text-sm [&_p]:text-muted-foreground"><article><strong>01</strong><h3>Qual empresa assumiu cada obrigação?</h3><p>Confrontar fabricante, loja e montadora com os CNPJs realmente presentes no contrato e na nota fiscal.</p></article>
    <article><strong>02</strong><h3>Qual é a situação efetiva do pedido?</h3><p>Comprovar fabricação, expedição, peças disponíveis e cronograma de instalação com responsáveis.</p></article>
    <article><strong>03</strong><h3>Que solução é verificável?</h3><p>Informar condições objetivas para entrega, conclusão, restituição ou composição de custos documentados.</p></article>
-   <article><strong>04</strong><h3>Há processos coletivos associados ao CNPJ contratado?</h3><p>Verificar os registros judiciais do CNPJ específico e sua data, sem inferência a partir de empresas que não integram o contrato.</p></article>
+   <article><strong>04</strong><h3>Há processos coletivos associados ao CNPJ contratado?</h3><p>Exija o CNPJ do contrato e confira os registros judiciais desse CNPJ — com data e fonte. Não compre no escuro.</p></article>
   </div>
-  <p class="precedent-limit-note"><strong>Conclusão editorial:</strong> {link.stance}</p>
-  <div class="precedent-detail-actions"><a class="button button-dark" href={casePath(item)+'evidencias/'}>Revisar documentos do caso ↗</a><a class="button button-subtle" href={casePath(item)+'imprensa/'}>Ver perguntas públicas ↗</a><a class="button button-subtle" href={casePath(item)+'impacto/'}>Explorar cenário financeiro ↗</a></div>
+  <p class="my-6 border border-warning/25 bg-warning-soft p-5 text-sm"><strong>Conclusão editorial:</strong> {link.stance}</p>
+  <div class="mt-6 flex flex-wrap gap-2.5"><a class="inline-flex shrink-0 items-center justify-center gap-2 min-h-10 max-w-full px-5 py-2 text-center text-sm font-medium whitespace-normal sm:whitespace-nowrap no-underline transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 bg-primary text-primary-foreground hover:bg-primary/90" href={casePath(item)+'evidencias/'}>Revisar documentos do caso ↗</a><a class="inline-flex shrink-0 items-center justify-center gap-2 min-h-10 max-w-full px-5 py-2 text-center text-sm font-medium whitespace-normal sm:whitespace-nowrap no-underline transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 border bg-background text-foreground shadow-xs hover:bg-accent" href={casePath(item)+'imprensa/'}>Ver perguntas públicas ↗</a><a class="inline-flex shrink-0 items-center justify-center gap-2 min-h-10 max-w-full px-5 py-2 text-center text-sm font-medium whitespace-normal sm:whitespace-nowrap no-underline transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 border bg-background text-foreground shadow-xs hover:bg-accent" href={casePath(item)+'impacto/'}>Explorar cenário financeiro ↗</a></div>
  </div></section>}
 </BaseLayout>

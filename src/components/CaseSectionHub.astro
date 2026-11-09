@@ -1,0 +1,32 @@
+---
+/* The one place a case page links to its sub-pages: 4 groups from lib/case-sections. */
+import { type Case } from '@/lib/cases';
+import { caseGroups, type SectionKey } from '@/lib/case-sections';
+import { copy } from '@/lib/copy';
+import Section from './layout/Section.astro';
+interface Props { item: Case; exclude?: SectionKey[] }
+const { item, exclude = ['resumo'] } = Astro.props;
+const groups = caseGroups(item)
+  .map((g) => ({ ...g, sections: g.sections.filter((s) => !exclude.includes(s.key)) }))
+  .filter((g) => g.sections.length > 0);
+---
+<Section id="siga-o-caso" eyebrow={copy.case.sections.eyebrow} title={copy.case.sections.title} tone="muted">
+  <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+    {groups.map((g) => (
+      <nav aria-label={g.label} class="rounded-xl border bg-card p-5">
+        <h3 class="m-0 text-lg font-extrabold">{g.label}</h3>
+        <p class="mt-1 mb-4 text-sm text-muted-foreground">{g.pitch}</p>
+        <ul class="m-0 grid list-none gap-3 p-0">
+          {g.sections.map((s) => (
+            <li>
+              <a href={s.href} class="group block no-underline">
+                <strong class="block text-sm text-foreground group-hover:underline">{s.label} →</strong>
+                <span class="block text-xs text-muted-foreground">{s.hint}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    ))}
+  </div>
+</Section>

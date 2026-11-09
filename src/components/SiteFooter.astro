@@ -1,36 +1,52 @@
 ---
 import Identity from './Identity.astro';
-import { cases, dateBR } from '../lib/cases';
+import { cases, dateBR } from '@/lib/cases';
+import { Separator } from '@/components/ui/separator';
 const latest = cases.reduce((a, b) => (a > b.status_data ? a : b.status_data), '');
+const groups = [
+  {
+    title: 'Pesquise',
+    links: [
+      ['Perfis e avaliações de empresas', '/empresas/'],
+      ['Casos documentados', '/casos/'],
+      ['Não recomendamos', '/avaliacoes/nao-recomendamos/'],
+      ['Consulta de CNPJ', '/cnpj/'],
+      ['Tipos de problema', '/problemas/'],
+      ['Falências e recuperações: precedentes', '/precedentes/'],
+      ['Explore cenários de impacto', '/cenarios/'],
+      ['Kit Boca a Boca para imprimir', '/kit-boca-a-boca/'],
+    ],
+  },
+  {
+    title: 'Entenda o projeto',
+    links: [
+      ['Como funciona', '/como-funciona/'],
+      ['Critérios e metodologia', '/metodologia/'],
+      ['Análise de risco e cenários com dados', '/precedentes/'],
+      ['Como documentar atrasos', '/guias/o-que-fazer-atraso-moveis-planejados/'],
+      ['Atualizações (RSS)', '/rss.xml'],
+    ],
+  },
+];
 ---
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <div>
-      <Identity footer />
-      <p>Publicação independente para dar visibilidade a casos documentados, reunir fontes públicas, comparar avaliações editoriais e cobrar respostas verificáveis.</p>
+<footer class="bg-[#0f1714] py-14 text-[#e3ebe2]" data-print-hide>
+  <div class="container">
+    <div class="grid gap-10 md:grid-cols-[2fr_1fr_1fr]">
+      <div class="space-y-4">
+        <Identity />
+        <p class="m-0 max-w-sm text-sm leading-relaxed text-white/60">Publicação independente para dar visibilidade a casos documentados, reunir fontes públicas, comparar avaliações editoriais e cobrar respostas verificáveis.</p>
+      </div>
+      {groups.map((g) => (
+        <nav aria-label={g.title} class="flex flex-col gap-2.5">
+          <strong class="text-sm text-white">{g.title}</strong>
+          {g.links.map(([label, href]) => <a href={href} class="text-sm text-white/65 no-underline hover:text-white hover:underline">{label}</a>)}
+        </nav>
+      ))}
     </div>
-    <div>
-      <strong>Pesquise</strong>
-      <a href="/empresas/">Perfis e avaliações de empresas</a>
-      <a href="/casos/">Casos documentados</a>
-      <a href="/avaliacoes/nao-recomendamos/">Não recomendamos</a>
-      <a href="/cnpj/">Consulta de CNPJ</a>
-      <a href="/problemas/">Tipos de problema</a>
-      <a href="/precedentes/">Falências e recuperações: precedentes</a>
-      <a href="/cenarios/">Explore cenários de impacto</a>
-      <a href="/kit-boca-a-boca/">Kit Boca a Boca para imprimir</a>
+    <Separator className="my-8 bg-white/10" />
+    <div class="flex flex-col gap-2 text-xs text-white/50 sm:flex-row sm:justify-between">
+      <span>© {new Date().getFullYear()} CasoAberto. Projeto editorial independente.</span>
+      {latest && <span>Arquivo atualizado em {dateBR(latest)} · Brasil</span>}
     </div>
-    <div>
-      <strong>Entenda o projeto</strong>
-      <a href="/como-funciona/">Como funciona</a>
-      <a href="/metodologia/">Critérios e metodologia</a>
-      <a href="/precedentes/">Análise de risco e cenários com dados</a>
-      <a href="/guias/o-que-fazer-atraso-moveis-planejados/">Como documentar atrasos</a>
-      <a href="/rss.xml">Atualizações (RSS)</a>
-    </div>
-  </div>
-  <div class="container footer-bottom">
-    <span>© {new Date().getFullYear()} CasoAberto. Projeto editorial independente.</span>
-    {latest && <span>Arquivo atualizado em {dateBR(latest)} · Brasil</span>}
   </div>
 </footer>

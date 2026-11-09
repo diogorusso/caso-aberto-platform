@@ -1,20 +1,47 @@
 ---
-import {precedentPath,precedentDuration,brlCompact,type Precedent} from '../lib/precedents';
-interface Props {precedent:Precedent;compact?:boolean}
-const {precedent:p,compact=false}=Astro.props;
-const isBankrupt=p.stage==='falencia_decretada';
-const duration=precedentDuration(p);
+import { precedentPath, precedentDuration, brlCompact, type Precedent } from '../lib/precedents';
+import { publicTimelineRowsForPrecedent, precedentStageTone } from '../lib/public-timeline';
+import PublicTimelineDrawer from './islands/PublicTimelineDrawer';
+import { Badge } from './ui/badge';
+import { Card, CardContent, CardFooter, CardHeader } from './ui/card';
+import { cn } from '@/lib/utils';
+interface Props { precedent: Precedent; compact?: boolean }
+const { precedent: p, compact = false } = Astro.props;
+const isBankrupt = p.stage === 'falencia_decretada';
+const duration = precedentDuration(p);
+const timelineRows = publicTimelineRowsForPrecedent(p);
 ---
-<article class:list={['precedent-card',isBankrupt?'precedent-bankruptcy':'precedent-recovery']}>
- <div class="precedent-card-top"><span class="precedent-stage">{p.stage_label}</span><span class="precedent-location">{p.geography}</span></div>
- <h3><a href={precedentPath(p)}>{p.brand}</a></h3>
- <p class="precedent-sector">{p.segment}</p>
- <p class="precedent-headline">{p.headline}</p>
- <div class="precedent-highlight">
-  {p.customer_amounts_documented_brl?<><strong>{brlCompact(p.customer_amounts_documented_brl)}</strong><span>Créditos de clientes ligados a móveis pagos e não entregues, segundo relação apresentada</span></>:<><strong>{duration} dias</strong><span>{p.comparison_period_kind}; não representa início da crise</span></>}
- </div>
- {!compact&&<p class="precedent-card-summary">{p.summary}</p>}
- <p class="precedent-case-id">{p.process_number} · {p.court}</p>
- <div class="precedent-card-links"><a href={precedentPath(p)}>Abrir cronologia e análise ↗</a><a href={p.sources[0].url} target="_blank" rel="noopener noreferrer">Fonte judicial / publicação ↗</a></div>
- {p.stage==='recuperacao_judicial'&&<p class="precedent-stage-note">Recuperação judicial ≠ falência. Nenhuma data de falência é calculada.</p>}
-</article>
+<Card className={cn('h-full border-t-4', isBankrupt ? 'border-t-brand-strong': 'border-t-warning')}>
+  <CardHeader className="min-w-0 gap-2">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <Badge variant={isBankrupt ? 'brand': 'warning'} className="whitespace-normal text-left uppercase">{p.stage_label}</Badge>
+      <span class="text-xs text-muted-foreground">{p.geography}</span>
+    </div>
+    <h3 class="m-0 text-2xl"><a class="no-underline hover:underline" href={precedentPath(p)}>{p.brand}</a></h3>
+    <p class="m-0 text-xs font-semibold uppercase tracking-wider text-muted-foreground">{p.segment}</p>
+    <p class="m-0 font-medium">{p.headline}</p>
+  </CardHeader>
+  <CardContent className="space-y-3">
+    <div class="bg-muted p-4">
+      {p.customer_amounts_documented_brl
+        ? <><strong class="block text-2xl font-bold tracking-tight">{brlCompact(p.customer_amounts_documented_brl)}</strong><span class="text-xs text-muted-foreground">Créditos de clientes ligados a móveis pagos e não entregues, segundo relação apresentada</span></>
+        : duration != null
+          ? <><strong class="block text-2xl font-bold tracking-tight">{duration} dias</strong><span class="text-xs text-muted-foreground">{p.comparison_period_kind}; não representa início da crise</span></>
+          : <><strong class="block text-2xl font-bold tracking-tight">{p.stage_label}</strong><span class="text-xs text-muted-foreground">Comparação de sinais públicos</span></>}
+    </div>
+    {!compact && <p class="m-0 text-sm text-muted-foreground">{p.summary}</p>}
+    <p class="m-0 font-mono text-xs text-muted-foreground">{p.process_number} · {p.court}</p>
+    <PublicTimelineDrawer
+      client:visible
+      brand={p.brand}
+      stageLabel={p.stage_label}
+      stageTone={precedentStageTone(p.stage)}
+      detailHref={precedentPath(p)}
+      rows={timelineRows}
+    />
+  </CardContent>
+  <CardFooter className="mt-auto flex-wrap gap-x-4 gap-y-1 text-sm">
+    <a class="text-link" href={precedentPath(p)}>Abrir cronologia e análise ↗</a>
+    <a class="text-link" href={p.sources[0].url} target="_blank" rel="noopener noreferrer">Fonte judicial / publicação ↗</a>
+  </CardFooter>
+</Card>

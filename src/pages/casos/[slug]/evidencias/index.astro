@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
-import CaseNav from '../../../../components/CaseNav.astro';
 import EvidenceIndex from '../../../../components/EvidenceIndex.astro';
 import {cases,casePath,crumbFor,type Case} from '../../../../lib/cases';
 export function getStaticPaths(){return cases.map(item=>({params:{slug:item.slug},props:{item}}));}
@@ -9,22 +8,21 @@ interface Props {item:Case}
 const {item}=Astro.props;
 const crumbs=[...crumbFor(item),{label:'Índice documental',href:casePath(item)+'evidencias/'}];
 ---
-<BaseLayout title={'Índice de evidências e documentos — '+item.empresa_resumo+' | CasoAberto'}
+<BaseLayout title={'Índice de evidências e documentos — '+item.empresa_resumo+'| CasoAberto'}
  description={'Documentos a preservar, fontes públicas e índice probatório referenciado para o dossiê '+item.empresa_resumo+'. CSV, versão para impressão e checklist de integridade.'}
  dateModified={item.status_data} type="article" breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}>
  <Breadcrumbs items={crumbs}/>
- <header class="pagehead"><div class="container"><span class="eyebrow">APOIO DOCUMENTAL</span><h1>Documentos, referências e preservação do caso.</h1>
-  <p>Índice público e exportável para o titular, jornalistas e profissionais que precisem verificar cronologia e fontes. Não substitui os documentos originais nem afirma que os arquivos privados estejam publicados ou autenticados.</p>
+ <header class="border-b bg-card py-12 md:py-16 [&_h1]:my-4 [&_p]:max-w-3xl [&_p]:text-lg [&_p]:text-muted-foreground"><div class="container"><span class="eyebrow text-xs font-semibold uppercase tracking-[0.14em] text-brand-strong">BASE DOCUMENTAL</span><h1>Os documentos que sustentam a cobrança.</h1>
+  <p>Índice público e exportável para o consumidor, jornalistas e advogados conferirem cada data e cada fonte. Os originais privados ficam fora do site e não são apresentados aqui como autenticados.</p>
  </div></header>
- <CaseNav item={item} current="evidencias" />
  <EvidenceIndex caseId={item.id} slug={item.slug} />
- <section class="section"><div class="container">
-  <span class="eyebrow">PRESERVAÇÃO E INTEGRIDADE</span><h2>Prepare um pacote privado, preservando os arquivos originais.</h2>
-  <div class="evidence-guidance">
+ <section class="py-14 md:py-20"><div class="container">
+  <span class="eyebrow text-xs font-semibold uppercase tracking-[0.14em] text-brand-strong">PRESERVAÇÃO E INTEGRIDADE</span><h2>Guarde tudo. Documento bem guardado é cobrança que não se perde.</h2>
+  <div class="mt-6 grid gap-4 md:grid-cols-2 [&>article]:border [&>article]:bg-card [&>article]:p-6 [&>article]:shadow-sm [&_h3]:mt-0 [&_ol]:list-decimal [&_ol]:space-y-2 [&_ol]:pl-5 [&_ol]:text-sm">
    <article><h3>Para o consumidor ou equipe autorizada</h3><ol><li>Organize contrato, aditivos, projeto aprovado, comprovantes e notas fiscais.</li><li>Exporte conversas completas e e-mails originais com datas, remetentes e contexto, sem editar o conteúdo de origem.</li><li>Guarde fotos e vídeos originais com metadados e registros de comparecimento ou não comparecimento.</li><li>Separe recibos de custos extras, datas e explicações sobre a relação de cada custo com o atraso.</li><li>Preserve número e comprovante da notificação e dos protocolos administrativos.</li><li>Gere um inventário SHA-256 local, fora do repositório público, para detectar alterações futuras.</li></ol></article>
    <article><h3>Para análise profissional ou imprensa</h3><ol><li>Use os identificadores do índice documental para solicitar e citar documentos específicos.</li><li>Confira o CNPJ no contrato, nota fiscal e comprovante bancário antes de atribuir responsabilidade.</li><li>Registre data/hora da consulta de cada URL, resposta da empresa e versão acessada.</li><li>Separe fatos deste caso de reclamações de outras unidades e de eventuais comparações externas.</li><li>Faça cópias com dados pessoais suprimidos quando a divulgação pública não exigir identificação.</li><li>Não atribua ao índice público valor de autenticação ou cadeia de custódia pericial.</li></ol></article>
   </div>
-  <div class="dossier-provenance"><strong>Integridade digital:</strong> O repositório contém o utilitário local de hash em <code>scripts/build-evidence-manifest.mjs</code>. Executar fora do servidor e do GitHub, mantendo dados privados fora do site. Os hashes identificam alterações nos arquivos, mas não demonstram isoladamente quando ou por quem foram criados.</div>
-  <div class="evidence-actions"><a class="button button-dark" href={casePath(item)+'indice-evidencias.csv'}>Exportar índice documental (CSV)</a><a class="button button-subtle" href={casePath(item)+'imprensa/'}>Kit para imprensa ↗</a></div>
+  <div class="my-8 border bg-brand-soft p-5 text-sm"><strong>Integridade digital:</strong> O repositório contém o utilitário local de hash em <code>scripts/build-evidence-manifest.mjs</code>. Executar fora do servidor e do GitHub, mantendo dados privados fora do site. Os hashes identificam alterações nos arquivos, mas não demonstram isoladamente quando ou por quem foram criados.</div>
+  <div class="my-6 flex flex-wrap gap-2.5"><a class="inline-flex shrink-0 items-center justify-center gap-2 min-h-10 max-w-full px-5 py-2 text-center text-sm font-medium whitespace-normal sm:whitespace-nowrap no-underline transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 bg-primary text-primary-foreground hover:bg-primary/90" href={casePath(item)+'indice-evidencias.csv'}>Exportar índice documental (CSV)</a><a class="inline-flex shrink-0 items-center justify-center gap-2 min-h-10 max-w-full px-5 py-2 text-center text-sm font-medium whitespace-normal sm:whitespace-nowrap no-underline transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 border bg-background text-foreground shadow-xs hover:bg-accent" href={casePath(item)+'imprensa/'}>Kit para imprensa ↗</a></div>
  </div></section>
 </BaseLayout>

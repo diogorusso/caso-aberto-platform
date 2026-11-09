@@ -1,4 +1,8 @@
 ---
+/*
+ * Brand page IA: hero → nossa posição → casos → números → risco → quem é → resposta → continue.
+ * Words come from lib/copy.ts; rail anchors from lib/company-sections.ts.
+ */
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import CompanyIdentityHero from '../../../components/CompanyIdentityHero.astro';
@@ -9,33 +13,49 @@ import CompanyCaseMatrix from '../../../components/CompanyCaseMatrix.astro';
 import CompanyRanking from '../../../components/CompanyRanking.astro';
 import ImpactDashboard from '../../../components/ImpactDashboard.astro';
 import PrecedentComparison from '../../../components/PrecedentComparison.astro';
-import DetailLayout from '../../../components/ui/DetailLayout.astro';
+import CollapseSignalsMatrix from '../../../components/CollapseSignalsMatrix.astro';
+import SectionRail from '../../../components/SectionRail.astro';
+import Section from '../../../components/layout/Section.astro';
+import ButtonLink from '../../../components/layout/ButtonLink.astro';
 import {findBrand,brandPath} from '../../../lib/brands';
 import {cases,casePath} from '../../../lib/cases';
-import {companyProfileNavItems} from '../../../lib/impact';
+import {companySections} from '../../../lib/company-sections';
+import {copy} from '../../../lib/copy';
 const brand=findBrand('florense');
 if(!brand)throw Error('Florense must have a published brand profile');
 const caseItem=cases.find(c=>brand.case_ids.includes(c.id));
 const crumbs=[{label:'Início',href:'/'},{label:'Empresas',href:'/empresas/'},{label:brand.name,href:brandPath(brand)}];
-const schema={'@context':'https://schema.org','@type':'WebPage',name:'Florense — perfil empresarial e arquivo de casos',about:{'@type':'Organization',name:brand.name,url:'https://florense.com.br/',logo:'https://images.squarespace-cdn.com/content/v1/64e8cc485611b24469ae7ad6/6224d17d-4408-418f-9700-cc4d34e2e886/florensewithback-removebg-preview%2B2.png'},dateModified:brand.last_reviewed};
-const navItems=companyProfileNavItems({hasPrecedent:Boolean(caseItem),hasDossier:true});
+const schema={'@context':'https://schema.org','@type':'WebPage',name:'Florense — perfil empresarial e arquivo de casos',about:{'@type':'Organization',name:brand.name,url:'https://florense.com.br/',logo:'https://casoaberto.pages.dev/media/florense/florense-logo.png'},dateModified:brand.last_reviewed};
+const rail=companySections({hasPrecedent:Boolean(caseItem)});
+const v=copy.verdict, w=copy.company.why, a=copy.company.answer, more=copy.company.more;
 ---
-<BaseLayout title="Florense: reclamações, CNPJ, risco, casos e avaliação | CasoAberto" description="Perfil editorial da Florense com imagem oficial, dados societários, reclamações catalogadas e caso de R$ 190 mil em Ipanema. Leia fontes, histórico e análise." dateModified={brand.last_reviewed} breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))} schema={schema}>
+<BaseLayout title="Florense: reclamações, CNPJ, risco, casos e avaliação | CasoAberto" description="Não recomendamos a Florense enquanto o caso de R$ 190 mil em Ipanema seguir sem solução. Veja provas, reclamações, CNPJs e o que a empresa precisa responder." dateModified={brand.last_reviewed} breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))} schema={schema}>
  <Breadcrumbs items={crumbs}/>
- <DetailLayout items={navItems} title="No perfil" railLabel="Florense">
-  <CompanyIdentityHero brand={brand}/>
-  <ImpactDashboard brand={brand} embedded/>
-  <section class="section company-editorial-scope" id="avaliacao-editorial"><div class="container">
-   <div class="section-heading"><div><span class="eyebrow">POR QUE ESSA AVALIAÇÃO?</span><h2>Uma recomendação com perguntas e documentos.</h2><p>O caso de Ipanema fundamenta a avaliação editorial atual. Esse recorte não transforma problemas de uma unidade em prova automática sobre todos os pedidos da rede.</p></div></div>
-   <div class="rating-evidence"><article><h3>Fundamentos publicados</h3><ol>{brand.verdict.basis.map(x=><li>{x}</li>)}</ol></article><article><h3>O que pode alterar a recomendação?</h3><ol>{brand.verdict.review_triggers.map(x=><li>{x}</li>)}</ol></article></div>
-   <div class="company-identity-actions">{caseItem&&<a class="button button-dark" href={casePath(caseItem)}>Acessar caso documentado ↗</a>}<a class="button button-subtle" href="/empresas/florense/ipanema-rj/">Examinar unidade de Ipanema ↗</a><a class="company-inline-link" href="/metodologia/#avaliacao-editorial">Critérios editoriais ↗</a></div>
-  </div></section>
-  <CompanyCaseMatrix brand={brand}/>
-  {caseItem&&<PrecedentComparison item={caseItem} compact/>}
-  <CompanyRecognitionGallery brand={brand}/>
-  <CompanyDossier/>
-  <CompanyProfiles only={[...brand.primary_company_profile_ids,...brand.related_company_profile_ids]} title="Cadastros e vínculos societários da rede"/>
-  <CompanyRanking currentBrand={brand.slug} heading="Avaliações editoriais: marca e unidades publicadas"/>
-  <section class="section company-accountability-end" id="resposta-institucional"><div class="container"><span class="eyebrow">RESPOSTA INSTITUCIONAL</span><h2>O que a Florense tem a dizer sobre o caso?</h2><p>O dossiê reúne perguntas documentadas sobre a entrega e mantém espaço para registrar manifestação verificável, solução ou atualização.</p><div class="company-identity-actions">{caseItem&&<a class="button button-dark" href={casePath(caseItem)+'imprensa/'}>Perguntas, documentos e imprensa ↗</a>}<a class="button button-subtle" href="/empresas/">Outras empresas avaliadas ↗</a></div></div></section>
- </DetailLayout>
+ <CompanyIdentityHero brand={brand}/>
+ <SectionRail items={rail} label={brand.name}/>
+
+ <Section id="avaliacao-editorial" eyebrow={w.eyebrow} title={w.title} description={w.body}>
+  <div class="grid gap-6 md:grid-cols-2">
+   <article class="rounded-xl border bg-card p-6"><h3 class="mt-0">{v.basisTitle}</h3><ol class="m-0 grid gap-2 pl-5">{brand.verdict.basis.map(x=><li>{x}</li>)}</ol></article>
+   <article class="rounded-xl border bg-card p-6"><h3 class="mt-0">{v.triggersTitle}</h3><ol class="m-0 grid gap-2 pl-5">{brand.verdict.review_triggers.map(x=><li>{x}</li>)}</ol></article>
+  </div>
+  <p class="mt-5 mb-0 text-sm text-muted-foreground"><a href="/metodologia/#avaliacao-editorial">{v.methodLink} →</a></p>
+ </Section>
+
+ <CompanyCaseMatrix brand={brand}/>
+ <ImpactDashboard brand={brand} embedded/>
+ {caseItem&&<PrecedentComparison item={caseItem} compact/>}
+ {caseItem&&<CollapseSignalsMatrix item={caseItem}/>}
+ <CompanyDossier/>
+ <CompanyProfiles only={[...brand.primary_company_profile_ids,...brand.related_company_profile_ids]} title={copy.company.profiles.brandTitle}/>
+ <CompanyRecognitionGallery brand={brand}/>
+
+ <Section id="resposta-institucional" tone="dark" eyebrow={a.eyebrow(brand.name)} title={a.title(brand.name)} description={a.body}>
+  {caseItem&&<div class="flex flex-wrap gap-3"><ButtonLink variant="inverse" href={casePath(caseItem)+'imprensa/'}>{a.pressLink} →</ButtonLink></div>}
+ </Section>
+
+ <CompanyRanking currentBrand={brand.slug} heading={copy.company.ranking.brandTitle}/>
+ <Section tone="muted" size="sm" eyebrow={more.eyebrow}>
+  <div class="flex flex-wrap gap-3"><ButtonLink variant="outline" href="/empresas/">{more.directory}</ButtonLink><ButtonLink variant="outline" href="/avaliacoes/nao-recomendamos/">{more.notRecommended}</ButtonLink><ButtonLink variant="ghost" href="/problemas/">{more.topics}</ButtonLink></div>
+ </Section>
 </BaseLayout>

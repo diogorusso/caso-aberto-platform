@@ -8,71 +8,109 @@
     "unidade_slug": "ipanema-rj",
     "local": "Rio de Janeiro, RJ",
     "categoria": "Móveis planejados",
-    "titulo": "Florense Ipanema: R$ 190 mil pagos. Prazo descumprido. Onde estão os móveis?",
-    "chamada": "Florense Ipanema: R$ 190 mil pagos. Prazo descumprido. Onde estão os móveis?",
-    "resumo": "Consumidor relata pagamento integral de R$ 190 mil em julho de 2026 por móveis planejados de cozinha e área de serviço na Florense Ipanema, com entrega e montagem prometidas para a primeira semana de outubro. Descreve reagendamentos, ausência da equipe e notificação extrajudicial em 30/10/2026. Até 09/11/2026 não há resolução confirmada neste dossiê.",
-    "impacto": "Além do valor quitado, o consumidor relata transtorno doméstico e custos adicionais de acomodação/imóvel associados à falta dos móveis. Valores de custos extras não foram publicados integralmente aqui e dependem de comprovação do reclamante.",
-    "status": "Aguardando solução confirmada",
+    "titulo": "Florense Ipanema: R$ 190 mil pagos. Prazo estourado. Cadê os móveis?",
+    "chamada": "R$ 190 mil pagos. Prazo estourado. Florense Ipanema, cadê os móveis?",
+    "resumo": "Em julho de 2026, o consumidor pagou R$ 190 mil — o valor total, adiantado — por cozinha e área de serviço planejadas na Florense Ipanema. A promessa: entrega e montagem na primeira semana de outubro. O que veio, segundo o relato: remarcações e equipe que não apareceu no dia marcado. Em 30/10/2026 a empresa foi notificada extrajudicialmente. Até 09/11/2026, nenhuma solução confirmada.",
+    "impacto": "Não é só o dinheiro parado. O consumidor relata casa desmontada, rotina travada e gastos extras com acomodação e imóvel por causa dos móveis que não chegaram. Os valores desses custos ainda não foram publicados por completo e dependem de comprovação.",
+    "status": "Sem solução confirmada",
     "status_data": "2026-11-09",
     "valor_brl": 190000,
     "data_publicacao": "2026-11-03",
     "prazo_original": "Primeira semana de outubro de 2026",
     "prazo_posterior": "15 de dezembro de 2026 (previsão mencionada na notificação de 30/10; contestada pelo consumidor; não é confirmação de entrega)",
     "procon_protocol": "202611080341",
-    "legal_entity_note": "A página oficial trata Ipanema como franquia da rede Florense (Flores da Cunha/RS). Fabricante, franquia e instaladores são elos distintos; este dossiê não funde identidades jurídicas sem documento.",
+    "collapse_signals": [
+      {
+        "key": "pagamento_integral",
+        "date": "2026-07-20",
+        "source_url": "https://www.reclameaqui.com.br/florense-moveis/nao-recebi-meus-moveis-planejados-e-a-loja-nao-cumpre-prazos_LaK42QhQaVqRLA5s/",
+        "note": "Consumidor relata R$ 190 mil pagos integralmente e adiantados."
+      },
+      {
+        "key": "atraso_entrega",
+        "date": "2026-10-07",
+        "source_url": "https://www.reclameaqui.com.br/florense-moveis/nao-recebi-meus-moveis-planejados-e-a-loja-nao-cumpre-prazos_LaK42QhQaVqRLA5s/",
+        "note": "Prazo prometido para a primeira semana de outubro de 2026 não cumprido."
+      },
+      {
+        "key": "remarcacao",
+        "date": "2026-10-30",
+        "source_url": "https://www.reclameaqui.com.br/florense-moveis/nao-recebi-meus-moveis-planejados-e-a-loja-nao-cumpre-prazos_LaK42QhQaVqRLA5s/",
+        "note": "Nova previsão de montagem até 15/12/2026, contestada pelo consumidor."
+      },
+      {
+        "key": "equipe_faltou",
+        "date": "2026-10-01",
+        "source_url": "https://www.reclameaqui.com.br/florense-moveis/nao-recebi-meus-moveis-planejados-e-a-loja-nao-cumpre-prazos_LaK42QhQaVqRLA5s/",
+        "note": "Pelo menos dois agendamentos com equipe ausente em outubro de 2026, segundo o relato."
+      },
+      {
+        "key": "sem_resposta",
+        "date": "2026-11-03",
+        "source_url": "https://www.reclameaqui.com.br/florense-moveis/nao-recebi-meus-moveis-planejados-e-a-loja-nao-cumpre-prazos_LaK42QhQaVqRLA5s/",
+        "note": "Reclamação pública sem resposta da empresa na consulta de referência."
+      },
+      {
+        "key": "cobranca_formal",
+        "date": "2026-11-08",
+        "source_url": "/casos/florense-ipanema-rj-atraso-moveis-planejados/atualizacoes/",
+        "note": "Notificação extrajudicial em 30/10/2026 e protocolo Procon/RJ 202611080341 em 08/11/2026."
+      }
+    ],
+    "legal_entity_note": "Fabricante, franquia e montadora são empresas diferentes — e cada uma tem seu papel. A página oficial apresenta Ipanema como franquia da rede Florense (Flores da Cunha/RS). Só atribuímos responsabilidade a um CNPJ quando o documento mostra.",
     "cronologia": [
       {
         "data": "Julho de 2026",
-        "titulo": "Contrato e pagamento",
-        "texto": "O consumidor informa ter contratado móveis para cozinha e área de serviço e pago R$ 190 mil integralmente. A notificação menciona pagamento em 20 de julho de 2026."
+        "titulo": "Contrato e pagamento integral",
+        "texto": "O consumidor contratou móveis para cozinha e área de serviço e pagou R$ 190 mil — tudo, adiantado. A notificação registra pagamento em 20 de julho de 2026."
       },
       {
         "data": "Primeira semana de outubro",
-        "titulo": "Entrega e montagem prometidas",
-        "texto": "Prazo originalmente informado pelo consumidor como determinante da contratação."
+        "titulo": "Prazo prometido",
+        "texto": "Entrega e montagem na primeira semana de outubro. Segundo o consumidor, foi esse prazo que fechou o negócio."
       },
       {
         "data": "Outubro de 2026",
-        "titulo": "Agendamentos frustrados",
-        "texto": "O relato descreve novas medições e pelo menos dois agendamentos em que a equipe não compareceu após a preparação do imóvel."
+        "titulo": "Equipe não aparece",
+        "texto": "O relato descreve novas medições e pelo menos dois agendamentos em que a equipe não compareceu — depois de o consumidor preparar o imóvel para recebê-la."
       },
       {
         "data": "30/10/2026",
-        "titulo": "Notificação extrajudicial",
-        "texto": "Notificação assinada e fornecida para organização do caso; menciona uma previsão posterior de montagem até 15/12/2026, contestada pelo consumidor."
+        "titulo": "Empresa notificada",
+        "texto": "Notificação extrajudicial assinada. Ela menciona uma nova previsão de montagem até 15/12/2026 — mais de dois meses além do prazo original — contestada pelo consumidor."
       },
       {
         "data": "03/11/2026",
-        "titulo": "Publicação no Reclame Aqui",
-        "texto": "O consumidor formalizou publicamente sua experiência e pediu entrega, cronograma e tratamento dos prejuízos."
+        "titulo": "Denúncia pública no Reclame Aqui",
+        "texto": "O consumidor tornou o caso público e exigiu entrega, cronograma e reparação dos prejuízos."
       },
       {
         "data": "08/11/2026",
-        "titulo": "Procon/RJ",
+        "titulo": "Procon/RJ acionado",
         "texto": "Protocolo informado pelo consumidor: 202611080341."
       },
       {
         "data": "09/11/2026",
-        "titulo": "Dossiê CasoAberto ampliado",
-        "texto": "Arquivo público de reclamações expandido, alerta Roma Mobili, mapa institucional e guias ao consumidor publicados. Sem confirmação de entrega integral até esta data."
+        "titulo": "CasoAberto abre o dossiê",
+        "texto": "Publicamos o arquivo de reclamações públicas, o alerta Roma Mobili, o mapa de empresas e guias ao consumidor. Até esta data, nenhuma entrega integral confirmada."
       }
     ],
     "pedidos": [
       {
-        "titulo": "Cronograma por escrito",
-        "texto": "Informação verificável sobre fabricação, entrega, montagem e os responsáveis por cada etapa."
+        "titulo": "Data de entrega por escrito",
+        "texto": "Cronograma assinado de fabricação, entrega e montagem — com o nome de quem responde por cada etapa. Promessa verbal não serve mais."
       },
       {
-        "titulo": "Conclusão integral do serviço",
-        "texto": "Entrega e instalação dos itens contratados, com confirmação das datas e da equipe."
+        "titulo": "Entrega e montagem completas",
+        "texto": "Tudo o que foi contratado e pago, instalado. Com data confirmada e equipe que apareça."
       },
       {
-        "titulo": "Resposta aos prejuízos",
-        "texto": "Manifestação sobre os custos adicionais que o consumidor afirma ter sofrido e puder comprovar."
+        "titulo": "Reparação dos prejuízos",
+        "texto": "Resposta concreta aos custos extras que o consumidor comprovar. Quem causou o atraso arca com ele."
       },
       {
-        "titulo": "Atualização pública",
-        "texto": "Registro de resposta da empresa e da efetiva conclusão, caso ocorram."
+        "titulo": "Resposta pública",
+        "texto": "A empresa tem espaço aqui. Qualquer resposta verificável — e a conclusão do serviço, quando acontecer — será publicada com o mesmo destaque."
       }
     ],
     "fontes": [
@@ -133,13 +171,13 @@
       }
     ],
     "imprensa_perguntas": [
-      "Qual é a data definitiva, por escrito, para entrega e montagem integral desse pedido?",
-      "Qual o estágio atual de fabricação, expedição, transporte e instalação dos itens?",
-      "Como a empresa pretende evitar novos agendamentos sem comparecimento?",
-      "Como se divide a responsabilidade entre fabricante, revenda/franquia e instaladores?",
-      "Qual resposta será oferecida aos custos que o consumidor afirma ter comprovado?",
-      "Qual razão social recebeu os R$ 190 mil e emite a nota fiscal correspondente?",
-      "Em que data o pedido de julho entrou na fila de produção e como se explica o atraso diante da programação industrial anunciada em setembro?"
+      "Qual é a data definitiva, por escrito, para a entrega e a montagem completas deste pedido?",
+      "Em que etapa estão hoje a fabricação, a expedição, o transporte e a instalação dos itens pagos?",
+      "Por que a equipe faltou a agendamentos confirmados — e o que garante que não vai faltar de novo?",
+      "Quem responde por este pedido: a fábrica, a franquia ou os instaladores?",
+      "Como a empresa vai reparar os custos extras que o consumidor comprovar?",
+      "Qual razão social recebeu os R$ 190 mil e emitiu a nota fiscal?",
+      "Quando o pedido pago em julho entrou na fila de produção — e como se explica o atraso diante da programação industrial anunciada pela própria empresa em setembro?"
     ]
   }
 ]

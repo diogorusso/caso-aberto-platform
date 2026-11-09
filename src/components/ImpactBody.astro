@@ -1,19 +1,19 @@
 ---
 import {brl,casePath,type Case} from '../lib/cases';
 import {type Brand,type BrandUnit,findBrand,verdictForCase,statusLabel} from '../lib/brands';
+import BrandTag from './BrandTag.astro';
 import {impactForSelection,brandSnapshot,statusGroups} from '../lib/impact';
 import ImpactSimulator from './ImpactSimulator.tsx';
 import PrecedentComparison from './PrecedentComparison.astro';
 import VerdictMiniSummary from './VerdictMiniSummary.astro';
 import VerdictStatusBadge from './VerdictStatusBadge';
-import SectionBlock from './ui/SectionBlock.astro';
-import SurfaceCard from './ui/SurfaceCard.astro';
-import KpiTile from './ui/KpiTile.astro';
-import { buttonVariants } from './ui/button';
+import Section from './layout/Section.astro';
+import Eyebrow from './layout/Eyebrow.astro';
+import ButtonLink from './layout/ButtonLink.astro';
+import { KpiCard } from './ui/kpi-card';
 import { Badge } from './ui/badge';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
 import { Separator } from './ui/separator';
-import { cn } from '../lib/utils';
 interface Props {caseItem?:Case;brand?:Brand;unit?:BrandUnit}
 const {caseItem,brand,unit}=Astro.props;
 const data=impactForSelection({caseItem,brand,unit});
@@ -29,68 +29,54 @@ const sample=data.reports.slice().sort((a,b)=>b.data.localeCompare(a.data)).slic
 const fresh=data.latestStatus||modeled?.snapshot_date||'2026-11-09';
 const freshBR=fresh.split('-').reverse().join('/');
 const docRows=statusGroups.map(g=>({...g,value:data.statuses[g.key]})).filter(g=>g.value>0);
-const daysWindow=data.delayMin==null?'—':data.delayMin===data.delayMax?data.delayMin+' dias':data.delayMin+'–'+data.delayMax+' dias';
+const daysWindow=data.delayMin==null?'—':data.delayMin===data.delayMax?data.delayMin+'dias':data.delayMin+'–'+data.delayMax+'dias';
 const scopeText=caseItem?'este caso':unit?'esta unidade':'esta marca e seus casos vinculados';
 const verdict=caseItem?verdictForCase(caseItem):(unit||brand)?.verdict;
 const verdictStatus=verdict?statusLabel(verdict.status):null;
+const tagBrand=brand||(caseItem?.empresa_slug?findBrand(caseItem.empresa_slug):undefined);
+const tagUnit=unit||(caseItem?.unidade_slug?tagBrand?.units.find((u)=>u.slug===caseItem.unidade_slug):undefined);
 ---
-<div class="impact-full scroll-mt-6" id="analisar-impacto">
-  <section class="border-b border-stroke bg-soft py-12 md:py-14">
+<div id="analisar-impacto" class="scroll-mt-28">
+  <section class="border-b bg-muted py-12 md:py-16">
     <div class="container">
-      <div class="grid overflow-hidden rounded-2xl border border-[#d6e0d6] bg-[radial-gradient(circle_at_92%_8%,rgba(171,66,54,0.12),transparent_34%),linear-gradient(135deg,#f7f8f3,#eef2eb)] p-6 md:grid-cols-[minmax(0,1.05fr)_minmax(300px,0.95fr)] md:gap-10 md:p-12">
-        <div class="flex min-w-0 flex-col justify-center gap-4">
-          <div class="flex flex-wrap items-center gap-2.5">
-            <span class="eyebrow">RADAR DE EXPOSIÇÃO</span>
-            <Badge variant="outline" className="rounded-full border-[#d0dbd0] bg-white/70 uppercase tracking-wide text-[#5f7164]">
-              Revisão {freshBR}
-            </Badge>
-            {verdictStatus && verdict && (
-              <VerdictStatusBadge status={verdict.status} label={verdictStatus} />
-            )}
+      <div class="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(20rem,0.95fr)] lg:items-center">
+        <div class="space-y-4">
+          <div class="flex flex-wrap items-center gap-2">
+            <Eyebrow>Radar de exposição</Eyebrow>
+            <Badge variant="outline" className="bg-card">Revisão {freshBR}</Badge>
+            {verdictStatus && verdict && <VerdictStatusBadge status={verdict.status} label={verdictStatus} />}
           </div>
-          <h2 class="m-0 max-w-[16ch] text-[clamp(2.2rem,4vw,3.8rem)] leading-[1.05] tracking-[-0.06em] text-ink">
-            O impacto em números: {label}.
-          </h2>
-          <p class="m-0 max-w-[48ch] text-[1.05rem] leading-relaxed text-muted-foreground">
-            Pagamentos relatados, tempo transcorrido, reclamações públicas, documentos e decisões pendentes — cada indicador com recorte e fonte.
-          </p>
-          <div class="mt-1 flex flex-wrap gap-2.5">
-            <a class={cn(buttonVariants({ variant: 'default' }))} href="#painel-observado">Ver indicadores ↓</a>
-            {modeled && (
-              <a class={cn(buttonVariants({ variant: 'outline' }))} href="#simulador-impacto">Calcular cenários ↓</a>
-            )}
-            <a class={cn(buttonVariants({ variant: 'outline' }))} href={evidenceRoute}>Ver documentos ↗</a>
+          {tagBrand && <BrandTag brand={tagBrand} unit={tagUnit} size="md" linked />}
+          <h2 class="m-0 text-4xl md:text-5xl">O impacto em números: {label}.</h2>
+          <p class="m-0 max-w-xl text-lg text-muted-foreground">Pagamentos relatados, tempo transcorrido, reclamações públicas, documentos e decisões pendentes — cada indicador com recorte e fonte.</p>
+          <div class="flex flex-wrap gap-2.5">
+            <ButtonLink href="#painel-observado">Ver indicadores ↓</ButtonLink>
+            {modeled && <ButtonLink variant="outline" href="#simulador-impacto">Calcular cenários ↓</ButtonLink>}
+            <ButtonLink variant="outline" href={evidenceRoute}>Ver documentos ↗</ButtonLink>
           </div>
         </div>
-
-        <Card className="min-w-0 gap-0 rounded-2xl border-[#d6e0d6] bg-white/85 shadow-[0_24px_60px_rgba(21,28,25,0.08)]">
-          <CardHeader className="gap-2 border-b border-[#e0e7df] p-6 pb-4">
-            <span class="text-[0.7rem] font-extrabold uppercase tracking-[0.12em] text-brand-dark">01 · Resumo editorial</span>
-            <CardTitle className="text-[1.2rem] leading-snug tracking-[-0.03em]">
-              Antes dos números, a recomendação em vigor.
-            </CardTitle>
-            <CardDescription className="text-[0.88rem] leading-snug">
-              O painel mensura exposição documental. A recomendação editorial permanece o critério para novas contratações.
-            </CardDescription>
+        <Card>
+          <CardHeader className="gap-2 border-b">
+            <Eyebrow>01 · Resumo editorial</Eyebrow>
+            <CardTitle className="text-lg">Antes dos números, a recomendação em vigor.</CardTitle>
+            <CardDescription>O painel mensura exposição documental. A recomendação editorial permanece o critério para novas contratações.</CardDescription>
           </CardHeader>
-          <CardContent className="grid gap-4 p-6 pt-5">
+          <CardContent className="grid gap-4">
             {verdict
-              ? <VerdictMiniSummary verdict={verdict} compact subject={label}/>
-              : <p class="m-0 text-[0.92rem] text-muted-foreground">Sem recomendação editorial publicada para este recorte.</p>}
+              ? <VerdictMiniSummary verdict={verdict} compact subject={label} />
+              : <p class="m-0 text-sm text-muted-foreground">Sem recomendação editorial publicada para este recorte.</p>}
             <Separator />
-            <dl class="m-0 grid grid-cols-1 gap-2.5 sm:grid-cols-3" aria-label="Sinalizadores do recorte">
-              <div class="grid gap-1.5 rounded-xl border border-[#e0e7df] bg-[rgba(171,66,54,0.06)] p-3.5">
-                <dt class="text-[0.68rem] font-extrabold uppercase tracking-[0.08em] text-[#9a4a3b]">Pago informado</dt>
-                <dd class="m-0 text-[1.15rem] font-extrabold leading-tight tracking-[-0.04em] break-words">{data.reportedPaymentTotal>0?brl(data.reportedPaymentTotal):'—'}</dd>
-              </div>
-              <div class="grid gap-1.5 rounded-xl border border-[#e0e7df] bg-[rgba(171,66,54,0.06)] p-3.5">
-                <dt class="text-[0.68rem] font-extrabold uppercase tracking-[0.08em] text-[#9a4a3b]">Dias em aberto</dt>
-                <dd class="m-0 text-[1.15rem] font-extrabold leading-tight tracking-[-0.04em]">{data.holdDays==null?'—':data.holdDays}</dd>
-              </div>
-              <div class="grid gap-1.5 rounded-xl border border-[#e0e7df] bg-[rgba(171,66,54,0.06)] p-3.5">
-                <dt class="text-[0.68rem] font-extrabold uppercase tracking-[0.08em] text-[#9a4a3b]">Relatos</dt>
-                <dd class="m-0 text-[1.15rem] font-extrabold leading-tight tracking-[-0.04em]">{data.indexedReportCount}</dd>
-              </div>
+            <dl class="m-0 grid gap-2.5 sm:grid-cols-3" aria-label="Sinalizadores do recorte">
+              {[
+                ['Pago informado', data.reportedPaymentTotal > 0 ? brl(data.reportedPaymentTotal) : '—'],
+                ['Dias em aberto', data.holdDays == null ? '—': data.holdDays],
+                ['Relatos', data.indexedReportCount],
+              ].map(([k, v]) => (
+                <div class="bg-brand-soft p-3">
+                  <dt class="text-[0.68rem] font-semibold uppercase tracking-wider text-brand-strong">{k}</dt>
+                  <dd class="m-0 mt-1 text-lg font-bold tracking-tight break-words">{v}</dd>
+                </div>
+              ))}
             </dl>
           </CardContent>
         </Card>
@@ -98,38 +84,38 @@ const verdictStatus=verdict?statusLabel(verdict.status):null;
     </div>
   </section>
 
-  <SectionBlock id="painel-observado" variant="muted" eyebrow="01 · DADOS PUBLICADOS" title="Valores altos. Perguntas que exigem resposta." description="Contagens do arquivo deste dossiê. Históricos externos aparecem no bloco seguinte, sem somar universos.">
+  <Section id="painel-observado" tone="muted" eyebrow="01 · DADOS PUBLICADOS" title="Valores altos. Perguntas que exigem resposta." description="Contagens do arquivo deste dossiê. Históricos externos aparecem no bloco seguinte, sem somar universos.">
     <div class="grid grid-cols-1 gap-3 md:grid-cols-2">
-      <KpiTile label="Valor pago, segundo consumidor(es)" value={data.reportedPaymentTotal>0?brl(data.reportedPaymentTotal):'Não informado'} note="Valor envolvido nos contratos relatados, sem inferir perda definitiva"/>
-      <KpiTile label="Tempo desde pagamento relatado" value={data.holdDays==null?'Não informado':data.holdDays+' dias'} note={modeled?'De '+modeled.payment_date_reported.split('-').reverse().join('/')+' a '+modeled.snapshot_date.split('-').reverse().join('/'):'Até a última atualização publicada'}/>
-      <KpiTile label="Atraso desde o prazo original" value={daysWindow} note="Prazo informado pelo consumidor; intervalo até a revisão documental"/>
-      <KpiTile label="URLs distintas citadas" value={data.sourceCount.toLocaleString('pt-BR')} note="Reclamações, registros e publicações; nem todos os links são menções negativas"/>
+      <KpiCard label="Valor pago, segundo consumidor(es)" value={data.reportedPaymentTotal>0?brl(data.reportedPaymentTotal):'Não informado'} note="Valor relatado nos contratos do dossiê — o dinheiro saiu"/>
+      <KpiCard label="Tempo desde pagamento relatado" value={data.holdDays==null?'Não informado':data.holdDays+'dias'} note={modeled?'De '+modeled.payment_date_reported.split('-').reverse().join('/')+'a '+modeled.snapshot_date.split('-').reverse().join('/'):'Até a última atualização publicada'}/>
+      <KpiCard label="Atraso desde o prazo original" value={daysWindow} note="Prazo informado pelo consumidor; intervalo até a revisão documental"/>
+      <KpiCard label="URLs distintas citadas" value={data.sourceCount.toLocaleString('pt-BR')} note="Reclamações, registros e publicações; nem todos os links são menções negativas"/>
     </div>
     <div class="mt-3.5 grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
-      <KpiTile tone="dark" label="Arquivo de relatos" value={data.indexedReportCount} note="Relatos externos catalogados no recorte, inclusive resolvidos" href={sourceRoute} hrefLabel="Abrir arquivo ↗"/>
-      <KpiTile tone="dark" label="Evidências indexadas" value={data.evidenceItems.length} note="Itens no índice documental, públicos e privados" href={evidenceRoute} hrefLabel="Conferir índice ↗"/>
-      <KpiTile tone="dark" label="Respostas registradas" value={data.recordedCompanyResponses} note="Respostas institucionais específicas no dossiê" href={caseHref+'atualizacoes/'} hrefLabel="Histórico ↗"/>
-      <KpiTile tone="dark" label="Apoios publicados" value={data.verifiedSupportTotal} note="Apoios com consentimento revisados para publicação" href={caseHref+'#apoiar'} hrefLabel="Enviar relato ↗"/>
+      <KpiCard tone="dark" label="Arquivo de relatos" value={data.indexedReportCount} note="Relatos externos catalogados no recorte, inclusive resolvidos" href={sourceRoute} hrefLabel="Abrir arquivo ↗"/>
+      <KpiCard tone="dark" label="Evidências indexadas" value={data.evidenceItems.length} note="Itens no índice documental, públicos e privados" href={evidenceRoute} hrefLabel="Conferir índice ↗"/>
+      <KpiCard tone="dark" label="Respostas registradas" value={data.recordedCompanyResponses} note="Respostas institucionais específicas no dossiê" href={caseHref+'atualizacoes/'} hrefLabel="Histórico ↗"/>
+      <KpiCard tone="dark" label="Apoios publicados" value={data.verifiedSupportTotal} note="Apoios com consentimento revisados para publicação" href={caseHref+'#apoiar'} hrefLabel="Enviar relato ↗"/>
     </div>
-    <p class="mt-4 text-[0.82rem] text-[#647368]">Período: recorte editorial revisado em {freshBR}. “0” significa nenhum registro identificado neste arquivo, não inexistência no mundo real.</p>
-  </SectionBlock>
+    <p class="mt-4 mb-0 text-sm text-muted-foreground">Período: recorte editorial revisado em {freshBR}. “0” significa nenhum registro identificado neste arquivo, não inexistência no mundo real.</p>
+  </Section>
 
   {snapshot && (
-    <SectionBlock id="impacto-externo" variant="editorial" eyebrow={`02 · FONTE EXTERNA · ${snapshot.platform}`} title="O histórico geral da marca amplia o contexto." description="Universo distinto do arquivo CasoAberto. Não some estes totais às reclamações catalogadas acima.">
+    <Section id="impacto-externo" tone="card" eyebrow={`02 · FONTE EXTERNA · ${snapshot.platform}`} title="O histórico geral da marca amplia o contexto." description="Universo distinto do arquivo CasoAberto. Não some estes totais às reclamações catalogadas acima.">
       <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
-        <KpiTile tone="accent" label="Reclamações ativas no histórico" value={snapshot.total_active_records.toLocaleString('pt-BR')}/>
-        <KpiTile tone="accent" label="Classificadas como atraso de entrega" value={snapshot.delivery_delay_category_records.toLocaleString('pt-BR')}/>
-        <KpiTile tone="accent" label="Visualizações no perfil externo" value={snapshot.company_profile_views_display} note="Não é tráfego do CasoAberto"/>
-        <KpiTile tone="accent" label={`Recebidas · ${snapshot.six_month_period}`} value={String(snapshot.six_month_received)}/>
+        <KpiCard tone="accent" label="Reclamações ativas no histórico" value={snapshot.total_active_records.toLocaleString('pt-BR')}/>
+        <KpiCard tone="accent" label="Classificadas como atraso de entrega" value={snapshot.delivery_delay_category_records.toLocaleString('pt-BR')}/>
+        <KpiCard tone="accent" label="Visualizações no perfil externo" value={snapshot.company_profile_views_display} note="Não é tráfego do CasoAberto"/>
+        <KpiCard tone="accent" label={`Recebidas · ${snapshot.six_month_period}`} value={String(snapshot.six_month_received)}/>
       </div>
       <div class="mt-5 flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
-        <p class="m-0 max-w-[810px] text-[0.88rem] leading-relaxed text-[#5b695f]">{snapshot.notes} A fonte exibe {snapshot.six_month_answered_pct}% de respostas no período de seis meses — isso não é taxa de resolução.</p>
-        <a class={cn(buttonVariants({ variant: 'default' }), 'shrink-0')} href={snapshot.page_url} target="_blank" rel="noopener noreferrer">Examinar perfil original ↗</a>
+        <p class="m-0 max-w-3xl text-sm leading-relaxed text-muted-foreground">{snapshot.notes} A fonte exibe {snapshot.six_month_answered_pct}% de respostas no período de seis meses — isso não é taxa de resolução.</p>
+        <ButtonLink class="shrink-0" href={snapshot.page_url} external>Examinar perfil original ↗</ButtonLink>
       </div>
-    </SectionBlock>
+    </Section>
   )}
 
-  <SectionBlock id="desfecho-reclamacoes" variant="default" eyebrow="03 · DESFECHO DAS RECLAMAÇÕES" title="Resposta não é o mesmo que solução." description={`Classificação dos relatos reunidos para ${scopeText}, conforme status na última consulta registrada.`}>
+  <Section id="desfecho-reclamacoes" tone="default" eyebrow="03 · DESFECHO DAS RECLAMAÇÕES" title="Resposta não é o mesmo que solução." description={`Classificação dos relatos reunidos para ${scopeText}, conforme status na última consulta registrada.`}>
     <div class="mb-5 grid max-w-[920px] gap-4">
       {docRows.map(row => (
         <div class="grid gap-2">
@@ -137,46 +123,49 @@ const verdictStatus=verdict?statusLabel(verdict.status):null;
             <strong>{row.label}</strong>
             <span class="font-extrabold">{row.value} / {data.indexedReportCount}</span>
           </div>
-          <div class="h-3 overflow-hidden rounded-full bg-[#e9eee7]">
-            <span class="block h-full min-w-px rounded-full bg-brand-dark" style={`width:${data.indexedReportCount>0?row.value/data.indexedReportCount*100:0}%`}></span>
+          <div class="h-2.5 overflow-hidden bg-muted" role="presentation">
+            <span class="block h-full min-w-px bg-brand-strong" style={`width:${data.indexedReportCount>0?row.value/data.indexedReportCount*100:0}%`}></span>
           </div>
         </div>
       ))}
-      {docRows.length===0 && <p>Não há reclamações externas catalogadas neste recorte.</p>}
+      {docRows.length===0 && <p class="text-muted-foreground">Não há reclamações externas catalogadas neste recorte.</p>}
     </div>
-    <a class="text-link" href={sourceRoute}>Ler cada reclamação e confirmar o estado atual ↗</a>
-  </SectionBlock>
+    <a class="text-link text-sm" href={sourceRoute}>Ler cada reclamação e confirmar o estado atual ↗</a>
+  </Section>
 
   {modeled && (
-    <SectionBlock id="simulador-impacto" variant="muted" spacing="md">
+    <Section id="simulador-impacto" tone="muted" size="md">
       <ImpactSimulator client:load reportedPayment={data.reportedPaymentTotal} daysHeld={data.holdDays||0} daysDelay={data.delayMin||0} asOf={modeled.snapshot_date} defaults={modeled.scenario_defaults}/>
-    </SectionBlock>
+    </Section>
   )}
 
-  <SectionBlock id="trilha-documental" variant="default" eyebrow="04 · TRILHA DOCUMENTAL" title="Veja as referências por trás das manchetes." description="O registro individual de cada reclamação importa tanto quanto o total.">
+  <Section id="trilha-documental" tone="default" eyebrow="04 · TRILHA DOCUMENTAL" title="Veja as referências por trás das manchetes." description="O registro individual de cada reclamação importa tanto quanto o total.">
     <div class="grid grid-cols-1 gap-3.5 md:grid-cols-2">
       {sample.map((r, i) => (
-        <SurfaceCard
-          label={`${String(i+1).padStart(2,'0')} · ${r.data.split('-').reverse().join('/')} · ${r.cidade}`}
-          title={r.titulo}
-          description={r.resumo}
-          status={r.status}
-          href={r.url}
-          external
-        />
+        <Card className="relative gap-3 transition-shadow hover:shadow-md">
+          <CardHeader className="gap-2">
+            <span class="text-xs font-semibold uppercase tracking-wider text-brand-strong">{`${String(i+1).padStart(2,'0')} · ${r.data.split('-').reverse().join('/')} · ${r.cidade}`}</span>
+            <CardTitle className="text-base leading-snug">{r.titulo}</CardTitle>
+            <CardDescription className="leading-relaxed">{r.resumo}</CardDescription>
+          </CardHeader>
+          <CardFooter className="mt-auto justify-between gap-3">
+            <Badge variant="secondary">{r.status}</Badge>
+            <a class="text-link text-sm after:absolute after:inset-0 after:content-['']" href={r.url} target="_blank" rel="noopener noreferrer">Abrir fonte ↗</a>
+          </CardFooter>
+        </Card>
       ))}
-      {sample.length===0 && <p>Não há menções externas catalogadas neste recorte.</p>}
+      {sample.length===0 && <p class="text-muted-foreground">Não há menções externas catalogadas neste recorte.</p>}
     </div>
     <div class="mt-7 flex flex-wrap gap-3">
-      <a class={cn(buttonVariants({ variant: 'default' }))} href={evidenceRoute}>Índice documental e exportação ↗</a>
-      <a class={cn(buttonVariants({ variant: 'outline' }))} href={caseHref+'materiais-imprensa/'}>Material de imprensa ↗</a>
-      <a class={cn(buttonVariants({ variant: 'outline' }))} href={caseHref+'#apoiar'}>Enviar relato relacionado ↗</a>
+      <ButtonLink href={evidenceRoute}>Índice documental e exportação ↗</ButtonLink>
+      <ButtonLink variant="outline" href={caseHref+'materiais-imprensa/'}>Material de imprensa ↗</ButtonLink>
+      <ButtonLink variant="outline" href={caseHref+'#apoiar'}>Enviar relato relacionado ↗</ButtonLink>
     </div>
-  </SectionBlock>
+  </Section>
 
   {linkedCase && <PrecedentComparison item={linkedCase} compact/>}
 
-  <SectionBlock id="prestacao-contas" variant="accent" eyebrow="PRESTAÇÃO DE CONTAS" title="O que aconteceu com o dinheiro? Quando o serviço será concluído?" description="O acompanhamento público exige respostas verificáveis. Este painel reúne fatos, indicadores editoriais e simulação separada — não substitui documentos originais nem determina responsabilidade judicial.">
-    <a class={cn(buttonVariants({ variant: 'secondary' }), 'bg-white text-ink hover:bg-soft')} href={caseHref}>Voltar ao dossiê e perguntas da empresa ↗</a>
-  </SectionBlock>
+  <Section id="prestacao-contas" tone="accent" eyebrow="PRESTAÇÃO DE CONTAS" title="O que aconteceu com o dinheiro? Quando o serviço será concluído?" description="O consumidor pagou. O produto não chegou. Exija respostas verificáveis — com data, CNPJ e documentos.">
+    <ButtonLink variant="inverse" size="lg" href={caseHref}>Voltar ao dossiê e perguntas da empresa ↗</ButtonLink>
+  </Section>
 </div>

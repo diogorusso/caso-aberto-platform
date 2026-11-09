@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
-import CaseNav from '../../../../components/CaseNav.astro';
 import SourceList from '../../../../components/SourceList.astro';
 import { cases, casePath, crumbFor, brl, dateBR, reportsFor, roma, type Case } from '../../../../lib/cases';
 export function getStaticPaths() {return cases.map(item=>({params:{slug:item.slug},props:{item}}));}
@@ -12,17 +11,16 @@ const n=reportsFor(item).length;
 ---
 <BaseLayout title={`${item.empresa_resumo}: kit para imprensa | CasoAberto`} description={'Fact sheet público de '+item.empresa_resumo+': valores, datas, fontes verificáveis, cronologia e perguntas à empresa.'} dateModified={item.status_data} type="article" breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}>
   <Breadcrumbs items={crumbs}/>
-  <section class="pagehead"><div class="container"><span class="eyebrow">KIT IMPRENSA</span><h1>Fact sheet — {item.empresa_resumo}</h1><p>Material verificável para jornalistas. CasoAberto é publicação independente — não somos órgão oficial nem assessoria jurídica.</p></div></section>
-  <CaseNav item={item} current="imprensa" />
-  <section class="press-actionbar"><div class="container"><a class="button button-dark" href={casePath(item)+'materiais-imprensa/'}>Baixar cards e fact sheet ↗</a><a class="button button-subtle" href={casePath(item)+'evidencias/'}>Índice documental ↗</a><a class="button button-subtle" href={casePath(item)+'indice-evidencias.csv'}>Exportar CSV</a></div></section>
-  <section class="section"><div class="container narrow editorial">
+  <section class="border-b bg-card py-12 md:py-16 [&_h1]:my-4 [&_p]:max-w-3xl [&_p]:text-lg [&_p]:text-muted-foreground"><div class="container"><span class="eyebrow text-xs font-semibold uppercase tracking-[0.14em] text-brand-strong">KIT IMPRENSA</span><h1>Fact sheet — {item.empresa_resumo}</h1><p>Tudo verificável, tudo com fonte. O CasoAberto atua ao lado do consumidor lesado — não somos órgão oficial nem escritório de advocacia.</p></div></section>
+  <section class="border-y bg-muted py-4 [&>.container]:flex [&>.container]:flex-wrap [&>.container]:gap-2.5"><div class="container"><a class="inline-flex shrink-0 items-center justify-center gap-2 min-h-10 max-w-full px-5 py-2 text-center text-sm font-medium whitespace-normal sm:whitespace-nowrap no-underline transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 bg-primary text-primary-foreground hover:bg-primary/90" href={casePath(item)+'materiais-imprensa/'}>Baixar cards e fact sheet ↗</a><a class="inline-flex shrink-0 items-center justify-center gap-2 min-h-10 max-w-full px-5 py-2 text-center text-sm font-medium whitespace-normal sm:whitespace-nowrap no-underline transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 border bg-background text-foreground shadow-xs hover:bg-accent" href={casePath(item)+'evidencias/'}>Índice documental ↗</a><a class="inline-flex shrink-0 items-center justify-center gap-2 min-h-10 max-w-full px-5 py-2 text-center text-sm font-medium whitespace-normal sm:whitespace-nowrap no-underline transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 border bg-background text-foreground shadow-xs hover:bg-accent" href={casePath(item)+'indice-evidencias.csv'}>Exportar CSV</a></div></section>
+  <section class="py-14 md:py-20"><div class="container [--container-max:52rem] prose prose-stone max-w-[52rem] prose-headings:tracking-tight prose-h2:mt-12 prose-h2:text-2xl prose-a:text-brand-strong">
     <h2>O que aconteceu</h2>
     <p>{item.resumo}</p>
     <h2>Números e datas</h2>
     <ul>
       <li>Valor informado como pago: {item.valor_brl?brl(item.valor_brl):'não informado'}</li>
       <li>Prazo original: {item.prazo_original}</li>
-      {item.id==='CA-001' && <li>Notificação extrajudicial: 30/10/2026</li>}
+      {item.id==='CA-001'&& <li>Notificação extrajudicial: 30/10/2026</li>}
       <li>Publicação no Reclame Aqui: {dateBR(item.data_publicacao)}</li>
       {item.procon_protocol && <li>Protocolo administrativo informado: {item.procon_protocol}</li>}
       <li>Status do dossiê em {dateBR(item.status_data)}: {item.status}</li>
@@ -30,16 +28,16 @@ const n=reportsFor(item).length;
     </ul>
     <h2>Link da reclamação principal</h2>
     <p><a href={item.fontes[0]?.url} target="_blank" rel="noopener noreferrer">{item.fontes[0]?.url}</a></p>
-    <h2>Perguntas submetidas à empresa</h2>
-    <ol class="editor-list">{(item.imprensa_perguntas||[]).map(q=><li>{q}</li>)}</ol>
-    {item.id==='CA-001' && <><h2>Comparação Roma Mobili (alerta de risco)</h2><p>{roma.disclaimer}</p><p>Processo {roma.proceeding.number} — falência decretada em 19/12/2025. <a href={casePath(item)+'risco-roma-mobili/'}>Página completa da comparação</a>.</p></>}
-    {item.id==='CA-001' && <><h2>Pesquisa corporativa adicional</h2><p>Identificação da fabricante, CNPJs, empresa da unidade Ipanema, administradores, reclamações, rede franqueada e declarações industriais de 2026: <a href="/empresas/florense/">consultar dossiê corporativo completo</a>.</p></>}<h2>Arquivo e documentos</h2>
+    <h2>Perguntas que a empresa precisa responder</h2>
+    <ol class="list-decimal space-y-2 pl-5">{(item.imprensa_perguntas||[]).map(q=><li>{q}</li>)}</ol>
+    {item.id==='CA-001'&& <><h2>Comparação Roma Mobili (alerta de risco)</h2><p>{roma.campaign_line} {roma.campaign_sub}</p><p>Processo {roma.proceeding.number} — falência decretada em 19/12/2025. <a href={casePath(item)+'risco-roma-mobili/'}>Página completa da comparação</a>.</p></>}
+    {item.id==='CA-001'&& <><h2>Pesquisa corporativa adicional</h2><p>Identificação da fabricante, CNPJs, empresa da unidade Ipanema, administradores, reclamações, rede franqueada e declarações industriais de 2026: <a href="/empresas/florense/">consultar dossiê corporativo completo</a>.</p></>}<h2>Arquivo e documentos</h2>
     <SourceList items={item.fontes}/>
     <p><a class="text-link" href={`${casePath(item)}reclamacoes-publicas/`}>Arquivo ampliado de reclamações públicas ↗</a></p>
     <h2>Canal para resposta da empresa</h2>
-    <p>Respostas institucionais documentadas podem ser enviadas aos canais oficiais da franquia/marca e, para registro editorial, ao dossiê. Não publicamos dados pessoais irrelevantes nem estimulamos assédio.</p>
+    <p>A empresa pode responder a qualquer momento. Respostas documentadas são publicadas aqui, com o mesmo destaque da denúncia. Não publicamos dados pessoais e não aceitamos assédio.</p>
     <h2>Contato imprensa (CasoAberto)</h2>
     <p>Pedidos de entrevista/fact-check: use o e-mail provisório <a href="mailto:redacao@casoaberto.org">redacao@casoaberto.org</a> até configuração definitiva de canal.</p>
-    <p class="muted">Nenhuma redação ou autoridade endossa este dossiê apenas por constar neste kit.</p>
+    <p class="text-sm text-muted-foreground">Nenhuma redação ou autoridade endossa este dossiê apenas por constar neste kit.</p>
   </div></section>
 </BaseLayout>

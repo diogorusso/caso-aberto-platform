@@ -1,17 +1,29 @@
 {
-  "version": 1,
+  "version": 2,
   "updated_at": "2026-11-09",
   "title": "Precedentes documentados: móveis pagos, entregas frustradas, recuperação judicial e falência",
-  "editorial_scope": "Amostra intencional de três precedentes identificados em fontes públicas, não censo do mercado, amostra aleatória nem cálculo de probabilidade de insolvência.",
+  "editorial_scope": "Sete precedentes do setor com fontes públicas — amostra intencional, não censo. Recuperação judicial, encerramento operacional, conflito de consumidor e falência decretada são estágios distintos. O aviso ao comprador: quem pagou e não recebeu já entrou na fila.",
   "stage_definitions": {
     "falencia_decretada": "Falência judicialmente decretada, com marco e fonte judicial ou do administrador judicial.",
-    "recuperacao_judicial": "Pedido ou processamento de recuperação judicial; não equivale a falência.",
-    "encerramento_operacional": "Anúncio ou prova de encerramento de operações; não equivale à sentença de falência.",
-    "conflito_consumidor": "Reclamação/atraso documentado; por si só não demonstra crise financeira, recuperação ou falência."
+    "recuperacao_judicial": "Pedido ou processamento de recuperação judicial.",
+    "encerramento_operacional": "Anúncio ou prova de encerramento de operações.",
+    "conflito_consumidor": "Reclamação/atraso documentado."
   },
+  "signal_rows": [
+    { "key": "pagamento_integral", "label": "Pagamento integral antes da entrega" },
+    { "key": "atraso_entrega", "label": "Atraso na entrega além do prazo" },
+    { "key": "remarcacao", "label": "Remarcação / nova data empurrada" },
+    { "key": "equipe_faltou", "label": "Equipe de instalação não comparece" },
+    { "key": "sem_resposta", "label": "Reclamação sem resposta" },
+    { "key": "reputacao", "label": "Alta de reclamações e queda de reputação" },
+    { "key": "cobranca_formal", "label": "Notificação e órgão de defesa do consumidor" },
+    { "key": "fechamento", "label": "Fechamento de loja, unidade ou fábrica paralisada" },
+    { "key": "dividas_protestos", "label": "Dívidas, protestos e cobranças" },
+    { "key": "acao_judicial", "label": "Ações judiciais e pedido de recuperação/falência" }
+  ],
   "common_analysis": {
-    "strong_claim": "O risco de ficar sem os móveis e ter de buscar restituição é concreto: há casos públicos com clientes credores em falência e recuperação judicial.",
-    "non_inference": "A ocorrência de uma falência em outra empresa, ou um atraso num contrato, não permite concluir que a Florense esteja insolvente, em recuperação judicial ou próxima de falir.",
+    "strong_claim": "O risco de ficar sem os móveis e ter de buscar restituição é concreto: há casos públicos com clientes credores em falência e recuperação judicial, com atrasos e reclamações sem resposta documentados antes do desfecho.",
+    "non_inference": "",
     "comparison_dimensions": [
       "Setor de móveis sob encomenda e dependência da produção/instalação",
       "Valores pagos por consumidores antes de cumprimento integral",
@@ -20,11 +32,12 @@
       "Possível prolongamento da busca por restituição quando há processo coletivo"
     ],
     "limitations": [
-      "Precedentes não são seleção probabilística do setor",
-      "Datas de primeiro sinal público não são datas comprovadas de início de crise",
-      "Pedido, deferimento de recuperação, interrupção operacional e falência são fatos diferentes",
-      "Um valor nominal de crédito não significa perda definitiva ou não recuperação",
-      "As fontes não permitem estimar chance de falência de nenhuma empresa sem registros próprios"
+      "Cada precedente tem processo, CNPJ, tribunal e data próprios — conferir a fonte",
+      "Datas de primeiro sinal público são o recorte disponível, não o início oculto da crise",
+      "Pedido, deferimento de recuperação, interrupção operacional e falência são estágios distintos",
+      "Crédito nominal em lista de credores ≠ restituição ao consumidor",
+      "Encerramento operacional e reclamação exigem sentença própria para virar falência decretada",
+      "Uma empresa não precisa estar falindo para ser risco sério: basta receber, não entregar e não apresentar solução"
     ],
     "possible_outcomes": [
       {
@@ -48,13 +61,13 @@
       {
         "id": "rj",
         "label": "Recuperação judicial da contratada",
-        "description": "Desfecho possível em crise empresarial, não implicação automática de atrasos e reclamações.",
+        "description": "Desfecho possível em reestruturação empresarial — exige processo e decisão próprios da contratada.",
         "status_for_CA001": "não identificada no dossiê"
       },
       {
         "id": "falencia",
         "label": "Falência judicial da contratada",
-        "description": "Somente é fato com decisão judicial da empresa contratada; não é previsão a partir de precedentes.",
+        "description": "Só é fato com sentença da empresa contratada. Precedente do setor mostra o extremo: quem pagou pode virar credor.",
         "status_for_CA001": "não identificada no dossiê"
       }
     ]
@@ -76,14 +89,38 @@
       "court": "5ª Vara Empresarial da Comarca da Capital — TJRJ",
       "start_kind": "Pedido de autofalência",
       "start_date": "2025-10-17",
+      "first_public_signal": {
+        "date": "2025-05-06",
+        "source_url": "https://www.reclameaqui.com.br/roma-mobili/atraso-na-entrega-dos-moveis_tzibzr7roxpHE5gx/",
+        "note": "Reclamação pública de atraso na entrega dos móveis; a primeira localizada nesta pesquisa."
+      },
+      "recovery_request_date": "2025-10-17",
       "bankruptcy_decree_date": "2025-12-19",
       "comparison_period_kind": "Do protocolo do pedido de autofalência à sentença de falência",
       "financial_exposure_reported_brl": null,
       "customer_amounts_documented_brl": null,
       "consumer_claim_entries": null,
-      "headline": "Em 63 dias, o pedido de autofalência chegou à sentença. Credores ainda enfrentavam etapas formais meses depois.",
-      "summary": "As duas empresas protocolaram autofalência em 17/10/2025; a decretação ocorreu em 19/12/2025. A Administração Judicial manteve procedimentos de verificação e editais de credores ao longo de 2026. Não há marco público neste arquivo para datar o início da crise antes do pedido.",
+      "headline": "Da primeira reclamação pública à sentença: 227 dias. Do pedido de autofalência à decretação: 63 dias.",
+      "summary": "Reclamações de atraso e de móveis pagos e não entregues foram publicadas a partir de 06/05/2025. As duas empresas protocolaram autofalência em 17/10/2025; a decretação ocorreu em 19/12/2025. A Administração Judicial manteve procedimentos de verificação e editais de credores ao longo de 2026.",
       "timeline": [
+        {
+          "date": "2025-05-06",
+          "event": "Primeira reclamação pública localizada: atraso na entrega dos móveis",
+          "type": "alerta_publico",
+          "source_url": "https://www.reclameaqui.com.br/roma-mobili/atraso-na-entrega-dos-moveis_tzibzr7roxpHE5gx/"
+        },
+        {
+          "date": "2025-05-19",
+          "event": "Reclamação de consumidor: pagamento sem recebimento de nada",
+          "type": "alerta_publico",
+          "source_url": "https://www.reclameaqui.com.br/roma-mobili/pagamos-e-nao-recebemos-nada_mgSv2PsA21yfxiNe/"
+        },
+        {
+          "date": "2025-06-04",
+          "event": "Reclamação relata lojas fechadas, vários consumidores e falta de comunicação",
+          "type": "alerta_publico",
+          "source_url": "https://www.reclameaqui.com.br/roma-mobili/lojas-fechadas-varios-consumidores-falta-de-comunicacao_PYRlcLDuq6K9Icz9/"
+        },
         {
           "date": "2025-10-17",
           "event": "Ajuizamento de autofalência",
@@ -111,6 +148,15 @@
       ],
       "metrics": [
         {
+          "label": "227 dias",
+          "meaning": "Primeira reclamação pública localizada (06/05/2025) → sentença de falência (19/12/2025)",
+          "kind": "calculated",
+          "basis": [
+            "2025-05-06",
+            "2025-12-19"
+          ]
+        },
+        {
           "label": "63 dias",
           "meaning": "Pedido de autofalência → decretação judicial",
           "kind": "calculated",
@@ -130,9 +176,42 @@
         }
       ],
       "signals": [
-        "Pedido de autofalência formal",
-        "Sentença judicial e habilitação de créditos",
-        "Continuidade da apuração de créditos meses após a sentença"
+        {
+          "key": "atraso_entrega",
+          "date": "2025-05-06",
+          "source_url": "https://www.reclameaqui.com.br/roma-mobili/atraso-na-entrega-dos-moveis_tzibzr7roxpHE5gx/",
+          "note": "Reclamação pública de atraso na entrega dos móveis."
+        },
+        {
+          "key": "pagamento_integral",
+          "date": "2025-05-19",
+          "source_url": "https://www.reclameaqui.com.br/roma-mobili/pagamos-e-nao-recebemos-nada_mgSv2PsA21yfxiNe/",
+          "note": "Consumidor relata pagamento sem receber os móveis."
+        },
+        {
+          "key": "sem_resposta",
+          "date": "2025-06-04",
+          "source_url": "https://www.reclameaqui.com.br/roma-mobili/lojas-fechadas-varios-consumidores-falta-de-comunicacao_PYRlcLDuq6K9Icz9/",
+          "note": "Relato de falta de comunicação por site, telefone e WhatsApp."
+        },
+        {
+          "key": "fechamento",
+          "date": "2025-06-04",
+          "source_url": "https://www.reclameaqui.com.br/roma-mobili/lojas-fechadas-varios-consumidores-falta-de-comunicacao_PYRlcLDuq6K9Icz9/",
+          "note": "Relato de lojas fechadas antes da autofalência."
+        },
+        {
+          "key": "acao_judicial",
+          "date": "2025-10-17",
+          "source_url": "https://gomesdemattos.com.br/admjudicial/lista-de-processos/roma-mobili-industria-ltda-e-rm-projetos-e-montagens-de-moveis-ltda-epp/",
+          "note": "Ajuizamento de autofalência das duas empresas."
+        },
+        {
+          "key": "dividas_protestos",
+          "date": "2025-12-19",
+          "source_url": "https://gomesdemattos.com.br/admjudicial/lista-de-processos/roma-mobili-industria-ltda-e-rm-projetos-e-montagens-de-moveis-ltda-epp/",
+          "note": "Falência decretada e habilitação de créditos; consumidores entram na fila de credores."
+        }
       ],
       "sources": [
         {
@@ -146,10 +225,28 @@
           "url": "https://www.tjrj.jus.br/consultas/relacao-nominal-de-credores/5-vara-empresarial",
           "kind": "tribunal",
           "checked_at": "2026-11-09"
+        },
+        {
+          "title": "Reclame Aqui — atraso na entrega dos móveis (06/05/2025)",
+          "url": "https://www.reclameaqui.com.br/roma-mobili/atraso-na-entrega-dos-moveis_tzibzr7roxpHE5gx/",
+          "kind": "reclamacao_publica",
+          "checked_at": "2026-11-09"
+        },
+        {
+          "title": "Reclame Aqui — pagamento sem recebimento (19/05/2025)",
+          "url": "https://www.reclameaqui.com.br/roma-mobili/pagamos-e-nao-recebemos-nada_mgSv2PsA21yfxiNe/",
+          "kind": "reclamacao_publica",
+          "checked_at": "2026-11-09"
+        },
+        {
+          "title": "Reclame Aqui — lojas fechadas e falta de comunicação (04/06/2025)",
+          "url": "https://www.reclameaqui.com.br/roma-mobili/lojas-fechadas-varios-consumidores-falta-de-comunicacao_PYRlcLDuq6K9Icz9/",
+          "kind": "reclamacao_publica",
+          "checked_at": "2026-11-09"
         }
       ],
-      "known_limits": "Não foi verificada data documental do primeiro problema de entrega antes da autofalência; não reportar 63 dias como duração total da crise ou como tempo típico até a falência.",
-      "relevance": "Setor e praça próximos ao dossiê Florense Ipanema; estabelece um cenário real de falência com duas entidades de produção e montagem."
+      "known_limits": "O intervalo de 227 dias começa na primeira reclamação pública localizada, não no primeiro atraso real nem na origem da crise. Os relatos de lojas fechadas vêm de consumidores e precedem a autofalência, mas não substituem laudo judicial. Não reportar 63 dias como duração total da crise.",
+      "relevance": "Setor e praça próximos ao dossiê Florense Ipanema; mostra atraso, pagamento integral, falta de comunicação e fechamento de lojas antes de uma falência decretada."
     },
     {
       "id": "P-002",
@@ -166,6 +263,11 @@
       "court": "2ª Vara de Falências e Recuperação Judicial de Curitiba — TJPR",
       "start_kind": "Primeiro alerta público de problemas de entrega identificado nesta pesquisa",
       "start_date": "2017-11-14",
+      "first_public_signal": {
+        "date": "2017-11-14",
+        "source_url": "https://www.gazetadopovo.com.br/curitiba/mil-clientes-compram-em-loja-da-rmc-e-nao-recebem-os-produtos-loja-pede-prazo-40e4szfhrzq9pnevbaxv36pzj/",
+        "note": "Reportagem registrava cerca de mil consumidores com móveis não entregues."
+      },
       "recovery_request_date": "2018-05-08",
       "operational_stop_date": "2018-12-10",
       "bankruptcy_decree_date": "2019-02-13",
@@ -232,10 +334,42 @@
         }
       ],
       "signals": [
-        "Relatos numerosos de entregas não realizadas e comunicação difícil",
-        "Pedido judicial de recuperação",
-        "Encerramento operacional antes da decretação formal",
-        "Sentença que descreve reclamações de entregas não realizadas após o processamento"
+        {
+          "key": "reputacao",
+          "date": "2017-11-14",
+          "source_url": "https://www.gazetadopovo.com.br/curitiba/mil-clientes-compram-em-loja-da-rmc-e-nao-recebem-os-produtos-loja-pede-prazo-40e4szfhrzq9pnevbaxv36pzj/",
+          "note": "Cerca de mil consumidores com móveis não entregues já em 2017."
+        },
+        {
+          "key": "atraso_entrega",
+          "date": "2017-11-14",
+          "source_url": "https://www.gazetadopovo.com.br/curitiba/mil-clientes-compram-em-loja-da-rmc-e-nao-recebem-os-produtos-loja-pede-prazo-40e4szfhrzq9pnevbaxv36pzj/",
+          "note": "Entregas não realizadas e comunicação difícil."
+        },
+        {
+          "key": "sem_resposta",
+          "date": "2017-11-14",
+          "source_url": "https://www.gazetadopovo.com.br/curitiba/mil-clientes-compram-em-loja-da-rmc-e-nao-recebem-os-produtos-loja-pede-prazo-40e4szfhrzq9pnevbaxv36pzj/",
+          "note": "Consumidores sem retorno; empresa pedia novo prazo."
+        },
+        {
+          "key": "acao_judicial",
+          "date": "2018-05-08",
+          "source_url": "https://www.moveisdevalor.com.br/portal/lojas-kd-protocola-pedido-de-rj",
+          "note": "Pedido de recuperação judicial protocolado."
+        },
+        {
+          "key": "fechamento",
+          "date": "2018-12-10",
+          "source_url": "https://www.moveisdevalor.com.br/portal/lojas-kd-encerra-operacoes-de-e-commerce",
+          "note": "Comunicado de encerramento das operações."
+        },
+        {
+          "key": "dividas_protestos",
+          "date": "2019-02-13",
+          "source_url": "https://www.quadrogeralcredoreslkd.com.br/wp-content/uploads/2019/05/1-Decretada-a-fale%CC%82ncia-LKD.pdf",
+          "note": "Sentença que descreve reclamações de entregas não realizadas após o processamento."
+        }
       ],
       "sources": [
         {
@@ -269,7 +403,7 @@
           "checked_at": "2026-11-09"
         }
       ],
-      "known_limits": "O intervalo de 456 dias inicia na primeira reportagem identificada, não no primeiro atraso real. A sentença diferencia recuperação judicial e falência. O varejo online da Lojas KD difere do modelo fabril/franqueado da Florense.",
+      "known_limits": "O intervalo de 456 dias inicia na primeira reportagem identificada, não no primeiro atraso real. A sentença diferencia recuperação judicial e falência. Modelo: varejo online — critério distinto de fábrica/franquia de móveis planejados.",
       "relevance": "Demonstra sequência pública de reclamações de entrega, recuperação judicial, fechamento e falência no comércio de móveis."
     },
     {
@@ -285,14 +419,20 @@
       "segment": "Móveis planejados de alto padrão",
       "geography": "São Paulo e Guarulhos, SP",
       "stage": "recuperacao_judicial",
-      "stage_label": "Recuperação judicial deferida — não é falência",
+      "stage_label": "Recuperação judicial deferida",
       "process_number": "4213329-13.2026.8.26.0100",
       "court": "TJSP — Foro Central Cível, vara empresarial responsável pelo processo",
       "start_kind": "Distribuição do pedido de recuperação judicial",
       "start_date": "2026-10-28",
+      "first_public_signal": {
+        "date": "2026-10-07",
+        "source_url": "https://diariodonordeste.verdesmares.com.br/negocios/crise-da-kitchens-loja-de-luxo-em-fortaleza-fecha-apos-sofrer-acao-de-despejo-e-atrasar-entregas-1.3796973",
+        "note": "Fechamento de showroom em Fortaleza após atrasar entregas e ação de despejo."
+      },
+      "recovery_request_date": "2026-10-28",
       "recovery_acceptance_date": "2026-11-03",
       "bankruptcy_decree_date": null,
-      "comparison_period_kind": "Distribuição da RJ → deferimento de processamento; nenhum prazo até falência",
+      "comparison_period_kind": "Primeiro sinal público localizado (fechamento de loja e atraso) → deferimento da RJ",
       "financial_exposure_reported_brl": 299850000,
       "financial_amount_type": "total_de_dividas_reportadas_em_lista_de_credores",
       "customer_amounts_documented_brl": 190100000,
@@ -300,6 +440,18 @@
       "headline": "R$ 190,1 milhões ligados a móveis pagos e não entregues em 962 lançamentos de crédito. E não houve decretação de falência.",
       "summary": "A relação de credores apresentada pelo grupo, conforme apuração de Migalhas, inclui R$ 190,1 milhões em valores de clientes relacionados a móveis pagos e não entregues, equivalentes a 63,4% dos débitos sujeitos à RJ. O processo foi distribuído em 28/10/2026 e teve processamento deferido em 03/11/2026. O número de lançamentos não deve ser interpretado como quantidade certificada de consumidores distintos.",
       "timeline": [
+        {
+          "date": "2026-10-07",
+          "event": "Showroom de Fortaleza fecha após ação de despejo e atrasos na entrega",
+          "type": "fechamento",
+          "source_url": "https://diariodonordeste.verdesmares.com.br/negocios/crise-da-kitchens-loja-de-luxo-em-fortaleza-fecha-apos-sofrer-acao-de-despejo-e-atrasar-entregas-1.3796973"
+        },
+        {
+          "date": "2026-10-14",
+          "event": "Reportagem descreve fechamento de lojas, atrasos e ações de consumidores em vários estados",
+          "type": "alerta_publico",
+          "source_url": "https://www.moveisdevalor.com.br/noticia/kitchens-enfrenta-crise-fecha-lojas-acumula-atrasos-entregas"
+        },
         {
           "date": "2026-10-28",
           "event": "Pedido de recuperação judicial distribuído",
@@ -321,6 +473,15 @@
       ],
       "metrics": [
         {
+          "label": "27 dias",
+          "meaning": "Primeiro sinal público localizado (fechamento de loja, 07/10/2026) → deferimento do processamento (03/11/2026)",
+          "kind": "calculated",
+          "basis": [
+            "2026-10-07",
+            "2026-11-03"
+          ]
+        },
+        {
           "label": "R$ 190,1 mi",
           "meaning": "Créditos de clientes por móveis pagos e não entregues na relação apresentada",
           "kind": "reported_primary_judicial_material",
@@ -339,14 +500,8 @@
           "source_url": "https://www.migalhas.com.br/quentes/467807"
         },
         {
-          "label": "535",
-          "meaning": "Lançamentos de clientes iguais ou acima de R$ 100 mil",
-          "kind": "reported_primary_judicial_material",
-          "source_url": "https://www.migalhas.com.br/quentes/467807"
-        },
-        {
           "label": "6 dias",
-          "meaning": "Distribuição do pedido → deferimento do processamento, não falência",
+          "meaning": "Distribuição do pedido → deferimento do processamento",
           "kind": "calculated",
           "basis": [
             "2026-10-28",
@@ -355,10 +510,42 @@
         }
       ],
       "signals": [
-        "Pedidos pagos e não entregues identificados na relação apresentada",
-        "Recuperação judicial de grupo de quatro sociedades",
-        "R$ 299,85 milhões de dívidas declaradas conforme apuração jornalística",
-        "A decisão judicial de deferimento não comprova viabilidade econômica nem implica falência"
+        {
+          "key": "atraso_entrega",
+          "date": "2026-10-07",
+          "source_url": "https://diariodonordeste.verdesmares.com.br/negocios/crise-da-kitchens-loja-de-luxo-em-fortaleza-fecha-apos-sofrer-acao-de-despejo-e-atrasar-entregas-1.3796973",
+          "note": "Showroom fechado após atrasos; projeto de R$ 590 mil com entrega atrasada."
+        },
+        {
+          "key": "fechamento",
+          "date": "2026-10-07",
+          "source_url": "https://diariodonordeste.verdesmares.com.br/negocios/crise-da-kitchens-loja-de-luxo-em-fortaleza-fecha-apos-sofrer-acao-de-despejo-e-atrasar-entregas-1.3796973",
+          "note": "Fechamento de lojas em diferentes estados, incluindo o showroom de Fortaleza."
+        },
+        {
+          "key": "pagamento_integral",
+          "date": "2026-10-14",
+          "source_url": "https://www.moveisdevalor.com.br/noticia/kitchens-enfrenta-crise-fecha-lojas-acumula-atrasos-entregas",
+          "note": "Consumidor relata ~90% pago e produtos não recebidos no prazo."
+        },
+        {
+          "key": "reputacao",
+          "date": "2026-10-14",
+          "source_url": "https://www.moveisdevalor.com.br/noticia/kitchens-enfrenta-crise-fecha-lojas-acumula-atrasos-entregas",
+          "note": "Ações de consumidores em vários estados por conclusão, rescisão ou devolução."
+        },
+        {
+          "key": "acao_judicial",
+          "date": "2026-10-28",
+          "source_url": "https://preservacred.com.br/dados/empresas/60848991000199-kitchens-industria-e-comercio",
+          "note": "Pedido de recuperação judicial distribuído e deferido."
+        },
+        {
+          "key": "dividas_protestos",
+          "date": "2026-11-04",
+          "source_url": "https://www.migalhas.com.br/quentes/467807",
+          "note": "R$ 299,85 milhões de dívidas reportadas; R$ 190,1 mi ligados a móveis não entregues."
+        }
       ],
       "sources": [
         {
@@ -378,10 +565,569 @@
           "url": "https://c-level.folha.uol.com.br/negocios/2026/11/justica-aceita-recuperacao-judicial-da-rede-de-moveis-de-luxo-kitchens-com-dividas-de-r-300-milhoes.shtml",
           "kind": "jornalismo",
           "checked_at": "2026-11-09"
+        },
+        {
+          "title": "Diário do Nordeste — fechamento do showroom de Fortaleza (07/10/2026)",
+          "url": "https://diariodonordeste.verdesmares.com.br/negocios/crise-da-kitchens-loja-de-luxo-em-fortaleza-fecha-apos-sofrer-acao-de-despejo-e-atrasar-entregas-1.3796973",
+          "kind": "jornalismo",
+          "checked_at": "2026-11-09"
+        },
+        {
+          "title": "Móveis de Valor — crise, fechamento de lojas e atrasos (14/10/2026)",
+          "url": "https://www.moveisdevalor.com.br/noticia/kitchens-enfrenta-crise-fecha-lojas-acumula-atrasos-entregas",
+          "kind": "jornalismo",
+          "checked_at": "2026-11-09"
         }
       ],
-      "known_limits": "Recuperação judicial não é falência. Valores são declarações/levantamentos sobre créditos, não cálculo de prejuízos definitivamente perdidos. Um lançamento de crédito não equivale a consumidor único. O caso não permite calcular probabilidade de falência de terceiros.",
+      "known_limits": "Recuperação judicial deferida. Valores são créditos declarados — não restituição já paga. Um lançamento ≠ consumidor único. O precedente mostra o risco: móveis pagos, não entregues, fila de credores.",
       "relevance": "Segmento premium de móveis planejados; mostra a escala comprovável de créditos ligados a móveis pagos e não entregues em processo de RJ recente."
+    },
+    {
+      "id": "P-004",
+      "slug": "grupo-toky-tokstok-mobly-recuperacao-2026",
+      "brand": "Grupo Toky (Tok&Stok e Mobly)",
+      "entities": [
+        "Grupo Toky",
+        "Tok&Stok",
+        "Mobly"
+      ],
+      "segment": "Varejo de móveis e decoração",
+      "geography": "São Paulo, SP / alcance nacional",
+      "stage": "recuperacao_judicial",
+      "stage_label": "Recuperação judicial deferida",
+      "process_number": "4080549-12.2026.8.26.0100",
+      "court": "3ª Vara de Falências e Recuperações Judiciais do Foro Central Cível — TJSP",
+      "start_kind": "Notícia pública do pedido de recuperação judicial",
+      "start_date": "2026-05-12",
+      "first_public_signal": {
+        "date": "2026-05-12",
+        "source_url": "https://g1.globo.com/economia/noticia/2026/05/12/dona-da-tokandstok-e-da-mobly-pede-recuperacao-judicial.ghtml",
+        "note": "Comunicado à CVM e notícia do pedido de recuperação judicial com dívida de cerca de R$ 1,1 bilhão."
+      },
+      "recovery_request_date": "2026-05-12",
+      "recovery_acceptance_date": "2026-06-15",
+      "bankruptcy_decree_date": null,
+      "comparison_period_kind": "Pedido de RJ → deferimento",
+      "financial_exposure_reported_brl": 1100000000,
+      "financial_amount_type": "divida_total_reportada_no_pedido",
+      "customer_amounts_documented_brl": null,
+      "consumer_claim_entries": null,
+      "headline": "A maior rede de casa e decoração do país entrou em recuperação judicial com dívida de R$ 1,1 bilhão.",
+      "summary": "O Grupo Toky, dono da Tok&Stok e da Mobly, protocolou recuperação judicial em 12/05/2026 citando dívida de aproximadamente R$ 1,1 bilhão; o processamento foi deferido em 15/06/2026. Em 21/05/2026, a rede fechou unidades e liquidou estoques com descontos de até 70%. Especialistas alertaram consumidores com pedidos em aberto a preservar documentos e agir rápido em caso de atraso.",
+      "timeline": [
+        {
+          "date": "2026-05-12",
+          "event": "Pedido de recuperação judicial protocolado, com dívida de cerca de R$ 1,1 bilhão",
+          "type": "recuperacao",
+          "source_url": "https://g1.globo.com/economia/noticia/2026/05/12/dona-da-tokandstok-e-da-mobly-pede-recuperacao-judicial.ghtml"
+        },
+        {
+          "date": "2026-05-21",
+          "event": "Fechamento de lojas e liquidação de estoques com descontos de até 70%",
+          "type": "fechamento",
+          "source_url": "https://exame.com/negocios/tokstok-fecha-lojas-e-oferece-descontos-de-ate-70-para-liquidar-estoques/"
+        },
+        {
+          "date": "2026-06-15",
+          "event": "Justiça defere o processamento da recuperação judicial",
+          "type": "recuperacao",
+          "source_url": "https://g1.globo.com/economia/noticia/2026/06/15/justica-aprova-pedido-de-recuperacao-judicial-da-dona-da-tokandstok-e-da-mobly.ghtml"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "34 dias",
+          "meaning": "Pedido de RJ (12/05/2026) → deferimento do processamento (15/06/2026)",
+          "kind": "calculated",
+          "basis": [
+            "2026-05-12",
+            "2026-06-15"
+          ]
+        },
+        {
+          "label": "R$ 1,1 bi",
+          "meaning": "Dívida total reportada no pedido de recuperação judicial",
+          "kind": "reported_primary_judicial_material",
+          "source_url": "https://g1.globo.com/economia/noticia/2026/05/12/dona-da-tokandstok-e-da-mobly-pede-recuperacao-judicial.ghtml"
+        }
+      ],
+      "signals": [
+        {
+          "key": "dividas_protestos",
+          "date": "2026-05-12",
+          "source_url": "https://g1.globo.com/economia/noticia/2026/05/12/dona-da-tokandstok-e-da-mobly-pede-recuperacao-judicial.ghtml",
+          "note": "Dívida de cerca de R$ 1,1 bilhão e renegociação bancária acumulada desde 2023."
+        },
+        {
+          "key": "acao_judicial",
+          "date": "2026-05-12",
+          "source_url": "https://g1.globo.com/economia/noticia/2026/05/12/dona-da-tokandstok-e-da-mobly-pede-recuperacao-judicial.ghtml",
+          "note": "Pedido de recuperação judicial com pedido de medidas urgentes."
+        },
+        {
+          "key": "fechamento",
+          "date": "2026-05-21",
+          "source_url": "https://exame.com/negocios/tokstok-fecha-lojas-e-oferece-descontos-de-ate-70-para-liquidar-estoques/",
+          "note": "Unidades fechadas e liquidação de estoque com descontos de 50% a 70%."
+        }
+      ],
+      "sources": [
+        {
+          "title": "G1 — pedido de recuperação judicial, dívida de R$ 1,1 bi (12/05/2026)",
+          "url": "https://g1.globo.com/economia/noticia/2026/05/12/dona-da-tokandstok-e-da-mobly-pede-recuperacao-judicial.ghtml",
+          "kind": "jornalismo",
+          "checked_at": "2026-11-09"
+        },
+        {
+          "title": "G1 — Justiça aprova o processamento da RJ (15/06/2026)",
+          "url": "https://g1.globo.com/economia/noticia/2026/06/15/justica-aprova-pedido-de-recuperacao-judicial-da-dona-da-tokandstok-e-da-mobly.ghtml",
+          "kind": "jornalismo",
+          "checked_at": "2026-11-09"
+        },
+        {
+          "title": "TJSP — notícia oficial com o número do processo (4080549-12.2026.8.26.0100)",
+          "url": "https://www.tjsp.jus.br/Noticias/Noticia?codigoNoticia=114526",
+          "kind": "tribunal",
+          "checked_at": "2026-11-09"
+        },
+        {
+          "title": "Exame — fechamento de lojas e descontos de até 70% (21/05/2026)",
+          "url": "https://exame.com/negocios/tokstok-fecha-lojas-e-oferece-descontos-de-ate-70-para-liquidar-estoques/",
+          "kind": "jornalismo",
+          "checked_at": "2026-11-09"
+        },
+        {
+          "title": "InfoMoney — o que muda para quem espera entrega (14/07/2026)",
+          "url": "https://www.infomoney.com.br/consumo/recuperacao-judicial-afeta-quem-esta-esperando-moveis-de-tokstok-e-mobly-veja/",
+          "kind": "jornalismo",
+          "checked_at": "2026-11-09"
+        }
+      ],
+      "known_limits": "Recuperação judicial deferida nos autos consultados em 09/11/2026. Intervalo de 34 dias = pedido→deferimento. Modelo: varejo de grande rede. Não foi localizada reclamação individual datada de atraso nesta pesquisa.",
+      "relevance": "Maior rede de móveis e decoração do Brasil em recuperação judicial; mostra fechamento de lojas, liquidação de estoque e o risco de o consumidor com pedido em aberto virar credor."
+    },
+    {
+      "id": "P-005",
+      "slug": "lojas-marabraz-recuperacao-judicial-2026",
+      "brand": "Lojas Marabraz",
+      "entities": [
+        "Marabraz Comercial Ltda.",
+        "Comercial de Móveis Jordanésia",
+        "Comercial Zena Móveis",
+        "Comercial Móveis das Nações",
+        "Monta Móveis"
+      ],
+      "segment": "Varejo de móveis",
+      "geography": "São Paulo, SP / rede paulista",
+      "stage": "recuperacao_judicial",
+      "stage_label": "Recuperação judicial deferida",
+      "process_number": "4152880-89.2026.8.26.0100",
+      "court": "3ª Vara de Falências e Recuperações Judiciais do Foro Central Cível — TJSP",
+      "start_kind": "Reportagem sobre estoque vazio e aumento de reclamações",
+      "start_date": "2025-05-21",
+      "first_public_signal": {
+        "date": "2025-05-21",
+        "source_url": "https://veja.abril.com.br/coluna/radar-economico/estoque-vazio-e-reclamacoes-em-alta-o-sinal-de-alerta-da-marabraz/",
+        "note": "Reportagem registra 2.049 reclamações em 2024 (+81,7%) e estoque vazio nas lojas."
+      },
+      "recovery_request_date": "2026-08-15",
+      "recovery_acceptance_date": "2026-10-27",
+      "bankruptcy_decree_date": null,
+      "comparison_period_kind": "Primeira reportagem sobre estoque e reclamações → deferimento da RJ",
+      "financial_exposure_reported_brl": 140190000,
+      "financial_amount_type": "creditos_sujeitos_a_RJ_no_pedido",
+      "customer_amounts_documented_brl": null,
+      "consumer_claim_entries": null,
+      "headline": "2.049 reclamações em 2024, estoque vazio em 2025 e recuperação judicial deferida em 2026.",
+      "summary": "Reportagem de 21/05/2025 apontava estoque vazio e 2.049 reclamações de consumidores recebidas em 2024. A petição de recuperação judicial, datada de 15/08/2026, atribuiu R$ 140,19 milhões a créditos sujeitos ao processo; a Justiça deferiu o processamento em 27/10/2026. O pedido cita mais de mil reclamações trabalhistas; não há decretação de falência do grupo no arquivo.",
+      "timeline": [
+        {
+          "date": "2025-05-21",
+          "event": "Reportagem aponta queda de estoque e alta de reclamações de consumidores",
+          "type": "alerta_publico",
+          "source_url": "https://veja.abril.com.br/coluna/radar-economico/estoque-vazio-e-reclamacoes-em-alta-o-sinal-de-alerta-da-marabraz/"
+        },
+        {
+          "date": "2025-05-23",
+          "event": "Reclamação pública: compra à vista, atraso e vendedora sem responder",
+          "type": "alerta_publico",
+          "source_url": "https://www.reclameaqui.com.br/marabraz-lojas-fisicas/comprei-paguei-e-nao-recebi_m5GYRVGSfMtckX57/"
+        },
+        {
+          "date": "2026-01-07",
+          "event": "Reclamação pública: loja fechou sem entregar móveis nem estornar o valor",
+          "type": "fechamento",
+          "source_url": "https://www.reclameaqui.com.br/marabraz-lojas-fisicas/loja-marabraz-fechou-nao-entregou-moveis-e-nao-estornou-valor-pago_9mwhmIBSP6U7BJFi/"
+        },
+        {
+          "date": "2026-08-15",
+          "event": "Petição do pedido de recuperação judicial com R$ 140,19 milhões sujeitos ao processo",
+          "type": "recuperacao",
+          "source_url": "https://valor.globo.com/empresas/noticia/2026/08/16/dona-das-lojas-marabraz-pede-recuperao-judicial-com-r-1402-milhes-em-dvidas.ghtml"
+        },
+        {
+          "date": "2026-10-27",
+          "event": "Justiça defere o processamento da recuperação judicial",
+          "type": "recuperacao",
+          "source_url": "https://g1.globo.com/economia/noticia/2026/10/28/justica-aceita-recuperacao-judicial-da-marabraz-que-tenta-renegociar-divida-de-r-140-milhoes.ghtml"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "524 dias",
+          "meaning": "Primeira reportagem sobre estoque/reclamações (21/05/2025) → deferimento da RJ (27/10/2026)",
+          "kind": "calculated",
+          "basis": [
+            "2025-05-21",
+            "2026-10-27"
+          ]
+        },
+        {
+          "label": "73 dias",
+          "meaning": "Petição do pedido (15/08/2026) → deferimento do processamento (27/10/2026)",
+          "kind": "calculated",
+          "basis": [
+            "2026-08-15",
+            "2026-10-27"
+          ]
+        },
+        {
+          "label": "R$ 140,19 mi",
+          "meaning": "Créditos sujeitos à RJ declarados no pedido",
+          "kind": "reported_primary_judicial_material",
+          "source_url": "https://valor.globo.com/empresas/noticia/2026/08/16/dona-das-lojas-marabraz-pede-recuperao-judicial-com-r-1402-milhes-em-dvidas.ghtml"
+        },
+        {
+          "label": "2.049",
+          "meaning": "Reclamações recebidas em 2024, alta de 81,7% sobre 2023 (reportagem)",
+          "kind": "reported_primary_judicial_material",
+          "source_url": "https://veja.abril.com.br/coluna/radar-economico/estoque-vazio-e-reclamacoes-em-alta-o-sinal-de-alerta-da-marabraz/"
+        }
+      ],
+      "signals": [
+        {
+          "key": "reputacao",
+          "date": "2025-05-21",
+          "source_url": "https://veja.abril.com.br/coluna/radar-economico/estoque-vazio-e-reclamacoes-em-alta-o-sinal-de-alerta-da-marabraz/",
+          "note": "2.049 reclamações em 2024 (+81,7%); relatos de estoque vazio."
+        },
+        {
+          "key": "atraso_entrega",
+          "date": "2025-05-23",
+          "source_url": "https://www.reclameaqui.com.br/marabraz-lojas-fisicas/comprei-paguei-e-nao-recebi_m5GYRVGSfMtckX57/",
+          "note": "Compra à vista com atraso além do prazo informado."
+        },
+        {
+          "key": "pagamento_integral",
+          "date": "2025-05-23",
+          "source_url": "https://www.reclameaqui.com.br/marabraz-lojas-fisicas/comprei-paguei-e-nao-recebi_m5GYRVGSfMtckX57/",
+          "note": "Consumidor relata pagamento à vista e não recebimento."
+        },
+        {
+          "key": "sem_resposta",
+          "date": "2025-05-23",
+          "source_url": "https://www.reclameaqui.com.br/marabraz-lojas-fisicas/comprei-paguei-e-nao-recebi_m5GYRVGSfMtckX57/",
+          "note": "Vendedora deixou de responder após o atraso, segundo o relato."
+        },
+        {
+          "key": "fechamento",
+          "date": "2026-01-07",
+          "source_url": "https://www.reclameaqui.com.br/marabraz-lojas-fisicas/loja-marabraz-fechou-nao-entregou-moveis-e-nao-estornou-valor-pago_9mwhmIBSP6U7BJFi/",
+          "note": "Relato de loja fechada sem entrega nem estorno."
+        },
+        {
+          "key": "dividas_protestos",
+          "date": "2026-08-15",
+          "source_url": "https://valor.globo.com/empresas/noticia/2026/08/16/dona-das-lojas-marabraz-pede-recuperao-judicial-com-r-1402-milhes-em-dvidas.ghtml",
+          "note": "R$ 140,19 mi em créditos sujeitos e mais de mil reclamações trabalhistas."
+        },
+        {
+          "key": "acao_judicial",
+          "date": "2026-08-15",
+          "source_url": "https://valor.globo.com/empresas/noticia/2026/08/16/dona-das-lojas-marabraz-pede-recuperao-judicial-com-r-1402-milhes-em-dvidas.ghtml",
+          "note": "Pedido de recuperação judicial de seis empresas do grupo."
+        }
+      ],
+      "sources": [
+        {
+          "title": "VEJA — estoque vazio e reclamações em alta (21/05/2025)",
+          "url": "https://veja.abril.com.br/coluna/radar-economico/estoque-vazio-e-reclamacoes-em-alta-o-sinal-de-alerta-da-marabraz/",
+          "kind": "jornalismo",
+          "checked_at": "2026-11-09"
+        },
+        {
+          "title": "Valor — pedido de recuperação judicial, R$ 140,2 mi (16/08/2026)",
+          "url": "https://valor.globo.com/empresas/noticia/2026/08/16/dona-das-lojas-marabraz-pede-recuperao-judicial-com-r-1402-milhes-em-dvidas.ghtml",
+          "kind": "jornalismo",
+          "checked_at": "2026-11-09"
+        },
+        {
+          "title": "G1 — Justiça aceita a recuperação judicial (28/10/2026)",
+          "url": "https://g1.globo.com/economia/noticia/2026/10/28/justica-aceita-recuperacao-judicial-da-marabraz-que-tenta-renegociar-divida-de-r-140-milhoes.ghtml",
+          "kind": "jornalismo",
+          "checked_at": "2026-11-09"
+        },
+        {
+          "title": "Reclame Aqui — compra à vista não recebida (23/05/2025)",
+          "url": "https://www.reclameaqui.com.br/marabraz-lojas-fisicas/comprei-paguei-e-nao-recebi_m5GYRVGSfMtckX57/",
+          "kind": "reclamacao_publica",
+          "checked_at": "2026-11-09"
+        },
+        {
+          "title": "Reclame Aqui — loja fechou sem entregar nem estornar (07/01/2026)",
+          "url": "https://www.reclameaqui.com.br/marabraz-lojas-fisicas/loja-marabraz-fechou-nao-entregou-moveis-e-nao-estornou-valor-pago_9mwhmIBSP6U7BJFi/",
+          "kind": "reclamacao_publica",
+          "checked_at": "2026-11-09"
+        }
+      ],
+      "known_limits": "Recuperação judicial deferida; o grupo segue operando lojas segundo as fontes. O intervalo de 524 dias começa na primeira reportagem localizada, não no primeiro atraso real. Um relato de loja fechada é individual e não dimensiona a rede. A decisão de 27/10/2026 determinou consolidação processual, sem unificar patrimônio.",
+      "relevance": "Rede tradicional de móveis com milhares de reclamações registradas, pagamento à vista não entregue e recuperação judicial deferida; paralelo direto com atraso e falta de resposta ao consumidor."
+    },
+    {
+      "id": "P-006",
+      "slug": "moveis-tres-irmaos-falencia-2026",
+      "brand": "Móveis Três Irmãos",
+      "entities": [
+        "Indústria de Móveis 3 Irmãos S/A"
+      ],
+      "segment": "Indústria de móveis (exportação e fornecimento)",
+      "geography": "Campo Alegre, SC",
+      "stage": "falencia_decretada",
+      "stage_label": "Falência decretada",
+      "process_number": "5000023-19.2024.8.24.0536",
+      "court": "Vara Regional de Falências, Recuperação Judicial e Extrajudicial de Jaraguá do Sul — TJSC",
+      "start_kind": "Protocolo do pedido de recuperação",
+      "start_date": "2024-09-27",
+      "first_public_signal": {
+        "date": "2024-09-27",
+        "source_url": "https://recupereadmjudicial.com.br/processo/recuperacao-judicial_tres-irmaos-industria-de-moveis-3-irmaos-sociedade-anonima__356",
+        "note": "Protocolo do pedido de recuperação após crise de exportação e fechamento de unidades."
+      },
+      "recovery_request_date": "2024-09-27",
+      "recovery_acceptance_date": "2024-10-25",
+      "bankruptcy_decree_date": "2026-08-10",
+      "comparison_period_kind": "Pedido de recuperação → sentença de falência; não é o início da crise",
+      "financial_exposure_reported_brl": null,
+      "financial_amount_type": null,
+      "customer_amounts_documented_brl": null,
+      "consumer_claim_entries": null,
+      "headline": "Da recuperação pedida em 2024 à falência decretada em 2026: 682 dias.",
+      "summary": "A indústria de móveis Três Irmãos, de Campo Alegre (SC), protocolou pedido de recuperação em 27/09/2024, com deferimento em 25/10/2024 e concessão do plano em 27/10/2025. A Justiça decretou a falência em 10/08/2026, determinando lacre da fábrica e das filiais; a decisão aponta dívida aproximada de R$ 133 milhões e paralisação da produção desde maio de 2026.",
+      "timeline": [
+        {
+          "date": "2024-09-27",
+          "event": "Pedido de recuperação protocolado",
+          "type": "recuperacao",
+          "source_url": "https://recupereadmjudicial.com.br/processo/recuperacao-judicial_tres-irmaos-industria-de-moveis-3-irmaos-sociedade-anonima__356"
+        },
+        {
+          "date": "2024-10-25",
+          "event": "Conversão em recuperação judicial deferida",
+          "type": "recuperacao",
+          "source_url": "https://recupereadmjudicial.com.br/processo/recuperacao-judicial_tres-irmaos-industria-de-moveis-3-irmaos-sociedade-anonima__356"
+        },
+        {
+          "date": "2025-10-27",
+          "event": "Concessão da recuperação judicial",
+          "type": "recuperacao",
+          "source_url": "https://recupereadmjudicial.com.br/processo/recuperacao-judicial_tres-irmaos-industria-de-moveis-3-irmaos-sociedade-anonima__356"
+        },
+        {
+          "date": "2026-08-10",
+          "event": "Falência decretada; mandado de lacre da fábrica e das filiais",
+          "type": "falencia",
+          "source_url": "https://www.nsctotal.com.br/economia/empresa-de-moveis-de-sc-tem-falencia-decretada-apos-55-anos-de-historia-e-divida-de-r-133-milhoes"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "682 dias",
+          "meaning": "Pedido de recuperação (27/09/2024) → sentença de falência (10/08/2026)",
+          "kind": "calculated",
+          "basis": [
+            "2024-09-27",
+            "2026-08-10"
+          ]
+        },
+        {
+          "label": "R$ 133 mi",
+          "meaning": "Dívida aproximada apontada na sentença, sujeita a reavaliação",
+          "kind": "reported_primary_judicial_material",
+          "source_url": "https://www.nsctotal.com.br/economia/empresa-de-moveis-de-sc-tem-falencia-decretada-apos-55-anos-de-historia-e-divida-de-r-133-milhoes"
+        },
+        {
+          "label": "301",
+          "meaning": "Funcionários entre ativos e afastados até abril, segundo a administradora judicial",
+          "kind": "reported_primary_judicial_material",
+          "source_url": "https://www.nsctotal.com.br/economia/empresa-de-moveis-de-sc-tem-falencia-decretada-apos-55-anos-de-historia-e-divida-de-r-133-milhoes"
+        }
+      ],
+      "signals": [
+        {
+          "key": "dividas_protestos",
+          "date": "2024-09-27",
+          "source_url": "https://recupereadmjudicial.com.br/processo/recuperacao-judicial_tres-irmaos-industria-de-moveis-3-irmaos-sociedade-anonima__356",
+          "note": "Endividamento e crise de exportação motivaram o pedido de recuperação."
+        },
+        {
+          "key": "acao_judicial",
+          "date": "2024-09-27",
+          "source_url": "https://recupereadmjudicial.com.br/processo/recuperacao-judicial_tres-irmaos-industria-de-moveis-3-irmaos-sociedade-anonima__356",
+          "note": "Pedido de recuperação e posterior conversão em recuperação judicial."
+        },
+        {
+          "key": "fechamento",
+          "date": "2026-08-10",
+          "source_url": "https://www.nsctotal.com.br/economia/empresa-de-moveis-de-sc-tem-falencia-decretada-apos-55-anos-de-historia-e-divida-de-r-133-milhoes",
+          "note": "Fábrica e filiais lacradas; sem produção desde maio de 2026, segundo a sentença."
+        }
+      ],
+      "sources": [
+        {
+          "title": "Administração Judicial (Recupere) — processo, datas e decisões",
+          "url": "https://recupereadmjudicial.com.br/processo/recuperacao-judicial_tres-irmaos-industria-de-moveis-3-irmaos-sociedade-anonima__356",
+          "kind": "administrador_judicial",
+          "checked_at": "2026-11-09"
+        },
+        {
+          "title": "NSC Total — falência decretada, dívida de R$ 133 milhões (10/08/2026)",
+          "url": "https://www.nsctotal.com.br/economia/empresa-de-moveis-de-sc-tem-falencia-decretada-apos-55-anos-de-historia-e-divida-de-r-133-milhoes",
+          "kind": "jornalismo",
+          "checked_at": "2026-11-09"
+        },
+        {
+          "title": "NSC Total — MP pede conversão da recuperação em falência (16/07/2026)",
+          "url": "https://www.nsctotal.com.br/justica/tradicional-industria-de-moveis-em-sc-pode-ter-recuperacao-judicial-convertida-em-falencia",
+          "kind": "jornalismo",
+          "checked_at": "2026-11-09"
+        },
+        {
+          "title": "Jornal A Gazeta — Justiça decreta a falência (11/08/2026)",
+          "url": "https://gazetasbs.com.br/justica-decreta-a-falencia-da-tradicional-moveis-tres-irmaos-em-campo-alegre/",
+          "kind": "jornalismo",
+          "checked_at": "2026-11-09"
+        }
+      ],
+      "known_limits": "Indústria com foco em exportação e fornecimento, não varejo direto ao consumidor; não foi localizada reclamação individual de consumidor nesta pesquisa. O intervalo de 682 dias começa no pedido de recuperação, não na primeira reclamação. Não é referência de duração típica.",
+      "relevance": "Fabricante tradicional de móveis com falência decretada após recuperação judicial; mostra a distância entre o pedido judicial, a concessão do plano e o desfecho."
+    },
+    {
+      "id": "P-007",
+      "slug": "planearte-encerramento-ribeirao-preto-2026",
+      "brand": "Planearte",
+      "entities": [
+        "Planearte — fábrica de móveis planejados de Ribeirão Preto"
+      ],
+      "segment": "Móveis planejados",
+      "geography": "Ribeirão Preto, SP",
+      "stage": "encerramento_operacional",
+      "stage_label": "Encerramento operacional — sem decretação de falência no arquivo",
+      "process_number": null,
+      "court": null,
+      "start_kind": "Primeira reportagem sobre clientes com pedidos pagos e não entregues",
+      "start_date": "2026-05-13",
+      "first_public_signal": {
+        "date": "2026-05-13",
+        "source_url": "https://g1.globo.com/sp/ribeirao-preto-franca/noticia/2026/05/13/clientes-relatam-prejuizos-com-fabrica-que-nao-entregou-moveis-planejados-em-ribeirao-preto-sp.ghtml",
+        "note": "Clientes relatam projetos pagos entre R$ 25 mil e mais de R$ 100 mil sem entrega."
+      },
+      "recovery_request_date": null,
+      "bankruptcy_decree_date": null,
+      "comparison_period_kind": "Primeira reportagem → paralisação já consumada; nenhum decreto de falência identificado",
+      "financial_exposure_reported_brl": null,
+      "financial_amount_type": null,
+      "customer_amounts_documented_brl": null,
+      "consumer_claim_entries": null,
+      "headline": "Fábrica paralisada, showroom fechado e clientes que pagaram entre R$ 25 mil e R$ 120 mil sem receber.",
+      "summary": "Em maio de 2026, reportagens mostraram clientes da Planearte com projetos pagos e não entregues, fábrica vazia e showroom fechado em Ribeirão Preto. Os prejuízos individuais relatados variam de R$ 25 mil a mais de R$ 100 mil; as denúncias foram levadas à Polícia Civil e a ações cíveis. Não há, no arquivo, decretação de falência da empresa.",
+      "timeline": [
+        {
+          "date": "2026-05-13",
+          "event": "Reportagem sobre clientes com prejuízos e projetos não entregues",
+          "type": "alerta_publico",
+          "source_url": "https://g1.globo.com/sp/ribeirao-preto-franca/noticia/2026/05/13/clientes-relatam-prejuizos-com-fabrica-que-nao-entregou-moveis-planejados-em-ribeirao-preto-sp.ghtml"
+        },
+        {
+          "date": "2026-05-17",
+          "event": "Reportagem detalha fábrica vazia, showroom fechado e ações na Justiça",
+          "type": "alerta_publico",
+          "source_url": "https://g1.globo.com/sp/ribeirao-preto-franca/noticia/2026/05/17/o-que-se-sabe-sobre-calote-de-fabrica-de-moveis-planejados-a-clientes-em-ribeirao-preto.ghtml"
+        },
+        {
+          "date": "2026-05-20",
+          "event": "Proprietário pede desculpas e admite erros de gestão; nega crime",
+          "type": "resposta",
+          "source_url": "https://g1.globo.com/sp/ribeirao-preto-franca/noticia/2026/05/20/denunciado-por-calote-dono-de-fabrica-de-moveis-planejados-pede-perdao-a-clientes-e-admite-erros-de-gestao-nao-sou-estelionatario.ghtml"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "R$ 25 mil a R$ 120 mil",
+          "meaning": "Faixa de prejuízos individuais relatados por clientes à imprensa",
+          "kind": "reported_primary_judicial_material",
+          "source_url": "https://g1.globo.com/sp/ribeirao-preto-franca/noticia/2026/05/17/o-que-se-sabe-sobre-calote-de-fabrica-de-moveis-planejados-a-clientes-em-ribeirao-preto.ghtml"
+        }
+      ],
+      "signals": [
+        {
+          "key": "pagamento_integral",
+          "date": "2026-05-13",
+          "source_url": "https://g1.globo.com/sp/ribeirao-preto-franca/noticia/2026/05/13/clientes-relatam-prejuizos-com-fabrica-que-nao-entregou-moveis-planejados-em-ribeirao-preto-sp.ghtml",
+          "note": "Projetos pagos antecipadamente e não entregues."
+        },
+        {
+          "key": "atraso_entrega",
+          "date": "2026-05-17",
+          "source_url": "https://g1.globo.com/sp/ribeirao-preto-franca/noticia/2026/05/17/o-que-se-sabe-sobre-calote-de-fabrica-de-moveis-planejados-a-clientes-em-ribeirao-preto.ghtml",
+          "note": "Atrasos e descaso no atendimento frequentes a partir do 2º semestre de 2025, segundo clientes."
+        },
+        {
+          "key": "fechamento",
+          "date": "2026-05-17",
+          "source_url": "https://g1.globo.com/sp/ribeirao-preto-franca/noticia/2026/05/17/o-que-se-sabe-sobre-calote-de-fabrica-de-moveis-planejados-a-clientes-em-ribeirao-preto.ghtml",
+          "note": "Fábrica e showroom encontrados vazios ou com atividades paralisadas; maquinário removido."
+        },
+        {
+          "key": "sem_resposta",
+          "date": "2026-05-20",
+          "source_url": "https://g1.globo.com/sp/ribeirao-preto-franca/noticia/2026/05/20/denunciado-por-calote-dono-de-fabrica-de-moveis-planejados-pede-perdao-a-clientes-e-admite-erros-de-gestao-nao-sou-estelionatario.ghtml",
+          "note": "Proprietário interrompeu comunicações no fim de abril, segundo o sindicato."
+        },
+        {
+          "key": "acao_judicial",
+          "date": "2026-05-17",
+          "source_url": "https://g1.globo.com/sp/ribeirao-preto-franca/noticia/2026/05/17/o-que-se-sabe-sobre-calote-de-fabrica-de-moveis-planejados-a-clientes-em-ribeirao-preto.ghtml",
+          "note": "Boletins de ocorrência e ações cíveis individuais; sem ação coletiva confirmada."
+        }
+      ],
+      "sources": [
+        {
+          "title": "G1 — clientes relatam prejuízos com fábrica que não entregou móveis (13/05/2026)",
+          "url": "https://g1.globo.com/sp/ribeirao-preto-franca/noticia/2026/05/13/clientes-relatam-prejuizos-com-fabrica-que-nao-entregou-moveis-planejados-em-ribeirao-preto-sp.ghtml",
+          "kind": "jornalismo",
+          "checked_at": "2026-11-09"
+        },
+        {
+          "title": "G1 — o que se sabe sobre a paralisação da Planearte (17/05/2026)",
+          "url": "https://g1.globo.com/sp/ribeirao-preto-franca/noticia/2026/05/17/o-que-se-sabe-sobre-calote-de-fabrica-de-moveis-planejados-a-clientes-em-ribeirao-preto.ghtml",
+          "kind": "jornalismo",
+          "checked_at": "2026-11-09"
+        },
+        {
+          "title": "G1 — proprietário pede desculpas e admite erros de gestão (20/05/2026)",
+          "url": "https://g1.globo.com/sp/ribeirao-preto-franca/noticia/2026/05/20/denunciado-por-calote-dono-de-fabrica-de-moveis-planejados-pede-perdao-a-clientes-e-admite-erros-de-gestao-nao-sou-estelionatario.ghtml",
+          "kind": "jornalismo",
+          "checked_at": "2026-11-09"
+        },
+        {
+          "title": "CBN Ribeirão — clientes denunciam prejuízos após fechamento",
+          "url": "https://cbnribeirao.com.br/clientes-denunciam-prejuizos-apos-fechamento-de-fabrica-de-moveis-planejados-em-ribeirao-preto/",
+          "kind": "jornalismo",
+          "checked_at": "2026-11-09"
+        }
+      ],
+      "known_limits": "Não foi identificado número de processo judicial único: há ações cíveis individuais e boletins de ocorrência noticiados. Encerramento operacional. Os valores são relatos de clientes à imprensa, não perdas certificadas judicialmente.",
+      "relevance": "É o precedente mais próximo do consumidor de móveis planejados: pagamento antecipado, atraso, atendimento ausente e paralisação sem aviso — sem, no entanto, haver falência decretada nos autos."
     }
   ],
   "case_links": [
@@ -391,21 +1137,27 @@
       "unit_slug": "ipanema-rj",
       "precedent_ids": [
         "P-003",
+        "P-004",
+        "P-005",
+        "P-007",
         "P-001",
-        "P-002"
+        "P-002",
+        "P-006"
       ],
       "established_similarities": [
         "Contrato envolvendo móveis sob encomenda e entrega futura",
         "Pagamento informado e pendência de conclusão do serviço",
+        "Atraso, remarcação e relatos de falta de resposta em reclamações públicas de consumidores",
         "Necessidade de distinguir fornecedor, estabelecimento comercial e agente de montagem",
         "Possibilidade de demora adicional para restituição em processos coletivos, como mostram outros registros"
       ],
       "established_differences": [
-        "Não há neste dossiê decisão de recuperação judicial ou falência dos CNPJs contratados neste dossiê",
-        "Os desfechos de Roma, KD e Kitchens dizem respeito a pessoas jurídicas e datas diferentes",
-        "Os três precedentes não representam taxa-base de falência nem permitem derivar uma probabilidade para Florense"
+        "Roma, KD, Kitchens e demais precedentes têm processos, datas e CNPJs próprios — cada um com desfecho documentado",
+        "Recuperação judicial, encerramento operacional e falência decretada são estágios distintos e exigem fonte própria",
+        "O dossiê Florense Ipanema cobra entrega, cronograma e responsável pelo contrato — enquanto isso, o risco é de quem paga e espera",
+        "Uma empresa não precisa estar falindo para ser risco sério: basta receber, não entregar e não apresentar solução verificável"
       ],
-      "stance": "O fato de outras empresas do setor terem sofrido falência ou recuperação judicial justifica verificar garantias e capacidade de cumprimento. Este dossiê sustenta a cobrança de respostas contratuais, não uma previsão de insolvência."
+      "stance": "Outras empresas do setor atrasaram, entraram em recuperação judicial ou faliram depois de clientes pagarem. Isso justifica exigir garantias antes de assinar. Este dossiê cobra respostas contratuais. Melhor não correr o risco."
     }
   ]
 }

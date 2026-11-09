@@ -1,26 +1,72 @@
 ---
 import EvidenceSummary from './EvidenceSummary.astro';
-import { type Case, brl } from '../lib/cases';
+import ButtonLink from './layout/ButtonLink.astro';
+import Eyebrow from './layout/Eyebrow.astro';
+import { type Case, brl, casePath } from '../lib/cases';
+import { forCase, statusLabel } from '../lib/brands';
+import media from '../data/company-media.json';
+import { copy } from '@/lib/copy';
 interface Props { item: Case }
 const { item } = Astro.props;
-const base = `/casos/${item.slug}/`;
+const base = casePath(item);
+const t = copy.case.hero;
+const brand = forCase(item);
+const unit = brand?.units.find((u) => u.slug === item.unidade_slug);
+const brandMedia = brand ? (media.brands as Record<string, any>)[brand.slug] : undefined;
+const unitMedia = item.unidade_slug ? brandMedia?.units?.[item.unidade_slug] : undefined;
+const logo = brandMedia?.logo;
+const photo = unitMedia?.image;
+const recognition = (unit as any)?.recognition || (brand as any)?.recognition;
+const badge = recognition?.badge || (unit || brand) ? statusLabel((unit || brand)!.verdict.status) : 'Não recomendamos';
+const subject = unit?.name || brand?.name || item.empresa_resumo;
+const metrics = [
+  [t.metrics.paid, item.valor_brl ? brl(item.valor_brl) : t.metrics.notInformed],
+  [t.metrics.promised, item.prazo_original || t.metrics.notInformed],
+  [t.metrics.status(item.status_data), item.status],
+];
 ---
-<section class="case-hero">
-  <div class="container">
-    <div class="case-eyebrow">{item.empresa} · {item.local}</div>
-    <h1>{item.chamada}</h1>
-    <p>{item.resumo}</p>
-    <div class="hero-buttons">
-      <a class="button button-primary" href={`${base}linha-do-tempo/`}>Cronologia ↗</a>
-      <a class="button button-ghost" href={`${base}reclamacoes-publicas/`}>Fontes públicas ↗</a>
-      {item.id==='CA-001' && <a class="button button-outline" href={base+'risco-roma-mobili/'}>Alerta Roma ↗</a>}
-      <a class="button button-outline" href="#apoiar">Apoiar este caso</a>
+<section class="bg-forest py-14 text-forest-foreground md:py-20">
+  <div class="container space-y-8">
+    <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.8fr)] lg:items-start">
+      <div class="max-w-3xl space-y-5">
+        <Eyebrow inverse>{t.eyebrow(item.id)}</Eyebrow>
+        <h1 class="m-0">{item.chamada}</h1>
+        <p class="m-0 max-w-3xl text-lg leading-relaxed text-white/75">{item.resumo}</p>
+        <div class="flex flex-wrap gap-2.5">
+          <ButtonLink variant="brand" size="lg" href="#apoiar">{t.primaryCta}</ButtonLink>
+          <ButtonLink variant="outline-inverse" size="lg" href={`${base}evidencias/`}>{t.secondaryCta} ↗</ButtonLink>
+        </div>
+      </div>
+
+      <!-- Logotipo e foto da loja logo no início do caso, com selo editorial vermelho. -->
+      {photo?.src && (
+        <figure class="relative m-0 overflow-hidden border border-white/15 bg-black/20">
+          <img class="h-64 w-full object-cover sm:h-80" src={photo.src} alt={photo.alt} loading="eager" decoding="async" />
+          <span class="absolute left-0 top-0 z-[2] inline-flex items-center gap-2 bg-destructive px-3.5 py-2.5 text-xs font-extrabold uppercase tracking-[0.12em] text-white shadow-lg" role="note" aria-label={`Posição editorial: ${badge}`}>
+            <span class="size-2 bg-white" aria-hidden="true"></span>{badge}
+          </span>
+          {logo?.src && (
+            <span class="absolute bottom-3 left-3 inline-flex h-14 items-center justify-center border border-border bg-white px-3 shadow-md">
+              <img class="max-h-9 max-w-[9rem] object-contain" src={logo.src} alt={logo.alt} loading="eager" decoding="async" />
+            </span>
+          )}
+          <figcaption class="border-t border-white/10 px-4 py-3 text-xs leading-snug text-white/70">
+            <strong class="block text-white/90">{subject}</strong>
+            Imagem da unidade divulgada pela marca. Não é foto do conflito.
+            {photo.source_url && <a class="ml-1 font-bold text-brand no-underline hover:underline" href={photo.source_url} target="_blank" rel="noopener noreferrer">Fonte ↗</a>}
+          </figcaption>
+        </figure>
+      )}
     </div>
+
     <EvidenceSummary item={item} />
-    <div class="case-metrics">
-      <div><small>Valor informado como pago</small><strong>{item.valor_brl ? brl(item.valor_brl) : 'Não informado'}</strong></div>
-      <div><small>Prazo originalmente contratado</small><strong>{item.prazo_original || 'Consultar cronologia'}</strong></div>
-      <div><small>Estado na última revisão</small><strong>{item.status}</strong></div>
-    </div>
+    <dl class="m-0 grid gap-6 border-t border-white/15 pt-6 md:grid-cols-3">
+      {metrics.map(([k, v]) => (
+        <div>
+          <dt class="text-sm text-white/60">{k}</dt>
+          <dd class="m-0 mt-1 text-2xl font-bold tracking-tight md:text-3xl">{v}</dd>
+        </div>
+      ))}
+    </dl>
   </div>
 </section>

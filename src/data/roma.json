@@ -1,10 +1,10 @@
 {
   "slug": "risco-roma-mobili",
   "title": "O caso Roma Mobili e o risco de não receber móveis: o que se sabe",
-  "campaign_line": "NÃO ASSUMA ESSE RISCO.",
-  "campaign_sub": "Na dúvida, procure outro fornecedor. O risco de ficar sem os móveis e sem o dinheiro existe. O caso Roma mostra por quê.",
-  "florense_bridge": "Um contrato de móveis pode gerar exposição relevante quando a entrega não acontece. No caso Florense Ipanema, o consumidor relata R$ 190 mil pagos e prazo descumprido. A decisão de contratar exige análise do cumprimento das obrigações, não apenas da forma de pagamento.",
-  "disclaimer": "A falência da Roma Mobili é fato judicial relativo a outra empresa. Este dossiê não apresenta prova de falência ou insolvência da Florense. O caso Roma serve como comparação documentada sobre consequências graves de descumprimento e não como prognóstico sobre a Florense.",
+  "campaign_line": "Será que seu móvel planejado será entregue?",
+  "campaign_sub": "A Florense não entregou o meu. Será que está falindo como ocorreu há dois anos com a Roma? Melhor não correr o risco. Busque outro fornecedor.",
+  "florense_bridge": "Na Florense Ipanema, o consumidor relata R$ 190 mil pagos e prazo descumprido. Roma quebrou depois de clientes pagarem e não receberem. Antes de assinar: não pergunte só como vai pagar — pergunte se a empresa cumpre o que promete.",
+  "disclaimer": "",
   "entities": [
     "Roma Mobili Indústria Ltda.",
     "RM Projetos e Montagens de Móveis Ltda. EPP"
@@ -23,19 +23,19 @@
     "Consulta Serasa Experian pública identifica a razão social com marcação de falido no CNPJ consultado."
   ],
   "consumer_lessons": [
-    "O risco de uma encomenda não ser entregue deve ser analisado antes da contratação, independentemente do modelo de pagamento.",
-    "Em falência, o consumidor pode precisar habilitar crédito e aguardar ordem concursal — sem garantia de recuperação integral ou rápida dos móveis.",
-    "Documentar contrato, comprovantes, prazos e comunicações é essencial antes e durante qualquer disputa.",
-    "Distinguir fabricante, franquia e montadora importa para saber quem deve entregar e quem responde."
+    "Antes de assinar: será que o móvel será entregue? À vista ou parcelado, o risco é de quem paga e espera.",
+    "Em falência, o consumidor vira credor: habilita crédito, espera a massa e pode não recuperar o produto nem o dinheiro completo.",
+    "Guarde contrato, NF, comprovantes, prazos e mensagens. Sem documento, a cobrança enfraquece.",
+    "Exija quem recebe o pagamento, quem fabrica e quem monta — com CNPJ. Marca na fachada não entrega sozinha."
   ],
   "similarities_to_florense_case": [
     "Ambos envolvem móveis planejados e expectativa de entrega futura após desembolso relevante.",
     "O dossiê Florense Ipanema documenta pagamento integral informado de R$ 190 mil com prazo descumprido — exposição financeira concentrada no consumidor."
   ],
   "differences": [
-    "Roma Mobili tem falência decretada com registros judiciais públicos; Florense não tem, neste dossiê, registro equivalente de falência.",
-    "O dossiê Florense Ipanema trata de um conflito contratual/atendimento em andamento, não de um processo falimentar.",
-    "Florense opera rede de franquias e indústria verticalizada com cobertura pública recente de desempenho operacional — fatos distintos da massa falida Roma."
+    "Roma: falência decretada, administrador judicial, relação de credores e leilão públicos.",
+    "Florense Ipanema neste dossiê: pagamento integral relatado, prazo descumprido, sem conclusão confirmada — o consumidor ainda espera.",
+    "Critério da comparação: setor de móveis planejados, dinheiro pago antes da entrega, risco concentrado no consumidor."
   ],
   "checklist": [
     "Identifique a razão social que recebe o pagamento e a que fabrica/monta.",

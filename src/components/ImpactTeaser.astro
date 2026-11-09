@@ -1,32 +1,35 @@
 ---
-import {brl,type Case} from '../lib/cases';
-import {type Brand,type BrandUnit} from '../lib/brands';
-import {impactForSelection,caseImpactPath,brandImpactPath,unitImpactPath,brandSnapshot} from '../lib/impact';
-import SectionBlock from './ui/SectionBlock.astro';
-import KpiTile from './ui/KpiTile.astro';
-import { buttonVariants } from './ui/button';
-import { cn } from '../lib/utils';
-interface Props {caseItem?:Case;brand?:Brand;unit?:BrandUnit}
-const {caseItem,brand,unit}=Astro.props;
-const data=impactForSelection({caseItem,brand,unit});
-const target=caseItem?caseImpactPath(caseItem):brand&&unit?unitImpactPath(brand,unit):brand?brandImpactPath(brand):'/casos/';
-const title=caseItem?caseItem.empresa_resumo:unit?.name||brand?.name||'Arquivo';
-const snapshot=brand&&!unit&&!caseItem?brandSnapshot(brand):null;
+import { brl, type Case } from '../lib/cases';
+import { type Brand, type BrandUnit, findBrand } from '../lib/brands';
+import { impactForSelection, caseImpactPath, brandImpactPath, unitImpactPath, brandSnapshot } from '../lib/impact';
+import Section from './layout/Section.astro';
+import ButtonLink from './layout/ButtonLink.astro';
+import BrandTag from './BrandTag.astro';
+import { KpiCard } from './ui/kpi-card';
+import { Alert, AlertDescription } from './ui/alert';
+interface Props { caseItem?: Case; brand?: Brand; unit?: BrandUnit }
+const { caseItem, brand, unit } = Astro.props;
+const data = impactForSelection({ caseItem, brand, unit });
+const target = caseItem ? caseImpactPath(caseItem) : brand && unit ? unitImpactPath(brand, unit) : brand ? brandImpactPath(brand) : '/casos/';
+const title = caseItem ? caseItem.empresa_resumo : unit?.name || brand?.name || 'Arquivo';
+const snapshot = brand && !unit && !caseItem ? brandSnapshot(brand) : null;
+const tagBrand = brand || (caseItem?.empresa_slug ? findBrand(caseItem.empresa_slug) : undefined);
+const tagUnit = unit || (caseItem?.unidade_slug ? tagBrand?.units.find((u) => u.slug === caseItem.unidade_slug) : undefined);
 ---
-<SectionBlock id="impacto-em-numeros" variant="editorial" eyebrow={`RADAR DE EXPOSIÇÃO · ${title}`} title="O tamanho do problema, em números." description="Dinheiro envolvido, tempo transcorrido, reclamações e fontes — com datas, recortes e documentação.">
-  <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
-    <KpiTile label="Valor já pago, segundo consumidor(es)" value={data.reportedPaymentTotal>0?brl(data.reportedPaymentTotal):'Sem valor informado'}/>
-    <KpiTile label="Reclamações públicas neste recorte" value={data.indexedReportCount.toLocaleString('pt-BR')} note="Inclui relatos resolvidos"/>
-    <KpiTile label="URLs externas distintas" value={data.sourceCount.toLocaleString('pt-BR')} note="Reclamações, cadastros e publicações"/>
-    <KpiTile label="Desde o pagamento relatado" value={data.holdDays!=null?data.holdDays+' dias':'Não informado'} note={`Até ${data.model?.snapshot_date||'última revisão'}`}/>
+<Section id="impacto-em-numeros" tone="muted" eyebrow={`Radar de exposição · ${title}`} title="O tamanho do problema, em números." description="Dinheiro envolvido, tempo transcorrido, reclamações e fontes — com datas, recortes e documentação.">
+  {tagBrand && <BrandTag slot="action" brand={tagBrand} unit={tagUnit} size="sm" linked />}
+  <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+    <KpiCard label="Valor já pago, segundo consumidor(es)" value={data.reportedPaymentTotal > 0 ? brl(data.reportedPaymentTotal) : 'Sem valor informado'} />
+    <KpiCard label="Reclamações públicas neste recorte" value={data.indexedReportCount.toLocaleString('pt-BR')} note="Inclui relatos resolvidos" />
+    <KpiCard label="URLs externas distintas" value={data.sourceCount.toLocaleString('pt-BR')} note="Reclamações, cadastros e publicações" />
+    <KpiCard label="Desde o pagamento relatado" value={data.holdDays != null ? data.holdDays + ' dias' : 'Não informado'} note={`Até ${data.model?.snapshot_date || 'última revisão'}`} />
   </div>
-  {snapshot&&(
-    <div class="impact-teaser-context" style="margin-top:16px">
-      <strong>Histórico externo da marca:</strong> {snapshot.total_active_records} reclamações ativas listadas no Reclame Aqui; {snapshot.delivery_delay_category_records} classificadas como atraso na entrega.
-      <a href={snapshot.page_url} target="_blank" rel="noopener noreferrer"> Conferir fonte e período ↗</a>. Não somamos o total externo aos registros catalogados.
-    </div>
+  {snapshot && (
+    <Alert variant="brand" className="mt-4">
+      <AlertDescription className="text-foreground/85">
+        <p class="m-0"><strong>Histórico externo da marca:</strong> {snapshot.total_active_records} reclamações ativas listadas no Reclame Aqui; {snapshot.delivery_delay_category_records} classificadas como atraso na entrega. <a class="text-link" href={snapshot.page_url} target="_blank" rel="noopener noreferrer">Conferir fonte e período ↗</a>. Não somamos o total externo aos registros catalogados.</p>
+      </AlertDescription>
+    </Alert>
   )}
-  <div class="impact-actions">
-    <a class={cn(buttonVariants({ variant: 'default' }))} href={target}>Abrir painel completo ↗</a>
-  </div>
-</SectionBlock>
+  <div class="mt-6"><ButtonLink href={target}>Abrir painel completo ↗</ButtonLink></div>
+</Section>

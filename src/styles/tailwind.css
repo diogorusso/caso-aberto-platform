@@ -1,43 +1,57 @@
 /*
-  Tailwind + shadcn layer for CasoAberto.
-  Preflight omitted on purpose so editorial CSS keeps owning the base reset.
+  CasoAberto design system: Tailwind v4 + shadcn/ui (new-york) tokens.
+  This is the single global stylesheet. Components style themselves with
+  utilities; the only other CSS is print-kit.css for physical A4/A5/A6 sheets.
 */
-@layer theme, base, components, utilities;
-@import "tailwindcss/theme.css" layer(theme);
-@import "tailwindcss/utilities.css" layer(utilities);
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
-@source "../components/**/*.{astro,tsx,ts,jsx,js}";
-@source "../pages/**/*.{astro,tsx,ts,jsx,js}";
-@source "../layouts/**/*.{astro,tsx,ts,jsx,js}";
-@source "../lib/**/*.{ts,tsx}";
+@source "../components";
+@source "../pages";
+@source "../layouts";
+@source "../lib";
 
-/*
-  Map shadcn theme colors without clobbering CasoAberto brand tokens
-  (--muted and --accent already mean text/brand accent in global.css).
-*/
 :root {
-  --background: var(--paper);
-  --foreground: var(--ink);
+  /* Design rule: square corners everywhere (no rounded corners). */
+  --radius: 0;
+
+  /* shadcn semantic tokens mapped to the CasoAberto palette */
+  --background: #f7f7f2;
+  --foreground: #151c19;
   --card: #ffffff;
-  --card-foreground: var(--ink);
+  --card-foreground: #151c19;
   --popover: #ffffff;
-  --popover-foreground: var(--ink);
-  --primary: var(--black);
+  --popover-foreground: #151c19;
+  --primary: #121b18;
   --primary-foreground: #ffffff;
-  --secondary: var(--soft);
-  --secondary-foreground: var(--ink);
-  --ui-muted: var(--soft);
-  --ui-muted-foreground: #637069;
-  --ui-accent: #fff4f1;
-  --ui-accent-foreground: var(--accent-dark);
-  --destructive: var(--accent-dark);
-  --destructive-foreground: #ffffff;
-  --border: var(--stroke);
-  --input: var(--stroke);
-  --ring: var(--accent-dark);
+  --secondary: #eff1ea;
+  --secondary-foreground: #151c19;
+  --muted: #eff1ea;
+  --muted-foreground: #5d6a62;
+  --accent: #e8ece4;
+  --accent-foreground: #151c19;
+  --destructive: #bc3d2b;
+  --border: #dfe5dd;
+  --input: #cdd6cc;
+  --ring: #bc3d2b;
+
+  /* CasoAberto brand extensions */
+  --brand: #f46851;
+  --brand-foreground: #171b18;
+  --brand-strong: #a8372a;
+  --brand-soft: #fff1ed;
+  --forest: #1c3028;
+  --forest-foreground: #ffffff;
+  --warning: #7a5719;
+  --warning-soft: #fbf3df;
+  --success: #22603f;
+  --success-soft: #e6f4ea;
 }
 
 @theme inline {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -48,26 +62,92 @@
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--ui-muted);
-  --color-muted-foreground: var(--ui-muted-foreground);
-  --color-accent: var(--ui-accent);
-  --color-accent-foreground: var(--ui-accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --color-ink: var(--ink);
-  --color-paper: var(--paper);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-brand-strong: var(--brand-strong);
+  --color-brand-soft: var(--brand-soft);
   --color-forest: var(--forest);
-  --color-soft: var(--soft);
-  --color-stroke: var(--stroke);
-  --color-brand: var(--accent);
-  --color-brand-dark: var(--accent-dark);
+  --color-forest-foreground: var(--forest-foreground);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
 
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-xs: 0;
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --radius-2xl: 0;
+  --radius-3xl: 0;
+  --radius-4xl: 0;
+}
+
+/* Centered page container (Tailwind's default container is not centered). */
+@utility container {
+  width: 100%;
+  max-width: var(--container-max, 76rem);
+  margin-inline: auto;
+  padding-inline: 1rem;
+  @variant sm {
+    padding-inline: 1.5rem;
+  }
+  @variant lg {
+    padding-inline: 2rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  /* Square corners everywhere, including rounded-full and arbitrary rounded-[…] values. */
+  *, *::before, *::after { border-radius: 0 !important; }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+    line-height: 1.6;
+  }
+  h1, h2, h3, h4 {
+    @apply font-bold tracking-tight text-balance;
+    line-height: 1.15;
+  }
+  h1 { @apply text-4xl sm:text-5xl lg:text-6xl; }
+  h2 { @apply text-3xl sm:text-4xl; }
+  h3 { @apply text-xl; }
+  h4 { @apply text-base; }
+  /* Long URLs and IDs in sourced text must wrap instead of widening the page. */
+  p, li, dd, td, figcaption { overflow-wrap: break-word; }
+  /* Static shadcn/React children rendered by Astro must not affect flex/grid layout. */
+  astro-island, astro-slot, astro-static-slot { display: contents; }
+  ::selection { background: #f8b1a5; color: #141b16; }
+  [hidden] { display: none !important; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+}
+
+@layer components {
+  /* Shared editorial link look; used where a full Button would be too heavy. */
+  .text-link {
+    @apply font-semibold text-brand-strong underline decoration-brand-strong/40 underline-offset-4 transition-colors hover:text-foreground hover:decoration-foreground;
+  }
+}
+
+@media print {
+  [data-print-hide] { display: none !important; }
+  body { background: #fff; }
 }

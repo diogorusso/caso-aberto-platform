@@ -9,15 +9,11 @@ const variantForStatus = {
 
 type VerdictStatus = keyof typeof variantForStatus;
 
-export default function VerdictStatusBadge({
-  status,
-  label,
-  className,
-}: {
-  status: string;
-  label: string;
-  className?: string;
-}) {
+export default function VerdictStatusBadge({ status, label, className }: { status: string; label: string; className?: string }) {
   const variant = variantForStatus[status as VerdictStatus] ?? 'outline';
-  return <Badge variant={variant} className={cn('uppercase tracking-[0.065em]', className)}>{label}</Badge>;
+  return (
+    <Badge variant={variant} className={cn('font-semibold uppercase tracking-wide', className)}>
+      {label}
+    </Badge>
+  );
 }

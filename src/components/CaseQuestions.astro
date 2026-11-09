@@ -2,6 +2,11 @@
 interface Props { questions: string[] }
 const { questions } = Astro.props;
 ---
-<ol class="editor-list questions-list">
-  {questions.map((q) => <li>{q}</li>)}
+<ol class="m-0 grid list-none gap-3 p-0">
+  {questions.map((q, i) => (
+    <li class="flex gap-4 border bg-card p-4">
+      <span class="font-mono text-sm font-semibold text-brand-strong">{String(i + 1).padStart(2, '0')}</span>
+      <span class="text-sm leading-relaxed">{q}</span>
+    </li>
+  ))}
 </ol>

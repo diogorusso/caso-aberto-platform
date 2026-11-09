@@ -1,7 +1,7 @@
 {
   "version": 1,
   "updated_at": "2026-11-09",
-  "policy": "Somente apontar como 'parte do contrato' entidade identificada no contrato/NF/comprovante pelo titular. Administradores só aparecem no caso depois de conferência do CNPJ com documentação e QSA fonte datada. Registros empresariais associados à marca não provam participação no contrato.",
+  "policy": "Só entra como parte do contrato quem o titular identifica em contrato/NF/comprovante. Administradores só depois de CNPJ conferido com documento e QSA datado. Nome da marca no cadastro ≠ assinatura do pedido — exija o CNPJ do pagamento.",
   "cases": {
     "CA-001": {
       "status": "awaiting_contract_documents",
