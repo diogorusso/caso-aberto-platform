@@ -12,7 +12,7 @@ const reports=reportsFor(item);
 ---
 <BaseLayout title={`Reclamações públicas e fontes: ${item.empresa_resumo} | CasoAberto`} description={`Registros e reclamações públicas relacionados a ${item.empresa_resumo}. Links originais, datas, unidades, assuntos e atualizações.`} dateModified={item.status_data}>
   <Breadcrumbs items={[...crumbFor(item),{label:'Fontes públicas',href:`${casePath(item)}reclamacoes-publicas/`}]}/>
-  <section class="pagehead"><div class="container"><span class="eyebrow">ORIGEM DOS REGISTROS · {item.id}</span><h1>{item.empresa_resumo}: reclamações públicas e fontes.</h1><p>Fontes identificadas por data, localidade e situação informada. Relatos de terceiros não são conclusões sobre todas as unidades da marca.</p></div></section>
+  <section class="pagehead"><div class="container"><span class="eyebrow">ORIGEM DOS REGISTROS</span><h1>{item.empresa_resumo}: reclamações públicas e fontes.</h1><p>Fontes identificadas por data, localidade e situação informada. Relatos de terceiros não são conclusões sobre todas as unidades da marca.</p></div></section>
   <CaseNav item={item} current="reclamacoes-publicas" />
   <section class="section"><div class="container"><h2>Fontes diretamente ligadas ao caso</h2><SourceList items={item.fontes}/>
     {reports.length > 0 && <><div class="note"><strong>Arquivo de reclamações externas</strong><p>{reports.length} publicações selecionadas com links originais. O histórico pode incluir registros resolvidos e reclamações de outras localidades; cada entrada identifica seu status registrado.</p></div><ReportsExplorer reports={reports} client:visible /></>}

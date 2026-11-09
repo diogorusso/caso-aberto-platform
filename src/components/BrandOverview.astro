@@ -1,14 +1,15 @@
 ---
-import {cases,casePath,reports} from '../lib/cases';
+import {cases,reports} from '../lib/cases';
 import {brandPath,unitPath,statusLabel,type Brand,type BrandUnit} from '../lib/brands';
+import {companyProfileNavItems} from '../lib/impact';
 import CompanyIdentityHero from './CompanyIdentityHero.astro';
 import CompanyRecognitionGallery from './CompanyRecognitionGallery.astro';
 import CompanyProfiles from './CompanyProfiles.astro';
-import CaseCard from './CaseCard.astro';
 import CompanyCaseMatrix from './CompanyCaseMatrix.astro';
 import CompanyRanking from './CompanyRanking.astro';
-import ImpactTeaser from './ImpactTeaser.astro';
+import ImpactDashboard from './ImpactDashboard.astro';
 import PrecedentComparison from './PrecedentComparison.astro';
+import DetailLayout from './ui/DetailLayout.astro';
 interface Props{brand:Brand;unit?:BrandUnit}
 const {brand,unit}=Astro.props;
 const rated=unit||brand;
@@ -16,21 +17,24 @@ const linkedCases=cases.filter(c=>rated.case_ids.includes(c.id));
 const uniqueReports=reports.filter(r=>linkedCases.some(c=>c.id===r.case_id) && (!unit || r.unit===unit.name.replace(brand.name,'').trim() || r.unit===unit.slug.split('-')[0]));
 const scopedProfiles=unit?unit.company_profile_ids:brand.primary_company_profile_ids;
 const canonicalPath=unit?unitPath(brand,unit):brandPath(brand);
+const navItems=companyProfileNavItems({hasPrecedent:linkedCases.length>0,hasDossier:false});
 ---
-<CompanyIdentityHero brand={brand} unit={unit}/>
-<section class="section"><div class="container">
- <div class="section-heading"><div><span class="eyebrow">PERFIL EDITORIAL · {brand.segment}</span><h2>{rated.name}: situação documentada</h2></div><a class="text-link" href="/empresas/">Todas as empresas ↗</a></div>
- <p class="dossier-intro">{unit?unit.summary:brand.summary}</p>
- <div class="brand-scope-grid"><div><strong>{linkedCases.length}</strong><span>Dossiês relacionados</span></div><div><strong>{scopedProfiles.length}</strong><span>Cadastros CNPJ relacionados</span></div><div><strong>{uniqueReports.length}</strong><span>Relatos deste recorte</span></div><div><strong>{rated.last_reviewed.split('-').reverse().join('/')}</strong><span>Última revisão editorial</span></div></div>
- <div class="rating-evidence"><div><h3>Por que essa recomendação?</h3><ol>{rated.verdict.basis.map(x=><li>{x}</li>)}</ol></div><div><h3>O que pode mudar a avaliação?</h3><ol>{rated.verdict.review_triggers.map(x=><li>{x}</li>)}</ol></div></div>
- <div class="dossier-links">{rated.verdict.source_urls.map((url,i)=><a href={url} target="_blank" rel="noopener noreferrer">Fonte da avaliação {i+1} ↗</a>)}</div>
+<DetailLayout items={navItems} title="No perfil" railLabel={rated.name}>
+ <CompanyIdentityHero brand={brand} unit={unit}/>
+ <section class="section" id="avaliacao-editorial"><div class="container">
+  <div class="section-heading"><div><span class="eyebrow">PERFIL EDITORIAL · {brand.segment}</span><h2>{rated.name}: situação documentada</h2></div><a class="text-link" href="/empresas/">Todas as empresas ↗</a></div>
+  <p class="dossier-intro">{unit?unit.summary:brand.summary}</p>
+  <div class="brand-scope-grid"><div><strong>{linkedCases.length}</strong><span>Dossiês relacionados</span></div><div><strong>{scopedProfiles.length}</strong><span>Cadastros CNPJ relacionados</span></div><div><strong>{uniqueReports.length}</strong><span>Relatos deste recorte</span></div><div><strong>{rated.last_reviewed.split('-').reverse().join('/')}</strong><span>Última revisão editorial</span></div></div>
+  <div class="rating-evidence"><div><h3>Por que essa recomendação?</h3><ol>{rated.verdict.basis.map(x=><li>{x}</li>)}</ol></div><div><h3>O que pode mudar a avaliação?</h3><ol>{rated.verdict.review_triggers.map(x=><li>{x}</li>)}</ol></div></div>
+  <div class="dossier-links">{rated.verdict.source_urls.map((url,i)=><a href={url} target="_blank" rel="noopener noreferrer">Fonte da avaliação {i+1} ↗</a>)}</div>
  </div></section>
-<ImpactTeaser brand={brand} unit={unit}/>
-<CompanyCaseMatrix brand={brand} unit={unit}/>
-{linkedCases[0]&&<PrecedentComparison item={linkedCases[0]} compact/>}
-<CompanyProfiles only={scopedProfiles} hidePeople={Boolean(unit)} title={unit?'Cadastro da unidade em fontes públicas':'Pessoas jurídicas vinculadas à marca'} />
-<CompanyRecognitionGallery brand={brand} unit={unit}/>
-<CompanyRanking currentBrand={brand.slug} currentUnit={unit?.slug}/>
-{!unit&&brand.units.length>0&&<section class="section"><div class="container"><span class="eyebrow">UNIDADES</span><h2>Pesquise a unidade específica</h2><div class="brand-unit-list">{brand.units.filter(u=>u.published).map(u=><a href={unitPath(brand,u)}><strong>{u.name}</strong><span>{u.location} · {statusLabel(u.verdict.status)}</span></a>)}</div></div></section>}
-{!unit&&brand.faq.length>0&&<section class="section section-soft"><div class="container narrow"><span class="eyebrow">PERGUNTAS FREQUENTES</span><h2>Dúvidas sobre {brand.name}</h2>{brand.faq.map(f=><details class="brand-faq"><summary>{f.question}</summary><p>{f.answer}</p></details>)}</div></section>}
-<section class="section"><div class="container"><a class="text-link" href={canonicalPath+'#'}>Voltar ao início ↗</a><p class="muted">A recomendação expressa uma avaliação editorial revisável sobre as evidências indicadas; não é decisão judicial ou declaração de insolvência.</p></div></section>
+ <ImpactDashboard brand={brand} unit={unit} embedded/>
+ <CompanyCaseMatrix brand={brand} unit={unit}/>
+ {linkedCases[0]&&<PrecedentComparison item={linkedCases[0]} compact/>}
+ <CompanyProfiles only={scopedProfiles} hidePeople={Boolean(unit)} title={unit?'Cadastro da unidade em fontes públicas':'Pessoas jurídicas vinculadas à marca'} />
+ <CompanyRecognitionGallery brand={brand} unit={unit}/>
+ <CompanyRanking currentBrand={brand.slug} currentUnit={unit?.slug}/>
+ {!unit&&brand.units.length>0&&<section class="section" id="unidades-publicadas"><div class="container"><span class="eyebrow">UNIDADES</span><h2>Pesquise a unidade específica</h2><div class="brand-unit-list">{brand.units.filter(u=>u.published).map(u=><a href={unitPath(brand,u)}><strong>{u.name}</strong><span>{u.location} · {statusLabel(u.verdict.status)}</span></a>)}</div></div></section>}
+ {!unit&&brand.faq.length>0&&<section class="section section-soft"><div class="container narrow"><span class="eyebrow">PERGUNTAS FREQUENTES</span><h2>Dúvidas sobre {brand.name}</h2>{brand.faq.map(f=><details class="brand-faq"><summary>{f.question}</summary><p>{f.answer}</p></details>)}</div></section>}
+ <section class="section" id="resposta-institucional"><div class="container"><a class="text-link" href={canonicalPath+'#'}>Voltar ao início ↗</a><p class="muted">A recomendação expressa uma avaliação editorial revisável sobre as evidências indicadas; não é decisão judicial ou declaração de insolvência.</p></div></section>
+</DetailLayout>

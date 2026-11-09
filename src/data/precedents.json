@@ -149,7 +149,7 @@
         }
       ],
       "known_limits": "Não foi verificada data documental do primeiro problema de entrega antes da autofalência; não reportar 63 dias como duração total da crise ou como tempo típico até a falência.",
-      "relevance": "Setor e praça próximos ao caso CA-001; estabelece um cenário real de falência com duas entidades de produção e montagem."
+      "relevance": "Setor e praça próximos ao dossiê Florense Ipanema; estabelece um cenário real de falência com duas entidades de produção e montagem."
     },
     {
       "id": "P-002",
@@ -401,11 +401,11 @@
         "Possibilidade de demora adicional para restituição em processos coletivos, como mostram outros registros"
       ],
       "established_differences": [
-        "Não há neste dossiê decisão de recuperação judicial ou falência dos CNPJs contratados no caso CA-001",
+        "Não há neste dossiê decisão de recuperação judicial ou falência dos CNPJs contratados neste dossiê",
         "Os desfechos de Roma, KD e Kitchens dizem respeito a pessoas jurídicas e datas diferentes",
         "Os três precedentes não representam taxa-base de falência nem permitem derivar uma probabilidade para Florense"
       ],
-      "stance": "O fato de outras empresas do setor terem sofrido falência ou recuperação judicial justifica verificar garantias e capacidade de cumprimento. O caso CA-001 sustenta a cobrança de respostas contratuais, não uma previsão de insolvência."
+      "stance": "O fato de outras empresas do setor terem sofrido falência ou recuperação judicial justifica verificar garantias e capacidade de cumprimento. Este dossiê sustenta a cobrança de respostas contratuais, não uma previsão de insolvência."
     }
   ]
 }

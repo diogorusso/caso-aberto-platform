@@ -1,28 +1,92 @@
 ---
 import { type Case, casePath } from '../lib/cases';
-import {linkageForCase} from '../lib/precedents';
-import {printKitForCase} from '../lib/print-kits';
+import { linkageForCase } from '../lib/precedents';
+import { printKitForCase } from '../lib/print-kits';
 import scenarioData from '../data/action-scenarios.json';
 interface Props { item: Case; current?: string }
 const { item, current = 'resumo' } = Astro.props;
 const p = casePath(item);
 const tabs = [
-  {key:'resumo', label:'Dossiê', href:p},
-  {key:'linha-do-tempo', label:'Cronologia', href:`${p}linha-do-tempo/`},
-  {key:'impacto',label:'Impacto em números',href:p+'impacto/'},
-  ...(scenarioData.cases.some(x=>x.case_id===item.id)?[{key:'cenarios',label:'Explore cenários',href:p+'cenarios/'}]:[]),
-  ...(linkageForCase(item.id)?[{key:'precedentes',label:'Precedentes',href:p+'precedentes/'}]:[]),
-  {key:'reclamacoes-publicas', label:'Fontes públicas', href:`${p}reclamacoes-publicas/`},
-  ...(item.id==='CA-001'?[{key:'risco-roma-mobili',label:'Alerta Roma',href:p+'risco-roma-mobili/'},{key:'responsaveis',label:'Quem responde',href:p+'responsaveis/'}]:[]),
-  {key:'atualizacoes', label:'Atualizações', href:`${p}atualizacoes/`},
-  {key:'imprensa', label:'Imprensa', href:`${p}imprensa/`},
-  ...(printKitForCase(item)?[{key:'kit-boca-a-boca',label:'Kit Boca a Boca',href:p+'kit-boca-a-boca/'}]:[]),
-  ...(item.id==='CA-001'?[{key:'evidencias',label:'Evidências',href:p+'evidencias/'},{key:'materiais-imprensa',label:'Materiais',href:p+'materiais-imprensa/'}]:[]),
+  { key: 'resumo', label: 'Dossiê', href: p },
+  { key: 'linha-do-tempo', label: 'Cronologia', href: `${p}linha-do-tempo/` },
+  { key: 'impacto', label: 'Impacto em números', href: `${p}impacto/` },
+  ...(scenarioData.cases.some((x) => x.case_id === item.id)
+    ? [{ key: 'cenarios', label: 'Explore cenários', href: `${p}cenarios/` }]
+    : []),
+  ...(linkageForCase(item.id)
+    ? [{ key: 'precedentes', label: 'Precedentes', href: `${p}precedentes/` }]
+    : []),
+  { key: 'reclamacoes-publicas', label: 'Fontes públicas', href: `${p}reclamacoes-publicas/` },
+  ...(item.id === 'CA-001'
+    ? [
+        { key: 'risco-roma-mobili', label: 'Alerta Roma', href: `${p}risco-roma-mobili/` },
+        { key: 'responsaveis', label: 'Quem responde', href: `${p}responsaveis/` },
+      ]
+    : []),
+  { key: 'atualizacoes', label: 'Atualizações', href: `${p}atualizacoes/` },
+  { key: 'imprensa', label: 'Imprensa', href: `${p}imprensa/` },
+  ...(printKitForCase(item)
+    ? [{ key: 'kit-boca-a-boca', label: 'Kit Boca a Boca', href: `${p}kit-boca-a-boca/` }]
+    : []),
+  ...(item.id === 'CA-001'
+    ? [
+        { key: 'evidencias', label: 'Evidências', href: `${p}evidencias/` },
+        { key: 'materiais-imprensa', label: 'Materiais', href: `${p}materiais-imprensa/` },
+      ]
+    : []),
 ];
+const currentTab = tabs.find((tab) => tab.key === current) ?? tabs[0];
 ---
-<nav class="case-nav" aria-label="Seções do caso">
-  {tabs.map(tab => <a href={tab.href} aria-current={current===tab.key?'page':undefined}>{tab.label}</a>)}
-</nav>
-<style>
-  .case-nav a[aria-current="page"] {border-bottom-color:var(--accent);color:var(--ink)}
-</style>
+<div class="case-nav-shell" data-case-nav>
+  <aside class="case-nav-desktop" aria-label="Seções do caso">
+    <p class="case-nav-heading">Seções do caso</p>
+    <nav class="case-nav">
+      {tabs.map((tab) => (
+        <a href={tab.href} aria-current={current === tab.key ? 'page' : undefined}>{tab.label}</a>
+      ))}
+    </nav>
+  </aside>
+
+  <details class="case-nav-drawer">
+    <summary class="case-nav-trigger">
+      <span class="case-nav-trigger-copy">
+        <span class="case-nav-trigger-kicker">Seções do caso</span>
+        <span class="case-nav-trigger-current">{currentTab.label}</span>
+      </span>
+      <span class="case-nav-trigger-icon" aria-hidden="true"></span>
+    </summary>
+    <div class="case-nav-scrim" data-case-nav-close tabindex="-1" aria-hidden="true"></div>
+    <div class="case-nav-panel">
+      <div class="case-nav-panel-head">
+        <p class="case-nav-heading">Seções do caso</p>
+        <button type="button" class="case-nav-close" data-case-nav-close aria-label="Fechar menu de seções">Fechar</button>
+      </div>
+      <nav class="case-nav" aria-label="Seções do caso">
+        {tabs.map((tab) => (
+          <a href={tab.href} aria-current={current === tab.key ? 'page' : undefined}>{tab.label}</a>
+        ))}
+      </nav>
+    </div>
+  </details>
+</div>
+<script>
+  function bindCaseNav(root: HTMLElement) {
+    if (root.dataset.bound === '1') return;
+    root.dataset.bound = '1';
+    const drawer = root.querySelector<HTMLDetailsElement>('.case-nav-drawer');
+    if (!drawer) return;
+    const close = () => { drawer.open = false; };
+    root.querySelectorAll('[data-case-nav-close]').forEach((el) => {
+      el.addEventListener('click', close);
+    });
+    drawer.addEventListener('toggle', () => {
+      document.documentElement.classList.toggle('case-nav-open', drawer.open);
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && drawer.open) close();
+    });
+  }
+  const boot = () => document.querySelectorAll<HTMLElement>('[data-case-nav]').forEach(bindCaseNav);
+  boot();
+  document.addEventListener('astro:page-load', boot);
+</script>

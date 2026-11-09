@@ -13,7 +13,7 @@ const link=linkageForCase(item.id);
    <a class="button button-dark" href={comparisonPath(item.slug)}>Comparação completa e processos ↗</a>
   </div>
   <div class="precedent-grid">{records.map(p=><PrecedentCard precedent={p} compact={compact}/>)}</div>
-  {!compact&&link&&<div class="precedent-method-grid"><div><h3>O que é comparável ao caso {item.id}?</h3><ul>{link.established_similarities.map(s=><li>{s}</li>)}</ul></div><div><h3>O que não podemos concluir?</h3><ul>{link.established_differences.map(d=><li>{d}</li>)}</ul></div></div>}
+  {!compact&&link&&<div class="precedent-method-grid"><div><h3>O que é comparável a este dossiê?</h3><ul>{link.established_similarities.map(s=><li>{s}</li>)}</ul></div><div><h3>O que não podemos concluir?</h3><ul>{link.established_differences.map(d=><li>{d}</li>)}</ul></div></div>}
   <div class="precedent-cta-line"><a href="/precedentes/">Ver observatório de precedentes ↗</a><a href={casePath(item)+'impacto/'}>Painel de impacto e cenários ↗</a><span>Fontes: decisões judiciais, administradores e reportagens datadas</span></div>
  </div>
 </section>}

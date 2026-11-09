@@ -45,19 +45,19 @@
       ],
       "verdict": {
         "status": "nao_recomendamos",
-        "scope": "Novas contratações com a marca enquanto o caso CA-001 permanecer sem solução confirmada e sem resposta documental suficiente; trata-se de posição editorial baseada nesse caso, não de diagnóstico financeiro nem de imputação automática a todas as unidades.",
+        "scope": "Novas contratações com a marca enquanto o dossiê Florense Ipanema permanecer sem solução confirmada e sem resposta documental suficiente; trata-se de posição editorial baseada nesse caso, não de diagnóstico financeiro nem de imputação automática a todas as unidades.",
         "headline": "Não recomendamos contratar a Florense sem esclarecimento verificável das pendências deste dossiê.",
         "lead": "Não assuma esse risco. Na dúvida, procure outro fornecedor. O consumidor precisa de clareza sobre a entrega e sobre quem responde pelo contrato, independentemente da forma de pagamento.",
         "question": "O que a Florense precisa esclarecer antes de uma nova contratação?",
         "context": "Existe uma reclamação documentada envolvendo R$ 190 mil pagos e atraso na unidade Ipanema. A falência da Roma Mobili ocorreu em outra empresa e ilustra consequências graves possíveis no setor; não há neste arquivo comprovação de falência ou insolvência da Florense.",
         "basis": [
-          "Caso CA-001: consumidor relata pagamento integral de R$ 190 mil e prazo de entrega da primeira semana de outubro de 2026 não cumprido.",
+          "Dossiê Florense Ipanema: consumidor relata pagamento integral de R$ 190 mil e prazo de entrega da primeira semana de outubro de 2026 não cumprido.",
           "Notificação extrajudicial de 30/10/2026, reclamação pública de 03/11/2026 e protocolo Procon/RJ informado.",
           "Arquivo reúne reclamações adicionais de outras unidades, com datas, locais e status individualizados.",
           "Ausência de conclusão integral confirmada neste dossiê na revisão de 09/11/2026."
         ],
         "review_triggers": [
-          "Documentar entrega e instalação completas do pedido CA-001 e desfecho dos prejuízos reportados.",
+          "Documentar entrega e instalação completas do pedido Florense Ipanema e desfecho dos prejuízos reportados.",
           "Publicar cronograma e resposta atribuíveis à contratada identificada por CNPJ.",
           "Atualizar o histórico com resposta verificável e mudanças de status."
         ],
@@ -84,7 +84,7 @@
           "summary": "Unidade de Ipanema mencionada em reclamação de pagamento integral de R$ 190 mil e atraso na entrega e montagem. Outro caso público de 2026 da unidade foi posteriormente resolvido.",
           "verdict": {
             "status": "nao_recomendamos",
-            "scope": "Novas compras e contratações da unidade de Ipanema, seja qual for a forma de pagamento, até conclusão verificável do caso CA-001 e esclarecimento das obrigações da empresa.",
+            "scope": "Novas compras e contratações da unidade de Ipanema, seja qual for a forma de pagamento, até conclusão verificável do dossiê Florense Ipanema e esclarecimento das obrigações da empresa.",
             "headline": "Não recomendamos comprar na Florense Ipanema enquanto o caso não tiver solução confirmada.",
             "lead": "Na dúvida, procure outro fornecedor. Um consumidor relata R$ 190 mil pagos, prazo descumprido e entrega ainda não confirmada neste dossiê.",
             "question": "Quem responde pelo pedido e quando a entrega será concluída?",
@@ -115,11 +115,11 @@
         },
         {
           "question": "Qual é a empresa por trás da Florense Ipanema?",
-          "answer": "A Ipanema Representações e Serviços de Móveis Ltda. (CNPJ 39.526.757/0001-59) consta em cadastro empresarial no endereço da loja. A pessoa jurídica que assinou o contrato CA-001 depende de conferência do contrato, nota fiscal e comprovantes."
+          "answer": "A Ipanema Representações e Serviços de Móveis Ltda. (CNPJ 39.526.757/0001-59) consta em cadastro empresarial no endereço da loja. A pessoa jurídica que assinou o contrato deste dossiê depende de conferência do contrato, nota fiscal e comprovantes."
         },
         {
           "question": "Por que o CasoAberto não recomenda contratar a Florense neste momento?",
-          "answer": "Pelo caso CA-001, envolvendo valor relevante relatado como pago, descumprimento de prazo e ausência de conclusão confirmada na revisão do dossiê. É uma avaliação editorial de contratação, independentemente da forma de pagamento, revisável com novos documentos e respostas."
+          "answer": "Pelo dossiê Florense Ipanema, envolvendo valor relevante relatado como pago, descumprimento de prazo e ausência de conclusão confirmada na revisão do dossiê. É uma avaliação editorial de contratação, independentemente da forma de pagamento, revisável com novos documentos e respostas."
         },
         {
           "question": "Onde ver as outras reclamações Florense?",

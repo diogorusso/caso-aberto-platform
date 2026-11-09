@@ -11,12 +11,12 @@ const brand=forCase(item);
 const logo=brand?(media.brands as Record<string,any>)[brand.slug]?.logo:undefined;
 ---
 {featured ? <article class="featured-case">
-    <div class="case-top">{logo?.src&&<img class="case-brand-logo" src={logo.src} alt={logo.alt} width="90" height="35" loading="lazy"/>}<span class="case-number">{item.id} · {item.categoria}</span><span class="pill pill-open">{item.status}</span>{verdict && <span class={"rating-label rating-"+verdict.status}>{statusLabel(verdict.status)}</span>}</div>
+    <div class="case-top">{logo?.src&&<img class="case-brand-logo" src={logo.src} alt={logo.alt} width="90" height="35" loading="lazy"/>}<span class="case-number">{item.categoria}</span><span class="pill pill-open">{item.status}</span>{verdict && <span class={"rating-label rating-"+verdict.status}>{statusLabel(verdict.status)}</span>}</div>
     <div class="feature-cols">
       <div><p class="meta">{item.local}</p><h3>{item.chamada}</h3><p>{item.resumo}</p><a class="text-link" href={casePath(item)}>Ver o dossiê completo ↗</a> · <a class="text-link" href={caseImpactPath(item)}>Painel de impacto ↗</a></div>
       <div class="big-metric"><small>{item.valor_brl ? "Valor informado como pago" : "Última atualização"}</small><strong>{item.valor_brl ? brl(item.valor_brl) : dateBR(item.status_data)}</strong><span>{item.status}</span></div>
     </div>
   </article> : <article class="case-card">
-    <div class="case-top">{logo?.src&&<img class="case-brand-logo" src={logo.src} alt={logo.alt} width="90" height="35" loading="lazy"/>}<span class="case-number">{item.id} · {item.categoria}</span><span class="pill pill-open">{item.status}</span>{verdict && <span class={"rating-label rating-"+verdict.status}>{statusLabel(verdict.status)}</span>}</div>
+    <div class="case-top">{logo?.src&&<img class="case-brand-logo" src={logo.src} alt={logo.alt} width="90" height="35" loading="lazy"/>}<span class="case-number">{item.categoria}</span><span class="pill pill-open">{item.status}</span>{verdict && <span class={"rating-label rating-"+verdict.status}>{statusLabel(verdict.status)}</span>}</div>
     <div class="meta">{item.local}</div><h2>{item.titulo}</h2><p>{item.resumo}</p><a href={casePath(item)} class="text-link">Ver dossiê completo ↗</a> · <a class="text-link" href={caseImpactPath(item)}>Impacto em números ↗</a>
   </article>}

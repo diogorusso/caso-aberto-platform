@@ -1,6 +1,6 @@
 {
   "updated_at": "2026-11-09",
-  "source_policy": "Registros cadastrais públicos reproduzidos de agregadores com indicação da Receita Federal como fonte; emissão de comprovantes oficiais é oferecida separadamente. Vínculo societário não implica responsabilidade pelo contrato CA-001.",
+  "source_policy": "Registros cadastrais públicos reproduzidos de agregadores com indicação da Receita Federal como fonte; emissão de comprovantes oficiais é oferecida separadamente. Vínculo societário não implica responsabilidade pelo contrato deste dossiê.",
   "registry_verification_url": "https://www.gov.br/pt-br/servicos/consultar-cadastro-nacional-de-pessoas-juridicas",
   "entities": [
     {
@@ -82,7 +82,7 @@
       "name": "Ipanema Representações e Serviços de Móveis Ltda.",
       "cnpj": "39.526.757/0001-59",
       "scope": "Empresa cadastrada no mesmo endereço comercial da Florense Ipanema",
-      "relationship": "Endereço coincide com loja no localizador oficial; contratante do caso CA-001 depende de contrato, pagamento e documentos fiscais",
+      "relationship": "Endereço coincide com loja no localizador oficial; contratante deste dossiê depende de contrato, pagamento e documentos fiscais",
       "registration": "Ativa em consulta RFB 13/09/2026",
       "opened": "2020-10-22",
       "status_since": "2026-07-02",
@@ -155,7 +155,7 @@
       ],
       "notes": [
         "Não confundir o capital social da holding com o da fabricante.",
-        "Não implica responsabilidade contratual direta pelo pedido CA-001."
+        "Não implica responsabilidade contratual direta pelo pedido deste dossiê."
       ]
     },
     {

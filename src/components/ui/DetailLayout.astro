@@ -1,0 +1,33 @@
+---
+import TocSidebar, { type TocItem } from './TocSidebar.astro';
+import SectionRail, { type SectionRailItem } from './SectionRail.astro';
+interface Props {
+  items: TocItem[];
+  title?: string;
+  rail?: boolean;
+  sidebar?: boolean;
+  railLabel?: string;
+  class?: string;
+}
+const {
+  items,
+  title = 'Nesta página',
+  rail = true,
+  sidebar = true,
+  railLabel = 'Nesta página',
+  class: className = '',
+} = Astro.props;
+const railItems = items as SectionRailItem[];
+const showSidebar = sidebar && items.length > 1;
+---
+<div class:list={['ca-detail', showSidebar && 'ca-detail--with-sidebar', className]} data-has-toc={items.length > 1 ? 'true' : 'false'}>
+  {rail && <SectionRail items={railItems} label={railLabel} />}
+  {showSidebar && (
+    <aside class="ca-detail__sidebar" aria-label={title}>
+      <TocSidebar items={items} title={title} />
+    </aside>
+  )}
+  <div class="ca-detail__stream">
+    <slot />
+  </div>
+</div>

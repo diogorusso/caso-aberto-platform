@@ -11,7 +11,7 @@ const crumbs = [...crumbFor(item), {label:'Atualizações', href:`${casePath(ite
 ---
 <BaseLayout
   title={`Atualizações — ${item.empresa_resumo} | CasoAberto`}
-  description={`Histórico datado de atualizações do dossiê ${item.id}.`}
+  description={`Histórico datado de atualizações do dossiê ${item.empresa_resumo}.`}
   type="article"
   dateModified={item.status_data}
   breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}

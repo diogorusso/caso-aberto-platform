@@ -22,15 +22,25 @@
 .company-identity h1{font-size:clamp(2.5rem,4.05vw,4.8rem);letter-spacing:-.075em;line-height:1.04;margin:0 0 22px;max-width:780px}
 .company-identity-heading-tail{font-weight:490;color:#5b7163}
 .company-profile-summary{max-width:710px;font-size:1.02rem;line-height:1.6;color:#54665b;margin:0 0 23px}
+.verdict-panel{display:grid;gap:14px;background:#fff;padding:20px;border:1px solid #d6e0d6;border-radius:14px;margin:17px 0 25px;max-width:740px}
+.verdict-panel--compact{margin:0;max-width:none;background:#fbfcf9;box-shadow:inset 0 0 0 1px rgba(214,224,214,.7)}
+.verdict-panel__meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.verdict-panel__date{font-size:.72rem;font-weight:720;color:#718174;letter-spacing:.02em}
+.verdict-panel__body{display:flex;gap:17px}
+.company-verdict-rail{width:4px;flex-shrink:0;border-radius:999px;background:#ab4236}
+.verdict-panel--cautela .company-verdict-rail{background:#c49a3a}
+.verdict-panel--recomendamos .company-verdict-rail{background:#3d8a5f}
+.verdict-panel strong{font-size:clamp(1.08rem,1.4vw,1.35rem);letter-spacing:-.035em;line-height:1.3;display:block}
+.verdict-panel p{font-size:.94rem;line-height:1.5;font-weight:700;color:#23362b;margin:9px 0}
+.verdict-panel small{font-size:.74rem;line-height:1.5;color:#718174;display:block}
 .company-verdict-integrated{display:flex;gap:17px;background:#fff;padding:21px;border:1px solid #d6e0d6;margin:17px 0 25px;max-width:740px}
-.company-verdict-rail{width:4px;flex-shrink:0;background:#ab4236}
 .company-verdict-integrated strong{font-size:clamp(1.15rem,1.5vw,1.5rem);letter-spacing:-.035em;line-height:1.3;display:block}
 .company-verdict-integrated p{font-size:.96rem;line-height:1.5;font-weight:740;color:#23362b;margin:9px 0}
 .company-verdict-integrated small{font-size:.75rem;line-height:1.5;color:#718174;display:block}
 .company-identity-actions{display:flex;align-items:center;flex-wrap:wrap;gap:10px 14px}
 .company-inline-link{font-size:.84rem;font-weight:790;text-decoration:underline;text-underline-offset:4px;color:#375344}
 .company-identity-visual{min-width:0;display:flex;flex-direction:column}
-.company-photo-card{margin:0;background:#1b3026;min-height:100%;display:flex;flex-direction:column;overflow:hidden}
+.company-photo-card{margin:0;background:#1b3026;min-height:100%;display:flex;flex-direction:column;overflow:hidden;border-radius:16px}
 .company-photo-card>img{width:100%;height:clamp(300px,30vw,465px);display:block;object-fit:cover}
 .company-photo-card figcaption{color:#f4f6ef;padding:17px 19px 19px;display:flex;flex-direction:column;gap:5px;line-height:1.35}
 .company-photo-card figcaption strong{font-size:.93rem}
@@ -41,11 +51,9 @@
 .company-photo-empty strong{font-size:1.7rem;max-width:420px;line-height:1.2}
 .company-photo-empty p{font-size:.92rem;max-width:450px}
 .company-visual-source{font-size:.8rem;color:#3c6148;margin-top:9px;font-weight:800}
-.company-identity-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid #d2ddd1;padding:0 0 25px}
-.company-identity-metrics>div{padding:23px 18px 18px;border-right:1px solid #d2ddd1;min-width:0}
-.company-identity-metrics>div:first-child{padding-left:0}
-.company-identity-metrics>div:last-child{border-right:0}
-.company-identity-metrics strong{display:block;font-size:clamp(1.4rem,2.1vw,2.5rem);font-weight:870;letter-spacing:-.07em;line-height:1.17;overflow-wrap:anywhere}
+.company-identity-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;border-top:1px solid #d2ddd1;padding:18px 0 25px}
+.company-identity-metrics>div{padding:20px 18px;min-width:0;background:#fff;border:1px solid #d9e2d9;border-radius:14px;border-top:4px solid #ab4236}
+.company-identity-metrics strong{display:block;font-size:clamp(1.35rem,2vw,2.2rem);font-weight:870;letter-spacing:-.07em;line-height:1.17;overflow-wrap:anywhere}
 .company-identity-metrics span{display:block;font-size:.81rem;color:#53685b;margin-top:10px;max-width:235px;line-height:1.38}
 .company-brand-footnote{font-size:.76rem;color:#647468;border-top:1px solid #d2ddd1;margin:0;padding:14px 0 17px}
 .company-brand-footnote a{color:#99402f;font-weight:780}
@@ -97,9 +105,9 @@
 .editorial-verdict .verdict-links{gap:8px}
 .editorial-verdict .verdict-links a:not(.button){color:#a23d2e;font-size:.8rem}
 .editorial-verdict .verdict-links .button{background:#17382a;color:#fff;font-size:.78rem;padding:9px 13px}
-@media(max-width:1050px){.company-identity-grid{gap:28px}.company-recognition-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.company-identity-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.company-identity-metrics>div:nth-child(2){border-right:0}}
+@media(max-width:1050px){.company-identity-grid{gap:28px}.company-recognition-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.company-identity-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){.company-identity-grid{grid-template-columns:1fr;gap:20px;padding:25px 0}.company-identity h1{font-size:clamp(2.2rem,8vw,3.4rem)}.company-photo-card>img{height:330px}.company-photo-card{min-height:0}.company-brand-lockup{margin-bottom:18px}.company-recognition-grid,.contract-slots{grid-template-columns:1fr}.editorial-verdict .verdict-grid{grid-template-columns:1fr;padding:20px}.editorial-verdict .verdict-context{border-left:0;border-top:1px solid #dce4dd;padding:17px 0 0}}
-@media(max-width:470px){.company-identity-metrics{grid-template-columns:1fr 1fr}.company-identity-metrics>div{padding:15px 12px}.company-identity-metrics strong{font-size:1.45rem}.company-identity-top{flex-direction:column;align-items:start}.company-identity-actions .button{width:100%;text-align:center}.company-verdict-integrated{padding:15px}.company-brand-logo{min-width:112px;max-width:130px}.company-brand-logo img{max-width:100px}}
+@media(max-width:470px){.company-identity-metrics{grid-template-columns:1fr 1fr}.company-identity-metrics>div{padding:15px 12px}.company-identity-metrics strong{font-size:1.45rem}.company-identity-top{flex-direction:column;align-items:start}.company-identity-actions .button{width:100%;text-align:center}.verdict-panel,.company-verdict-integrated{padding:15px}.company-brand-logo{min-width:112px;max-width:130px}.company-brand-logo img{max-width:100px}}
 
 /* Case pages: recognizable company reference, never masquerading as case evidence. */
 .case-company-reference{background:#f6f8f2;padding:23px 0;border-block:1px solid #dbe3d9}

@@ -10,7 +10,7 @@ const linkedCase=cases.find(c=>c.id===caseId);
 const responsibleRoute=linkedCase?casePath(linkedCase)+'responsaveis/':'/casos/';
 ---
 <section class="contract-scope section" id="entidades-do-contrato"><div class="container">
-  <div class="section-heading"><div><span class="eyebrow">RESPONSABILIDADE CONTRATUAL · {caseId}</span><h2>Quais CNPJs aparecem no contrato?</h2><p>Fábrica, montadora e administradores só são atribuídos ao pedido mediante identificação da pessoa jurídica nos documentos. Cadastros de empresas no mesmo endereço não bastam.</p></div></div>
+  <div class="section-heading"><div><span class="eyebrow">RESPONSABILIDADE CONTRATUAL</span><h2>Quais CNPJs aparecem no contrato?</h2><p>Fábrica, montadora e administradores só são atribuídos ao pedido mediante identificação da pessoa jurídica nos documentos. Cadastros de empresas no mesmo endereço não bastam.</p></div></div>
   <div class="contract-slots">
    {entry?.slots?.map((slot:any)=><article class="contract-slot">
     <span class="eyebrow">{slot.contract_role}</span>

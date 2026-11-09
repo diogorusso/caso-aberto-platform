@@ -5,7 +5,7 @@ const { item } = Astro.props;
 const n = reportsFor(item).length;
 ---
 <div class="evidence-strip">
-  <div><span>Caso</span><strong>{item.id}</strong></div>
+  <div><span>Empresa</span><strong>{item.empresa_resumo}</strong></div>
   <div><span>Valor informado</span><strong>{item.valor_brl ? brl(item.valor_brl) : '—'}</strong></div>
   <div><span>Prazo original</span><strong>{item.prazo_original || '—'}</strong></div>
   <div><span>Status</span><strong>{item.status}</strong></div>

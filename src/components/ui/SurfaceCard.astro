@@ -1,0 +1,44 @@
+---
+interface Props {
+  label?: string;
+  title?: string;
+  description?: string;
+  href?: string;
+  external?: boolean;
+  variant?: 'surface' | 'dark' | 'soft';
+  class?: string;
+}
+const {
+  label,
+  title,
+  description,
+  href,
+  external = false,
+  variant = 'surface',
+  class: className = '',
+} = Astro.props;
+const isLink = Boolean(href);
+---
+<article class:list={['ca-surface-card', `ca-surface-card--${variant}`, isLink && 'ca-surface-card--link', className]}>
+  {(label || Astro.slots.has('icon')) && (
+    <div class="ca-surface-card__header">
+      <slot name="icon" />
+      {label && <span class="ca-surface-card__num">{label}</span>}
+    </div>
+  )}
+  {title && <h3>{title}</h3>}
+  {description && <p>{description}</p>}
+  <slot />
+  {isLink && href && (
+    <>
+      <a
+        class="ca-surface-card__hit"
+        href={href}
+        aria-label={typeof title === 'string' ? title : undefined}
+        target={external ? '_blank' : undefined}
+        rel={external ? 'noopener noreferrer' : undefined}
+      ></a>
+      <span class="ca-surface-card__cta" aria-hidden="true">↗</span>
+    </>
+  )}
+</article>

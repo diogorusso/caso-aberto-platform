@@ -16,7 +16,7 @@ const title=unit?'Registros relacionados à unidade':'Casos documentados e recla
   <div class="company-matrix-stats"><div><strong>{related.length}</strong><span>Casos com dossiê publicado</span></div><div><strong>{complaints.length}</strong><span>Relatos externos no recorte</span></div><div><strong>{new Set(complaints.map(r=>r.cidade)).size}</strong><span>Localidades identificadas</span></div><div><strong>{subject.verdict.valid_as_of.split('-').reverse().join('/')}</strong><span>Data da avaliação</span></div></div>
   <div class="company-case-list">
    {related.map(c=><article class="company-case-feature">
-    <div class="case-feature-heading"><span class="eyebrow">{c.id} · {c.categoria}</span><span class="editorial-pill">{statusLabel(subject.verdict.status)}</span></div>
+    <div class="case-feature-heading"><span class="eyebrow">{c.empresa_resumo} · {c.categoria}</span><span class="editorial-pill">{statusLabel(subject.verdict.status)}</span></div>
     <h3><a href={casePath(c)}>{c.titulo}</a></h3>
     <p>{c.resumo}</p>
     <dl><div><dt>Valor relatado como pago</dt><dd>{c.valor_brl?brl(c.valor_brl):'Não informado'}</dd></div><div><dt>Situação na última revisão</dt><dd>{c.status}</dd></div><div><dt>Última revisão</dt><dd>{dateBR(c.status_data)}</dd></div></dl>

@@ -12,7 +12,7 @@ const href=brand?(unit?unitPath(brand,unit):brandPath(brand)):'/empresas/';
 const currentVerdict=unit?.verdict||brand?.verdict;
 ---
 {brand&&<section class="case-company-reference"><div class="container case-company-layout">
- <div class="case-company-brand">{visuals?.logo?.src&&<img src={visuals.logo.src} alt={visuals.logo.alt} width="110" height="52" loading="lazy"/>}<div><span class="eyebrow">EMPRESA CITADA NO CASO {item.id}</span><h2>{unit?.name||brand.name}</h2><p>{unit?.location||brand.location} · <span class={"company-verdict-pill status-"+currentVerdict?.status}>{statusLabel((unit||brand).verdict.status)}</span></p></div></div>
+ <div class="case-company-brand">{visuals?.logo?.src&&<img src={visuals.logo.src} alt={visuals.logo.alt} width="110" height="52" loading="lazy"/>}<div><span class="eyebrow">EMPRESA CITADA NESTE DOSSIÊ</span><h2>{unit?.name||brand.name}</h2><p>{unit?.location||brand.location} · <span class={"company-verdict-pill status-"+currentVerdict?.status}>{statusLabel((unit||brand).verdict.status)}</span></p></div></div>
  {photo?.src&&<figure class="case-company-thumb"><img src={photo.src} alt={photo.alt} width="180" height="130" loading="lazy"/><figcaption>Imagem da unidade divulgada pela marca · <a href={photo.source_url} target="_blank" rel="noopener noreferrer">Fonte ↗</a></figcaption></figure>}
  <div class="case-company-action"><a class="button button-dark" href={href}>Perfil, CNPJ e casos relacionados ↗</a></div>
 </div></section>}

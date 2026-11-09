@@ -13,10 +13,10 @@
       "shares": null,
       "measurement_period": "Snapshot editorial em 09/11/2026",
       "definitions": {
-        "public_complaints_indexed": "Registros públicos distintos indexados em relatos.json com case_id CA-001",
+        "public_complaints_indexed": "Registros públicos distintos indexados em relatos.json neste dossiê",
         "primary_sources_cited": "Fontes com URL https listadas no dossiê e nas páginas auxiliares",
         "case_updates": "Entradas em updates.json",
-        "company_responses_on_record": "Respostas institucionais verificáveis endereçadas ao caso CA-001 e publicadas aqui",
+        "company_responses_on_record": "Respostas institucionais verificáveis endereçadas a este dossiê e publicadas aqui",
         "verified_support_submissions": "Relatos de apoio revisados e consentidos para publicação"
       }
     }

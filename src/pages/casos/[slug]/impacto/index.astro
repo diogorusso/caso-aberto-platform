@@ -11,7 +11,7 @@ const {item}=Astro.props;
 const crumbs=[...crumbFor(item),{label:'Radar de impacto',href:caseImpactPath(item)}];
 ---
 <BaseLayout title={'Impacto em números: '+item.empresa_resumo+' — dinheiro, atraso, reclamações e cenários | CasoAberto'}
- description={'Dados públicos e cenários de exposição do caso '+item.id+': pagamento informado, dias sem conclusão confirmada, reclamações, fontes e cenários financeiros com premissas editáveis.'}
+ description={'Dados públicos e cenários de exposição de '+item.empresa_resumo+': pagamento informado, dias sem conclusão confirmada, reclamações, fontes e cenários financeiros com premissas editáveis.'}
  dateModified={item.status_data} type="article" breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}>
  <Breadcrumbs items={crumbs}/>
  <CaseNav item={item} current="impacto"/>

@@ -1,0 +1,33 @@
+---
+export interface TocItem { id: string; label: string }
+interface Props {
+  items: TocItem[];
+  title?: string;
+  class?: string;
+}
+const { items, title = 'Nesta página', class: className = '' } = Astro.props;
+const ids = items.map((item) => item.id).join(',');
+---
+{items.length > 1 && (
+  <nav
+    class:list={['ca-toc', className]}
+    aria-label={title}
+    data-spy="toc"
+    data-section-ids={ids}
+  >
+    <p class="ca-toc__title">{title}</p>
+    <ol class="ca-toc__list">
+      {items.map((item, i) => (
+        <li>
+          <a href={`#${item.id}`} class="ca-toc__link" data-spy-link={item.id}>
+            <span class="ca-toc__num">{String(i + 1).padStart(2, '0')}</span>
+            <span>{item.label}</span>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </nav>
+)}
+<script>
+  import '../../scripts/bind-scroll-spy.ts';
+</script>

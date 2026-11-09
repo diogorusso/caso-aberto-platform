@@ -1,0 +1,33 @@
+---
+export interface SectionRailItem { id: string; label: string }
+interface Props {
+  items: SectionRailItem[];
+  label?: string;
+  class?: string;
+}
+const { items, label = 'Nesta página', class: className = '' } = Astro.props;
+const ids = items.map((item) => item.id).join(',');
+---
+{items.length > 1 && (
+  <nav
+    class:list={['ca-section-rail', className]}
+    aria-label={label}
+    data-spy="rail"
+    data-section-ids={ids}
+  >
+    <div class="container ca-section-rail__inner">
+      <span class="ca-section-rail__label">{label}</span>
+      <ul class="ca-section-rail__list" data-spy-list>
+        {items.map((item) => (
+          <li>
+            <a href={`#${item.id}`} class="ca-section-rail__link" data-spy-link={item.id}>{item.label}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <span class="ca-section-rail__indicator" data-spy-indicator aria-hidden="true"></span>
+  </nav>
+)}
+<script>
+  import '../../scripts/bind-scroll-spy.ts';
+</script>

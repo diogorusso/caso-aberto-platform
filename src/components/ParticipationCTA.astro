@@ -2,7 +2,7 @@
 import { type Case, casePath } from '../lib/cases';
 interface Props { item?: Case }
 const { item } = Astro.props;
-const subject = item ? encodeURIComponent(`Apoio / relato — ${item.id} ${item.empresa_resumo}`) : encodeURIComponent('Apoio / relato — CasoAberto');
+const subject = item ? encodeURIComponent(`Apoio / relato — ${item.empresa_resumo}`) : encodeURIComponent('Apoio / relato — CasoAberto');
 const body = encodeURIComponent(`Quero apoiar ou enviar um relato relacionado.\n\nConsentimento para publicação anonimizada: SIM/NÃO\nCidade/UF:\nResumo factual (sem dados pessoais sensíveis):\nLink de fonte pública (se houver):\n\nNão envie CPF, endereço residencial, telefone particular, contratos assinados completos ou documentos privados por este canal público.`);
 const mail = `mailto:redacao@casoaberto.org?subject=${subject}&body=${body}`;
 ---

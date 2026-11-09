@@ -26,6 +26,28 @@ export const statusGroups=[
  {key:'unknown',label:'A confirmar na origem'}
 ] as const;
 export const brandSnapshot=(brand:Brand)=>raw.external_brand_snapshots.find(x=>x.brand_slug===brand.slug);
+export const impactNavItems=(opts:{hasSnapshot?:boolean;hasModel?:boolean}={})=>[
+  {id:'analisar-impacto',label:'Resumo'},
+  {id:'painel-observado',label:'Dados publicados'},
+  ...(opts.hasSnapshot?[{id:'impacto-externo',label:'Fonte externa'}]:[]),
+  {id:'desfecho-reclamacoes',label:'Desfechos'},
+  ...(opts.hasModel?[{id:'simulador-impacto',label:'Cenários'}]:[]),
+  {id:'trilha-documental',label:'Fontes'},
+  {id:'prestacao-contas',label:'Prestação de contas'},
+];
+export const companyProfileNavItems=(opts:{hasPrecedent?:boolean;hasDossier?:boolean}={})=>[
+  {id:'perfil-empresarial',label:'Perfil'},
+  {id:'analisar-impacto',label:'Impacto'},
+  {id:'painel-observado',label:'Números'},
+  {id:'avaliacao-editorial',label:'Avaliação'},
+  {id:'casos-associados',label:'Casos'},
+  ...(opts.hasPrecedent?[{id:'precedentes-documentados',label:'Precedentes'}]:[]),
+  {id:'identificacao-visual',label:'Identidade'},
+  ...(opts.hasDossier?[{id:'observatorio-empresa',label:'Observatório'}]:[]),
+  {id:'perfis-cnpj',label:'CNPJs'},
+  {id:'ranking-editorial',label:'Ranking'},
+  {id:'resposta-institucional',label:'Resposta'},
+];
 
 const unitMatch=(report:Report,brand:Brand,unit:BrandUnit)=>{
  const normalized=unit.name.toLocaleLowerCase('pt-BR').replace(brand.name.toLocaleLowerCase('pt-BR'),'').trim();

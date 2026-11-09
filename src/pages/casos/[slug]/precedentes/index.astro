@@ -18,7 +18,7 @@ const crumbs=[...crumbFor(item),{label:'Precedentes de risco',href:comparisonPat
  type="article" dateModified={raw.updated_at} breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}>
  <Breadcrumbs items={crumbs}/>
  <header class="precedent-detail-hero"><div class="container">
-  <span class="eyebrow">CA-001 · PRECEDENTES DE RISCO E ESCALONAMENTO</span>
+  <span class="eyebrow">PRECEDENTES DE RISCO E ESCALONAMENTO</span>
   <h1>A entrega pode atrasar. A disputa pode escalar. E o dinheiro?</h1>
   <p>Roma Mobili e Lojas KD chegaram à falência; Kitchens entrou em recuperação judicial com centenas de créditos de clientes por móveis não entregues. O paralelo mostra consequências documentadas em outras empresas — não é diagnóstico de solvência da Florense.</p>
   <div class="precedent-case-ids"><span>{comparable.filter(p=>p.stage==='falencia_decretada').length} falências decretadas em precedentes</span><span>{comparable.filter(p=>p.stage==='recuperacao_judicial').length} recuperação judicial sem falência</span><span>{comparable.length} processos públicos documentados</span></div>
@@ -30,7 +30,7 @@ const crumbs=[...crumbFor(item),{label:'Precedentes de risco',href:comparisonPat
   <p class="precedent-section-lead">O caso já tem atraso e reclamação documentados. Os demais resultados dependem de novos fatos, contratos, documentos e decisões independentes; não há uma sequência obrigatória até falência.</p>
   <div class="precedent-outcomes">{raw.common_analysis.possible_outcomes.map((outcome,i)=><article>
     <span class="precedent-outcome-n">{String(i+1).padStart(2,'0')}</span>
-    <h3>{outcome.label}</h3><p>{outcome.description}</p><small>Status do CA-001: {outcome.status_for_CA001}</small>
+    <h3>{outcome.label}</h3><p>{outcome.description}</p><small>Status deste dossiê: {outcome.status_for_CA001}</small>
   </article>)}</div>
  </div></section>
  {link&&<section class="section precedent-questions"><div class="container">

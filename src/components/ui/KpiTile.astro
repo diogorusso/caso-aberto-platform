@@ -1,0 +1,26 @@
+---
+interface Props {
+  label: string;
+  value: string | number;
+  note?: string;
+  href?: string;
+  hrefLabel?: string;
+  tone?: 'light' | 'dark' | 'accent';
+  class?: string;
+}
+const {
+  label,
+  value,
+  note,
+  href,
+  hrefLabel,
+  tone = 'light',
+  class: className = '',
+} = Astro.props;
+---
+<article class:list={['ca-kpi', `ca-kpi--${tone}`, className]}>
+  <span class="ca-kpi__label">{label}</span>
+  <strong class="ca-kpi__value">{value}</strong>
+  {note && <small class="ca-kpi__note">{note}</small>}
+  {href && <a class="ca-kpi__link" href={href}>{hrefLabel || 'Abrir ↗'}</a>}
+</article>

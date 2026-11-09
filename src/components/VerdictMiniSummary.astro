@@ -1,0 +1,28 @@
+---
+import {statusLabel, type Verdict} from '../lib/brands';
+interface Props {
+  verdict: Verdict;
+  compact?: boolean;
+  subject?: string;
+  showMeta?: boolean;
+}
+const {verdict, compact = false, subject, showMeta = true} = Astro.props;
+const label = statusLabel(verdict.status);
+const reviewed = verdict.valid_as_of.split('-').reverse().join('/');
+---
+<aside class:list={['verdict-panel', compact && 'verdict-panel--compact', `verdict-panel--${verdict.status}`]} aria-label="Resumo da recomendação editorial">
+  {showMeta && (
+    <div class="verdict-panel__meta">
+      <span class={'company-verdict-pill status-'+verdict.status}>{label}</span>
+      <span class="verdict-panel__date">{subject ? `${subject} · ` : ''}Revisão {reviewed}</span>
+    </div>
+  )}
+  <div class="verdict-panel__body">
+    <div class="company-verdict-rail" aria-hidden="true"></div>
+    <div>
+      <strong>{verdict.headline}</strong>
+      <p>{verdict.lead}</p>
+      <small>Recomendação referente a {verdict.scope.toLocaleLowerCase('pt-BR')}</small>
+    </div>
+  </div>
+</aside>

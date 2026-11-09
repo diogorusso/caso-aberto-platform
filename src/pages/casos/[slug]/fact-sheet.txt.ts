@@ -6,7 +6,7 @@ export const GET:APIRoute=({params})=>{
  const item=cases.find(c=>c.slug===params.slug);
  if(!item)return new Response('Caso não encontrado',{status:404});
  const text=[
-  'CASOABERTO — FACT SHEET EDITORIAL '+item.id,
+  'CASOABERTO — FACT SHEET EDITORIAL — '+item.empresa_resumo,
   'Última revisão: '+item.status_data,
   'URL: '+siteOrigin+casePath(item),
   'Assunto: '+item.titulo,
@@ -37,5 +37,5 @@ export const GET:APIRoute=({params})=>{
   'CasoAberto — publicação independente',
   ''
  ].join('\n');
- return new Response(text,{headers:{'Content-Type':'text/plain; charset=utf-8','Content-Disposition':'attachment; filename="'+item.id+'-fact-sheet.txt"','Cache-Control':'public, max-age=3600'}});
+ return new Response(text,{headers:{'Content-Type':'text/plain; charset=utf-8','Content-Disposition':'attachment; filename="'+item.slug+'-fact-sheet.txt"','Cache-Control':'public, max-age=3600'}});
 };

@@ -1,0 +1,145 @@
+---
+import {brl,casePath,type Case} from '../lib/cases';
+import {type Brand,type BrandUnit,findBrand,verdictForCase,statusLabel} from '../lib/brands';
+import {impactForSelection,brandSnapshot,statusGroups} from '../lib/impact';
+import ImpactSimulator from './ImpactSimulator.tsx';
+import PrecedentComparison from './PrecedentComparison.astro';
+import VerdictMiniSummary from './VerdictMiniSummary.astro';
+import SectionBlock from './ui/SectionBlock.astro';
+import SurfaceCard from './ui/SurfaceCard.astro';
+import KpiTile from './ui/KpiTile.astro';
+interface Props {caseItem?:Case;brand?:Brand;unit?:BrandUnit}
+const {caseItem,brand,unit}=Astro.props;
+const data=impactForSelection({caseItem,brand,unit});
+const snapshotBrand=brand||(caseItem?.empresa_slug?findBrand(caseItem.empresa_slug):undefined);
+const snapshot=snapshotBrand&&!unit?brandSnapshot(snapshotBrand):null;
+const label=caseItem?caseItem.empresa_resumo:unit?.name||brand?.name||'CasoAberto';
+const linkedCase=data.relatedCases[0];
+const caseHref=linkedCase?casePath(linkedCase):'/casos/';
+const sourceRoute=caseHref==='/'?'/casos/':caseHref+'reclamacoes-publicas/';
+const evidenceRoute=linkedCase?caseHref+'evidencias/':'/casos/';
+const modeled=data.model;
+const sample=data.reports.slice().sort((a,b)=>b.data.localeCompare(a.data)).slice(0,6);
+const fresh=data.latestStatus||modeled?.snapshot_date||'2026-11-09';
+const freshBR=fresh.split('-').reverse().join('/');
+const docRows=statusGroups.map(g=>({...g,value:data.statuses[g.key]})).filter(g=>g.value>0);
+const daysWindow=data.delayMin==null?'—':data.delayMin===data.delayMax?data.delayMin+' dias':data.delayMin+'–'+data.delayMax+' dias';
+const scopeText=caseItem?'este caso':unit?'esta unidade':'esta marca e seus casos vinculados';
+const verdict=caseItem?verdictForCase(caseItem):(unit||brand)?.verdict;
+const verdictStatus=verdict?statusLabel(verdict.status):null;
+---
+<div class="impact-full" id="analisar-impacto">
+  <section class="impact-feature">
+    <div class="container">
+      <div class="impact-feature__shell">
+        <div class="impact-feature__copy">
+          <div class="impact-feature__meta">
+            <span class="eyebrow">RADAR DE EXPOSIÇÃO</span>
+            <span class="impact-feature__stamp">Revisão {freshBR}</span>
+            {verdictStatus && <span class={'company-verdict-pill status-'+(verdict?.status||'')}>{verdictStatus}</span>}
+          </div>
+          <h2>O impacto em números: {label}.</h2>
+          <p>Pagamentos relatados, tempo transcorrido, reclamações públicas, documentos e decisões pendentes — cada indicador com recorte e fonte.</p>
+          <div class="impact-feature__actions">
+            <a class="button button-dark" href="#painel-observado">Ver indicadores ↓</a>
+            {modeled && <a class="button button-subtle" href="#simulador-impacto">Calcular cenários ↓</a>}
+            <a class="button button-subtle" href={evidenceRoute}>Ver documentos ↗</a>
+          </div>
+        </div>
+        <div class="impact-feature__panel">
+          <div class="impact-feature__panel-head">
+            <span class="ca-surface-card__num">01 · RESUMO EDITORIAL</span>
+            <strong>Antes dos números, a recomendação em vigor.</strong>
+            <p>O painel mensura exposição documental. A recomendação editorial permanece o critério para novas contratações.</p>
+          </div>
+          {verdict
+            ? <VerdictMiniSummary verdict={verdict} compact subject={label}/>
+            : <p class="impact-feature__empty">Sem recomendação editorial publicada para este recorte.</p>}
+          <dl class="impact-feature__stats" aria-label="Sinalizadores do recorte">
+            <div><dt>Pago informado</dt><dd>{data.reportedPaymentTotal>0?brl(data.reportedPaymentTotal):'—'}</dd></div>
+            <div><dt>Dias em aberto</dt><dd>{data.holdDays==null?'—':data.holdDays}</dd></div>
+            <div><dt>Relatos</dt><dd>{data.indexedReportCount}</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SectionBlock id="painel-observado" variant="muted" eyebrow="01 · DADOS PUBLICADOS" title="Valores altos. Perguntas que exigem resposta." description="Contagens do arquivo deste dossiê. Históricos externos aparecem no bloco seguinte, sem somar universos.">
+    <div class="ca-kpi-grid ca-kpi-grid--2">
+      <KpiTile label="Valor pago, segundo consumidor(es)" value={data.reportedPaymentTotal>0?brl(data.reportedPaymentTotal):'Não informado'} note="Valor envolvido nos contratos relatados, sem inferir perda definitiva"/>
+      <KpiTile label="Tempo desde pagamento relatado" value={data.holdDays==null?'Não informado':data.holdDays+' dias'} note={modeled?'De '+modeled.payment_date_reported.split('-').reverse().join('/')+' a '+modeled.snapshot_date.split('-').reverse().join('/'):'Até a última atualização publicada'}/>
+      <KpiTile label="Atraso desde o prazo original" value={daysWindow} note="Prazo informado pelo consumidor; intervalo até a revisão documental"/>
+      <KpiTile label="URLs distintas citadas" value={data.sourceCount.toLocaleString('pt-BR')} note="Reclamações, registros e publicações; nem todos os links são menções negativas"/>
+    </div>
+    <div class="ca-kpi-grid ca-kpi-grid--4" style="margin-top:14px">
+      <KpiTile tone="dark" label="Arquivo de relatos" value={data.indexedReportCount} note="Relatos externos catalogados no recorte, inclusive resolvidos" href={sourceRoute} hrefLabel="Abrir arquivo ↗"/>
+      <KpiTile tone="dark" label="Evidências indexadas" value={data.evidenceItems.length} note="Itens no índice documental, públicos e privados" href={evidenceRoute} hrefLabel="Conferir índice ↗"/>
+      <KpiTile tone="dark" label="Respostas registradas" value={data.recordedCompanyResponses} note="Respostas institucionais específicas no dossiê" href={caseHref+'atualizacoes/'} hrefLabel="Histórico ↗"/>
+      <KpiTile tone="dark" label="Apoios publicados" value={data.verifiedSupportTotal} note="Apoios com consentimento revisados para publicação" href={caseHref+'#apoiar'} hrefLabel="Enviar relato ↗"/>
+    </div>
+    <p class="impact-period-note">Período: recorte editorial revisado em {freshBR}. “0” significa nenhum registro identificado neste arquivo, não inexistência no mundo real.</p>
+  </SectionBlock>
+
+  {snapshot && (
+    <SectionBlock id="impacto-externo" variant="editorial" eyebrow={`02 · FONTE EXTERNA · ${snapshot.platform}`} title="O histórico geral da marca amplia o contexto." description="Universo distinto do arquivo CasoAberto. Não some estes totais às reclamações catalogadas acima.">
+      <div class="ca-kpi-grid ca-kpi-grid--4">
+        <KpiTile tone="accent" label="Reclamações ativas no histórico" value={snapshot.total_active_records.toLocaleString('pt-BR')}/>
+        <KpiTile tone="accent" label="Classificadas como atraso de entrega" value={snapshot.delivery_delay_category_records.toLocaleString('pt-BR')}/>
+        <KpiTile tone="accent" label="Visualizações no perfil externo" value={snapshot.company_profile_views_display} note="Não é tráfego do CasoAberto"/>
+        <KpiTile tone="accent" label={`Recebidas · ${snapshot.six_month_period}`} value={String(snapshot.six_month_received)}/>
+      </div>
+      <div class="impact-external-footer">
+        <p>{snapshot.notes} A fonte exibe {snapshot.six_month_answered_pct}% de respostas no período de seis meses — isso não é taxa de resolução.</p>
+        <a class="button button-dark" href={snapshot.page_url} target="_blank" rel="noopener noreferrer">Examinar perfil original ↗</a>
+      </div>
+    </SectionBlock>
+  )}
+
+  <SectionBlock id="desfecho-reclamacoes" variant="default" eyebrow="03 · DESFECHO DAS RECLAMAÇÕES" title="Resposta não é o mesmo que solução." description={`Classificação dos relatos reunidos para ${scopeText}, conforme status na última consulta registrada.`}>
+    <div class="impact-status-rows">
+      {docRows.map(row => (
+        <div class="impact-status-row">
+          <div class="impact-status-line"><strong>{row.label}</strong><span>{row.value} / {data.indexedReportCount}</span></div>
+          <div class="impact-status-track"><span style={`width:${data.indexedReportCount>0?row.value/data.indexedReportCount*100:0}%`}></span></div>
+        </div>
+      ))}
+      {docRows.length===0 && <p>Não há reclamações externas catalogadas neste recorte.</p>}
+    </div>
+    <a class="text-link" href={sourceRoute}>Ler cada reclamação e confirmar o estado atual ↗</a>
+  </SectionBlock>
+
+  {modeled && (
+    <SectionBlock id="simulador-impacto" variant="muted" spacing="md">
+      <ImpactSimulator client:load reportedPayment={data.reportedPaymentTotal} daysHeld={data.holdDays||0} daysDelay={data.delayMin||0} asOf={modeled.snapshot_date} defaults={modeled.scenario_defaults}/>
+    </SectionBlock>
+  )}
+
+  <SectionBlock id="trilha-documental" variant="default" eyebrow="04 · TRILHA DOCUMENTAL" title="Veja as referências por trás das manchetes." description="O registro individual de cada reclamação importa tanto quanto o total.">
+    <div class="ca-cards-grid ca-cards-grid--2">
+      {sample.map((r, i) => (
+        <SurfaceCard
+          label={`${String(i+1).padStart(2,'0')} · ${r.data.split('-').reverse().join('/')} · ${r.cidade}`}
+          title={r.titulo}
+          description={r.resumo}
+          href={r.url}
+          external
+        >
+          <span class="impact-mention-status">{r.status}</span>
+        </SurfaceCard>
+      ))}
+      {sample.length===0 && <p>Não há menções externas catalogadas neste recorte.</p>}
+    </div>
+    <div class="impact-actions">
+      <a class="button button-dark" href={evidenceRoute}>Índice documental e exportação ↗</a>
+      <a class="button button-subtle" href={caseHref+'materiais-imprensa/'}>Material de imprensa ↗</a>
+      <a class="button button-subtle" href={caseHref+'#apoiar'}>Enviar relato relacionado ↗</a>
+    </div>
+  </SectionBlock>
+
+  {linkedCase && <PrecedentComparison item={linkedCase} compact/>}
+
+  <SectionBlock id="prestacao-contas" variant="accent" eyebrow="PRESTAÇÃO DE CONTAS" title="O que aconteceu com o dinheiro? Quando o serviço será concluído?" description="O acompanhamento público exige respostas verificáveis. Este painel reúne fatos, indicadores editoriais e simulação separada — não substitui documentos originais nem determina responsabilidade judicial.">
+    <a class="button button-white" href={caseHref}>Voltar ao dossiê e perguntas da empresa ↗</a>
+  </SectionBlock>
+</div>

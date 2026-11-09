@@ -1,6 +1,6 @@
 {
   "company": "Florense / Grupo Florense",
-  "manufacturer_note": "A indústria Florense opera a partir de Flores da Cunha (RS). Lojas como Ipanema são franquias da rede — entidades comerciais distintas da fábrica. Nomes abaixo referem-se a papéis públicos reportados sobre a fabricante/grupo, não a comprovação de que tenham tratado o pedido CA-001.",
+  "manufacturer_note": "A indústria Florense opera a partir de Flores da Cunha (RS). Lojas como Ipanema são franquias da rede — entidades comerciais distintas da fábrica. Nomes abaixo referem-se a papéis públicos reportados sobre a fabricante/grupo, não a comprovação de que tenham tratado o pedido Florense Ipanema.",
   "last_verified_at": "2026-11-09",
   "people": [
     {
@@ -117,7 +117,7 @@
         "source": "https://casadosdados.com.br/solucao/cnpj/ipanema-representacoes-e-servicos-de-moveis-ltda-39526757000159"
       }
     ],
-    "notes": "Cadastro público identifica administradores da pessoa jurídica localizada no endereço da unidade. A identificação de quem assinou o contrato CA-001 depende do instrumento e dos documentos fiscais.",
+    "notes": "Cadastro público identifica administradores da pessoa jurídica localizada no endereço da unidade. A identificação de quem assinou o contrato deste dossiê depende do instrumento e dos documentos fiscais.",
     "last_verified_at": "2026-11-09"
   },
   "channels": [
@@ -135,7 +135,7 @@
     }
   ],
   "institutional_questions": [
-    "Qual entidade jurídica contratou e recebeu os R$ 190 mil do pedido CA-001 — franquia Ipanema, fabricante ou outra?",
+    "Qual entidade jurídica contratou e recebeu os R$ 190 mil do pedido Florense Ipanema — franquia Ipanema, fabricante ou outra?",
     "Qual o estágio atual, por escrito, de fabricação, expedição, transporte e montagem deste pedido?",
     "Como se divide a responsabilidade operacional entre franquia, fábrica e instaladores neste contrato?",
     "Há cronograma vinculante e nominado para conclusão integral, com datas e responsáveis?",

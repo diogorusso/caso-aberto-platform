@@ -9,7 +9,7 @@ const statusLabel=(s:string)=>({publico_localizado:'Registro público localizado
 ---
 <section class="evidence-section" id="indice-evidencias">
  <div class="container">
-  <header class="evidence-intro"><span class="eyebrow">ÍNDICE DOCUMENTAL · {caseId}</span><h2>Uma referência estável para cada evidência.</h2><p>{evidence.notes}</p>
+  <header class="evidence-intro"><span class="eyebrow">ÍNDICE DOCUMENTAL</span><h2>Uma referência estável para cada evidência.</h2><p>{evidence.notes}</p>
    <div class="evidence-summary"><span><strong>{rows.length}</strong> registros catalogados</span><span><strong>{publicRows.length}</strong> fontes públicas</span><span><strong>{privateRows.length}</strong> provas/documentos privados a preservar</span></div>
    <div class="evidence-actions"><a class="button button-dark" href={'/casos/' + slug + '/indice-evidencias.csv'}>Baixar índice CSV ↗</a><button class="button button-subtle" type="button" data-print-evidence>Imprimir / salvar PDF</button></div>
   </header>

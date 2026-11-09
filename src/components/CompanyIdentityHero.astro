@@ -1,8 +1,9 @@
 ---
 import media from '../data/company-media.json';
-import {cases,casePath,brl} from '../lib/cases';
-import {type Brand,type BrandUnit,brandPath,unitPath,statusLabel} from '../lib/brands';
-import {impactForSelection,brandImpactPath,unitImpactPath,brandSnapshot} from '../lib/impact';
+import {casePath,brl} from '../lib/cases';
+import {type Brand,type BrandUnit,statusLabel} from '../lib/brands';
+import {impactForSelection,brandSnapshot} from '../lib/impact';
+import VerdictMiniSummary from './VerdictMiniSummary.astro';
 interface Props {brand:Brand;unit?:BrandUnit}
 const {brand,unit}=Astro.props;
 const selected=unit||brand;
@@ -14,8 +15,6 @@ const snapshot=brandSnapshot(brand);
 const {relatedCases,reportedPaymentTotal,indexedReportCount,sourceCount,holdDays}=impactForSelection({brand,unit});
 const first=relatedCases[0];
 const caseLink=first?casePath(first):'/casos/';
-const impactLink=unit?unitImpactPath(brand,unit):brandImpactPath(brand);
-const toUnit=unit?unitPath(brand,unit):brandPath(brand);
 const status=statusLabel(selected.verdict.status);
 ---
 <section class="company-identity" id="perfil-empresarial" aria-labelledby="company-identity-heading">
@@ -30,10 +29,10 @@ const status=statusLabel(selected.verdict.status);
     <div class="company-verdict-line"><span class={'company-verdict-pill status-'+selected.verdict.status}>{status}</span><span class="company-verdict-date">Avaliação editorial · {selected.verdict.valid_as_of.split('-').reverse().join('/')}</span></div>
     <h1 id="company-identity-heading">{unit?unit.name:brand.name}<span class="company-identity-heading-tail">: histórico, casos e responsabilidade.</span></h1>
     <p class="company-profile-summary">{unit?unit.summary:brand.summary}</p>
-    <div class="company-verdict-integrated"><div class="company-verdict-rail"></div><div><strong>{selected.verdict.headline}</strong><p>{selected.verdict.lead}</p><small>Recomendação referente a {selected.verdict.scope.toLocaleLowerCase('pt-BR')}</small></div></div>
+    <VerdictMiniSummary verdict={selected.verdict} showMeta={false}/>
     <div class="company-identity-actions">
      <a class="button button-dark" href={caseLink}>Ver caso e evidências ↗</a>
-     <a class="button button-subtle" href={impactLink}>Analisar impacto ↗</a>
+     <a class="button button-subtle" href="#analisar-impacto">Analisar impacto ↓</a>
      <a class="company-inline-link" href="#casos-associados">Reclamações relacionadas ↓</a>
     </div>
    </div>

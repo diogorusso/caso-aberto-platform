@@ -8,9 +8,9 @@ export function getStaticPaths() {return cases.map(item=>({params:{slug:item.slu
 interface Props {item: Case}
 const {item}=Astro.props;
 ---
-<BaseLayout title={`${item.empresa_resumo}: cronologia do caso | CasoAberto`} description={`Linha do tempo, prazos e eventos relatados no caso ${item.id}: ${item.resumo}`} dateModified={item.status_data} type="article">
+<BaseLayout title={`${item.empresa_resumo}: cronologia do caso | CasoAberto`} description={`Linha do tempo, prazos e eventos relatados no dossiê ${item.empresa_resumo}: ${item.resumo}`} dateModified={item.status_data} type="article">
   <Breadcrumbs items={[...crumbFor(item),{label:'Linha do tempo',href:`${casePath(item)}linha-do-tempo/`}]}/>
-  <section class="pagehead"><div class="container"><span class="eyebrow">CRONOLOGIA · {item.id}</span><h1>{item.empresa_resumo}: linha do tempo do caso.</h1><p>Datas, prazos, compromissos e registros reunidos para acompanhar a evolução do caso.</p></div></section>
+  <section class="pagehead"><div class="container"><span class="eyebrow">CRONOLOGIA</span><h1>{item.empresa_resumo}: linha do tempo do caso.</h1><p>Datas, prazos, compromissos e registros reunidos para acompanhar a evolução do caso.</p></div></section>
   <CaseNav item={item} current="linha-do-tempo"/>
   <section class="section"><div class="container narrow"><Timeline items={item.cronologia}/><div class="note"><strong>O que permanece pendente?</strong><p>{item.status}. Última revisão: {item.status_data}. {item.prazo_posterior || ''}</p></div><a class="text-link" href={casePath(item)}>Voltar ao dossiê ↗</a></div></section>
 </BaseLayout>

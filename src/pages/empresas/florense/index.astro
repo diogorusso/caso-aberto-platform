@@ -7,30 +7,35 @@ import CompanyDossier from '../../../components/CompanyDossier.astro';
 import CompanyProfiles from '../../../components/CompanyProfiles.astro';
 import CompanyCaseMatrix from '../../../components/CompanyCaseMatrix.astro';
 import CompanyRanking from '../../../components/CompanyRanking.astro';
-import ImpactTeaser from '../../../components/ImpactTeaser.astro';
+import ImpactDashboard from '../../../components/ImpactDashboard.astro';
 import PrecedentComparison from '../../../components/PrecedentComparison.astro';
+import DetailLayout from '../../../components/ui/DetailLayout.astro';
 import {findBrand,brandPath} from '../../../lib/brands';
 import {cases,casePath} from '../../../lib/cases';
+import {companyProfileNavItems} from '../../../lib/impact';
 const brand=findBrand('florense');
 if(!brand)throw Error('Florense must have a published brand profile');
 const caseItem=cases.find(c=>brand.case_ids.includes(c.id));
 const crumbs=[{label:'Início',href:'/'},{label:'Empresas',href:'/empresas/'},{label:brand.name,href:brandPath(brand)}];
 const schema={'@context':'https://schema.org','@type':'WebPage',name:'Florense — perfil empresarial e arquivo de casos',about:{'@type':'Organization',name:brand.name,url:'https://florense.com.br/',logo:'https://images.squarespace-cdn.com/content/v1/64e8cc485611b24469ae7ad6/6224d17d-4408-418f-9700-cc4d34e2e886/florensewithback-removebg-preview%2B2.png'},dateModified:brand.last_reviewed};
+const navItems=companyProfileNavItems({hasPrecedent:Boolean(caseItem),hasDossier:true});
 ---
 <BaseLayout title="Florense: reclamações, CNPJ, risco, casos e avaliação | CasoAberto" description="Perfil editorial da Florense com imagem oficial, dados societários, reclamações catalogadas e caso de R$ 190 mil em Ipanema. Leia fontes, histórico e análise." dateModified={brand.last_reviewed} breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))} schema={schema}>
  <Breadcrumbs items={crumbs}/>
- <CompanyIdentityHero brand={brand}/>
- <ImpactTeaser brand={brand}/>
- <section class="section company-editorial-scope"><div class="container">
-  <div class="section-heading"><div><span class="eyebrow">POR QUE ESSA AVALIAÇÃO?</span><h2>Uma recomendação com perguntas e documentos.</h2><p>O caso de Ipanema fundamenta a avaliação editorial atual. Esse recorte não transforma problemas de uma unidade em prova automática sobre todos os pedidos da rede.</p></div></div>
-  <div class="rating-evidence"><article><h3>Fundamentos publicados</h3><ol>{brand.verdict.basis.map(x=><li>{x}</li>)}</ol></article><article><h3>O que pode alterar a recomendação?</h3><ol>{brand.verdict.review_triggers.map(x=><li>{x}</li>)}</ol></article></div>
-  <div class="company-identity-actions">{caseItem&&<a class="button button-dark" href={casePath(caseItem)}>Acessar caso documentado ↗</a>}<a class="button button-subtle" href="/empresas/florense/ipanema-rj/">Examinar unidade de Ipanema ↗</a><a class="company-inline-link" href="/metodologia/#avaliacao-editorial">Critérios editoriais ↗</a></div>
- </div></section>
- <CompanyCaseMatrix brand={brand}/>
- {caseItem&&<PrecedentComparison item={caseItem} compact/>}
- <CompanyRecognitionGallery brand={brand}/>
- <CompanyDossier/>
- <CompanyProfiles only={[...brand.primary_company_profile_ids,...brand.related_company_profile_ids]} title="Cadastros e vínculos societários da rede"/>
- <CompanyRanking currentBrand={brand.slug} heading="Avaliações editoriais: marca e unidades publicadas"/>
- <section class="section company-accountability-end"><div class="container"><span class="eyebrow">RESPOSTA INSTITUCIONAL</span><h2>O que a Florense tem a dizer sobre o caso?</h2><p>O dossiê reúne perguntas documentadas sobre a entrega e mantém espaço para registrar manifestação verificável, solução ou atualização.</p><div class="company-identity-actions">{caseItem&&<a class="button button-dark" href={casePath(caseItem)+'imprensa/'}>Perguntas, documentos e imprensa ↗</a>}<a class="button button-subtle" href="/empresas/">Outras empresas avaliadas ↗</a></div></div></section>
+ <DetailLayout items={navItems} title="No perfil" railLabel="Florense">
+  <CompanyIdentityHero brand={brand}/>
+  <ImpactDashboard brand={brand} embedded/>
+  <section class="section company-editorial-scope" id="avaliacao-editorial"><div class="container">
+   <div class="section-heading"><div><span class="eyebrow">POR QUE ESSA AVALIAÇÃO?</span><h2>Uma recomendação com perguntas e documentos.</h2><p>O caso de Ipanema fundamenta a avaliação editorial atual. Esse recorte não transforma problemas de uma unidade em prova automática sobre todos os pedidos da rede.</p></div></div>
+   <div class="rating-evidence"><article><h3>Fundamentos publicados</h3><ol>{brand.verdict.basis.map(x=><li>{x}</li>)}</ol></article><article><h3>O que pode alterar a recomendação?</h3><ol>{brand.verdict.review_triggers.map(x=><li>{x}</li>)}</ol></article></div>
+   <div class="company-identity-actions">{caseItem&&<a class="button button-dark" href={casePath(caseItem)}>Acessar caso documentado ↗</a>}<a class="button button-subtle" href="/empresas/florense/ipanema-rj/">Examinar unidade de Ipanema ↗</a><a class="company-inline-link" href="/metodologia/#avaliacao-editorial">Critérios editoriais ↗</a></div>
+  </div></section>
+  <CompanyCaseMatrix brand={brand}/>
+  {caseItem&&<PrecedentComparison item={caseItem} compact/>}
+  <CompanyRecognitionGallery brand={brand}/>
+  <CompanyDossier/>
+  <CompanyProfiles only={[...brand.primary_company_profile_ids,...brand.related_company_profile_ids]} title="Cadastros e vínculos societários da rede"/>
+  <CompanyRanking currentBrand={brand.slug} heading="Avaliações editoriais: marca e unidades publicadas"/>
+  <section class="section company-accountability-end" id="resposta-institucional"><div class="container"><span class="eyebrow">RESPOSTA INSTITUCIONAL</span><h2>O que a Florense tem a dizer sobre o caso?</h2><p>O dossiê reúne perguntas documentadas sobre a entrega e mantém espaço para registrar manifestação verificável, solução ou atualização.</p><div class="company-identity-actions">{caseItem&&<a class="button button-dark" href={casePath(caseItem)+'imprensa/'}>Perguntas, documentos e imprensa ↗</a>}<a class="button button-subtle" href="/empresas/">Outras empresas avaliadas ↗</a></div></div></section>
+ </DetailLayout>
 </BaseLayout>

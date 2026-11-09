@@ -2,23 +2,29 @@
 import {brl,type Case} from '../lib/cases';
 import {type Brand,type BrandUnit} from '../lib/brands';
 import {impactForSelection,caseImpactPath,brandImpactPath,unitImpactPath,brandSnapshot} from '../lib/impact';
+import SectionBlock from './ui/SectionBlock.astro';
+import KpiTile from './ui/KpiTile.astro';
 interface Props {caseItem?:Case;brand?:Brand;unit?:BrandUnit}
 const {caseItem,brand,unit}=Astro.props;
 const data=impactForSelection({caseItem,brand,unit});
 const target=caseItem?caseImpactPath(caseItem):brand&&unit?unitImpactPath(brand,unit):brand?brandImpactPath(brand):'/casos/';
-const title=caseItem?'Caso '+caseItem.id:unit?.name||brand?.name||'Arquivo';
+const title=caseItem?caseItem.empresa_resumo:unit?.name||brand?.name||'Arquivo';
 const snapshot=brand&&!unit&&!caseItem?brandSnapshot(brand):null;
 ---
-<section class="impact-teaser section" id="impacto-em-numeros">
- <div class="container">
-  <div class="impact-teaser-head"><div><span class="eyebrow">RADAR DE EXPOSIÇÃO · {title}</span><h2>O tamanho do problema, em números.</h2><p>Dinheiro envolvido, tempo transcorrido, reclamações e fontes — com datas, recortes e documentação.</p></div><a class="button button-dark" href={target}>Abrir painel completo ↗</a></div>
-  <div class="impact-teaser-stats">
-   <div><strong>{data.reportedPaymentTotal>0?brl(data.reportedPaymentTotal):'Sem valor informado'}</strong><span>Valor já pago, segundo consumidor(es)</span></div>
-   <div><strong>{data.indexedReportCount.toLocaleString('pt-BR')}</strong><span>Reclamações públicas catalogadas neste recorte, incluindo resolvidas</span></div>
-   <div><strong>{data.sourceCount.toLocaleString('pt-BR')}</strong><span>URLs externas distintas: reclamações, cadastros e publicações</span></div>
-   <div><strong>{data.holdDays!=null?data.holdDays+' dias':'Não informado'}</strong><span>Desde o pagamento relatado até {data.model?.snapshot_date||'última revisão'}</span></div>
+<SectionBlock id="impacto-em-numeros" variant="editorial" eyebrow={`RADAR DE EXPOSIÇÃO · ${title}`} title="O tamanho do problema, em números." description="Dinheiro envolvido, tempo transcorrido, reclamações e fontes — com datas, recortes e documentação.">
+  <div class="ca-kpi-grid ca-kpi-grid--4">
+    <KpiTile label="Valor já pago, segundo consumidor(es)" value={data.reportedPaymentTotal>0?brl(data.reportedPaymentTotal):'Sem valor informado'}/>
+    <KpiTile label="Reclamações públicas neste recorte" value={data.indexedReportCount.toLocaleString('pt-BR')} note="Inclui relatos resolvidos"/>
+    <KpiTile label="URLs externas distintas" value={data.sourceCount.toLocaleString('pt-BR')} note="Reclamações, cadastros e publicações"/>
+    <KpiTile label="Desde o pagamento relatado" value={data.holdDays!=null?data.holdDays+' dias':'Não informado'} note={`Até ${data.model?.snapshot_date||'última revisão'}`}/>
   </div>
-  {snapshot&&<div class="impact-teaser-context"><strong>Histórico externo da marca:</strong> {snapshot.total_active_records} reclamações ativas listadas no Reclame Aqui; {snapshot.delivery_delay_category_records} classificadas como atraso na entrega. <a href={snapshot.page_url} target="_blank" rel="noopener noreferrer">Conferir fonte e período ↗</a>. Não somamos o total externo aos registros catalogados.</div>}
-  <p class="impact-teaser-note">O painel completo compara os números publicados com cenários de custo, exposição comercial e potenciais demandas. <a href={target}>Examinar hipóteses e fontes ↗</a></p>
- </div>
-</section>
+  {snapshot&&(
+    <div class="impact-teaser-context" style="margin-top:16px">
+      <strong>Histórico externo da marca:</strong> {snapshot.total_active_records} reclamações ativas listadas no Reclame Aqui; {snapshot.delivery_delay_category_records} classificadas como atraso na entrega.
+      <a href={snapshot.page_url} target="_blank" rel="noopener noreferrer"> Conferir fonte e período ↗</a>. Não somamos o total externo aos registros catalogados.
+    </div>
+  )}
+  <div class="impact-actions">
+    <a class="button button-dark" href={target}>Abrir painel completo ↗</a>
+  </div>
+</SectionBlock>

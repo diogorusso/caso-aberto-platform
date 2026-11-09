@@ -10,10 +10,10 @@ const {item}=Astro.props;
 const crumbs=[...crumbFor(item),{label:'Índice documental',href:casePath(item)+'evidencias/'}];
 ---
 <BaseLayout title={'Índice de evidências e documentos — '+item.empresa_resumo+' | CasoAberto'}
- description={'Documentos a preservar, fontes públicas e índice probatório referenciado para o caso '+item.id+'. CSV, versão para impressão e checklist de integridade.'}
+ description={'Documentos a preservar, fontes públicas e índice probatório referenciado para o dossiê '+item.empresa_resumo+'. CSV, versão para impressão e checklist de integridade.'}
  dateModified={item.status_data} type="article" breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}>
  <Breadcrumbs items={crumbs}/>
- <header class="pagehead"><div class="container"><span class="eyebrow">APOIO DOCUMENTAL · {item.id}</span><h1>Documentos, referências e preservação do caso.</h1>
+ <header class="pagehead"><div class="container"><span class="eyebrow">APOIO DOCUMENTAL</span><h1>Documentos, referências e preservação do caso.</h1>
   <p>Índice público e exportável para o titular, jornalistas e profissionais que precisem verificar cronologia e fontes. Não substitui os documentos originais nem afirma que os arquivos privados estejam publicados ou autenticados.</p>
  </div></header>
  <CaseNav item={item} current="evidencias" />

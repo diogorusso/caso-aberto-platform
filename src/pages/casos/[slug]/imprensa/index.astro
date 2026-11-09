@@ -10,9 +10,9 @@ const {item}=Astro.props;
 const crumbs=[...crumbFor(item),{label:'Imprensa',href:`${casePath(item)}imprensa/`}];
 const n=reportsFor(item).length;
 ---
-<BaseLayout title={`${item.empresa_resumo}: kit para imprensa | CasoAberto`} description={'Fact sheet público do caso '+item.id+': valores, datas, fontes verificáveis, cronologia e perguntas à empresa.'} dateModified={item.status_data} type="article" breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}>
+<BaseLayout title={`${item.empresa_resumo}: kit para imprensa | CasoAberto`} description={'Fact sheet público de '+item.empresa_resumo+': valores, datas, fontes verificáveis, cronologia e perguntas à empresa.'} dateModified={item.status_data} type="article" breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}>
   <Breadcrumbs items={crumbs}/>
-  <section class="pagehead"><div class="container"><span class="eyebrow">KIT IMPRENSA · {item.id}</span><h1>Fact sheet — {item.empresa_resumo}</h1><p>Material verificável para jornalistas. CasoAberto é publicação independente — não somos órgão oficial nem assessoria jurídica.</p></div></section>
+  <section class="pagehead"><div class="container"><span class="eyebrow">KIT IMPRENSA</span><h1>Fact sheet — {item.empresa_resumo}</h1><p>Material verificável para jornalistas. CasoAberto é publicação independente — não somos órgão oficial nem assessoria jurídica.</p></div></section>
   <CaseNav item={item} current="imprensa" />
   <section class="press-actionbar"><div class="container"><a class="button button-dark" href={casePath(item)+'materiais-imprensa/'}>Baixar cards e fact sheet ↗</a><a class="button button-subtle" href={casePath(item)+'evidencias/'}>Índice documental ↗</a><a class="button button-subtle" href={casePath(item)+'indice-evidencias.csv'}>Exportar CSV</a></div></section>
   <section class="section"><div class="container narrow editorial">
