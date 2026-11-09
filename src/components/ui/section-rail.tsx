@@ -61,17 +61,17 @@ export function SectionRail({ items, label = 'Nesta página', className }: Secti
       ref={navRef}
       aria-label={label}
       className={cn(
-        'sticky top-[79px] z-20 border-b border-stroke bg-paper/92 backdrop-blur-[10px]',
+        'sticky top-[79px] z-20 border-b border-stroke/80 bg-paper/95 shadow-[0_8px_24px_rgba(21,28,25,0.04)] backdrop-blur-md',
         className,
       )}
     >
-      <div className="container flex min-w-0 items-center gap-4 py-2.5">
-        <span className="shrink-0 text-[0.68rem] font-extrabold uppercase tracking-[0.12em] text-muted-foreground">
+      <div className="container flex min-w-0 items-center gap-5 py-3">
+        <span className="shrink-0 rounded-md bg-soft px-2 py-1 text-[0.68rem] font-extrabold uppercase tracking-[0.12em] text-muted-foreground">
           {label}
         </span>
         <ul
           ref={listRef}
-          className="flex min-w-0 list-none flex-nowrap gap-0 overflow-x-auto p-0 [-ms-overflow-style:none] [scrollbar-width:none] md:flex-wrap md:overflow-visible [&::-webkit-scrollbar]:hidden"
+          className="flex min-w-0 list-none flex-nowrap gap-1 overflow-x-auto p-0 [-ms-overflow-style:none] [scrollbar-width:none] md:flex-wrap md:overflow-visible [&::-webkit-scrollbar]:hidden"
         >
           {items.map((item) => {
             const isActive = item.id === activeId;
@@ -86,10 +86,10 @@ export function SectionRail({ items, label = 'Nesta página', className }: Secti
                     smoothScrollToId(item.id);
                   }}
                   className={cn(
-                    'inline-flex items-center whitespace-nowrap px-3 py-2 text-[0.82rem] no-underline transition-colors',
+                    'inline-flex items-center whitespace-nowrap rounded-md px-3 py-1.5 text-[0.84rem] no-underline transition-colors',
                     isActive
-                      ? 'font-extrabold text-brand-dark'
-                      : 'font-semibold text-[#6a7a6e] hover:text-ink',
+                      ? 'bg-[#fff4f1] font-bold text-brand-dark'
+                      : 'font-medium text-[#6a7a6e] hover:bg-soft hover:text-ink',
                   )}
                 >
                   {item.label}

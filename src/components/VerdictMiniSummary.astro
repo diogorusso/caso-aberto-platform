@@ -1,6 +1,7 @@
 ---
 import {statusLabel, type Verdict} from '../lib/brands';
 import VerdictStatusBadge from './VerdictStatusBadge.tsx';
+import { Alert, AlertDescription, AlertTitle } from './ui/alert';
 interface Props {
   verdict: Verdict;
   compact?: boolean;
@@ -10,20 +11,31 @@ interface Props {
 const {verdict, compact = false, subject, showMeta = true} = Astro.props;
 const label = statusLabel(verdict.status);
 const reviewed = verdict.valid_as_of.split('-').reverse().join('/');
+const tone =
+  verdict.status === 'recomendamos' ? 'success' :
+  verdict.status === 'cautela' ? 'warning' :
+  'brand';
 ---
-<aside class:list={['verdict-panel', compact && 'verdict-panel--compact', `verdict-panel--${verdict.status}`]} aria-label="Resumo da recomendação editorial">
+<Alert
+  variant={tone}
+  className={compact ? 'max-w-none' : 'max-w-[740px]'}
+  aria-label="Resumo da recomendação editorial"
+>
   {showMeta && (
-    <div class="verdict-panel__meta">
+    <div class="mb-3 flex flex-wrap items-center gap-2.5">
       <VerdictStatusBadge status={verdict.status} label={label} />
-      <span class="verdict-panel__date">{subject ? `${subject} · ` : ''}Revisão {reviewed}</span>
+      <span class="text-[0.72rem] font-semibold tracking-wide text-muted-foreground">
+        {subject ? `${subject} · ` : ''}Revisão {reviewed}
+      </span>
     </div>
   )}
-  <div class="verdict-panel__body">
-    <div class="company-verdict-rail" aria-hidden="true"></div>
-    <div>
-      <strong>{verdict.headline}</strong>
-      <p>{verdict.lead}</p>
-      <small>Recomendação referente a {verdict.scope.toLocaleLowerCase('pt-BR')}</small>
-    </div>
-  </div>
-</aside>
+  <AlertTitle className={tone === 'brand' ? 'text-brand-dark' : undefined}>
+    {verdict.headline}
+  </AlertTitle>
+  <AlertDescription>
+    <p class="m-0 font-semibold text-ink/85">{verdict.lead}</p>
+    <small class="mt-2 block text-[0.74rem] text-muted-foreground">
+      Recomendação referente a {verdict.scope.toLocaleLowerCase('pt-BR')}
+    </small>
+  </AlertDescription>
+</Alert>

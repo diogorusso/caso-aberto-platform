@@ -8,6 +8,8 @@ import VerdictStatusBadge from './VerdictStatusBadge';
 import { KpiCard } from './ui/kpi-card';
 import { buttonVariants } from './ui/button';
 import { Badge } from './ui/badge';
+import { Card } from './ui/card';
+import { Separator } from './ui/separator';
 import { cn } from '../lib/utils';
 interface Props {brand:Brand;unit?:BrandUnit}
 const {brand,unit}=Astro.props;
@@ -21,46 +23,131 @@ const {relatedCases,reportedPaymentTotal,indexedReportCount,sourceCount,holdDays
 const first=relatedCases[0];
 const caseLink=first?casePath(first):'/casos/';
 const status=statusLabel(selected.verdict.status);
+const reviewed=selected.verdict.valid_as_of.split('-').reverse().join('/');
 ---
-<section class="company-identity border-b border-[#d8e1d8] bg-[#f2f4ee] pt-8" id="perfil-empresarial" aria-labelledby="company-identity-heading">
- <div class="container">
-  <div class="flex flex-wrap items-center justify-between gap-4 border-b border-[#cedbd0] pb-5">
-    <span class="eyebrow m-0">CASOABERTO / PERFIL EMPRESARIAL {unit?'· UNIDADE LOCAL':'· MARCA E REDE'}</span>
-    <Badge variant="outline" className="rounded-full text-[0.78rem] font-bold text-[#718176]">
-      Revisado em {selected.verdict.valid_as_of.split('-').reverse().join('/')}
-    </Badge>
-  </div>
-  <div class="company-identity-grid">
-   <div class="company-identity-copy">
-    <div class="company-brand-lockup">
-     {visual?.logo?.src?<span class="company-brand-logo"><img src={visual.logo.src} alt={visual.logo.alt} loading="eager" decoding="async"/></span>:<span class="company-brand-monogram" aria-hidden="true">{brand.name.slice(0,2).toUpperCase()}</span>}
-     <span><strong>{brand.name}</strong><small>{unit?unit.location:brand.segment+' · '+brand.location}</small></span>
+<section class="scroll-mt-28 border-b border-stroke bg-[radial-gradient(circle_at_12%_0%,rgba(244,104,81,0.08),transparent_42%),linear-gradient(180deg,#f4f6f1_0%,#f7f7f2_55%)] pb-10 pt-6" id="perfil-empresarial" aria-labelledby="company-identity-heading">
+  <div class="container">
+    <div class="mb-5 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex flex-wrap items-center gap-2">
+        <Badge variant="brand" className="uppercase tracking-[0.08em]">CasoAberto</Badge>
+        <span class="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+          Perfil empresarial {unit ? '· unidade local' : '· marca e rede'}
+        </span>
+      </div>
+      <Badge variant="outline" className="rounded-full font-semibold text-muted-foreground">
+        Revisado em {reviewed}
+      </Badge>
     </div>
-    <div class="mb-4 flex flex-wrap items-center gap-3">
-      <VerdictStatusBadge status={selected.verdict.status} label={status} />
-      <span class="text-[0.8rem] font-semibold text-[#6a7a6e]">Avaliação editorial · {selected.verdict.valid_as_of.split('-').reverse().join('/')}</span>
+
+    {/* Harpia-style card shell: copy + media in one composition */}
+    <Card className="overflow-hidden rounded-[22px] border-stroke bg-card p-0 shadow-[0_28px_70px_rgba(21,28,25,0.1)]">
+      <div class="grid lg:grid-cols-[minmax(0,1.02fr)_minmax(340px,0.98fr)]">
+        <div class="flex min-w-0 flex-col gap-4 p-6 sm:p-8 lg:gap-5 lg:p-10">
+          <div class="flex flex-wrap items-center gap-3">
+            {visual?.logo?.src ? (
+              <span class="inline-flex h-12 min-w-[120px] items-center justify-center rounded-xl border border-stroke bg-white px-3 shadow-sm">
+                <img src={visual.logo.src} alt={visual.logo.alt} class="max-h-8 max-w-[118px] object-contain" loading="eager" decoding="async" />
+              </span>
+            ) : (
+              <span class="grid size-12 place-items-center rounded-xl border border-stroke bg-soft text-lg font-extrabold shadow-sm" aria-hidden="true">
+                {brand.name.slice(0,2).toUpperCase()}
+              </span>
+            )}
+            <div class="min-w-0">
+              <p class="m-0 text-sm font-bold text-ink">{brand.name}</p>
+              <p class="m-0 text-xs text-muted-foreground">{unit ? unit.location : `${brand.segment} · ${brand.location}`}</p>
+            </div>
+            <div class="ml-auto flex flex-wrap items-center gap-2">
+              <VerdictStatusBadge status={selected.verdict.status} label={status} />
+            </div>
+          </div>
+
+          <div class="grid gap-2.5">
+            <h1 id="company-identity-heading" class="m-0 max-w-[17ch] text-[clamp(1.9rem,3.2vw,2.85rem)] font-extrabold leading-[1.08] tracking-[-0.05em] text-ink">
+              {unit ? unit.name : brand.name}
+              <span class="font-medium text-[#5b7163]">: histórico, casos e responsabilidade.</span>
+            </h1>
+            <p class="m-0 max-w-[44ch] text-[0.98rem] leading-relaxed text-muted-foreground">
+              {unit ? unit.summary : brand.summary}
+            </p>
+          </div>
+
+          <VerdictMiniSummary verdict={selected.verdict} showMeta={false} />
+
+          <div class="mt-1 flex flex-wrap items-center gap-2.5">
+            <a class={cn(buttonVariants({ variant: 'default' }))} href={caseLink}>Ver caso e evidências ↗</a>
+            <a class={cn(buttonVariants({ variant: 'outline' }))} href="#analisar-impacto">Analisar impacto ↓</a>
+            <a class={cn(buttonVariants({ variant: 'ghost' }), 'text-brand-dark')} href="#casos-associados">Reclamações relacionadas ↓</a>
+          </div>
+        </div>
+
+        <aside class="relative min-h-[420px] border-t border-stroke bg-soft lg:min-h-full lg:border-l lg:border-t-0" aria-label="Identificação visual da empresa">
+          {image?.src ? (
+            <figure class="absolute inset-0 m-0 flex flex-col">
+              <img
+                src={image.src}
+                alt={image.alt}
+                width="820"
+                height="600"
+                class="min-h-0 flex-1 object-cover"
+                loading="eager"
+                decoding="async"
+              />
+              <figcaption class="relative z-[1] border-t border-white/10 bg-forest px-5 py-4 text-white">
+                <strong class="block text-[0.92rem] font-bold leading-snug">{image.title}</strong>
+                <span class="mt-1 block text-[0.76rem] text-white/78">{image.address || unitVisual?.address || brand.location}</span>
+                <small class="mt-1.5 block text-[0.7rem] leading-snug text-white/60">
+                  Imagem de divulgação da marca. Não é foto do conflito.
+                </small>
+                {photoSource && (
+                  <a
+                    class="mt-2.5 inline-flex text-[0.76rem] font-bold text-[#ffb39c] no-underline hover:underline"
+                    href={photoSource}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ver fotografia na fonte original ↗
+                  </a>
+                )}
+              </figcaption>
+            </figure>
+          ) : (
+            <div class="flex h-full min-h-[360px] flex-col justify-end gap-3 p-8">
+              <strong class="max-w-[28ch] text-2xl leading-tight text-forest">Imagem do estabelecimento em verificação</strong>
+              <p class="m-0 max-w-[40ch] text-sm text-muted-foreground">
+                O catálogo aceita imagens com fonte, localização, data e autoria. Não usamos fotos de outras lojas para representar uma unidade.
+              </p>
+            </div>
+          )}
+        </aside>
+      </div>
+    </Card>
+
+    {unitVisual?.website && (
+      <a
+        class={cn(buttonVariants({ variant: 'link' }), 'mt-3 h-auto px-0')}
+        href={unitVisual.website}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Página oficial da unidade ↗
+      </a>
+    )}
+
+    <Separator className="my-6" />
+
+    <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4" aria-label="Dados deste dossiê">
+      <KpiCard label="Pagamento informado" value={reportedPaymentTotal ? brl(reportedPaymentTotal) : '—'} note="Nos casos associados" />
+      <KpiCard label="Desde o pagamento" value={holdDays != null ? holdDays + ' dias' : '—'} note="Até a última revisão" />
+      <KpiCard label="Reclamações catalogadas" value={indexedReportCount} note={unit ? 'Da unidade' : 'Nos casos vinculados'} />
+      <KpiCard label="URLs distintas" value={sourceCount} note="Referências no dossiê" />
     </div>
-    <h1 id="company-identity-heading">{unit?unit.name:brand.name}<span class="company-identity-heading-tail">: histórico, casos e responsabilidade.</span></h1>
-    <p class="company-profile-summary">{unit?unit.summary:brand.summary}</p>
-    <VerdictMiniSummary verdict={selected.verdict} showMeta={false}/>
-    <div class="mt-5 flex flex-wrap items-center gap-2.5">
-     <a class={cn(buttonVariants({ variant: 'default' }))} href={caseLink}>Ver caso e evidências ↗</a>
-     <a class={cn(buttonVariants({ variant: 'outline' }))} href="#analisar-impacto">Analisar impacto ↓</a>
-     <a class={cn(buttonVariants({ variant: 'link' }), 'h-auto px-1')} href="#casos-associados">Reclamações relacionadas ↓</a>
-    </div>
-   </div>
-   <aside class="company-identity-visual" aria-label="Identificação visual da empresa">
-    {image?.src?<figure class="company-photo-card"><img src={image.src} alt={image.alt} width="820" height="600" loading="eager" decoding="async"/><figcaption><strong>{image.title}</strong><span>{image.address||unitVisual?.address||brand.location}</span><small>Imagem de divulgação da marca, sem data da fotografia confirmada. Não é foto do conflito.</small><a href={photoSource} target="_blank" rel="noopener noreferrer">Ver fotografia na fonte original ↗</a></figcaption></figure>
-     :<div class="company-photo-empty"><strong>Imagem do estabelecimento em verificação</strong><p>O catálogo aceita imagens com fonte, localização, data e autoria. Não usamos fotos de outras lojas para representar uma unidade.</p></div>}
-    {unitVisual?.website&&<a class="company-visual-source" href={unitVisual.website} target="_blank" rel="noopener noreferrer">Página oficial da unidade ↗</a>}
-   </aside>
+
+    {snapshot && !unit && (
+      <p class="mt-4 mb-0 text-[0.76rem] leading-relaxed text-muted-foreground">
+        Contexto da marca: {snapshot.total_active_records} reclamações listadas no histórico externo do Reclame Aqui em {snapshot.as_of.split('-').reverse().join('/')}. Amostra diferente, não somada acima.
+        {' '}<a class="font-bold text-brand-dark no-underline hover:underline" href={snapshot.page_url} target="_blank" rel="noopener noreferrer">Fonte ↗</a>
+      </p>
+    )}
   </div>
-  <div class="grid grid-cols-1 gap-3 border-t border-[#d2ddd1] py-5 sm:grid-cols-2 xl:grid-cols-4" aria-label="Dados deste dossiê">
-   <KpiCard label="Pagamento informado" value={reportedPaymentTotal?brl(reportedPaymentTotal):'—'} note="Nos casos associados"/>
-   <KpiCard label="Desde o pagamento" value={holdDays!=null?holdDays+' dias':'—'} note="Até a última revisão"/>
-   <KpiCard label="Reclamações catalogadas" value={indexedReportCount} note={unit?'Da unidade':'Nos casos vinculados'}/>
-   <KpiCard label="URLs distintas" value={sourceCount} note="Referências no dossiê"/>
-  </div>
-  {snapshot&&!unit&&<p class="company-brand-footnote">Contexto da marca: {snapshot.total_active_records} reclamações listadas no histórico externo do Reclame Aqui em {snapshot.as_of.split('-').reverse().join('/')}. Amostra diferente, não somada acima. <a href={snapshot.page_url} target="_blank" rel="noopener noreferrer">Fonte ↗</a></p>}
- </div>
 </section>

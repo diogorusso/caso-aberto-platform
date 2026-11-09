@@ -22,10 +22,10 @@ export function TableOfContents({ items, title = 'Nesta página', className }: T
 
   return (
     <nav aria-label={title} className={cn('min-w-0', className)}>
-      <p className="mb-3.5 text-[0.68rem] font-extrabold uppercase tracking-[0.12em] text-muted-foreground">
+      <p className="mb-4 px-2 text-[0.68rem] font-extrabold uppercase tracking-[0.14em] text-muted-foreground">
         {title}
       </p>
-      <ol className="m-0 grid list-none gap-1 p-0">
+      <ol className="m-0 grid list-none gap-0.5 p-0">
         {items.map((item, i) => {
           const isActive = item.id === activeId;
           return (
@@ -39,13 +39,18 @@ export function TableOfContents({ items, title = 'Nesta página', className }: T
                   smoothScrollToId(item.id);
                 }}
                 className={cn(
-                  'flex items-baseline gap-2.5 rounded-r-md border-l-2 px-2 py-1.5 text-[0.88rem] leading-snug no-underline transition-colors',
+                  'flex items-baseline gap-2.5 rounded-lg border-l-2 px-2.5 py-2 text-[0.88rem] leading-snug no-underline transition-colors',
                   isActive
-                    ? 'border-brand bg-[#fff4f1] font-extrabold text-brand-dark'
-                    : 'border-transparent font-semibold text-[#526357] hover:bg-soft hover:text-ink',
+                    ? 'border-brand bg-[#fff4f1] font-bold text-brand-dark shadow-sm'
+                    : 'border-transparent font-medium text-[#526357] hover:bg-soft hover:text-ink',
                 )}
               >
-                <span className="shrink-0 text-[0.7rem] font-extrabold tracking-wide text-[#8a968c]">
+                <span
+                  className={cn(
+                    'shrink-0 font-mono text-[0.68rem] font-bold tracking-wide',
+                    isActive ? 'text-brand-dark' : 'text-[#8a968c]',
+                  )}
+                >
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <span>{item.label}</span>
