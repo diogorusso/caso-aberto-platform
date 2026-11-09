@@ -4,7 +4,7 @@ interface Props {precedent:Precedent}
 const {precedent:p}=Astro.props;
 ---
 <ol class="precedent-timeline" aria-label={'Cronologia documentada de '+p.brand}>
- {p.timeline.map((event,i)=><li class:list={['precedent-milestone','milestone-'+event.type]}>
+ {p.timeline.map(event=><li class:list={['precedent-milestone','milestone-'+event.type]}>
   <span class="precedent-timeline-date"><time datetime={event.date}>{formatDate(event.date)}</time></span>
   <div class="precedent-timeline-body"><strong>{event.event}</strong><a href={event.source_url} target="_blank" rel="noopener noreferrer">Fonte do marco ↗</a></div>
  </li>)}

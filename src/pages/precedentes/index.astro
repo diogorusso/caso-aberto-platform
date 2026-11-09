@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import PrecedentCard from '../../components/PrecedentCard.astro';
-import {precedents,stageDescription,formatDate} from '../../lib/precedents';
+import {precedents,formatDate} from '../../lib/precedents';
 import raw from '../../data/precedents.json';
 const bankrupt=precedents.filter(p=>p.stage==='falencia_decretada').length;
 const recovery=precedents.filter(p=>p.stage==='recuperacao_judicial').length;

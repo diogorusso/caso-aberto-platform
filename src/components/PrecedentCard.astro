@@ -1,5 +1,5 @@
 ---
-import {precedentPath,precedentDuration,formatDate,brlCompact,type Precedent} from '../lib/precedents';
+import {precedentPath,precedentDuration,brlCompact,type Precedent} from '../lib/precedents';
 interface Props {precedent:Precedent;compact?:boolean}
 const {precedent:p,compact=false}=Astro.props;
 const isBankrupt=p.stage==='falencia_decretada';

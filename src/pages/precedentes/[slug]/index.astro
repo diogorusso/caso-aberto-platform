@@ -2,7 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import PrecedentTimeline from '../../../components/PrecedentTimeline.astro';
-import {precedents,precedentPath,formatDate,precedentDuration,stageDescription,type Precedent} from '../../../lib/precedents';
+import {precedents,precedentPath,formatDate,stageDescription,type Precedent} from '../../../lib/precedents';
 import raw from '../../../data/precedents.json';
 export function getStaticPaths(){return precedents.map(precedent=>({params:{slug:precedent.slug},props:{precedent}}));}
 interface Props{precedent:Precedent}
@@ -22,7 +22,7 @@ const schema={'@context':'https://schema.org','@type':'Article',headline:p.brand
  </div></section>
  <section class="section precedent-results"><div class="container">
   <span class="eyebrow">INDICADORES DA DOCUMENTAÇÃO</span><h2>Não é uma previsão: são marcos já registrados.</h2>
-  <div class="precedent-results-grid">{p.metrics.map(metric=><article><strong>{metric.label}</strong><p>{metric.meaning}</p>{metric.kind==='calculated'&&<small>Intervalo entre datas explicitadas nas fontes do processo</small>}{metric.source_url&&<a href={metric.source_url} target="_blank" rel="noopener noreferrer">Fonte do indicador ↗</a>}</article>)}</div>
+  <div class="precedent-results-grid">{p.metrics.map(metric=><article><strong>{metric.label}</strong><p>{metric.meaning}</p>{metric.kind==='calculated'&&<small>Intervalo entre datas explicitadas nas fontes do processo</small>}{'source_url' in metric && metric.source_url && <a href={metric.source_url} target="_blank" rel="noopener noreferrer">Fonte do indicador ↗</a>}</article>)}</div>
  </div></section>
  <section class="section precedent-timeline-section" id="linha-do-tempo"><div class="container">
   <span class="eyebrow">MARCO A MARCO</span><h2>Linha do tempo com documentos.</h2>
