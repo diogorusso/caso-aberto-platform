@@ -8,10 +8,10 @@ const importantKeys=['focus','closure_evidence'];
 const https=url=>typeof url==='string'&&/^https:\/\/[a-z0-9.-]+(?::443)?(?:\/|$)/i.test(url)&&!/@/.test(url.split('/').slice(0,3).join('/'));
 export const sourceCases=(owned,atlas,political,platform)=>{
  const out=[
-  ...owned.map(item=>({id:item.id,slug:item.slug,href:'/casos/'+item.slug+'/',date:item.status_data,status:item.status,kind:'consumer'})),
-  ...atlas.cases.map(item=>({id:item.id,slug:item.slug,href:'/casos/arquivo-publico/'+item.slug+'/',date:item.reviewed_at,status:item.status_label,kind:'external'})),
-  ...political.cases.map(item=>({id:item.id,slug:item.slug,href:'/observatorio/politica/'+item.slug+'/',date:item.reviewed_at,status:item.status,kind:'political'})),
-  {id:'PLAT-2026-CASE',slug:'meta-eleicoes-2026-governanca-plataformas',href:'/observatorio/plataformas/',date:platform.reviewed_at,status:'Registros institucionais acompanhados',kind:'platform'},
+  ...owned.map(item=>({id:item.id,slug:item.slug,href:'/casos/'+item.slug+'/',date:item.status_data,status:item.status,kind:'consumer',source_urls:item.fontes.map(s=>s.url)})),
+  ...atlas.cases.map(item=>({id:item.id,slug:item.slug,href:'/casos/arquivo-publico/'+item.slug+'/',date:item.reviewed_at,status:item.status_label,kind:'external',source_urls:item.sources.map(s=>s.url)})),
+  ...political.cases.map(item=>({id:item.id,slug:item.slug,href:'/observatorio/politica/'+item.slug+'/',date:item.reviewed_at,status:item.status,kind:'political',source_urls:item.source_ids.map(id=>political.sources.find(s=>s.id===id)?.url).filter(Boolean)})),
+  {id:'PLAT-2026-CASE',slug:'meta-eleicoes-2026-governanca-plataformas',href:'/observatorio/plataformas/',date:platform.reviewed_at,status:'Registros institucionais acompanhados',kind:'platform',source_urls:platform.records.map(r=>r.source_url)},
  ];
  return out;
 };
@@ -33,7 +33,9 @@ export function validatePolicy(policy,index){
   if(!Array.isArray(item.watch_urls)||item.watch_urls.length>policy.schedule.max_requests_per_case||item.watch_urls.some(u=>!https(u)))problems.push('Invalid watch URL cap '+item.id);
   if(!Array.isArray(item.deadlines)||item.deadlines.some(d=>!iso(d)))problems.push('Invalid deadline '+item.id);
   if(item.mode==='closed'&&(!iso(item.closed_at)||!https(item.closure_source_url||'')))problems.push('Closed case lacks verifiable closure date and source '+item.id);
+  if(item.mode==='paused'&&(typeof item.pause_reason!=='string'||item.pause_reason.length<30||!iso(item.paused_at)))problems.push('Paused case requires dated editorial reason '+item.id);
   if(item.mode==='closed'&&item.closed_at>byId.get(item.id)?.date)problems.push('Closure date is newer than published case review '+item.id);
+  if(item.mode==='closed'&&!byId.get(item.id)?.source_urls?.includes(item.closure_source_url))problems.push('Closure source missing from published dossier '+item.id);
   if(item.mode==='closed'&&!/(resolvid|conclu[ií]d|encerrad|arquivad|cumprid|homologad|finalizad)/i.test(byId.get(item.id)?.status||''))problems.push('Closed case lacks a published resolution status '+item.id);
  }
  for(const item of index)if(!ids.has(item.id))problems.push('Case omitted from monitoring '+item.id);
