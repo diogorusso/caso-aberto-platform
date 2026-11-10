@@ -44,10 +44,10 @@
           "date": "2025-04-17",
           "label": "Governo informa cancelamento do cadastro turístico",
           "description": "Segundo publicação do Ministério da Justiça, o Ministério do Turismo cancelou o registro da Hurb no Cadastur após medidas da Senacon.",
-          "source_url": "https://www.gov.br/mj/pt-br/assuntos/seus-direitos/consumidor/noticias-consumidor?b_start%3Aint=210"
+          "source_url": "https://www.gov.br/mj/pt-br/assuntos/noticias/apos-medida-da-senacon-ministerio-do-turismo-cancela-cadastro-da-hurb"
         }
       ],
-      "other_side": "Em registros de 2023 analisados pelo Procon-SP, a empresa atribuía diferenças de datas à disponibilidade dos preços promocionais. O jornal O Estado de S. Paulo/Folha registrou em 2024 ofertas de migração de pacote; cada contrato e resposta precisa ser verificado individualmente.",
+      "other_side": "Em registros de 2023 analisados pelo Procon-SP, a empresa atribuía diferenças de datas à disponibilidade dos preços promocionais. O jornal Folha de S.Paulo registrou em 2024 ofertas de migração de pacote; cada contrato e resposta precisa ser verificado individualmente.",
       "other_side_url": "https://www.procon.sp.gov.br/reclamacoes-sobre-a-hurb-no-procon-sp/",
       "questions": [
         "Quem assumiu, por escrito, a emissão das passagens e a reserva de hospedagem?",
@@ -80,7 +80,7 @@
         },
         {
           "name": "MJSP — medidas relativas à Hurb",
-          "url": "https://www.gov.br/mj/pt-br/assuntos/seus-direitos/consumidor/noticias-consumidor?b_start%3Aint=210",
+          "url": "https://www.gov.br/mj/pt-br/assuntos/noticias/apos-medida-da-senacon-ministerio-do-turismo-cancela-cadastro-da-hurb",
           "published_at": "2025-04-17",
           "kind": "Órgão público"
         }
@@ -329,7 +329,7 @@
         {
           "name": "Agência Brasil — guia de reparação de prejuízos",
           "url": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-07/saiba-como-pedir-ressarcimento-por-prejuizos-com-falta-de-energia",
-          "published_at": "2026-07-16",
+          "published_at": "2026-07-30",
           "kind": "Jornalismo"
         }
       ]

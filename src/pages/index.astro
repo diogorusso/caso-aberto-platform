@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CaseCard from '../components/CaseCard.astro';
+import PublicCaseCard from '../components/PublicCaseCard.astro';
+import publicAtlas from '../data/public-case-atlas.json';
 import { cases, reports } from '../lib/cases';
 import { brands, ratingDefinitions } from '../lib/brands';
 import registries from '../data/company-profiles.json';
@@ -58,6 +60,12 @@ const pathways = [
       <p class="m-0 text-sm text-muted-foreground">Contagens do arquivo CasoAberto nesta versão, não estatísticas do mercado brasileiro. <a class="text-link" href="/metodologia/">Como organizamos os dados ↗</a></p>
     </div>
   </section>
+
+  <Section eyebrow="CASOS PARA INVESTIGAR" title="Uma reclamação pessoal pode revelar um problema maior." description="Além dos dossiês acompanhados diretamente, reunimos fontes de Procons, imprensa e decisões sobre serviços e contratos. Cada recorte preserva data, limites e posição conhecida da empresa.">
+    <a slot="action" class="text-link text-sm" href="/casos/arquivo-publico/">Explorar todos os casos documentados ↗</a>
+    <div class="grid gap-4 md:grid-cols-2">{publicAtlas.cases.map(study=><PublicCaseCard study={study} compact/>)}</div>
+    <p class="m-0 text-sm text-muted-foreground">O arquivo público é uma síntese atribuída de registros externos, não uma investigação original de cada contrato. <a class="text-link" href="/historias/">Leia as histórias que dão contexto aos números ↗</a></p>
+  </Section>
 
   <Section eyebrow="DO DADO À AÇÃO" title="Três capacidades para não depender de intermediários." description="O CasoAberto combina investigação pública, organização por consentimento e educação técnica. Casos de consumo são uma das aplicações — não o limite do projeto.">
     <div class="grid gap-4 md:grid-cols-3">
