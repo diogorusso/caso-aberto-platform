@@ -475,6 +475,556 @@
       "format": "insight_publico",
       "product_slug": "pegadas-digitais",
       "editorial_boundary": "Amostra educativa aberta; o currículo completo, protocolos, formação e exercícios avançados permanecem no produto educacional."
+    },
+    {
+      "slug": "vpn-nao-e-um-plano-de-seguranca",
+      "title": "VPN não é um plano de segurança: comece pelo seu modelo de ameaça",
+      "summary": "Antes de instalar outra ferramenta de privacidade, descubra qual informação precisa proteger, de quem e com qual consequência observável.",
+      "chapters": [
+        "01",
+        "02"
+      ],
+      "product_slug": "pegadas-digitais",
+      "format": "insight_publico",
+      "published_at": "2026-11-09",
+      "updated_at": "2026-11-09",
+      "sections": [
+        {
+          "heading": "A pergunta vem antes da ferramenta",
+          "paragraphs": [
+            "Uma jornalista protegendo uma fonte, um comerciante protegendo contratos e uma pessoa gerenciando perfis pessoais têm riscos diferentes. A mesma VPN não atende a todos: ela modifica parte da visibilidade de rede, mas não apaga logins nem elimina informações já entregues a um site. Um bom plano começa pela relação entre dado, observador e consequência."
+          ]
+        },
+        {
+          "heading": "O que uma auditoria pessoal consegue demonstrar",
+          "paragraphs": [
+            "Um inventário deve registrar o que você publicou, o que aplicativos receberam com autorização e o que outras pessoas podem compartilhar sobre você. Ele não prova que todo registro existe nem que alguém usou cada informação contra você. O valor está em identificar uma exposição concreta e escolher uma proteção que tenha resultado verificável."
+          ]
+        }
+      ],
+      "lab": {
+        "title": "Exercício inicial: uma pergunta verificável",
+        "steps": [
+          "Escreva em uma frase: 'Quero impedir que [observador] obtenha [informação] por [caminho] porque [consequência]'. Avalie somente dados seus."
+        ]
+      },
+      "questions": [
+        {
+          "q": "Uma VPN impede que o site me reconheça?",
+          "a": "Não necessariamente. O serviço ainda pode observar sua sessão e seus dados autenticados."
+        },
+        {
+          "q": "É preciso apagar todas as contas?",
+          "a": "Não. A medida precisa ser proporcional ao risco e aos serviços dos quais a pessoa depende."
+        }
+      ],
+      "sources": [
+        {
+          "name": "EFF — Your Security Plan",
+          "url": "https://ssd.eff.org/module/your-security-plan"
+        },
+        {
+          "name": "W3C — Browser Fingerprinting Guidance",
+          "url": "https://www.w3.org/TR/fingerprinting-guidance/"
+        }
+      ],
+      "editorial_boundary": "Insight independente de entrada. O material educacional completo, protocolos, laboratórios e soluções permanecem no acervo privado."
+    },
+    {
+      "slug": "cancelamento-dificil-padroes-de-escolha",
+      "title": "Por que cancelar um serviço pode ser muito mais difícil do que assinar?",
+      "summary": "Entenda como escolhas, botões, padrões de interface e fricção digital alteram sua capacidade de decidir sem reduzir todo design persuasivo a fraude.",
+      "chapters": [
+        "06",
+        "07"
+      ],
+      "product_slug": "algoritmos-e-poder",
+      "format": "insight_publico",
+      "published_at": "2026-11-09",
+      "updated_at": "2026-11-09",
+      "sections": [
+        {
+          "heading": "A interface também exerce influência",
+          "paragraphs": [
+            "Uma tela pode destacar a confirmação, esconder a recusa e exigir caminhos muito diferentes para contratar e cancelar. A ordem das opções, o tamanho dos botões e a quantidade de etapas afetam o que parece mais fácil. Isso é arquitetura de escolha. Para avaliar se é enganosa, importa documentar o fluxo, as informações fornecidas e as alternativas reais disponíveis."
+          ]
+        },
+        {
+          "heading": "Compare duas jornadas, não apenas um botão",
+          "paragraphs": [
+            "Uma captura isolada pode perder contexto como passos anteriores, obrigação contratual ou configuração de acessibilidade. Uma análise mais sólida registra começo e fim dos dois caminhos, textos, obstáculos, idioma e condições. O resultado é uma pergunta concreta sobre assimetria de experiência, não uma afirmação de intenção sem evidência."
+          ]
+        }
+      ],
+      "lab": {
+        "title": "Exercício inicial: uma pergunta verificável",
+        "steps": [
+          "Em um serviço que você usa, compare quantos passos são necessários para contratar e cancelar; registre os textos e as opções disponíveis sem concluir automaticamente que houve ilegalidade."
+        ]
+      },
+      "questions": [
+        {
+          "q": "Toda interface persuasiva é manipulação?",
+          "a": "Não. A avaliação depende de transparência, finalidade, alternativas e impacto sobre a decisão."
+        },
+        {
+          "q": "Uma imagem basta para comprovar um padrão enganoso?",
+          "a": "Geralmente não. É importante registrar a jornada completa e as condições observadas."
+        }
+      ],
+      "sources": [
+        {
+          "name": "EDPB — Deceptive Design Patterns",
+          "url": "https://www.edpb.europa.eu/documents/guideline/guidelines-032022-on-deceptive-design-patterns-in-social-media-platform_en"
+        },
+        {
+          "name": "EDPB — Consent or Pay and Genuine Choice",
+          "url": "https://www.edpb.europa.eu/news/edpb-consent-or-pay-models-should-offer-real-choice_en"
+        }
+      ],
+      "editorial_boundary": "Insight independente de entrada. O material educacional completo, protocolos, laboratórios e soluções permanecem no acervo privado."
+    },
+    {
+      "slug": "numero-reciclado-conta-antiga",
+      "title": "Seu número de telefone pode abrir a conta de outra pessoa?",
+      "summary": "Números reciclados e recuperação por SMS revelam por que receber um código hoje não demonstra ser o titular histórico de uma conta.",
+      "chapters": [
+        "08",
+        "56"
+      ],
+      "product_slug": "pegadas-digitais",
+      "format": "insight_publico",
+      "published_at": "2026-11-09",
+      "updated_at": "2026-11-09",
+      "sections": [
+        {
+          "heading": "O telefone é uma rota de entrega, não uma identidade eterna",
+          "paragraphs": [
+            "Operadoras podem reatribuir números após a desativação de linhas. Se um serviço trata a posse atual do número como evidência permanente de identidade, o novo titular pode receber mensagens destinadas ao antigo usuário. O SMS pode ter chegado corretamente ao novo assinante e, mesmo assim, o sistema de recuperação estar incorreto."
+          ]
+        },
+        {
+          "heading": "O controle precisa funcionar no ciclo inteiro da conta",
+          "paragraphs": [
+            "Proteger o login com um autenticador mais forte ajuda, mas não corrige automaticamente uma recuperação permissiva. Verifique dispositivos confiáveis, telefone de recuperação, sessões existentes e canais de suporte. O objetivo é remover dependência de identificadores antigos, sem tentar acessar contas ou números de outras pessoas."
+          ]
+        }
+      ],
+      "lab": {
+        "title": "Exercício inicial: uma pergunta verificável",
+        "steps": [
+          "Revise apenas suas contas: liste onde o telefone participa da recuperação e confirme se os números cadastrados ainda pertencem a você."
+        ]
+      },
+      "questions": [
+        {
+          "q": "Um código SMS prova quem era o titular anterior?",
+          "a": "Não. Ele comprova recebimento na rota atual, não a identidade histórica."
+        },
+        {
+          "q": "Passkeys eliminam todos os riscos de recuperação?",
+          "a": "Não. O processo de redefinição e de suporte continua fazendo parte da segurança."
+        }
+      ],
+      "sources": [
+        {
+          "name": "Princeton — Recycled Phone Numbers",
+          "url": "https://recyclednumbers.cs.princeton.edu/"
+        },
+        {
+          "name": "NIST — Digital Identity Guidelines, Authentication",
+          "url": "https://pages.nist.gov/800-63-4/sp800-63b.html"
+        }
+      ],
+      "editorial_boundary": "Insight independente de entrada. O material educacional completo, protocolos, laboratórios e soluções permanecem no acervo privado."
+    },
+    {
+      "slug": "golpe-anuncio-whatsapp-pix",
+      "title": "Do anúncio ao WhatsApp e ao Pix: como reconhecer a cadeia de um golpe",
+      "summary": "Fraudes modernas podem usar a mesma infraestrutura de distribuição das empresas legítimas. Analise contato, autoridade falsa e pagamentos sem depender de estereótipos.",
+      "chapters": [
+        "09",
+        "10",
+        "20",
+        "36"
+      ],
+      "product_slug": "cidadania-e-direitos",
+      "format": "insight_publico",
+      "published_at": "2026-11-09",
+      "updated_at": "2026-11-09",
+      "sections": [
+        {
+          "heading": "O golpe não começa necessariamente com um link estranho",
+          "paragraphs": [
+            "Uma fraude pode captar atenção em um anúncio, mover a conversa para uma mensagem privada e então apresentar uma oportunidade com urgência artificial. A técnica pode combinar prova social fabricada, identidade de terceiros e pedidos de pagamento ou transferência. Nenhum desses sinais, isoladamente, demonstra crime; a combinação de contexto, destinatário e justificativa importa."
+          ]
+        },
+        {
+          "heading": "Conter o dano vem antes de publicar a denúncia",
+          "paragraphs": [
+            "Ao identificar transferência ou acesso indevido, utilize os canais oficiais do seu banco e preserve comprovantes, URLs e números de protocolo, reduzindo exposição adicional. No Brasil, o Banco Central descreve golpes e caminhos para contestação de transações Pix dentro dos critérios aplicáveis. Não encaminhe dados financeiros pessoais a grupos públicos como forma de 'provar' o golpe."
+          ]
+        }
+      ],
+      "lab": {
+        "title": "Exercício inicial: uma pergunta verificável",
+        "steps": [
+          "Antes de realizar um pagamento recebido por mensagem, confirme a identidade do solicitante por um canal independente e registre o motivo do pedido."
+        ]
+      },
+      "questions": [
+        {
+          "q": "Toda mensagem no WhatsApp é suspeita?",
+          "a": "Não. O risco depende da verificação do destinatário, do pedido e do contexto."
+        },
+        {
+          "q": "É possível garantir devolução do Pix?",
+          "a": "Não. Os mecanismos existentes possuem critérios e não garantem recuperação em todos os casos."
+        }
+      ],
+      "sources": [
+        {
+          "name": "Banco Central — Golpes e fraudes",
+          "url": "https://www.bcb.gov.br/golpes"
+        },
+        {
+          "name": "FTC — Task Scams and Gamified Jobs",
+          "url": "https://www.ftc.gov/news-events/data-visualizations/data-spotlight/2024/12/paying-get-paid-gamified-job-scams-drive-record-losses"
+        }
+      ],
+      "editorial_boundary": "Insight independente de entrada. O material educacional completo, protocolos, laboratórios e soluções permanecem no acervo privado."
+    },
+    {
+      "slug": "gps-desligado-rastro-fisico",
+      "title": "GPS desligado: sua localização deixou de ser observável?",
+      "summary": "Rede móvel, Wi-Fi, pagamentos, veículos e dispositivos conectados podem produzir pistas de localização mesmo sem permissão contínua de GPS.",
+      "chapters": [
+        "11",
+        "28",
+        "35",
+        "54"
+      ],
+      "product_slug": "pegadas-digitais",
+      "format": "insight_publico",
+      "published_at": "2026-11-09",
+      "updated_at": "2026-11-09",
+      "sections": [
+        {
+          "heading": "Localização não é uma variável única",
+          "paragraphs": [
+            "O celular usa diversas tecnologias para se conectar. Aplicativos podem receber posição precisa quando autorizados; redes podem observar conexão aproximada; pagamentos e dispositivos domésticos podem indicar lugares visitados. É incorreto dizer que todo observador possui todos esses sinais. O modelo útil identifica cada sistema, resolução de dado e finalidade."
+          ]
+        },
+        {
+          "heading": "Uma proteção não interrompe todas as inferências",
+          "paragraphs": [
+            "Desativar acesso de um aplicativo ao GPS pode reduzir uma fonte importante de coleta, mas não apaga registros anteriores nem elimina todo sinal de proximidade. Fotografias publicadas por familiares, dispositivos compartilhados ou histórico de compra também podem revelar contexto. A proteção precisa considerar quem vê o quê e quais dados estão sob seu controle."
+          ]
+        }
+      ],
+      "lab": {
+        "title": "Exercício inicial: uma pergunta verificável",
+        "steps": [
+          "Escolha um aplicativo próprio e registre permissões de localização, frequência de acesso e a finalidade declarada; revise os dados que você compartilha voluntariamente."
+        ]
+      },
+      "questions": [
+        {
+          "q": "Sem GPS ninguém consegue inferir minha localização?",
+          "a": "Não. Outras fontes podem oferecer indícios, com precisão e condições diferentes."
+        },
+        {
+          "q": "Um app sabe necessariamente onde estive?",
+          "a": "Não. A observação depende das permissões, integrações e dados efetivamente disponíveis."
+        }
+      ],
+      "sources": [
+        {
+          "name": "EFF — Surveillance Self-Defense",
+          "url": "https://ssd.eff.org/"
+        },
+        {
+          "name": "FTC — Platform Data Practices",
+          "url": "https://www.ftc.gov/reports/look-behind-screens-examining-data-practices-social-media-video-streaming-services"
+        }
+      ],
+      "editorial_boundary": "Insight independente de entrada. O material educacional completo, protocolos, laboratórios e soluções permanecem no acervo privado."
+    },
+    {
+      "slug": "verificacao-de-idade-privacidade",
+      "title": "Verificação de idade protege crianças sem criar novos riscos de privacidade?",
+      "summary": "Comprovar faixa etária pode reduzir acesso indevido, mas também pode ampliar coleta de documentos, biometria e vínculos familiares.",
+      "chapters": [
+        "14",
+        "23",
+        "33"
+      ],
+      "product_slug": "cidadania-e-direitos",
+      "format": "insight_publico",
+      "published_at": "2026-11-09",
+      "updated_at": "2026-11-09",
+      "sections": [
+        {
+          "heading": "O objetivo e o meio precisam ser avaliados separadamente",
+          "paragraphs": [
+            "Uma plataforma pode ser obrigada a oferecer proteção específica para menores. Mas formas diferentes de verificação podem coletar selfie, documento, declaração familiar ou sinais estimados. O melhor mecanismo depende da finalidade, da exigência legal e dos riscos de reidentificação, vazamento e exclusão de pessoas sem documentos adequados."
+          ]
+        },
+        {
+          "heading": "Minimização é parte da segurança infantil",
+          "paragraphs": [
+            "Não basta pedir mais informações para prometer proteção. Uma avaliação pública deve examinar retenção, fornecedor, acessibilidade, erro de classificação e possibilidade de recurso. Crianças e famílias podem precisar de soluções que preservem direitos e segurança sem transformar cada acesso em um novo registro biométrico permanente."
+          ]
+        }
+      ],
+      "lab": {
+        "title": "Exercício inicial: uma pergunta verificável",
+        "steps": [
+          "Ao avaliar uma plataforma para sua família, procure a política oficial de verificação de idade e registre exatamente quais dados são pedidos, por quem e por quanto tempo."
+        ]
+      },
+      "questions": [
+        {
+          "q": "Todo site precisa de biometria para verificar idade?",
+          "a": "Não. Métodos e obrigações variam; biometria é apenas uma das possibilidades."
+        },
+        {
+          "q": "A prova de idade é sempre segura?",
+          "a": "Não. É necessário avaliar necessidade, retenção, acesso, erros e alternativas."
+        }
+      ],
+      "sources": [
+        {
+          "name": "FTC — Children’s Privacy Rule Updates",
+          "url": "https://www.ftc.gov/news-events/news/press-releases/2025/01/ftc-finalizes-changes-childrens-privacy-rule-limiting-companies-ability-monetize-kids-data"
+        },
+        {
+          "name": "ANPD — ECA Digital",
+          "url": "https://www.gov.br/anpd/pt-br/assuntos/eca-digital/"
+        }
+      ],
+      "editorial_boundary": "Insight independente de entrada. O material educacional completo, protocolos, laboratórios e soluções permanecem no acervo privado."
+    },
+    {
+      "slug": "conta-invadida-primeiros-registros",
+      "title": "Conta invadida: quais registros preservar antes de perder o acesso?",
+      "summary": "Em incidentes digitais, contenção e provas cumprem funções diferentes. Organize evidências úteis sem atrasar medidas urgentes de segurança.",
+      "chapters": [
+        "15",
+        "16",
+        "25"
+      ],
+      "product_slug": "cidadania-e-direitos",
+      "format": "insight_publico",
+      "published_at": "2026-11-09",
+      "updated_at": "2026-11-09",
+      "sections": [
+        {
+          "heading": "Primeiro, contenha o dano imediato",
+          "paragraphs": [
+            "Se uma conta está enviando mensagens sem autorização ou pode movimentar dinheiro, recuperar controle e bloquear a operação é prioridade. Um incidente de credencial é diferente de vazamento de dados, perda de dispositivo ou publicação indevida de conteúdo. A resposta depende do ativo ameaçado e do evento observável, não de uma história única sobre 'hackers'."
+          ]
+        },
+        {
+          "heading": "Preserve o mínimo necessário para uma contestação",
+          "paragraphs": [
+            "Horários, identificadores de transação, URLs originais, notificações, protocolos e respostas oficiais costumam ser mais úteis que capturas sem contexto. Guarde originais de forma segura, sem enviar senhas, códigos, documentos ou endereços particulares a públicos amplos. Um alerta de segurança não comprova sozinho qual foi a origem técnica do incidente."
+          ]
+        }
+      ],
+      "lab": {
+        "title": "Exercício inicial: uma pergunta verificável",
+        "steps": [
+          "Em uma conta própria não comprometida, localize a tela oficial de sessões/dispositivos e identifique onde obter o registro de acessos e o canal de recuperação."
+        ]
+      },
+      "questions": [
+        {
+          "q": "Devo documentar antes de bloquear uma fraude ativa?",
+          "a": "Não. A contenção de risco imediato tem prioridade; preserve evidências que sejam seguras e viáveis."
+        },
+        {
+          "q": "Uma notificação de invasão identifica o autor?",
+          "a": "Não necessariamente. O evento pode ter causas e atribuições que exigem investigação separada."
+        }
+      ],
+      "sources": [
+        {
+          "name": "NIST — Incident Response SP 800-61r3",
+          "url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final"
+        },
+        {
+          "name": "IdentityTheft.gov — Recovery Steps",
+          "url": "https://www.identitytheft.gov/Steps"
+        }
+      ],
+      "editorial_boundary": "Insight independente de entrada. O material educacional completo, protocolos, laboratórios e soluções permanecem no acervo privado."
+    },
+    {
+      "slug": "defesas-que-criam-riscos",
+      "title": "Quando uma ferramenta de privacidade pode criar outro risco?",
+      "summary": "Defesas digitais precisam ser testadas no contexto real. O controle que funciona em uma camada pode falhar diante de relações, permissões e dependências invisíveis.",
+      "chapters": [
+        "24",
+        "26",
+        "41",
+        "43"
+      ],
+      "product_slug": "ia-agentes-e-protecao",
+      "format": "insight_publico",
+      "published_at": "2026-11-09",
+      "updated_at": "2026-11-09",
+      "sections": [
+        {
+          "heading": "A solução pode adicionar um observador",
+          "paragraphs": [
+            "Uma extensão promete bloquear rastreadores, mas solicita leitura de todas as páginas. Um agente organiza arquivos e recebe acesso a pastas que não precisava consultar. O problema deixa de ser apenas a ameaça original e passa a incluir a nova ferramenta. Avaliar risco significa mapear ambos os fluxos de autoridade e dados."
+          ]
+        },
+        {
+          "heading": "Uma demonstração precisa testar também o fracasso",
+          "paragraphs": [
+            "Se um teste mostra que um rastreador foi bloqueado, isso não prova ausência de outras coletas. Se a revogação parece funcionar na interface, é necessário perguntar se as credenciais continuam válidas. Antes de recomendar uma defesa, registre o que foi efetivamente testado, uma explicação alternativa e quais condições permanecem desconhecidas."
+          ]
+        }
+      ],
+      "lab": {
+        "title": "Exercício inicial: uma pergunta verificável",
+        "steps": [
+          "Avalie uma extensão já instalada: anote sua finalidade, permissões concedidas e quais delas são realmente necessárias ao recurso que você usa."
+        ]
+      },
+      "questions": [
+        {
+          "q": "Mais extensões significam mais privacidade?",
+          "a": "Não. Algumas aumentam a superfície de permissões e distinguibilidade; o efeito depende do conjunto."
+        },
+        {
+          "q": "Um teste aprovado garante proteção total?",
+          "a": "Não. Demonstra apenas propriedades medidas sob condições específicas."
+        }
+      ],
+      "sources": [
+        {
+          "name": "EFF — Security Plan",
+          "url": "https://ssd.eff.org/module/your-security-plan"
+        },
+        {
+          "name": "OWASP — AI Agent Security Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html"
+        }
+      ],
+      "editorial_boundary": "Insight independente de entrada. O material educacional completo, protocolos, laboratórios e soluções permanecem no acervo privado."
+    },
+    {
+      "slug": "https-vpn-tor-o-que-veem",
+      "title": "HTTPS, VPN e Tor: quem ainda consegue observar sua conexão?",
+      "summary": "Criptografia protege conteúdos específicos; metadados de rede, horários e características de tráfego têm observadores e limites diferentes.",
+      "chapters": [
+        "37",
+        "40",
+        "48",
+        "49"
+      ],
+      "product_slug": "pegadas-digitais",
+      "format": "insight_publico",
+      "published_at": "2026-11-09",
+      "updated_at": "2026-11-09",
+      "sections": [
+        {
+          "heading": "Criptografado não significa invisível",
+          "paragraphs": [
+            "Uma conexão HTTPS normalmente protege o conteúdo de intermediários passivos, mas não impede que o site de destino conheça os dados que você envia. Provedor de acesso, resolvedor DNS, VPN e destino podem observar informações distintas. O mapa correto separa conteúdo, nome de domínio, endereço de rede, volume e horário, sem imaginar um único vigilante onisciente."
+          ]
+        },
+        {
+          "heading": "Controle e consequência mudam conforme a ameaça",
+          "paragraphs": [
+            "DNS criptografado protege a consulta de alguns observadores, mas não esconde todos os metadados de conexão. Uma VPN transfere confiança para outro operador e não desfaz login autenticado. Redes como Tor têm um modelo próprio de encaminhamento e limites diante de análise de tráfego e erros do usuário. Nenhuma tecnologia isolada oferece anonimato absoluto."
+          ]
+        }
+      ],
+      "lab": {
+        "title": "Exercício inicial: uma pergunta verificável",
+        "steps": [
+          "Desenhe uma conexão sua entre dispositivo, rede, provedor e site. Anote qual informação cada parte pode observar e qual permanece protegida."
+        ]
+      },
+      "questions": [
+        {
+          "q": "HTTPS oculta a visita para o próprio site?",
+          "a": "Não. O destino precisa processar a conexão e os dados que você envia."
+        },
+        {
+          "q": "VPN elimina fingerprinting?",
+          "a": "Não. Ela não impede a observação de características feitas pela própria página visitada."
+        }
+      ],
+      "sources": [
+        {
+          "name": "IETF — DNS over HTTPS RFC 8484",
+          "url": "https://www.rfc-editor.org/rfc/rfc8484.html"
+        },
+        {
+          "name": "Tor Project — How Tor Works",
+          "url": "https://support.torproject.org/about-tor/how-tor-works/overview/"
+        }
+      ],
+      "editorial_boundary": "Insight independente de entrada. O material educacional completo, protocolos, laboratórios e soluções permanecem no acervo privado."
+    },
+    {
+      "slug": "arquitetura-seguranca-pessoal-agentes",
+      "title": "Senha forte não resolve um agente com permissões demais",
+      "summary": "Segurança pessoal precisa incluir recuperação, escopo de ferramentas e testes de revogação — não apenas proteger a tela de login.",
+      "chapters": [
+        "51",
+        "52"
+      ],
+      "product_slug": "ia-agentes-e-protecao",
+      "format": "insight_publico",
+      "published_at": "2026-11-09",
+      "updated_at": "2026-11-09",
+      "sections": [
+        {
+          "heading": "Seu login é apenas uma fronteira",
+          "paragraphs": [
+            "Uma conta protegida com autenticação forte ainda pode conceder a um aplicativo acesso excessivo a mensagens ou documentos. Chaves de API, sessões persistentes, recuperação de conta e conectores possuem autoridades diferentes. Uma arquitetura pessoal de segurança deve explicar quais dispositivos, credenciais e ferramentas podem ler, editar ou distribuir cada classe de informação."
+          ]
+        },
+        {
+          "heading": "Proteção exige uma prova de limite",
+          "paragraphs": [
+            "Não basta o painel dizer que o acesso foi revogado. Para sistemas autorizados, um teste seguro confirma que a antiga credencial já não consegue agir. Outra pergunta é quanto conteúdo previamente copiado permanece fora do controle do usuário. Registrar o teste e suas limitações produz mais segurança do que uma lista indiscriminada de ferramentas supostamente 'essenciais'."
+          ]
+        }
+      ],
+      "lab": {
+        "title": "Exercício inicial: uma pergunta verificável",
+        "steps": [
+          "Escolha um serviço conectado ao seu e-mail, identifique o escopo concedido e localize o botão oficial para revogar essa permissão caso deixe de utilizá-lo."
+        ]
+      },
+      "questions": [
+        {
+          "q": "Autenticação forte impede vazamento por conectores?",
+          "a": "Não. Permissões concedidas a ferramentas operam em outra camada de autorização."
+        },
+        {
+          "q": "Revogar acesso sempre apaga dados antigos?",
+          "a": "Não. Token ativo, logs e cópias já produzidas são estados distintos."
+        }
+      ],
+      "sources": [
+        {
+          "name": "NIST — Authentication and Lifecycle",
+          "url": "https://pages.nist.gov/800-63-4/sp800-63b.html"
+        },
+        {
+          "name": "OWASP — AI Agent Security",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html"
+        }
+      ],
+      "editorial_boundary": "Insight independente de entrada. O material educacional completo, protocolos, laboratórios e soluções permanecem no acervo privado."
     }
   ],
   "delivery_model": "public_snippets_with_premium_curriculum",
