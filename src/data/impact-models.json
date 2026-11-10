@@ -4,7 +4,7 @@
   "definitions": {
     "observed": "Contagem em fonte pública ou no arquivo de evidências revisado; datas e cobertura podem divergir.",
     "reported": "Valor, prazo ou gasto descrito pelo consumidor e ainda sujeito a confrontação com originais.",
-    "modeled": "Cenário hipotético editável — separado dos fatos observados. Sem audiência medida nem perda de vendas inventada.",
+    "modeled": "Caminhos condicionais baseados em fatos, status e requisitos de comprovação. Não se atribui probabilidade, audiência ou prejuízo inventado.",
     "exposure": "Valor pago e ainda sem conclusão confirmada no dossiê — o dinheiro saiu; a entrega não.",
     "unique_sources": "URLs externas únicas do dossiê após eliminar repetidos (registros, fontes corporativas, Roma).",
     "public_mentions": "Links individuais de reclamação no arquivo, inclusive resolvidos — amostra catalogada, não o universo da internet."
@@ -43,17 +43,6 @@
       "actual_social_impressions": null,
       "verified_judicial_filings": null,
       "judicial_basis": "Protocolo Procon/RJ informado e notificação extrajudicial não são ações judiciais. Não há contagem de ações judiciais verificadas nesta base.",
-      "scenario_defaults": {
-        "incremental_cost_per_delay_day_brl": 400,
-        "opportunity_cost_monthly_rate_pct": 1,
-        "illustration_reach": 100000,
-        "purchase_ready_share_pct": 1,
-        "decision_change_share_pct": 5,
-        "illustrative_contract_ticket_brl": 100000,
-        "other_disputes_hypothetical": 5,
-        "illustrative_claim_value_brl": 190000
-      },
-      "scenarios_note": "Parâmetros de simulação didáticos, escolhidos para permitir análises de sensibilidade; não são estimativas estatísticas, benchmarks da Florense ou previsões.",
       "reference_urls": [
         "https://www.reclameaqui.com.br/florense-moveis/nao-recebi-meus-moveis-planejados-e-a-loja-nao-cumpre-prazos_LaK42QhQaVqRLA5s/",
         "https://www.proteste.org.br/reclame/lista-de-reclamacoes-publicas/reclamacoes-publicas?referenceid=CPTBR02190532-78"
