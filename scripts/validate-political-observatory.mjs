@@ -37,6 +37,7 @@ for(const study of data.cases){
  for(const key of ['topic','title','summary','status','scope','legal_stage','opening','next_check','limits'])assert(study[key]?.length>25||(['topic','scope','status'].includes(key)&&study[key]?.length>5),'Missing or weak '+key+' on '+id);
  assert(['alta','urgente','normal'].includes(study.priority),'Unrecognized priority '+id);
  assert(dateOk(study.first_record)&&study.first_record<=data.reviewed_at,'Invalid first record '+id);
+ assert(dateOk(study.reviewed_at)&&study.reviewed_at<=data.reviewed_at&&study.reviewed_at>=study.first_record,'Case editorial review date invalid '+id);
  const attached=unique(study.source_ids||[],'case source list '+id);
  assert(attached.size>=2,'Need at least two source IDs '+id);
  for(const source of attached)assert(sourceIds.has(source),'Missing source '+source+' on '+id);
