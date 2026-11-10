@@ -169,6 +169,20 @@
       "url": "https://www.congressoemfoco.com.br/noticia/120211/de-master-a-jogo-do-bicho-politicos-entraram-na-mira-da-pf-em-2026/",
       "published_at": "2026-07-03",
       "kind": "Jornalismo de levantamento; casos distintos"
+    },
+    {
+      "id": "ge-votacao",
+      "title": "ge — votação do Conselho Deliberativo do Flamengo pelo patrocínio",
+      "url": "https://ge.globo.com/futebol/times/flamengo/noticia/2025/08/19/conselheiros-do-flamengo-aprovam-maior-contrato-de-patrocinio-do-futebol-brasileiro.ghtml",
+      "published_at": "2025-08-19",
+      "kind": "Jornalismo sobre votação e contrato"
+    },
+    {
+      "id": "betano-parceria",
+      "title": "Betano — relato da formalização e dirigentes na parceria Flamengo",
+      "url": "https://blog-br.betano.com/patrocinios/betano-e-flamengo-firmam-parceria-historica-ate-2028-e-ampliam-presenca-no-esporte-brasileiro/",
+      "published_at": "2025-08-20",
+      "kind": "Manifestação da marca interessada"
     }
   ],
   "entities": [
@@ -321,6 +335,21 @@
       "id": "denasus",
       "name": "Departamento Nacional de Auditoria do SUS",
       "role": "órgão público"
+    },
+    {
+      "id": "luiz-eduardo-baptista",
+      "name": "Luiz Eduardo Baptista (Bap)",
+      "role": "Presidente do Flamengo que apresentou a parceria em 20/08/2025"
+    },
+    {
+      "id": "guilherme-figueiredo",
+      "name": "Guilherme Augusto Figueiredo",
+      "role": "Diretor-geral Betano Brasil participante do anúncio em 20/08/2025"
+    },
+    {
+      "id": "pietro-cardia-lorenzoni",
+      "name": "Pietro Cardia Lorenzoni",
+      "role": "Advogado da ANJL listado no cadastro da ADI 8027; atuação processual, não imputação"
     }
   ],
   "relationships": [
@@ -421,6 +450,27 @@
       "relation": "Apuração noticiada sobre alegado financiamento de filme; há negativa do senador",
       "source": "pf-flavio",
       "case_id": "POL-003"
+    },
+    {
+      "from": "flamengo",
+      "to": "luiz-eduardo-baptista",
+      "relation": "Luiz Eduardo Baptista era presidente do clube durante a apresentação pública da parceria, conforme o comunicado oficial.",
+      "source": "flamengo-contrato",
+      "case_id": "POL-002"
+    },
+    {
+      "from": "betano",
+      "to": "guilherme-figueiredo",
+      "relation": "Guilherme Augusto Figueiredo foi apresentado pelo clube como diretor-geral da marca no Brasil e participante do anúncio do patrocínio.",
+      "source": "flamengo-contrato",
+      "case_id": "POL-002"
+    },
+    {
+      "from": "anjl",
+      "to": "pietro-cardia-lorenzoni",
+      "relation": "Pietro Cardia Lorenzoni consta como advogado representante da ANJL no registro público da ADI 8027, sem inferência de atuação além do processo.",
+      "source": "stf-adi",
+      "case_id": "POL-001"
     }
   ],
   "sponsorships": [
@@ -554,6 +604,11 @@
           "finding": "Reportagem de 09/11 noticia suspensão de processos ordinários sobre a constitucionalidade da MP até julgamento do STF; o conteúdo preciso e eventuais mudanças exigem consulta aos autos.",
           "source": "fux-suspensao",
           "kind": "reportagem-a-confirmar-nos-autos"
+        },
+        {
+          "finding": "O cadastro público da ADI 8027 identifica Pietro Cardia Lorenzoni e outros advogados como representantes processuais da Associação Nacional de Jogos e Loterias (ANJL); representar uma entidade na Justiça não comprova ato ilícito.",
+          "source": "stf-adi",
+          "kind": "documentado"
         }
       ],
       "timeline": [
@@ -596,7 +651,8 @@
         "anjl",
         "spa",
         "flamengo",
-        "cbf"
+        "cbf",
+        "pietro-cardia-lorenzoni"
       ],
       "questions": [
         "Quais das 99 emendas registradas alteram proibição, transição, restituição, publicidade ou fiscalização e quem as assinou?",
@@ -653,6 +709,16 @@
           "finding": "Levantamento jornalístico de 18/09/2026 encontrou 13 dos 20 clubes da Série A com patrocinador máster de apostas; a lista reflete data anterior à MP.",
           "source": "clubes-mapa",
           "kind": "levantamento-histórico"
+        },
+        {
+          "finding": "Segundo reportagem do ge de 19/08/2025, o Conselho Deliberativo aprovou o patrocínio com 654 votos favoráveis, 11 contrários e quatro abstenções; a votação aprova um negócio comercial, não uma posição criminal ou eleitoral.",
+          "source": "ge-votacao",
+          "kind": "levantamento-jornalístico"
+        },
+        {
+          "finding": "O anúncio institucional do Flamengo identificou Luiz Eduardo Baptista (Bap) e Guilherme Augusto Figueiredo, diretor-geral da Betano Brasil, como participantes da apresentação pública da parceria em 20/08/2025.",
+          "source": "flamengo-contrato",
+          "kind": "posição-da-parte"
         }
       ],
       "timeline": [
@@ -697,7 +763,9 @@
         "anjl",
         "corinthians",
         "palmeiras",
-        "sao-paulo-fc"
+        "sao-paulo-fc",
+        "luiz-eduardo-baptista",
+        "guilherme-figueiredo"
       ],
       "questions": [
         "O pedido do Flamengo foi deferido? Quais documentos efetivamente entraram nos autos?",
@@ -716,7 +784,9 @@
         "stf-bets",
         "stf-adi",
         "clubes-mapa",
-        "mp-tramite"
+        "mp-tramite",
+        "ge-votacao",
+        "betano-parceria"
       ],
       "reviewed_at": "2026-11-10"
     },
