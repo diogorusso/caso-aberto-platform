@@ -1,0 +1,211 @@
+{
+  "version": 1,
+  "review_date": "2026-11-09",
+  "note": "Pautas originais sem segmentação política ou publicação automática; não são resultados empíricos novos.",
+  "topics": [
+    {
+      "slug": "privacidade-sem-ilusoes",
+      "hook": "Privacidade não é ficar invisível",
+      "question": "Que diferença há entre bloquear rastreamento e eliminar dados já compartilhados?",
+      "product_slug": "pegadas-digitais",
+      "article_slug": "como-remover-dados-de-corretores",
+      "limit": "Prevenção, correção e remoção são operações distintas.",
+      "format": "card-social-ou-newsletter",
+      "status": "roteiro-editorial",
+      "channel_adaptations": [
+        "card-educativo",
+        "roteiro-curto",
+        "FAQ",
+        "newsletter"
+      ],
+      "publication_url": null
+    },
+    {
+      "slug": "cookie-nao-e-tudo",
+      "hook": "Apagou cookies. E o restante?",
+      "question": "Por que cookies não são a única forma de reconhecer uma sessão?",
+      "product_slug": "pegadas-digitais",
+      "article_slug": "revogacao-de-consentimento-na-pratica",
+      "limit": "O navegador não mostra toda a cadeia entre servidores.",
+      "format": "card-social-ou-newsletter",
+      "status": "roteiro-editorial",
+      "channel_adaptations": [
+        "card-educativo",
+        "roteiro-curto",
+        "FAQ",
+        "newsletter"
+      ],
+      "publication_url": null
+    },
+    {
+      "slug": "identidade-vinculada",
+      "hook": "Quando o sistema erra sua identidade",
+      "question": "Como contas compartilhadas misturam identidades estatísticas?",
+      "product_slug": "pegadas-digitais",
+      "article_slug": "quando-deletar-nao-apaga",
+      "limit": "Um dispositivo identificado não prova a identidade civil.",
+      "format": "card-social-ou-newsletter",
+      "status": "roteiro-editorial",
+      "channel_adaptations": [
+        "card-educativo",
+        "roteiro-curto",
+        "FAQ",
+        "newsletter"
+      ],
+      "publication_url": null
+    },
+    {
+      "slug": "revogar-nao-e-apagar",
+      "hook": "Revogar consentimento não é apagar dados",
+      "question": "Como formular uma pergunta verificável sobre o que parou de ser tratado?",
+      "product_slug": "pegadas-digitais",
+      "article_slug": "revogacao-de-consentimento-na-pratica",
+      "limit": "Um clique confirmado não prova propagação aos destinatários.",
+      "format": "card-social-ou-newsletter",
+      "status": "roteiro-editorial",
+      "channel_adaptations": [
+        "card-educativo",
+        "roteiro-curto",
+        "FAQ",
+        "newsletter"
+      ],
+      "publication_url": null
+    },
+    {
+      "slug": "anuncio-vs-recomendacao",
+      "hook": "Anúncio não é recomendação",
+      "question": "Como separar conteúdo pago do ranking orgânico?",
+      "product_slug": "algoritmos-e-poder",
+      "article_slug": "leiloes-de-anuncios-e-perfis-invisiveis",
+      "limit": "Uma captura isolada não comprova compra de alcance.",
+      "format": "card-social-ou-newsletter",
+      "status": "roteiro-editorial",
+      "channel_adaptations": [
+        "card-educativo",
+        "roteiro-curto",
+        "FAQ",
+        "newsletter"
+      ],
+      "publication_url": null
+    },
+    {
+      "slug": "alcance-e-efeito",
+      "hook": "Alcance não é mudança de opinião",
+      "question": "Por que impressão, clique, engajamento e comportamento são distintos?",
+      "product_slug": "algoritmos-e-poder",
+      "article_slug": "como-auditar-o-feed-sem-confundir-causas",
+      "limit": "Efeitos políticos exigem mensurações próprias.",
+      "format": "card-social-ou-newsletter",
+      "status": "roteiro-editorial",
+      "channel_adaptations": [
+        "card-educativo",
+        "roteiro-curto",
+        "FAQ",
+        "newsletter"
+      ],
+      "publication_url": null
+    },
+    {
+      "slug": "comparar-dois-feeds",
+      "hook": "Dois feeds diferentes comprovam viés?",
+      "question": "Quais variáveis podem explicar a personalização?",
+      "product_slug": "algoritmos-e-poder",
+      "article_slug": "como-auditar-o-feed-sem-confundir-causas",
+      "limit": "Contas, histórico e tempo podem explicar diferenças.",
+      "format": "card-social-ou-newsletter",
+      "status": "roteiro-editorial",
+      "channel_adaptations": [
+        "card-educativo",
+        "roteiro-curto",
+        "FAQ",
+        "newsletter"
+      ],
+      "publication_url": null
+    },
+    {
+      "slug": "parceiros-do-anuncio",
+      "hook": "Quem recebe dados quando um anúncio é leiloado?",
+      "question": "Quais observadores participam sem contato direto com você?",
+      "product_slug": "algoritmos-e-poder",
+      "article_slug": "leiloes-de-anuncios-e-perfis-invisiveis",
+      "limit": "Não presuma que todos receberam os mesmos dados.",
+      "format": "card-social-ou-newsletter",
+      "status": "roteiro-editorial",
+      "channel_adaptations": [
+        "card-educativo",
+        "roteiro-curto",
+        "FAQ",
+        "newsletter"
+      ],
+      "publication_url": null
+    },
+    {
+      "slug": "quando-agente-age",
+      "hook": "Quando seu assistente pode agir por você?",
+      "question": "A diferença entre conselho e execução depende de que permissões?",
+      "product_slug": "ia-agentes-e-protecao",
+      "article_slug": "agentes-de-ia-e-permissoes",
+      "limit": "Um prompt não substitui autorização em código.",
+      "format": "card-social-ou-newsletter",
+      "status": "roteiro-editorial",
+      "channel_adaptations": [
+        "card-educativo",
+        "roteiro-curto",
+        "FAQ",
+        "newsletter"
+      ],
+      "publication_url": null
+    },
+    {
+      "slug": "arquivo-deepfake",
+      "hook": "Como verificar um vídeo antes de acusar?",
+      "question": "Assinatura digital e verdade factual respondem perguntas diferentes.",
+      "product_slug": "ia-agentes-e-protecao",
+      "article_slug": "deepfake-prova-ou-encenacao",
+      "limit": "Metadados ausentes não comprovam conteúdo sintético.",
+      "format": "card-social-ou-newsletter",
+      "status": "roteiro-editorial",
+      "channel_adaptations": [
+        "card-educativo",
+        "roteiro-curto",
+        "FAQ",
+        "newsletter"
+      ],
+      "publication_url": null
+    },
+    {
+      "slug": "permissoes-residuais",
+      "hook": "Desconectar um agente realmente revoga seu acesso?",
+      "question": "Como distinguir interface, token ativo, cópias e permissões?",
+      "product_slug": "ia-agentes-e-protecao",
+      "article_slug": "agentes-de-ia-e-permissoes",
+      "limit": "Revogação não garante eliminação de dados passados.",
+      "format": "card-social-ou-newsletter",
+      "status": "roteiro-editorial",
+      "channel_adaptations": [
+        "card-educativo",
+        "roteiro-curto",
+        "FAQ",
+        "newsletter"
+      ],
+      "publication_url": null
+    },
+    {
+      "slug": "pedido-lgpd",
+      "hook": "Qual direito solicitar pela LGPD?",
+      "question": "Acesso, correção e revisão de decisão são pedidos diferentes.",
+      "product_slug": "cidadania-e-direitos",
+      "article_slug": "lgpd-direitos-e-decisoes-algoritmicas",
+      "limit": "A aplicação depende de base legal e situação concreta.",
+      "format": "card-social-ou-newsletter",
+      "status": "roteiro-editorial",
+      "channel_adaptations": [
+        "card-educativo",
+        "roteiro-curto",
+        "FAQ",
+        "newsletter"
+      ],
+      "publication_url": null
+    }
+  ]
+}
