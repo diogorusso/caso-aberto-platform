@@ -232,3 +232,17 @@ All nine published case studies belong to one CasoAberto research collection at 
 Implementation: src/data/case-categories.json (featured case and mandatory mapping), src/lib/case-catalog.ts (one normalized library model), src/components/islands/CaseResearchExplorer.tsx (diacritic-insensitive searching, content/category filters, sorting and URL parameters), and src/pages/casos/categoria/[slug]/index.astro (four SEO-friendly static category pages). Existing underlying JSON schemas are retained for detailed Florense company, evidence and impact functions. The legal team's existing CasoAberto tone skill is applied across the new site copy. Validate with npm run verify:case-catalog (also included in verify:data), npm run check and npm run build.
 
 The November 10 unified research registry also incorporates seven political/institutional dossiers from political-observatory.json under a fifth category, Política e direitos. The unified totals are now 16 documented cases plus 12 linked personal stories. Political case pages retain their original observatory routes, source dates and evidentiary stages; all are discoverable in the same case search without modifying the underlying political source data.
+
+## Observatório político e accountability — 10/11/2026
+
+A pesquisa cívica pública agora tem um eixo independente dos casos de consumo: **bets e seus patrocinadores, decisões judiciais e legislativas, segurança de representantes eleitos, violência contra povos indígenas, acesso ao voto e rastreabilidade de emendas parlamentares**. São sete investigações com fontes por fato, cronologia, responsáveis institucionais, questões ainda abertas e limites.
+
+- Índice: `/observatorio/politica/`; dossiês: `/observatorio/politica/:slug/`.
+- Registro versionado: `src/data/political-observatory.json`; método completo e procedimento de atualização: `docs/observatorio-politico.md`.
+- Para conferir: `npm run verify:politics` (também incluído em `npm run verify:data`); `npm run check && npm run build`.
+- Para consultar localmente o que precisa de verificação: `npm run research:politics -- --list` ou `--case POL-002`. Para aplicar um pacote com revisão editorial legítima: `npm run research:politics -- --apply caminho/pacote-revisado.json`.
+- Skills disponíveis em `.cursor/skills/casoaberto-investigacao-politica/`, `.cursor/skills/casoaberto-monitoramento-factual/` e `.cursor/skills/casoaberto-publicacao-estatica/`.
+
+Comando conversacional de execução para um agente com ferramentas GitHub/web: **"Atualize o observatório político do CasoAberto; confira fontes e decisões novas desde a revisão anterior, revise os fatos e vínculos, execute validação e build e publique a versão confirmada no site estático."**
+
+Nenhuma dessas funções implanta monitoramento contínuo, coleta perfis políticos, transmite mensagens de campanha, modifica o Worker privado ou atribui culpa por patrocínio/associação. Referências e patrocínios históricos devem continuar com data e status explícitos. A revisão editorial de fatos sensíveis exige conferência humana e histórico de correções.

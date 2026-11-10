@@ -79,3 +79,7 @@ Scope: a static Brazilian civic research, citizen-organization education, digita
 58. Run npm run verify:case-catalog alongside existing source, type and build checks. A case without one category or a featured case not matching Florense must fail.
 
 59. The seven POL-xxx institutional and political dossiers from src/data/political-observatory.json are also CasoAberto documented cases and belong in the same search. The category politica-e-direitos includes all seven, with links to their existing static observatory routes. Preserve the political research skills and their factual-source requirements, and do not infer partisan wrongdoing or automate persuasion from case index entries.
+
+60. Preserve the concurrently added political observatory routes and source-reviewed dossiers, and index their documented cases through /casos/. The political dataset and /observatorio/politica/ remain the source of truth for each case.
+61. Run verify:politics and political research validation alongside the unified case checks; no inference of guilt from institutional relationships or sponsorship.
+62. Preserve the political research, monitoring and static publication skills and genuine human editorial review requirements. Never invent approval or background work.

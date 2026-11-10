@@ -22,6 +22,7 @@ const printCase=study=>{
  console.log('Case route: /observatorio/politica/'+study.slug+'/');
  console.log('Research checkpoint: '+study.next_check);
  console.log('\nUnresolved verification questions:');
+ console.log('Last evidence revision: '+study.reviewed_at);
  study.questions.forEach((q,i)=>console.log(' '+(i+1)+'. '+q));
  console.log('\nSource register:');
  study.source_ids.forEach(id=>{const s=data.sources.find(x=>x.id===id);if(s)console.log(' - '+s.id+' | '+(s.published_at||'no date')+' | '+s.url);});
@@ -30,7 +31,7 @@ if(packetPath){
  const packet=JSON.parse(readFileSync(resolve(packetPath),'utf8'));
  const study=getCase(packet.case_id||'');
  if(!packet.editorial_review||packet.editorial_review.approved!==true||typeof packet.editorial_review.reviewer!=='string'||packet.editorial_review.reviewer.trim().length<3||typeof packet.editorial_review.review_note!=='string'||packet.editorial_review.review_note.length<40)fail('Human editorial approval and review note are required. Do not fake approval.');
- if(!dateOk(packet.reviewed_at)||packet.reviewed_at<data.reviewed_at)fail('Review date invalid, in the future or older than current published review');
+ if(!dateOk(packet.reviewed_at)||packet.reviewed_at<data.reviewed_at||packet.reviewed_at<study.reviewed_at)fail('Review date invalid, in the future or older than current published review');
  if(!Array.isArray(packet.sources)||packet.sources.length<1)fail('Evidence packet must supply at least one independently checked source');
  if(!Array.isArray(packet.facts)||packet.facts.length<1)fail('Evidence packet must contain at least one document-linked factual update');
  const incoming=new Map();
@@ -61,6 +62,7 @@ if(packetPath){
  study.timeline.push(...(packet.timeline||[]).filter(e=>!events.has(e.source+'|'+e.date+'|'+e.title)));
  study.timeline.sort((a,b)=>a.date.localeCompare(b.date));
  for(const key of ['status','next_check','questions','limits'])if(packet[key]!==undefined)study[key]=packet[key];
+ study.reviewed_at=packet.reviewed_at;
  data.reviewed_at=packet.reviewed_at;
  if(!Array.isArray(data.revision_log))data.revision_log=[];
  data.revision_log.push({date:packet.reviewed_at,case_id:study.id,reviewer:packet.editorial_review.reviewer,review_note:packet.editorial_review.review_note,source_ids:[...incoming.keys()],fact_count:packet.facts.length});
