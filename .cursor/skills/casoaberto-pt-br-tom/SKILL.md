@@ -25,7 +25,7 @@ Guia passado pelo legal. O agente **executa**. Não questiona a recomendação l
 
 - Florense/Roma no §3 = **exemplo autorizado de registro**, não limite de escopo.
 - Caso novo = **mesma voz** + fatos daquele caso (nome, valor, prazo, fontes).
-- Home permanece **company-neutral** (AGENTS §15–16): tom de confronto de plataforma, sem hardcodar uma marca como CTA global — **neutro ≠ soft**.
+- O hero geral da home representa o projeto. A home **destaca Florense** como investigação principal por decisão do proprietário, e os demais casos estão no mesmo arquivo com busca e categorias. O tom de confronto vale em todo o site.
 
 Se o agente “reservar” o tom agressivo só para Florense e escrever o resto educado/corporativo → **falhou o skill**.
 
@@ -159,7 +159,7 @@ Disclaimer do LLM. Apagar. Não substituir. Voltar à fórmula / exemplo autoriz
 - [ ] Fatos atribuídos / verificáveis
 - [ ] Sem inventar insolvência/crime/números
 - [ ] Sem disclaimer criado ou sugerido
-- [ ] Home/nav company-neutral **e** confrontacional (não soft)
+- [ ] Hero institucional e investigação Florense em destaque na home; todos os casos juntos na busca
 - [ ] Fecha em pergunta, exigência ou ação
 
 ## Arquivos
