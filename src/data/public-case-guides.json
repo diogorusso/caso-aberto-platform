@@ -1,0 +1,187 @@
+{
+  "version": 1,
+  "reviewed_at": "2026-11-10",
+  "guides": [
+    {
+      "slug": "passagem-ou-pacote-de-viagem-nao-entregue",
+      "title": "Pagou a viagem e não recebeu a passagem? Separe três problemas.",
+      "description": "Contrato, emissão, reembolso e recuperação judicial exigem documentos e perguntas diferentes. Um roteiro para não misturar datas nem perder provas.",
+      "category": "Viagens",
+      "updated_at": "2026-11-10",
+      "intro": "Uma reserva prometida, uma passagem não emitida e um crédito reconhecido na Justiça não são a mesma coisa. Se o prazo prometido venceu, o primeiro trabalho é registrar exatamente qual prestação deixou de ser entregue e o que a empresa respondeu. Quando há recuperação judicial, entra uma segunda análise: como o crédito foi tratado no procedimento vigente.",
+      "sections": [
+        {
+          "heading": "01 · Reconstrua o compromisso",
+          "paragraphs": [
+            "Recupere o anúncio ou contrato com a modalidade: data fixa, mês determinado ou janela flexível. Guarde o preço, a janela de emissão, as opções de datas apresentadas e a confirmação de pagamento.",
+            "Quando existir reacomodação ou crédito proposto, anote se é uma nova oferta ou execução da obrigação original. Uma proposta de 'upgrade' não comprova que as condições anteriores foram cumpridas."
+          ]
+        },
+        {
+          "heading": "02 · Separe pedido de resposta de pedido judicial",
+          "paragraphs": [
+            "Um pedido administrativo pode solicitar execução, alternativa ou restituição, conforme o contrato e a legislação. Se a empresa está em recuperação judicial, acompanhe os canais formais de credores e as decisões mais recentes, sem supor que um protocolo no Procon substitui os atos do processo.",
+            "Notícias sobre prazos de 2024 ou 2025 são registros históricos, não abertura automática de nova janela hoje. Verifique datas vigentes diretamente no processo e, se necessário, busque orientação profissional."
+          ]
+        },
+        {
+          "heading": "03 · Faça a pergunta que não pode ser respondida com propaganda",
+          "paragraphs": [
+            "Qual bilhete foi efetivamente emitido e por qual transportadora? Qual a reserva de hospedagem vinculada? Se não houve emissão, qual medida contratual ou restituição formal foi proposta, por escrito, com data e condições?",
+            "Seu arquivo pessoal não precisa expor RG, CPF, cartão de crédito, localizador de voo ou passaporte no espaço público. Preserve originais para o canal adequado."
+          ]
+        }
+      ],
+      "checklist": [
+        "Contrato/anúncio da modalidade e data da compra.",
+        "Comprovante de pagamento e prazo de emissão divulgado.",
+        "Histórico das sugestões de datas e remarcações.",
+        "Comprovante da emissão (ou respostas sobre não emissão).",
+        "Protocolos de contato, oferta alternativa e situação do crédito, se aplicável."
+      ],
+      "request_example": "Em [data] contratei [serviço e modalidade], com prazo de [data]. Até [data de consulta], não localizei [passagens ou reserva], conforme documentos que mantenho disponíveis no canal apropriado. Solicito confirmação documental da execução ou explicação específica das alternativas contratuais, com condições e prazo, indicando o setor responsável.",
+      "limits": "Cada contrato e cada fase de recuperação judicial exigem análise própria. Um crédito listado não significa dinheiro pago; uma decisão favorável individual não comprova que todo consumidor recebeu ressarcimento.",
+      "sources": [
+        {
+          "name": "Procon-SP — 123milhas e processo de recuperação judicial",
+          "url": "https://www.procon.sp.gov.br/consumidores-lesados-pela-123-milhas-devem-registrar-novamente-suas-reclamacoes-em-site-criado-a-pedido-da-justica/",
+          "published_at": "2024-06-28"
+        },
+        {
+          "name": "Procon-SP — queixas relativas à Hurb",
+          "url": "https://www.procon.sp.gov.br/reclamacoes-sobre-a-hurb-no-procon-sp/",
+          "published_at": "2023-04-25"
+        },
+        {
+          "name": "Radioagência Nacional — revisão de créditos 123milhas",
+          "url": "https://agenciabrasil.ebc.com.br/radioagencia-nacional/justica/audio/2025-12/123milhas-adesao-processo-de-revisao-de-credito-acaba-amanha",
+          "published_at": "2025-12-09"
+        }
+      ],
+      "related_case_slugs": [
+        "hurb-pacotes-flexiveis-viagens-reembolso",
+        "123milhas-pacotes-cancelados-recuperacao-judicial"
+      ]
+    },
+    {
+      "slug": "compra-online-nao-entregue",
+      "title": "Compra online atrasada: o rastreio mudou, mas a mercadoria não chegou.",
+      "description": "Aprenda a documentar o atraso, distinguir status de transporte de entrega e cobrar alternativas verificáveis sem expor dados pessoais.",
+      "category": "Compras online",
+      "updated_at": "2026-11-10",
+      "intro": "Uma mensagem automática dizendo 'em transporte' não prova que o pacote chegou ao endereço contratado. Quando a data prometida passa, a conversa útil é sobre entrega comprovada, prazo, alternativa e restituição — tudo associado a um pedido específico.",
+      "sections": [
+        {
+          "heading": "01 · O que foi prometido no momento da compra?",
+          "paragraphs": [
+            "Guarde o pedido original, a oferta, a data/turno indicado e a informação de disponibilidade. Registre se o prazo foi alterado depois do pagamento e se houve consentimento para a mudança.",
+            "Não substitua confirmação de recebimento por atualizações de rastreio. O código de acompanhamento pode indicar eventos logísticos sem confirmar que a pessoa recebeu o produto certo."
+          ]
+        },
+        {
+          "heading": "02 · Como diferenciar resposta de solução",
+          "paragraphs": [
+            "Uma resposta padronizada, um pedido de desculpas ou uma nova data futura não equivale ao fechamento do caso. Pergunte em que etapa está o produto, quem é responsável pela entrega, qual data foi confirmada e como a empresa documentará a solução.",
+            "O art. 35 do Código de Defesa do Consumidor prevê alternativas diante do descumprimento de oferta. A escolha apropriada depende dos fatos e do que foi contratado; consulte o canal oficial do órgão de defesa do consumidor."
+          ]
+        },
+        {
+          "heading": "03 · Proteja seus dados enquanto reclama",
+          "paragraphs": [
+            "Evite publicar número de pedido, nome completo, telefone, print com endereço ou informações de pagamento em redes abertas. O comprovante original pode ser fornecido ao Procon ou ao próprio fornecedor por canal adequado.",
+            "Anote em documento privado cada contato e sua resposta. Na comunicação pública, descreva somente fatos necessários, datas pertinentes e o tipo de solução esperada."
+          ]
+        }
+      ],
+      "checklist": [
+        "Data da compra, oferta e prazo prometido.",
+        "Pagamento e número de pedido mantidos em arquivo privado.",
+        "Atualizações de transporte e comprovante de recebimento, se houver.",
+        "Contatos de suporte, novos prazos e pedido de cancelamento.",
+        "Comprovante de entrega ou de reembolso, distinguindo um do outro."
+      ],
+      "request_example": "Fiz o pedido em [data] com entrega prometida para [data]. O sistema registrou [status], mas não há comprovação de recebimento até [data verificada]. Solicito confirmação da entrega, com documento que indique o evento, ou apresentação formal da alternativa contratual aplicável, incluindo prazo de conclusão.",
+      "limits": "Uma reclamação publicada não demonstra automaticamente fraude intencional nem situação atual da empresa. Rankings de Procon são bases administrativas com períodos e denominadores específicos, não probabilidade de falha em cada pedido.",
+      "sources": [
+        {
+          "name": "Procon-SP — orientação sobre entrega e CDC, art. 35",
+          "url": "https://www.procon.sp.gov.br/reclamacoes-fundamentadas-2025/",
+          "published_at": "2026-01-01"
+        },
+        {
+          "name": "Procon-SP — ranking e problemas de entrega em 2024",
+          "url": "https://www.procon.sp.gov.br/procon-sp-divulga-cadastro-das-empresas-mais-reclamadas-em-2024/",
+          "published_at": "2025-03-14"
+        },
+        {
+          "name": "Procon-SP — análise de falhas de entrega",
+          "url": "https://www.procon.sp.gov.br/reclamacoes-no-procon-sp-aumentam-16-em-2024/",
+          "published_at": "2025-03-17"
+        }
+      ],
+      "related_case_slugs": [
+        "yeesco-compras-online-nao-entregues"
+      ]
+    },
+    {
+      "slug": "apagao-prejuizo-ressarcimento",
+      "title": "Ficou sem luz? Como registrar alimentos perdidos, aparelho danificado e ausência de resposta.",
+      "description": "Checklist de provas sobre interrupção de energia, duração, prejuízos e canais de ressarcimento — sem tratar números da rede como perdas individuais.",
+      "category": "Energia e serviços essenciais",
+      "updated_at": "2026-11-10",
+      "intro": "Quando a energia acaba, a geladeira, o trabalho e a rotina param junto. A situação se torna ainda mais grave quando não há previsão confiável de retorno. Para cobrar providências, você precisa de três linhas de registro: interrupção, prejuízo específico e resposta formal.",
+      "sections": [
+        {
+          "heading": "01 · Registre uma ocorrência, não uma estatística",
+          "paragraphs": [
+            "Marque data e hora aproximadas da interrupção, do retorno e das tentativas de contato. Guarde protocolos e mensagens recebidas. A quantidade de interrupções da rede divulgada pela Aneel não é a quantidade de residências ou pessoas atingidas.",
+            "Se a concessionária informou um horário diferente do seu relato, preserve ambas as versões. O objetivo é perguntar por uma verificação técnica da sua unidade, não extrapolar a média de toda a região."
+          ]
+        },
+        {
+          "heading": "02 · Faça o inventário do prejuízo com segurança",
+          "paragraphs": [
+            "Para alimentos perdidos, registre fotografias datadas, produtos, comprovantes e valores que consiga demonstrar. Para equipamentos, guarde marca, modelo, sintomas e registros técnicos. Evite abrir ou descartar equipamentos antes de conferir as regras aplicáveis de verificação da concessionária.",
+            "Nem todo produto descartado ou aparelho avariado possui nexo automaticamente comprovado com uma interrupção. Quanto mais claramente os fatos estiverem documentados, melhor será possível avaliar a solicitação."
+          ]
+        },
+        {
+          "heading": "03 · Cobre resposta sem confundir etapas",
+          "paragraphs": [
+            "O pedido de ressarcimento à distribuidora é diferente de uma multa administrativa aplicada pelo Procon e de uma decisão judicial sobre uma ocorrência coletiva. Cada uma tem destinatário, prova, prazo e resultado específicos.",
+            "Peça número de protocolo e justificativa formal da resposta. Se a solicitação não for solucionada, consulte Procon, agência reguladora e os canais oficiais aplicáveis ao seu caso. Os prazos e exigências devem ser verificados na norma vigente."
+          ]
+        }
+      ],
+      "checklist": [
+        "Horário de queda e retorno observado na unidade.",
+        "Protocolos de contato e mensagens da concessionária.",
+        "Fotografias de alimentos ou equipamentos afetados.",
+        "Notas fiscais, orçamentos e laudos disponíveis, conforme o tipo de dano.",
+        "Solicitação formal, resposta, data e instância de recurso."
+      ],
+      "request_example": "Na minha unidade consumidora houve interrupção observada entre [data/hora] e [data/hora], conforme registros disponíveis no canal apropriado. Relato o seguinte prejuízo: [itens documentados]. Solicito análise formal do nexo com a interrupção e resposta por protocolo, indicando requisitos, prazo e providências cabíveis.",
+      "limits": "Decisões sobre falhas gerais no serviço não equivalem à comprovação automática de prejuízo individual. O CasoAberto não consulta dados técnicos da sua instalação nem recebe comprovantes nesta página.",
+      "sources": [
+        {
+          "name": "Agência Brasil — guia de ressarcimento por falta de energia",
+          "url": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-07/saiba-como-pedir-ressarcimento-por-prejuizos-com-falta-de-energia",
+          "published_at": "2026-07-01"
+        },
+        {
+          "name": "Agência Brasil — decisão judicial sobre apagão de 2025",
+          "url": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-09/justica-reconhece-falhas-da-enel-em-apagao-de-dezembro-de-2025-em-sp",
+          "published_at": "2026-09-09"
+        },
+        {
+          "name": "Agência Brasil — multa do Procon Paulistano de 2026",
+          "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/procon-paulistano-multa-enel-por-falhas-no-fornecimento-de-energia",
+          "published_at": "2026-10-21"
+        }
+      ],
+      "related_case_slugs": [
+        "enel-sp-apagao-2025-ressarcimento"
+      ]
+    }
+  ]
+}
