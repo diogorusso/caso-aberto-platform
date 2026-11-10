@@ -8,7 +8,7 @@
     "build": "npm run verify:data && astro build && npm run verify:public-bundle",
     "preview": "astro preview",
     "check": "astro check",
-    "verify:data": "node scripts/validate-data.mjs && node scripts/validate-structure.mjs && node scripts/validate-civic-research.mjs && npm run verify:publications && npm run verify:content-packs && npm run verify:curated-content && npm run verify:education-coverage && npm run verify:lead-magnets && npm run verify:editorial-preview && npm run verify:course-crypto && npm run verify:cause-api && npm run verify:public-case-atlas && npm run verify:politics && npm run verify:case-catalog",
+    "verify:data": "node scripts/validate-data.mjs && node scripts/validate-structure.mjs && node scripts/validate-civic-research.mjs && npm run verify:publications && npm run verify:content-packs && npm run verify:curated-content && npm run verify:education-coverage && npm run verify:lead-magnets && npm run verify:editorial-preview && npm run verify:course-crypto && npm run verify:cause-api && npm run verify:public-case-atlas && npm run verify:politics && npm run verify:case-catalog && npm run verify:visual-stories",
     "new:company": "node scripts/new-company.mjs",
     "verify:structure": "node scripts/validate-structure.mjs",
     "verify:civic": "node scripts/validate-civic-research.mjs",
@@ -29,7 +29,8 @@
     "verify:public-case-atlas": "node scripts/validate-public-case-atlas.mjs",
     "verify:politics": "node scripts/validate-political-observatory.mjs",
     "research:politics": "node scripts/run-political-research.mjs",
-    "verify:case-catalog": "node scripts/validate-case-catalog.mjs"
+    "verify:case-catalog": "node scripts/validate-case-catalog.mjs",
+    "verify:visual-stories": "node scripts/validate-visual-stories.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^7.1.5",
