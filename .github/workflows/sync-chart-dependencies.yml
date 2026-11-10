@@ -1,0 +1,27 @@
+name: Sync chart dependencies once
+on:
+  push:
+    paths:
+      - .github/workflows/sync-chart-dependencies.yml
+permissions:
+  contents: write
+jobs:
+  sync-lock:
+    if: github.event.head_commit.message == 'chore(charts): provision one-time lockfile synchronization'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install chart dependencies and resolve lockfile
+        run: npm install --package-lock-only --ignore-scripts --save-exact recharts@3.10.1 react-is@19.2.0
+      - name: Commit reproducible lockfile
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add package.json package-lock.json
+          git commit -m "chore(charts): lock Recharts v3 and React-is dependencies"
+          git push
