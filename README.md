@@ -275,3 +275,17 @@ Detailed design, modeling and editorial rules: [docs/visual-impact-storytelling.
 ## Case action and OG features — 2026-11-10
 
 24 documented cases each now have a static action route at /casos/acoes/:id/ with editable templates, verified complaint and company-contact channels, and a judicial route guide. Social preview images are generated as 1200x630 PNGs for the complete case and story index using Sharp. Florense OG uses the documented original store photo and logo. Other brands are represented by distinct typographic case imagery until sourced image assets are cleared. See scripts/validate-case-actions.mjs and scripts/generate-og-images.mjs.
+
+## Acompanhamento de casos até o fechamento — 2026-11-10
+
+A plataforma permanece **100% estática no site público**. A rotina agendada roda fora dele, no GitHub: `.github/workflows/case-watch.yml` checa fonte e vencimento com **zero tokens de LLM**, até 12 requisições HTTPS e 8 tarefas de pesquisa por dia. Issues `[case-watch:ID]` formam a fila de revisão e são idempotentes. Uma tarefa ChatGPT independente foi configurada para revisar no máximo dois desses Issues por ciclo, apenas quando houver trabalho; a tarefa não substitui comprovação documental nem revisão editorial exigida para fontes sensíveis.
+
+- **Política por ID:** `src/data/case-watch-policy.json` registra os 24 casos, urgência, intervalo, até duas URLs de observação, prazos conhecidos e prova exigida para encerramento.
+- **Motor determinístico:** `scripts/case-watch-core.mjs`, `scripts/case-watch.mjs`, `scripts/case-watch-issues.mjs`. Cache de ETag/hash fica no GitHub Actions cache, nunca no site.
+- **Pesquisa econômica:** `npm run case:review -- --case POL-001` imprime apenas uma cápsula do caso (até 4.800 caracteres por padrão). `npm run case:watch -- --offline --today 2026-11-11` simula sem rede. `npm run verify:case-watch` testa ciclo, cobertura e fechamento.
+- **Fim de rodada:** `npm run case:complete -- --case CA-001 --outcome no-change ... --apply` registra fonte/autor e fecha o Issue, mas não muda o site. `closedAt` posterga a próxima revisão, evitando gastar tokens repetidamente em um caso sem fato novo.
+- **Fechamento do caso:** só `mode=closed` com status conclusivo publicado, `closed_at` e `closure_source_url` após prova do desfecho. Com `closed` o cron deixa de consultar a fonte. Fechar Issue e fechar caso são operações diferentes.
+- **Publicação:** somente diff de fato material confirmado nos JSON originais, atualização dos visuais/fichas afetados, `verify:data`, Astro check/build, commit em `main`, deploy Cloudflare.
+- **Skills:** `.cursor/skills/casoaberto-case-review-economy/`, `.cursor/skills/casoaberto-case-lifecycle/`, mais a skill de tom `casoaberto-pt-br-tom`.
+
+Guia operacional e comando manual do Actions: [docs/case-watch-operations.md](docs/case-watch-operations.md). Sem webhook, D1, Worker, CMS dinâmico, mensagens a terceiros ou despesas com modelo para ciclos sem fila.
