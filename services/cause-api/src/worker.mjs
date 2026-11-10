@@ -53,7 +53,7 @@ async function secureHandler(request,env,actor){
   const invite=await db.prepare('UPDATE cause_invites SET used_at=?,used_by=? WHERE token_hash=? AND used_at IS NULL AND expires_at>? RETURNING cause_id,role').bind(date,actor,hash,date).first();
   if(!invite)return error(404,'invalid_or_expired_invite');
   await db.batch([
-   db.prepare('INSERT OR IGNORE INTO memberships(cause_id,actor_id,role,consented_at) VALUES(?,?,?,?)').bind(invite.cause_id,actor,invite.role,date),
+   db.prepare('INSERT INTO memberships(cause_id,actor_id,role,consented_at) VALUES(?,?,?,?) ON CONFLICT(cause_id,actor_id) DO UPDATE SET role=excluded.role,consented_at=excluded.consented_at,revoked_at=NULL WHERE memberships.revoked_at IS NOT NULL').bind(invite.cause_id,actor,invite.role,date),
    audit(db,invite.cause_id,actor,'membership_joined',invite.cause_id,date)
   ]);
   return json({cause_id:invite.cause_id,joined:true});
@@ -75,6 +75,49 @@ async function secureHandler(request,env,actor){
    audit(db,causeId,actor,'status_changed',causeId,date)
   ]);
   return json({status});
+ }
+ if(method==='GET'&&segments.length===4&&segments[3]==='members'){
+  if(role!=='owner')return error(403,'owner_only');
+  const members=await db.prepare('SELECT actor_id,role,consented_at,consent_version FROM memberships WHERE cause_id=? AND revoked_at IS NULL ORDER BY consented_at DESC LIMIT 200').bind(causeId).all();
+  return json({items:members.results||[],note:'Identificadores pseudônimos; não incluem nome, email ou perfil político.'});
+ }
+ if(method==='DELETE'&&segments.length===5&&segments[3]==='members'){
+  if(role!=='owner')return error(403,'owner_only');
+  const other=segments[4];
+  if(!/^[a-f0-9]{64}$/.test(other)||other===actor)return error(400,'invalid_member');
+  const date=now();
+  const result=await db.prepare("UPDATE memberships SET revoked_at=? WHERE cause_id=? AND actor_id=? AND role IN ('editor','viewer') AND revoked_at IS NULL").bind(date,causeId,other).run();
+  if(result.meta?.changes!==1)return error(404,'member_not_found');
+  await audit(db,causeId,actor,'membership_revoked',other,date).run();
+  return json({revoked:true});
+ }
+ if(method==='POST'&&segments.length===4&&segments[3]==='leave'){
+  if(role==='owner')return error(409,'owner_must_transfer_or_close_cause');
+  const date=now();
+  const result=await db.prepare('UPDATE memberships SET revoked_at=? WHERE cause_id=? AND actor_id=? AND revoked_at IS NULL').bind(date,causeId,actor).run();
+  if(result.meta?.changes!==1)return error(404,'membership_not_found');
+  await audit(db,causeId,actor,'membership_left',actor,date).run();
+  return json({left:true,note:'Seu acesso foi encerrado. Retenção de registros anteriores depende das regras publicadas e pedidos de correção/eliminação.'});
+ }
+ if(method==='GET'&&segments.length===4&&segments[3]==='audit'){
+  if(role!=='owner')return error(403,'owner_only');
+  const rows=await db.prepare('SELECT id,actor_id,action,object_id,created_at FROM audit_events WHERE cause_id=? ORDER BY created_at DESC LIMIT 200').bind(causeId).all();
+  return json({items:rows.results||[]});
+ }
+ if(method==='GET'&&segments.length===4&&segments[3]==='invites'){
+  if(role!=='owner')return error(403,'owner_only');
+  const rows=await db.prepare('SELECT token_hash,role,created_at,expires_at FROM cause_invites WHERE cause_id=? AND used_at IS NULL AND expires_at>? ORDER BY created_at DESC LIMIT 20').bind(causeId,now()).all();
+  return json({items:rows.results||[],note:'Hashes de convites pendentes, não os tokens secretos originais.'});
+ }
+ if(method==='DELETE'&&segments.length===5&&segments[3]==='invites'){
+  if(role!=='owner')return error(403,'owner_only');
+  const hash=segments[4];
+  if(!/^[a-f0-9]{64}$/.test(hash))return error(400,'invalid_invite');
+  const date=now();
+  const result=await db.prepare('UPDATE cause_invites SET used_at=?,used_by=? WHERE cause_id=? AND token_hash=? AND used_at IS NULL').bind(date,actor,causeId,hash).run();
+  if(result.meta?.changes!==1)return error(404,'invite_not_found');
+  await audit(db,causeId,actor,'invite_revoked',causeId,date).run();
+  return json({revoked:true});
  }
  if(method==='POST'&&segments.length===4&&segments[3]==='invites'){
   if(role!=='owner')return error(403,'owner_only');
@@ -139,7 +182,7 @@ async function secureHandler(request,env,actor){
 export default {
  async fetch(request,env){
   const path=new URL(request.url).pathname;
-  if(request.method==='GET'&&path==='/health')return json({service:'casoaberto-private-cause-api',status:'unpublished_private_service'});
+  if(request.method==='GET'&&path==='/health')return json({service:'casoaberto-private-cause-api',status:'reachable'});
   if(!path.startsWith('/api/'))return error(404,'not_found');
   if(!env?.DB||!env?.API_RATE_LIMIT||!configValid(env)||typeof env.CAUSE_APP_ORIGIN!=='string'||!env.CAUSE_APP_ORIGIN.startsWith('https://'))return error(503,'not_configured');
   if(request.method!=='GET'&&request.headers.get('Origin')!==env.CAUSE_APP_ORIGIN)return error(403,'invalid_origin');
