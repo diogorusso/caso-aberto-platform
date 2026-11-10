@@ -38,7 +38,7 @@ export function validatePolicy(policy,index){
  for(const item of index)if(!ids.has(item.id))problems.push('Case omitted from monitoring '+item.id);
  return problems;
 }
-export function planReviews({policy,index,today,openIssueIds=[],caseId='',force=false}){
+export function planReviews({policy,index,today,openIssueIds=[],completedAt={},caseId='',force=false}){
  if(!iso(today))throw new Error('Invalid date');
  const errors=validatePolicy(policy,index);
  if(errors.length)throw new Error(errors.join('; '));
@@ -49,14 +49,16 @@ export function planReviews({policy,index,today,openIssueIds=[],caseId='',force=
   if(caseId&&config.id!==caseId)continue;
   if(config.mode!=='active'||open.has(config.id))continue;
   const item=lookups.get(config.id);
-  const deadline=config.deadlines.some(d=>d<=today&&d>item.date);
-  const overdue=addDays(item.date,config.interval_days)<=today;
+  const completion=completedAt[config.id];
+  const lastCheck=iso(completion)&&completion>item.date?completion:item.date;
+  const deadline=config.deadlines.some(d=>d<=today&&d>lastCheck);
+  const overdue=addDays(lastCheck,config.interval_days)<=today;
   if(!force&&!deadline&&!overdue)continue;
   candidates.push({id:item.id,href:item.href,kind:item.kind,status:item.status,reviewed_at:item.date,
-   priority:config.priority,focus:config.focus,closure_evidence:config.closure_evidence,
+   priority:config.priority,last_checked_at:lastCheck,focus:config.focus,closure_evidence:config.closure_evidence,
    watch_urls:config.watch_urls.slice(0,policy.schedule.max_requests_per_case),
    reasons:[...(force?['solicitação manual']:[]),...(deadline?['prazo público vencido']:[]),...(overdue?['revisão periódica vencida']:[])],
-   overdue_days:Math.max(0,Math.floor((Date.parse(today+'T12:00:00Z')-Date.parse(addDays(item.date,config.interval_days)+'T12:00:00Z'))/86400000))
+   overdue_days:Math.max(0,Math.floor((Date.parse(today+'T12:00:00Z')-Date.parse(addDays(lastCheck,config.interval_days)+'T12:00:00Z'))/86400000))
   });
  }
  candidates.sort((a,b)=>rank[a.priority]-rank[b.priority]||b.overdue_days-a.overdue_days||a.id.localeCompare(b.id));
@@ -67,7 +69,8 @@ export function issueBody(entry,changedSources=[]){
  return [
   '## '+entry.id+' — pesquisa pontual e atualização do CasoAberto',
   '**Caso:** '+entry.href,
-  '**Última revisão do dossiê:** '+entry.reviewed_at,
+  '**Última revisão publicada do dossiê:** '+entry.reviewed_at,
+  '**Última verificação editorial:** '+entry.last_checked_at,
   '**Estado publicado:** '+entry.status,
   '**Motivo:** '+entry.reasons.join('; '),
   '**Pergunta de pesquisa:** '+entry.focus,
