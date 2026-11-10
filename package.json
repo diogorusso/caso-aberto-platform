@@ -8,7 +8,7 @@
     "build": "npm run verify:data && npm run og:build && astro build && npm run verify:public-bundle",
     "preview": "astro preview",
     "check": "astro check",
-    "verify:data": "node scripts/validate-data.mjs && node scripts/validate-structure.mjs && node scripts/validate-civic-research.mjs && npm run verify:publications && npm run verify:content-packs && npm run verify:curated-content && npm run verify:education-coverage && npm run verify:lead-magnets && npm run verify:editorial-preview && npm run verify:course-crypto && npm run verify:cause-api && npm run verify:public-case-atlas && npm run verify:politics && npm run verify:case-catalog && npm run verify:visual-stories && npm run verify:research-ledger",
+    "verify:data": "node scripts/validate-data.mjs && node scripts/validate-structure.mjs && node scripts/validate-civic-research.mjs && npm run verify:publications && npm run verify:content-packs && npm run verify:curated-content && npm run verify:education-coverage && npm run verify:lead-magnets && npm run verify:editorial-preview && npm run verify:course-crypto && npm run verify:cause-api && npm run verify:public-case-atlas && npm run verify:politics && npm run verify:case-catalog && npm run verify:visual-stories && npm run verify:research-ledger && npm run verify:case-actions",
     "new:company": "node scripts/new-company.mjs",
     "verify:structure": "node scripts/validate-structure.mjs",
     "verify:civic": "node scripts/validate-civic-research.mjs",
@@ -32,7 +32,8 @@
     "verify:case-catalog": "node scripts/validate-case-catalog.mjs",
     "verify:visual-stories": "node scripts/validate-visual-stories.mjs",
     "verify:research-ledger": "node scripts/validate-research-ledger.mjs",
-    "og:build": "node scripts/generate-og-images.mjs"
+    "og:build": "node scripts/generate-og-images.mjs",
+    "verify:case-actions": "node scripts/validate-case-actions.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^7.1.5",
