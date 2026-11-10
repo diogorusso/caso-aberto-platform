@@ -48,3 +48,10 @@ Os arquivos `build/editorial-drafts/*.md` e `*.json` devem ser revisados e produ
 Além da geração local sem IA em `build/editorial-drafts/`, existem **12 packs editoriais curados** em `campaign/education/*.md` (um por tema) com quatro quadros de carrossel, legenda, roteiro de vídeo, abertura de newsletter, links públicos e limites da evidência. Estes são rascunhos, não conteúdos já distribuídos. O manifesto `src/data/education-content-packs.json` registra o material para que seja reutilizado com fidelidade.
 
 O gate `npm run verify:curated-content` confere versão, referências, mapeamento ao produto, tamanho e presença do material em arquivos Markdown; ainda exige revisão humana contextual de conteúdo, acessibilidade e fontes. **Não executar distribuição automática** ou adicionar a obra integral ao projeto público.
+
+
+## Recursos gratuitos por trilha — camada de aquisição sem captura
+
+Os quatro programas possuem uma ficha própria em `/academia/:slug/ferramenta-gratuita/`, gerada pela mesma página estática a partir de `src/data/academy-lead-magnets.json`. Cada ficha oferece um problema único, cinco perguntas introdutórias, três campos para preenchimento em papel e um limite explícito do que demonstra. A ficha é pronta para impressão ou "Salvar como PDF" via navegador. **Não há formulário enviado a servidor, lead capture, pixel de conversão ou promessa de acesso premium**.
+
+O índice `/autonomia-digital/guias/` agora agrupa as perguntas de acordo com os produtos educacionais e as páginas de insight trazem até três materiais de leitura relacionados. Isso constrói caminhos úteis de SEO e educação sem multiplicar páginas idênticas. `npm run verify:lead-magnets` garante ligações, limites e presença das quatro fichas.
