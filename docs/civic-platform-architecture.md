@@ -134,3 +134,9 @@ Release tests: `npm run verify:data && npm run check && npm run build`; keyboard
 ## Local-first organization capabilities (shipped)
 
 `/organizar/espaco-de-causa/` supports multiple user-owned causes, evidence links, public request drafts, status journal, shared task list/board/month calendar, JSON portability, opt-in localStorage backup and an editable prompt export for outside AI assistants. All task views share task IDs and deadlines. AI brief generation is **only text**; copying is an explicit user action. No app service receives this text. Do not copy sensitive data to an outside provider without independent user approval. Local browser storage is not an encrypted vault or a protected multi-user workspace.
+
+## Secure collaboration backend foundation (source only, undeployed)
+
+The cause-api service under services/cause-api/ now includes separate Worker+D1 source, database migration, Cloudflare Access JWT signature and audience checks, pseudonymous identities, per-cause read/edit roles, single-use hashed invitations, opt-in membership, revocation, local audit events, private evidence links, tasks and institutional request drafts. It has no deployed hostname or database. It is NOT wired into public Astro and cannot be used for real participation until consent, data deletion/retention, staging, moderation, operational security and independently verified private Access deployment are completed. Member causes and draft messages are never automatically published or distributed.
+
+The public local-first Workspace remains useful without accounts and intentionally sends no data. This separate service is the first tested architectural boundary toward private multi-user work, not a finished social network.
