@@ -1,5 +1,5 @@
 import {useEffect,useMemo,useState} from 'react';
-import {Search,ArrowUpRight,RotateCcw,FolderOpen,BookOpen,CalendarDays} from 'lucide-react';
+import {Search,ArrowUpRight,RotateCcw,FolderOpen,BookOpen} from 'lucide-react';
 import type {CaseCategory,CaseResearchEntry} from '../../lib/case-catalog';
 
 interface Props {
@@ -93,13 +93,13 @@ export default function CaseResearchExplorer({entries,categories,lockedCategory}
     </div>
    </nav>}
    <div className="mt-6 grid gap-4 border-t border-border pt-5 md:grid-cols-[1fr_auto] md:items-end">
-    <fieldset className="m-0 min-w-0 border-none p-0">
+    {casesTotal>0&&storiesTotal>0&&<fieldset className="m-0 min-w-0 border-none p-0">
      <legend className="mb-2 text-xs font-bold uppercase tracking-widest text-muted-foreground">Conteúdo</legend>
      <div className="flex flex-wrap gap-2">
       {([['todos','Tudo'],['caso','Casos'],['historia','Histórias']] as const).map(([value,label])=><button key={value} type="button"
        aria-pressed={kind===value} onClick={()=>setKind(value)} className={choiceClass+' '+(kind===value?'border-brand bg-brand text-white':'border-border bg-background text-foreground hover:bg-muted')}>{label}</button>)}
      </div>
-    </fieldset>
+    </fieldset>}
     <label className="grid gap-2 text-sm font-semibold" htmlFor="case-sort">
      Ordenar por
      <select id="case-sort" value={order} onChange={event=>setOrder(event.currentTarget.value as Sort)}
