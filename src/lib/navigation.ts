@@ -1,6 +1,6 @@
 /** Platform-level navigation: no single brand or political cause controls global messaging. */
 export const primaryNav = [
-  { label: 'Casos', href: '/casos/' },
+  { label: 'Casos e pesquisas', href: '/casos/' },
   { label: 'Instituto', href: '/instituto/' },
   { label: 'Organizar', href: '/organizar/' },
   { label: 'Autonomia digital', href: '/autonomia-digital/' },

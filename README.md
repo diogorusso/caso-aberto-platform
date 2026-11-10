@@ -225,6 +225,14 @@ See `docs/static-public-case-research.md`. Data: `src/data/public-case-atlas.jso
 
 Expanded the external consumer case atlas with Grão de Gente, Lado Rosa, Novo Mundo Goiás and Light Rio July 2026, plus six more attributed personal stories that show both unresolved complaints at the time and resolved late deliveries. Added an original guide on the distinction between unfulfilled purchases and credit handling in judicial recovery proceedings. Editorial attribution, dates, official sources and company responses remain mandatory. These are not direct consumer interviews or private evidence collected by CasoAberto.
 
+## Unified case research — owner's latest static-site direction (November 10, 2026)
+
+All nine published case studies belong to one CasoAberto research collection at /casos/, with Florense Ipanema prominently featured on both the home page and case index. Eight other researched cases and twelve individual stories are searchable in the same client-enhanced, server-rendered static index. Four static categories cover furniture/home, travel, online purchases, and energy/services; every entry links back to its existing, source-rich URL. The older /casos/arquivo-publico/ index now presents the whole collection instead of a separate editorial class. Each original deep link is retained.
+
+Implementation: src/data/case-categories.json (featured case and mandatory mapping), src/lib/case-catalog.ts (one normalized library model), src/components/islands/CaseResearchExplorer.tsx (diacritic-insensitive searching, content/category filters, sorting and URL parameters), and src/pages/casos/categoria/[slug]/index.astro (four SEO-friendly static category pages). Existing underlying JSON schemas are retained for detailed Florense company, evidence and impact functions. The legal team's existing CasoAberto tone skill is applied across the new site copy. Validate with npm run verify:case-catalog (also included in verify:data), npm run check and npm run build.
+
+The November 10 unified research registry also incorporates seven political/institutional dossiers from political-observatory.json under a fifth category, Política e direitos. The unified totals are now 16 documented cases plus 12 linked personal stories. Political case pages retain their original observatory routes, source dates and evidentiary stages; all are discoverable in the same case search without modifying the underlying political source data.
+
 ## Observatório político e accountability — 10/11/2026
 
 A pesquisa cívica pública agora tem um eixo independente dos casos de consumo: **bets e seus patrocinadores, decisões judiciais e legislativas, segurança de representantes eleitos, violência contra povos indígenas, acesso ao voto e rastreabilidade de emendas parlamentares**. São sete investigações com fontes por fato, cronologia, responsáveis institucionais, questões ainda abertas e limites.
