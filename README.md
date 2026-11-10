@@ -224,3 +224,17 @@ See `docs/static-public-case-research.md`. Data: `src/data/public-case-atlas.jso
 ## Static case library second batch — 2026-11-10
 
 Expanded the external consumer case atlas with Grão de Gente, Lado Rosa, Novo Mundo Goiás and Light Rio July 2026, plus six more attributed personal stories that show both unresolved complaints at the time and resolved late deliveries. Added an original guide on the distinction between unfulfilled purchases and credit handling in judicial recovery proceedings. Editorial attribution, dates, official sources and company responses remain mandatory. These are not direct consumer interviews or private evidence collected by CasoAberto.
+
+## Observatório político e accountability — 10/11/2026
+
+A pesquisa cívica pública agora tem um eixo independente dos casos de consumo: **bets e seus patrocinadores, decisões judiciais e legislativas, segurança de representantes eleitos, violência contra povos indígenas, acesso ao voto e rastreabilidade de emendas parlamentares**. São sete investigações com fontes por fato, cronologia, responsáveis institucionais, questões ainda abertas e limites.
+
+- Índice: `/observatorio/politica/`; dossiês: `/observatorio/politica/:slug/`.
+- Registro versionado: `src/data/political-observatory.json`; método completo e procedimento de atualização: `docs/observatorio-politico.md`.
+- Para conferir: `npm run verify:politics` (também incluído em `npm run verify:data`); `npm run check && npm run build`.
+- Para consultar localmente o que precisa de verificação: `npm run research:politics -- --list` ou `--case POL-002`. Para aplicar um pacote com revisão editorial legítima: `npm run research:politics -- --apply caminho/pacote-revisado.json`.
+- Skills disponíveis em `.cursor/skills/casoaberto-investigacao-politica/`, `.cursor/skills/casoaberto-monitoramento-factual/` e `.cursor/skills/casoaberto-publicacao-estatica/`.
+
+Comando conversacional de execução para um agente com ferramentas GitHub/web: **"Atualize o observatório político do CasoAberto; confira fontes e decisões novas desde a revisão anterior, revise os fatos e vínculos, execute validação e build e publique a versão confirmada no site estático."**
+
+Nenhuma dessas funções implanta monitoramento contínuo, coleta perfis políticos, transmite mensagens de campanha, modifica o Worker privado ou atribui culpa por patrocínio/associação. Referências e patrocínios históricos devem continuar com data e status explícitos. A revisão editorial de fatos sensíveis exige conferência humana e histórico de correções.
