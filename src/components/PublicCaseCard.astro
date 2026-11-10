@@ -8,6 +8,8 @@ interface Props {
   compact?: boolean;
 }
 const {study,compact=false} = Astro.props;
+const url='https://casoaberto.pages.dev/casos/arquivo-publico/'+study.slug+'/';
+const whatsapp='https://wa.me/?text='+encodeURIComponent('CasoAberto: '+study.headline+'\nLeia documentos, cronologia e perguntas: '+url);
 ---
 <article class="flex flex-col gap-4 border border-border bg-card p-6">
   <div class="flex flex-wrap items-center justify-between gap-2 text-xs font-semibold uppercase tracking-wide">
@@ -23,5 +25,5 @@ const {study,compact=false} = Astro.props;
     <p class="mt-2 text-xs text-muted-foreground">{study.key_fact.period}</p>
   </div>
   <p class="m-0 text-xs text-muted-foreground">{study.status_label}</p>
-  <a class="text-link font-semibold" href={'/casos/arquivo-publico/'+study.slug+'/'}>Cobrar resposta. Conferir fontes ↗</a>
+  <div class="flex flex-wrap items-center justify-between gap-3 border-t border-border pt-3"><a class="text-link font-semibold" href={'/casos/arquivo-publico/'+study.slug+'/'}>Abrir investigação ↗</a><a class="inline-flex min-h-11 items-center rounded-md border border-[#1c9c64] px-3 py-2 text-sm font-bold text-[#168557] no-underline hover:bg-muted" href={whatsapp} target="_blank" rel="noopener noreferrer">Compartilhar WhatsApp ↗</a></div>
 </article>
