@@ -57,7 +57,7 @@ const maxBar=Math.max(1,...barItems.map(b=>b.value));
         <text x={left} y={H-10} font-size="12" fill="var(--muted-foreground)">{date(grouped[0].date)}</text>
         <text x={W-right} y={H-10} font-size="12" text-anchor="end" fill="var(--muted-foreground)">{date(grouped[grouped.length-1].date)}</text>
       </svg>
-      <p class="mt-0 px-2 text-xs text-muted-foreground"><BookOpenText size={13} class="mr-1 inline-block align-[-2px]" aria-hidden="true"/> Cada degrau representa um marco registrado, não uma medida de dano nem um novo caso individual.</p>
+      <p class="mt-0 px-2 text-xs text-muted-foreground"><BookOpenText size={13} className="mr-1 inline-block align-[-2px]" aria-hidden="true"/> Cada degrau representa um marco registrado, não uma medida de dano nem um novo caso individual.</p>
     </div>
   ) : <p class="p-6 text-sm text-muted-foreground">Nenhum marco datado catalogado.</p>}
   <div class="flex flex-wrap items-center justify-between gap-3 border-t border-border px-5 py-4 text-xs text-muted-foreground">
