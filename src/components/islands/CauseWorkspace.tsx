@@ -1,4 +1,4 @@
-import { useState, type ChangeEvent } from 'react';
+import { useState, type ChangeEvent, type SyntheticEvent } from 'react';
 import CauseTaskViews from './CauseTaskViews';
 import CauseAiBrief from './CauseAiBrief';
 import {
@@ -45,7 +45,7 @@ export default function CauseWorkspace() {
     setWorkspace(old => updateCause(old, cause.id, change));
     setFeedback('Alteração feita apenas nesta sessão. Exporte o arquivo ou salve explicitamente.');
   };
-  const addCause = (event: React.FormEvent<HTMLFormElement>) => {
+  const addCause = (event: SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault();
     const f = event.currentTarget, fd = getForm(f);
     const title = formString(fd,'title'), objective = formString(fd,'objective');

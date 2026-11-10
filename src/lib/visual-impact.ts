@@ -2,7 +2,7 @@ import stories from '../data/impact-stories.json';
 import atlas from '../data/public-case-atlas.json';
 import politics from '../data/political-observatory.json';
 import platforms from '../data/platform-observatory.json';
-import {cases,casePath,brl,reportsFor} from './cases';
+import {cases,casePath,brl} from './cases';
 import {impactForSelection,statusGroups} from './impact';
 
 export type PlotPoint={date:string;title:string;url?:string};

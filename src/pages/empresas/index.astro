@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BrandRatingCard from '../../components/BrandRatingCard.astro';
 import CompanyRanking from '../../components/CompanyRanking.astro';
-import {brands,ratingDefinitions,statusLabel} from '../../lib/brands';
+import {brands,ratingDefinitions} from '../../lib/brands';
 const reviewed=brands.slice().sort((a,b)=>a.verdict.valid_as_of<b.verdict.valid_as_of?1:-1);
 ---
 <BaseLayout title="Empresas avaliadas: recomendamos, cautela e não recomendamos | CasoAberto" description="Consulte avaliações editoriais fundamentadas, empresas, unidades, CNPJs, casos documentados e decisões de contratação. A classificação informa alcance, evidências e revisão.">
