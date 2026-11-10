@@ -61,10 +61,21 @@ const pathways = [
     </div>
   </section>
 
-  <Section eyebrow="CASOS PARA INVESTIGAR" title="Uma reclamação pessoal pode revelar um problema maior." description="Além dos dossiês acompanhados diretamente, reunimos fontes de Procons, imprensa e decisões sobre serviços e contratos. Cada recorte preserva data, limites e posição conhecida da empresa.">
-    <a slot="action" class="text-link text-sm" href="/casos/arquivo-publico/">Explorar todos os casos documentados ↗</a>
-    <div class="grid gap-4 md:grid-cols-2">{publicAtlas.cases.map(study=><PublicCaseCard study={study} compact/>)}</div>
-    <p class="m-0 text-sm text-muted-foreground">O arquivo público é uma síntese atribuída de registros externos, não uma investigação original de cada contrato. <a class="text-link" href="/historias/">Leia as histórias que dão contexto aos números ↗</a></p>
+  {featuredCase&&<Section eyebrow="CASO EM DESTAQUE · A COBRANÇA COMEÇA AQUI" title="R$ 190 mil pagos. Prazo estourado. Cadê os móveis?" description="A contratação da unidade de Ipanema abriu o arquivo CasoAberto. O consumidor pagou. A entrega não ocorreu no prazo relatado. Contrato, cronologia, empresa e perguntas estão publicados.">
+    <a slot="action" class="text-link font-semibold" href={casePath(featuredCase)}>Acompanhar o caso em destaque ↗</a>
+    <CaseCard item={featuredCase} featured/>
+   </Section>}
+  <Section tone="muted" eyebrow="ACERVO DE PESQUISA" title="Não é só um problema. São setores inteiros cobrados." description="Viagens, entregas, móveis e energia. Todas as pesquisas do CasoAberto estão organizadas num único arquivo, com buscas por empresa, cidade, problema e categoria.">
+    <a slot="action" class="text-link font-semibold" href="/casos/#pesquisar-casos">Pesquisar todos os casos ↗</a>
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+      {categories.map(cat=><a class="flex flex-col gap-4 rounded-lg border border-border bg-card p-5 no-underline hover:border-brand/60" href={categoryHref(cat)}>
+       <span class="text-xs font-extrabold uppercase tracking-wider text-brand-strong">{cat.eyebrow}</span>
+       <h3 class="m-0 text-xl text-foreground">{cat.title}</h3>
+       <p class="m-0 flex-1 text-sm leading-relaxed text-muted-foreground">{cat.description}</p>
+       <span class="text-sm font-semibold text-link">{caseCountFor(cat.slug)} casos · Conferir ↗</span>
+      </a>)}
+    </div>
+    <p class="mb-0 mt-5 text-sm font-semibold">{caseStudies.length} casos documentados · {personalStories.length} histórias de consumidores. <a class="text-link" href="/historias/">Leia as histórias que movimentam cada caso ↗</a></p>
   </Section>
 
   <Section eyebrow="DO DADO À AÇÃO" title="Três capacidades para não depender de intermediários." description="O CasoAberto combina investigação pública, organização por consentimento e educação técnica. Casos de consumo são uma das aplicações — não o limite do projeto.">
@@ -127,15 +138,6 @@ const pathways = [
       ))}
     </div>
   </Section>
-
-  {newestCases.length>0 && (
-    <Section tone="muted" eyebrow="ARQUIVO PÚBLICO" title="Casos documentados" description="Cada caso possui um endereço próprio, cronologia, status e referências para acompanhar o desfecho.">
-      <a slot="action" class="text-link text-sm" href="/casos/">Todos os casos ↗</a>
-      <div class="space-y-4">
-        {newestCases.map((item,i) => <CaseCard item={item} featured={i===0}/>)}
-      </div>
-    </Section>
-  )}
 
   <section class="bg-forest py-14 text-forest-foreground md:py-20" aria-labelledby="kit-home-title" data-print-hide>
     <div class="container grid gap-10 lg:grid-cols-[1.3fr_0.9fr] lg:items-center">

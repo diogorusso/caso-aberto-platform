@@ -1,5 +1,4 @@
 ---
-import type {HTMLAttributes} from 'astro/types';
 interface Props {
   study: {
     slug: string; company: string; sector: string; headline: string; deck: string;
@@ -13,7 +12,7 @@ const {study,compact=false} = Astro.props;
 <article class="flex flex-col gap-4 border border-border bg-card p-6">
   <div class="flex flex-wrap items-center justify-between gap-2 text-xs font-semibold uppercase tracking-wide">
     <span class="text-brand-strong">{study.sector}</span>
-    <span class="text-muted-foreground">ARQUIVO EXTERNO · {study.reviewed_at.split('-').reverse().join('/')}</span>
+    <span class="text-muted-foreground">PESQUISA CASOABERTO · {study.reviewed_at.split('-').reverse().join('/')}</span>
   </div>
   <h3 class:list={["m-0 leading-tight",compact?"text-xl":"text-2xl"]}>{study.headline}</h3>
   <p class="m-0 text-sm font-semibold">{study.company}</p>
@@ -24,5 +23,5 @@ const {study,compact=false} = Astro.props;
     <p class="mt-2 text-xs text-muted-foreground">{study.key_fact.period}</p>
   </div>
   <p class="m-0 text-xs text-muted-foreground">{study.status_label}</p>
-  <a class="text-link font-semibold" href={'/casos/arquivo-publico/'+study.slug+'/'}>Examinar fontes e cronologia ↗</a>
+  <a class="text-link font-semibold" href={'/casos/arquivo-publico/'+study.slug+'/'}>Cobrar resposta. Conferir fontes ↗</a>
 </article>
