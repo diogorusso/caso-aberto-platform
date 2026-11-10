@@ -9,10 +9,10 @@ interface Props {item:Case}
 const {item}=Astro.props;
 const crumbs=[...crumbFor(item),{label:'Radar de impacto',href:caseImpactPath(item)}];
 ---
-<BaseLayout title={'Impacto em números: '+item.empresa_resumo+' — dinheiro, atraso, reclamações e cenários | CasoAberto'}
- description={'Dados públicos e cenários de exposição de '+item.empresa_resumo+': pagamento informado, dias sem conclusão confirmada, reclamações, fontes e cenários financeiros com premissas editáveis.'}
+<BaseLayout title={'Impacto em números: '+item.empresa_resumo+' — dinheiro, atraso, reclamações e consequências | CasoAberto'}
+ description={'Dados públicos e cenários de exposição de '+item.empresa_resumo+': pagamento informado, dias sem conclusão confirmada, reclamações, fontes e consequências condicionais ligadas a dados e documentos.'}
  dateModified={item.status_data} type="article" breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}>
  <Breadcrumbs items={crumbs}/>
  <ImpactDashboard caseItem={item}/>
- <section class="py-14 md:py-20 bg-muted"><div class="container [--container-max:52rem]"><span class="eyebrow text-xs font-semibold uppercase tracking-[0.14em] text-brand-strong">SOBRE A ANÁLISE</span><h2>Como ler os números?</h2><p>O painel considera a última revisão documental de {item.status_data.split('-').reverse().join('/')}, não o horário atual. Valor pago (relatado) fica separado de custos extras ainda não comprovados. Projeções de alcance e conflitos são cenários — não medições de faturamento da empresa.</p><p>Cada unidade tem seus registros. A marca que vende é a mesma. Confira os links originais e a data do levantamento.</p></div></section>
+ <section class="py-14 md:py-20 bg-muted"><div class="container [--container-max:52rem]"><span class="eyebrow text-xs font-semibold uppercase tracking-[0.14em] text-brand-strong">SOBRE A ANÁLISE</span><h2>Como ler os números?</h2><p>O painel considera a última revisão documental de {item.status_data.split('-').reverse().join('/')}, não o horário atual. Valor pago (relatado) fica separado de custos extras ainda não comprovados. O agravamento descrito parte de obrigações e fatos específicos. Os gráficos mostram registros existentes, não alcance fictício ou previsão de faturamento.</p><p>Cada unidade tem seus registros. A marca que vende é a mesma. Confira os links originais e a data do levantamento.</p></div></section>
 </BaseLayout>
