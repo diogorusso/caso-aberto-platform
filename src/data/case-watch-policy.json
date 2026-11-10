@@ -22,7 +22,10 @@
       "priority": "high",
       "interval_days": 1,
       "focus": "Conferir entrega integral ou restituição, cronograma documentado, resposta da empresa e status de reclamações, sem exposição de documentos privados.",
-      "watch_urls": [],
+      "watch_urls": [
+        "https://www.reclameaqui.com.br/florense-moveis/nao-recebi-meus-moveis-planejados-e-a-loja-nao-cumpre-prazos_LaK42QhQaVqRLA5s/",
+        "https://www.reclameaqui.com.br/florense-moveis/descumprimento-de-prazo-na-entrega-de-marcenaria-florense_yv_EetTkC951tEH1/"
+      ],
       "deadlines": [],
       "closure_evidence": "Entrega integral aceita ou restituição executada, com documento verificável e atualização editorial."
     },
@@ -32,7 +35,10 @@
       "priority": "standard",
       "interval_days": 7,
       "focus": "Consultar atos novos sobre Hurb (Hotel Urbano): Fiscalização e cobranças documentadas · 2023–2025; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
-      "watch_urls": [],
+      "watch_urls": [
+        "https://www.procon.sp.gov.br/reclamacoes-sobre-a-hurb-no-procon-sp/",
+        "https://www.procon.sp.gov.br/procon-sp-divulga-cadastro-das-empresas-mais-reclamadas-em-2024/"
+      ],
       "deadlines": [],
       "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
     },
@@ -42,7 +48,10 @@
       "priority": "standard",
       "interval_days": 7,
       "focus": "Consultar atos novos sobre 123milhas / Grupo 123 Milhas: Recuperação judicial e créditos · 2023–2025; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
-      "watch_urls": [],
+      "watch_urls": [
+        "https://www.procon.sp.gov.br/123-milhas-2/",
+        "https://www.procon.sp.gov.br/consumidores-lesados-pela-123-milhas-devem-registrar-novamente-suas-reclamacoes-em-site-criado-a-pedido-da-justica/"
+      ],
       "deadlines": [],
       "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
     },
@@ -52,7 +61,10 @@
       "priority": "standard",
       "interval_days": 7,
       "focus": "Consultar atos novos sobre Yeesco: Entregas e reclamações registradas · 2024–2025; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
-      "watch_urls": [],
+      "watch_urls": [
+        "https://www.procon.sp.gov.br/procon-sp-divulga-cadastro-das-empresas-mais-reclamadas-em-2024/",
+        "https://www.procon.sp.gov.br/reclamacoes-no-procon-sp-aumentam-16-em-2024/"
+      ],
       "deadlines": [],
       "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
     },
@@ -62,7 +74,10 @@
       "priority": "standard",
       "interval_days": 7,
       "focus": "Consultar atos novos sobre Enel Distribuição São Paulo: Apagão, decisão e fiscalização · 2025–2026; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
-      "watch_urls": [],
+      "watch_urls": [
+        "https://agenciabrasil.ebc.com.br/geral/noticia/2026-09/justica-reconhece-falhas-da-enel-em-apagao-de-dezembro-de-2025-em-sp",
+        "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/procon-paulistano-multa-enel-por-falhas-no-fornecimento-de-energia"
+      ],
       "deadlines": [],
       "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
     },
@@ -72,7 +87,10 @@
       "priority": "standard",
       "interval_days": 7,
       "focus": "Consultar atos novos sobre Grão de Gente: Recuperação judicial e entregas · 2024–2026; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
-      "watch_urls": [],
+      "watch_urls": [
+        "https://www.graodegente.com.br/institucional/comunicado-ao-mercado/",
+        "https://mercadoeconsumo.com.br/16/09/2024/noticias/grao-de-gente-reduz-portfolio-e-enxuga-operacao-em-meio-a-recuperacao-judicial/amp/"
+      ],
       "deadlines": [],
       "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
     },
@@ -82,7 +100,10 @@
       "priority": "standard",
       "interval_days": 7,
       "focus": "Consultar atos novos sobre Lado Rosa / Lado Fit: Fiscalização e multa do Procon-SC · 2025; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
-      "watch_urls": [],
+      "watch_urls": [
+        "https://www.procon.sc.gov.br/procon-sc-instaura-processo-administrativo-contra-loja-lado-rosa/",
+        "https://www.procon.sc.gov.br/zap-denuncias-recebe-235-reclamacoes-em-1-semana/"
+      ],
       "deadlines": [],
       "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
     },
@@ -92,7 +113,10 @@
       "priority": "high",
       "interval_days": 3,
       "focus": "Consultar atos novos sobre Novo Mundo (varejo): Cobrança do Procon Goiás · novembro de 2026; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
-      "watch_urls": [],
+      "watch_urls": [
+        "https://portal6.com.br/2026/10/28/comprou-na-novo-mundo-clientes-de-anapolis-e-goiania-esperam-meses-e-so-recebem-depois-do-procon/",
+        "https://www.maisgoias.com.br/cidades/novo-mundo-acumula-22-mil-reclamacoes-em-goias-procon-da-dez-dias-para-empresa-agir/"
+      ],
       "deadlines": [],
       "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
     },
@@ -102,7 +126,10 @@
       "priority": "standard",
       "interval_days": 7,
       "focus": "Consultar atos novos sobre Light — fornecimento de energia no Rio: Apagão do Rio e recomposição · julho de 2026; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
-      "watch_urls": [],
+      "watch_urls": [
+        "https://agenciabrasil.ebc.com.br/geral/noticia/2026-07/ventania-causa-apagao-e-paralisa-transportes-no-rio-de-janeiro",
+        "https://agenciabrasil.ebc.com.br/economia/noticia/2026-07/vendaval-ainda-causa-danos-moradores-do-rio-de-janeiro"
+      ],
       "deadlines": [],
       "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
     },
@@ -112,7 +139,10 @@
       "priority": "high",
       "interval_days": 3,
       "focus": "Consultar atos novos sobre Grupo Casas Bahia: Processamento de recuperação judicial deferido em 21/10/2026; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
-      "watch_urls": [],
+      "watch_urls": [
+        "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-abre-monitoramento-de-casas-bahia-tok-stok-e-marabraz-apos-pedidos-de-recuperacao-judicial",
+        "https://portal.tjsp.jus.br/Imprensa/Noticias/Noticia?codigoNoticia=115802&pagina=1"
+      ],
       "deadlines": [],
       "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
     },
@@ -122,7 +152,10 @@
       "priority": "high",
       "interval_days": 3,
       "focus": "Consultar atos novos sobre Grupo Toky — Tok&Stok e Mobly: Processamento deferido pela Justiça em 12/06/2026; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
-      "watch_urls": [],
+      "watch_urls": [
+        "https://www.rad.cvm.gov.br/ENETWEB/frmGerenciaPaginaFRE.aspx?CodigoTipoInstituicao=1&NumeroSequencialDocumento=159240",
+        "https://portal.tjsp.jus.br/Noticias/Noticia?codigoNoticia=114526&pagina=46"
+      ],
       "deadlines": [],
       "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
     },
@@ -132,7 +165,10 @@
       "priority": "high",
       "interval_days": 3,
       "focus": "Consultar atos novos sobre Marabraz: Processamento da recuperação judicial reportado em 28/10/2026; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
-      "watch_urls": [],
+      "watch_urls": [
+        "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-abre-monitoramento-de-casas-bahia-tok-stok-e-marabraz-apos-pedidos-de-recuperacao-judicial",
+        "https://www1.folha.uol.com.br/mercado/2026/08/marabraz-pede-recuperacao-judicial-com-dividas-de-r-140-milhoes.shtml"
+      ],
       "deadlines": [],
       "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
     },
@@ -142,7 +178,10 @@
       "priority": "high",
       "interval_days": 3,
       "focus": "Consultar atos novos sobre Live Nation Brasil e Ticketmaster Brasil: Notificações da Senacon em outubro de 2026; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
-      "watch_urls": [],
+      "watch_urls": [
+        "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-notifica-empresas-sobre-estrutura-de-shows-do-bts-em-sao-paulo",
+        "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-orienta-consumidores-sobre-direitos-nos-shows-do-bts-em-sao-paulo"
+      ],
       "deadlines": [],
       "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
     },
@@ -152,7 +191,10 @@
       "priority": "high",
       "interval_days": 3,
       "focus": "Consultar atos novos sobre Corsan / Aegea: Compromissos anunciados e monitoramento em outubro/2026; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
-      "watch_urls": [],
+      "watch_urls": [
+        "https://www.mprs.mp.br/noticias/consumidor/67560/",
+        "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-ministerio-publico-e-procons-gauchos-cobram-melhorias-nos-servicos-da-corsan-aegea"
+      ],
       "deadlines": [],
       "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
     },
@@ -162,7 +204,10 @@
       "priority": "high",
       "interval_days": 3,
       "focus": "Consultar atos novos sobre Amazon Prime Video: Averiguação preliminar iniciada pela Senacon em 10/09/2026; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
-      "watch_urls": [],
+      "watch_urls": [
+        "https://www.gov.br/mj/pt-br/assuntos/noticias-1/senacon-inicia-averiguacao-sobre-mudancas-no-amazon-prime-video/",
+        "https://www.mobiletime.com.br/noticias/11/09/2026/senacon-amaz-prime-video/"
+      ],
       "deadlines": [],
       "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
     },
@@ -172,7 +217,10 @@
       "priority": "high",
       "interval_days": 3,
       "focus": "Consultar atos novos sobre Viagogo, StubHub, TicketSwap, BuyTicket e FunBuyNet: Medidas cautelares anunciadas em 28/10/2026; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
-      "watch_urls": [],
+      "watch_urls": [
+        "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-determina-que-viagogo-informe-ao-consumidor-que-nao-e-canal-oficial-de-venda",
+        "https://www.gov.br/mj/pt-br/assuntos/noticias-1/senacon-instaura-processos-contra-duas-plataformas-de-revenda-de-ingressos"
+      ],
       "deadlines": [],
       "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
     },
@@ -182,7 +230,10 @@
       "priority": "high",
       "interval_days": 2,
       "focus": "Consultar andamento e emendas da MP no Congresso, andamento da ADI 8027, peças juntadas e atos de fiscalização da SPA.",
-      "watch_urls": [],
+      "watch_urls": [
+        "https://www.congressonacional.leg.br/pt_BR/materias/medidas-provisorias/-/mpv/175871",
+        "https://www.gov.br/fazenda/pt-br/composicao/orgaos/secretaria-de-premios-e-apostas/transparencia-ativa-processos-de-autorizacao-de-apostas-de-quota-fixa/empresas-autorizadas"
+      ],
       "deadlines": [
         "2026-11-23"
       ],
@@ -194,7 +245,10 @@
       "priority": "high",
       "interval_days": 2,
       "focus": "Revisar peças da ADI, comunicados dos clubes e contratos publicados; atualizar o mapa com coluna de situação pós-MP quando houver prova individual.",
-      "watch_urls": [],
+      "watch_urls": [
+        "https://www.gov.br/fazenda/pt-br/composicao/orgaos/secretaria-de-premios-e-apostas/transparencia-ativa-processos-de-autorizacao-de-apostas-de-quota-fixa/empresas-autorizadas",
+        "https://noticias.stf.jus.br/postsnoticias/stf-divulga-cronograma-de-audiencia-publica-sobre-proibicao-das-bets/"
+      ],
       "deadlines": [],
       "closure_evidence": "Desfecho procedimental ou institucional demonstrado por ato público, com contraditório, cronologia e fontes atualizados; proteção de vítimas preservada."
     },
@@ -204,7 +258,10 @@
       "priority": "high",
       "interval_days": 2,
       "focus": "Buscar no STF e na PF atos oficiais novos e a versão integral da defesa; distinguir fatos migratórios comprovados, reportagens e decisões judiciais.",
-      "watch_urls": [],
+      "watch_urls": [
+        "https://agenciabrasil.ebc.com.br/justica/noticia/2026-10/entenda-investigacoes-contra-flavio-continuam-no-stf-apos-fuga",
+        "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/pf-investiga-circunstancias-da-fuga-de-flavio-bolsonaro-do-brasil"
+      ],
       "deadlines": [],
       "closure_evidence": "Desfecho procedimental ou institucional demonstrado por ato público, com contraditório, cronologia e fontes atualizados; proteção de vítimas preservada."
     },
@@ -214,7 +271,10 @@
       "priority": "urgent",
       "interval_days": 1,
       "focus": "Acompanhar notas da PF/MJSP, decisões públicas, órgãos eleitorais e pesquisa de violência política; proibir rastreamento de localização ou segurança da vítima.",
-      "watch_urls": [],
+      "watch_urls": [
+        "https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/pf-investiga-ameacas-recebidas-pela-deputada-eleita-ana-elisa",
+        "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/08/pf-investiga-ameacas-contra-a-deputada-eleita-ana-elisa.htm"
+      ],
       "deadlines": [],
       "closure_evidence": "Desfecho procedimental ou institucional demonstrado por ato público, com contraditório, cronologia e fontes atualizados; proteção de vítimas preservada."
     },
@@ -224,7 +284,10 @@
       "priority": "urgent",
       "interval_days": 1,
       "focus": "Acompanhar notas oficiais e respostas de órgãos de apuração e das organizações indígenas; publicar somente contagens com data e denominador.",
-      "watch_urls": [],
+      "watch_urls": [
+        "https://www.gov.br/povosindigenas/pt-br/assuntos/noticias/2026/10/nota-denuncias-de-violencias-apos-o-2o-turno-das-eleicoes",
+        "https://iclnoticias.com.br/brasil-registra-13-ataques-contra-indigenas/"
+      ],
       "deadlines": [],
       "closure_evidence": "Desfecho procedimental ou institucional demonstrado por ato público, com contraditório, cronologia e fontes atualizados; proteção de vítimas preservada."
     },
@@ -234,7 +297,10 @@
       "priority": "high",
       "interval_days": 2,
       "focus": "Revisar documentos do TSE/MPE e relatórios pós-eleição sobre atendimento e acessibilidade em territórios indígenas.",
-      "watch_urls": [],
+      "watch_urls": [
+        "https://www.mpf.mp.br/o-mpf/unidades/procuradoria-geral-da-republica-pgr/noticias/eleicoes-2026-mp-eleitoral-reforca-fiscalizacao-para-garantir-voto-de-indigenas-no-segundo-turno",
+        "https://agenciabrasil.ebc.com.br/justica/noticia/2026-10/mpe-pede-providencias-para-garantir-voto-de-indigenas-no-segundo-turno"
+      ],
       "deadlines": [],
       "closure_evidence": "Desfecho procedimental ou institucional demonstrado por ato público, com contraditório, cronologia e fontes atualizados; proteção de vítimas preservada."
     },
@@ -244,7 +310,10 @@
       "priority": "high",
       "interval_days": 2,
       "focus": "Em 30/11 revisar petições e decisões da ADPF 854, além de dados abertos do Siafi e Transferegov.",
-      "watch_urls": [],
+      "watch_urls": [
+        "https://noticias.stf.jus.br/postsnoticias/governo-e-congresso-deverao-propor-codigo-unico-para-rastrear-emendas-parlamentares-decide-relator/",
+        "https://www.congressoemfoco.com.br/noticia/120211/de-master-a-jogo-do-bicho-politicos-entraram-na-mira-da-pf-em-2026/"
+      ],
       "deadlines": [
         "2026-11-30"
       ],
@@ -256,7 +325,10 @@
       "priority": "standard",
       "interval_days": 7,
       "focus": "Verificar desdobramentos da ação do MPF, resultados de transparência e execução de compromissos da plataforma.",
-      "watch_urls": [],
+      "watch_urls": [
+        "https://www.tse.jus.br/comunicacao/noticias/2026/Setembro/plano-da-meta-para-as-eleicoes-2026-preve-combate-a-desinformacao-e-remocao-de-conteudo-violento",
+        "https://www.mpf.mp.br/o-mpf/unidades/pr-rs/noticias/mpf-aciona-a-justica-para-barrar-bloqueios-e-restricoes-arbitrarias-praticados-pela-meta-em-redes-sociais"
+      ],
       "deadlines": [],
       "closure_evidence": "Ato institucional conclusivo ou conclusão editorial formal, com fonte e histórico de correções."
     }
