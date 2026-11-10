@@ -1,0 +1,1108 @@
+{
+  "version": 1,
+  "reviewed_at": "2026-11-10",
+  "editorial_scope": "Observatório cívico independente de fatos públicos e apurações atribuídas; sem imputação por associação ou monitoramento pessoal.",
+  "sources": [
+    {
+      "id": "mp-tramite",
+      "title": "Congresso Nacional — MPV 1.394/2026",
+      "url": "https://www.congressonacional.leg.br/pt_BR/materias/medidas-provisorias/-/mpv/175871",
+      "published_at": "2026-09-25",
+      "kind": "Registro legislativo"
+    },
+    {
+      "id": "fazenda-bets",
+      "title": "Ministério da Fazenda — autorização de operadores anterior à MP",
+      "url": "https://www.gov.br/fazenda/pt-br/composicao/orgaos/secretaria-de-premios-e-apostas/transparencia-ativa-processos-de-autorizacao-de-apostas-de-quota-fixa/empresas-autorizadas",
+      "published_at": "2026-10-09",
+      "kind": "Registro administrativo histórico"
+    },
+    {
+      "id": "stf-bets",
+      "title": "STF — audiência pública sobre proibição das bets",
+      "url": "https://noticias.stf.jus.br/postsnoticias/stf-divulga-cronograma-de-audiencia-publica-sobre-proibicao-das-bets/",
+      "published_at": "2026-10-28",
+      "kind": "Fonte judicial"
+    },
+    {
+      "id": "stf-adi",
+      "title": "STF — acompanhamento processual da ADI 8027",
+      "url": "https://portal.stf.jus.br/processos/detalhe.asp?incidente=7708339",
+      "kind": "Processo judicial"
+    },
+    {
+      "id": "flamengo-nota",
+      "title": "Flamengo — manifestação sobre pedido de ingresso na ADI",
+      "url": "https://www.flamengo.com.br/noticias/notas-oficiais/nota-a-imprensa-30-09-26",
+      "published_at": "2026-09-30",
+      "kind": "Manifestação de parte interessada"
+    },
+    {
+      "id": "flamengo-contrato",
+      "title": "Flamengo — aprovação do patrocínio máster Betano",
+      "url": "https://www.flamengo.com.br/noticias/institucional/conselho-deliberativo-aprova-parceria-master-entre-flamengo-e-betano",
+      "published_at": "2025-08-19",
+      "kind": "Manifestação do clube"
+    },
+    {
+      "id": "ge-betano",
+      "title": "ge — valores e condições reportados do patrocínio Betano",
+      "url": "https://ge.globo.com/futebol/times/flamengo/noticia/2025/08/18/flamengo-vai-receber-quase-r-900-milhoes-de-novo-patrocinador-ate-o-fim-de-2028.ghtml",
+      "published_at": "2025-08-18",
+      "kind": "Jornalismo"
+    },
+    {
+      "id": "clubes-mapa",
+      "title": "Meio & Mensagem — patrocinadores da Série A em 18/09/2026",
+      "url": "https://www.meioemensagem.com.br/marketing/quem-sao-as-bets-que-patrocinam-o-futebol-brasileiro",
+      "published_at": "2026-09-18",
+      "kind": "Jornalismo setorial; fotografia histórica"
+    },
+    {
+      "id": "cpi-bets",
+      "title": "Agência Senado — rejeição do relatório final da CPI das Bets",
+      "url": "https://www12.senado.leg.br/noticias/materias/2025/06/12/cpi-das-bets-rejeita-relatorio-final",
+      "published_at": "2025-06-12",
+      "kind": "Registro legislativo"
+    },
+    {
+      "id": "fux-suspensao",
+      "title": "Lance! — decisão noticiada sobre suspensão de ações ordinárias",
+      "url": "https://www.lance.com.br/futebol-nacional/fux-acata-pedido-da-pgr-e-suspende-acoes-sobre-bets-ate-o-julgamento-no-stf.html",
+      "published_at": "2026-11-09",
+      "kind": "Jornalismo jurídico; decisão requer conferência nos autos"
+    },
+    {
+      "id": "pf-flavio",
+      "title": "Agência Brasil — investigações contra Flávio após saída do país",
+      "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2026-10/entenda-investigacoes-contra-flavio-continuam-no-stf-apos-fuga",
+      "published_at": "2026-10-27",
+      "kind": "Jornalismo público"
+    },
+    {
+      "id": "pf-fuga",
+      "title": "Agência Brasil — PF investiga circunstâncias da saída de Flávio",
+      "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/pf-investiga-circunstancias-da-fuga-de-flavio-bolsonaro-do-brasil",
+      "published_at": "2026-10-29",
+      "kind": "Jornalismo público"
+    },
+    {
+      "id": "flavio-defesa",
+      "title": "Folha — Flávio nega ajuda externa à saída do Brasil",
+      "url": "https://www1.folha.uol.com.br/poder/2026/11/flavio-diz-ao-nyt-que-levara-para-o-tumulo-segredo-sobre-como-fugiu-do-brasil-e-chegou-aos-eua.shtml",
+      "published_at": "2026-11-05",
+      "kind": "Jornalismo; versão atribuída"
+    },
+    {
+      "id": "ana-pf",
+      "title": "Agência Brasil — PF investiga ameaças contra Ana Elisa",
+      "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/pf-investiga-ameacas-recebidas-pela-deputada-eleita-ana-elisa",
+      "published_at": "2026-11-08",
+      "kind": "Jornalismo público com confirmação da PF"
+    },
+    {
+      "id": "ana-mjsp",
+      "title": "UOL — medidas de segurança de Ana Elisa",
+      "url": "https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/08/pf-investiga-ameacas-contra-a-deputada-eleita-ana-elisa.htm",
+      "published_at": "2026-11-08",
+      "kind": "Jornalismo com resposta do MJSP"
+    },
+    {
+      "id": "ana-campanha",
+      "title": "Agência Brasil — ameaças durante campanha de Ana Elisa",
+      "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/deputada-federal-eleita-ana-elisa-denuncia-ameacas-durante-campanha",
+      "published_at": "2026-10-08",
+      "kind": "Jornalismo público"
+    },
+    {
+      "id": "violencia-2026",
+      "title": "Agência Brasil — levantamento de violência política eleitoral",
+      "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/com-alta-da-violencia-politica-no-brasil-mulheres-sao-maiores-vitimas",
+      "published_at": "2026-10-08",
+      "kind": "Jornalismo sobre pesquisa independente"
+    },
+    {
+      "id": "violencia-governo",
+      "title": "Agência Brasil — registro governamental de violência no segundo turno",
+      "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/governo-reforcara-investigacoes-de-violencia-politica-no-segundo-turno",
+      "published_at": "2026-10-28",
+      "kind": "Declaração governamental reportada"
+    },
+    {
+      "id": "mpi-nota",
+      "title": "Ministério dos Povos Indígenas — nota oficial pós-segundo turno",
+      "url": "https://www.gov.br/povosindigenas/pt-br/assuntos/noticias/2026/10/nota-denuncias-de-violencias-apos-o-2o-turno-das-eleicoes",
+      "published_at": "2026-10-27",
+      "kind": "Fonte oficial"
+    },
+    {
+      "id": "ataques-indigenas",
+      "title": "ICL — denúncias de ataques contra indígenas após eleição",
+      "url": "https://iclnoticias.com.br/brasil-registra-13-ataques-contra-indigenas/",
+      "published_at": "2026-11-07",
+      "kind": "Jornalismo de apuração; denúncias"
+    },
+    {
+      "id": "mpf-voto",
+      "title": "MPF — medidas para assegurar voto indígena no segundo turno",
+      "url": "https://www.mpf.mp.br/o-mpf/unidades/procuradoria-geral-da-republica-pgr/noticias/eleicoes-2026-mp-eleitoral-reforca-fiscalizacao-para-garantir-voto-de-indigenas-no-segundo-turno",
+      "published_at": "2026-10-14",
+      "kind": "Fonte oficial"
+    },
+    {
+      "id": "mpe-voto",
+      "title": "Agência Brasil — pedido de providências eleitorais para o voto indígena",
+      "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2026-10/mpe-pede-providencias-para-garantir-voto-de-indigenas-no-segundo-turno",
+      "published_at": "2026-10-20",
+      "kind": "Jornalismo público"
+    },
+    {
+      "id": "emendas-stf",
+      "title": "STF — código único para rastrear emendas (ADPF 854)",
+      "url": "https://noticias.stf.jus.br/postsnoticias/governo-e-congresso-deverao-propor-codigo-unico-para-rastrear-emendas-parlamentares-decide-relator/",
+      "published_at": "2026-09-09",
+      "kind": "Fonte judicial"
+    },
+    {
+      "id": "emendas-cobertura",
+      "title": "Congresso em Foco — operações e políticos investigados em 2026",
+      "url": "https://www.congressoemfoco.com.br/noticia/120211/de-master-a-jogo-do-bicho-politicos-entraram-na-mira-da-pf-em-2026/",
+      "published_at": "2026-07-03",
+      "kind": "Jornalismo de levantamento; casos distintos"
+    }
+  ],
+  "entities": [
+    {
+      "id": "governo-federal",
+      "name": "Presidência da República / Executivo",
+      "role": "órgão público"
+    },
+    {
+      "id": "congresso",
+      "name": "Congresso Nacional",
+      "role": "órgão público"
+    },
+    {
+      "id": "stf",
+      "name": "Supremo Tribunal Federal",
+      "role": "órgão público"
+    },
+    {
+      "id": "luiz-fux",
+      "name": "Luiz Fux",
+      "role": "autoridade judicial"
+    },
+    {
+      "id": "anjl",
+      "name": "Associação Nacional de Jogos e Loterias",
+      "role": "entidade setorial"
+    },
+    {
+      "id": "spa",
+      "name": "Secretaria de Prêmios e Apostas",
+      "role": "regulador"
+    },
+    {
+      "id": "flamengo",
+      "name": "Clube de Regatas do Flamengo",
+      "role": "clube esportivo"
+    },
+    {
+      "id": "cbf",
+      "name": "Confederação Brasileira de Futebol",
+      "role": "entidade esportiva"
+    },
+    {
+      "id": "betano",
+      "name": "Betano",
+      "role": "marca de apostas"
+    },
+    {
+      "id": "kaizen",
+      "name": "Kaizen Gaming Brasil Ltda",
+      "role": "operadora registrada antes da MP"
+    },
+    {
+      "id": "corinthians",
+      "name": "Sport Club Corinthians Paulista",
+      "role": "clube esportivo"
+    },
+    {
+      "id": "palmeiras",
+      "name": "Sociedade Esportiva Palmeiras",
+      "role": "clube esportivo"
+    },
+    {
+      "id": "sao-paulo-fc",
+      "name": "São Paulo Futebol Clube",
+      "role": "clube esportivo"
+    },
+    {
+      "id": "flavio",
+      "name": "Flávio Bolsonaro",
+      "role": "agente político"
+    },
+    {
+      "id": "pf",
+      "name": "Polícia Federal",
+      "role": "órgão público"
+    },
+    {
+      "id": "willer",
+      "name": "Willer Tomaz",
+      "role": "advogado citado em investigação noticiada"
+    },
+    {
+      "id": "alcazar",
+      "name": "Alcazar Holdings",
+      "role": "pessoa jurídica citada em investigação noticiada"
+    },
+    {
+      "id": "vorcaro",
+      "name": "Daniel Vorcaro",
+      "role": "pessoa citada em investigação noticiada"
+    },
+    {
+      "id": "ana-elisa",
+      "name": "Ana Elisa Santos Silva",
+      "role": "deputada federal eleita; vítima de ameaças denunciadas"
+    },
+    {
+      "id": "mjsp",
+      "name": "Ministério da Justiça e Segurança Pública",
+      "role": "órgão público"
+    },
+    {
+      "id": "tse",
+      "name": "Tribunal Superior Eleitoral",
+      "role": "órgão público"
+    },
+    {
+      "id": "mpi",
+      "name": "Ministério dos Povos Indígenas",
+      "role": "órgão público"
+    },
+    {
+      "id": "mdhc",
+      "name": "Ministério dos Direitos Humanos e da Cidadania",
+      "role": "órgão público"
+    },
+    {
+      "id": "mir",
+      "name": "Ministério da Igualdade Racial",
+      "role": "órgão público"
+    },
+    {
+      "id": "apib",
+      "name": "Articulação dos Povos Indígenas do Brasil (APIB)",
+      "role": "organização da sociedade civil"
+    },
+    {
+      "id": "cimi",
+      "name": "Conselho Indigenista Missionário (Cimi)",
+      "role": "organização da sociedade civil"
+    },
+    {
+      "id": "mpf",
+      "name": "Ministério Público Federal / Eleitoral",
+      "role": "órgão público"
+    },
+    {
+      "id": "univaja",
+      "name": "União dos Povos Indígenas do Vale do Javari (Univaja)",
+      "role": "organização indígena"
+    },
+    {
+      "id": "flavio-dino",
+      "name": "Flávio Dino",
+      "role": "autoridade judicial"
+    },
+    {
+      "id": "denasus",
+      "name": "Departamento Nacional de Auditoria do SUS",
+      "role": "órgão público"
+    }
+  ],
+  "relationships": [
+    {
+      "from": "flamengo",
+      "to": "betano",
+      "relation": "Contrato de patrocínio máster aprovado em 2025; situação posterior à MP a confirmar",
+      "source": "flamengo-contrato",
+      "case_id": "POL-002"
+    },
+    {
+      "from": "kaizen",
+      "to": "betano",
+      "relation": "Operadora da marca na lista administrativa anterior à MP",
+      "source": "fazenda-bets",
+      "case_id": "POL-002"
+    },
+    {
+      "from": "flamengo",
+      "to": "stf",
+      "relation": "Clube informou pedido de ingresso como amicus curiae na ADI 8027; admissão pendente de conferência",
+      "source": "flamengo-nota",
+      "case_id": "POL-002"
+    },
+    {
+      "from": "anjl",
+      "to": "stf",
+      "relation": "Entidade autora da ADI 8027",
+      "source": "stf-adi",
+      "case_id": "POL-001"
+    },
+    {
+      "from": "congresso",
+      "to": "governo-federal",
+      "relation": "Legislativo examina MP apresentada pela Presidência",
+      "source": "mp-tramite",
+      "case_id": "POL-001"
+    },
+    {
+      "from": "pf",
+      "to": "ana-elisa",
+      "relation": "Órgão investiga ameaças denunciadas contra a deputada eleita",
+      "source": "ana-pf",
+      "case_id": "POL-004"
+    },
+    {
+      "from": "mjsp",
+      "to": "ana-elisa",
+      "relation": "Ministério informou medidas de proteção em andamento; detalhes operacionais omitidos",
+      "source": "ana-mjsp",
+      "case_id": "POL-004"
+    },
+    {
+      "from": "mpi",
+      "to": "mdhc",
+      "relation": "Atuação conjunta anunciada para acompanhar denúncias pós-eleição",
+      "source": "mpi-nota",
+      "case_id": "POL-005"
+    },
+    {
+      "from": "mpi",
+      "to": "mir",
+      "relation": "Atuação conjunta anunciada para acompanhar denúncias pós-eleição",
+      "source": "mpi-nota",
+      "case_id": "POL-005"
+    },
+    {
+      "from": "mpf",
+      "to": "tse",
+      "relation": "MPE encaminhou pedido de providências para voto indígena",
+      "source": "mpe-voto",
+      "case_id": "POL-006"
+    },
+    {
+      "from": "stf",
+      "to": "congresso",
+      "relation": "Relator ordenou proposta conjunta de identificador único de emendas",
+      "source": "emendas-stf",
+      "case_id": "POL-007"
+    },
+    {
+      "from": "flavio",
+      "to": "stf",
+      "relation": "Dois procedimentos investigativos noticiados; não equivale a condenação",
+      "source": "pf-flavio",
+      "case_id": "POL-003"
+    },
+    {
+      "from": "flavio",
+      "to": "willer",
+      "relation": "Citação em apuração noticiada; não constitui prova de participação criminosa",
+      "source": "pf-flavio",
+      "case_id": "POL-003"
+    },
+    {
+      "from": "flavio",
+      "to": "vorcaro",
+      "relation": "Apuração noticiada sobre alegado financiamento de filme; há negativa do senador",
+      "source": "pf-flavio",
+      "case_id": "POL-003"
+    }
+  ],
+  "sponsorships": [
+    {
+      "club": "Flamengo",
+      "brand": "Betano",
+      "as_of": "2026-09-18",
+      "source": "clubes-mapa",
+      "status": "fotografia histórica anterior à MP 1.394/2026; vigência atual não verificada"
+    },
+    {
+      "club": "Palmeiras",
+      "brand": "Sportingbet",
+      "as_of": "2026-09-18",
+      "source": "clubes-mapa",
+      "status": "fotografia histórica anterior à MP 1.394/2026; vigência atual não verificada"
+    },
+    {
+      "club": "Fluminense",
+      "brand": "Superbet",
+      "as_of": "2026-09-18",
+      "source": "clubes-mapa",
+      "status": "fotografia histórica anterior à MP 1.394/2026; vigência atual não verificada"
+    },
+    {
+      "club": "Cruzeiro",
+      "brand": "Betnacional",
+      "as_of": "2026-09-18",
+      "source": "clubes-mapa",
+      "status": "fotografia histórica anterior à MP 1.394/2026; vigência atual não verificada"
+    },
+    {
+      "club": "Atlético-MG",
+      "brand": "H2Bet",
+      "as_of": "2026-09-18",
+      "source": "clubes-mapa",
+      "status": "fotografia histórica anterior à MP 1.394/2026; vigência atual não verificada"
+    },
+    {
+      "club": "Santos",
+      "brand": "Novibet",
+      "as_of": "2026-09-18",
+      "source": "clubes-mapa",
+      "status": "fotografia histórica anterior à MP 1.394/2026; vigência atual não verificada"
+    },
+    {
+      "club": "Botafogo",
+      "brand": "Vbet",
+      "as_of": "2026-09-18",
+      "source": "clubes-mapa",
+      "status": "fotografia histórica anterior à MP 1.394/2026; vigência atual não verificada"
+    },
+    {
+      "club": "São Paulo",
+      "brand": "Superbet",
+      "as_of": "2026-09-18",
+      "source": "clubes-mapa",
+      "status": "fotografia histórica anterior à MP 1.394/2026; vigência atual não verificada"
+    },
+    {
+      "club": "Vitória",
+      "brand": "Bet7k",
+      "as_of": "2026-09-18",
+      "source": "clubes-mapa",
+      "status": "fotografia histórica anterior à MP 1.394/2026; vigência atual não verificada"
+    },
+    {
+      "club": "Corinthians",
+      "brand": "Esportes da Sorte",
+      "as_of": "2026-09-18",
+      "source": "clubes-mapa",
+      "status": "fotografia histórica anterior à MP 1.394/2026; vigência atual não verificada"
+    },
+    {
+      "club": "Vasco",
+      "brand": "Sportingbet",
+      "as_of": "2026-09-18",
+      "source": "clubes-mapa",
+      "status": "fotografia histórica anterior à MP 1.394/2026; vigência atual não verificada"
+    },
+    {
+      "club": "Remo",
+      "brand": "VaideBet",
+      "as_of": "2026-09-18",
+      "source": "clubes-mapa",
+      "status": "fotografia histórica anterior à MP 1.394/2026; vigência atual não verificada"
+    },
+    {
+      "club": "Chapecoense",
+      "brand": "ZeroUm",
+      "as_of": "2026-09-18",
+      "source": "clubes-mapa",
+      "status": "fotografia histórica anterior à MP 1.394/2026; vigência atual não verificada"
+    }
+  ],
+  "cases": [
+    {
+      "id": "POL-001",
+      "slug": "bets-proibicao-mp-1394-congresso-stf",
+      "topic": "Apostas e poder econômico",
+      "title": "Quem ganha, quem perde e quem tenta mudar a proibição das bets?",
+      "summary": "MP 1.394/2026, seus efeitos sobre publicidade e operação, a disputa no Congresso e as ações de constitucionalidade no STF.",
+      "status": "MP em tramitação e constitucionalidade judicializada",
+      "priority": "alta",
+      "first_record": "2025-06-12",
+      "scope": "Brasil",
+      "legal_stage": "MP publicada em 25/09/2026; acompanhamento legislativo e ADIs em curso",
+      "opening": "O setor passou de um regime de autorização federal para uma medida provisória que proíbe ofertas, intermediação, publicidade e patrocínio. Não basta identificar quem é pró ou contra: é necessário publicar o texto aplicável, a situação da norma, a autoria e o efeito de cada emenda e ação judicial.",
+      "facts": [
+        {
+          "finding": "O Congresso registra a MP 1.394/2026, publicada em 25/09/2026, com prazo de deliberação informado até 23/11 e regime de urgência a partir de 09/11.",
+          "source": "mp-tramite",
+          "kind": "documentado"
+        },
+        {
+          "finding": "A medida prevê encerramento das autorizações anteriores, restituição de saldos e proibição de publicidade e patrocínio; o andamento parlamentar pode alterar seu destino.",
+          "source": "mp-tramite",
+          "kind": "documentado"
+        },
+        {
+          "finding": "A ADI 8027, relatada por Luiz Fux, foi proposta pela Associação Nacional de Jogos e Loterias; o STF programou audiência pública com clubes, associações e órgãos do poder público.",
+          "source": "stf-bets",
+          "kind": "documentado"
+        },
+        {
+          "finding": "A CPI das Bets do Senado rejeitou seu relatório final em 12/06/2025 por 4 votos a 3; propostas e conclusões não foram aprovadas como relatório da CPI.",
+          "source": "cpi-bets",
+          "kind": "documentado"
+        },
+        {
+          "finding": "Reportagem de 09/11 noticia suspensão de processos ordinários sobre a constitucionalidade da MP até julgamento do STF; o conteúdo preciso e eventuais mudanças exigem consulta aos autos.",
+          "source": "fux-suspensao",
+          "kind": "reportagem-a-confirmar-nos-autos"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2025-06-12",
+          "title": "CPI encerra sem relatório aprovado",
+          "detail": "Relatório final da CPI das Bets é rejeitado no Senado.",
+          "source": "cpi-bets"
+        },
+        {
+          "date": "2026-09-25",
+          "title": "Proibição publicada",
+          "detail": "MP 1.394 institui a proibição e transição do setor.",
+          "source": "mp-tramite"
+        },
+        {
+          "date": "2026-09-28",
+          "title": "Ação constitucional",
+          "detail": "ADI 8027 é protocolada no STF.",
+          "source": "stf-adi"
+        },
+        {
+          "date": "2026-11-03",
+          "title": "Audiência pública no STF",
+          "detail": "Clubes, associações e instituições foram convidados para discutir efeitos da medida.",
+          "source": "stf-bets"
+        },
+        {
+          "date": "2026-11-09",
+          "title": "Urgência parlamentar",
+          "detail": "A MP passa a tramitar em regime de urgência conforme registro oficial.",
+          "source": "mp-tramite"
+        }
+      ],
+      "entity_ids": [
+        "governo-federal",
+        "congresso",
+        "stf",
+        "luiz-fux",
+        "anjl",
+        "spa",
+        "flamengo",
+        "cbf"
+      ],
+      "questions": [
+        "Quais das 99 emendas registradas alteram proibição, transição, restituição, publicidade ou fiscalização e quem as assinou?",
+        "O que ocorreu com saldos, prêmios pendentes, reclamações de consumidores e autorizações durante a transição?",
+        "Que argumentos e evidências apresentaram ANJL, IBJR, clubes, Executivo e PGR nas ADIs?",
+        "O despacho recente do STF suspende apenas ações ordinárias ou altera a eficácia material da MP? Conferir dispositivo judicial."
+      ],
+      "next_check": "Consultar andamento e emendas da MP no Congresso, andamento da ADI 8027, peças juntadas e atos de fiscalização da SPA.",
+      "limits": "Relatório rejeitado não produz indiciamento aprovado da CPI; apresentar emendas não comprova lobby ilegal. A situação de norma e processos pode mudar antes de nova revisão.",
+      "source_ids": [
+        "mp-tramite",
+        "fazenda-bets",
+        "stf-bets",
+        "stf-adi",
+        "cpi-bets",
+        "fux-suspensao"
+      ]
+    },
+    {
+      "id": "POL-002",
+      "slug": "flamengo-betano-clubes-publicidade-bets",
+      "topic": "Apostas e futebol",
+      "title": "Quem financia os clubes e quem atua judicialmente pelas bets?",
+      "summary": "Patrocínio Betano–Flamengo, agentes econômicos identificados, outros clubes da Série A e participação na disputa judicial sobre a MP.",
+      "status": "Contratos históricos documentados; efeitos da MP em disputa",
+      "priority": "alta",
+      "first_record": "2025-08-19",
+      "scope": "Brasil · Série A · patrocínios em setembro de 2026",
+      "legal_stage": "Pedido de ingresso do Flamengo como amicus curiae anunciado na ADI 8027; concessão deve ser verificada nos autos",
+      "opening": "O Flamengo aprovou uma parceria com a Betano e declarou ter buscado ingresso em ação sobre a MP. A empresa operadora no cadastro da Fazenda é Kaizen Gaming Brasil Ltda. Isso é relação comercial e processual documentada, não prova de crime nem de favorecimento político. O mapa setorial registra contratos antes da proibição, sem afirmar que seguem sendo exibidos agora.",
+      "facts": [
+        {
+          "finding": "O conselho deliberativo do Flamengo aprovou parceria máster com a Betano em 19/08/2025, anunciando vigência até 31/12/2028.",
+          "source": "flamengo-contrato",
+          "kind": "documentado"
+        },
+        {
+          "finding": "O ge reportou compromisso de quase R$ 895 milhões no contrato e R$ 268,5 milhões por temporada; são valores noticiados, não comprovantes de pagamentos realizados.",
+          "source": "ge-betano",
+          "kind": "valor-reportado"
+        },
+        {
+          "finding": "O Ministério da Fazenda registrava, antes da MP 1.394, Kaizen Gaming Brasil Ltda (CNPJ 46.786.961/0001-74), marca Betano, portaria SPA/MF 246/2025.",
+          "source": "fazenda-bets",
+          "kind": "documentado"
+        },
+        {
+          "finding": "Em 30/09/2026 o Flamengo informou pedido de ingresso como amicus curiae na ADI 8027 em defesa da discussão de segurança jurídica e financiamento esportivo.",
+          "source": "flamengo-nota",
+          "kind": "posição-da-parte"
+        },
+        {
+          "finding": "Levantamento jornalístico de 18/09/2026 encontrou 13 dos 20 clubes da Série A com patrocinador máster de apostas; a lista reflete data anterior à MP.",
+          "source": "clubes-mapa",
+          "kind": "levantamento-histórico"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2025-08-19",
+          "title": "Flamengo aprova contrato",
+          "detail": "Clube divulga aprovação do acordo de longo prazo com Betano.",
+          "source": "flamengo-contrato"
+        },
+        {
+          "date": "2026-09-18",
+          "title": "Mapa de patrocínios",
+          "detail": "Meio & Mensagem divulga fotografia da Série A anterior à MP.",
+          "source": "clubes-mapa"
+        },
+        {
+          "date": "2026-09-25",
+          "title": "Proibição federal",
+          "detail": "MP altera o regime de operação e publicidade das apostas.",
+          "source": "mp-tramite"
+        },
+        {
+          "date": "2026-09-30",
+          "title": "Manifestação judicial do Flamengo",
+          "detail": "Clube comunica pedido de admissão na ADI 8027.",
+          "source": "flamengo-nota"
+        },
+        {
+          "date": "2026-11-03",
+          "title": "Entidades chamadas a expor argumentos",
+          "detail": "STF programa audiência pública incluindo clubes, CBF e entidades de apostas.",
+          "source": "stf-bets"
+        }
+      ],
+      "entity_ids": [
+        "flamengo",
+        "betano",
+        "kaizen",
+        "stf",
+        "luiz-fux",
+        "cbf",
+        "anjl",
+        "corinthians",
+        "palmeiras",
+        "sao-paulo-fc"
+      ],
+      "questions": [
+        "O pedido do Flamengo foi deferido? Quais documentos efetivamente entraram nos autos?",
+        "Qual a estrutura de propriedade verificável da Kaizen Gaming Brasil e a cadeia de controle até a marca estrangeira?",
+        "Os contratos foram suspensos, renegociados, rescindidos ou substituídos após a MP? Quais cláusulas e multas são públicas?",
+        "Quais clubes e associações têm interesse processual, participação comprovada ou posicionamento público — sem inferir atuação secreta?",
+        "Há publicidade indireta por marcas de conteúdo esportivo? Documentar anúncio específico, data e posicionamento das partes."
+      ],
+      "next_check": "Revisar peças da ADI, comunicados dos clubes e contratos publicados; atualizar o mapa com coluna de situação pós-MP quando houver prova individual.",
+      "limits": "Autorização prévia à MP não é licença válida para operar agora. Contrato anunciado não significa pagamento integral. Pedir amicus curiae não comprova admissão ou irregularidade.",
+      "source_ids": [
+        "flamengo-contrato",
+        "ge-betano",
+        "fazenda-bets",
+        "flamengo-nota",
+        "stf-bets",
+        "stf-adi",
+        "clubes-mapa",
+        "mp-tramite"
+      ]
+    },
+    {
+      "id": "POL-003",
+      "slug": "flavio-bolsonaro-saida-brasil-investigacoes-stf",
+      "topic": "Responsabilização pública",
+      "title": "Flávio Bolsonaro deixou o Brasil. O que continua sob investigação?",
+      "summary": "Cronologia da saída para os EUA, medidas relativas a passaportes e dois procedimentos em andamento no STF, com as versões e limites de cada afirmação.",
+      "status": "Saída reportada; investigações em curso sem condenação estabelecida nestes registros",
+      "priority": "alta",
+      "first_record": "2026-10-26",
+      "scope": "Brasil e Estados Unidos",
+      "legal_stage": "Duas investigações noticiadas no STF; verificar número dos autos e decisões públicas",
+      "opening": "A cobertura de 27 de outubro relatou que Flávio Bolsonaro deixou o país após derrota eleitoral e ordem de entrega de passaportes. O mesmo noticiário identificou investigação ligada a negócios com bets e outra sobre financiamento de filme. Não se deve transformar suspeitas narradas por fonte jornalística em culpa judicialmente demonstrada.",
+      "facts": [
+        {
+          "finding": "A Agência Brasil noticiou saída de Flávio Bolsonaro para os Estados Unidos em 27/10/2026 após decisão sobre entrega e cancelamento de passaportes.",
+          "source": "pf-flavio",
+          "kind": "documentado"
+        },
+        {
+          "finding": "Conforme a reportagem, uma investigação apura fatos envolvendo o advogado Willer Tomaz e operações ligadas a bets; o nome do senador teria aparecido em comunicação relacionada à Alcazar Holdings.",
+          "source": "pf-flavio",
+          "kind": "apuração-noticiada"
+        },
+        {
+          "finding": "Outra investigação noticiada envolve supostos pagamentos para o filme Dark Horse e Daniel Vorcaro; a matéria registra negativa de vantagem indevida por Flávio.",
+          "source": "pf-flavio",
+          "kind": "apuração-com-versão"
+        },
+        {
+          "finding": "Em entrevista repercutida em 05/11, Flávio disse ter organizado a viagem por conta própria e negou ajuda de governos.",
+          "source": "flavio-defesa",
+          "kind": "versão-do-citado"
+        },
+        {
+          "finding": "A PF, segundo reportagem, apura circunstâncias da saída do país, inclusive a passagem por fronteira e ausência de registro migratório em posto brasileiro.",
+          "source": "pf-fuga",
+          "kind": "apuração-noticiada"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-10-26",
+          "title": "Medidas sobre passaportes",
+          "detail": "Reportagem registra decisão e ordem de entrega de documentos de viagem.",
+          "source": "pf-flavio"
+        },
+        {
+          "date": "2026-10-27",
+          "title": "Saída para os EUA é noticiada",
+          "detail": "Agência Brasil descreve a viagem e a continuidade de investigações.",
+          "source": "pf-flavio"
+        },
+        {
+          "date": "2026-10-29",
+          "title": "Investigação das circunstâncias da saída",
+          "detail": "Cobertura descreve apuração da Polícia Federal sobre rota e controles de fronteira.",
+          "source": "pf-fuga"
+        },
+        {
+          "date": "2026-11-05",
+          "title": "Versão pública do senador",
+          "detail": "Reportagem reproduz entrevista em que ele nega assistência de governos.",
+          "source": "flavio-defesa"
+        }
+      ],
+      "entity_ids": [
+        "flavio",
+        "stf",
+        "pf",
+        "willer",
+        "alcazar",
+        "vorcaro"
+      ],
+      "questions": [
+        "Quais são os números, objetos processuais e decisões públicas de cada inquérito, sem divulgar dados sob sigilo?",
+        "Quais medidas cautelares constam efetivamente dos autos e quais consequências processuais da saída?",
+        "Qual é a situação de cooperação internacional, se houver comunicação oficial?",
+        "Há documentação societária ou financeira direta que ampare vínculos investigados, além de referências de terceiros?",
+        "Qual manifestação processual formal da defesa deve ser incluída quando publicamente disponível?"
+      ],
+      "next_check": "Buscar no STF e na PF atos oficiais novos e a versão integral da defesa; distinguir fatos migratórios comprovados, reportagens e decisões judiciais.",
+      "limits": "Não reproduzir alegações de lavagem de dinheiro como condenação, nem detalhar deslocamento privado ou familiares. O relato de saída não resolve a situação jurídica dos inquéritos.",
+      "source_ids": [
+        "pf-flavio",
+        "pf-fuga",
+        "flavio-defesa"
+      ]
+    },
+    {
+      "id": "POL-004",
+      "slug": "ana-elisa-ameacas-violencia-politica-protecao",
+      "topic": "Violência política e direitos",
+      "title": "Quem protege Ana Elisa diante das ameaças denunciadas?",
+      "summary": "Ameaças relatadas contra a deputada federal eleita, investigação pela PF e medidas de proteção informadas por autoridades.",
+      "status": "Investigação federal confirmada; medidas de proteção informadas",
+      "priority": "urgente",
+      "first_record": "2026-10-08",
+      "scope": "Minas Gerais · Brasil",
+      "legal_stage": "Apuração policial; autoria e responsabilidades não concluídas nos registros examinados",
+      "opening": "A liberdade de participação política fica comprometida quando uma pessoa eleita relata ameaças de morte e violência sexual. A PF confirmou investigação. A cobertura também informa medidas de proteção, sem que se deva divulgar rotinas, locais, dados privados ou detalhes operacionais da segurança.",
+      "facts": [
+        {
+          "finding": "Em 08/10, Agência Brasil registrou denúncia de ameaças racistas, misóginas e de violência sexual relatadas pela deputada federal eleita Ana Elisa Santos Silva.",
+          "source": "ana-campanha",
+          "kind": "documentado"
+        },
+        {
+          "finding": "Em 08/11 a Polícia Federal informou apuração das ameaças em Divinópolis com apoio especializado de crimes cibernéticos e pedidos de cooperação internacional.",
+          "source": "ana-pf",
+          "kind": "documentado"
+        },
+        {
+          "finding": "Reportagem com manifestação do Ministério da Justiça descreveu reforço de proteção e atuação de entidades nacionais, estaduais e locais.",
+          "source": "ana-mjsp",
+          "kind": "medidas-oficiais-reportadas"
+        },
+        {
+          "finding": "Uma pesquisa noticiada pela Agência Brasil registrou 134 episódios de violência política na campanha até o primeiro turno, dos quais 70 atingiram mulheres; números não representam 134 autores identificados.",
+          "source": "violencia-2026",
+          "kind": "levantamento-independente"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-10-08",
+          "title": "Denúncias ganham cobertura nacional",
+          "detail": "Agência Brasil registra ataques e denúncia à polícia.",
+          "source": "ana-campanha"
+        },
+        {
+          "date": "2026-11-07",
+          "title": "Nova divulgação pública de ameaças",
+          "detail": "Deputada divulga nova comunicação ameaçadora, segundo reportagens.",
+          "source": "ana-pf"
+        },
+        {
+          "date": "2026-11-08",
+          "title": "PF confirma investigação",
+          "detail": "Polícia Federal divulga diligências e cooperação policial internacional.",
+          "source": "ana-pf"
+        },
+        {
+          "date": "2026-11-09",
+          "title": "Proteção informada",
+          "detail": "Cobertura registra resposta do MJSP sobre reforço de medidas.",
+          "source": "ana-mjsp"
+        }
+      ],
+      "entity_ids": [
+        "ana-elisa",
+        "pf",
+        "mjsp",
+        "tse"
+      ],
+      "questions": [
+        "A PF publicou desdobramento não sigiloso da investigação ou identificação formal de suspeitos?",
+        "Há esclarecimento institucional sobre responsabilização por ameaças contra candidaturas e mandatárias?",
+        "Quais mecanismos de apoio e denúncia são acessíveis a outras mulheres atacadas por violência política?",
+        "Quais políticas concretas de prevenção foram anunciadas e podem ser avaliadas sem comprometer a segurança da vítima?"
+      ],
+      "next_check": "Acompanhar notas da PF/MJSP, decisões públicas, órgãos eleitorais e pesquisa de violência política; proibir rastreamento de localização ou segurança da vítima.",
+      "limits": "Não publicar reproduções operacionais das ameaças, identidade não confirmada de remetentes, endereço, agenda, escolta ou dados de família. A investigação segue sem atribuição definitiva de autoria.",
+      "source_ids": [
+        "ana-pf",
+        "ana-mjsp",
+        "ana-campanha",
+        "violencia-2026"
+      ]
+    },
+    {
+      "id": "POL-005",
+      "slug": "indigenas-violencia-retaliacao-eleicoes-2026",
+      "topic": "Povos indígenas e direitos",
+      "title": "Após as eleições, quem investiga a violência contra povos indígenas?",
+      "summary": "Denúncias de retaliação e ameaças a comunidades indígenas, resposta ministerial e diferenças entre denúncias, vítimas e investigações.",
+      "status": "Denúncias sob apuração; não confundir contagens e responsabilização",
+      "priority": "urgente",
+      "first_record": "2026-10-27",
+      "scope": "Brasil · relatos em MS e SP",
+      "legal_stage": "Força-tarefa ministerial e apurações reportadas; situação de cada episódio precisa ser verificada",
+      "opening": "As denúncias de intimidação eleitoral contra povos originários atingem direitos de voto e segurança comunitária. Os ministérios anunciaram atuação conjunta após o segundo turno. É essencial preservar a integridade de comunidades ameaçadas, documentar respostas do poder público e não publicar locais ou detalhes que ampliem risco.",
+      "facts": [
+        {
+          "finding": "Em 27/10, os ministérios dos Povos Indígenas, Direitos Humanos e Igualdade Racial anunciaram esforço conjunto para qualificar e pedir investigação de denúncias de violência após o segundo turno.",
+          "source": "mpi-nota",
+          "kind": "documentado"
+        },
+        {
+          "finding": "Reportagem de 07/11 informou que o Ministério dos Povos Indígenas recebeu 13 denúncias de violência eleitoral contra indígenas; a contagem difere de casos criminalmente comprovados.",
+          "source": "ataques-indigenas",
+          "kind": "denúncias-reportadas"
+        },
+        {
+          "finding": "A mesma reportagem descreveu ameaças atribuídas a áudios em Tacuru (MS) e Avaí (SP), afastamento de agentes públicos no primeiro caso e medidas de apuração; nomes privados e locais internos de comunidades são omitidos.",
+          "source": "ataques-indigenas",
+          "kind": "apuração-jornalística"
+        },
+        {
+          "finding": "Apresentação governamental reportada em 28/10 contabilizou 45 episódios de violência política com 47 vítimas naquele recorte, entre elas 3 vítimas fatais indígenas; os conjuntos não são necessariamente deduplicados frente às 13 denúncias.",
+          "source": "violencia-governo",
+          "kind": "declaração-governamental"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-10-27",
+          "title": "Força-tarefa ministerial",
+          "detail": "Pasta dos Povos Indígenas e outros ministérios anunciam acompanhamento e pedidos de investigação.",
+          "source": "mpi-nota"
+        },
+        {
+          "date": "2026-10-28",
+          "title": "Balanço preliminar do governo",
+          "detail": "Agência Brasil relata 45 episódios e 47 vítimas de violência política, segundo a apresentação governamental.",
+          "source": "violencia-governo"
+        },
+        {
+          "date": "2026-11-07",
+          "title": "13 denúncias indígenas reportadas",
+          "detail": "Reportagem atribui número ao Ministério dos Povos Indígenas e contextualiza episódios documentados.",
+          "source": "ataques-indigenas"
+        }
+      ],
+      "entity_ids": [
+        "mpi",
+        "mdhc",
+        "mir",
+        "pf",
+        "apib",
+        "cimi"
+      ],
+      "questions": [
+        "Quantos episódios têm registro formal, procedimento instaurado, medida de proteção e resultado público?",
+        "Quais providências foram tomadas por municípios, estados, PF e MPF sem identificar pessoas ameaçadas?",
+        "Como organizações indígenas descrevem os fatos e que retificações ou versões dos acusados foram documentadas?",
+        "As 13 denúncias ao MPI estão dentro dos 45 casos apresentados pelo governo ou são bases com períodos e critérios diferentes?"
+      ],
+      "next_check": "Acompanhar notas oficiais e respostas de órgãos de apuração e das organizações indígenas; publicar somente contagens com data e denominador.",
+      "limits": "A expressão 'perseguição' é uma hipótese a investigar caso a caso. Não identificar líderes, aldeias, itinerários, famílias ou denunciantes vulneráveis além do indispensável e já público. Não igualar denúncia a sentença.",
+      "source_ids": [
+        "mpi-nota",
+        "ataques-indigenas",
+        "violencia-governo"
+      ]
+    },
+    {
+      "id": "POL-006",
+      "slug": "eleicoes-2026-acesso-voto-povos-indigenas",
+      "topic": "Direitos eleitorais",
+      "title": "O direito ao voto indígena foi garantido na prática?",
+      "summary": "Transporte, mesários com apoio linguístico e obstáculos documentados no primeiro turno, seguidos de recomendações do Ministério Público Eleitoral.",
+      "status": "Providências solicitadas; resultado e implementação pendentes de verificação",
+      "priority": "alta",
+      "first_record": "2026-10-14",
+      "scope": "Brasil · estados citados no pedido eleitoral",
+      "legal_stage": "Atuação do Ministério Público Eleitoral e pedidos de providências ao TSE",
+      "opening": "A barreira eleitoral pode ocorrer sem agressão física: a ausência de transporte e apoio linguístico pode impedir o exercício de um direito. O MP Eleitoral descreveu problemas e cobrou medidas para o segundo turno. O observatório deve verificar implementação e resposta institucional, não inferir fraude eleitoral.",
+      "facts": [
+        {
+          "finding": "O MPF informou em 14/10 fiscalização reforçada para corrigir falhas de transporte, comunicação em línguas indígenas e restrições enfrentadas por mães indígenas.",
+          "source": "mpf-voto",
+          "kind": "documentado"
+        },
+        {
+          "finding": "A Agência Brasil noticiou pedido do MPE ao presidente do TSE, Kassio Nunes Marques, para garantir condições de votação em 25/10.",
+          "source": "mpe-voto",
+          "kind": "documentado"
+        },
+        {
+          "finding": "O MPE citou relatos de dificuldades em MG, MT, AP, PE, AM e PA; isso não é prova de impedimento generalizado em todos os locais de votação.",
+          "source": "mpe-voto",
+          "kind": "relatos-registrados"
+        },
+        {
+          "finding": "O MPF registrou 287.157 eleitores indígenas aptos em 2026; a contagem eleitoral não mede quantos sofreram impedimentos.",
+          "source": "mpf-voto",
+          "kind": "documentado"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-10-14",
+          "title": "MP Eleitoral reforça fiscalização",
+          "detail": "MPF publica orientação e canais para denúncias.",
+          "source": "mpf-voto"
+        },
+        {
+          "date": "2026-10-20",
+          "title": "Pedido formal de providências",
+          "detail": "MPE demanda correções ao TSE antes do segundo turno.",
+          "source": "mpe-voto"
+        },
+        {
+          "date": "2026-10-25",
+          "title": "Segundo turno",
+          "detail": "Marco para conferir respostas e execução de transporte e apoio linguístico; não inferir resultado sem fonte.",
+          "source": "mpe-voto"
+        }
+      ],
+      "entity_ids": [
+        "mpf",
+        "tse",
+        "mpi",
+        "univaja"
+      ],
+      "questions": [
+        "Quais respostas formais o TSE apresentou ao pedido de 20/10?",
+        "Quais serviços de transporte e intérpretes foram efetivamente prestados e onde isso foi documentado?",
+        "Quais representações tiveram diligências, recomendações ou decisões posteriores?",
+        "Que dados agregados estão disponíveis sem reidentificar eleitores ou comunidades?"
+      ],
+      "next_check": "Revisar documentos do TSE/MPE e relatórios pós-eleição sobre atendimento e acessibilidade em territórios indígenas.",
+      "limits": "Pedido do MP não prova conclusão de irregularidade ou alteração do resultado eleitoral. Os números nacionais de eleitores não podem ser usados como contagem de vítimas.",
+      "source_ids": [
+        "mpf-voto",
+        "mpe-voto"
+      ]
+    },
+    {
+      "id": "POL-007",
+      "slug": "emendas-parlamentares-rastreabilidade-adpf-854",
+      "topic": "Orçamento e transparência",
+      "title": "Quem indicou a emenda, quem recebeu e onde o dinheiro foi aplicado?",
+      "summary": "Decisão do STF sobre identificador único de emendas e achados de auditoria na saúde: rastreabilidade documental de origem a destinatário.",
+      "status": "Determinação judicial com prazo de proposta em 30/11/2026",
+      "priority": "alta",
+      "first_record": "2026-09-09",
+      "scope": "Brasil · orçamento federal",
+      "legal_stage": "ADPF 854; acompanhamento judicial da transparência",
+      "opening": "Uma emenda só é rastreável se for possível ligar indicação, empenho, pagamento, recebedor e execução. O STF determinou proposta de código único para conectar essas etapas. O Instituto pode comparar registros administrativos públicos sem presumir corrupção pelo simples recebimento de uma emenda.",
+      "facts": [
+        {
+          "finding": "Em 09/09 o ministro Flávio Dino determinou que governo e Congresso apresentem até 30/11 proposta e cronograma de identificador único para emendas no âmbito da ADPF 854.",
+          "source": "emendas-stf",
+          "kind": "documentado"
+        },
+        {
+          "finding": "Segundo o STF, o identificador deve permitir acompanhar indicação parlamentar e empenho no Siafi e Transferegov.br.",
+          "source": "emendas-stf",
+          "kind": "documentado"
+        },
+        {
+          "finding": "A notícia oficial descreve 25 auditorias complementares do Denasus, das quais 17 indicaram necessidade de devolução ou recomposição; o STF reportou R$ 8,42 milhões com aplicação irregular ou não comprovada naquele recorte.",
+          "source": "emendas-stf",
+          "kind": "documentado"
+        },
+        {
+          "finding": "Levantamento jornalístico de julho lista investigações que atingiram parlamentares de diferentes partidos, mas operações são casos distintos e não podem ser fundidas em uma imputação única.",
+          "source": "emendas-cobertura",
+          "kind": "levantamento-jornalístico"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-07-03",
+          "title": "Mapa jornalístico de operações",
+          "detail": "Congresso em Foco publica levantamento de investigações envolvendo diferentes políticos.",
+          "source": "emendas-cobertura"
+        },
+        {
+          "date": "2026-09-09",
+          "title": "STF exige identificador único",
+          "detail": "Relator determina proposta conjunta até 30/11 para rastreabilidade de emendas.",
+          "source": "emendas-stf"
+        }
+      ],
+      "entity_ids": [
+        "stf",
+        "flavio-dino",
+        "congresso",
+        "governo-federal",
+        "denasus"
+      ],
+      "questions": [
+        "A proposta conjunta foi entregue até 30/11? O identificador permite ligar os registros sem perda de referência?",
+        "Quais emendas específicas possuem empenho, pagamento, convênio, nota fiscal e entrega verificáveis?",
+        "Quais 17 auditorias indicaram recomposição e que recurso ou correção administrativa foi informado?",
+        "Os sistemas de acesso público permitem verificar beneficiário final e objeto executado sem dados privados?"
+      ],
+      "next_check": "Em 30/11 revisar petições e decisões da ADPF 854, além de dados abertos do Siafi e Transferegov.",
+      "limits": "Valor apontado em auditorias não equivale a condenação ou desvio doloso comprovado de qualquer parlamentar; registrar titular, objeto, período e contraditório apenas com documentação correspondente.",
+      "source_ids": [
+        "emendas-stf",
+        "emendas-cobertura"
+      ]
+    }
+  ]
+}
