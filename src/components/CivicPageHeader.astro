@@ -1,0 +1,12 @@
+---
+interface Props { eyebrow: string; title: string; lead: string; note?: string }
+const { eyebrow, title, lead, note } = Astro.props;
+---
+<section class="bg-primary py-16 text-primary-foreground md:py-24" aria-labelledby="civic-title">
+  <div class="container space-y-6">
+    <p class="m-0 text-xs font-bold uppercase tracking-[0.18em] text-[#ff917e]">{eyebrow}</p>
+    <h1 id="civic-title" class="m-0 max-w-5xl text-4xl leading-tight tracking-tight sm:text-5xl lg:text-6xl">{title}</h1>
+    <p class="m-0 max-w-3xl text-lg leading-relaxed text-white/80 md:text-xl">{lead}</p>
+    {note && <p class="m-0 max-w-3xl border-t border-white/20 pt-5 text-sm text-white/65">{note}</p>}
+  </div>
+</section>

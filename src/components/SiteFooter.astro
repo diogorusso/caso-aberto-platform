@@ -14,12 +14,17 @@ const groups = [
       ['Tipos de problema', '/problemas/'],
       ['Falências e recuperações: precedentes', '/precedentes/'],
       ['Explore cenários de impacto', '/cenarios/'],
+      ['Observatório de plataformas digitais', '/observatorio/plataformas/'],
       ['Kit Boca a Boca para imprimir', '/kit-boca-a-boca/'],
     ],
   },
   {
     title: 'Entenda o projeto',
     links: [
+      ['Instituto de dados e pesquisa', '/instituto/'],
+      ['Organização cidadã', '/organizar/'],
+      ['Escola de autonomia digital', '/autonomia-digital/'],
+      ['Diagnóstico gratuito de pegadas digitais', '/autonomia-digital/diagnostico/'],
       ['Como funciona', '/como-funciona/'],
       ['Critérios e metodologia', '/metodologia/'],
       ['Análise de risco e cenários com dados', '/precedentes/'],
@@ -34,7 +39,7 @@ const groups = [
     <div class="grid gap-10 md:grid-cols-[2fr_1fr_1fr]">
       <div class="space-y-4">
         <Identity />
-        <p class="m-0 max-w-sm text-sm leading-relaxed text-white/60">Publicação independente para dar visibilidade a casos documentados, reunir fontes públicas, comparar avaliações editoriais e cobrar respostas verificáveis.</p>
+        <p class="m-0 max-w-sm text-sm leading-relaxed text-white/60">Instituto e plataforma independentes para investigar, organizar demandas legítimas, proteger a autonomia digital e cobrar respostas com fontes verificáveis.</p>
       </div>
       {groups.map((g) => (
         <nav aria-label={g.title} class="flex flex-col gap-2.5">

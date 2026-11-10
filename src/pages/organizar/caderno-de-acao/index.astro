@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const blocos=[
+ {title:'1. O fato verificável',hint:'O que aconteceu? Onde, quando e com qual documento ou protocolo?'},
+ {title:'2. A fonte e a versão',hint:'URL pública, documento, data e autor. Que outra explicação precisa ser verificada?'},
+ {title:'3. Quem pode responder',hint:'Órgão, empresa, fornecedor ou plataforma — função institucional, não contato privado de pessoa.'},
+ {title:'4. A demanda concreta',hint:'O que precisa ser respondido, alterado, publicado, devolvido ou corrigido?'},
+ {title:'5. Responsabilidade e prazo',hint:'Quem concordou em acompanhar a demanda? Qual prazo de revisão ou resposta?'},
+ {title:'6. Resposta, correção e fechamento',hint:'Que resposta foi recebida? Houve providência comprovada? O que permanece em aberto?'}
+];
+---
+<BaseLayout title="Caderno de Ação — ficha cidadã para imprimir | CasoAberto" description="Modelo gratuito e imprimível para documentar fatos, fontes, pedidos, responsáveis, respostas e correções de uma causa.">
+<section class="container max-w-4xl space-y-5 py-12"><p class="m-0 text-xs font-bold uppercase tracking-wider text-brand-strong">KIT CIDADÃO · USO LIVRE</p><h1 class="m-0 text-4xl">Caderno de Ação</h1><p class="text-lg">Uma ficha para transformar preocupação em pergunta pública verificável. Preencha à mão, em arquivo próprio ou em reunião comunitária. Nenhum dado é coletado pelo site.</p><p class="text-sm text-muted-foreground">Imprima esta página em A4, preferencialmente preto e branco. Não publique nomes, endereços, documentos pessoais ou contatos sem base legítima e autorização apropriada.</p></section>
+<div class="container max-w-4xl space-y-4 pb-14">
+{blocos.map(bloco => <section class="break-inside-avoid border border-border p-5"><h2 class="mt-0 text-lg">{bloco.title}</h2><p class="text-sm text-muted-foreground">{bloco.hint}</p><div class="h-16 border-b border-dashed border-foreground/40"></div><div class="h-8 border-b border-dashed border-foreground/40"></div></section>)}
+<section class="break-inside-avoid border-l-4 border-brand bg-muted p-6"><h2 class="mt-0 text-xl">Antes de divulgar</h2><ul class="space-y-2"><li>Confirme os fatos em fontes originais e guarde uma cópia da versão consultada.</li><li>Convide as partes envolvidas a responder e registre mudanças de status.</li><li>Publique somente o material autorizado. Corrija erros com visibilidade equivalente.</li><li>Prefira pedidos específicos e ações voluntárias a assédio, exposição pessoal ou disparos massivos.</li></ul><a class="text-link" href="/organizar/">Voltar ao guia de organização ↗</a></section>
+</div>
+</BaseLayout>

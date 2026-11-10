@@ -1,0 +1,72 @@
+{
+  "reviewed_at": "2026-11-09",
+  "topic": "Moderação, publicidade e transparência de plataformas no Brasil",
+  "framing": "Registro documental de eventos, pesquisas e posicionamentos. A ocorrência de falha não demonstra, sozinha, intenção partidária, causa exclusiva ou efeito eleitoral.",
+  "records": [
+    {
+      "id": "PLAT-2026-001",
+      "date": "2026-08-25",
+      "platform": "Facebook / Meta",
+      "type": "experimento independente",
+      "source_kind": "pesquisa de organização civil",
+      "headline": "Anistia testa revisão de publicidade com desinformação eleitoral",
+      "finding": "Em teste de 15 anúncios, 14 continham desinformação eleitoral; oito desses 14 passaram pela revisão inicial.",
+      "scope": "Experimento controlado, não amostra probabilística de todos os anúncios.",
+      "limits": "Nenhum anúncio foi efetivamente veiculado. Aprovação em teste não mede alcance real nem prova intenção da plataforma.",
+      "source_label": "Amnesty International, 25 ago. 2026",
+      "source_url": "https://www.amnesty.org/en/latest/news/2026/08/brazil-election-disinformation/"
+    },
+    {
+      "id": "PLAT-2026-002",
+      "date": "2026-09-07",
+      "platform": "Meta / eleições 2026",
+      "type": "plano declarado",
+      "source_kind": "registro oficial",
+      "headline": "TSE publica o plano de conformidade apresentado pela Meta",
+      "finding": "O plano enviado ao tribunal descreve medidas sobre publicidade política, desinformação, violência e conteúdos produzidos com IA.",
+      "scope": "Compromissos declarados em 7 de setembro de 2026.",
+      "limits": "A existência do plano não comprova a eficácia de sua execução.",
+      "source_label": "Tribunal Superior Eleitoral, 7 set. 2026",
+      "source_url": "https://www.tse.jus.br/comunicacao/noticias/2026/Setembro/plano-da-meta-para-as-eleicoes-2026-preve-combate-a-desinformacao-e-remocao-de-conteudo-violento"
+    },
+    {
+      "id": "PLAT-2026-003",
+      "date": "2026-10-15",
+      "platform": "Facebook e Instagram / Meta",
+      "type": "pesquisa de anúncios",
+      "source_kind": "pesquisa acadêmica",
+      "headline": "NetLab identifica 1.613 anúncios político-eleitorais impulsionados do exterior",
+      "finding": "O laboratório identificou 1.613 anúncios veiculados entre julho e setembro de 2026, atribuídos a atores localizados no exterior.",
+      "scope": "Conjunto de anúncios identificado pelo NetLab; não equivale à totalidade de anúncios eleitorais na plataforma.",
+      "limits": "A pesquisa identifica irregularidades e riscos de governança, mas não estabelece uma ordem partidária deliberada da Meta.",
+      "source_label": "NetLab/UFRJ, 15 out. 2026",
+      "source_url": "https://netlab.eco.ufrj.br/post/meta-lucra-com-an%C3%BAncios-irregulares-promovidos-por-redes-coordenadas-para-influenciar-as-elei%C3%A7%C3%B5es-no"
+    },
+    {
+      "id": "PLAT-2026-004",
+      "date": "2026-10-21",
+      "platform": "Instagram, Facebook e WhatsApp / Meta",
+      "type": "ação judicial proposta",
+      "source_kind": "ato do Ministério Público",
+      "headline": "MPF ajuíza ação sobre restrições e bloqueios em redes",
+      "finding": "O MPF informou ter ajuizado ação civil pública que pede revisão humana e medidas sobre restrições de contas e conteúdos.",
+      "scope": "Pedido da parte autora no processo nº 5072264-10.2026.4.04.7100.",
+      "limits": "Petição e alegações do MPF não se confundem com decisão judicial final ou fatos definitivamente julgados.",
+      "source_label": "Ministério Público Federal, 21 out. 2026",
+      "source_url": "https://www.mpf.mp.br/o-mpf/unidades/pr-rs/noticias/mpf-aciona-a-justica-para-barrar-bloqueios-e-restricoes-arbitrarias-praticados-pela-meta-em-redes-sociais"
+    },
+    {
+      "id": "PLAT-2026-005",
+      "date": "2026-11-06",
+      "platform": "Meta / eleições 2026",
+      "type": "resposta da empresa",
+      "source_kind": "posicionamento da parte",
+      "headline": "Meta contesta interpretações de interferência eleitoral",
+      "finding": "A Meta divulgou explicações técnicas, métricas de alcance e sua interpretação de incidentes ocorridos durante a campanha.",
+      "scope": "Manifestação da própria empresa, atualizada em 6 de novembro de 2026.",
+      "limits": "É posição da parte interessada; métricas e explicações exigem análise independente e comparação com os autos.",
+      "source_label": "Meta, atualizado em 6 nov. 2026",
+      "source_url": "https://about.fb.com/br/news/2026/10/a-meta-nao-esta-interferindo-nas-eleicoes-brasileiras-estes-sao-os-fatos/"
+    }
+  ]
+}

@@ -29,20 +29,20 @@ const pathways = [
 ];
 ---
 <BaseLayout
-  title="CasoAberto — Consulte empresas, avaliações e casos antes de contratar"
-  description="O CasoAberto reúne perfis empresariais, CNPJ, casos documentados, reclamações públicas e avaliações editoriais com fontes. Pesquise antes de contratar."
+  title="CasoAberto — Pesquisa, organização e autonomia digital para agir"
+  description="Investigue casos, verifique dados, organize demandas, acompanhe instituições e aprenda autonomia digital com fontes e ferramentas abertas."
   breadcrumbs={[{name:'Início',item:'/'}]}
 >
   <section class="relative overflow-hidden bg-primary py-20 text-primary-foreground md:py-28" aria-labelledby="platform-home-title">
     <div class="container relative z-10 space-y-7">
-      <Eyebrow inverse class="flex items-center gap-2.5"><span class="size-2 bg-brand" aria-hidden="true"></span> CASOABERTO · TRANSPARÊNCIA PARA O CONSUMIDOR</Eyebrow>
-      <h1 id="platform-home-title" class="m-0 max-w-5xl text-5xl leading-[0.98] tracking-[-0.06em] sm:text-6xl lg:text-8xl">Antes de contratar,<br /><em class="text-[#ff917e] not-italic">conheça os fatos.</em></h1>
-      <p class="m-0 max-w-2xl text-lg leading-relaxed text-white/75 md:text-xl">Empresas têm histórico. Consumidores merecem respostas. Reunimos documentos, dados de empresas e casos, decisões judiciais comparáveis e cenários de impacto para dar visibilidade a problemas que exigem solução.</p>
+      <Eyebrow inverse class="flex items-center gap-2.5"><span class="size-2 bg-brand" aria-hidden="true"></span> CASOABERTO · PESQUISA, AUTONOMIA E AÇÃO CIDADÃ</Eyebrow>
+      <h1 id="platform-home-title" class="m-0 max-w-5xl text-5xl leading-[0.98] tracking-[-0.06em] sm:text-6xl lg:text-8xl">Quando os fatos importam,<br /><em class="text-[#ff917e] not-italic">a sociedade precisa agir.</em></h1>
+      <p class="m-0 max-w-2xl text-lg leading-relaxed text-white/75 md:text-xl">Dados públicos, pesquisa verificável e tecnologia a serviço de quem precisa de respostas. Investigue empresas, instituições e plataformas, organize demandas coletivas e aprenda a controlar sua presença digital.</p>
       <div class="flex flex-wrap gap-2.5">
-        <ButtonLink variant="brand" size="lg" href="/empresas/">Consultar empresas <span aria-hidden="true">↗</span></ButtonLink>
-        <ButtonLink variant="outline-inverse" size="lg" href="/casos/">Explorar casos documentados <span aria-hidden="true">↗</span></ButtonLink>
+        <ButtonLink variant="brand" size="lg" href="/instituto/">Conhecer o instituto <span aria-hidden="true">↗</span></ButtonLink>
+        <ButtonLink variant="outline-inverse" size="lg" href="/organizar/">Organizar uma demanda <span aria-hidden="true">↗</span></ButtonLink>
       </div>
-      <p class="m-0 border-t border-white/15 pt-6 text-sm font-medium text-white/60">Processos judiciais verificáveis <span aria-hidden="true" class="text-brand">·</span> Cenários de impacto <span aria-hidden="true" class="text-brand">·</span> Casos e respostas documentados</p>
+      <p class="m-0 border-t border-white/15 pt-6 text-sm font-medium text-white/60">Evidências rastreáveis <span aria-hidden="true" class="text-brand">·</span> Organização cidadã <span aria-hidden="true" class="text-brand">·</span> Autonomia e direitos digitais</p>
     </div>
     <div class="pointer-events-none absolute -right-4 -bottom-32 hidden text-[min(50vw,40rem)] leading-none font-black tracking-[-0.12em] text-forest select-none lg:block" aria-hidden="true">CA</div>
   </section>
@@ -58,6 +58,22 @@ const pathways = [
       <p class="m-0 text-sm text-muted-foreground">Contagens do arquivo CasoAberto nesta versão, não estatísticas do mercado brasileiro. <a class="text-link" href="/metodologia/">Como organizamos os dados ↗</a></p>
     </div>
   </section>
+
+  <Section eyebrow="DO DADO À AÇÃO" title="Três capacidades para não depender de intermediários." description="O CasoAberto combina investigação pública, organização por consentimento e educação técnica. Casos de consumo são uma das aplicações — não o limite do projeto.">
+    <div class="grid gap-4 md:grid-cols-3">
+      {[
+        {title:'Instituto de dados',description:'Protocolos, fontes originais, casos, respostas, pesquisas e observatórios públicos com escopo e revisão.',href:'/instituto/',link:'Pesquisar com método'},
+        {title:'Organização cidadã',description:'Da causa individual à demanda comunitária: documentar, reunir, publicar pedidos e acompanhar resultados.',href:'/organizar/',link:'Aprender a organizar'},
+        {title:'Autonomia digital',description:'Fingerprinting, algoritmos, IA, fraudes, segurança e direitos para entender e controlar tecnologias.',href:'/autonomia-digital/',link:'Começar a aprender'}
+      ].map(pillar => (
+        <Card className="h-full">
+          <CardHeader><CardTitle className="text-xl">{pillar.title}</CardTitle></CardHeader>
+          <CardContent className="text-sm text-muted-foreground">{pillar.description}</CardContent>
+          <CardFooter className="mt-auto"><a class="text-link text-sm" href={pillar.href}>{pillar.link} ↗</a></CardFooter>
+        </Card>
+      ))}
+    </div>
+  </Section>
 
   <Section eyebrow="COMECE SUA PESQUISA" title="O que você quer verificar?">
     <a slot="action" class="text-link text-sm" href="/como-funciona/">Como funciona o CasoAberto ↗</a>
@@ -155,11 +171,11 @@ const pathways = [
   <section class="bg-forest py-16 text-forest-foreground md:py-24">
     <div class="container space-y-5">
       <Eyebrow inverse>DECISÕES MAIS INFORMADAS</Eyebrow>
-      <h2 class="m-0 max-w-4xl text-4xl sm:text-5xl lg:text-7xl">Mais transparência.<br/>Mais responsabilidade.</h2>
-      <p class="m-0 max-w-2xl text-lg text-white/75">Pesquise antes de contratar. Acompanhe os casos depois. Compartilhe informações que possam ser verificadas.</p>
+      <h2 class="m-0 max-w-4xl text-4xl sm:text-5xl lg:text-7xl">Dados para compreender.<br/>Ferramentas para agir.</h2>
+      <p class="m-0 max-w-2xl text-lg text-white/75">Investigue com fontes. Organize sem perder o controle da sua identidade, dos seus dados e das suas decisões.</p>
       <div class="flex flex-wrap gap-2.5 pt-2">
-        <ButtonLink variant="inverse" size="lg" href="/empresas/">Consultar empresas ↗</ButtonLink>
-        <ButtonLink variant="outline-inverse" size="lg" href="/como-funciona/">Entenda nossa proposta ↗</ButtonLink>
+        <ButtonLink variant="inverse" size="lg" href="/instituto/">Pesquisar com o instituto ↗</ButtonLink>
+        <ButtonLink variant="outline-inverse" size="lg" href="/autonomia-digital/diagnostico/">Diagnóstico digital gratuito ↗</ButtonLink>
       </div>
     </div>
   </section>

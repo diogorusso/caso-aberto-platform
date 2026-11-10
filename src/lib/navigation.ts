@@ -1,5 +1,8 @@
-/** Platform-centric global navigation (AGENTS.md §15–16: no company-specific CTA). Top nav: 2 links, no buttons. */
+/** Platform-level navigation: no single brand or political cause controls global messaging. */
 export const primaryNav = [
   { label: 'Casos', href: '/casos/' },
-  { label: 'Não recomendamos', href: '/avaliacoes/nao-recomendamos/' },
+  { label: 'Instituto', href: '/instituto/' },
+  { label: 'Organizar', href: '/organizar/' },
+  { label: 'Autonomia digital', href: '/autonomia-digital/' },
+  { label: 'Plataformas', href: '/observatorio/plataformas/' },
 ];
