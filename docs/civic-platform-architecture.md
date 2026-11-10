@@ -1,6 +1,6 @@
 # CasoAberto — Civic operating system, research institute and digital autonomy school
 
-Status: first public vertical slice implemented on branch `feat/civic-platform-institute-and-digital-autonomy` · 2026-11-09. Implementation details below are a **roadmap** unless marked shipped. The platform currently ships static HTML via Astro / Cloudflare Pages; it has no runtime user accounts, database, uploads, cause workspaces, agents or personal analytics.
+Status: public institute, curated education catalog and an **individual local-first Cause Workspace** ship through Astro/React on Cloudflare Pages. No server-side login, database, uploads, multi-user cause workspaces, autonomous agents or behavioral profiling are deployed. Private collaboration and authenticated course delivery remain roadmap items.
 
 ## Product mandate
 
@@ -130,3 +130,7 @@ Initial free tool: `/autonomia-digital/diagnostico/`. Do not claim email lead ca
 **P3 — reproducible institute + AI:** ingestion adapters, source provenance, datasets/code versioning, measurable algorithmic audits, lab protocol registry, editorial approvals and live status dashboards. Independent validation before impact or causal claims.
 
 Release tests: `npm run verify:data && npm run check && npm run build`; keyboard navigation; no unexpected tracking; all external source links resolve; no private originals in Git; no broken previously published slugs; public claims dated/attributed; no “working” login or action buttons for unavailable functionality. Local commands must actually be run in a capable environment before merging.
+
+## Local-first organization capabilities (shipped)
+
+`/organizar/espaco-de-causa/` supports multiple user-owned causes, evidence links, public request drafts, status journal, shared task list/board/month calendar, JSON portability, opt-in localStorage backup and an editable prompt export for outside AI assistants. All task views share task IDs and deadlines. AI brief generation is **only text**; copying is an explicit user action. No app service receives this text. Do not copy sensitive data to an outside provider without independent user approval. Local browser storage is not an encrypted vault or a protected multi-user workspace.
