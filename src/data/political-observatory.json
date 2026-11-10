@@ -613,7 +613,8 @@
         "stf-adi",
         "cpi-bets",
         "fux-suspensao"
-      ]
+      ],
+      "reviewed_at": "2026-11-10"
     },
     {
       "id": "POL-002",
@@ -716,7 +717,8 @@
         "stf-adi",
         "clubes-mapa",
         "mp-tramite"
-      ]
+      ],
+      "reviewed_at": "2026-11-10"
     },
     {
       "id": "POL-003",
@@ -804,7 +806,8 @@
         "pf-flavio",
         "pf-fuga",
         "flavio-defesa"
-      ]
+      ],
+      "reviewed_at": "2026-11-10"
     },
     {
       "id": "POL-004",
@@ -885,7 +888,8 @@
         "ana-mjsp",
         "ana-campanha",
         "violencia-2026"
-      ]
+      ],
+      "reviewed_at": "2026-11-10"
     },
     {
       "id": "POL-005",
@@ -961,7 +965,8 @@
         "mpi-nota",
         "ataques-indigenas",
         "violencia-governo"
-      ]
+      ],
+      "reviewed_at": "2026-11-10"
     },
     {
       "id": "POL-006",
@@ -1034,7 +1039,8 @@
       "source_ids": [
         "mpf-voto",
         "mpe-voto"
-      ]
+      ],
+      "reviewed_at": "2026-11-10"
     },
     {
       "id": "POL-007",
@@ -1102,7 +1108,8 @@
       "source_ids": [
         "emendas-stf",
         "emendas-cobertura"
-      ]
+      ],
+      "reviewed_at": "2026-11-10"
     }
   ]
 }
