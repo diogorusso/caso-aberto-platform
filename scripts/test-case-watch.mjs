@@ -27,6 +27,14 @@ test('open issues are not requeued; other cases use available slots',()=>{
  assert.equal(again.length,policy.schedule.max_review_cases_per_run);
  assert.equal(initial.some(x=>again.some(y=>y.id===x.id)),false);
 });
+test('completed no-change review defers recheck until next cadence',()=>{
+ const last={ 'POL-001':'2026-11-18'};
+ const tooSoon=planReviews({policy,index:records,today:'2026-11-19',caseId:'POL-001',completedAt:last});
+ assert.equal(tooSoon.length,0);
+ const due=planReviews({policy,index:records,today:'2026-11-20',caseId:'POL-001',completedAt:last});
+ assert.equal(due.length,1);
+ assert.equal(due[0].last_checked_at,'2026-11-18');
+});
 test('closed cases are excluded even if forced',()=>{
  const copy=structuredClone(policy);
  const item=copy.cases.find(c=>c.id==='CA-001');item.mode='closed';item.closed_at='2026-11-18';item.closure_source_url='https://example.org/prova';
