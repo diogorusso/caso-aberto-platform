@@ -29,7 +29,7 @@ const date=(s:string)=>s.split('-').reverse().join('/');
         <h2 id={'story-title-'+caseId} class="m-0 max-w-3xl text-3xl leading-tight tracking-tight md:text-4xl">{story.headline}</h2>
         <p class="m-0 text-lg leading-relaxed text-muted-foreground">{story.exposure}</p>
       </div>
-      <a href={printHref} class="inline-flex min-h-11 items-center justify-center gap-2 border border-border bg-card px-4 py-3 text-sm font-bold text-foreground no-underline hover:border-brand-strong hover:text-brand-strong"><Printer size={17} aria-hidden="true"/> Material para imprimir <ArrowRight size={16} aria-hidden="true"/></a>
+      <div class="flex flex-wrap items-center gap-2"><a href="/casos/impacto.json" class="inline-flex min-h-11 items-center justify-center gap-2 border border-border bg-card px-4 py-3 text-sm font-semibold text-foreground no-underline hover:border-brand-strong hover:text-brand-strong"><FileSearch size={17} aria-hidden="true"/> Dados abertos</a><a href={printHref} class="inline-flex min-h-11 items-center justify-center gap-2 border border-border bg-card px-4 py-3 text-sm font-bold text-foreground no-underline hover:border-brand-strong hover:text-brand-strong"><Printer size={17} aria-hidden="true"/> Material para imprimir <ArrowRight size={16} aria-hidden="true"/></a></div>
     </header>
 
     <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
