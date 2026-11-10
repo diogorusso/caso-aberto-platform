@@ -11,7 +11,7 @@ const path='/historias/'+person.slug+'/';
 const relatedCases=caseStudies.filter(entry=>person.case_slugs.includes(entry.slug));
 const topic=relatedCases[0]?.categorySlug;
 ---
-<BaseLayout title={person.headline+' | Histórias públicas CasoAberto'} description={person.deck} type="article" datePublished={person.source_published_at} dateModified={person.reviewed_at} breadcrumbs={[{name:'Início',item:'/'},{name:'Histórias',item:'/historias/'},{name:person.display_name,item:path}]}>
+<BaseLayout image={'/og/historias/'+person.slug+'.png'} title={person.headline+' | Histórias públicas CasoAberto'} description={person.deck} type="article" datePublished={person.source_published_at} dateModified={person.reviewed_at} breadcrumbs={[{name:'Início',item:'/'},{name:'Histórias',item:'/historias/'},{name:person.display_name,item:path}]}>
 <article>
 <header class="bg-primary py-16 text-primary-foreground"><div class="container max-w-5xl space-y-5"><p class="m-0 text-xs font-bold uppercase tracking-wider text-[#ff917e]">HISTÓRIA DOCUMENTADA · {person.category}</p><h1 class="m-0 max-w-5xl text-4xl md:text-6xl">{person.headline}</h1><p class="max-w-3xl text-xl text-white/80">{person.deck}</p><p class="m-0 text-sm text-white/60">Fonte: {person.primary_source_name} · Revisado em {person.reviewed_at.split('-').reverse().join('/')}</p></div></header>
 <div class="container py-5"><CaseActionBar title={person.headline} summary={person.deck} href={path} showComplaint={false}/></div>

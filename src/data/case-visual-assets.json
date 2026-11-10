@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "updated_at": "2026-11-10",
+  "notes": "Fotos e marcas editoriais do acervo. Pessoas das matérias não são retratadas com imagens de terceiros sem origem ou direito verificado. PNG OG usa a fotografia oficial já arquivada de Florense e tipografia dos demais casos.",
+  "assets": [
+    {
+      "case_id": "CA-001",
+      "company": "Florense Ipanema",
+      "photo": "/media/florense/florense-ipanema-loja.jpg",
+      "logo": "/media/florense/florense-logo.png",
+      "photo_source": "https://florense.com.br/franquias/ipanema",
+      "logo_source": "https://www.salus-homes.com/premium-luxury-design-brands",
+      "credit": "Fotografia promocional da unidade e logotipo de catálogo de marcas",
+      "is_incident_photo": false
+    }
+  ]
+}

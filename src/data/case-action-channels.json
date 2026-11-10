@@ -1,0 +1,380 @@
+{
+  "version": 1,
+  "reviewed_at": "2026-11-10",
+  "channels": {
+    "consumidor-gov": {
+      "title": "Consumidor.gov.br",
+      "url": "https://www.consumidor.gov.br/",
+      "purpose": "Reclamação individual na plataforma pública quando o fornecedor participa",
+      "source_url": "https://www.gov.br/mj/pt-br/assuntos/noticias/consumidor-gov-br-saiba-como-registrar-uma-reclamacao-pela-plataforma",
+      "step": "reclamacao",
+      "kind": "publico",
+      "note": "Entre com Gov.br, encontre a empresa cadastrada, anexe provas e acompanhe a resposta; não pressupor que toda empresa participa."
+    },
+    "reclame-aqui": {
+      "title": "Reclame Aqui — buscar empresa",
+      "url": "https://www.reclameaqui.com.br/",
+      "purpose": "Publicar e acompanhar reclamação individual",
+      "source_url": "https://www.reclameaqui.com.br/",
+      "step": "reclamacao",
+      "kind": "privado",
+      "note": "Procure o nome correto do fornecedor; o perfil pode não existir. Não publique CPF, dados bancários, contratos completos ou telefones pessoais."
+    },
+    "procon-rj": {
+      "title": "Procon-RJ — registrar reclamação",
+      "url": "https://www.procononline.rj.gov.br/",
+      "purpose": "Registrar ou acompanhar demanda de consumo no RJ",
+      "source_url": "https://www.procononline.rj.gov.br/",
+      "step": "procon",
+      "kind": "publico",
+      "note": "O site informa que o fluxo web é voltado ao computador; no celular recomenda aplicativo PROCON-RJ."
+    },
+    "procon-sp": {
+      "title": "Procon-SP Digital",
+      "url": "https://consumidor2.procon.sp.gov.br/login",
+      "purpose": "Abrir reclamação no Estado de São Paulo",
+      "source_url": "https://www.procon.sp.gov.br/carta-de-servicos/",
+      "step": "procon",
+      "kind": "publico",
+      "note": "Gov.br prata/ouro; destinado a consumidores elegíveis residentes/estabelecidos em SP."
+    },
+    "procon-go": {
+      "title": "Procon Goiás — registro eletrônico",
+      "url": "https://www.go.gov.br/servicos/servico-id/1542",
+      "purpose": "Formalizar reclamação no Estado de Goiás",
+      "source_url": "https://goias.gov.br/procon/como-proceder-realizar-uma-reclamacao-junto-ao-procon/",
+      "step": "procon",
+      "kind": "publico",
+      "note": "Portal Expresso de atendimento; a página do Procon detalha documentação e condições do serviço."
+    },
+    "procon-sc": {
+      "title": "Procon-SC — orientação e denúncia",
+      "url": "https://www.procon.sc.gov.br/",
+      "purpose": "Canais de denúncia e atendimento em SC",
+      "source_url": "https://www.procon.sc.gov.br/zap-denuncia-procon/",
+      "step": "procon",
+      "kind": "publico",
+      "note": "Reclamações individuais devem ser direcionadas ao Procon municipal quando houver; denúncias coletivas têm canal estadual próprio."
+    },
+    "procon-rs": {
+      "title": "Procon-RS — atendimento eletrônico",
+      "url": "https://procon.rs.gov.br/atendimento-ao-consumidor",
+      "purpose": "Registrar demanda nos municípios cobertos pelo Procon estadual",
+      "source_url": "https://www.procon.rs.gov.br/atendimento-ao-consumidor",
+      "step": "procon",
+      "kind": "publico",
+      "note": "O próprio portal encaminha residentes de Porto Alegre e cidades com Procon municipal aos órgãos locais."
+    },
+    "jec-tj-sp": {
+      "title": "TJSP — Juizado Especial Cível",
+      "url": "https://www.tjsp.jus.br/JuizadosEspeciais/JuizadosEspeciais/JEC",
+      "purpose": "Informações oficiais sobre propor ação de menor complexidade em SP",
+      "source_url": "https://www.tjsp.jus.br/JuizadosEspeciais/JuizadosEspeciais/JEC",
+      "step": "judicial",
+      "kind": "judicial",
+      "note": "O tribunal informa teto de 40 salários mínimos e advogado obrigatório acima de 20; consulte competência territorial, custas e via de atendimento."
+    },
+    "jec-tj-rj": {
+      "title": "TJRJ — Juizados Especiais Cíveis",
+      "url": "https://www.tjrj.jus.br/web/juizados-especiais/duvidas-frequentes/perguntas-e-respostas",
+      "purpose": "Regras oficiais para ajuizar causa de menor complexidade no RJ",
+      "source_url": "https://www.tjrj.jus.br/web/juizados-especiais/duvidas-frequentes/perguntas-e-respostas",
+      "step": "judicial",
+      "kind": "judicial",
+      "note": "O tribunal informa limite de 40 salários mínimos, advogado obrigatório acima de 20 e exigências de recurso; não renuncie a valores automaticamente."
+    },
+    "jec-sp-digital": {
+      "title": "TJSP — peticionamento eletrônico JEC",
+      "url": "https://www.tjsp.jus.br/peticionamentoJEC",
+      "purpose": "Consultar condições técnicas de protocolo judicial",
+      "source_url": "https://www.tjsp.jus.br/peticionamentoJEC",
+      "step": "judicial",
+      "kind": "judicial",
+      "note": "Regras de peticionamento e certificado digital dependem da unidade, tipo de pedido e representação."
+    },
+    "def-rj": {
+      "title": "Defensoria Pública RJ — atendimento",
+      "url": "https://defensoria.rj.def.br/Atendimento/",
+      "purpose": "Solicitar orientação e assistência jurídica gratuita quando elegível",
+      "source_url": "https://defensoria.rj.def.br/Atendimento/",
+      "step": "judicial",
+      "kind": "judicial",
+      "note": "Canais de agendamento e assistência para casos de consumo. Telefone 129 e atendimento eletrônico conforme critérios da instituição."
+    },
+    "def-sp": {
+      "title": "Defensoria Pública SP — agendamento",
+      "url": "https://www.defensoria.sp.def.br/web/guest/atendimento/agende-seu-atendimento",
+      "purpose": "Agendar orientação e assistência jurídica em São Paulo",
+      "source_url": "https://www.defensoria.sp.def.br/web/guest/atendimento/agende-seu-atendimento",
+      "step": "judicial",
+      "kind": "judicial",
+      "note": "A instituição avalia critérios de renda e situação; use o agendamento oficial."
+    },
+    "aneel": {
+      "title": "ANEEL — reclamar da distribuidora",
+      "url": "https://www.gov.br/aneel/pt-br/canais_atendimento/reclame-da-distribuidora",
+      "purpose": "Escalonar problema de energia elétrica após atendimento e ouvidoria da distribuidora",
+      "source_url": "https://www.gov.br/aneel/pt-br/canais_atendimento/reclame-da-distribuidora",
+      "step": "regulador",
+      "kind": "publico",
+      "note": "Sequência oficial: atendimento da distribuidora → ouvidoria → ANEEL; conserve ambos os protocolos."
+    },
+    "falabr": {
+      "title": "Fala.BR — ouvidoria e acesso à informação",
+      "url": "https://falabr.cgu.gov.br/v2/",
+      "purpose": "Pedido de informação ou manifestação a órgão federal competente",
+      "source_url": "https://falabr.cgu.gov.br/v2/",
+      "step": "transparencia",
+      "kind": "publico",
+      "note": "Selecione o órgão realmente responsável e diferencie solicitação de informação de denúncia; não envie pedidos repetitivos automatizados."
+    },
+    "florense-fabrica": {
+      "title": "Florense — formulário institucional",
+      "url": "https://florense.com.br/contato",
+      "purpose": "Contato com a fabricante/rede a respeito de prazo e entrega",
+      "source_url": "https://florense.com.br/contato",
+      "step": "empresa",
+      "kind": "empresa",
+      "note": "Identifique a razão social da sua compra: rede e franquia podem ter contratantes distintos."
+    },
+    "casas-sup": {
+      "title": "Casas Bahia — atendimento de pedidos",
+      "url": "https://www.casasbahia.com.br/",
+      "purpose": "Atendimento comercial e entregas",
+      "source_url": "https://support.banqi.com.br/hc/pt-br/articles/36487847297812-Como-falo-com-a-Casas-Bahia",
+      "step": "empresa",
+      "kind": "empresa",
+      "note": "Fonte vinculada ao grupo banQi informa SAC 4003-4336 e 0800-200-4336; consulte os canais do pedido contratado."
+    },
+    "tokstok-sup": {
+      "title": "Tok&Stok — central de atendimento",
+      "url": "https://atendimento.tokstok.com.br/",
+      "purpose": "Reagendar entrega, cancelar pedido e consultar reembolso",
+      "source_url": "https://atendimento.tokstok.com.br/",
+      "step": "empresa",
+      "kind": "empresa",
+      "note": "Central oficial inclui Meus pedidos, entregas e WhatsApp; confirme quem figura no seu contrato."
+    },
+    "ticketmaster-sup": {
+      "title": "Ticketmaster Brasil — formulário",
+      "url": "https://help.ticketmaster.com.br/hc/pt-br/articles/34669675343761-Como-entrar-em-contato-conosco-How-to-Contact-Us",
+      "purpose": "Suporte sobre bilhete, validação e pedidos",
+      "source_url": "https://help.ticketmaster.com.br/hc/pt-br/articles/34669675343761-Como-entrar-em-contato-conosco-How-to-Contact-Us",
+      "step": "empresa",
+      "kind": "empresa",
+      "note": "A central orienta usar o e-mail da conta e o formulário, evitando solicitações duplicadas."
+    },
+    "light-sup": {
+      "title": "Light — agência virtual",
+      "url": "https://agenciavirtual.light.com.br/Portal/Atendimento.aspx",
+      "purpose": "Ocorrência, ouvidoria e ressarcimento no Rio",
+      "source_url": "https://agenciavirtual.light.com.br/Portal/Atendimento.aspx",
+      "step": "empresa",
+      "kind": "empresa",
+      "note": "Serviços de falta de energia, ressarcimento de danos elétricos e não elétricos; atendimento via canais autenticados."
+    },
+    "light-ress": {
+      "title": "Light — solicitar ressarcimento",
+      "url": "https://agenciavirtual.light.com.br/Portal/MaisInformacoes.aspx?OpcaoServicoId=50",
+      "purpose": "Orientações para pedido de ressarcimento por danos elétricos",
+      "source_url": "https://agenciavirtual.light.com.br/Portal/MaisInformacoes.aspx?OpcaoServicoId=50",
+      "step": "empresa",
+      "kind": "empresa",
+      "note": "A documentação exigida depende da data do dano e da unidade consumidora."
+    },
+    "corsan-sup": {
+      "title": "Corsan — canais de relacionamento",
+      "url": "https://www.corsan.com.br/canais-de-relacionamento/",
+      "purpose": "Registrar falta d'água, cobrança e qualidade do serviço",
+      "source_url": "https://www.corsan.com.br/canais-de-relacionamento/",
+      "step": "empresa",
+      "kind": "empresa",
+      "note": "A Corsan informa atendimento 0800 646 6444 e WhatsApp pelo mesmo número."
+    },
+    "corsan-ouvidoria": {
+      "title": "Corsan — ouvidoria",
+      "url": "https://www.corsan.com.br/ouvidoria/",
+      "purpose": "Escalar demanda depois do primeiro atendimento",
+      "source_url": "https://www.corsan.com.br/ouvidoria/",
+      "step": "ouvidoria",
+      "kind": "empresa",
+      "note": "Exige número de protocolo do primeiro atendimento."
+    },
+    "corsan-etica": {
+      "title": "Aegea/Corsan — canal de ética",
+      "url": "https://www.corsan.com.br/canal-de-denuncia/",
+      "purpose": "Reportar indícios documentados de irregularidade ética, fraude ou conflito",
+      "source_url": "https://www.corsan.com.br/canal-de-denuncia/",
+      "step": "compliance",
+      "kind": "empresa",
+      "note": "Este canal NÃO é destinado a pedir solução para falta d'água ou cobrança comum; use relacionamento/ouvidoria nesses casos."
+    },
+    "enel-sup": {
+      "title": "Enel São Paulo — canais de atendimento",
+      "url": "https://www.enel.com.br/pt-saopaulo/atendimento.html",
+      "purpose": "Reportar falta de energia e pedido de ressarcimento",
+      "source_url": "https://www.arsesp.sp.gov.br/Documentosgerais/Cartilhas_Tematicas_Arsesp-Tratamento_de_Reclamacoes.pdf",
+      "step": "empresa",
+      "kind": "empresa",
+      "note": "Arsesp lista telefone 0800 727 2120 e emergência 0800 727 2196; confirme sempre os canais atuais."
+    },
+    "florense-ipanema": {
+      "title": "Florense Ipanema — contato da unidade",
+      "url": "https://florense.com.br/franquias/ipanema",
+      "purpose": "Atendimento da loja identificada no caso Florense Ipanema",
+      "source_url": "https://florense.com.br/franquias/ipanema",
+      "step": "empresa",
+      "kind": "empresa",
+      "note": "A página oficial da unidade publica telefone (21) 2247-9488 e email florense@florenseipanema.com.br. Confira a contratante no contrato e mantenha protocolo do atendimento."
+    },
+    "prime-video-support": {
+      "title": "Prime Video — central de suporte da assinatura",
+      "url": "https://www.primevideo.com/help",
+      "purpose": "Atendimento da assinatura, publicidade, cobrança e condições do serviço",
+      "source_url": "https://www.primevideo.com/help",
+      "step": "empresa",
+      "kind": "empresa",
+      "note": "A central oficial direciona assuntos de conta, assinatura e pagamento ao suporte; o formulário de compliance de conteúdo é outro procedimento."
+    },
+    "aegea-integridade": {
+      "title": "Corsan/Aegea — canal de integridade",
+      "url": "https://www.corsan.com.br/canal-de-denuncia/",
+      "purpose": "Relatar indícios de irregularidade ética ou corrupção, se documentados",
+      "source_url": "https://www.corsan.com.br/canal-de-denuncia/",
+      "step": "compliance",
+      "kind": "empresa",
+      "note": "Exclusivo para questões éticas, fraude, assédio e integridade; não substitui o SAC ou a Ouvidoria para falta d'água e fatura."
+    },
+    "novo-mundo-sup": {
+      "title": "Novo Mundo — central de atendimento",
+      "url": "https://www.novomundo.com.br/atendimento",
+      "purpose": "Consultar pedidos, entrega, troca, cancelamento e solicitação de ressarcimento",
+      "source_url": "https://www.novomundo.com.br/atendimento",
+      "step": "empresa",
+      "kind": "empresa",
+      "note": "A página oficial informa (62) 98562-7000 e faleconosco@novomundo.com.br; confira os detalhes e abra protocolo no canal da compra."
+    },
+    "stubhub-sup": {
+      "title": "StubHub — central de ajuda aos compradores",
+      "url": "https://support.stubhub.com/br/articles/61000276393-garantia-fanprotect-de-stubhub",
+      "purpose": "Suporte sobre entrega de bilhetes, autenticidade, ingresso invalidado e garantia FanProtect",
+      "source_url": "https://support.stubhub.com/br/articles/61000276393-garantia-fanprotect-de-stubhub",
+      "step": "empresa",
+      "kind": "empresa",
+      "note": "Central oficial da StubHub possui ajuda sobre ingresso não recebido, transferência móvel e evento cancelado. A plataforma cobre apenas compras feitas ali."
+    }
+  },
+  "regional": {
+    "CA-001": "RJ",
+    "EXT-001": "BR",
+    "EXT-002": "BR",
+    "EXT-003": "SC",
+    "EXT-004": "SP",
+    "EXT-005": "BR",
+    "EXT-006": "SC",
+    "EXT-007": "GO",
+    "EXT-008": "RJ",
+    "EXT-009": "SP",
+    "EXT-010": "SP",
+    "EXT-011": "SP",
+    "EXT-012": "SP",
+    "EXT-013": "RS",
+    "EXT-014": "BR",
+    "EXT-015": "BR"
+  },
+  "related": {
+    "CA-001": [
+      "florense-ipanema",
+      "florense-fabrica"
+    ],
+    "EXT-004": [
+      "enel-sup",
+      "aneel"
+    ],
+    "EXT-008": [
+      "light-sup",
+      "light-ress",
+      "aneel"
+    ],
+    "EXT-009": [
+      "casas-sup"
+    ],
+    "EXT-010": [
+      "tokstok-sup"
+    ],
+    "EXT-012": [
+      "ticketmaster-sup"
+    ],
+    "EXT-013": [
+      "corsan-sup",
+      "corsan-ouvidoria",
+      "aegea-integridade"
+    ],
+    "EXT-014": [
+      "prime-video-support"
+    ],
+    "EXT-007": [
+      "novo-mundo-sup"
+    ],
+    "EXT-015": [
+      "stubhub-sup"
+    ]
+  },
+  "issues": {
+    "CA-001": "entrega e montagem dos móveis planejados pagos e prazos descumpridos",
+    "EXT-001": "pacote de viagem ou reembolso não executado",
+    "EXT-002": "pacote ou passagem sem emissão e restituição pendente",
+    "EXT-003": "compra on-line com entrega não confirmada",
+    "EXT-004": "interrupção de energia e eventual ressarcimento",
+    "EXT-005": "pedido de itens infantis e tratamento de crédito",
+    "EXT-006": "compra de vestuário e prazo de entrega",
+    "EXT-007": "compra de móvel ou eletrodoméstico e promessa de entrega",
+    "EXT-008": "interrupção de fornecimento e documentação dos danos",
+    "EXT-009": "entrega de móveis ou eletrodomésticos durante recuperação judicial",
+    "EXT-010": "pedido de móveis e cumprimento do prazo durante recuperação judicial",
+    "EXT-011": "entrega contratada e prazos anunciados em recuperação judicial",
+    "EXT-012": "acesso, validação de ingresso e informações anunciadas para show",
+    "EXT-013": "interrupção de água, qualidade de serviço ou cobrança",
+    "EXT-014": "inserção de anúncios e alteração das condições do streaming",
+    "EXT-015": "revenda de ingressos, informações de preço e origem do vendedor"
+  },
+  "official_paths": {
+    "BR": [
+      "consumidor-gov",
+      "reclame-aqui"
+    ],
+    "RJ": [
+      "procon-rj",
+      "def-rj",
+      "jec-tj-rj"
+    ],
+    "SP": [
+      "procon-sp",
+      "def-sp",
+      "jec-tj-sp",
+      "jec-sp-digital"
+    ],
+    "GO": [
+      "procon-go"
+    ],
+    "SC": [
+      "procon-sc"
+    ],
+    "RS": [
+      "procon-rs"
+    ]
+  },
+  "civic": [
+    "falabr"
+  ],
+  "guidance": {
+    "pathway": [
+      "Empresa: protocolo e prazo documentado",
+      "Reclamação pública ou órgão de defesa do consumidor",
+      "Ouvidoria ou agência reguladora, se aplicável",
+      "Organizar provas e verificar rota judicial competente"
+    ],
+    "court": "Conforme o TJSP e TJRJ, os Juizados Especiais Cíveis tratam causas de menor complexidade até 40 salários mínimos; advogado é necessário acima de 20 salários mínimos e nos recursos. Valor, competência, tipo de ação e eventual renúncia exigem decisão individual. A ação Florense relata R$ 190 mil: consultar a via cível com advogado ou Defensoria antes de escolher rito.",
+    "identity": "Preencha somente seus fatos e documentos nos canais apropriados. Os exemplos gerados por CasoAberto não protocolam pedidos e não enviam mensagens sem ação explícita."
+  }
+}

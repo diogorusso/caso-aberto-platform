@@ -115,6 +115,7 @@ export default function CaseResearchExplorer({entries,categories,lockedCategory}
   </div>
   <div className="grid gap-4 md:grid-cols-2" aria-label="Resultados de casos documentados">
    {filtered.map(entry=><article key={entry.id} className={'group flex flex-col gap-4 rounded-lg border bg-card p-5 transition-colors hover:border-brand/60 md:p-6 '+(entry.featured?'border-brand ring-1 ring-brand/30':'border-border')}>
+    <img src={"/og/"+(entry.kind==="historia"?"historias/":"casos/")+entry.slug+".png"} alt={"Apresentação editorial: "+entry.company} width={1200} height={630} loading="lazy" decoding="async" className="aspect-[1200/630] w-full rounded-md border border-border object-cover"/>
     <div className="flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-wider">
      {entry.featured&&<span className="rounded bg-brand-strong px-2.5 py-1 text-white">CASO EM DESTAQUE</span>}
      <span className="text-brand-strong">{resultLabel(entry)}</span>
@@ -133,6 +134,7 @@ export default function CaseResearchExplorer({entries,categories,lockedCategory}
       {entry.storyCount>0?' · '+cap(entry.storyCount,'história','histórias'):''}
      </span>
      <a href={"https://wa.me/?text="+encodeURIComponent("CasoAberto: "+entry.title+"\nLeia o caso completo com fontes e cronologia: https://casoaberto.pages.dev"+entry.href)} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-10 items-center gap-1 text-xs font-bold text-link hover:underline" aria-label={"Compartilhar "+entry.title+" no WhatsApp"}><Share2 size={14} aria-hidden="true"/> WhatsApp</a>
+     {entry.kind==="caso"&&<a href={"/casos/acoes/"+entry.id+"/"} className="inline-flex min-h-10 items-center gap-1 text-sm font-bold text-brand-strong hover:underline">Agir / Modelos ↗</a>}
      <a href={entry.href} className="inline-flex items-center gap-1 text-sm font-bold text-link hover:underline">
       {entry.kind==='caso'?'Abrir caso':'Ler história'} <ArrowUpRight size={16} aria-hidden="true"/>
      </a>

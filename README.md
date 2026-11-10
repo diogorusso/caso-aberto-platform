@@ -271,3 +271,7 @@ The old slider-based impact calculator and its fabricated financial, campaign re
 - **Validation:** `npm run verify:visual-stories`, included in `verify:data` and `build`.
 
 Detailed design, modeling and editorial rules: [docs/visual-impact-storytelling.md](docs/visual-impact-storytelling.md). For future chat/agent tasks, load `.cursor/skills/casoaberto-visual-data-storytelling/SKILL.md` along with the PT-BR tone skill.
+
+## Case action and OG features — 2026-11-10
+
+24 documented cases each now have a static action route at /casos/acoes/:id/ with editable templates, verified complaint and company-contact channels, and a judicial route guide. Social preview images are generated as 1200x630 PNGs for the complete case and story index using Sharp. Florense OG uses the documented original store photo and logo. Other brands are represented by distinct typographic case imagery until sourced image assets are cleared. See scripts/validate-case-actions.mjs and scripts/generate-og-images.mjs.

@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CivicPageHeader from '../../../components/CivicPageHeader.astro';
+import {ClipboardList,Scale,FileText,Landmark,CheckCircle2,ArrowUpRight} from 'lucide-react';
+const steps=[
+ ['01','Organize o contrato','Guarde oferta, nota, recibos, comprovantes de pagamento, termo de garantia, prazos, conversas, protocolos e mudanças posteriores. Datas e valores precisam corresponder aos documentos.'],
+ ['02','Documente tentativas de solução','Solicite resposta por escrito ao fornecedor e considere Consumidor.gov.br (se participar), Reclame Aqui e Procon competente. Conserve cada protocolo e a resposta recebida.'],
+ ['03','Defina o que pedir','Diferencie entrega ou obrigação de fazer, restituição de valor comprovado, reparação demonstrada e eventual pedido de urgência. Não invente perdas nem use o dano de outra pessoa.'],
+ ['04','Verifique competência e representação','No Juizado Especial Cível o limite geral é 40 salários mínimos em causas cabíveis. Acima de 20 salários mínimos é exigido advogado; em recurso, a representação também pode ser necessária. Questões de maior valor ou complexidade exigem avaliação própria.'],
+ ['05','Acesse o Tribunal ou a Defensoria','Consulte a página do TJ do seu estado, localize o Juizado/vara competente e o serviço de atermação ou peticionamento disponível. Se preencher os critérios, procure a Defensoria; em outros casos, um advogado.'],
+ ['06','Acompanhe o processo','Após ajuizamento, registre o número, guarde intimações, compareça a audiências e documente acordos, decisões e cumprimento efetivo. Uma decisão favorável não significa pagamento realizado.']
+];
+const links=[
+ {title:'TJRJ · Juizados Especiais',url:'https://www.tjrj.jus.br/web/juizados-especiais/duvidas-frequentes/perguntas-e-respostas',description:'Regras de competência, limites e assistência por advogado no RJ.'},
+ {title:'TJSP · Juizados Especiais',url:'https://www.tjsp.jus.br/JuizadosEspeciais/JuizadosEspeciais/JEC',description:'Modelos, atermação e orientações processuais em São Paulo.'},
+ {title:'TJSP · peticionamento eletrônico',url:'https://www.tjsp.jus.br/peticionamentoJEC',description:'Condições, cadastro e canal online conforme unidade judicial.'},
+ {title:'Defensoria Pública RJ',url:'https://defensoria.rj.def.br/Atendimento/',description:'Orientação e agendamento para pessoas elegíveis; telefone 129.'},
+ {title:'Defensoria Pública SP',url:'https://www.defensoria.sp.def.br/web/guest/atendimento/agende-seu-atendimento',description:'Agendamento e critérios para acesso gratuito à assistência.'},
+ {title:'CNJ · quando advogado é necessário',url:'https://www.cnj.jus.br/cnj-servico-em-que-casos-nao-e-preciso-um-advogado-2/',description:'Explicação institucional sobre os Juizados e a representação.'}
+];
+---
+<BaseLayout title="Como processar uma empresa: provas, Procon, Juizado e assistência | CasoAberto" description="Um roteiro concreto para documentar uma compra, reclamar à empresa, acionar o Procon e verificar como ajuizar uma ação nos Juizados ou via Justiça comum.">
+ <CivicPageHeader eyebrow="GUIA DE AÇÃO · ACESSO À JUSTIÇA" title="Pagou. Não recebeu. Vai processar? Saiba por onde começar." lead="A empresa recebeu seu dinheiro. E você precisa de documento, protocolo, prazo e solução. Veja como organizar a cobrança e encontrar o caminho judicial que corresponde ao seu caso."/>
+ <section class="container max-w-5xl space-y-7 py-14">
+  <div class="grid gap-4 md:grid-cols-2">{steps.map(item=><article class="space-y-3 border border-border bg-card p-6"><p class="m-0 text-sm font-extrabold text-brand-strong">{item[0]} / PREPARAR A AÇÃO</p><h2 class="m-0 text-xl">{item[1]}</h2><p class="m-0 text-sm leading-relaxed text-muted-foreground">{item[2]}</p></article>)}</div>
+  <div class="space-y-3 border-l-4 border-brand-strong bg-muted p-6"><h2 class="m-0 text-xl">E se o contrato passar de R$ 190 mil?</h2><p class="m-0">O caso Florense relata R$ 190 mil pagos. A escolha da via judicial deve levar em conta os pedidos, os valores, os réus e a competência. Não use a renúncia de parte do crédito como atalho automático para caber no Juizado: peça exame jurídico concreto.</p><a class="text-link font-bold" href="/casos/florense-ipanema-rj-atraso-moveis-planejados/">Abrir o dossiê Florense ↗</a></div>
+ </section>
+ <section class="border-t bg-muted py-14"><div class="container max-w-5xl space-y-6"><h2 class="m-0 text-3xl">Tribunais, assistência e canais oficiais</h2><div class="grid gap-3 md:grid-cols-2">{links.map(link=><a href={link.url} target="_blank" rel="noopener noreferrer" class="flex flex-col gap-2 border border-border bg-card p-5 no-underline hover:border-brand"><strong class="text-base text-foreground">{link.title} <ArrowUpRight size={16} className="inline-block text-brand-strong" aria-hidden="true"/></strong><span class="text-sm text-muted-foreground">{link.description}</span></a>)}</div></div></section>
+ <section class="container max-w-5xl space-y-3 py-12"><h2 class="m-0 text-2xl">Prepare sua mensagem antes do atendimento.</h2><p class="m-0 text-muted-foreground">Cada investigação traz modelos de cobrança, reclamação, notificação e organização de fatos para ação judicial. Escolha a empresa e edite o texto.</p><a class="font-bold text-link" href="/casos/">Encontrar seu caso e abrir os modelos ↗</a></section>
+</BaseLayout>

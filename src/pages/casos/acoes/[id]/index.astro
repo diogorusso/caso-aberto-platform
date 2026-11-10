@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import CaseActionHub from '../../../../components/CaseActionHub.astro';
+import CaseActionBar from '../../../../components/CaseActionBar.astro';
+import {caseActionPlan} from '../../../../lib/case-actions';
+import {caseStudies} from '../../../../lib/case-catalog';
+export function getStaticPaths(){return caseStudies.map(item=>({params:{id:item.id},props:{id:item.id}}));}
+const {id}=Astro.props as {id:string};
+const plan=caseActionPlan(id);
+const entry=caseStudies.find(item=>item.id===id);
+if(!entry)throw new Error('Missing case action OG entry: '+id);
+---
+<BaseLayout image={'/og/casos/'+entry.slug+'.png'} title={'Cobrar '+plan.company+': modelos, Procon, ouvidoria e Justiça | CasoAberto'} description={'Aja no caso '+plan.title+'. Modelos de mensagens editáveis, canais oficiais, orientação para Procon, Reclame Aqui, ouvidoria e acesso à Justiça, com fontes verificáveis.'} type="article" dateModified="2026-11-10">
+ <div class="border-b bg-primary py-10 text-primary-foreground">
+  <div class="container space-y-4"><p class="m-0 text-xs font-bold uppercase tracking-widest text-[#ff917e]">CASOABERTO · AÇÃO CIDADÃ · {plan.id}</p><h1 class="m-0 max-w-5xl text-4xl leading-tight md:text-5xl">A empresa precisa responder. Você precisa do canal certo.</h1><p class="m-0 max-w-4xl text-lg text-white/80">{plan.title}</p>
+   <a class="inline-flex min-h-11 items-center text-sm font-semibold text-white underline" href={plan.href}>Conferir o dossiê completo antes de agir ↗</a>
+  </div>
+ </div>
+ <CaseActionHub caseId={id}/>
+ <section class="container space-y-5 py-12"><h2 class="m-0 text-2xl">Faça a pesquisa circular.</h2><CaseActionBar caseId={plan.id} title={plan.title} summary={plan.summary} href={plan.href} printHref={'/casos/imprimir/'+entry.slug+'/'} showComplaint={!plan.isCivic}/></section>
+</BaseLayout>

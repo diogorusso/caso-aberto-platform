@@ -8,6 +8,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import CaseIntro from '../../../components/CaseIntro.astro';
+import CaseActionHub from '../../../components/CaseActionHub.astro';
 import Requests from '../../../components/Requests.astro';
 import SourceList from '../../../components/SourceList.astro';
 import ShareActions from '../../../components/ShareActions.astro';
@@ -41,6 +42,7 @@ const romaHref = sectionHref(item,'risco-roma-mobili');
 const c = copy.case;
 ---
 <BaseLayout
+  image={"/og/casos/"+item.slug+".png"}
   title={`${item.titulo} | CasoAberto`}
   description={item.resumo}
   dateModified={item.status_data}
@@ -52,6 +54,7 @@ const c = copy.case;
   <CaseIntro item={item}/>
   {caseVerdict && <EditorialVerdict verdict={caseVerdict} subject={item.empresa_resumo} prominence="hero" caseHref={base+'evidencias/'} brand={caseBrand} unit={caseUnit}/>}
 
+  <CaseActionHub caseId={item.id} compact/>
   <CaseVisualStory caseId={item.id}/>
 
   <!-- O CASO -->
