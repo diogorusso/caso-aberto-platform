@@ -60,7 +60,7 @@ npm run verify:case-watch
 npm run verify:data && npm run check && npm run build
 ```
 
-Para encerrar uma revisão sem novidade comprovada, usar `npm run case:complete -- --case CA-001 --outcome no-change --source https://... --reviewer "editor real" --note "..." --apply` em ambiente com `GH_TOKEN`; no-change **não publica**.
+Para encerrar uma revisão **automática** sem novidade comprovada, usar `npm run case:complete -- --case CA-001 --outcome no-change --method automated --source https://... --reviewer "CasoAberto agent" --note "Descrição real, verificável e com pelo menos 55 caracteres." --apply` com `GH_TOKEN`. O registro declara explicitamente que a verificação foi feita por agente, não por humano. Para revisão humana, `--method human`. A opção `--method automated` só admite o resultado `no-change`; mudanças publicadas e encerramento definitivo têm gate editorial independente. No-change **não publica**.
 
 ### Resultado esperado
 
