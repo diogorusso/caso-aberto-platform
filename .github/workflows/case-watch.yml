@@ -1,0 +1,76 @@
+name: Case Watch — zero-token research queue
+
+on:
+  schedule:
+    # 09:23 America/Sao_Paulo (UTC-3). GitHub may delay cron execution.
+    - cron: '23 12 * * *'
+  workflow_dispatch:
+    inputs:
+      case_id:
+        description: 'Optional exact case ID (e.g. CA-001 or POL-001); blank = due cases'
+        required: false
+        type: string
+      force:
+        description: 'Queue review even when the normal interval has not elapsed'
+        required: false
+        type: boolean
+        default: false
+  push:
+    paths:
+      - '.github/workflows/case-watch.yml'
+
+concurrency:
+  group: casoaberto-case-watch
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  scan:
+    name: Source diff and review queue (no LLM)
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+      - name: Restore previous source fingerprints without committing to website
+        uses: actions/cache/restore@v4
+        with:
+          path: .case-watch-cache/state.json
+          key: casoaberto-case-watch-${{ github.run_id }}
+          restore-keys: |
+            casoaberto-case-watch-
+      - name: Read already-open case review issues
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p .case-watch-cache
+          gh issue list --state open --limit 250 --json title > .case-watch-cache/open-issues.json
+      - name: Validate registry and no-model tests
+        run: |
+          node scripts/case-watch.mjs --validate
+          node --test scripts/test-case-watch.mjs
+      - name: Make compact case packets and check a capped set of HTTPS sources
+        env:
+          CASE_ID: ${{ inputs.case_id || '' }}
+          FORCE_REVIEW: ${{ inputs.force || 'false' }}
+        shell: bash
+        run: |
+          args=()
+          if [[ -n "$CASE_ID" ]]; then args+=(--case "$CASE_ID"); fi
+          if [[ "$FORCE_REVIEW" == "true" ]]; then args+=(--force); fi
+          node scripts/case-watch.mjs "${args[@]}"
+      - name: Create or reopen one research issue per due case (no site changes)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/case-watch-issues.mjs
+      - name: Save compact fingerprints for next run
+        if: success()
+        uses: actions/cache/save@v4
+        with:
+          path: .case-watch-cache/state.json
+          key: casoaberto-case-watch-${{ github.run_id }}
