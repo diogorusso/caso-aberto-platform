@@ -16,7 +16,7 @@ export default function MobileNav({ items, current }: { items: Item[]; current: 
       <SheetContent side="right" className="w-[min(20rem,85vw)]">
         <SheetHeader>
           <SheetTitle>CasoAberto</SheetTitle>
-          <SheetDescription>Casos documentados, empresas e fontes públicas.</SheetDescription>
+          <SheetDescription>Casos, organização cidadã, pesquisa e autonomia digital.</SheetDescription>
         </SheetHeader>
         <nav aria-label="Principal" className="grid gap-1 px-4">
           {items.map((item) => (
