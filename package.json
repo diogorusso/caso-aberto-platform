@@ -36,7 +36,8 @@
     "verify:case-actions": "node scripts/validate-case-actions.mjs",
     "case:watch": "node scripts/case-watch.mjs",
     "case:review": "node scripts/case-review-packet.mjs",
-    "verify:case-watch": "node scripts/case-watch.mjs --validate && node --test scripts/test-case-watch.mjs"
+    "verify:case-watch": "node scripts/case-watch.mjs --validate && node --test scripts/test-case-watch.mjs",
+    "case:complete": "node scripts/case-review-complete.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^7.1.5",
