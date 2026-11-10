@@ -31,7 +31,7 @@ export const impactNavItems=(opts:{hasSnapshot?:boolean;hasModel?:boolean}={})=>
   {id:'painel-observado',label:'Dados publicados'},
   ...(opts.hasSnapshot?[{id:'impacto-externo',label:'Fonte externa'}]:[]),
   {id:'desfecho-reclamacoes',label:'Desfechos'},
-  ...(opts.hasModel?[{id:'simulador-impacto',label:'Cenários'}]:[]),
+  ...(opts.hasModel?[{id:'cenario-documental',label:'Consequências'}]:[]),
   {id:'trilha-documental',label:'Fontes'},
   {id:'prestacao-contas',label:'Prestação de contas'},
 ];
