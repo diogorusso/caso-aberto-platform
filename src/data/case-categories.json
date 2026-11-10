@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "featured_case_id": "CA-001",
+  "updated_at": "2026-11-10",
+  "categories": [
+    {
+      "slug": "moveis-e-casa",
+      "title": "Móveis e casa",
+      "eyebrow": "MÓVEIS · CASA · ELETRODOMÉSTICOS",
+      "description": "Pagou por móveis, reforma ou eletrodoméstico. O prazo venceu. Onde está o produto e quem responde pela entrega?",
+      "case_ids": [
+        "CA-001",
+        "EXT-007"
+      ],
+      "search_terms": [
+        "marcenaria",
+        "moveis planejados",
+        "decoração",
+        "cama",
+        "cozinha",
+        "eletrodomestico",
+        "novo mundo",
+        "florense"
+      ]
+    },
+    {
+      "slug": "viagens-e-turismo",
+      "title": "Viagens e turismo",
+      "eyebrow": "VIAGENS · PASSAGENS · REEMBOLSOS",
+      "description": "A viagem foi vendida. A passagem não saiu. Quem devolve o dinheiro e apresenta uma solução verificável?",
+      "case_ids": [
+        "EXT-001",
+        "EXT-002"
+      ],
+      "search_terms": [
+        "turismo",
+        "pacote",
+        "passagem",
+        "hurb",
+        "123milhas",
+        "reserva",
+        "reembolso",
+        "recuperacao judicial"
+      ]
+    },
+    {
+      "slug": "compras-online",
+      "title": "Compras online",
+      "eyebrow": "E-COMMERCE · MODA · PRODUTOS INFANTIS",
+      "description": "O pagamento foi aprovado. O rastreio mudou. A entrega não foi confirmada. Quais provas sustentam a cobrança?",
+      "case_ids": [
+        "EXT-003",
+        "EXT-005",
+        "EXT-006"
+      ],
+      "search_terms": [
+        "ecommerce",
+        "e-commerce",
+        "moda",
+        "roupas",
+        "vestuario",
+        "bebê",
+        "infantil",
+        "grao de gente",
+        "yeesco",
+        "lado rosa"
+      ]
+    },
+    {
+      "slug": "energia-e-servicos",
+      "title": "Energia e serviços",
+      "eyebrow": "APAGÕES · CONCESSIONÁRIAS · RESSARCIMENTO",
+      "description": "A luz acabou. O prejuízo ficou com o consumidor. Quanto tempo durou e qual foi a resposta da concessionária?",
+      "case_ids": [
+        "EXT-004",
+        "EXT-008"
+      ],
+      "search_terms": [
+        "energia",
+        "apagao",
+        "enel",
+        "light",
+        "eletricidade",
+        "ressarcimento",
+        "rio de janeiro",
+        "sao paulo"
+      ]
+    }
+  ]
+}
