@@ -220,3 +220,7 @@ A separate, **not deployed**, Cloudflare Worker + D1 prototype lives in services
 The static site now adds **four separately sourced public institutional case studies** (Hurb, 123milhas, Yeesco and Enel São Paulo), **six attributed personal reports**, **three case-specific consumer guides** and About/Editorial Standards. These are not extensions of the first-party case schema: no invented contracts, CNPJs, interviews or updates. Pages use a separate sourced JSON catalog and reusable Astro static routes, with sector period, source type, company's documented response, document chronology and what remains unknown.
 
 See `docs/static-public-case-research.md`. Data: `src/data/public-case-atlas.json` and `src/data/public-case-guides.json`. Run `npm run verify:public-case-atlas` (now included in `verify:data`) before publishing more case entries. Avoid reproducing personal identifiers or historical claims as current outcomes.
+
+## Static case library second batch — 2026-11-10
+
+Expanded the external consumer case atlas with Grão de Gente, Lado Rosa, Novo Mundo Goiás and Light Rio July 2026, plus six more attributed personal stories that show both unresolved complaints at the time and resolved late deliveries. Added an original guide on the distinction between unfulfilled purchases and credit handling in judicial recovery proceedings. Editorial attribution, dates, official sources and company responses remain mandatory. These are not direct consumer interviews or private evidence collected by CasoAberto.

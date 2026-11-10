@@ -391,7 +391,7 @@
         "Diferencie a entrega efetiva de uma resposta genérica, e a habilitação de crédito do recebimento do dinheiro."
       ],
       "limits": "Comunicado de recuperação judicial e relatos de consumidores não equivalem à decretação de falência. O CasoAberto não verificou pedidos individuais, pagamento em juízo ou situação atual de cada credor; uma entrega tardia documentada não elimina os outros relatos.",
-      "guide_slug": "compra-online-nao-entregue",
+      "guide_slug": "compra-em-recuperacao-judicial",
       "story_slugs": [
         "mae-pedido-bebe-grao-de-gente-reembolso",
         "cliente-grao-de-gente-recebeu-atrasado"
@@ -564,7 +564,7 @@
         "Consulte a atualização posterior do Procon Goiás para verificar se o plano prometido foi entregue, sem presumir descumprimento futuro."
       ],
       "limits": "Dados de 9/11/2026 não comprovam como o prazo do Procon se encerrou nem a situação atual da recuperação judicial. Procedimento administrativo e recuperação não equivalem à falência decretada. Relatos individuais não são o conjunto de 2.203 ocorrências do órgão.",
-      "guide_slug": "compra-online-nao-entregue",
+      "guide_slug": "compra-em-recuperacao-judicial",
       "story_slugs": [
         "felipe-cama-entregue-depois-procon",
         "neusa-microondas-nao-entregue"

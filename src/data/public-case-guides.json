@@ -114,7 +114,10 @@
         }
       ],
       "related_case_slugs": [
-        "yeesco-compras-online-nao-entregues"
+        "yeesco-compras-online-nao-entregues",
+        "grao-de-gente-recuperacao-judicial-pedidos-bebe",
+        "lado-rosa-nao-entrega-procon-santa-catarina",
+        "novo-mundo-goias-entregas-procon-novembro-2026"
       ]
     },
     {
@@ -171,7 +174,67 @@
         }
       ],
       "related_case_slugs": [
-        "enel-sp-apagao-2025-ressarcimento"
+        "enel-sp-apagao-2025-ressarcimento",
+        "apagao-rio-julho-2026-light-ressarcimento"
+      ]
+    },
+    {
+      "slug": "compra-em-recuperacao-judicial",
+      "title": "A empresa entrou em recuperação judicial. Sua compra vai ser entregue ou devolvida?",
+      "description": "A data do pedido importa. Entenda as diferenças entre entrega, crédito habilitado, negociação e restituição para compras em empresa em recuperação judicial.",
+      "category": "Recuperação judicial e direitos do consumidor",
+      "updated_at": "2026-11-10",
+      "intro": "Uma empresa pediu recuperação judicial. O consumidor pagou antes disso, mas a mercadoria não foi entregue. Ainda existe um contrato e uma pretensão de crédito, porém a forma de cobrança pode mudar conforme o tipo de obrigação, a data e o estágio do procedimento judicial. Não confunda o protocolo de habilitação com pagamento efetivo nem anúncio de reorganização com encerramento de processo.",
+      "sections": [
+        {
+          "heading": "01 · Qual é o marco do seu contrato?",
+          "paragraphs": [
+            "Separe a data da compra, a data do pagamento, a data prometida para entrega e a data em que a empresa ingressou em recuperação judicial. Os efeitos processuais dependem da natureza do crédito e dos fatos aplicáveis; não é seguro presumir que toda compra anterior ou posterior terá tratamento idêntico.",
+            "Uma declaração de recuperação judicial não comprova que a empresa faliu nem que deixou de atender todos os clientes. Compare a mensagem da companhia com os atos da administração judicial e as orientações dos órgãos competentes, sempre pela data do procedimento."
+          ]
+        },
+        {
+          "heading": "02 · A empresa ofereceu o quê, exatamente?",
+          "paragraphs": [
+            "Há diferença entre entregar a mercadoria, conceder crédito em loja, oferecer acordo privado, reconhecer crédito no processo, realizar pagamento e cancelar uma compra. Cada ação exige documento distinto. Registre o que foi proposto, em qual canal e se você concordou.",
+            "Se uma proposta envolver adesão a plano, cessão de direitos, deságio, parcelamento ou renúncia, não conclua que ela é obrigatória sem ler o instrumento e consultar orientação adequada. Notícias antigas podem mencionar um prazo de habilitação ou negociação que já terminou."
+          ]
+        },
+        {
+          "heading": "03 · Como formular o pedido sem expor informações pessoais",
+          "paragraphs": [
+            "Identifique o fornecedor do contrato e a pessoa jurídica envolvida, descreva o serviço não entregue e apresente o número do pedido apenas em canal de atendimento adequado. Uma rede varejista pode ter várias empresas; o anúncio de recuperação de um grupo não comprova que todo produto ou loja tem a mesma obrigação processual.",
+            "Peça esclarecimento documental sobre a etapa atual do seu crédito ou a entrega. Guarde comprovantes, respostas, decisões e protocolos privados. Quando houver dúvida sobre habilitação judicial ou aceite de proposta, consulte o administrador judicial e assistência jurídica independente antes de praticar atos irreversíveis."
+          ]
+        }
+      ],
+      "checklist": [
+        "Data da compra e do pagamento com documento original.",
+        "Fornecedor contratual identificado, sem confundir matriz, grupo e unidade.",
+        "Prazo, serviço ou produto prometido e demonstração de não entrega.",
+        "Documentação do procedimento atual e canal oficial da administração judicial.",
+        "Proposta, decisão ou confirmação de pagamento efetivo, com data e condições."
+      ],
+      "request_example": "Contratei [produto/serviço] de [pessoa jurídica] em [data], com prazo [data], e mantenho os comprovantes em arquivo privado. Solicito esclarecimento documentado se a obrigação será executada ou tratada como crédito no procedimento aplicável, com identificação do canal competente, do estágio atual e de qualquer proposta formal. Não considero concluída a demanda sem confirmação verificável.",
+      "limits": "Este guia não identifica a natureza jurídica do seu crédito nem substitui orientação individual sobre prazo, habilitação, classificação de crédito, execução, ação judicial ou aceite de acordo. Recuperação judicial e falência são procedimentos distintos e não devem ser tratados como sinônimos.",
+      "sources": [
+        {
+          "name": "Grão de Gente — comunicado sobre o pedido de recuperação",
+          "url": "https://www.graodegente.com.br/institucional/comunicado-ao-mercado/"
+        },
+        {
+          "name": "Procon-SP — orientações sobre consumidores da 123milhas",
+          "url": "https://www.procon.sp.gov.br/consumidores-lesados-pela-123-milhas-devem-registrar-novamente-suas-reclamacoes-em-site-criado-a-pedido-da-justica/"
+        },
+        {
+          "name": "Portal 6 — reclamações e manifestação da Novo Mundo em 2026",
+          "url": "https://portal6.com.br/2026/11/09/apos-notificacao-do-procon-goias-novo-mundo-promete-plano-para-resolver-mais-de-400-reclamacoes-pendentes/"
+        }
+      ],
+      "related_case_slugs": [
+        "grao-de-gente-recuperacao-judicial-pedidos-bebe",
+        "novo-mundo-goias-entregas-procon-novembro-2026",
+        "123milhas-pacotes-cancelados-recuperacao-judicial"
       ]
     }
   ]
