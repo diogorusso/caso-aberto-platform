@@ -15,5 +15,5 @@ const plan=caseActionPlan(id);
   </div>
  </div>
  <CaseActionHub caseId={id}/>
- <section class="container space-y-5 py-12"><h2 class="m-0 text-2xl">Faça a pesquisa circular.</h2><CaseActionBar title={plan.title} summary={plan.summary} href={plan.href} printHref={'/casos/imprimir/'+(plan.href.split('/').filter(Boolean).pop()||plan.id)+'/'} showComplaint={!plan.isCivic}/></section>
+ <section class="container space-y-5 py-12"><h2 class="m-0 text-2xl">Faça a pesquisa circular.</h2><CaseActionBar caseId={plan.id} title={plan.title} summary={plan.summary} href={plan.href} printHref={'/casos/imprimir/'+(plan.href.split('/').filter(Boolean).pop()||plan.id)+'/'} showComplaint={!plan.isCivic}/></section>
 </BaseLayout>

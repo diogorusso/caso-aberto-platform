@@ -33,7 +33,7 @@ const metrics = [
         <h1 class="m-0">{item.chamada}</h1>
         <p class="m-0 max-w-3xl text-lg leading-relaxed text-white/75">{item.resumo}</p>
         <div class="flex flex-wrap gap-2.5">
-          <ButtonLink variant="brand" size="lg" href="#apoiar">{t.primaryCta}</ButtonLink>
+          <ButtonLink variant="brand" size="lg" href={"/casos/acoes/"+item.id+"/"}>Cobrar / Reclamar / Justiça ↗</ButtonLink>
           <ButtonLink variant="outline-inverse" size="lg" href={`${base}evidencias/`}>{t.secondaryCta} ↗</ButtonLink>
         </div>
       </div>

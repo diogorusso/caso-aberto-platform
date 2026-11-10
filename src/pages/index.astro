@@ -51,7 +51,7 @@ const pathways = [
   {featuredCase&&<Section eyebrow="CASO EM DESTAQUE · A COBRANÇA COMEÇA AQUI" title="R$ 190 mil pagos. Prazo estourado. Cadê os móveis?" description="A contratação da unidade de Ipanema abriu o arquivo CasoAberto. O consumidor pagou. A entrega não ocorreu no prazo relatado. Contrato, cronologia, empresa e perguntas estão publicados.">
     <a slot="action" class="text-link font-semibold" href={casePath(featuredCase)}>Acompanhar o caso em destaque ↗</a>
     <CaseCard item={featuredCase} featured/>
-    <CaseActionBar title={featuredCase.titulo} summary={featuredCase.resumo} href={casePath(featuredCase)} printHref={"/casos/imprimir/"+featuredCase.slug+"/"}/>
+    <CaseActionBar title={featuredCase.titulo} summary={featuredCase.resumo} href={casePath(featuredCase)} caseId={featuredCase.id} printHref={"/casos/imprimir/"+featuredCase.slug+"/"}/>
    </Section>}
   <Section tone="muted" eyebrow="ACERVO DE PESQUISA" title="Não é só um problema. São setores inteiros cobrados." description="Viagens, entregas, móveis, energia e política. Todas as pesquisas do CasoAberto estão organizadas num único arquivo, com buscas por empresa, cidade, problema e categoria.">
     <a slot="action" class="text-link font-semibold" href="/casos/#pesquisar-casos">Pesquisar todos os casos ↗</a>

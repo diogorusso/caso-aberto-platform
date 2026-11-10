@@ -2,6 +2,7 @@
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import CaseVisualStory from '../../../../components/CaseVisualStory.astro';
 import CaseActionBar from '../../../../components/CaseActionBar.astro';
+import CaseActionHub from '../../../../components/CaseActionHub.astro';
 import atlas from '../../../../data/public-case-atlas.json';
 import {caseStudies,categoryHref} from '../../../../lib/case-catalog';
 export function getStaticPaths(){return atlas.cases.map(study=>({params:{slug:study.slug},props:{study}}));}
@@ -15,7 +16,8 @@ const nearby=caseStudies.filter(item=>item.categorySlug===catalogEntry?.category
 <BaseLayout title={study.headline+' | Pesquisa CasoAberto'} description={study.deck} type="article" dateModified={study.reviewed_at} breadcrumbs={[{name:'Início',item:'/'},{name:'Casos',item:'/casos/'},{name:study.company,item:caseUrl}]}>
 <article>
   <header class="bg-primary py-16 text-primary-foreground"><div class="container max-w-5xl space-y-5"><p class="m-0 text-xs font-bold uppercase tracking-wider text-[#ff917e]">CASO DOCUMENTADO · {study.sector}</p><h1 class="m-0 text-4xl leading-tight md:text-6xl">{study.headline}</h1><p class="max-w-4xl text-xl text-white/80">{study.deck}</p><p class="m-0 text-sm text-white/60">Caso pesquisado: {study.state} · Revisão: {study.reviewed_at.split('-').reverse().join('/')}</p></div></header>
-  <div class="container py-5"><CaseActionBar title={study.headline} summary={study.deck} href={caseUrl} printHref={'/casos/imprimir/'+study.slug+'/'} /></div>
+  <div class="container py-5"><CaseActionBar title={study.headline} summary={study.deck} href={caseUrl} caseId={study.id} printHref={'/casos/imprimir/'+study.slug+'/'} /></div>
+  <CaseActionHub caseId={study.id} compact/>
   <CaseVisualStory caseId={study.id}/>
   <div class="container grid max-w-6xl gap-10 py-14 lg:grid-cols-[minmax(0,1fr)_17rem]">
     <div class="min-w-0 space-y-10">
