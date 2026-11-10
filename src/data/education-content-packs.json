@@ -1,0 +1,369 @@
+{
+  "version": 1,
+  "review_date": "2026-11-09",
+  "visibility": "internal-draft-marketing-assets",
+  "source_kind": "public-snippet-derivative",
+  "note": "Material editorial derivado dos insights públicos, jamais de exportação literal do playbook privado. Exige revisão humana antes de distribuição.",
+  "packs": [
+    {
+      "slug": "privacidade-sem-ilusoes",
+      "hook": "Privacidade não é ficar invisível",
+      "question": "Que diferença há entre bloquear rastreamento e eliminar dados já compartilhados?",
+      "product_slug": "pegadas-digitais",
+      "article_slug": "como-remover-dados-de-corretores",
+      "limit": "Prevenção, correção e remoção são operações distintas.",
+      "format": "card-social-ou-newsletter",
+      "status": "roteiro-editorial",
+      "channel_adaptations": [
+        "card-educativo",
+        "roteiro-curto",
+        "FAQ",
+        "newsletter"
+      ],
+      "publication_url": null,
+      "review_status": "draft-human-review",
+      "source_url": "https://www.gov.br/anpd/pt-br/assuntos/titular-de-dados-1/direito-dos-titulares",
+      "read_more_url": "/autonomia-digital/guias/como-remover-dados-de-corretores/",
+      "product_preview_url": "/academia/pegadas-digitais/",
+      "caption": "Privacidade não é desaparecer da internet. Bloquear um novo rastreador reduz observações futuras; não apaga perfis vendidos antes, nem muda uma decisão automatizada já tomada. A pergunta útil é: o que parou de circular, em qual sistema e desde quando? Comece mapeando o serviço e a fonte do dado.",
+      "carousel": [
+        "Privacidade não é invisibilidade",
+        "Bloquear coleta futura não é eliminar cópias antigas",
+        "Peça informação sobre origem, finalidade e destinatário",
+        "Exija um resultado verificável: o que mudou?"
+      ],
+      "short_video_script": "Você bloqueou rastreadores. Excelente. Mas a informação que já foi coletada desapareceu? Não necessariamente. Existem diferenças entre impedir um novo envio, corrigir um cadastro, retirar um dado da busca e solicitar eliminação. Sem saber qual operação aconteceu, o selo verde de privacidade pode enganar. Nosso insight traz um ponto de partida.",
+      "newsletter_excerpt": "O pequeno sucesso de apertar um botão pode esconder uma pergunta maior: a proteção mudou apenas o navegador ou também os destinatários dos dados? Nesta edição, separamos prevenção, retirada de publicação e exclusão de registros."
+    },
+    {
+      "slug": "cookie-nao-e-tudo",
+      "hook": "Apagou cookies. E o restante?",
+      "question": "Por que cookies não são a única forma de reconhecer uma sessão?",
+      "product_slug": "pegadas-digitais",
+      "article_slug": "revogacao-de-consentimento-na-pratica",
+      "limit": "O navegador não mostra toda a cadeia entre servidores.",
+      "format": "card-social-ou-newsletter",
+      "status": "roteiro-editorial",
+      "channel_adaptations": [
+        "card-educativo",
+        "roteiro-curto",
+        "FAQ",
+        "newsletter"
+      ],
+      "publication_url": null,
+      "review_status": "draft-human-review",
+      "source_url": "https://www.gov.br/anpd/pt-br/assuntos/titular-de-dados-1/direito-dos-titulares",
+      "read_more_url": "/autonomia-digital/guias/revogacao-de-consentimento-na-pratica/",
+      "product_preview_url": "/academia/pegadas-digitais/",
+      "caption": "Apagar cookies é uma ação útil, mas não equivale a um navegador irreconhecível. Configuração, conta autenticada e dados recebidos por servidores podem relacionar sessões. Não procure um truque mágico: procure entender quem observa quais sinais e como reduzir vínculos entre contextos.",
+      "carousel": [
+        "Limpou cookies. E agora?",
+        "Sessões podem continuar relacionadas por outros sinais",
+        "Um login desfaz muita separação entre contextos",
+        "Teste com uma pergunta: quem continua observando?"
+      ],
+      "short_video_script": "Cookies são só uma peça do problema. A sessão também pode conter informações de navegador, rede e histórico autenticado. A mesma pessoa pode ser identificada por vários mecanismos, com graus diferentes de confiabilidade. Por isso, 'limpei cookies' não deve ser traduzido como 'meus dados foram apagados'.",
+      "newsletter_excerpt": "Você pode reduzir o vínculo entre contextos sem prometer invisibilidade. Veja por que a higiene de cookies é um controle útil, mas parcial, e onde suas limitações aparecem."
+    },
+    {
+      "slug": "identidade-vinculada",
+      "hook": "Quando o sistema erra sua identidade",
+      "question": "Como contas compartilhadas misturam identidades estatísticas?",
+      "product_slug": "pegadas-digitais",
+      "article_slug": "quando-deletar-nao-apaga",
+      "limit": "Um dispositivo identificado não prova a identidade civil.",
+      "format": "card-social-ou-newsletter",
+      "status": "roteiro-editorial",
+      "channel_adaptations": [
+        "card-educativo",
+        "roteiro-curto",
+        "FAQ",
+        "newsletter"
+      ],
+      "publication_url": null,
+      "review_status": "draft-human-review",
+      "source_url": "https://consumer.ftc.gov/articles/what-know-about-people-search-sites-sell-your-information",
+      "read_more_url": "/autonomia-digital/guias/quando-deletar-nao-apaga/",
+      "product_preview_url": "/academia/pegadas-digitais/",
+      "caption": "Uma conta compartilhada não representa necessariamente uma pessoa. Um modelo pode relacionar compras, buscas e histórico de uma casa como se todos fossem um único perfil. O risco não depende de acertar seu nome: uma classificação errada já pode afetar anúncios, suspeitas ou recomendações.",
+      "carousel": [
+        "Mesmo dispositivo, pessoas diferentes",
+        "Vínculo entre sessões é inferência, não prova de autoria",
+        "Um erro pode produzir consequência antes de ser corrigido",
+        "Ao contestar, documente contexto e alternativa plausível"
+      ],
+      "short_video_script": "Uma família usa o mesmo tablet. Um sistema interpreta a atividade como se viesse da mesma pessoa. O perfil resultante pode estar misturado sem que ninguém perceba. Quando falamos de identidade digital, precisamos separar dispositivo, conta, residência e indivíduo. Uma associação provável não é identidade comprovada.",
+      "newsletter_excerpt": "Erros de identificação não são detalhes técnicos sem consequência. A nova pergunta é como documentar decisões que nascem de vínculos imprecisos entre dados."
+    },
+    {
+      "slug": "revogar-nao-e-apagar",
+      "hook": "Revogar consentimento não é apagar dados",
+      "question": "Como formular uma pergunta verificável sobre o que parou de ser tratado?",
+      "product_slug": "pegadas-digitais",
+      "article_slug": "revogacao-de-consentimento-na-pratica",
+      "limit": "Um clique confirmado não prova propagação aos destinatários.",
+      "format": "card-social-ou-newsletter",
+      "status": "roteiro-editorial",
+      "channel_adaptations": [
+        "card-educativo",
+        "roteiro-curto",
+        "FAQ",
+        "newsletter"
+      ],
+      "publication_url": null,
+      "review_status": "draft-human-review",
+      "source_url": "https://www.gov.br/anpd/pt-br/assuntos/titular-de-dados-1/direito-dos-titulares",
+      "read_more_url": "/autonomia-digital/guias/revogacao-de-consentimento-na-pratica/",
+      "product_preview_url": "/academia/pegadas-digitais/",
+      "caption": "A plataforma disse 'consentimento revogado'. O que isso prova? Que uma preferência foi registrada — não necessariamente que cada parceiro deixou de receber eventos, que cópias foram apagadas ou que todos os sistemas atualizaram o estado. Peça o alcance da medida e registre o que é observável.",
+      "carousel": [
+        "Revogar é uma mudança distribuída",
+        "Interface, scripts, servidores e parceiros podem divergir",
+        "A resposta precisa indicar finalidade e data",
+        "Não confunda confirmação visual com prova completa"
+      ],
+      "short_video_script": "Desativar um controle de publicidade pode mudar a interface primeiro e os fluxos técnicos depois. Cada etapa tem um responsável. Um teste local observa só parte dessa cadeia. A solução não é afirmar que tudo falhou, mas especificar o fluxo, documentar o que persistiu e pedir explicação verificável.",
+      "newsletter_excerpt": "Um clique de retirada de consentimento tem múltiplas consequências possíveis. Entenda por que 'preferência salva' é começo de auditoria, não fim da investigação."
+    },
+    {
+      "slug": "anuncio-vs-recomendacao",
+      "hook": "Anúncio não é recomendação",
+      "question": "Como separar conteúdo pago do ranking orgânico?",
+      "product_slug": "algoritmos-e-poder",
+      "article_slug": "leiloes-de-anuncios-e-perfis-invisiveis",
+      "limit": "Uma captura isolada não comprova compra de alcance.",
+      "format": "card-social-ou-newsletter",
+      "status": "roteiro-editorial",
+      "channel_adaptations": [
+        "card-educativo",
+        "roteiro-curto",
+        "FAQ",
+        "newsletter"
+      ],
+      "publication_url": null,
+      "review_status": "draft-human-review",
+      "source_url": "https://search.ftc.gov/policy/advocacy-research/tech-at-ftc/2024/12/unpacking-real-time-bidding-through-ftcs-case-mobilewalla",
+      "read_more_url": "/autonomia-digital/guias/leiloes-de-anuncios-e-perfis-invisiveis/",
+      "product_preview_url": "/academia/algoritmos-e-poder/",
+      "caption": "O que aparece no seu feed pode ter sido pago, recomendado, buscado ou publicado por alguém que você segue. Sem distinguir essas origens, qualquer análise sobre manipulação começa confundindo fenômenos diferentes. Identifique o rótulo, a origem e o período antes de fazer uma afirmação.",
+      "carousel": [
+        "Nem tudo que aparece foi impulsionado",
+        "Anúncio, busca, seguido e recomendado são categorias distintas",
+        "A entrega depende de regras e contexto",
+        "Documente origem antes de afirmar intenção"
+      ],
+      "short_video_script": "Uma pessoa vê um post político na primeira posição da tela. Isso prova que alguém pagou para promovê-lo? Não. O feed mistura diferentes mecanismos. É necessário identificar a origem do conteúdo, registrar a data e entender quais explicações alternativas permanecem.",
+      "newsletter_excerpt": "Uma análise de publicidade precisa começar por um inventário de categorias. Veja como formular a primeira pergunta pública sem confundir ranking e compra de alcance."
+    },
+    {
+      "slug": "alcance-e-efeito",
+      "hook": "Alcance não é mudança de opinião",
+      "question": "Por que impressão, clique, engajamento e comportamento são distintos?",
+      "product_slug": "algoritmos-e-poder",
+      "article_slug": "como-auditar-o-feed-sem-confundir-causas",
+      "limit": "Efeitos políticos exigem mensurações próprias.",
+      "format": "card-social-ou-newsletter",
+      "status": "roteiro-editorial",
+      "channel_adaptations": [
+        "card-educativo",
+        "roteiro-curto",
+        "FAQ",
+        "newsletter"
+      ],
+      "publication_url": null,
+      "review_status": "draft-human-review",
+      "source_url": "https://doi.org/10.1038/s41586-026-10098-2",
+      "read_more_url": "/autonomia-digital/guias/como-auditar-o-feed-sem-confundir-causas/",
+      "product_preview_url": "/academia/algoritmos-e-poder/",
+      "caption": "Um conteúdo ganhou visualizações. Isso não prova que mudou a opinião de quem viu. Exposição, clique, interação, lembrança e comportamento são variáveis diferentes. A pesquisa que ignora essa separação pode exagerar efeitos e esconder impactos reais que ainda não foram medidos.",
+      "carousel": [
+        "Visualização não é persuasão",
+        "Interação não é concordância",
+        "Mudança de escolha exige evidência própria",
+        "Pergunte qual resultado o estudo mediu"
+      ],
+      "short_video_script": "Uma publicação alcança milhões de pessoas. Quantas prestaram atenção, mudaram de posição ou tomaram uma decisão? O número inicial não responde. Uma investigação séria separa entrega, consumo e comportamento. Essa distinção protege a discussão pública de conclusões fáceis.",
+      "newsletter_excerpt": "A primeira disciplina da auditoria algorítmica é o vocabulário: alcance, consumo e escolha não são sinônimos. Aprenda a ler estudos com essa separação."
+    },
+    {
+      "slug": "comparar-dois-feeds",
+      "hook": "Dois feeds diferentes comprovam viés?",
+      "question": "Quais variáveis podem explicar a personalização?",
+      "product_slug": "algoritmos-e-poder",
+      "article_slug": "como-auditar-o-feed-sem-confundir-causas",
+      "limit": "Contas, histórico e tempo podem explicar diferenças.",
+      "format": "card-social-ou-newsletter",
+      "status": "roteiro-editorial",
+      "channel_adaptations": [
+        "card-educativo",
+        "roteiro-curto",
+        "FAQ",
+        "newsletter"
+      ],
+      "publication_url": null,
+      "review_status": "draft-human-review",
+      "source_url": "https://doi.org/10.1038/s41586-026-10098-2",
+      "read_more_url": "/autonomia-digital/guias/como-auditar-o-feed-sem-confundir-causas/",
+      "product_preview_url": "/academia/algoritmos-e-poder/",
+      "caption": "Você e um amigo pesquisam o mesmo tema e recebem conteúdos diferentes. Há uma observação importante, mas ainda faltam variáveis: contas seguidas, histórico, dispositivo, idioma e horário. Duas capturas podem abrir uma pesquisa, não encerrá-la.",
+      "carousel": [
+        "Duas telas diferentes fazem uma boa pergunta",
+        "Histórico e contas seguidas alteram o resultado",
+        "Compare datas, tipo de item e contexto",
+        "Descreva o limite antes de atribuir causa"
+      ],
+      "short_video_script": "Dois feeds diferentes são prova de manipulação intencional? Não por si só. São um ponto de partida para formular o experimento. O desafio é encontrar o que mudou e testar outras explicações sem fingir que uma comparação casual é um estudo causal.",
+      "newsletter_excerpt": "Uma observação vira pesquisa quando você descreve o que mediu e o que poderia explicar o mesmo resultado. Veja quatro perguntas fundamentais antes de acusar um algoritmo."
+    },
+    {
+      "slug": "parceiros-do-anuncio",
+      "hook": "Quem recebe dados quando um anúncio é leiloado?",
+      "question": "Quais observadores participam sem contato direto com você?",
+      "product_slug": "algoritmos-e-poder",
+      "article_slug": "leiloes-de-anuncios-e-perfis-invisiveis",
+      "limit": "Não presuma que todos receberam os mesmos dados.",
+      "format": "card-social-ou-newsletter",
+      "status": "roteiro-editorial",
+      "channel_adaptations": [
+        "card-educativo",
+        "roteiro-curto",
+        "FAQ",
+        "newsletter"
+      ],
+      "publication_url": null,
+      "review_status": "draft-human-review",
+      "source_url": "https://search.ftc.gov/policy/advocacy-research/tech-at-ftc/2024/12/unpacking-real-time-bidding-through-ftcs-case-mobilewalla",
+      "read_more_url": "/autonomia-digital/guias/leiloes-de-anuncios-e-perfis-invisiveis/",
+      "product_preview_url": "/academia/algoritmos-e-poder/",
+      "caption": "Quando um espaço publicitário é disputado, o site visitado pode ser apenas uma parte da cadeia. Há fornecedores de tecnologia e anunciantes que não mantêm relação direta com a pessoa. Os dados que circulam variam — mas a existência dessa cadeia justifica perguntas públicas sobre destinatários e finalidade.",
+      "carousel": [
+        "O anúncio tem mais participantes do que você vê",
+        "SDKs, exchanges e compradores cumprem papéis diferentes",
+        "Nem todo participante recebe dados idênticos",
+        "O direito à explicação começa com mapear a cadeia"
+      ],
+      "short_video_script": "Você entrou num site e viu um anúncio. Quem participou dessa escolha? Pode haver uma série de fornecedores com funções distintas. O fluxo não deve ser tratado como universal, mas o mapa de participantes ajuda a descobrir quais perguntas fazer sobre destino, finalidade e retenção dos dados.",
+      "newsletter_excerpt": "A cadeia de publicidade está frequentemente fora do campo de visão do usuário. Nosso novo insight mostra como investigar a arquitetura sem inventar um vazamento específico."
+    },
+    {
+      "slug": "quando-agente-age",
+      "hook": "Quando seu assistente pode agir por você?",
+      "question": "A diferença entre conselho e execução depende de que permissões?",
+      "product_slug": "ia-agentes-e-protecao",
+      "article_slug": "agentes-de-ia-e-permissoes",
+      "limit": "Um prompt não substitui autorização em código.",
+      "format": "card-social-ou-newsletter",
+      "status": "roteiro-editorial",
+      "channel_adaptations": [
+        "card-educativo",
+        "roteiro-curto",
+        "FAQ",
+        "newsletter"
+      ],
+      "publication_url": null,
+      "review_status": "draft-human-review",
+      "source_url": "https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html",
+      "read_more_url": "/autonomia-digital/guias/agentes-de-ia-e-permissoes/",
+      "product_preview_url": "/academia/ia-agentes-e-protecao/",
+      "caption": "Um assistente que responde a perguntas é diferente de um agente capaz de enviar mensagens, ler arquivos e alterar sistemas. A autorização precisa existir em credenciais, escopos e confirmação da ação — e continuar funcionando quando o modelo interpretar mal uma instrução.",
+      "carousel": [
+        "O assistente pode aconselhar ou executar",
+        "Uma página lida não pode autorizar uma ação por você",
+        "Permissões precisam valer fora do prompt",
+        "Revise o destinatário antes de publicar ou enviar"
+      ],
+      "short_video_script": "Quando a IA está conectada ao seu e-mail, a pergunta não é apenas o que ela sabe. É o que ela pode fazer. Um texto malicioso em uma página pode tentar transformá-la em mensageira de dados. A defesa precisa estar na política de acesso e no checkpoint antes da ação.",
+      "newsletter_excerpt": "Uma ferramenta poderosa também é uma superfície de risco. Veja por que controles de ação não podem depender apenas de uma frase escrita no prompt."
+    },
+    {
+      "slug": "arquivo-deepfake",
+      "hook": "Como verificar um vídeo antes de acusar?",
+      "question": "Assinatura digital e verdade factual respondem perguntas diferentes.",
+      "product_slug": "ia-agentes-e-protecao",
+      "article_slug": "deepfake-prova-ou-encenacao",
+      "limit": "Metadados ausentes não comprovam conteúdo sintético.",
+      "format": "card-social-ou-newsletter",
+      "status": "roteiro-editorial",
+      "channel_adaptations": [
+        "card-educativo",
+        "roteiro-curto",
+        "FAQ",
+        "newsletter"
+      ],
+      "publication_url": null,
+      "review_status": "draft-human-review",
+      "source_url": "https://spec.c2pa.org/specifications/specifications/2.2/specs/ContentCredentials.html",
+      "read_more_url": "/autonomia-digital/guias/deepfake-prova-ou-encenacao/",
+      "product_preview_url": "/academia/ia-agentes-e-protecao/",
+      "caption": "Um arquivo com assinatura válida pode mostrar uma cena encenada. Um arquivo sem metadados pode ser completamente autêntico. Proveniência e verdade factual não são equivalentes. Antes de acusar alguém, investigue o original, o contexto e evidências independentes.",
+      "carousel": [
+        "Assinatura responde quem fez o arquivo e como ele mudou",
+        "Autenticidade não comprova a interpretação da cena",
+        "Ausência de credenciais não demonstra fraude",
+        "Busque contexto e versões antes de compartilhar"
+      ],
+      "short_video_script": "Um vídeo tem selo de origem. Isso garante que a afirmação anexada ao vídeo é verdadeira? Não. A assinatura pode comprovar propriedades do arquivo, mas não a intenção, o contexto nem aquilo que ficou fora do enquadramento. A investigação precisa ser maior que o detector.",
+      "newsletter_excerpt": "Deepfake é um problema real; falsas certezas sobre detectores também. Este insight separa integridade do arquivo e verdade do acontecimento."
+    },
+    {
+      "slug": "permissoes-residuais",
+      "hook": "Desconectar um agente realmente revoga seu acesso?",
+      "question": "Como distinguir interface, token ativo, cópias e permissões?",
+      "product_slug": "ia-agentes-e-protecao",
+      "article_slug": "agentes-de-ia-e-permissoes",
+      "limit": "Revogação não garante eliminação de dados passados.",
+      "format": "card-social-ou-newsletter",
+      "status": "roteiro-editorial",
+      "channel_adaptations": [
+        "card-educativo",
+        "roteiro-curto",
+        "FAQ",
+        "newsletter"
+      ],
+      "publication_url": null,
+      "review_status": "draft-human-review",
+      "source_url": "https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html",
+      "read_more_url": "/autonomia-digital/guias/agentes-de-ia-e-permissoes/",
+      "product_preview_url": "/academia/ia-agentes-e-protecao/",
+      "caption": "Você desconectou um agente da sua conta. Ótimo. Mas uma permissão exibida na tela, tokens ainda válidos, cópias obtidas antes e logs são estados diferentes. Uma auditoria responsável testa a revogação por recurso e não promete que a memória apagou sozinha.",
+      "carousel": [
+        "Desconectado na tela não descreve todo o sistema",
+        "Verifique tokens, escopos e atividades recentes",
+        "Cópias passadas exigem tratamento próprio",
+        "Teste a recusa de acesso sem dados de terceiros"
+      ],
+      "short_video_script": "Uma integração aparece como desconectada no painel. Isso é suficiente para provar que o agente não acessa mais seus arquivos? Só uma verificação da autorização efetiva responde. E ela ainda não resolve cópias armazenadas anteriormente. A solução é testar fronteiras, não supor segurança.",
+      "newsletter_excerpt": "A revogação de acesso é uma questão técnica com consequências concretas. Aprenda a perguntar o que deixou de funcionar e o que pode continuar armazenado."
+    },
+    {
+      "slug": "pedido-lgpd",
+      "hook": "Qual direito solicitar pela LGPD?",
+      "question": "Acesso, correção e revisão de decisão são pedidos diferentes.",
+      "product_slug": "cidadania-e-direitos",
+      "article_slug": "lgpd-direitos-e-decisoes-algoritmicas",
+      "limit": "A aplicação depende de base legal e situação concreta.",
+      "format": "card-social-ou-newsletter",
+      "status": "roteiro-editorial",
+      "channel_adaptations": [
+        "card-educativo",
+        "roteiro-curto",
+        "FAQ",
+        "newsletter"
+      ],
+      "publication_url": null,
+      "review_status": "draft-human-review",
+      "source_url": "https://www.gov.br/anpd/pt-br/assuntos/titular-de-dados-1/direito-dos-titulares",
+      "read_more_url": "/autonomia-digital/guias/lgpd-direitos-e-decisoes-algoritmicas/",
+      "product_preview_url": "/academia/cidadania-e-direitos/",
+      "caption": "Você quer contestar uma decisão automatizada. Antes de escrever 'quero excluir todos meus dados', identifique a decisão, a organização responsável e o direito que realmente responde ao problema: acesso, correção, informações ou revisão. Um pedido específico costuma gerar uma resposta mais auditável.",
+      "carousel": [
+        "O direito depende do tratamento em questão",
+        "Acesso, correção e revisão não são sinônimos",
+        "Use canal oficial, registre protocolo e data",
+        "Exija esclarecimento específico, não uma resposta genérica"
+      ],
+      "short_video_script": "Uma conta foi bloqueada e ninguém explicou por quê. O pedido mais útil pode ser sobre o critério de decisão e o canal de recurso, não um pedido genérico de apagamento. Direitos digitais funcionam melhor quando a pessoa identifica o evento e faz uma solicitação verificável.",
+      "newsletter_excerpt": "Não existe botão mágico de proteção de dados. Nesta edição, mostramos como separar pedidos de acesso, correção e revisão com perguntas específicas."
+    }
+  ]
+}
