@@ -3,7 +3,7 @@ import ledger from '../../../data/platform-observatory.json';
 // Escape quotes/newlines and guard spreadsheet formula execution on user-downloaded CSV.
 const cell = (raw: unknown): string => {
   let s = String(raw ?? '');
-  if (/^[\\s]*[=+@-]/.test(s)) s = "'" + s;
+  if (/^\s*[=+@-]/.test(s)) s = "'" + s;
   return '"' + s.replaceAll('"','""') + '"';
 };
 export const GET: APIRoute = () => {

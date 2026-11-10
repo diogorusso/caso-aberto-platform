@@ -42,3 +42,9 @@ Os arquivos `build/editorial-drafts/*.md` e `*.json` devem ser revisados e produ
 - Produto: quando existir plataforma de venda, medir apenas eventos com consentimento e finalidade documentada; nunca perfis de convicção política de leitores.
 - Revisão: a fila gerada é pauta, não fato já publicado; acompanhar versões e correções posteriores em cada meio.
 - Verificação: `npm run verify:data && npm run check && npm run build` e `npm run verify:content-packs`.
+
+## Pacotes originais revisáveis para lançamento
+
+Além da geração local sem IA em `build/editorial-drafts/`, existem **12 packs editoriais curados** em `campaign/education/*.md` (um por tema) com quatro quadros de carrossel, legenda, roteiro de vídeo, abertura de newsletter, links públicos e limites da evidência. Estes são rascunhos, não conteúdos já distribuídos. O manifesto `src/data/education-content-packs.json` registra o material para que seja reutilizado com fidelidade.
+
+O gate `npm run verify:curated-content` confere versão, referências, mapeamento ao produto, tamanho e presença do material em arquivos Markdown; ainda exige revisão humana contextual de conteúdo, acessibilidade e fontes. **Não executar distribuição automática** ou adicionar a obra integral ao projeto público.
