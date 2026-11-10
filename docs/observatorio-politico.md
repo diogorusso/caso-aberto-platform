@@ -5,6 +5,7 @@
 ## Arquitetura entregue
 
 - Fonte estruturada: `src/data/political-observatory.json` — sete investigações, registro de fontes, índice de pessoas/instituições, vínculos documentais e fotografia histórica de 13 patrocínios da Série A.
+- Exportação pública de dados e vínculos: `/observatorio/politica/dados.json` (JSON estático sem dados privados, com links de proveniência).
 - Índice SEO: `/observatorio/politica/`; páginas derivadas de `getStaticPaths()`: `/observatorio/politica/:slug/`.
 - Reuso do `BaseLayout`, `CivicPageHeader`, identidade, utilitários Tailwind existentes, navegação institucional e links nos casos.
 - Auditoria: `npm run verify:politics` valida IDs, datas, URLs, classificação das fontes, relações, cronologia, vigência histórica e exclusão de possíveis CPFs; `npm run verify:data` incorpora a checagem.
