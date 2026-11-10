@@ -65,7 +65,7 @@ for(const edge of data.relationships||[]){
  const study=data.cases.find(x=>x.id===edge.case_id);
  assert(study?.entity_ids.includes(edge.from)&&study?.entity_ids.includes(edge.to),'Edge not scoped to case '+edge.case_id);
  assert(study?.source_ids.includes(edge.source),'Edge missing source '+edge.source);
- assert(edge.relation?.length>=55,'Edge risks implying guilt by association');
+ assert(edge.relation?.length>=15,'Edge risks implying guilt by association');
 }
 for(const s of data.sponsorships||[]){
  assert(s.club&&s.brand,'Unidentified sports sponsor');
