@@ -1,0 +1,606 @@
+{
+  "version": 1,
+  "updated_at": "2026-11-10",
+  "purpose": "Casos públicos revisáveis, distintos de dossiês originais e sem alegação de contato direto com consumidores.",
+  "cases": [
+    {
+      "id": "EXT-001",
+      "slug": "hurb-pacotes-flexiveis-viagens-reembolso",
+      "company": "Hurb (Hotel Urbano)",
+      "sector": "Viagens e turismo",
+      "state": "Brasil · série histórica 2023–2025",
+      "headline": "Você comprou a viagem. A data nunca chegou. Como a Hurb respondeu?",
+      "deck": "Pacotes com datas flexíveis, viagens adiadas e consumidores cobrando reembolso: documentos do Procon e da Senacon explicam como o problema se tornou uma questão pública.",
+      "status_label": "Medidas administrativas documentadas; situação individual depende do contrato",
+      "reviewed_at": "2026-11-10",
+      "first_record": "2023-04-25",
+      "record_type": "fontes-oficiais-e-reportagem",
+      "key_fact": {
+        "metric": "7.554",
+        "label": "reclamações fundamentadas da Hurb no levantamento Procon-SP 2024",
+        "period": "exercício 2024, não volume de clientes únicos do Brasil",
+        "source_url": "https://www.procon.sp.gov.br/procon-sp-divulga-cadastro-das-empresas-mais-reclamadas-em-2024/"
+      },
+      "lead": "A venda de um pacote com datas flexíveis transfere a confirmação da viagem para depois do pagamento. Quando a empresa não apresenta datas utilizáveis e o reembolso não chega, o problema deixa de ser uma mudança de agenda: é a execução do contrato que precisa ser explicada.",
+      "verified": [
+        "O Procon-SP descreveu, em abril de 2023, registros de datas repetidamente prorrogadas, reservas canceladas e restituições não efetuadas conforme as reclamações examinadas.",
+        "O ranking de 2024 do Procon-SP registrou 7.554 reclamações fundamentadas da Hurb; a taxa de solução divulgada era de 0,3% na fase analisada, não uma taxa global sobre todos os clientes.",
+        "Em abril de 2025, o Ministério da Justiça divulgou medida da Senacon e o cancelamento do cadastro Cadastur pelo Ministério do Turismo; isso não equivale a uma sentença de falência."
+      ],
+      "timeline": [
+        {
+          "date": "2023-04-25",
+          "label": "Procon-SP detalha o padrão de reclamações",
+          "description": "A fiscalização descreve adiamentos, divergência de datas, cancelamentos e pedidos de reembolso relatados pelos consumidores.",
+          "source_url": "https://www.procon.sp.gov.br/reclamacoes-sobre-a-hurb-no-procon-sp/"
+        },
+        {
+          "date": "2025-03-14",
+          "label": "Ranking anual divulgado",
+          "description": "O Procon-SP publica os resultados de 2024 com recorte estadual e índice específico de solução.",
+          "source_url": "https://www.procon.sp.gov.br/procon-sp-divulga-cadastro-das-empresas-mais-reclamadas-em-2024/"
+        },
+        {
+          "date": "2025-04-17",
+          "label": "Governo informa cancelamento do cadastro turístico",
+          "description": "Segundo publicação do Ministério da Justiça, o Ministério do Turismo cancelou o registro da Hurb no Cadastur após medidas da Senacon.",
+          "source_url": "https://www.gov.br/mj/pt-br/assuntos/noticias/apos-medida-da-senacon-ministerio-do-turismo-cancela-cadastro-da-hurb"
+        }
+      ],
+      "other_side": "Em registros de 2023 analisados pelo Procon-SP, a empresa atribuía diferenças de datas à disponibilidade dos preços promocionais. O jornal Folha de S.Paulo registrou em 2024 ofertas de migração de pacote; cada contrato e resposta precisa ser verificado individualmente.",
+      "other_side_url": "https://www.procon.sp.gov.br/reclamacoes-sobre-a-hurb-no-procon-sp/",
+      "questions": [
+        "Quem assumiu, por escrito, a emissão das passagens e a reserva de hospedagem?",
+        "Qual prazo de entrega ou restituição foi efetivamente oferecido ao consumidor?",
+        "Há prova de reembolso, crédito utilizável ou nova viagem executada — não apenas uma proposta?"
+      ],
+      "steps": [
+        "Localize contrato, comprovante de pagamento, datas sugeridas e respostas recebidas.",
+        "Compare a modalidade contratada com medidas e comunicados oficiais correspondentes ao período.",
+        "Verifique canais do Procon e a situação atual do seu pedido; não use prazos antigos como se estivessem abertos hoje."
+      ],
+      "limits": "Arquivo sobre um setor e medidas públicas históricas. Não identifica a situação atual de cada contrato, não afirma que toda reclamação continua aberta, nem conclui falência ou responsabilidade de uma franquia não documentada.",
+      "guide_slug": "passagem-ou-pacote-de-viagem-nao-entregue",
+      "story_slugs": [
+        "carla-viagens-hurb-123milhas",
+        "marcelo-quatro-pacotes-hurb"
+      ],
+      "sources": [
+        {
+          "name": "Procon-SP — reclamações sobre a Hurb",
+          "url": "https://www.procon.sp.gov.br/reclamacoes-sobre-a-hurb-no-procon-sp/",
+          "published_at": "2023-04-25",
+          "kind": "Órgão público"
+        },
+        {
+          "name": "Procon-SP — ranking do exercício de 2024",
+          "url": "https://www.procon.sp.gov.br/procon-sp-divulga-cadastro-das-empresas-mais-reclamadas-em-2024/",
+          "published_at": "2025-03-14",
+          "kind": "Órgão público"
+        },
+        {
+          "name": "MJSP — medidas relativas à Hurb",
+          "url": "https://www.gov.br/mj/pt-br/assuntos/noticias/apos-medida-da-senacon-ministerio-do-turismo-cancela-cadastro-da-hurb",
+          "published_at": "2025-04-17",
+          "kind": "Órgão público"
+        }
+      ]
+    },
+    {
+      "id": "EXT-002",
+      "slug": "123milhas-pacotes-cancelados-recuperacao-judicial",
+      "company": "123milhas / Grupo 123 Milhas",
+      "sector": "Viagens e recuperação judicial",
+      "state": "Brasil · registros 2022–2025",
+      "headline": "Sua passagem foi cancelada. E agora você precisa entrar na fila de credores?",
+      "deck": "O caso 123milhas reúne compras individuais, cancelamentos de serviços e um processo de recuperação judicial: contratação, crédito e pagamento são etapas diferentes.",
+      "status_label": "Recuperação judicial documentada; verificar atualizações no TJMG",
+      "reviewed_at": "2026-11-10",
+      "first_record": "2023-09-01",
+      "record_type": "fontes-oficiais-e-reportagem",
+      "key_fact": {
+        "metric": "2023",
+        "label": "ano em que foi deferido o processamento da recuperação judicial",
+        "period": "marco de 2023, não decreto de falência nem comprovação de pagamento a clientes",
+        "source_url": "https://www.procon.sp.gov.br/123-milhas-2/"
+      },
+      "lead": "Comprar um pacote e não receber a emissão gera uma cobrança de contrato. Quando a empresa ingressa em recuperação judicial, o consumidor também precisa acompanhar o crédito reconhecido na lista pertinente — e o caminho processual pode mudar ao longo do tempo.",
+      "verified": [
+        "Em setembro de 2023, o Procon-SP informou o deferimento do processamento da recuperação judicial da 123milhas em Belo Horizonte.",
+        "Em junho de 2024, o Procon-SP alertou sobre a necessidade de documentação e consulta ao procedimento de cadastro de credores divulgado pela Justiça.",
+        "Em dezembro de 2025, reportagem da Radioagência Nacional descreveu etapa de revisão de créditos e alertou que aceitar determinadas propostas poderia afetar a participação em assembleia; os prazos da notícia não devem ser reutilizados em 2026 sem conferência."
+      ],
+      "timeline": [
+        {
+          "date": "2023-09-01",
+          "label": "Procon-SP comunica o marco da recuperação judicial",
+          "description": "O órgão descreve o deferimento judicial do processamento e seus efeitos sobre o atendimento aos consumidores.",
+          "source_url": "https://www.procon.sp.gov.br/123-milhas-2/"
+        },
+        {
+          "date": "2024-06-28",
+          "label": "Procon-SP orienta habilitação documental",
+          "description": "Reforça a diferença entre reclamação em Procon e participação no processo de recuperação judicial.",
+          "source_url": "https://www.procon.sp.gov.br/consumidores-lesados-pela-123-milhas-devem-registrar-novamente-suas-reclamacoes-em-site-criado-a-pedido-da-justica/"
+        },
+        {
+          "date": "2025-12-09",
+          "label": "Reportagem acompanha revisão de créditos",
+          "description": "O conteúdo registra um prazo histórico e modalidades de negociação; situação e prazos posteriores dependem dos autos.",
+          "source_url": "https://agenciabrasil.ebc.com.br/radioagencia-nacional/justica/audio/2025-12/123milhas-adesao-processo-de-revisao-de-credito-acaba-amanha"
+        }
+      ],
+      "other_side": "O processamento da recuperação judicial organiza a negociação de créditos sob supervisão judicial; não é, por definição, decretação de falência. A posição atual da empresa, administradores judiciais e credores deve ser conferida nos autos mais recentes.",
+      "other_side_url": "https://www.procon.sp.gov.br/123-milhas-2/",
+      "questions": [
+        "Seu nome e valor constam na lista pertinente da recuperação judicial?",
+        "O comprovante de pagamento e o comprovante de não emissão são distinguíveis?",
+        "A proposta apresentada altera direitos de voto ou outras opções processuais?"
+      ],
+      "steps": [
+        "Reúna comprovantes, e-mails, datas prometidas, vouchers e respostas da empresa.",
+        "Consulte diretamente fontes judiciais oficiais e os canais divulgados pelo administrador judicial, verificando as datas atuais.",
+        "Antes de aderir a uma proposta, compare seus termos com a orientação de um órgão de defesa do consumidor ou profissional habilitado."
+      ],
+      "limits": "Reportagens individuais de 2022 não são automaticamente casos do cancelamento em massa de agosto de 2023. Prazos de 2024 e 2025 são fatos históricos, não instruções válidas automaticamente hoje.",
+      "guide_slug": "passagem-ou-pacote-de-viagem-nao-entregue",
+      "story_slugs": [
+        "carla-viagens-hurb-123milhas",
+        "vivian-casamento-sem-passagens-123milhas",
+        "marcelo-ferias-nao-emitidas-123milhas"
+      ],
+      "sources": [
+        {
+          "name": "Procon-SP — 123 Milhas e recuperação judicial",
+          "url": "https://www.procon.sp.gov.br/123-milhas-2/",
+          "published_at": "2023-09-01",
+          "kind": "Órgão público"
+        },
+        {
+          "name": "Procon-SP — documentação de credores",
+          "url": "https://www.procon.sp.gov.br/consumidores-lesados-pela-123-milhas-devem-registrar-novamente-suas-reclamacoes-em-site-criado-a-pedido-da-justica/",
+          "published_at": "2024-06-28",
+          "kind": "Órgão público"
+        },
+        {
+          "name": "Radioagência Nacional — revisão de crédito",
+          "url": "https://agenciabrasil.ebc.com.br/radioagencia-nacional/justica/audio/2025-12/123milhas-adesao-processo-de-revisao-de-credito-acaba-amanha",
+          "published_at": "2025-12-09",
+          "kind": "Jornalismo"
+        }
+      ]
+    },
+    {
+      "id": "EXT-003",
+      "slug": "yeesco-compras-online-nao-entregues",
+      "company": "Yeesco",
+      "sector": "Comércio eletrônico e vestuário",
+      "state": "Brasil · registros 2023–2025",
+      "headline": "A roupa foi paga. O rastreamento andou. Mas o pedido chegou?",
+      "deck": "Atrasos, cobranças, mensagens padronizadas e dificuldade de cancelamento: o Procon-SP e relatos jornalísticos permitem reconstruir o problema de entrega no comércio eletrônico.",
+      "status_label": "Reclamações históricas e ações de órgãos documentadas",
+      "reviewed_at": "2026-11-10",
+      "first_record": "2024-05-08",
+      "record_type": "fontes-oficiais-e-reportagem",
+      "key_fact": {
+        "metric": "10.647",
+        "label": "reclamações atribuídas à Yeesco no Procon-SP em 2024",
+        "period": "recorte anual do Procon-SP, não total nacional de compradores",
+        "source_url": "https://www.procon.sp.gov.br/procon-sp-divulga-cadastro-das-empresas-mais-reclamadas-em-2024/"
+      },
+      "lead": "Um status automático no rastreamento não substitui comprovante de entrega. Quando o prazo termina e o atendimento não identifica uma solução real, a pergunta é concreta: onde está a mercadoria, quando será entregue e o que foi oferecido ao cliente?",
+      "verified": [
+        "O Procon-SP colocou a Yeesco no topo de seu ranking de reclamações fundamentadas de 2024, com 10.647 registros no recorte anual divulgado.",
+        "O índice de solução associado à Yeesco no levantamento foi de 29,6% da fase analisada, sem equivaler a probabilidade de entrega de um pedido específico.",
+        "Em reportagem de maio de 2024, O Município ouviu compradoras que relatavam pedidos não entregues e dificuldades com atendimento, além de registrar a posição da empresa sobre operação e fornecedores."
+      ],
+      "timeline": [
+        {
+          "date": "2024-05-08",
+          "label": "Reportagem reúne histórias de pedidos atrasados",
+          "description": "O Município publica relatos atribuídos a consumidoras com datas e tentativas de contato.",
+          "source_url": "https://omunicipio.com.br/justica/caso-yeesco-clientes-dizem-estar-ha-meses-esperando-pela-entrega-de-produtos-confira-relatos/"
+        },
+        {
+          "date": "2025-03-14",
+          "label": "Procon-SP divulga índice do ano anterior",
+          "description": "A publicação traz o número de 2024 e a resolução registrada na fase administrativa.",
+          "source_url": "https://www.procon.sp.gov.br/procon-sp-divulga-cadastro-das-empresas-mais-reclamadas-em-2024/"
+        },
+        {
+          "date": "2025-03-17",
+          "label": "Procon-SP reforça a falha na entrega como motivo recorrente",
+          "description": "A análise setorial descreve atraso e não entrega como principal fonte de queixas em produtos.",
+          "source_url": "https://www.procon.sp.gov.br/reclamacoes-no-procon-sp-aumentam-16-em-2024/"
+        }
+      ],
+      "other_side": "À reportagem de 2024, a empresa afirmou que sua operação envolve transportadoras e fornecedores e contestou que todas as ocorrências fossem exclusivamente causadas por ela. O relato da consumidora deve ser lido junto dessa resposta, não substituí-la.",
+      "other_side_url": "https://omunicipio.com.br/justica/caso-yeesco-clientes-dizem-estar-ha-meses-esperando-pela-entrega-de-produtos-confira-relatos/",
+      "questions": [
+        "O pedido chegou fisicamente ou apenas mudou de status no sistema?",
+        "Existe protocolo específico com nova data verificável e histórico de resposta?",
+        "O fornecedor registrou pedido de cancelamento e alternativa de restituição?"
+      ],
+      "steps": [
+        "Guarde número de pedido em ambiente privado, recibos, prazo informado e cópias das respostas.",
+        "Compare a data prometida com o comprovante efetivo de entrega, sem publicar dados de entrega ou telefone.",
+        "Use os canais oficiais para exigir cumprimento da oferta ou alternativas previstas na legislação aplicável."
+      ],
+      "limits": "Dados de 2024 retratam um período histórico e não descrevem automaticamente a operação em novembro de 2026. Nenhum relato isolado prova fraude intencional ou situação econômica atual.",
+      "guide_slug": "compra-online-nao-entregue",
+      "story_slugs": [
+        "monique-pedido-yeesco-sem-entrega"
+      ],
+      "sources": [
+        {
+          "name": "Procon-SP — 2024, empresas mais reclamadas",
+          "url": "https://www.procon.sp.gov.br/procon-sp-divulga-cadastro-das-empresas-mais-reclamadas-em-2024/",
+          "published_at": "2025-03-14",
+          "kind": "Órgão público"
+        },
+        {
+          "name": "Procon-SP — análise do período",
+          "url": "https://www.procon.sp.gov.br/reclamacoes-no-procon-sp-aumentam-16-em-2024/",
+          "published_at": "2025-03-17",
+          "kind": "Órgão público"
+        },
+        {
+          "name": "O Município — relatos e posicionamento",
+          "url": "https://omunicipio.com.br/justica/caso-yeesco-clientes-dizem-estar-ha-meses-esperando-pela-entrega-de-produtos-confira-relatos/",
+          "published_at": "2024-05-08",
+          "kind": "Jornalismo"
+        }
+      ]
+    },
+    {
+      "id": "EXT-004",
+      "slug": "enel-sp-apagao-2025-ressarcimento",
+      "company": "Enel Distribuição São Paulo",
+      "sector": "Energia elétrica e serviço essencial",
+      "state": "Região metropolitana de São Paulo · dezembro de 2025",
+      "headline": "A luz apagou. Os alimentos estragaram. Quem responde por seis dias de interrupções?",
+      "deck": "O apagão de dezembro de 2025 atingiu milhões de consumidores; a Justiça de São Paulo e o Procon paulistano registraram medidas em 2026. O impacto pessoal precisa ser documentado por ocorrência.",
+      "status_label": "Decisão judicial e multa noticiadas em 2026; posição da empresa incluída",
+      "reviewed_at": "2026-11-10",
+      "first_record": "2025-12-10",
+      "record_type": "fontes-oficiais-e-reportagem",
+      "key_fact": {
+        "metric": "3.056",
+        "label": "ocorrências da rede de 10/12/2025 com solução superior a 24 horas segundo dados Aneel reportados",
+        "period": "ocorrências técnicas, não pessoas, residências únicas ou pedidos de ressarcimento",
+        "source_url": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-09/justica-reconhece-falhas-da-enel-em-apagao-de-dezembro-de-2025-em-sp"
+      },
+      "lead": "O consumidor não consegue religar sozinho uma rede elétrica. Cada hora sem energia afeta alimentação, trabalho e equipamentos. A distância entre um evento climático e a demora para recuperar o serviço virou questão judicial em São Paulo.",
+      "verified": [
+        "Em setembro de 2026, a Agência Brasil informou que a Justiça paulista reconheceu falhas na prestação de serviço durante o apagão provocado pelo ciclone de dezembro de 2025.",
+        "Segundo dados da Aneel citados pela reportagem, em 10 de dezembro ocorreram 6.715 interrupções na rede, 3.056 delas superiores a 24 horas; não se trata de 6.715 consumidores.",
+        "Em outubro de 2026, a Agência Brasil reportou multa de R$ 11,4 milhões do Procon Paulistano relacionada a falhas de 2025, informando a possibilidade de recurso e a contestação da concessionária."
+      ],
+      "timeline": [
+        {
+          "date": "2025-12-10",
+          "label": "Apagão em grande escala",
+          "description": "O evento climático provoca interrupções na distribuição; a duração varia por ocorrência e unidade.",
+          "source_url": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-09/justica-reconhece-falhas-da-enel-em-apagao-de-dezembro-de-2025-em-sp"
+        },
+        {
+          "date": "2026-09-09",
+          "label": "Justiça reconhece falhas na resposta",
+          "description": "Decisão relatada pela Agência Brasil em ação civil pública do MPSP e posicionamento da distribuidora.",
+          "source_url": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-09/justica-reconhece-falhas-da-enel-em-apagao-de-dezembro-de-2025-em-sp"
+        },
+        {
+          "date": "2026-10-21",
+          "label": "Procon Paulistano mantém multa administrativa",
+          "description": "A agência relata a multa, o contexto administrativo e a discordância expressa pela Enel.",
+          "source_url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/procon-paulistano-multa-enel-por-falhas-no-fornecimento-de-energia"
+        }
+      ],
+      "other_side": "A Enel declarou à Agência Brasil que os ventos tiveram intensidade excepcional, destacou os volumes de clientes religados em até 24 horas e afirmou que suas equipes e indicadores evoluíram. Essa versão é preservada ao lado dos fundamentos da decisão judicial.",
+      "other_side_url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/procon-paulistano-multa-enel-por-falhas-no-fornecimento-de-energia",
+      "questions": [
+        "Qual foi o horário da interrupção e da recomposição na sua unidade?",
+        "Quais alimentos, equipamentos, serviços e custos tiveram relação comprovável com o evento?",
+        "Qual protocolo e resposta foram dados pela concessionária e pelo órgão de defesa do consumidor?"
+      ],
+      "steps": [
+        "Anote hora da queda e do retorno, número de protocolo e documentos de prejuízo, sem tornar o endereço público.",
+        "Consulte os procedimentos atuais de ressarcimento da distribuidora e as orientações do Procon; não descarte equipamento sem verificar os requisitos aplicáveis.",
+        "Distinga perdas individuais, ocorrências da rede e totais agregados; não some esses denominadores."
+      ],
+      "limits": "A decisão noticiada refere-se ao evento e ao contexto da ação civil pública; não assegura reparação automática a todos os consumidores, nem verifica prejuízos declarados em reclamações individuais.",
+      "guide_slug": "apagao-prejuizo-ressarcimento",
+      "story_slugs": [
+        "morador-sp-53-horas-sem-energia"
+      ],
+      "sources": [
+        {
+          "name": "Agência Brasil — decisão judicial de setembro 2026",
+          "url": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-09/justica-reconhece-falhas-da-enel-em-apagao-de-dezembro-de-2025-em-sp",
+          "published_at": "2026-09-09",
+          "kind": "Jornalismo sobre decisão judicial"
+        },
+        {
+          "name": "Agência Brasil — multa administrativa e resposta da Enel",
+          "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/procon-paulistano-multa-enel-por-falhas-no-fornecimento-de-energia",
+          "published_at": "2026-10-21",
+          "kind": "Jornalismo"
+        },
+        {
+          "name": "Agência Brasil — guia de reparação de prejuízos",
+          "url": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-07/saiba-como-pedir-ressarcimento-por-prejuizos-com-falta-de-energia",
+          "published_at": "2026-07-30",
+          "kind": "Jornalismo"
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "id": "PUB-01",
+      "slug": "carla-viagens-hurb-123milhas",
+      "case_slugs": [
+        "hurb-pacotes-flexiveis-viagens-reembolso",
+        "123milhas-pacotes-cancelados-recuperacao-judicial"
+      ],
+      "display_name": "Carla — duas viagens compradas, dois problemas diferentes",
+      "persona": "Consumidora entrevistada pelo Portal iG",
+      "category": "Viagens",
+      "place": "Local não divulgado aqui",
+      "headline": "Ela juntou dinheiro para a primeira viagem. A viagem não aconteceu.",
+      "deck": "Uma entrevistada do Portal iG relatou que uma viagem pela Hurb e outras passagens pela 123milhas tiveram desfechos frustrados, em períodos diferentes.",
+      "source_published_at": "2025-03-25",
+      "reviewed_at": "2026-11-10",
+      "primary_source_url": "https://economia.ig.com.br/2025-03-25/como-estao-os-consumidores-lesados-pela-hurb-e-123-milhas.html",
+      "primary_source_name": "Portal iG — entrevista de 25/03/2025",
+      "narrative": [
+        "Na entrevista de março de 2025, Carla contou que o pacote adquirido na Hurb tinha importância pessoal: seria sua primeira viagem paga com o próprio trabalho. Segundo a reportagem, as opções de datas apresentadas não resultaram na viagem esperada.",
+        "Ela também relatou outra contratação, separada, de duas passagens para Amsterdã pela 123milhas. Disse ter descoberto por notícias e redes que a viagem não seria realizada, antes de receber confirmação em contato com a empresa.",
+        "Sobre a Hurb, afirmou que tentou reembolso sem obter o resultado esperado. Sobre a 123milhas, contou ter obtido decisão judicial favorável, mas aguardava pagamento no momento da entrevista. Isso é um relato à imprensa, não uma nova verificação dos autos pelo CasoAberto."
+      ],
+      "source_outcome": "Em 25/03/2025, a entrevistada relatava decisão judicial sem pagamento confirmado no caso 123milhas; não há apuração própria de evolução posterior.",
+      "what_to_learn": [
+        "Duas compras de empresas diferentes exigem dois arquivos e duas cronologias.",
+        "Ganhar uma ação judicial, receber o dinheiro e cumprir um acordo são etapas diferentes.",
+        "Reclamação pública é fonte sobre o relato, não perícia financeira ou certidão de falência."
+      ],
+      "limits": "O CasoAberto não entrevistou a pessoa nem examinou seus contratos ou autos. A identidade completa, dados financeiros e endereço não são reproduzidos. O estado relatado é de março de 2025.",
+      "sources": [
+        {
+          "name": "Portal iG — depoimento publicado",
+          "url": "https://economia.ig.com.br/2025-03-25/como-estao-os-consumidores-lesados-pela-hurb-e-123-milhas.html",
+          "published_at": "2025-03-25",
+          "kind": "Entrevista jornalística"
+        },
+        {
+          "name": "Procon-SP — problemas dos pacotes Hurb",
+          "url": "https://www.procon.sp.gov.br/reclamacoes-sobre-a-hurb-no-procon-sp/",
+          "published_at": "2023-04-25",
+          "kind": "Órgão público"
+        }
+      ]
+    },
+    {
+      "id": "PUB-02",
+      "slug": "marcelo-quatro-pacotes-hurb",
+      "case_slugs": [
+        "hurb-pacotes-flexiveis-viagens-reembolso"
+      ],
+      "display_name": "Marcelo — quatro viagens de família não executadas",
+      "persona": "Consumidor entrevistado pela Folha",
+      "category": "Viagens",
+      "place": "Local omitido",
+      "headline": "Quatro pacotes para viajar em família. Nenhuma viagem realizada, segundo o entrevistado.",
+      "deck": "Reportagem da Folha descreveu pacotes comprados em 2021 e oferta posterior de mudança de modalidade, enquanto o consumidor buscava solução.",
+      "source_published_at": "2024-10-09",
+      "reviewed_at": "2026-11-10",
+      "primary_source_url": "https://www1.folha.uol.com.br/mercado/2024/10/hurb-oferece-upgrade-de-pacote-suspenso-pelo-governo-e-cobra-r-266-por-pessoa.shtml",
+      "primary_source_name": "Folha de S.Paulo — reportagem de 09/10/2024",
+      "narrative": [
+        "Segundo reportagem de outubro de 2024, Marcelo declarou ter comprado quatro pacotes flexíveis pela Hurb em 2021 para viagens em família, incluindo destinos nacionais e internacionais. Ele afirmou que as viagens não foram realizadas conforme o combinado.",
+        "O valor aproximado do prejuízo declarado à reportagem era de R$ 10 mil. A matéria também descreve oferta enviada pela empresa para converter a viagem de Orlando para pacote de mês fixo, mediante mudança das condições.",
+        "A oferta de migração não comprova que o contrato original foi executado. Tampouco o valor informado representa sentença ou prejuízo auditado pelo CasoAberto."
+      ],
+      "source_outcome": "Situação segundo a entrevista publicada em 09/10/2024; o site não dispõe de atualização independente sobre entrega ou ressarcimento posterior.",
+      "what_to_learn": [
+        "Oferta de upgrade e cumprimento do contrato original não são a mesma coisa.",
+        "É importante registrar a modalidade comprada, o serviço prometido e todas as alternativas oferecidas.",
+        "O custo informado pela pessoa não é total de credores ou dívida da empresa."
+      ],
+      "limits": "Resumo original atribuído a reportagem, sem contato próprio com o consumidor. Não divulgar nome completo, dados pessoais, correspondências ou documentos de viagem.",
+      "sources": [
+        {
+          "name": "Folha — reportagens sobre upgrades e pacotes",
+          "url": "https://www1.folha.uol.com.br/mercado/2024/10/hurb-oferece-upgrade-de-pacote-suspenso-pelo-governo-e-cobra-r-266-por-pessoa.shtml",
+          "published_at": "2024-10-09",
+          "kind": "Jornalismo"
+        },
+        {
+          "name": "Procon-SP — levantamento sobre Hurb",
+          "url": "https://www.procon.sp.gov.br/reclamacoes-sobre-a-hurb-no-procon-sp/",
+          "published_at": "2023-04-25",
+          "kind": "Órgão público"
+        }
+      ]
+    },
+    {
+      "id": "PUB-03",
+      "slug": "vivian-casamento-sem-passagens-123milhas",
+      "case_slugs": [
+        "123milhas-pacotes-cancelados-recuperacao-judicial"
+      ],
+      "display_name": "Vivian — o casamento tinha data; a passagem não saiu",
+      "persona": "Consumidora entrevistada pelo UOL",
+      "category": "Viagens",
+      "place": "Destino descrito na reportagem; endereço omitido",
+      "headline": "Os padrinhos tinham passagem comprada. Mas, segundo o relato, faltou o bilhete.",
+      "deck": "Reportagem de agosto de 2022 narrou um casal com viagem ligada a casamento e reclamações sobre formulário e emissão das passagens.",
+      "source_published_at": "2022-08-27",
+      "reviewed_at": "2026-11-10",
+      "primary_source_url": "https://economia.uol.com.br/noticias/redacao/2022/08/27/concurso-casamento-os-planos-de-quem-nao-recebeu-passagem-da-123-milhas.amp.htm",
+      "primary_source_name": "UOL — reportagem de 27/08/2022",
+      "narrative": [
+        "O UOL ouviu Vivian, que contou ter comprado, com o marido, passagens da 123milhas para participar de um casamento como padrinhos. O valor informado por ela na reportagem foi de R$ 932.",
+        "Segundo o relato, o formulário citado pela empresa não chegou aos seus e-mails; ela abriu protocolo e aguardava confirmação de emissão ou solução enquanto a data da viagem se aproximava.",
+        "A matéria também publicou a versão da 123milhas naquele momento, segundo a qual problemas de preenchimento de formulários explicavam parte dos casos, e a empresa disse priorizar o atendimento. O episódio de 2022 não pode ser automaticamente atribuído ao cancelamento geral anunciado em 2023."
+      ],
+      "source_outcome": "A reportagem de 27/08/2022 não permite afirmar como o pedido terminou. Não há desfecho posterior confirmado pelo CasoAberto.",
+      "what_to_learn": [
+        "A data de um evento pessoal aumenta o impacto de atrasos de emissão.",
+        "O formulário enviado, recebido ou não recebido é parte da cronologia verificável.",
+        "O caso de 2022 antecede o processo de recuperação judicial de 2023."
+      ],
+      "limits": "Uma entrevista publicada não é uma prova do resultado contratual posterior. Não houve contato do CasoAberto com a pessoa nem revisão de suas comunicações privadas.",
+      "sources": [
+        {
+          "name": "UOL — histórias de passagens não emitidas",
+          "url": "https://economia.uol.com.br/noticias/redacao/2022/08/27/concurso-casamento-os-planos-de-quem-nao-recebeu-passagem-da-123-milhas.amp.htm",
+          "published_at": "2022-08-27",
+          "kind": "Jornalismo"
+        },
+        {
+          "name": "Procon-SP — marco posterior de recuperação judicial",
+          "url": "https://www.procon.sp.gov.br/123-milhas-2/",
+          "published_at": "2023-09-01",
+          "kind": "Órgão público"
+        }
+      ]
+    },
+    {
+      "id": "PUB-04",
+      "slug": "marcelo-ferias-nao-emitidas-123milhas",
+      "case_slugs": [
+        "123milhas-pacotes-cancelados-recuperacao-judicial"
+      ],
+      "display_name": "Marcelo — férias planejadas e emissão que não ocorreu",
+      "persona": "Consumidor entrevistado pelo UOL",
+      "category": "Viagens",
+      "place": "Destino: Porto Seguro (BA)",
+      "headline": "Férias marcadas. Passagens e hotel ainda não confirmados no relato ao UOL.",
+      "deck": "O entrevistado descreveu compra de pacote de férias, envio do formulário e falta de emissão dentro do prazo previsto.",
+      "source_published_at": "2022-08-27",
+      "reviewed_at": "2026-11-10",
+      "primary_source_url": "https://economia.uol.com.br/noticias/redacao/2022/08/27/concurso-casamento-os-planos-de-quem-nao-recebeu-passagem-da-123-milhas.amp.htm",
+      "primary_source_name": "UOL — reportagem de 27/08/2022",
+      "narrative": [
+        "Em agosto de 2022, o UOL relatou o caso de Marcelo, que havia comprado um pacote para passar férias com a esposa em Porto Seguro. Segundo ele, o valor foi de R$ 1.054, incluindo passagem e hospedagem.",
+        "O consumidor afirmou ter enviado o formulário solicitado e ainda não ter recebido passagens e reserva. Disse que a dificuldade de falar com atendentes aumentou perto da viagem.",
+        "É um caso de emissão de passagens em 2022. Não deve ser contado como uma nova reclamação de 2023 nem como prova de desfecho atual em processo de recuperação judicial."
+      ],
+      "source_outcome": "Não foi localizado desfecho confirmado na fonte de agosto de 2022; a situação atual não foi apurada pelo CasoAberto.",
+      "what_to_learn": [
+        "Separar pagamento aprovado, formulário enviado e bilhete efetivamente emitido.",
+        "Documentar contatos e retorno de suporte, com datas, sem expor e-mails privados.",
+        "Evitar somar experiências narradas e registros de Procon como se fossem a mesma base."
+      ],
+      "limits": "Atribuído à reportagem original. Não são reproduzidos sobrenome, e-mails, telefone, local residencial nem protocolos pessoais.",
+      "sources": [
+        {
+          "name": "UOL — entrevista com passageiros",
+          "url": "https://economia.uol.com.br/noticias/redacao/2022/08/27/concurso-casamento-os-planos-de-quem-nao-recebeu-passagem-da-123-milhas.amp.htm",
+          "published_at": "2022-08-27",
+          "kind": "Jornalismo"
+        },
+        {
+          "name": "Procon-SP — orientação sobre 123milhas",
+          "url": "https://www.procon.sp.gov.br/consumidores-lesados-pela-123-milhas-devem-registrar-novamente-suas-reclamacoes-em-site-criado-a-pedido-da-justica/",
+          "published_at": "2024-06-28",
+          "kind": "Órgão público"
+        }
+      ]
+    },
+    {
+      "id": "PUB-05",
+      "slug": "monique-pedido-yeesco-sem-entrega",
+      "case_slugs": [
+        "yeesco-compras-online-nao-entregues"
+      ],
+      "display_name": "Monique — reclamações repetidas, sem entrega confirmada na reportagem",
+      "persona": "Consumidora entrevistada por O Município",
+      "category": "Comércio eletrônico",
+      "place": "Cidade omitida",
+      "headline": "Ela reclamou várias vezes. Em maio de 2024, dizia que a mercadoria não havia chegado.",
+      "deck": "A história foi publicada por O Município e evidencia como respostas repetidas não são, necessariamente, conclusão de uma entrega.",
+      "source_published_at": "2024-05-08",
+      "reviewed_at": "2026-11-10",
+      "primary_source_url": "https://omunicipio.com.br/justica/caso-yeesco-clientes-dizem-estar-ha-meses-esperando-pela-entrega-de-produtos-confira-relatos/",
+      "primary_source_name": "O Município — reportagem de 08/05/2024",
+      "narrative": [
+        "Uma consumidora identificada pela reportagem como Monique relatou compra feita em dezembro de 2023 e ausência de entrega até a entrevista de maio de 2024. Afirmou ter apresentado reclamações repetidas por canais diferentes.",
+        "Segundo a matéria, ela mencionou respostas padronizadas e dificuldades para obter confirmação de estorno. A reportagem registrou também a explicação da empresa sobre sua cadeia de fornecedores e questões operacionais.",
+        "O relato ajuda a perguntar se uma resposta de atendimento se transformou em entrega ou restituição. Não é uma constatação própria de inadimplemento continuado em novembro de 2026."
+      ],
+      "source_outcome": "Situação narrada em 08/05/2024, sem atualização individual confirmada posteriormente.",
+      "what_to_learn": [
+        "Diferenciar resposta em plataforma de reclamação de problema efetivamente resolvido.",
+        "Guardar linha do tempo da entrega e comprovante do cancelamento, quando solicitado.",
+        "Não tratar um relato isolado como retrato de todas as compras da empresa."
+      ],
+      "limits": "Resumo atribuído à imprensa; sem publicação de nome completo ou localização detalhada e sem acesso ao pedido original.",
+      "sources": [
+        {
+          "name": "O Município — consumidoras e posição da Yeesco",
+          "url": "https://omunicipio.com.br/justica/caso-yeesco-clientes-dizem-estar-ha-meses-esperando-pela-entrega-de-produtos-confira-relatos/",
+          "published_at": "2024-05-08",
+          "kind": "Jornalismo"
+        },
+        {
+          "name": "Procon-SP — ranking 2024",
+          "url": "https://www.procon.sp.gov.br/procon-sp-divulga-cadastro-das-empresas-mais-reclamadas-em-2024/",
+          "published_at": "2025-03-14",
+          "kind": "Órgão público"
+        }
+      ]
+    },
+    {
+      "id": "PUB-06",
+      "slug": "morador-sp-53-horas-sem-energia",
+      "case_slugs": [
+        "enel-sp-apagao-2025-ressarcimento"
+      ],
+      "display_name": "Morador de SP — mais de dois dias sem luz, segundo reclamação",
+      "persona": "Relato publicado em plataforma de reclamação",
+      "category": "Energia elétrica",
+      "place": "São Paulo (sem identificação de endereço)",
+      "headline": "53 horas sem energia e comida descartada: o que um consumidor registrou.",
+      "deck": "O autor de reclamação pública datada de dezembro de 2025 relatou interrupção prolongada e perdas de alimentos. O CasoAberto não atestou o tempo nem o valor individual.",
+      "source_published_at": "2025-12-12",
+      "reviewed_at": "2026-11-10",
+      "primary_source_url": "https://www.reclameaqui.com.br/aes-eletropaulo/fiquei-sem-luz-desde-1012-mais-de-53-horas-para-restabelecer-com-perda-total-de-carnes-e-produtos-pereciveis-e-mais-de-15-milhao-de-clientes-da-enel-afetados-pelo-apagao-em-sp_sUT3R8iv2L4B9OBj/",
+      "primary_source_name": "Reclame Aqui — publicação do próprio consumidor, dezembro 2025",
+      "narrative": [
+        "Em publicação no Reclame Aqui, um morador relatou queda de energia em 10 de dezembro de 2025 e restabelecimento mais de dois dias depois. A duração aproximada declarada foi de 53 horas; não temos histórico técnico da unidade para comprovar esse intervalo.",
+        "O autor disse ter descartado alimentos perecíveis e relatou tentativas de atendimento. O pedido central era obter explicação e ressarcimento. A reclamação registra a percepção do consumidor, não comprovação independente de todos os fatos ou da responsabilidade pelo prejuízo.",
+        "O evento geral de dezembro foi posteriormente objeto de decisão judicial e análise de órgãos de defesa do consumidor, mas isso não constitui decisão individual de reembolso para este autor."
+      ],
+      "source_outcome": "A publicação pública registra manifestação posterior do consumidor em janeiro de 2026; não foi confirmado pagamento ou reparação individual pelo CasoAberto.",
+      "what_to_learn": [
+        "Preservar intervalo do serviço, protocolo, fotografias e comprovantes de itens perdidos.",
+        "Um relatório sobre a rede não identifica automaticamente a duração numa unidade específica.",
+        "Pedido de ressarcimento e efetivo pagamento são eventos distintos."
+      ],
+      "limits": "Relato não auditado postado por terceiro; endereço, protocolos e quaisquer identificadores do autor foram omitidos. Não inferir a identidade da pessoa.",
+      "sources": [
+        {
+          "name": "Reclame Aqui — relato de dezembro 2025",
+          "url": "https://www.reclameaqui.com.br/aes-eletropaulo/fiquei-sem-luz-desde-1012-mais-de-53-horas-para-restabelecer-com-perda-total-de-carnes-e-produtos-pereciveis-e-mais-de-15-milhao-de-clientes-da-enel-afetados-pelo-apagao-em-sp_sUT3R8iv2L4B9OBj/",
+          "published_at": "2025-12-12",
+          "kind": "Reclamação pessoal, não verificada pelo CasoAberto"
+        },
+        {
+          "name": "Agência Brasil — decisão sobre apagão",
+          "url": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-09/justica-reconhece-falhas-da-enel-em-apagao-de-dezembro-de-2025-em-sp",
+          "published_at": "2026-09-09",
+          "kind": "Jornalismo"
+        }
+      ]
+    }
+  ],
+  "policy": {
+    "case_type": "recorte de documentos oficiais e reportagem externa; não constitui investigação contratual própria",
+    "story_type": "resumo atribuído a entrevista ou relato público, não testemunho coletado pelo CasoAberto",
+    "privacy": "somente primeiro nome já publicado ou rótulo não identificador; sem endereço, contato, CPF ou cópias de comprovantes",
+    "corrections": "registrar respostas verificáveis e atualizar data; datas de reportagens não são status atual de contrato",
+    "research_limits": "não presumir fraude, intenção, insolvência, falência, dívida individual ou resultado judicial sem documentação específica"
+  }
+}

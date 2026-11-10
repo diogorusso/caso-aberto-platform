@@ -1,0 +1,28 @@
+---
+import type {HTMLAttributes} from 'astro/types';
+interface Props {
+  study: {
+    slug: string; company: string; sector: string; headline: string; deck: string;
+    status_label: string; key_fact: {metric:string;label:string;period:string};
+    reviewed_at: string; record_type: string;
+  };
+  compact?: boolean;
+}
+const {study,compact=false} = Astro.props;
+---
+<article class="flex flex-col gap-4 border border-border bg-card p-6">
+  <div class="flex flex-wrap items-center justify-between gap-2 text-xs font-semibold uppercase tracking-wide">
+    <span class="text-brand-strong">{study.sector}</span>
+    <span class="text-muted-foreground">ARQUIVO EXTERNO · {study.reviewed_at.split('-').reverse().join('/')}</span>
+  </div>
+  <h3 class:list={["m-0 leading-tight",compact?"text-xl":"text-2xl"]}>{study.headline}</h3>
+  <p class="m-0 text-sm font-semibold">{study.company}</p>
+  <p class="m-0 flex-1 text-muted-foreground">{study.deck}</p>
+  <div class="border-l-4 border-brand bg-muted p-4">
+    <strong class="text-2xl">{study.key_fact.metric}</strong>
+    <p class="m-0 text-sm">{study.key_fact.label}</p>
+    <p class="mt-2 text-xs text-muted-foreground">{study.key_fact.period}</p>
+  </div>
+  <p class="m-0 text-xs text-muted-foreground">{study.status_label}</p>
+  <a class="text-link font-semibold" href={'/casos/arquivo-publico/'+study.slug+'/'}>Examinar fontes e cronologia ↗</a>
+</article>

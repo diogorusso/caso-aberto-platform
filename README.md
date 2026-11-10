@@ -214,3 +214,9 @@ The full 56-chapter playbook remains private. When a paid course is actually com
 ## Private community collaboration service — source only
 
 A separate, **not deployed**, Cloudflare Worker + D1 prototype lives in services/cause-api/. It performs cryptographic verification of Access JWTs, isolates cause membership and roles, supports tasks, HTTPS evidence links, private institutional request drafts, single-use invitations, revocation and audit events. No API keys or database identifiers are committed. It is **not the public Astro site's backend**, not available to users and not a claim of secure operational citizen accounts. Validate with npm run verify:cause-api and review all manual deployment gates in services/cause-api/README.md before configuring real Cloudflare resources.
+
+## New static public-case research and about (2026-11-10)
+
+The static site now adds **four separately sourced public institutional case studies** (Hurb, 123milhas, Yeesco and Enel São Paulo), **six attributed personal reports**, **three case-specific consumer guides** and About/Editorial Standards. These are not extensions of the first-party case schema: no invented contracts, CNPJs, interviews or updates. Pages use a separate sourced JSON catalog and reusable Astro static routes, with sector period, source type, company's documented response, document chronology and what remains unknown.
+
+See `docs/static-public-case-research.md`. Data: `src/data/public-case-atlas.json` and `src/data/public-case-guides.json`. Run `npm run verify:public-case-atlas` (now included in `verify:data`) before publishing more case entries. Avoid reproducing personal identifiers or historical claims as current outcomes.

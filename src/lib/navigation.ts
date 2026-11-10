@@ -6,4 +6,5 @@ export const primaryNav = [
   { label: 'Autonomia digital', href: '/autonomia-digital/' },
   { label: 'Academia', href: '/academia/' },
   { label: 'Plataformas', href: '/observatorio/plataformas/' },
+  { label: 'Sobre', href: '/sobre/' },
 ];
