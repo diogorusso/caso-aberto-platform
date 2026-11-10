@@ -85,16 +85,35 @@ No LLM autonomous public accusation or mass distribution. No fake replies, fake 
 
 Do not bolt an accounts API onto the static public Pages app. A later authenticated private workspace requires separate service and threat model: per-tenant authorization at API/data/storage boundaries, explicit scopes and consent revocation, encrypted private data with retention controls, audit/event log, rate limits and abuse reporting, encrypted object storage, scoped AI connectors, async job queue, human checkpoints, breach response and independent security review. Keep public build separate from private case files. Maintain safe defaults for journalists, activists, whistleblowers and children.
 
+## Private educational IP and content distribution — owner direction (2026-11-09)
+
+**The entire 56-chapter playbook is the core information product.** It must stay private; publishing it section by section on the SEO site would cannibalize the offering. Do not bundle it, its exhaustive chapter synopses, instructor guides, complete labs, answer keys, advanced algorithms or original private PDFs into the public Astro build. The public repository cannot act as the premium vault.
+
+A staged, multi-output research-to-content model:
+
+- **Private source layer** — complete chapter content, historical notes, primary-source register, deep explanations, methods, advanced labs, exercise solutions, product lesson files, facilitator packs. Access restricted to approved editors.
+- **Public discovery** — a unique user question plus original explanatory insight, one safe action, one limitation and traceable external sources. These snippets target discoverable search intent; they are not back-to-back extracts from the chapter.
+- **Public lead magnets** — a one-page checklist, introductory worksheet, locally run self-audit or printable organizer. Do not require account or identity profiling; email opt-in is not implemented.
+- **Educational products** — packaged progressive courses, differentiated outcomes, full practical labs, instructor guides, technical demonstrations, review exercises, practice data, recurring updated editions.
+- **Distribution adaptations** — social cards, short clips scripts, newsletters, FAQs and community handouts derived from the PUBLIC insight, manually reviewed. `src/data/content-distribution-queue.json` has 12 draft angles, not published outreach.
+- **Institution evidence** — still freely accessible: source-led public datasets, case accountability, factual corrections and essential civic-rights guidance.
+
+The `scripts/validate-publications.mjs` gate caps public snippet size and verifies product mappings, sources, deadlines and the absence of paid checkouts. Content editorial QA must additionally check semantic overlap, appropriate attribution, privacy and research scope; automated size checks alone cannot prevent manuscript reconstruction.
+
+Routes: `/academia/`, `/academia/:slug/`, `/autonomia-digital/guias/`, `/autonomia-digital/guias/:slug/`, `/autonomia-digital/ferramentas/:slug/`. Existing original free guides stay accessible.
+
+**Future paid delivery is not shipped:** only release a complete course through a separate authenticated service with encrypted restricted artifacts, scoped entitlement, validated checkout, refunds and retention/legal disclosures. The public site may advertise verified products but never embed private full text, paid PDFs or license keys in JavaScript or HTML.
+
 ## Content factory: SEO, public tools, products and lead magnets
 
 A content item is not a thin pSEO permutation. It has a distinct user question, research evidence, practical action and revision date. Example source-to-content graph:
 
 ```text
 Evidence / wiki chapter (private) → source register and factual review
-→ canonical public explainer + reproducible mini-lab
+→ reviewed public insight + safe starter exercise
 → question-specific SEO articles + FAQ with original value
 → free printable worksheet / audit checklist / CSV / decision tree
-→ optional workshop, advanced research pack or paid service
+→ protected full curriculum and differentiated educational products
 → correction and feedback → updated research source map
 ```
 

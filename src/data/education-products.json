@@ -1,0 +1,114 @@
+{
+  "version": 1,
+  "review_date": "2026-11-09",
+  "full_playbook_location": "private_repository_only",
+  "note": "Programas educativos em desenvolvimento. Conteúdo público é recorte original, não o playbook integral. Não há venda, inscrição ou captura de dados nesta versão.",
+  "tiers": [
+    {
+      "slug": "pegadas-digitais",
+      "name": "Mapa Invisível — Pegadas Digitais",
+      "type": "curso + atlas + fichas",
+      "status": "em-producao",
+      "audience": "Pessoas que querem entender e reduzir rastreamento online sem confundir proteção com invisibilidade",
+      "promise": "Entender observadores, evidências, vínculos entre dados e como avaliar mecanismos de proteção",
+      "premium_deliverables": [
+        "Aulas progressivas de fundamentos a estudos avançados",
+        "Atlas de fluxos de dados e identidade entre serviços",
+        "Protocolos completos de auditoria com análise de resultados",
+        "Exercícios orientados, materiais de formação e estudos de caso"
+      ],
+      "sample_slugs": [
+        "como-remover-dados-de-corretores",
+        "revogacao-de-consentimento-na-pratica",
+        "quando-deletar-nao-apaga"
+      ],
+      "entry_resource_url": "/autonomia-digital/diagnostico/",
+      "product_price": null,
+      "checkout_url": null
+    },
+    {
+      "slug": "algoritmos-e-poder",
+      "name": "Quem Controla o Feed? — Algoritmos e Poder",
+      "type": "curso + laboratório de pesquisa",
+      "status": "em-producao",
+      "audience": "Educadores, jornalistas, estudantes e pessoas que querem analisar feeds, propaganda e alcance",
+      "promise": "Diferenciar recomendação, anúncios, efeitos observados e conclusões causais para formular perguntas públicas fortes",
+      "premium_deliverables": [
+        "Trilhas sobre ranking, leilões de anúncios e arquitetura de escolha",
+        "Protocolos controlados de pesquisa e documentação",
+        "Planilhas e avaliações estruturadas de evidência",
+        "Casos comentados, contraprovas e perguntas de pesquisa"
+      ],
+      "sample_slugs": [
+        "leiloes-de-anuncios-e-perfis-invisiveis",
+        "como-auditar-o-feed-sem-confundir-causas"
+      ],
+      "entry_resource_url": "/autonomia-digital/algoritmos-e-influencia/",
+      "product_price": null,
+      "checkout_url": null
+    },
+    {
+      "slug": "ia-agentes-e-protecao",
+      "name": "IA Sob Seu Controle — Agentes, Dados e Provas",
+      "type": "treinamento técnico + checklists",
+      "status": "em-producao",
+      "audience": "Profissionais, criadores, equipes e usuários de assistentes conectados a ferramentas",
+      "promise": "Entender limites de modelos, auditar permissões, testar controles e separar autenticidade de verdade",
+      "premium_deliverables": [
+        "Arquitetura de permissões, dados, ferramentas e aprovações",
+        "Exercícios completos de modelagem de ameaças e validação",
+        "Guias de revisão de agentes, conectores e revogação",
+        "Estudos comentados sobre mídia sintética, IA e evidências"
+      ],
+      "sample_slugs": [
+        "agentes-de-ia-e-permissoes",
+        "deepfake-prova-ou-encenacao"
+      ],
+      "entry_resource_url": "/autonomia-digital/diagnostico/",
+      "product_price": null,
+      "checkout_url": null
+    },
+    {
+      "slug": "cidadania-e-direitos",
+      "name": "Cidadania Programável — Direitos e Ação Pública",
+      "type": "curso + kit de organização",
+      "status": "em-producao",
+      "audience": "Cidadãos, coletivos, pesquisadores e organizações com demandas públicas documentáveis",
+      "promise": "Transformar registros em solicitações específicas, acompanhamento e correções verificáveis",
+      "premium_deliverables": [
+        "Módulos sobre direitos digitais, dados e instituições",
+        "Templates revisados de demandas e respostas públicas",
+        "Roteiros de facilitação, papéis, consentimento e governança",
+        "Laboratórios de dossiês, decisões e reavaliação de evidências"
+      ],
+      "sample_slugs": [
+        "lgpd-direitos-e-decisoes-algoritmicas"
+      ],
+      "entry_resource_url": "/organizar/espaco-de-causa/",
+      "product_price": null,
+      "checkout_url": null
+    }
+  ],
+  "free_resources": [
+    {
+      "name": "Diagnóstico de exposição digital",
+      "url": "/autonomia-digital/diagnostico/",
+      "format": "checklist local sem coleta"
+    },
+    {
+      "name": "Caderno de Ação",
+      "url": "/organizar/caderno-de-acao/",
+      "format": "modelo A4 para impressão"
+    },
+    {
+      "name": "Espaço de Causa",
+      "url": "/organizar/espaco-de-causa/",
+      "format": "ferramenta local, exportação JSON"
+    },
+    {
+      "name": "Microexercícios por tema",
+      "url": "/autonomia-digital/guias/",
+      "format": "amostras úteis vinculadas aos insights"
+    }
+  ]
+}

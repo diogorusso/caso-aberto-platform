@@ -10,3 +10,6 @@ dist/
 evidence-private/
 private-evidence/
 *.private-evidence.json
+
+# Offline editorial briefs; generated from public snippets, never deployed
+build/editorial-drafts/

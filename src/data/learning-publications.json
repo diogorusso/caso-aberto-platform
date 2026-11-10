@@ -1,0 +1,482 @@
+{
+  "version": 1,
+  "reviewed_at": "2026-11-09",
+  "status": "published-curated",
+  "editorial_note": "Artigos originais em português derivados de pesquisa interna; não reproduzem textos integrais do repositório privado. Afirmações devem ser interpretadas no âmbito de cada fonte.",
+  "articles": [
+    {
+      "slug": "como-remover-dados-de-corretores",
+      "title": "Como descobrir e reduzir seus dados em corretores de informação",
+      "summary": "Sites de busca de pessoas, brokers de anúncios e cadastros de crédito não são a mesma coisa. Aprenda a mapear registros e verificar o que uma remoção realmente mudou.",
+      "chapters": [
+        "04",
+        "18",
+        "42",
+        "53"
+      ],
+      "published_at": "2026-11-09",
+      "updated_at": "2026-11-09",
+      "sections": [
+        {
+          "heading": "Seu rastro pode existir sem uma conta",
+          "paragraphs": [
+            "Um corretor de dados pode receber registros públicos, informações compradas de parceiros, listas de marketing ou dados derivados de aplicativos. A pessoa não precisa ter visitado o serviço para aparecer nele. Por isso, apagar o próprio perfil em uma rede social não remove cópias de registros mantidas por empresas com as quais nunca teve contato."
+          ]
+        },
+        {
+          "heading": "A armadilha da remoção automatizada",
+          "paragraphs": [
+            "Serviços de remoção podem localizar registros que não pertencem à pessoa pesquisada. A avaliação de serviços comerciais no estudo PoPETs 2025 encontrou erros de identificação e lacunas de cobertura na amostra investigada. Não trate uma quantidade de resultados apontados como a quantidade de vazamentos verdadeiros."
+          ]
+        }
+      ],
+      "lab": {
+        "title": "Experimento inicial: Monte seu inventário de registros",
+        "steps": [
+          "Escolha somente três fontes públicas que tenham relação com sua própria identidade. Não pesquise terceiros."
+        ]
+      },
+      "sources": [
+        {
+          "name": "ANPD — direitos dos titulares",
+          "url": "https://www.gov.br/anpd/pt-br/assuntos/titular-de-dados-1/direito-dos-titulares"
+        },
+        {
+          "name": "PoPETs — avaliação de remoção por serviços comerciais (2025)",
+          "url": "https://www.petsymposium.org/popets/2025/popets-2025-0125.php"
+        },
+        {
+          "name": "Consumer Reports — investigação de serviços de exclusão (2024)",
+          "url": "https://www.consumerreports.org/electronics/personal-information/services-that-delete-data-from-people-search-sites-review-a2705843415"
+        }
+      ],
+      "questions": [
+        {
+          "q": "Existe remoção total garantida?",
+          "a": "Não. Uma confirmação de um fornecedor não prova eliminação de cópias em outros controladores, índices ou derivados."
+        },
+        {
+          "q": "Devo enviar RG ou CPF para todo site?",
+          "a": "Não. Primeiro valide o responsável e o canal oficial, a finalidade, a necessidade do documento e alternativas de verificação."
+        }
+      ],
+      "format": "insight_publico",
+      "product_slug": "pegadas-digitais",
+      "editorial_boundary": "Amostra educativa aberta; o currículo completo, protocolos, formação e exercícios avançados permanecem no produto educacional."
+    },
+    {
+      "slug": "revogacao-de-consentimento-na-pratica",
+      "title": "O que acontece depois que você revoga o consentimento?",
+      "summary": "Um botão 'Preferências salvas' pode não interromper todos os fluxos de dados. Entenda como auditar a revogação em páginas, aplicativos e parceiros.",
+      "chapters": [
+        "12",
+        "39",
+        "42"
+      ],
+      "published_at": "2026-11-09",
+      "updated_at": "2026-11-09",
+      "sections": [
+        {
+          "heading": "A confirmação visual é apenas um estado",
+          "paragraphs": [
+            "Quando alguém retira uma autorização de rastreamento, diversas partes precisam reagir: interface, gerenciador de consentimento, scripts, APIs, processamento de eventos, parceiros, armazenamentos e modelos derivados. Um único botão não demonstra que todos esses sistemas foram atualizados."
+          ]
+        },
+        {
+          "heading": "Não confunda consentimento com toda base legal",
+          "paragraphs": [
+            "Nem todo tratamento de dados depende exclusivamente de consentimento. Contratos, obrigações legais e outras hipóteses podem ter efeitos distintos. O pedido correto pode ser revogação de consentimento, acesso, correção, oposição ou explicação do uso de dados. A ANPD descreve essas categorias para os titulares brasileiros."
+          ]
+        }
+      ],
+      "lab": {
+        "title": "Experimento inicial: Teste de consentimento em uma conta sua",
+        "steps": [
+          "Registre as opções de consentimento antes da mudança e a política relevante."
+        ]
+      },
+      "sources": [
+        {
+          "name": "ANPD — direitos de titulares",
+          "url": "https://www.gov.br/anpd/pt-br/assuntos/titular-de-dados-1/direito-dos-titulares"
+        },
+        {
+          "name": "PoPETs — estudo de revogação de consentimento",
+          "url": "https://petsymposium.org/popets/2025/popets-2025-0133.php"
+        }
+      ],
+      "questions": [
+        {
+          "q": "Retirar consentimento apaga dados passados?",
+          "a": "Não necessariamente. É preciso distinguir finalidade, base legal, retenção, derivados e os direitos que se aplicam."
+        },
+        {
+          "q": "Uma requisição de rede é infração comprovada?",
+          "a": "Não. É uma observação a classificar; o contexto e a finalidade do fluxo determinam o que se pode concluir."
+        }
+      ],
+      "format": "insight_publico",
+      "product_slug": "pegadas-digitais",
+      "editorial_boundary": "Amostra educativa aberta; o currículo completo, protocolos, formação e exercícios avançados permanecem no produto educacional."
+    },
+    {
+      "slug": "agentes-de-ia-e-permissoes",
+      "title": "Sua IA pode ler arquivos e enviar mensagens? Faça a auditoria de permissões",
+      "summary": "Agentes com acesso a e-mail, navegador e arquivos precisam de limites fora do prompt. Um guia de autorização, memória, segurança e reversão.",
+      "chapters": [
+        "13",
+        "21",
+        "45",
+        "46",
+        "47",
+        "50"
+      ],
+      "published_at": "2026-11-09",
+      "updated_at": "2026-11-09",
+      "sections": [
+        {
+          "heading": "A fronteira mudou: texto agora aciona ferramentas",
+          "paragraphs": [
+            "Um chatbot isolado pode produzir uma resposta incorreta. Um agente conectado pode ler mensagens, transferir arquivos, executar código, preencher formulários ou enviar uma comunicação em nome do usuário. A autorização é um problema de sistemas e deve ser verificada no serviço que concede as credenciais, não apenas nas instruções escritas ao modelo."
+          ]
+        },
+        {
+          "heading": "Mapa completo da superfície de dados",
+          "paragraphs": [
+            "Liste três caminhos para cada integração: quais recursos podem ser lidos, quais ações podem ser executadas e onde ficam os resultados. E-mail, Drive, chat e repositórios podem juntar contextos que antes estavam separados. A criptografia em trânsito não impede o processamento legítimo de dados no momento em que o agente os acessa."
+          ]
+        }
+      ],
+      "lab": {
+        "title": "Experimento inicial: Audite um agente conectado",
+        "steps": [
+          "Escolha um agente e liste cada conector: leitura, escrita, exclusão e publicação."
+        ]
+      },
+      "sources": [
+        {
+          "name": "OWASP — AI Agent Security Cheat Sheet",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html"
+        },
+        {
+          "name": "EFF — privacidade em ferramentas de IA",
+          "url": "https://ssd.eff.org/module/privacy-considerations-with-ai-tools"
+        },
+        {
+          "name": "NIST — AI Risk Management Framework",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+        }
+      ],
+      "questions": [
+        {
+          "q": "Um prompt resolve autorização?",
+          "a": "Não. A autorização efetiva deve ser aplicada por sistemas de identidade, escopo, políticas, validação da ação e auditoria."
+        },
+        {
+          "q": "Desconectar um plugin apaga a memória da IA?",
+          "a": "Não necessariamente. Token, logs, cópias de documentos e memória são componentes diferentes."
+        }
+      ],
+      "format": "insight_publico",
+      "product_slug": "ia-agentes-e-protecao",
+      "editorial_boundary": "Amostra educativa aberta; o currículo completo, protocolos, formação e exercícios avançados permanecem no produto educacional."
+    },
+    {
+      "slug": "deepfake-prova-ou-encenacao",
+      "title": "Como verificar imagens, vídeos e áudios antes de compartilhar uma denúncia",
+      "summary": "Proveniência não é verdade: assinaturas, arquivos originais, edições, contexto e evidências externas têm funções distintas.",
+      "chapters": [
+        "32",
+        "34",
+        "50"
+      ],
+      "published_at": "2026-11-09",
+      "updated_at": "2026-11-09",
+      "sections": [
+        {
+          "heading": "Uma imagem autêntica pode contar uma história falsa",
+          "paragraphs": [
+            "Um vídeo gravado com câmera real pode omitir o começo da cena. Um áudio gerado artificialmente pode soar plausível e ainda assim não ser prova de que alguém falou aquilo. Verificar a origem do arquivo e verificar o que realmente aconteceu são investigações relacionadas, porém diferentes."
+          ]
+        },
+        {
+          "heading": "O que as credenciais de conteúdo demonstram",
+          "paragraphs": [
+            "Especificações C2PA descrevem manifestos assinados e informações sobre origem ou processamento de um arquivo. Uma verificação criptográfica pode indicar que determinada credencial está ligada ao conteúdo e que a assinatura corresponde ao modelo de confiança adotado. Isso não garante que a cena seja verdadeira, imparcial ou completa."
+          ]
+        }
+      ],
+      "lab": {
+        "title": "Experimento inicial: Teste a proveniência de um conteúdo seu",
+        "steps": [
+          "Use uma foto que você criou para estudar metadados e histórico de edições."
+        ]
+      },
+      "sources": [
+        {
+          "name": "C2PA — especificação de Content Credentials",
+          "url": "https://spec.c2pa.org/specifications/specifications/2.2/specs/ContentCredentials.html"
+        },
+        {
+          "name": "C2PA — explainer de proveniência",
+          "url": "https://c2pa.org/specifications/specifications/2.2/explainer/Explainer.html"
+        },
+        {
+          "name": "NIST — AI Risk Management Framework",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+        }
+      ],
+      "questions": [
+        {
+          "q": "Sem selo C2PA significa deepfake?",
+          "a": "Não. Ausência de assinatura não demonstra origem artificial; o histórico pode não existir ou ter sido removido."
+        },
+        {
+          "q": "Assinatura válida prova o acontecimento?",
+          "a": "Não. Demonstra propriedades de integridade e procedência sob o modelo de confiança, não a interpretação factual do evento."
+        }
+      ],
+      "format": "insight_publico",
+      "product_slug": "ia-agentes-e-protecao",
+      "editorial_boundary": "Amostra educativa aberta; o currículo completo, protocolos, formação e exercícios avançados permanecem no produto educacional."
+    },
+    {
+      "slug": "leiloes-de-anuncios-e-perfis-invisiveis",
+      "title": "O leilão invisível dos seus dados: como funciona a publicidade programática",
+      "summary": "Entenda quem participa da compra de um anúncio, quais dados podem circular e como investigar a exposição sem afirmar rastreamento universal.",
+      "chapters": [
+        "03",
+        "17",
+        "30",
+        "31"
+      ],
+      "published_at": "2026-11-09",
+      "updated_at": "2026-11-09",
+      "sections": [
+        {
+          "heading": "Uma página pode negociar atenção e dados",
+          "paragraphs": [
+            "Quando uma página ou aplicativo tem espaço publicitário, uma cadeia de fornecedores pode participar da escolha do anúncio: publisher, SDK, exchange, plataforma de compra, anunciantes e outros intermediários. O conjunto de informações transmitido varia por integração, legislação, consentimento e regras internas; não existe um pacote universal em todas as impressões."
+          ]
+        },
+        {
+          "heading": "O problema é a cadeia de distribuição",
+          "paragraphs": [
+            "Um banner de cookies pode mostrar uma escolha, mas não representar intuitivamente cada agente que recebeu um sinal. Pessoas podem não ter como saber qual destinatário posteriormente agregou informações e criou novas inferências. A intervenção precisa distinguir consentimento local, governança de fornecedores e fiscalização pública."
+          ]
+        }
+      ],
+      "lab": {
+        "title": "Experimento inicial: Mapeie um caminho publicitário",
+        "steps": [
+          "Escolha um site próprio ou página pública e abra o painel de rede com consentimento apropriado."
+        ]
+      },
+      "sources": [
+        {
+          "name": "FTC — Mobilewalla e real-time bidding",
+          "url": "https://search.ftc.gov/policy/advocacy-research/tech-at-ftc/2024/12/unpacking-real-time-bidding-through-ftcs-case-mobilewalla"
+        },
+        {
+          "name": "FTC — ordem contra Gravy Analytics e Venntel",
+          "url": "https://search.ftc.gov/news-events/news/press-releases/2025/01/ftc-finalizes-order-prohibiting-gravy-analytics-venntel-selling-sensitive-location-data"
+        },
+        {
+          "name": "W3C — Fingerprinting Guidance",
+          "url": "https://www.w3.org/TR/fingerprinting-guidance/"
+        }
+      ],
+      "questions": [
+        {
+          "q": "Todo anúncio revela minha identidade?",
+          "a": "Não. Dados, destinatários e técnicas variam; uma impressão pode ser segmentada sem revelar identidade civil."
+        },
+        {
+          "q": "Bloquear cookies encerra o problema?",
+          "a": "Pode reduzir alguns rastreamentos no navegador, mas não controla todas as transferências de servidor, dados anteriores ou brokers."
+        }
+      ],
+      "format": "insight_publico",
+      "product_slug": "algoritmos-e-poder",
+      "editorial_boundary": "Amostra educativa aberta; o currículo completo, protocolos, formação e exercícios avançados permanecem no produto educacional."
+    },
+    {
+      "slug": "lgpd-direitos-e-decisoes-algoritmicas",
+      "title": "Como pedir acesso, correção e revisão de decisões automatizadas pela LGPD",
+      "summary": "Um modelo de raciocínio para exercer direitos sobre seus dados sem enviar documentos desnecessários nem confundir direitos diferentes.",
+      "chapters": [
+        "12",
+        "22",
+        "27",
+        "42"
+      ],
+      "published_at": "2026-11-09",
+      "updated_at": "2026-11-09",
+      "sections": [
+        {
+          "heading": "Comece pela decisão ou pelo dado",
+          "paragraphs": [
+            "Se um serviço não informa por que bloqueou sua conta, negou crédito ou classificou um cadastro, identifique o controlador e o tipo de tratamento envolvido. O pedido de acesso difere do pedido de correção e do pedido de revisão de uma decisão baseada exclusivamente em processamento automatizado."
+          ]
+        },
+        {
+          "heading": "Peça informações que possam ser verificadas",
+          "paragraphs": [
+            "Um pedido claro descreve o dado ou evento, a data aproximada, a decisão afetada, o direito exercido e o canal oficial de resposta. Evite anexar CPF completo, cópia de documento, contratos ou dados de terceiros quando a identificação mínima ou o canal autenticado forem suficientes."
+          ]
+        }
+      ],
+      "lab": {
+        "title": "Experimento inicial: Prepare seu pedido LGPD",
+        "steps": [
+          "Anote controlador, canal oficial, finalidade e a decisão concreta."
+        ]
+      },
+      "sources": [
+        {
+          "name": "ANPD — direitos dos titulares",
+          "url": "https://www.gov.br/anpd/pt-br/assuntos/titular-de-dados-1/direito-dos-titulares"
+        },
+        {
+          "name": "Governo Digital — revisão de decisão automatizada",
+          "url": "https://www.gov.br/governodigital/pt-br/lgpd-pagina-do-cidadao/solicitar-a-revisao-de-decisoes-tomadas-com-base-em-tratamento-automatizado-de-dados-pessoais"
+        }
+      ],
+      "questions": [
+        {
+          "q": "Toda decisão por software é exclusivamente automatizada?",
+          "a": "Não. É necessário avaliar o papel efetivo de processamento automatizado e a relação com o resultado."
+        },
+        {
+          "q": "É preciso expor documentos no CasoAberto?",
+          "a": "Não. O pedido privado deve usar canais oficiais; materiais públicos devem ser minimizados e revisados."
+        }
+      ],
+      "format": "insight_publico",
+      "product_slug": "cidadania-e-direitos",
+      "editorial_boundary": "Amostra educativa aberta; o currículo completo, protocolos, formação e exercícios avançados permanecem no produto educacional."
+    },
+    {
+      "slug": "como-auditar-o-feed-sem-confundir-causas",
+      "title": "Como auditar um feed e separar influência, seleção e causalidade",
+      "summary": "Um roteiro para avaliar diferenças entre recomendações, personalização e anúncios sem fabricar medições de efeitos políticos.",
+      "chapters": [
+        "05",
+        "19",
+        "38",
+        "44"
+      ],
+      "published_at": "2026-11-09",
+      "updated_at": "2026-11-09",
+      "sections": [
+        {
+          "heading": "A primeira impressão não revela o algoritmo",
+          "paragraphs": [
+            "Duas telas diferentes podem refletir histórico de navegação, contas seguidas, localização, idioma, dia e dispositivo. Além disso, a própria plataforma altera seu software. Uma comparação entre duas pessoas sem controlar variáveis não demonstra preferência deliberada da empresa por um grupo, causa de uma mudança de opinião ou efeito eleitoral."
+          ]
+        },
+        {
+          "heading": "Seleção e feedback alteram o experimento",
+          "paragraphs": [
+            "Quem decide seguir uma conta já traz interesses anteriores. O algoritmo reorganiza o que aparece, a interação ensina o sistema e o conjunto de contas seguidas também muda. Medidas de curto prazo podem persistir no comportamento mesmo após alterar o feed."
+          ]
+        }
+      ],
+      "lab": {
+        "title": "Experimento inicial: Faça uma auditoria de feed própria",
+        "steps": [
+          "Descreva uma pergunta sobre conteúdo recomendado e escolha uma semana de observação."
+        ]
+      },
+      "sources": [
+        {
+          "name": "Nature — experimento sobre efeitos de algoritmos (2026)",
+          "url": "https://doi.org/10.1038/s41586-026-10098-2"
+        },
+        {
+          "name": "PNAS — estudo de experimentos de feeds",
+          "url": "https://doi.org/10.1073/pnas.2318127122"
+        },
+        {
+          "name": "NIST — AI Risk Management Framework",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+        }
+      ],
+      "questions": [
+        {
+          "q": "Duas capturas comprovam viés deliberado?",
+          "a": "Não. Elas documentam duas exposições e podem motivar uma pesquisa mais controlada."
+        },
+        {
+          "q": "Mudança de alcance prova mudança de voto?",
+          "a": "Não. Exposição, engajamento e escolha eleitoral são resultados distintos, exigindo medidas próprias."
+        }
+      ],
+      "format": "insight_publico",
+      "product_slug": "algoritmos-e-poder",
+      "editorial_boundary": "Amostra educativa aberta; o currículo completo, protocolos, formação e exercícios avançados permanecem no produto educacional."
+    },
+    {
+      "slug": "quando-deletar-nao-apaga",
+      "title": "A conta foi apagada. O que ainda pode existir sobre você?",
+      "summary": "Desativação, desindexação, exclusão, backups, cópias e inferências não são a mesma operação. Aprenda o que pedir e o que verificar.",
+      "chapters": [
+        "29",
+        "39",
+        "42",
+        "55"
+      ],
+      "published_at": "2026-11-09",
+      "updated_at": "2026-11-09",
+      "sections": [
+        {
+          "heading": "Excluir o botão não exclui os derivados",
+          "paragraphs": [
+            "Uma publicação pode ter gerado miniaturas, cópias de busca, registros de processamento, dados analíticos, notificações, versões de tradução, embeddings e compartilhamentos de outros usuários. Nenhuma operação de interface consegue, sem mecanismos específicos, provar a remoção de todas essas representações."
+          ]
+        },
+        {
+          "heading": "Use um vocabulário de resultados",
+          "paragraphs": [
+            "Despublicar remove uma versão visível; desindexar altera resultados de busca; eliminar um registro modifica um armazenamento; revogar uma permissão muda futuras autorizações; desaprender de um modelo é outra questão técnica e não equivale a apagar um arquivo. Cada uma tem observadores e provas diferentes."
+          ]
+        }
+      ],
+      "lab": {
+        "title": "Experimento inicial: Comprove o alcance de uma exclusão",
+        "steps": [
+          "Descreva exatamente qual publicação, conta ou autorização deseja remover."
+        ]
+      },
+      "sources": [
+        {
+          "name": "FTC — people-search sites e remoção de dados",
+          "url": "https://consumer.ftc.gov/articles/what-know-about-people-search-sites-sell-your-information"
+        },
+        {
+          "name": "ANPD — direitos dos titulares",
+          "url": "https://www.gov.br/anpd/pt-br/assuntos/titular-de-dados-1/direito-dos-titulares"
+        },
+        {
+          "name": "PoPETs — estudo de revogação",
+          "url": "https://petsymposium.org/popets/2025/popets-2025-0133.php"
+        }
+      ],
+      "questions": [
+        {
+          "q": "Excluir a conta apaga todas as cópias?",
+          "a": "Não necessariamente. As cópias, índices, registros e armazenamentos podem ter políticas e responsáveis diferentes."
+        },
+        {
+          "q": "Uma IA citar um fato prova que memorizou meus dados?",
+          "a": "Não. Pode ser recuperação externa, conhecimento geral, inferência ou erro; a origem precisa ser investigada."
+        }
+      ],
+      "format": "insight_publico",
+      "product_slug": "pegadas-digitais",
+      "editorial_boundary": "Amostra educativa aberta; o currículo completo, protocolos, formação e exercícios avançados permanecem no produto educacional."
+    }
+  ],
+  "delivery_model": "public_snippets_with_premium_curriculum",
+  "source_vault_private": true
+}

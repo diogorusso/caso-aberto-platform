@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import catalog from '../../../../data/learning-publications.json';
+export function getStaticPaths(){return catalog.articles.map(article=>({params:{slug:article.slug},props:{article}}));}
+type Article=typeof catalog.articles[number];
+const {article}=Astro.props as {article:Article};
+---
+<BaseLayout title={'Ficha de laboratório — '+article.title+' | CasoAberto'} description={'Microexercício gratuito para imprimir: '+article.lab.title}>
+<section class="container max-w-4xl space-y-5 py-12"><p class="m-0 text-xs font-bold uppercase tracking-wider text-brand-strong">CASOABERTO · MICROEXERCÍCIO ABERTO</p><h1 class="m-0 text-3xl">{article.lab.title}</h1><p class="text-muted-foreground">{article.summary}</p><p class="text-sm">Estudo: <a class="text-link" href={'/autonomia-digital/guias/'+article.slug+'/'}>{article.title} ↗</a> · Revisão {article.updated_at.split('-').reverse().join('/')}</p><p class="text-sm">Esta ficha contém uma reflexão introdutória, não o laboratório completo do produto. Imprima e preencha em papel ou arquivo próprio, sem envio ou coleta. Não registre dados de terceiros.</p></section>
+<section class="container max-w-4xl space-y-4 pb-12">{article.lab.steps.map((step,i)=><div class="break-inside-avoid space-y-3 border border-border p-5"><h2 class="m-0 text-base">{i+1}. {step}</h2><div class="h-12 border-b border-dashed border-foreground/40"></div><div class="h-10 border-b border-dashed border-foreground/40"></div></div>)}<div class="break-inside-avoid space-y-2 border-l-4 border-brand bg-muted p-6"><h2 class="m-0 text-lg">O que seu exercício não demonstra?</h2><div class="h-14 border-b border-dashed border-foreground/40"></div><p class="text-sm">Lembre-se de registrar data, população observada, método e alternativa explicativa. Uma observação isolada não prova intenção, autoria ou causalidade. O programa completo aprofunda os métodos.</p></div></section>
+</BaseLayout>

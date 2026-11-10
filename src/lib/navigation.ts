@@ -4,5 +4,6 @@ export const primaryNav = [
   { label: 'Instituto', href: '/instituto/' },
   { label: 'Organizar', href: '/organizar/' },
   { label: 'Autonomia digital', href: '/autonomia-digital/' },
+  { label: 'Academia', href: '/academia/' },
   { label: 'Plataformas', href: '/observatorio/plataformas/' },
 ];
