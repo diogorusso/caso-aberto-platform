@@ -1,6 +1,6 @@
 # CasoAberto — Astro + React Islands + Cloudflare Pages
 
-**A platform landing page and SEO-friendly dossiers for Brazilian consumer cases**, with a reusable component system and zero runtime servers. The first case is **Florense Ipanema (CA-001)**.
+**A civic research, organization and digital autonomy platform**, with evidence-led Brazilian consumer dossiers as its first mature vertical. The first case is **Florense Ipanema (CA-001)**. The public site is still static, while authenticated organizing workspaces remain a future phase.
 
 ## Architecture
 
@@ -15,7 +15,15 @@
 
 | Role | URL |
 |---|---|
-| Brand landing page and value proposition | `/` |
+| Platform landing page: institute, organizing, autonomy and cases | `/` |
+| Public research institute and method | `/instituto/` |
+| Citizen organizing and pressure toolkit | `/organizar/` |
+| Digital autonomy school | `/autonomia-digital/` |
+| Free print-friendly digital exposure audit | `/autonomia-digital/diagnostico/` |
+| Guide to fingerprinting and identity linkage | `/autonomia-digital/fingerprinting/` |
+| Algorithm influence and political ad literacy | `/autonomia-digital/algoritmos-e-influencia/` |
+| Printable action notebook for causes | `/organizar/caderno-de-acao/` |
+| Source-led platform governance observatory | `/observatorio/plataformas/` |
 | All consumer cases | `/casos/` |
 | Individual case dossier | `/casos/:slug/` |
 | Timeline and milestones | `/casos/:slug/linha-do-tempo/` |
@@ -180,3 +188,11 @@ Diferencial do produto: transformar dossiês de consumo em análises de risco do
 O CasoAberto agora transforma dossiês em informação pública impressa. A área `/kit-boca-a-boca/` e a rota gerada `/casos/:slug/kit-boca-a-boca/` oferecem cartaz A4, ficha A4, dois folhetos A5 por folha e quatro cartões A6 por folha, além de roteiro do organizador, colorido ou P&B. QR codes gerados e validados são arquivos SVG locais. A área `/cenarios/` e a rota `/casos/:slug/cenarios/` exploram respostas, efeitos e ações baseadas nos fatos de cada caso. Tudo estático, nenhum serviço em tempo de execução.
 
 Dados: `src/data/print-kits.json` e `src/data/action-scenarios.json`; componentes: `PrintKitStudio.astro` e `islands/ScenarioRehearsal.tsx`. Para criar QR de um novo caso: `python3 -m pip install qrcode`, depois `python3 scripts/generate-print-qrs.py` localmente. Leia `docs/kit-boca-a-boca.md`. Publique por commit após `npm run verify:data && npm run check && npm run build`.
+
+## Civic platform expansion — 2026-11-09
+
+The project now covers **individual, community, institutional and digital-platform accountability**. The civic operating model connects: (1) the CasoAberto research institute; (2) evidence-based, consent-led organizing tools; and (3) a digital-autonomy school based on the private wiki's 56-chapter playbook and original, sourced public derivatives. See [the implementation architecture](docs/civic-platform-architecture.md).
+
+This first phase includes a five-source Meta/Brazil 2026 platform observatory with separate treatment of independent research, official records and Meta's response. The source register is `src/data/platform-observatory.json`, rendered at `/observatorio/plataformas/`. Validate it using `npm run verify:civic` (also part of `npm run verify:data`). Dated documented facts are not conclusive proof of intentional partisan interference.
+
+Public tools include a local digital-exposure checklist and a print-friendly action notebook. **No user identity, cause membership, upload, message sending, storage, donation or subscription workflow is live.** Such capabilities require the security and rights gates set out in the architecture. Existing case pages and editorial rules remain intact.
