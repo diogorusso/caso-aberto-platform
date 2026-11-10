@@ -1,11 +1,9 @@
 # CasoAberto — distribuição educativa com fontes
 
-Os **12 pacotes** em `drafts/` são materiais editoriais para revisão. Eles oferecem rascunho de card, vídeo curto, newsletter e FAQ, **não são conteúdos publicados nem mensagens enviadas**.
+Os **12 roteiros versionados** nesta pasta são rascunhos de comunicação para **revisão humana**, com legenda, carrossel, vídeo, abertura de newsletter, fonte e limite. **Não são artigos já publicados, envios automáticos nem publicidade eleitoral.**
 
-Cada pacote usa somente uma pergunta original do `src/data/content-distribution-queue.json`, uma amostra pública revisada em `src/data/learning-publications.json` e fontes externas. O conteúdo premium completo permanece na wiki e em seu ambiente educacional futuro, não neste repositório.
+Os textos saem apenas das amostras públicas do `src/data/learning-publications.json`, das pautas no `src/data/content-distribution-queue.json` e de links externos. O acervo integral do produto educacional continua fora do repositório público. A página `/academia/` apresenta quatro formações em produção, sem pagamento ou matrícula ativa.
 
-Arquitetura: amostra pública / problema específico → recorte e fontes → microexercício gratuito → apresentação do programa na `/academia/`. O catálogo é informativo e não realiza pagamentos.
+**Produção incremental:** `npm run content:pack` gera variantes adicionais (social, roteiro curto, FAQ, newsletter) em `build/editorial-drafts/`, diretório ignorado pelo Git. Os arquivos versionados nesta pasta são o pacote editorial curado; os gerados localmente são propostas para comparação, não uma segunda fonte de verdade.
 
-Gerador para novas revisões: `npm run content:pack`. A saída automatizada fica em `build/editorial-drafts/`, ignorada pelo Git, para evitar publicação acidental. Reconciliar manualmente diferenças com os briefs versionados em `campaign/education/drafts/` antes de atualizar assets.
-
-Os rascunhos não indicam segmentação por preferências políticas, captura de e-mails, uso de bots ou promessa de novos fatos. Publicação, circulação e revisão de qualquer peça exigem aprovação humana.
+Antes da distribuição, revisar fatos, atualidade, autoria, direitos de imagem, acessibilidade, consentimento e as limitações. Publicação externa requer aprovação humana. Nenhum dado pessoal ou convicção política deve ser inferido do leitor.
