@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CaseCard from '../components/CaseCard.astro';
-import PublicCaseCard from '../components/PublicCaseCard.astro';
-import publicAtlas from '../data/public-case-atlas.json';
-import { cases, reports } from '../lib/cases';
+import {categories,featuredCase,caseStudies,personalStories,caseCountFor,categoryHref} from '../lib/case-catalog';
+import {casePath} from '../lib/cases';
+import { reports } from '../lib/cases';
 import { brands, ratingDefinitions } from '../lib/brands';
 import registries from '../data/company-profiles.json';
 import Section from '../components/layout/Section.astro';
@@ -12,8 +12,6 @@ import ButtonLink from '../components/layout/ButtonLink.astro';
 import { KpiCard } from '../components/ui/kpi-card';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '../components/ui/card';
 
-const publishedCases = cases.slice().sort((a,b) => b.status_data.localeCompare(a.status_data));
-const newestCases = publishedCases.slice(0,3);
 const reviewedCompanies = brands.length;
 const reviewedUnits = brands.reduce((total, brand) => total + brand.units.filter(unit => unit.published).length, 0);
 const companyStatuses = ratingDefinitions.slice().sort((a,b) => b.sort - a.sort);
@@ -38,11 +36,11 @@ const pathways = [
   <section class="relative overflow-hidden bg-primary py-20 text-primary-foreground md:py-28" aria-labelledby="platform-home-title">
     <div class="container relative z-10 space-y-7">
       <Eyebrow inverse class="flex items-center gap-2.5"><span class="size-2 bg-brand" aria-hidden="true"></span> CASOABERTO · PESQUISA, AUTONOMIA E AÇÃO CIDADÃ</Eyebrow>
-      <h1 id="platform-home-title" class="m-0 max-w-5xl text-5xl leading-[0.98] tracking-[-0.06em] sm:text-6xl lg:text-8xl">Quando os fatos importam,<br /><em class="text-[#ff917e] not-italic">a sociedade precisa agir.</em></h1>
+      <h1 id="platform-home-title" class="m-0 max-w-5xl text-5xl leading-[0.98] tracking-[-0.06em] sm:text-6xl lg:text-8xl">O consumidor cobra.<br /><em class="text-[#ff917e] not-italic">Quem responde?</em></h1>
       <p class="m-0 max-w-2xl text-lg leading-relaxed text-white/75 md:text-xl">Dados públicos, pesquisa verificável e tecnologia a serviço de quem precisa de respostas. Investigue empresas, instituições e plataformas, organize demandas coletivas e aprenda a controlar sua presença digital.</p>
       <div class="flex flex-wrap gap-2.5">
-        <ButtonLink variant="brand" size="lg" href="/instituto/">Conhecer o instituto <span aria-hidden="true">↗</span></ButtonLink>
-        <ButtonLink variant="outline-inverse" size="lg" href="/organizar/">Organizar uma demanda <span aria-hidden="true">↗</span></ButtonLink>
+        <ButtonLink variant="brand" size="lg" href="/casos/">Investigar os casos <span aria-hidden="true">↗</span></ButtonLink>
+        {featuredCase&&<ButtonLink variant="outline-inverse" size="lg" href={casePath(featuredCase)}>Caso em destaque <span aria-hidden="true">↗</span></ButtonLink>}
       </div>
       <p class="m-0 border-t border-white/15 pt-6 text-sm font-medium text-white/60">Evidências rastreáveis <span aria-hidden="true" class="text-brand">·</span> Organização cidadã <span aria-hidden="true" class="text-brand">·</span> Autonomia e direitos digitais</p>
     </div>
@@ -54,7 +52,7 @@ const pathways = [
       <div class="grid grid-cols-2 gap-3 lg:grid-cols-4">
         <KpiCard label="Empresas avaliadas" value={reviewedCompanies} note="Perfis com avaliação publicada" />
         <KpiCard label="Unidades identificadas" value={reviewedUnits} note="Avaliações com recorte local" />
-        <KpiCard label="Casos publicados" value={publishedCases.length} note="Com cronologia e fontes" />
+        <KpiCard label="Casos documentados" value={caseStudies.length} note="Pesquisas com fontes e cronologia" />
         <KpiCard label="Registros de reclamação" value={reports.length} note="Links para publicações originais" />
       </div>
       <p class="m-0 text-sm text-muted-foreground">Contagens do arquivo CasoAberto nesta versão, não estatísticas do mercado brasileiro. <a class="text-link" href="/metodologia/">Como organizamos os dados ↗</a></p>
