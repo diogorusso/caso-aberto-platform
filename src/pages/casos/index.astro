@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import CaseCard from '../../components/CaseCard.astro';
+import CaseActionBar from '../../components/CaseActionBar.astro';
 import CaseResearchExplorer from '../../components/islands/CaseResearchExplorer';
 import {categories,featuredCase,caseStudies,personalStories,allResearch,caseCountFor,categoryHref} from '../../lib/case-catalog';
 ---
@@ -19,6 +20,7 @@ import {categories,featuredCase,caseStudies,personalStories,allResearch,caseCoun
   <div class="container space-y-6">
    <div class="flex flex-wrap items-end justify-between gap-4"><div class="space-y-2"><p class="m-0 text-xs font-bold uppercase tracking-widest text-brand-strong">CASO EM DESTAQUE · INVESTIGAÇÃO CASOABERTO</p><h2 id="caso-destaque" class="m-0 text-3xl md:text-4xl">R$ 190 mil pagos. A entrega ficou para quando?</h2><p class="m-0 text-muted-foreground">Florense Ipanema. Contrato, cronologia, perguntas, fontes e atualizações do caso que abriu o arquivo.</p></div><a class="text-link font-semibold" href={'/casos/'+featuredCase.slug+'/'}>Acompanhar o caso completo ↗</a></div>
    <CaseCard item={featuredCase} featured/>
+   <CaseActionBar title={featuredCase.titulo} summary={featuredCase.resumo} href={"/casos/"+featuredCase.slug+"/"} printHref={"/casos/imprimir/"+featuredCase.slug+"/"}/>
   </div>
  </section>}
  <section class="border-y bg-muted py-12" aria-labelledby="categorias-casos">

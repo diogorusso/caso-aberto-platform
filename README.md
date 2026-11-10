@@ -247,11 +247,22 @@ Comando conversacional de execução para um agente com ferramentas GitHub/web: 
 
 Nenhuma dessas funções implanta monitoramento contínuo, coleta perfis políticos, transmite mensagens de campanha, modifica o Worker privado ou atribui culpa por patrocínio/associação. Referências e patrocínios históricos devem continuar com data e status explícitos. A revisão editorial de fatos sensíveis exige conferência humana e histórico de correções.
 
+## Research-data and social-action release · 2026-11-10
+
+The homepage institution KPIs now measure **all documented research**: cases, distinct research source URLs, dated chronology entries, questions/demands, sourced personal stories, indexed Florense complaints, historical precedents, and searchable categories. All counts come from structured JSON, not copied constants; /instituto/dados/pesquisa.json makes the counting and case ledger inspectable.
+
+Seven newly researched studies are sourced from TJSP, CVM, Senacon, MPRS, Folha, CNN and Mobile Time, with dated source links, chronology, questions, explicit institutional or company position, and evidence-first impact stories. Three new topic guides cover ticketing, water services and streaming contract changes. Florense remains the featured investigation. The site stays static with Astro and Cloudflare Pages.
+
+A sourced national-context card presents official Procon-SP **2024** numbers (255,536 complaints in the combined registry), clearly separated from this project's counts. Sharing via WhatsApp, Facebook, X and Telegram uses the case's complete static link; copying, print and official complaint links are also available without a new backend.
+
+See `docs/research-ledger-coverage-and-sharing.md`. Run `npm run verify:research-ledger`, `npm run verify:data`, `npm run check`, `npm run build`.
+
+
 ## Visual impact storytelling and print-ready cases — 2026-11-10
 
 The old slider-based impact calculator and its fabricated financial, campaign reach and lawsuit assumptions are removed. Every documented case now has a shared **evidence-first visual narrative** with dated KPIs, accessible SVG charts, the most material conditional consequence, verification triggers, a resolution checkpoint, and directly linked **A4 print material**.
 
-- **Data:** `src/data/impact-stories.json` (17 case narratives), derived from the original, separately reviewed consumer, public and political case files.
+- **Data:** `src/data/impact-stories.json` (original 17 case narratives; now expanded to 24), derived from the original, separately reviewed consumer, public and political case files.
 - **Reusable UI:** `src/components/CaseVisualStory.astro`, `src/components/CaseEvidenceChart.astro`, `src/lib/visual-impact.ts`. No hydrated chart runtime is necessary for static SVG display; charts share the shadcn/Tailwind color and spacing system, and respect reduced motion.
 - **Every case page:** first-party `/casos/:slug/`, third-party `/casos/arquivo-publico/:slug/`, political `/observatorio/politica/:slug/`, and platform `/observatorio/plataformas/`.
 - **Print:** `/casos/imprimir/:slug/` (one A4 evidence sheet per case). Existing multi-format Florense print studio is preserved, and linked from the inline case panel.

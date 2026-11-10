@@ -10,7 +10,10 @@
       "description": "Pagou por móveis, reforma ou eletrodoméstico. O prazo venceu. Onde está o produto e quem responde pela entrega?",
       "case_ids": [
         "CA-001",
-        "EXT-007"
+        "EXT-007",
+        "EXT-009",
+        "EXT-010",
+        "EXT-011"
       ],
       "search_terms": [
         "marcenaria",
@@ -73,7 +76,8 @@
       "description": "A luz acabou. O prejuízo ficou com o consumidor. Quanto tempo durou e qual foi a resposta da concessionária?",
       "case_ids": [
         "EXT-004",
-        "EXT-008"
+        "EXT-008",
+        "EXT-013"
       ],
       "search_terms": [
         "energia",
@@ -121,7 +125,8 @@
       "eyebrow": "META · ELEIÇÕES · PUBLICIDADE · MODERAÇÃO",
       "description": "Anúncios, bloqueios, decisões de moderação e dados que interferem no debate público. Quem define as regras? Quem entrega os documentos? Quem responde?",
       "case_ids": [
-        "PLAT-2026-CASE"
+        "PLAT-2026-CASE",
+        "EXT-014"
       ],
       "search_terms": [
         "meta",
@@ -137,6 +142,32 @@
         "desinformação",
         "mpf",
         "moderação"
+      ]
+    },
+    {
+      "slug": "eventos-e-ingressos",
+      "title": "Eventos e ingressos",
+      "eyebrow": "SHOWS · BILHETERIA · REVENDA",
+      "description": "Comprou um ingresso, encontrou filas ou uma plataforma de revenda? Quem informa o preço total, garante acesso e responde pela oferta contratada?",
+      "case_ids": [
+        "EXT-012",
+        "EXT-015"
+      ],
+      "search_terms": [
+        "ticketmaster",
+        "live nation",
+        "bts",
+        "ingressos",
+        "revenda",
+        "show",
+        "viagogo",
+        "stubhub",
+        "ticket swap",
+        "funbuy",
+        "buyticket",
+        "setor",
+        "lotacao",
+        "portao"
       ]
     }
   ]

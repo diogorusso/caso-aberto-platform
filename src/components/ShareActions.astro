@@ -1,36 +1,7 @@
 ---
 import Section from './layout/Section.astro';
-import { buttonVariants } from './ui/button';
-import { cn } from '@/lib/utils';
-import { copy } from '@/lib/copy';
-interface Props { title?: string }
-const t = copy.share;
-const { title = t.body } = Astro.props;
+import CaseActionBar from './CaseActionBar.astro';
+interface Props {title?:string;summary?:string;caseHref?:string}
+const {title='Compartilhe esta investigação',summary='',caseHref=Astro.url.pathname}=Astro.props;
 ---
-<div data-print-hide>
-  <Section tone="dark" eyebrow={t.eyebrow} title={t.title} description={title}>
-    <div class="flex flex-wrap gap-2.5">
-      <button type="button" class={cn(buttonVariants({ variant: 'inverse', size: 'lg' }))} data-share data-copied={t.copied}>{t.share}</button>
-      <button type="button" class={cn(buttonVariants({ variant: 'outline-inverse', size: 'lg' }))} data-whatsapp>{t.whatsapp} ↗</button>
-    </div>
-  </Section>
-</div>
-<script>
-  document.addEventListener('click', async (event) => {
-    const el = event.target;
-    if (!(el instanceof Element)) return;
-    const button = el.closest('[data-share], [data-whatsapp]');
-    if (!(button instanceof HTMLButtonElement)) return;
-    const url = location.href.split('#')[0];
-    if (button.hasAttribute('data-whatsapp')) {
-      const message = `Será que seu móvel planejado será entregue? Leia o dossiê com fontes: ${url}`;
-      window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
-      return;
-    }
-    if (navigator.share) {
-      try { await navigator.share({ title: document.title, url }); return; } catch { /* fallback */ }
-    }
-    try { await navigator.clipboard.writeText(url); button.textContent = button.dataset.copied || 'Link copiado ✓'; }
-    catch { window.prompt('Copie o link:', url); }
-  });
-</script>
+<div data-print-hide><Section tone="dark" eyebrow="COMPARTILHE A COBRANÇA" title="A empresa controla a publicidade. Você pode compartilhar os fatos." description="Cronologia, documentos e perguntas num único endereço. Envie para quem precisa conferir."><CaseActionBar title={title} summary={summary} href={caseHref} printHref={'/casos/imprimir/'+caseHref.split('/').filter(Boolean).pop()+'/'} /></Section></div>

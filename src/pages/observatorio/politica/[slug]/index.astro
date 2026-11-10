@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import CaseVisualStory from '../../../../components/CaseVisualStory.astro';
+import CaseActionBar from '../../../../components/CaseActionBar.astro';
 import ledger from '../../../../data/political-observatory.json';
 export function getStaticPaths() { return ledger.cases.map(study=>({params:{slug:study.slug},props:{study}})); }
 type Study = typeof ledger.cases[number];
@@ -19,6 +20,7 @@ const sourceLink=(id: string)=>bySource.get(id)?.url||'#fontes';
 <BaseLayout title={study.title+' | Observatório CasoAberto'} description={study.summary} type="article" dateModified={study.reviewed_at} breadcrumbs={[{name:'Início',item:'/'},{name:'Observatório político',item:base},{name:study.title,item:caseUrl}]}>
 <article>
  <header class="bg-primary py-14 md:py-20 text-primary-foreground"><div class="container max-w-6xl space-y-5"><div class="flex flex-wrap gap-3 text-xs font-bold uppercase tracking-[.15em]"><span class="text-[#ff917e]">{study.id} · {study.topic}</span><span class="text-white/60">REVISADO EM {date(study.reviewed_at)}</span></div><h1 class="m-0 max-w-5xl text-4xl leading-tight md:text-6xl">{study.title}</h1><p class="max-w-4xl text-lg text-white/80 md:text-xl">{study.summary}</p><p class="m-0 border-l-4 border-brand pl-4 text-sm font-semibold">{study.status}</p></div></header>
+ <div class="container py-5"><CaseActionBar title={study.title} summary={study.summary} href={caseUrl} printHref={'/casos/imprimir/'+study.slug+'/'} showComplaint={false}/></div>
  <CaseVisualStory caseId={study.id}/>
  <div class="container grid max-w-7xl gap-12 py-12 lg:grid-cols-[minmax(0,1fr)_17rem]">
   <div class="min-w-0 space-y-12">

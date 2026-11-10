@@ -1,0 +1,20 @@
+import {readFileSync,existsSync} from 'node:fs';
+const read=name=>JSON.parse(readFileSync(new URL('../src/data/'+name+'.json',import.meta.url),'utf8'));
+const atlas=read('public-case-atlas'),cases=read('casos'),politics=read('political-observatory'),platform=read('platform-observatory'),cats=read('case-categories'),bench=read('research-benchmarks'),visual=read('impact-stories');
+const failures=[],check=(condition,msg)=>{if(!condition)failures.push(msg)};
+const ids=[...cases.map(x=>x.id),...atlas.cases.map(x=>x.id),...politics.cases.map(x=>x.id),'PLAT-2026-CASE'];
+const listed=cats.categories.flatMap(x=>x.case_ids);
+check(ids.length===24,'unexpected case count; reconcile source manifests');
+check(new Set(ids).size===ids.length,'duplicate case ids');
+check(listed.length===ids.length&&new Set(listed).size===ids.length,'case classified more or less than once');
+check(ids.every(id=>listed.includes(id)),'case missing category');
+check(visual.cases.length===ids.length,'missing impact story');
+check(atlas.cases.every(x=>x.timeline?.length>=3&&x.sources?.length>=2),'case lacks event/source coverage');
+check(bench.total.value===255536,'Procon benchmark must match the cited official total');
+check(bench.companies.reduce((sum,x)=>sum+x.value,0)<bench.total.value,'Procon subset must not be treated as all official complaints');
+check(bench.companies.every(x=>atlas.cases.some(c=>c.slug===x.case_slug)),'broken Procon case linkage');
+check(bench.source_url.includes('procon.sp.gov.br/'),'official benchmark source missing');
+const paths=['src/components/ResearchMetrics.astro','src/components/ResearchBenchmarks.astro','src/components/CaseActionBar.astro','src/pages/instituto/dados/pesquisa.json.ts'];
+paths.forEach(p=>check(existsSync(new URL('../'+p,import.meta.url)),'missing feature '+p));
+if(failures.length){failures.forEach(e=>console.error('[research-ledger] '+e));process.exit(1);}
+console.log('Research ledger: '+ids.length+' cases; '+atlas.stories.length+' stories; '+cats.categories.length+' categories; sourced benchmark totals verified.');

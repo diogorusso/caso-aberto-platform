@@ -684,6 +684,554 @@
           "published_at": "2026-07-29"
         }
       ]
+    },
+    {
+      "id": "EXT-009",
+      "slug": "casas-bahia-recuperacao-judicial-entregas-2026",
+      "company": "Grupo Casas Bahia",
+      "sector": "Varejo · móveis e eletrodomésticos",
+      "state": "Brasil · São Paulo · agosto a outubro de 2026",
+      "headline": "Casas Bahia entrou em recuperação judicial. Quem responde por entregas e pagamentos?",
+      "deck": "O TJSP autorizou o processamento do pedido em outubro, depois do monitoramento da Senacon. Quem tem compra em andamento precisa distinguir a decisão judicial da entrega efetiva.",
+      "status_label": "Processamento de recuperação judicial deferido em 21/10/2026",
+      "reviewed_at": "2026-11-10",
+      "first_record": "2026-08-16",
+      "record_type": "fontes-oficiais-e-reportagem",
+      "key_fact": {
+        "metric": "21/10",
+        "label": "deferimento do processamento pelo TJSP",
+        "period": "Decisão da 2ª Vara de Falências e Recuperações Judiciais em 21/10/2026, processo 4152930-18.2026.8.26.0100",
+        "source_url": "https://portal.tjsp.jus.br/Imprensa/Noticias/Noticia?codigoNoticia=115802&pagina=1"
+      },
+      "lead": "Uma notícia de recuperação judicial atravessa a vida de quem já comprou um fogão, uma cama ou um eletrodoméstico. O consumidor quer entrega e prazo, não apenas um fato relevante ao mercado financeiro.",
+      "verified": [
+        "A relação de fatos relevantes do grupo registra pedido em 16 de agosto, tutela urgente em 31 de agosto e deferimento do processamento em 21 de outubro de 2026.",
+        "A Senacon anunciou monitoramento das compras, entregas e garantias em 25 de agosto e observou que os pedidos então estavam sob análise; esse registro é anterior à decisão judicial de outubro.",
+        "O TJSP informou que o processamento foi autorizado para o grupo e outras empresas do polo processual, com administrador judicial e complementação documental exigida."
+      ],
+      "timeline": [
+        {
+          "date": "2026-08-16",
+          "label": "Grupo comunica pedido de recuperação",
+          "description": "Fato relevante empresarial informa protocolo do pedido, a etapa inicial do processo.",
+          "source_url": "https://ri.grupocasasbahia.com.br/arquivamentos-cvm/fatos-relevantes/"
+        },
+        {
+          "date": "2026-08-25",
+          "label": "Senacon abre monitoramento",
+          "description": "Secretaria passa a acompanhar entregas, garantias e direitos dos consumidores após pedidos de recuperação.",
+          "source_url": "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-abre-monitoramento-de-casas-bahia-tok-stok-e-marabraz-apos-pedidos-de-recuperacao-judicial"
+        },
+        {
+          "date": "2026-10-21",
+          "label": "TJSP autoriza processamento",
+          "description": "Juízo defere o processamento da recuperação judicial, sujeito às determinações e condições da decisão.",
+          "source_url": "https://portal.tjsp.jus.br/Imprensa/Noticias/Noticia?codigoNoticia=115802&pagina=1"
+        }
+      ],
+      "other_side": "O grupo publicou fatos relevantes sobre as medidas judiciais e sua reestruturação; a Senacon registrou orientações da empresa para preservar pagamentos e formalizar problemas de entrega. A execução de cada pedido exige comprovante próprio.",
+      "other_side_url": "https://ri.grupocasasbahia.com.br/arquivamentos-cvm/fatos-relevantes/",
+      "questions": [
+        "Quais contratos e pessoas jurídicas constam do processo judicial e quais não constam?",
+        "O produto contratado está em estoque, em trânsito ou sem data comprovada de entrega?",
+        "Qual documento confirma o tratamento de pedidos, pagamentos e eventual restituição aos consumidores?"
+      ],
+      "steps": [
+        "Separe oferta, prazo, pagamento, CNPJ da contratante e protocolos em seu arquivo particular.",
+        "Consulte o documento da Senacon e o estágio atual do processo antes de aceitar novas condições.",
+        "Peça à empresa resposta específica sobre entrega, restituição ou crédito, com data e documento verificável."
+      ],
+      "limits": "A situação registrada é o processamento judicial em outubro de 2026; não é decretação de falência e não informa a solução de qualquer compra individual. Valores de dívidas e obrigações processuais não podem ser somados como perdas dos consumidores.",
+      "guide_slug": "compra-em-recuperacao-judicial",
+      "story_slugs": [],
+      "sources": [
+        {
+          "name": "Grupo Casas Bahia — fatos relevantes de 2026",
+          "url": "https://ri.grupocasasbahia.com.br/arquivamentos-cvm/fatos-relevantes/",
+          "published_at": "2026-10-21",
+          "kind": "Comunicados ao mercado"
+        },
+        {
+          "name": "Senacon — monitoramento de varejistas",
+          "url": "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-abre-monitoramento-de-casas-bahia-tok-stok-e-marabraz-apos-pedidos-de-recuperacao-judicial",
+          "published_at": "2026-08-25",
+          "kind": "Documento público"
+        },
+        {
+          "name": "TJSP — processamento da recuperação judicial",
+          "url": "https://portal.tjsp.jus.br/Imprensa/Noticias/Noticia?codigoNoticia=115802&pagina=1",
+          "published_at": "2026-10-21",
+          "kind": "Documento público"
+        }
+      ]
+    },
+    {
+      "id": "EXT-010",
+      "slug": "tok-stok-mobly-grupo-toky-recuperacao-2026",
+      "company": "Grupo Toky — Tok&Stok e Mobly",
+      "sector": "Móveis, decoração e varejo digital",
+      "state": "São Paulo e Brasil · maio a agosto de 2026",
+      "headline": "Tok&Stok e Mobly: qual é a garantia de entrega durante a recuperação judicial?",
+      "deck": "O Grupo Toky pediu recuperação em maio, teve processamento deferido em junho e entrou no monitoramento da Senacon em agosto. Quais compromissos têm prazo verificável?",
+      "status_label": "Processamento deferido pela Justiça em 12/06/2026",
+      "reviewed_at": "2026-11-10",
+      "first_record": "2026-05-12",
+      "record_type": "fontes-oficiais-e-reportagem",
+      "key_fact": {
+        "metric": "R$ 77 mi",
+        "label": "valor do bloqueio de recebíveis alegado pelo Grupo Toky",
+        "period": "Valor informado no pedido e citado pelo TJSP; não são perdas comprovadas de clientes",
+        "source_url": "https://portal.tjsp.jus.br/Noticias/Noticia?codigoNoticia=114526&pagina=46"
+      },
+      "lead": "Móveis planejados, sofás e itens para casa dependem de cronogramas longos. Quando o Grupo Toky recorre à recuperação judicial, a pergunta sobre quem entrega o produto continua sendo contratual e concreta.",
+      "verified": [
+        "Documentos financeiros do Grupo Toky registram pedido em 12 de maio e deferimento do processamento em 12 de junho de 2026.",
+        "O TJSP identificou o processo 4080549-12.2026.8.26.0100 e divulgou suspensão de execuções sujeitas ao procedimento, nomeação de administrador e deveres de informação.",
+        "O grupo declarou bloqueio de cerca de R$ 77 milhões em recebíveis e outros fatores que afetaram liquidez; essa é a alegação apresentada no pedido, sem converter o valor em dívida de consumidores."
+      ],
+      "timeline": [
+        {
+          "date": "2026-05-12",
+          "label": "Grupo protocola pedido",
+          "description": "Documentação cadastral/financeira empresarial registra pedido de recuperação judicial.",
+          "source_url": "https://www.rad.cvm.gov.br/ENETWEB/frmGerenciaPaginaFRE.aspx?CodigoTipoInstituicao=1&NumeroSequencialDocumento=159240"
+        },
+        {
+          "date": "2026-06-12",
+          "label": "TJSP defere processamento",
+          "description": "Tribunal descreve as medidas e o procedimento judicial relativo ao Grupo Toky.",
+          "source_url": "https://portal.tjsp.jus.br/Noticias/Noticia?codigoNoticia=114526&pagina=46"
+        },
+        {
+          "date": "2026-08-25",
+          "label": "Senacon monitora compras",
+          "description": "A secretaria inclui Tok&Stok e Mobly entre as operações acompanhadas.",
+          "source_url": "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-abre-monitoramento-de-casas-bahia-tok-stok-e-marabraz-apos-pedidos-de-recuperacao-judicial"
+        }
+      ],
+      "other_side": "Segundo o relato processual divulgado pelo TJSP, a empresa atribuiu a reorganização financeira a juros, consumo, resultados operacionais e bloqueio de recebíveis. Esse posicionamento não substitui comprovação de entrega no contrato individual.",
+      "other_side_url": "https://portal.tjsp.jus.br/Noticias/Noticia?codigoNoticia=114526&pagina=46",
+      "questions": [
+        "Quais contratos e pessoas jurídicas constam do processo judicial e quais não constam?",
+        "O produto contratado está em estoque, em trânsito ou sem data comprovada de entrega?",
+        "Qual documento confirma o tratamento de pedidos, pagamentos e eventual restituição aos consumidores?"
+      ],
+      "steps": [
+        "Separe oferta, prazo, pagamento, CNPJ da contratante e protocolos em seu arquivo particular.",
+        "Consulte o documento da Senacon e o estágio atual do processo antes de aceitar novas condições.",
+        "Peça à empresa resposta específica sobre entrega, restituição ou crédito, com data e documento verificável."
+      ],
+      "limits": "Datas de habilitação de créditos e suspensão de execuções dependem dos atos atuais. O processamento da recuperação não significa quitação de pedidos, insolvência definitiva ou falência da rede.",
+      "guide_slug": "compra-em-recuperacao-judicial",
+      "story_slugs": [],
+      "sources": [
+        {
+          "name": "Grupo Toky — cadastro financeiro enviado à CVM",
+          "url": "https://www.rad.cvm.gov.br/ENETWEB/frmGerenciaPaginaFRE.aspx?CodigoTipoInstituicao=1&NumeroSequencialDocumento=159240",
+          "published_at": "2026-06-26",
+          "kind": "Registro societário"
+        },
+        {
+          "name": "TJSP — processo do Grupo Toky",
+          "url": "https://portal.tjsp.jus.br/Noticias/Noticia?codigoNoticia=114526&pagina=46",
+          "published_at": "2026-06-15",
+          "kind": "Documento público"
+        },
+        {
+          "name": "Senacon — atendimento e contratos em execução",
+          "url": "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-abre-monitoramento-de-casas-bahia-tok-stok-e-marabraz-apos-pedidos-de-recuperacao-judicial",
+          "published_at": "2026-08-25",
+          "kind": "Documento público"
+        }
+      ]
+    },
+    {
+      "id": "EXT-011",
+      "slug": "marabraz-recuperacao-judicial-2026-pedidos-moveis",
+      "company": "Marabraz",
+      "sector": "Móveis, eletrodomésticos e crédito",
+      "state": "São Paulo · agosto a outubro de 2026",
+      "headline": "Marabraz pediu recuperação judicial. E os móveis de quem já pagou?",
+      "deck": "Pedido apresentado em agosto e processamento noticiado em outubro, com dívidas de R$ 140,2 milhões segundo a empresa. O contrato do consumidor precisa de resposta documentada.",
+      "status_label": "Processamento da recuperação judicial reportado em 28/10/2026",
+      "reviewed_at": "2026-11-10",
+      "first_record": "2026-08-15",
+      "record_type": "fontes-oficiais-e-reportagem",
+      "key_fact": {
+        "metric": "R$ 140,2 mi",
+        "label": "dívidas da empresa informadas à imprensa na recuperação judicial",
+        "period": "Valor do passivo da empresa reportado em outubro de 2026, não prejuízo de clientes",
+        "source_url": "https://www.cnnbrasil.com.br/economia/money/negocios/justica-de-sao-paulo-aceita-pedido-de-recuperacao-judicial-da-marabraz/"
+      },
+      "lead": "Quem comprou móveis para uma mudança tem uma pergunta diferente dos credores financeiros: quando o produto chega ou quando o pagamento é restituído? A recuperação judicial precisa ser entendida junto às obrigações de entrega.",
+      "verified": [
+        "A Folha publicou em 16 de agosto de 2026 que a Marabraz protocolou pedido no dia 15, acompanhado de indicação do passivo e posição da rede.",
+        "A Senacon incluiu a varejista no monitoramento de compras, garantias e restituições anunciado em 25 de agosto; o boletim refletia a fase de análise judicial daquela data.",
+        "Em 28 de outubro a CNN informou, com confirmação da empresa, que a Justiça autorizou o processamento da recuperação judicial e que a rede afirmou manter operações e apresentar plano."
+      ],
+      "timeline": [
+        {
+          "date": "2026-08-15",
+          "label": "Marabraz protocola pedido",
+          "description": "Reportagem registra distribuição do pedido na Justiça paulista.",
+          "source_url": "https://www1.folha.uol.com.br/mercado/2026/08/marabraz-pede-recuperacao-judicial-com-dividas-de-r-140-milhoes.shtml"
+        },
+        {
+          "date": "2026-08-25",
+          "label": "Senacon passa a monitorar",
+          "description": "Secretaria descreve orientações para compras, entregas, garantias e restituições.",
+          "source_url": "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-abre-monitoramento-de-casas-bahia-tok-stok-e-marabraz-apos-pedidos-de-recuperacao-judicial"
+        },
+        {
+          "date": "2026-10-28",
+          "label": "Empresa confirma etapa judicial",
+          "description": "CNN registra deferimento do processamento e o posicionamento da rede.",
+          "source_url": "https://www.cnnbrasil.com.br/economia/money/negocios/justica-de-sao-paulo-aceita-pedido-de-recuperacao-judicial-da-marabraz/"
+        }
+      ],
+      "other_side": "A Marabraz declarou que pretende preservar operações, empregos e compromissos, atribuindo dificuldades a juros e disputas societárias; o comunicado citado pelas reportagens não resolve um contrato específico.",
+      "other_side_url": "https://www.cnnbrasil.com.br/economia/money/negocios/justica-de-sao-paulo-aceita-pedido-de-recuperacao-judicial-da-marabraz/",
+      "questions": [
+        "Quais contratos e pessoas jurídicas constam do processo judicial e quais não constam?",
+        "O produto contratado está em estoque, em trânsito ou sem data comprovada de entrega?",
+        "Qual documento confirma o tratamento de pedidos, pagamentos e eventual restituição aos consumidores?"
+      ],
+      "steps": [
+        "Separe oferta, prazo, pagamento, CNPJ da contratante e protocolos em seu arquivo particular.",
+        "Consulte o documento da Senacon e o estágio atual do processo antes de aceitar novas condições.",
+        "Peça à empresa resposta específica sobre entrega, restituição ou crédito, com data e documento verificável."
+      ],
+      "limits": "O valor do passivo foi informado pela empresa à imprensa; não é valor comprovado de compras não entregues. Pedido, deferimento e homologação de plano não são a mesma etapa; a situação posterior requer conferência dos autos.",
+      "guide_slug": "compra-em-recuperacao-judicial",
+      "story_slugs": [],
+      "sources": [
+        {
+          "name": "Folha — pedido de recuperação da Marabraz",
+          "url": "https://www1.folha.uol.com.br/mercado/2026/08/marabraz-pede-recuperacao-judicial-com-dividas-de-r-140-milhoes.shtml",
+          "published_at": "2026-08-16",
+          "kind": "Jornalismo"
+        },
+        {
+          "name": "Senacon — monitoramento do varejo",
+          "url": "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-abre-monitoramento-de-casas-bahia-tok-stok-e-marabraz-apos-pedidos-de-recuperacao-judicial",
+          "published_at": "2026-08-25",
+          "kind": "Documento público"
+        },
+        {
+          "name": "CNN Brasil — deferimento e resposta da Marabraz",
+          "url": "https://www.cnnbrasil.com.br/economia/money/negocios/justica-de-sao-paulo-aceita-pedido-de-recuperacao-judicial-da-marabraz/",
+          "published_at": "2026-10-28",
+          "kind": "Jornalismo"
+        }
+      ]
+    },
+    {
+      "id": "EXT-012",
+      "slug": "live-nation-ticketmaster-bts-ingressos-acesso-2026",
+      "company": "Live Nation Brasil e Ticketmaster Brasil",
+      "sector": "Eventos, shows, ingresso e acesso",
+      "state": "São Paulo, SP · outubro de 2026",
+      "headline": "Comprou ingresso. Ficou na fila. Quem explica o acesso aos shows do BTS?",
+      "deck": "A Senacon pediu documentos sobre estrutura audiovisual, acesso, portões, lotação e validação de ingressos depois do show de 28 de outubro de 2026.",
+      "status_label": "Notificações da Senacon em outubro de 2026",
+      "reviewed_at": "2026-11-10",
+      "first_record": "2026-10-22",
+      "record_type": "fontes-oficiais-e-reportagem",
+      "key_fact": {
+        "metric": "24 h",
+        "label": "prazo dado às empresas na notificação após o primeiro show",
+        "period": "Ofício da Senacon divulgado em 29/10/2026 para parte dos documentos; não significa duração de filas",
+        "source_url": "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-notifica-live-nation-e-ticketmaster-apos-relatos-de-problemas-no-primeiro-show-do-bts"
+      },
+      "lead": "Um ingresso válido só tem utilidade quando permite acesso nas condições anunciadas. O caso reúne perguntas sobre estrutura anunciada, filas, portões e validação digital feitas por um órgão público.",
+      "verified": [
+        "Em 23 de outubro, a Senacon informou notificações sobre diferenças de telões e materiais de venda apresentados aos fãs antes dos shows.",
+        "Em 28 de outubro o órgão publicou orientações para comparar mapa, setor, informações de acesso e condições do ingresso contratado.",
+        "Em 29 de outubro, após o primeiro show, a Senacon relatou queixas de filas, sinalização, validação digital e fechamento temporário do portão 17; as empresas foram chamadas a apresentar dados em 24 horas."
+      ],
+      "timeline": [
+        {
+          "date": "2026-10-22",
+          "label": "Primeira notificação sobre estrutura",
+          "description": "Senacon pede detalhamento de telões, visibilidade e informações da oferta.",
+          "source_url": "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-notifica-empresas-sobre-estrutura-de-shows-do-bts-em-sao-paulo"
+        },
+        {
+          "date": "2026-10-28",
+          "label": "Primeiro espetáculo e orientação ao público",
+          "description": "A secretaria relembra o dever de fornecer informação precisa sobre ingresso e serviço.",
+          "source_url": "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-orienta-consumidores-sobre-direitos-nos-shows-do-bts-em-sao-paulo"
+        },
+        {
+          "date": "2026-10-29",
+          "label": "Cobrança de segurança e validação",
+          "description": "Novas notificações solicitam documentos, quantidades e dados sobre falhas de acesso.",
+          "source_url": "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-notifica-live-nation-e-ticketmaster-apos-relatos-de-problemas-no-primeiro-show-do-bts"
+        }
+      ],
+      "other_side": "Os documentos divulgados pela Senacon solicitam resposta da produtora e da plataforma sobre publicidade, lotação, acesso e atendimento. A notificação não apresenta nesses textos uma confirmação final sobre a causa de cada reclamação.",
+      "other_side_url": "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-notifica-live-nation-e-ticketmaster-apos-relatos-de-problemas-no-primeiro-show-do-bts",
+      "questions": [
+        "Quantos ingressos foram emitidos e validados por setor, e com quais documentos de lotação?",
+        "Quais mensagens foram enviadas aos compradores sobre portões, estrutura e mudanças?",
+        "Quais medidas concretas de atendimento ou ressarcimento foram prestadas aos consumidores com acesso prejudicado?"
+      ],
+      "steps": [
+        "Conserve ingresso digital, comprovante, mapa do setor e comunicação da venda.",
+        "Compare avisos anteriores ao show e os boletins da Senacon nas suas datas de publicação.",
+        "Peça informação específica sobre acesso e eventual reparação no canal contratado, documentando a resposta."
+      ],
+      "limits": "Notificações e reclamações são fatos do procedimento administrativo, não constatação final de superlotação, culpa empresarial ou número de pessoas indenizáveis. O registro não afirma que uma pessoa específica ficou impedida de entrar.",
+      "guide_slug": "ingresso-show-falha-acesso-revenda",
+      "story_slugs": [],
+      "sources": [
+        {
+          "name": "Senacon — estrutura de shows BTS",
+          "url": "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-notifica-empresas-sobre-estrutura-de-shows-do-bts-em-sao-paulo",
+          "published_at": "2026-10-23",
+          "kind": "Documento público"
+        },
+        {
+          "name": "Senacon — orientação para compradores de ingressos",
+          "url": "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-orienta-consumidores-sobre-direitos-nos-shows-do-bts-em-sao-paulo",
+          "published_at": "2026-10-28",
+          "kind": "Documento público"
+        },
+        {
+          "name": "Senacon — notificação após primeiro show",
+          "url": "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-notifica-live-nation-e-ticketmaster-apos-relatos-de-problemas-no-primeiro-show-do-bts",
+          "published_at": "2026-10-29",
+          "kind": "Documento público"
+        }
+      ]
+    },
+    {
+      "id": "EXT-013",
+      "slug": "corsan-aegea-procons-agua-rio-grande-do-sul-2026",
+      "company": "Corsan / Aegea",
+      "sector": "Abastecimento de água e saneamento",
+      "state": "Rio Grande do Sul · outubro de 2026",
+      "headline": "Faltou água ou resposta? O que a Corsan prometeu aos Procons do RS?",
+      "deck": "Senacon, Ministério Público e Procons registraram reunião e compromissos para respostas regionais, mutirão e acompanhamento das queixas em outubro de 2026.",
+      "status_label": "Compromissos anunciados e monitoramento em outubro/2026",
+      "reviewed_at": "2026-11-10",
+      "first_record": "2026-10-15",
+      "record_type": "fontes-oficiais-e-reportagem",
+      "key_fact": {
+        "metric": "5 regiões",
+        "label": "macrorregiões propostas para o atendimento direto aos Procons",
+        "period": "Plano de relacionamento anunciado pela Senacon em 22/10/2026; não atesta conclusão",
+        "source_url": "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-ministerio-publico-e-procons-gauchos-cobram-melhorias-nos-servicos-da-corsan-aegea"
+      },
+      "lead": "Água e esgoto são serviços que não podem desaparecer numa central de atendimento ineficaz. O Ministério Público gaúcho e a Senacon documentaram reclamações de consumidores e uma cobrança por canais capazes de resolver problemas.",
+      "verified": [
+        "O Ministério Público do RS informou reunião com representantes da Aegea e Procons em 15 de outubro para debater falhas de atendimento e soluções coletivas.",
+        "Em 22 de outubro, a Senacon informou que representantes da Corsan/Aegea assumiram o compromisso de organizar atendimento por cinco macrorregiões.",
+        "A secretaria também descreveu intenção de criar canais diretos aos Procons em dez dias úteis, mutirão de processos e monitoramento de execução; promessa de medida não é execução confirmada."
+      ],
+      "timeline": [
+        {
+          "date": "2026-10-15",
+          "label": "Reunião no Ministério Público",
+          "description": "MPRS recebe Senacon, Procons e representantes da concessionária para debater falhas.",
+          "source_url": "https://www.mprs.mp.br/noticias/consumidor/67560/"
+        },
+        {
+          "date": "2026-10-20",
+          "label": "Concessionária e instituições voltam a se reunir",
+          "description": "A Senacon descreve uma segunda reunião operacional e compromissos de atendimento.",
+          "source_url": "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-ministerio-publico-e-procons-gauchos-cobram-melhorias-nos-servicos-da-corsan-aegea"
+        },
+        {
+          "date": "2026-10-22",
+          "label": "Senacon publica plano de acompanhamento",
+          "description": "Divulgação das cinco macrorregiões, canais diretos, mutirão e intenção de monitoramento.",
+          "source_url": "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-ministerio-publico-e-procons-gauchos-cobram-melhorias-nos-servicos-da-corsan-aegea"
+        }
+      ],
+      "other_side": "A Corsan/Aegea, conforme os registros institucionais, propôs atendimento regionalizado, agenda de prestação de contas, auditorias e qualificação de canais. Cada etapa anunciada ainda precisa ser checada pelo prazo e pelo resultado.",
+      "other_side_url": "https://www.mprs.mp.br/noticias/consumidor/67560/",
+      "questions": [
+        "Os canais regionais prometidos aos Procons estão ativos? Onde estão os responsáveis?",
+        "Quantos casos do mutirão receberam resposta, solução e data verificável?",
+        "Quais localidades tiveram interrupções ou queixas reiteradas documentadas em fontes oficiais?"
+      ],
+      "steps": [
+        "Registre datas da interrupção, falta de abastecimento, protocolos e prejuízos próprios.",
+        "Consulte comunicações de sua cidade, Procon local, MPRS e concessionária.",
+        "Cobre publicamente número de demandas recebidas e resolvidas no período prometido, sem divulgar dados dos moradores."
+      ],
+      "limits": "As medidas anunciadas não são prova de que o abastecimento foi restabelecido em cada município ou de que todos os processos foram encerrados. Cinco regiões indicam modelo de atendimento, não número de reclamações.",
+      "guide_slug": "agua-esgoto-falha-atendimento-concessionaria",
+      "story_slugs": [],
+      "sources": [
+        {
+          "name": "Ministério Público RS — reunião com Corsan/Aegea",
+          "url": "https://www.mprs.mp.br/noticias/consumidor/67560/",
+          "published_at": "2026-10-19",
+          "kind": "Documento público"
+        },
+        {
+          "name": "Senacon — acordos e monitoramento da Corsan",
+          "url": "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-ministerio-publico-e-procons-gauchos-cobram-melhorias-nos-servicos-da-corsan-aegea",
+          "published_at": "2026-10-22",
+          "kind": "Documento público"
+        }
+      ]
+    },
+    {
+      "id": "EXT-014",
+      "slug": "amazon-prime-video-anuncios-adicional-senacon-2026",
+      "company": "Amazon Prime Video",
+      "sector": "Streaming, assinatura e publicidade digital",
+      "state": "Brasil · fevereiro de 2025 a setembro de 2026",
+      "headline": "Assinou sem anúncios? Por que manter a experiência passou a custar R$ 10 a mais?",
+      "deck": "A Senacon abriu averiguação sobre anúncios inseridos em contratos em andamento e uma modalidade adicional sem publicidade. A empresa declarou data e preço da mudança.",
+      "status_label": "Averiguação preliminar iniciada pela Senacon em 10/09/2026",
+      "reviewed_at": "2026-11-10",
+      "first_record": "2025-02-25",
+      "record_type": "fontes-oficiais-e-reportagem",
+      "key_fact": {
+        "metric": "R$ 10/mês",
+        "label": "opção adicional para remover anúncios no Prime Video",
+        "period": "Valor comunicado pela Amazon à Senacon em 2026 referente à mudança iniciada em 02/04/2025",
+        "source_url": "https://www.gov.br/mj/pt-br/assuntos/noticias-1/senacon-inicia-averiguacao-sobre-mudancas-no-amazon-prime-video/"
+      },
+      "lead": "Alguém contratou uma experiência de streaming e, durante o pagamento do plano, encontrou anúncios novos. A pergunta da Senacon: o que o contrato prometia e quem concordou com a alteração antes do seu término?",
+      "verified": [
+        "Segundo informações da Amazon à Senacon, clientes foram comunicados em 25 e 26 de fevereiro de 2025 sobre mudanças de publicidade na assinatura.",
+        "A empresa informou que os anúncios passaram a alcançar a base de assinantes em 2 de abril de 2025, com opção adicional sem anúncios por R$ 10 mensais.",
+        "Em 10 de setembro de 2026 a Senacon informou abertura de averiguação preliminar para examinar condições originalmente contratadas, duração de contratos e eventual alteração unilateral; Mobile Time reproduziu a investigação no dia seguinte."
+      ],
+      "timeline": [
+        {
+          "date": "2025-02-25",
+          "label": "Aviso da mudança relatado pela Amazon",
+          "description": "A empresa informou à Senacon o comunicado aos clientes em 25 e 26 de fevereiro.",
+          "source_url": "https://www.gov.br/mj/pt-br/assuntos/noticias-1/senacon-inicia-averiguacao-sobre-mudancas-no-amazon-prime-video/"
+        },
+        {
+          "date": "2025-04-02",
+          "label": "Anúncios passam a atingir assinantes",
+          "description": "Data declarada pela empresa para início da nova política de exibição.",
+          "source_url": "https://www.gov.br/mj/pt-br/assuntos/noticias-1/senacon-inicia-averiguacao-sobre-mudancas-no-amazon-prime-video/"
+        },
+        {
+          "date": "2026-09-10",
+          "label": "Senacon inicia averiguação",
+          "description": "Órgão divulga escopo documental da análise de contratos, preços e publicidade.",
+          "source_url": "https://www.gov.br/mj/pt-br/assuntos/noticias-1/senacon-inicia-averiguacao-sobre-mudancas-no-amazon-prime-video/"
+        }
+      ],
+      "other_side": "A Amazon declarou à Senacon que comunicou previamente os clientes e ofereceu opção sem anúncios mediante pagamento adicional. O órgão passou a verificar a relação dessa mudança com contratos que já estavam em curso.",
+      "other_side_url": "https://www.gov.br/mj/pt-br/assuntos/noticias-1/senacon-inicia-averiguacao-sobre-mudancas-no-amazon-prime-video/",
+      "questions": [
+        "Quais cláusulas e qual versão do plano foram oferecidas ao assinante no momento da compra?",
+        "O contrato tinha prazo determinado e a alteração ocorreu dentro desse período?",
+        "A empresa comunicou e registrou consentimento para uma mudança de qualidade ou preço?"
+      ],
+      "steps": [
+        "Guarde comprovantes da assinatura, captura da oferta e comunicação sobre anúncios.",
+        "Compare datas contratadas com a mudança comunicada em fevereiro e implementada em abril de 2025.",
+        "Solicite à empresa a cláusula, o histórico de comunicação e uma solução formal para o contrato específico."
+      ],
+      "limits": "Investigação preliminar da Senacon não é decisão administrativa final ou condenação judicial. O valor de R$ 10 é preço da modalidade adicional informado no recorte, não prejuízo comprovado de todo assinante.",
+      "guide_slug": "streaming-assinatura-anuncios-alteracao-contrato",
+      "story_slugs": [],
+      "sources": [
+        {
+          "name": "Senacon — averiguação Prime Video",
+          "url": "https://www.gov.br/mj/pt-br/assuntos/noticias-1/senacon-inicia-averiguacao-sobre-mudancas-no-amazon-prime-video/",
+          "published_at": "2026-09-10",
+          "kind": "Documento público"
+        },
+        {
+          "name": "Mobile Time — cobertura da investigação",
+          "url": "https://www.mobiletime.com.br/noticias/11/09/2026/senacon-amaz-prime-video/",
+          "published_at": "2026-09-11",
+          "kind": "Jornalismo"
+        }
+      ]
+    },
+    {
+      "id": "EXT-015",
+      "slug": "revenda-ingressos-viagogo-stubhub-ticket-swap-2026",
+      "company": "Viagogo, StubHub, TicketSwap, BuyTicket e FunBuyNet",
+      "sector": "Revenda digital de ingressos",
+      "state": "Brasil · julho a outubro de 2026",
+      "headline": "Quem vende seu ingresso? A Senacon cobrou cinco plataformas de revenda.",
+      "deck": "Decisões cautelares, notificações e processos administrativos exigem informação sobre vendedor, preço total e origem dos ingressos.",
+      "status_label": "Medidas cautelares anunciadas em 28/10/2026",
+      "reviewed_at": "2026-11-10",
+      "first_record": "2026-07-20",
+      "record_type": "fontes-oficiais-e-reportagem",
+      "key_fact": {
+        "metric": "5 plataformas",
+        "label": "intermediadoras alcançadas pela medida de 28/10/2026",
+        "period": "Nomes enumerados na medida cautelar publicada pela Senacon; não é número de clientes prejudicados",
+        "source_url": "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-determina-prazo-de-72-horas-para-cinco-plataformas-suspenderem-novas-revendas-de-ingressos"
+      },
+      "lead": "A publicidade pode parecer a bilheteria oficial, mas o ingresso oferecido vem de uma pessoa terceira. O comprador precisa saber quem vende, qual preço total será cobrado e que garantia real tem para entrar no evento.",
+      "verified": [
+        "Em julho de 2026, Senacon informou procedimento e medida de transparência sobre a Viagogo, além de averiguação preliminar sobre StubHub.",
+        "Em agosto, a secretaria abriu processos contra FunBuyNet e BuyTicket e registrou exigências de informação prévia sobre revenda e preço de face.",
+        "Em 28 de outubro, a Senacon determinou medida cautelar relativa à intermediação de novas revendas para cinco plataformas, listadas nominalmente, com exigências de informação e previsão de multa diária por descumprimento."
+      ],
+      "timeline": [
+        {
+          "date": "2026-07-20",
+          "label": "Senacon cobra transparência da Viagogo",
+          "description": "Procedimento e obrigações de identificação do canal de revenda são divulgados.",
+          "source_url": "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-determina-que-viagogo-informe-ao-consumidor-que-nao-e-canal-oficial-de-venda"
+        },
+        {
+          "date": "2026-08-17",
+          "label": "Novos processos sobre intermediadores",
+          "description": "Secretaria anuncia medidas contra FunBuyNet e BuyTicket, mantendo monitoramento do setor.",
+          "source_url": "https://www.gov.br/mj/pt-br/assuntos/noticias-1/senacon-instaura-processos-contra-duas-plataformas-de-revenda-de-ingressos"
+        },
+        {
+          "date": "2026-10-28",
+          "label": "Cautelar alcança cinco plataformas",
+          "description": "Decisão administrativa anuncia prazo de 72 horas, dever de informação e consequências por descumprimento.",
+          "source_url": "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-determina-prazo-de-72-horas-para-cinco-plataformas-suspenderem-novas-revendas-de-ingressos"
+        }
+      ],
+      "other_side": "Nos registros oficiais, as empresas têm oportunidade de defesa nos processos administrativos. A Senacon diferencia medida cautelar da decisão final sobre eventual infração, e descreve as exigências de transparência.",
+      "other_side_url": "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-determina-prazo-de-72-horas-para-cinco-plataformas-suspenderem-novas-revendas-de-ingressos",
+      "questions": [
+        "O consumidor sabia antes de pagar que o site era revenda e não bilheteria oficial?",
+        "O preço total e os encargos foram exibidos antes do pagamento?",
+        "Há comprovação de emissão e validação do ingresso, ou de reembolso quando falhou?"
+      ],
+      "steps": [
+        "Registre página de oferta, vendedor anunciado, total de taxas e comprovante do pedido.",
+        "Compare informações da compra com as exigências oficiais publicadas pela Senacon.",
+        "Cobre identificação, entrega válida e solução individual por canal verificável."
+      ],
+      "limits": "Cinco é contagem das plataformas nomeadas na cautelar, não de casos comprovados de fraude ou contratos prejudicados. A aplicação e vigência posterior da decisão dependem de consulta aos registros administrativos.",
+      "guide_slug": "ingresso-show-falha-acesso-revenda",
+      "story_slugs": [],
+      "sources": [
+        {
+          "name": "Senacon — Viagogo e transparência",
+          "url": "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-determina-que-viagogo-informe-ao-consumidor-que-nao-e-canal-oficial-de-venda",
+          "published_at": "2026-07-20",
+          "kind": "Documento público"
+        },
+        {
+          "name": "Senacon — processos sobre revenda",
+          "url": "https://www.gov.br/mj/pt-br/assuntos/noticias-1/senacon-instaura-processos-contra-duas-plataformas-de-revenda-de-ingressos",
+          "published_at": "2026-08-17",
+          "kind": "Documento público"
+        },
+        {
+          "name": "Senacon — cautelar sobre cinco plataformas",
+          "url": "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-determina-prazo-de-72-horas-para-cinco-plataformas-suspenderem-novas-revendas-de-ingressos",
+          "published_at": "2026-10-28",
+          "kind": "Documento público"
+        }
+      ]
     }
   ],
   "stories": [

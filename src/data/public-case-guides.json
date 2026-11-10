@@ -234,7 +234,174 @@
       "related_case_slugs": [
         "grao-de-gente-recuperacao-judicial-pedidos-bebe",
         "novo-mundo-goias-entregas-procon-novembro-2026",
-        "123milhas-pacotes-cancelados-recuperacao-judicial"
+        "123milhas-pacotes-cancelados-recuperacao-judicial",
+        "casas-bahia-recuperacao-judicial-entregas-2026",
+        "tok-stok-mobly-grupo-toky-recuperacao-2026",
+        "marabraz-recuperacao-judicial-2026-pedidos-moveis"
+      ]
+    },
+    {
+      "slug": "ingresso-show-falha-acesso-revenda",
+      "title": "Comprou o ingresso e não conseguiu entrar? Como cobrar quem vendeu e quem organizou.",
+      "description": "Shows, ingressos digitais, filas, revenda, taxa e estrutura diferente da oferta: documente os fatos e cobre respostas das partes envolvidas no evento.",
+      "category": "Ingressos, eventos e revenda",
+      "updated_at": "2026-11-10",
+      "intro": "Você pagou por um evento, mas não recebeu a experiência prometida: o acesso falhou, a fila impediu a entrada, a estrutura mudou ou o ingresso veio de uma plataforma de revenda. A obrigação de informar e prestar o serviço precisa ser examinada no momento em que a compra foi feita. A cobrança fica mais forte quando distingue bilheteria, organizadora, intermediador e vendedor real.",
+      "sections": [
+        {
+          "heading": "01 · Quem vendeu? Quem prometeu a entrada?",
+          "paragraphs": [
+            "Guarde o anúncio, o mapa, setor, assento, valor total, taxa, nome da plataforma, pedido e horário prometido. Compare quem emitiu o bilhete com quem organizou o evento e quem intermediou a compra.",
+            "Se você comprou em revenda, identifique a informação de que era revenda, o vendedor declarado e o preço de face. A Senacon tratou transparência da cadeia de venda e dos encargos em documentos de 2026."
+          ]
+        },
+        {
+          "heading": "02 · Como demonstrar a diferença entre o prometido e o prestado?",
+          "paragraphs": [
+            "Em caso de problemas de ingresso digital, guarde a mensagem de validação e o registro do atendimento. Para filas, portões ou mudança de estrutura, documente as informações públicas do evento e a hora da tentativa de acesso.",
+            "Solicite dados sobre quantos ingressos foram comercializados e validados no setor e as medidas adotadas para reparar consumidores afetados. Dados de órgão público podem indicar perguntas a fazer, mas o seu contrato exige prova individual."
+          ]
+        },
+        {
+          "heading": "03 · Como cobrar um resultado verificável?",
+          "paragraphs": [
+            "Procure a bilheteria ou a organizadora pelo canal oficial e descreva fatos, datas, setor e solução pretendida. Conserve protocolos e respostas, evitando divulgar o QR code de entrada em redes sociais.",
+            "Se a resposta não esclarecer o ocorrido, organize o histórico para um pedido ao Procon ou Consumidor.gov.br quando a empresa estiver cadastrada. Acompanhe decisões administrativas com a data e o estágio corretos."
+          ]
+        }
+      ],
+      "checklist": [
+        "Anúncio original com preço total, taxas, vendedor e data da oferta.",
+        "Comprovante de pagamento e tipo de ingresso, guardados em pasta privada.",
+        "Mapa do setor, comunicações sobre acesso, portões e estrutura divulgada.",
+        "Registros do horário da tentativa de acesso e resposta do atendimento.",
+        "Pedido específico de entrega válida, explicação ou reparação e protocolo."
+      ],
+      "request_example": "Comprei ingresso de [vendedor/plataforma] para [evento e data], setor [setor], sob as condições anunciadas em [data]. O problema concreto foi [descrever]. Solicito identificar o responsável pela venda e pela execução, apresentar o registro de validação e de acesso pertinente, explicar a divergência com a oferta e fornecer resposta escrita com a solução proposta e o prazo de cumprimento. Preservo os comprovantes originais.",
+      "limits": "É necessário distinguir revenda, venda primária, organizadora e plataforma intermediária conforme o contrato efetivamente usado. Medidas cautelares contra outras empresas não demonstram que seu ingresso era inválido, nem que todo problema justifica um mesmo valor de indenização.",
+      "sources": [
+        {
+          "name": "Senacon — notificações e acesso em shows 2026",
+          "url": "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-notifica-live-nation-e-ticketmaster-apos-relatos-de-problemas-no-primeiro-show-do-bts"
+        },
+        {
+          "name": "Senacon — requisitos de revenda e dever de informação",
+          "url": "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-determina-prazo-de-72-horas-para-cinco-plataformas-suspenderem-novas-revendas-de-ingressos"
+        },
+        {
+          "name": "Senacon — regras para compra e revenda de ingressos",
+          "url": "https://www.gov.br/mj/pt-br/assuntos/noticias/decreto-estabelece-novas-regras-para-compra-e-revenda-de-ingressos-para-eventos"
+        }
+      ],
+      "related_case_slugs": [
+        "live-nation-ticketmaster-bts-ingressos-acesso-2026",
+        "revenda-ingressos-viagogo-stubhub-ticket-swap-2026"
+      ]
+    },
+    {
+      "slug": "agua-esgoto-falha-atendimento-concessionaria",
+      "title": "Faltou água, houve cobrança ou ninguém respondeu? Exija uma solução da concessionária.",
+      "description": "Água e saneamento: como registrar interrupções, cobranças, ordens de serviço e compromissos públicos para cobrar respostas das concessionárias.",
+      "category": "Água, saneamento e serviços essenciais",
+      "updated_at": "2026-11-10",
+      "intro": "A água não chega, o atendimento registra um protocolo e a resposta não resolve. Nesse momento, o consumidor precisa de um histórico claro do serviço prestado e de quem assumiu o compromisso de solucionar. No Rio Grande do Sul, a Senacon e o Ministério Público documentaram cobranças públicas e compromissos da Corsan/Aegea em 2026. O método também serve para organizar a sua própria situação.",
+      "sections": [
+        {
+          "heading": "01 · Registre onde, quando e o quê",
+          "paragraphs": [
+            "Guarde fatura, identificação da unidade e protocolo em ambiente privado. Anote início e fim da interrupção observada, pressão insuficiente, qualidade relatada da água, cobrança contestada ou falha de esgoto com datas.",
+            "Compare o registro pessoal com comunicados públicos da distribuidora, prefeitura, agência reguladora e Procon local. A data de um boletim institucional pode ser diferente do momento em que seu serviço foi restabelecido."
+          ]
+        },
+        {
+          "heading": "02 · O que a concessionária efetivamente assumiu?",
+          "paragraphs": [
+            "Separe compromissos amplos de planos que podem ser conferidos: canal de atendimento, macrorregião, pessoa responsável, prazo, número de casos respondidos e andamento do mutirão.",
+            "A Senacon divulgou plano de cinco macrorregiões de atendimento e canal direto aos Procons gaúchos. O consumidor pode perguntar quais medidas realmente funcionam em seu município e quando foram implantadas."
+          ]
+        },
+        {
+          "heading": "03 · Como construir a cobrança",
+          "paragraphs": [
+            "Peça explicação técnica sobre ocorrência, cronograma de solução e eventual revisão da cobrança. Solicite número de protocolo e um retorno por escrito com data.",
+            "Se persistir, organize os registros para a ouvidoria, Procon, regulador ou instituição competente, conforme a natureza da demanda. Mobilização coletiva deve usar informações de serviço e documentos, sem expor dados de moradores."
+          ]
+        }
+      ],
+      "checklist": [
+        "Número da unidade e faturas guardados privadamente.",
+        "Datas e horários observados de interrupção ou problema de qualidade.",
+        "Protocolos, ordens de serviço e respostas da concessionária.",
+        "Comunicados públicos do município e agência, com data e fonte.",
+        "Solicitação de solução, prazo e confirmação do serviço restabelecido."
+      ],
+      "request_example": "Solicito esclarecimento formal sobre a unidade atendida em [município], com ocorrência de [problema] em [data e intervalo]. Anexo os documentos pelos canais adequados. Preciso do registro técnico disponível, da causa identificada, do responsável pelo atendimento, de um prazo verificável e, quando cabível, da explicação sobre a cobrança e os meios para obter revisão ou solução concreta.",
+      "limits": "O histórico de Corsan/Aegea serve como exemplo documentado de cobrança institucional, sem atribuir automaticamente a mesma causa ou resultado a outras cidades e concessionárias. A responsabilidade por danos ou valores não pode ser calculada apenas pelo tempo de ausência do serviço sem provas adicionais.",
+      "sources": [
+        {
+          "name": "MPRS — reunião extraordinária sobre Corsan/Aegea",
+          "url": "https://www.mprs.mp.br/noticias/consumidor/67560/"
+        },
+        {
+          "name": "Senacon — compromissos de atendimento regional da Corsan",
+          "url": "https://www.gov.br/mj/pt-br/assuntos/noticias/senacon-ministerio-publico-e-procons-gauchos-cobram-melhorias-nos-servicos-da-corsan-aegea"
+        }
+      ],
+      "related_case_slugs": [
+        "corsan-aegea-procons-agua-rio-grande-do-sul-2026"
+      ]
+    },
+    {
+      "slug": "streaming-assinatura-anuncios-alteracao-contrato",
+      "title": "O streaming mudou seu contrato? Como documentar anúncios, preço e cobrança adicional.",
+      "description": "Assinatura, anúncios e serviços digitais: confira a oferta que você contratou, o momento da alteração e o custo para manter as condições anunciadas.",
+      "category": "Assinatura digital e oferta contratada",
+      "updated_at": "2026-11-10",
+      "intro": "Você assina um serviço de vídeo e descobre que passou a receber anúncios, ou que precisa pagar um adicional para manter a experiência anterior. A pergunta não é apenas quanto custou o novo plano: o que estava contratado, por quanto tempo, quando a mudança aconteceu e o que o fornecedor comunicou? A Senacon instaurou apuração sobre o Prime Video em 2026, permitindo uma investigação com datas e valores específicos.",
+      "sections": [
+        {
+          "heading": "01 · Reconstrua a oferta original",
+          "paragraphs": [
+            "Recupere o texto da oferta que estava disponível na data de contratação, o ciclo de pagamento e as cláusulas relevantes. Guarde preço, modalidade mensal ou anual e data de renovação.",
+            "Não confunda publicidade inserida durante um novo ciclo com mudança em contrato de prazo determinado ainda vigente. A Senacon direcionou sua análise justamente à natureza e duração desses contratos."
+          ]
+        },
+        {
+          "heading": "02 · Quais mudanças foram comunicadas?",
+          "paragraphs": [
+            "Anote a data em que os anúncios surgiram no serviço, a comunicação recebida e o valor pedido para remover publicidade. No caso Prime Video, a Amazon comunicou à Senacon mudança implementada em abril de 2025 e opção de R$ 10 mensais para retirar anúncios.",
+            "Compare os valores com comprovantes do seu ciclo contratual. Uma notícia sobre todos os assinantes não prova que todos tiveram as mesmas condições, perderam igual valor ou pediram ressarcimento."
+          ]
+        },
+        {
+          "heading": "03 · Cobrar documentos e providência",
+          "paragraphs": [
+            "Peça ao fornecedor qual cláusula fundamenta a alteração e qual comunicação foi enviada ao seu cadastro, com data, termos e condições de cancelamento ou retorno ao plano contratado.",
+            "Se não houver solução, reúna a linha do tempo e utilize canais oficiais para formalizar uma reclamação identificada. Acompanhe a averiguação administrativa sem tratar sua abertura como decisão final."
+          ]
+        }
+      ],
+      "checklist": [
+        "Cópia ou captura da oferta vigente na assinatura.",
+        "Modalidade, preço e período contratado.",
+        "Mensagens de mudança recebidas e suas datas.",
+        "Registro do adicional e anúncios exibidos no período.",
+        "Protocolo com pedido de solução e resposta efetiva."
+      ],
+      "request_example": "Assinei [serviço e modalidade] em [data] pelo valor de [valor], pelo prazo [período]. Posteriormente foram inseridos [anúncios/alteração de condições] em [data], com cobrança adicional de [valor] para manter a experiência anteriormente oferecida. Solicito identificar a cláusula e a comunicação aplicadas ao meu contrato, com datas e condições, e informar uma solução formal com registro e prazo.",
+      "limits": "O caso da Senacon sobre Prime Video é averiguação preliminar e não estabelece por si só que todos os contratos eram idênticos, que houve infração definitiva ou que cada assinante tem automaticamente o mesmo direito de restituição. A cobrança depende da oferta e do histórico individual.",
+      "sources": [
+        {
+          "name": "Senacon — apuração preliminar da Amazon Prime Video",
+          "url": "https://www.gov.br/mj/pt-br/assuntos/noticias-1/senacon-inicia-averiguacao-sobre-mudancas-no-amazon-prime-video/"
+        },
+        {
+          "name": "Mobile Time — notícia e contexto da mudança de streaming",
+          "url": "https://www.mobiletime.com.br/noticias/11/09/2026/senacon-amaz-prime-video/"
+        }
+      ],
+      "related_case_slugs": [
+        "amazon-prime-video-anuncios-adicional-senacon-2026"
       ]
     }
   ]

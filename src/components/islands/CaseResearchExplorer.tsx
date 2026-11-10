@@ -1,5 +1,5 @@
 import {useEffect,useMemo,useState} from 'react';
-import {Search,ArrowUpRight,RotateCcw,FolderOpen,BookOpen} from 'lucide-react';
+import {Search,ArrowUpRight,RotateCcw,FolderOpen,BookOpen,Share2} from 'lucide-react';
 import type {CaseCategory,CaseResearchEntry} from '../../lib/case-catalog';
 
 interface Props {
@@ -132,6 +132,7 @@ export default function CaseResearchExplorer({entries,categories,lockedCategory}
       {entry.kind==='caso'?cap(entry.sourceCount,'fonte','fontes'):cap(entry.sourceCount,'referência','referências')}
       {entry.storyCount>0?' · '+cap(entry.storyCount,'história','histórias'):''}
      </span>
+     <a href={"https://wa.me/?text="+encodeURIComponent("CasoAberto: "+entry.title+"\nLeia o caso completo com fontes e cronologia: https://casoaberto.pages.dev"+entry.href)} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-10 items-center gap-1 text-xs font-bold text-link hover:underline" aria-label={"Compartilhar "+entry.title+" no WhatsApp"}><Share2 size={14} aria-hidden="true"/> WhatsApp</a>
      <a href={entry.href} className="inline-flex items-center gap-1 text-sm font-bold text-link hover:underline">
       {entry.kind==='caso'?'Abrir caso':'Ler história'} <ArrowUpRight size={16} aria-hidden="true"/>
      </a>

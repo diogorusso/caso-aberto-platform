@@ -1,0 +1,30 @@
+---
+import benchmarks from '../data/research-benchmarks.json';
+import {ExternalLink,BarChart3} from 'lucide-react';
+const maximum=Math.max(...benchmarks.companies.map(c=>c.value));
+const pt=(v:number)=>v.toLocaleString('pt-BR');
+const pct=(v:number)=>String(v).replace('.',',')+'%';
+---
+<section class="border-t border-border bg-card py-12 md:py-16" aria-labelledby="benchmark-title">
+ <div class="container grid gap-8 lg:grid-cols-[minmax(0,.85fr)_minmax(0,1.15fr)] lg:items-start">
+  <div class="space-y-4">
+   <p class="m-0 text-xs font-bold uppercase tracking-widest text-brand-strong">DADOS PÚBLICOS · PROCON-SP 2024</p>
+   <h2 id="benchmark-title" class="m-0 max-w-xl text-3xl leading-tight md:text-4xl">O problema vai além de uma empresa. O Procon mediu.</h2>
+   <strong class="block text-5xl font-extrabold tracking-tight tabular-nums">{pt(benchmarks.total.value)}</strong>
+   <p class="m-0 text-base font-semibold">{benchmarks.total.label}</p>
+   <p class="m-0 text-sm leading-relaxed text-muted-foreground">{benchmarks.total.description}</p>
+   <a class="inline-flex min-h-11 items-center gap-2 text-sm font-bold text-link" href={benchmarks.source_url} rel="noopener noreferrer" target="_blank"><ExternalLink size={16} aria-hidden="true"/> Ler relatório do Procon-SP ↗</a>
+  </div>
+  <div class="space-y-5 rounded-xl border border-border bg-background p-5 md:p-7">
+   <div class="flex items-center gap-2"><BarChart3 size={19} className="text-brand-strong" aria-hidden="true"/><h3 class="m-0 text-xl">Três empresas investigadas pelo CasoAberto</h3></div>
+   <p class="m-0 text-xs leading-relaxed text-muted-foreground">Reclamações fundamentadas da Fundação Procon-SP, exercício 2024. Base estadual histórica, não contagem de consumidores únicos.</p>
+   {benchmarks.companies.map(item=><div class="space-y-2">
+    <div class="flex flex-wrap justify-between gap-2 text-sm"><a class="font-bold text-link" href={'/casos/arquivo-publico/'+item.case_slug+'/'}>{item.name} ↗</a><strong class="tabular-nums">{pt(item.value)}</strong></div>
+    <div class="h-2.5 overflow-hidden rounded-full bg-muted" role="img" aria-label={item.name+': '+pt(item.value)+' reclamações fundamentadas na Fundação Procon-SP em 2024'}><div class="h-full rounded-full bg-brand-strong" style={'width:'+100*item.value/maximum+'%'}></div></div>
+    <p class="m-0 text-xs text-muted-foreground">Solução na fase analisada: {pct(item.resolution_rate_pct)}</p>
+   </div>)}
+   <p class="m-0 border-t border-border pt-4 text-sm"><strong>{pct(benchmarks.rate.value)}</strong> {benchmarks.rate.label}. <span class="text-muted-foreground">{benchmarks.rate.scope}</span></p>
+   <a class="text-link text-sm font-semibold" href="/casos/">Investigar os casos ↗</a>
+  </div>
+ </div>
+</section>

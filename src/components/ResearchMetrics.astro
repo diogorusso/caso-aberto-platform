@@ -1,0 +1,25 @@
+---
+import {metricCards,metrics} from '../lib/research-metrics';
+import {FolderSearch,Link2,CalendarClock,MessageSquareQuote,UsersRound,ClipboardList,Scale,Layers3} from 'lucide-react';
+const icons=[FolderSearch,Link2,CalendarClock,MessageSquareQuote,UsersRound,ClipboardList,Scale,Layers3];
+---
+<section class="border-y border-border bg-muted py-8 md:py-12" aria-labelledby="research-kpis-title">
+ <div class="container space-y-5">
+  <header class="flex flex-wrap items-end justify-between gap-3">
+   <div><p class="m-0 text-xs font-bold uppercase tracking-[.14em] text-brand-strong">OBSERVATÓRIO · BASE DOCUMENTADA</p><h2 id="research-kpis-title" class="mb-1 mt-2 text-2xl leading-tight md:text-3xl">A cobrança tem números. E cada número tem fonte.</h2><p class="m-0 text-sm text-muted-foreground">Arquivo atualizado em {metrics.reviewedAt.split('-').reverse().join('/')}</p></div>
+   <a class="inline-flex min-h-11 items-center text-sm font-semibold text-link" href="/instituto/dados/pesquisa.json">Auditar todos os números ↗</a>
+  </header>
+  <div class="grid grid-cols-2 gap-2.5 sm:gap-3 lg:grid-cols-4">
+   {metricCards.map((m,i)=>{
+    const Icon=icons[i];
+    return <a class="group flex min-w-0 flex-col gap-2 rounded-lg border border-border bg-card px-3.5 py-4 no-underline transition-colors hover:border-brand-strong focus-visible:ring-2 focus-visible:ring-brand sm:p-5" href={m.href}>
+     <div class="flex items-center justify-between gap-2"><span class="text-[.68rem] font-bold uppercase leading-snug tracking-wide text-muted-foreground sm:text-xs">{m.label}</span><Icon size={17} className="shrink-0 text-brand-strong" aria-hidden="true"/></div>
+     <strong class="block text-3xl font-extrabold leading-none tracking-tight tabular-nums text-foreground sm:text-4xl">{m.value}</strong>
+     <p class="m-0 flex-1 text-[.73rem] leading-snug text-muted-foreground sm:text-xs">{m.note}</p>
+     <span class="text-xs font-semibold text-link group-hover:underline">{m.cta} ↗</span>
+    </a>;
+   })}
+  </div>
+  <p class="m-0 text-xs leading-relaxed text-muted-foreground">Casos, reclamações, histórias e fontes são contagens diferentes. Nenhuma delas equivale à quantidade de pessoas únicas. <a class="text-link font-semibold" href="/instituto/dados/pesquisa.json">Conferir critérios e registros ↗</a></p>
+ </div>
+</section>

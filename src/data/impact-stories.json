@@ -172,6 +172,76 @@
       "threshold": "Novo teste independente, relatório oficial sobre execução ou decisão pública com providências exigidas.",
       "resolution": "Resultados auditáveis, dados de transparência e processos de recurso efetivamente verificáveis.",
       "action": "Cobrar métricas publicadas, metodologias e efetividade real dos controles anunciados."
+    },
+    {
+      "id": "EXT-009",
+      "audience": "Consumidor com compra de móveis ou eletrodomésticos em andamento",
+      "exposure": "Pedido feito, dinheiro comprometido e dúvidas sobre entrega durante recuperação.",
+      "headline": "Casas Bahia: o processo mudou. Quem apresenta a data da entrega?",
+      "worst_case": "Se o prazo contratual for descumprido sem solução documentada, o cliente poderá continuar sem o produto e com pagamento comprometido, mesmo com o processo judicial em andamento.",
+      "threshold": "Prazo vencido, tentativa de contato sem plano individual ou anúncio sem documento da compra.",
+      "resolution": "Produto entregue e aceito, ou restituição devidamente comprovada; ato processual atualizado.",
+      "action": "Peça cronograma verificável, canal da pessoa jurídica contratante e resposta formal sobre a execução da compra."
+    },
+    {
+      "id": "EXT-010",
+      "audience": "Compradores de Tok&Stok e Mobly com entrega futura",
+      "exposure": "Móveis para casa sujeitos a datas contratuais em meio à reorganização empresarial.",
+      "headline": "Tok&Stok e Mobly: a recuperação começou. Quem entrega o que foi vendido?",
+      "worst_case": "Se a entrega futura depender de promessas sem cronograma, uma família poderá enfrentar obra atrasada, imóvel incompleto e dinheiro imobilizado por período ainda desconhecido.",
+      "threshold": "Comunicação de atraso, produto sem estoque identificado ou proposta de troca sem termo formal.",
+      "resolution": "Entrega completa do pedido ou resolução contratual documentada, com orientação processual aplicável.",
+      "action": "Compare datas de compra e pedido de recuperação; exija o responsável e um documento sobre o cumprimento."
+    },
+    {
+      "id": "EXT-011",
+      "audience": "Clientes da Marabraz aguardando móveis e eletrodomésticos",
+      "exposure": "Compras de longo prazo ficam expostas à incerteza de entrega e restituição.",
+      "headline": "Marabraz: os móveis foram vendidos. E os compromissos com os clientes?",
+      "worst_case": "Se as datas continuarem sendo alteradas sem prova de entrega, compradores poderão perder o planejamento de moradia, enquanto pagamentos seguem comprometidos.",
+      "threshold": "Resposta que promete solução sem informar data, mercadoria e canal responsável.",
+      "resolution": "Cumprimento contratual ou cancelamento e restituição efetiva, registrados individualmente.",
+      "action": "Confronte a oferta original com o estágio processual e peça um compromisso escrito sobre o pedido."
+    },
+    {
+      "id": "EXT-012",
+      "audience": "Pessoas com ingressos para espetáculos e shows",
+      "exposure": "Problemas de acesso ou informações sobre estrutura podem frustrar a experiência contratada.",
+      "headline": "O ingresso era válido. Por que houve reclamação sobre a entrada?",
+      "worst_case": "Se problemas de acesso e informação se repetirem, compradores podem perder parte do espetáculo ou a utilidade do ingresso mesmo após pagar, sem solução individualizada.",
+      "threshold": "Divergência entre o mapa ofertado e a experiência, portão indisponível ou validação recusada.",
+      "resolution": "Documentação de ingresso, acesso prestado, resposta individual e eventual solução verificável.",
+      "action": "Peça dados da lotação, procedimentos de acesso e providências oferecidas a quem comprovou prejuízo."
+    },
+    {
+      "id": "EXT-013",
+      "audience": "Famílias afetadas por água ou saneamento sem atendimento eficaz",
+      "exposure": "Interrupções e resposta insuficiente afetam rotina e saúde ambiental.",
+      "headline": "A Corsan prometeu canais diretos. A população recebeu solução?",
+      "worst_case": "Se canais de atendimento e respostas permanecerem ineficazes, famílias podem enfrentar interrupções repetidas e dificuldades para resolver cobranças e serviços essenciais.",
+      "threshold": "Atraso na ativação dos canais prometidos ou novas queixas sem resposta pela macrorregião.",
+      "resolution": "Canais funcionando, demandas respondidas e melhorias de serviço verificadas por município e data.",
+      "action": "Consulte o Procon e os boletins locais; cobre cumprimento por macrorregião com registros auditáveis."
+    },
+    {
+      "id": "EXT-014",
+      "audience": "Assinantes que contrataram streaming por prazo determinado",
+      "exposure": "Inserção de anúncios ou custo adicional podem alterar a oferta percebida no período pago.",
+      "headline": "O preço mudou para ver sem anúncios. O contrato dizia o quê?",
+      "worst_case": "Se as condições do serviço mudarem durante contratos sem consentimento válido, assinantes podem pagar mais para manter uma experiência que acreditavam já ter contratado.",
+      "threshold": "Aumento do custo para retirar anúncios durante vigência de plano anteriormente contratado.",
+      "resolution": "Cláusulas, comunicações, prazo e solução do contrato publicados e verificados individualmente.",
+      "action": "Guarde a oferta de contratação e cobre a justificativa da alteração e uma solução ao seu plano específico."
+    },
+    {
+      "id": "EXT-015",
+      "audience": "Pessoas que compram ingressos em plataformas intermediadoras",
+      "exposure": "Preço total, autenticidade e identidade do vendedor precisam ficar claros antes do pagamento.",
+      "headline": "O site vende o evento ou revende o ingresso de outra pessoa?",
+      "worst_case": "Se plataformas não informarem quem vende e quais taxas são cobradas, compradores podem pagar preços maiores sem entender a origem do bilhete ou como resolver falhas de acesso.",
+      "threshold": "Oferta sem indicação do vendedor, taxa inesperada ou ausência de validação do ingresso.",
+      "resolution": "Bilhete válido entregue em prazo, informação contratual transparente e atendimento com conclusão documentada.",
+      "action": "Exija origem do ingresso, preço total antes de pagar e documentos sobre entrega e reembolso quando cabível."
     }
   ]
 }
