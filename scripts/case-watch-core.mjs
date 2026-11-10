@@ -33,7 +33,8 @@ export function validatePolicy(policy,index){
   if(!Array.isArray(item.watch_urls)||item.watch_urls.length>policy.schedule.max_requests_per_case||item.watch_urls.some(u=>!https(u)))problems.push('Invalid watch URL cap '+item.id);
   if(!Array.isArray(item.deadlines)||item.deadlines.some(d=>!iso(d)))problems.push('Invalid deadline '+item.id);
   if(item.mode==='closed'&&(!iso(item.closed_at)||!https(item.closure_source_url||'')))problems.push('Closed case lacks verifiable closure date and source '+item.id);
-  if(item.mode==='closed'&&item.closed_at<byId.get(item.id)?.date)problems.push('Closed before last case revision '+item.id);
+  if(item.mode==='closed'&&item.closed_at>byId.get(item.id)?.date)problems.push('Closure date is newer than published case review '+item.id);
+  if(item.mode==='closed'&&!/(resolvid|conclu[ií]d|encerrad|arquivad|cumprid|homologad|finalizad)/i.test(byId.get(item.id)?.status||''))problems.push('Closed case lacks a published resolution status '+item.id);
  }
  for(const item of index)if(!ids.has(item.id))problems.push('Case omitted from monitoring '+item.id);
  return problems;
