@@ -20,7 +20,11 @@
       "sample_slugs": [
         "como-remover-dados-de-corretores",
         "revogacao-de-consentimento-na-pratica",
-        "quando-deletar-nao-apaga"
+        "quando-deletar-nao-apaga",
+        "vpn-nao-e-um-plano-de-seguranca",
+        "numero-reciclado-conta-antiga",
+        "gps-desligado-rastro-fisico",
+        "https-vpn-tor-o-que-veem"
       ],
       "entry_resource_url": "/autonomia-digital/diagnostico/",
       "product_price": null,
@@ -41,7 +45,8 @@
       ],
       "sample_slugs": [
         "leiloes-de-anuncios-e-perfis-invisiveis",
-        "como-auditar-o-feed-sem-confundir-causas"
+        "como-auditar-o-feed-sem-confundir-causas",
+        "cancelamento-dificil-padroes-de-escolha"
       ],
       "entry_resource_url": "/autonomia-digital/algoritmos-e-influencia/",
       "product_price": null,
@@ -62,7 +67,9 @@
       ],
       "sample_slugs": [
         "agentes-de-ia-e-permissoes",
-        "deepfake-prova-ou-encenacao"
+        "deepfake-prova-ou-encenacao",
+        "defesas-que-criam-riscos",
+        "arquitetura-seguranca-pessoal-agentes"
       ],
       "entry_resource_url": "/autonomia-digital/diagnostico/",
       "product_price": null,
@@ -82,7 +89,10 @@
         "Laboratórios de dossiês, decisões e reavaliação de evidências"
       ],
       "sample_slugs": [
-        "lgpd-direitos-e-decisoes-algoritmicas"
+        "lgpd-direitos-e-decisoes-algoritmicas",
+        "golpe-anuncio-whatsapp-pix",
+        "verificacao-de-idade-privacidade",
+        "conta-invadida-primeiros-registros"
       ],
       "entry_resource_url": "/organizar/espaco-de-causa/",
       "product_price": null,
