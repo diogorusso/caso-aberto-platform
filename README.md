@@ -202,3 +202,7 @@ Public tools include a local digital-exposure checklist and a print-friendly act
 **The private 56-chapter playbook is the principal education product—not a free online book.** Public pages are distinct, original short insights and simple microexercises that provide immediate value while linking to planned courses. `/academia/` lists four differentiated product tracks; all are in preparation, with no price, purchase, enrollments or protected course delivery enabled.
 
 `src/data/learning-publications.json` defines public editorial snippets. `src/data/education-products.json` defines educational offerings without commerce. `src/data/content-distribution-queue.json` stages 12 multi-channel content angles with draft status; no content is posted automatically. The full manuscripts stay exclusively in the private research wiki. The script `npm run verify:publications` (part of `npm run verify:data`) enforces snippet size, link integrity and safe product status.
+
+### Cause Workspace UI (local-first)
+
+The individual cause notebook at `/organizar/espaco-de-causa/` now supports shared **list, board and calendar** views for tasks, evidence, response requests and activity log. It generates an editable **research brief** that the user may explicitly copy into an AI service of their choosing. CasoAberto never sends the brief, invokes an external AI model, or contacts institutions. Optional browser storage is unencrypted; JSON export/import gives portability but not confidential cloud backup.
