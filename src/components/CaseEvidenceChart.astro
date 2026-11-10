@@ -1,0 +1,75 @@
+---
+/** Static, accessible chart inspired by the shadcn chart patterns.
+ * No chart runtime is shipped to readers; dates and magnitudes come from sourced records.
+ */
+import {ChartNoAxesCombined,BookOpenText,ExternalLink} from 'lucide-react';
+import type {PlotPoint} from '../lib/visual-impact';
+interface Props{
+ title:string;description:string;points:PlotPoint[];
+ bars?:{label:string;value:number}[];
+ sourceUrl?:string;
+}
+const {title,description,points,bars,sourceUrl}=Astro.props;
+const plotted=[...points].sort((a,b)=>a.date.localeCompare(b.date));
+const grouped=plotted.reduce<Array<{date:string;total:number;titles:string[]}>>((acc,p)=>{
+ const last=acc[acc.length-1];
+ if(last&&last.date===p.date){last.total+=1;last.titles.push(p.title);}
+ else acc.push({date:p.date,total:1,titles:[p.title]});
+ return acc;
+},[]);
+let cumulative=0;
+const W=760,H=246,left=56,right=26,top=28,bottom=44;
+const plotW=W-left-right,plotH=H-top-bottom;
+const xFor=(index:number)=>left+(grouped.length<2?plotW/2:(index/(grouped.length-1))*plotW);
+const total=plotted.length;
+const svgPts=grouped.map((p,i)=>{cumulative+=p.total;return {...p,x:xFor(i),y:top+plotH*(1-cumulative/Math.max(total,1)),running:cumulative};});
+const path=svgPts.map((p,i)=>i===0?'M '+p.x+' '+(top+plotH)+' V '+p.y:'H '+p.x+' V '+p.y).join(' ');
+const fillPath=svgPts.length?path+' L '+svgPts[svgPts.length-1].x+' '+(top+plotH)+' L '+svgPts[0].x+' '+(top+plotH)+' Z':'';
+const tick=(v:number)=>v.toLocaleString('pt-BR');
+const date=(v:string)=>v.split('-').reverse().join('/');
+const barItems=(bars||[]).filter(b=>b.value>0);
+const maxBar=Math.max(1,...barItems.map(b=>b.value));
+---
+<div class="case-data-chart border border-border bg-card" aria-labelledby="chart-title">
+  <div class="flex items-start justify-between gap-4 border-b border-border p-5 md:p-6">
+    <div class="space-y-2"><p class="m-0 flex items-center gap-2 text-xs font-bold uppercase tracking-[.14em] text-brand-strong"><ChartNoAxesCombined size={16} aria-hidden="true"/> DADOS DOCUMENTADOS</p><h3 id="chart-title" class="m-0 text-xl md:text-2xl">{title}</h3><p class="m-0 max-w-2xl text-sm leading-relaxed text-muted-foreground">{description}</p></div>
+    <span class="shrink-0 border border-border px-2.5 py-1 text-xs font-semibold text-muted-foreground">{barItems.length?'BARRAS':'CRONOLOGIA'}</span>
+  </div>
+  {barItems.length ? (
+    <div class="grid gap-3 p-5 md:p-6" role="img" aria-label={title+'. '+barItems.map(b=>b.label+': '+b.value).join('; ')}>
+      {barItems.map((b,i)=>(
+        <div class="grid gap-1.5">
+          <div class="flex justify-between gap-4 text-sm"><span class="font-medium">{b.label}</span><strong class="tabular-nums">{tick(b.value)}</strong></div>
+          <div class="h-3 overflow-hidden bg-muted" aria-hidden="true">
+            <div class:list={['h-full case-data-bar',i===0?'bg-brand-strong':'bg-forest']} style={'--bar-width:'+String(b.value/maxBar*100)+'%;--bar-order:'+i}></div>
+          </div>
+        </div>
+      ))}
+    </div>
+  ) : grouped.length>0 ? (
+    <div class="px-3 pb-2 pt-5 md:px-6">
+      <svg viewBox={`0 0 ${W} ${H}`} class="w-full overflow-visible" role="img" aria-labelledby="chart-svg-title chart-svg-desc">
+        <title id="chart-svg-title">{title}</title><desc id="chart-svg-desc">{description} {total} marcos documentados entre {date(grouped[0].date)} e {date(grouped[grouped.length-1].date)}.</desc>
+        {[0,.5,1].map(f=><g><line x1={left} x2={W-right} y1={top+plotH*(1-f)} y2={top+plotH*(1-f)} stroke="var(--border)" stroke-dasharray="3 5"/><text x={left-12} y={top+plotH*(1-f)+4} text-anchor="end" font-size="12" fill="var(--muted-foreground)">{tick(Math.round(total*f))}</text></g>)}
+        <path d={fillPath} fill="var(--brand)" fill-opacity=".1"/>
+        <path d={path} fill="none" stroke="var(--brand-strong)" stroke-width="3" class="evidence-line"/>
+        {svgPts.map((p,i)=><g><circle cx={p.x} cy={p.y} r={i===svgPts.length-1?6:4} fill="var(--brand-strong)" stroke="var(--card)" stroke-width="2"><title>{date(p.date)} · {p.titles.join('; ')}</title></circle></g>)}
+        <text x={left} y={H-10} font-size="12" fill="var(--muted-foreground)">{date(grouped[0].date)}</text>
+        <text x={W-right} y={H-10} font-size="12" text-anchor="end" fill="var(--muted-foreground)">{date(grouped[grouped.length-1].date)}</text>
+      </svg>
+      <p class="mt-0 px-2 text-xs text-muted-foreground"><BookOpenText size={13} class="mr-1 inline-block align-[-2px]" aria-hidden="true"/> Cada degrau representa um marco registrado, não uma medida de dano nem um novo caso individual.</p>
+    </div>
+  ) : <p class="p-6 text-sm text-muted-foreground">Nenhum marco datado catalogado.</p>}
+  <div class="flex flex-wrap items-center justify-between gap-3 border-t border-border px-5 py-4 text-xs text-muted-foreground">
+    <span>{barItems.length?barItems.reduce((s,b)=>s+b.value,0).toLocaleString('pt-BR')+' registros na distribuição exibida':total+' marcos no recorte do dossiê'}</span>
+    {sourceUrl&&<a href={sourceUrl} rel="noopener noreferrer" class="inline-flex items-center gap-1 font-semibold text-brand-strong">Conferir origem <ExternalLink size={13} aria-hidden="true"/></a>}
+  </div>
+</div>
+<style>
+  .case-data-bar {width:var(--bar-width);transform-origin:left;animation:bar-enter .8s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--bar-order) * 65ms)}
+  .evidence-line {stroke-dasharray:1500;stroke-dashoffset:1500;animation:trace-in 1.25s ease-out forwards}
+  @keyframes trace-in {to{stroke-dashoffset:0}}
+  @keyframes bar-enter {from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @media (prefers-reduced-motion:reduce){.case-data-bar,.evidence-line{animation:none;stroke-dashoffset:0}}
+  @media print {.case-data-bar,.evidence-line{animation:none!important;stroke-dashoffset:0}}
+</style>
