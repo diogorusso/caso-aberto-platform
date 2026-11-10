@@ -4,6 +4,7 @@
  */
 import schema from '../data/case-categories.json';
 import atlas from '../data/public-case-atlas.json';
+import politics from '../data/political-observatory.json';
 import {cases, casePath} from './cases';
 
 export type CaseCategory={
@@ -46,6 +47,18 @@ export const caseStudies: CaseResearchEntry[]=[
    searchText:[item.company,item.headline,item.deck,item.sector,item.state,item.lead,item.status_label,
      ...item.verified,...item.questions,...category.search_terms].join(' '),
    sourceCount:item.sources.length,storyCount:item.story_slugs.length
+  };
+ }),
+ ...politics.cases.map(item=>{
+  const category=categoryFor(item.id);
+  return {
+   id:item.id,slug:item.slug,kind:'caso' as const,title:item.title,company:'Instituições e poder público',
+   summary:item.summary,category:category.title,categorySlug:category.slug,
+   href:'/observatorio/politica/'+item.slug+'/',status:item.status,date:politics.reviewed_at,
+   location:item.scope,featured:false,
+   searchText:[item.topic,item.title,item.summary,item.scope,item.opening,item.status,
+     ...item.facts.map(fact=>fact.finding),...item.questions,...category.search_terms].join(' '),
+   sourceCount:item.source_ids.length,storyCount:0
   };
  })
 ];

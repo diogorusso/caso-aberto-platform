@@ -11,7 +11,7 @@ import {categories,featuredCase,caseStudies,personalStories,allResearch,caseCoun
   <div class="container space-y-5">
    <p class="m-0 text-xs font-extrabold uppercase tracking-[.18em] text-[#ff917e]">CASOABERTO · PESQUISA DOCUMENTADA</p>
    <h1 class="m-0 max-w-5xl text-4xl leading-[1.05] tracking-tight sm:text-5xl lg:text-7xl">Pagou. Não recebeu. <span class="text-[#ff917e]">Cadê a resposta?</span></h1>
-   <p class="m-0 max-w-3xl text-lg leading-relaxed text-white/80">Móveis, viagens, compras e energia. Empresas e instituições aparecem com seus nomes, fatos, fontes e perguntas. Encontre o seu problema. Veja quem foi cobrado. Confira o resultado.</p>
+   <p class="m-0 max-w-3xl text-lg leading-relaxed text-white/80">Móveis, viagens, compras, energia, política e direitos. Empresas e instituições aparecem com seus nomes, fatos, fontes e perguntas. Encontre o seu problema. Veja quem foi cobrado. Confira o resultado.</p>
    <div class="flex flex-wrap gap-3 text-sm font-semibold text-white/80"><span>{caseStudies.length} casos documentados</span><span aria-hidden="true">·</span><span>{personalStories.length} histórias de consumidores</span><span aria-hidden="true">·</span><span>{categories.length} categorias</span></div>
   </div>
  </header>
@@ -22,7 +22,7 @@ import {categories,featuredCase,caseStudies,personalStories,allResearch,caseCoun
   </div>
  </section>}
  <section class="border-y bg-muted py-12" aria-labelledby="categorias-casos">
-  <div class="container space-y-7"><div><p class="m-0 text-xs font-bold uppercase tracking-widest text-brand-strong">ENCONTRE O PROBLEMA</p><h2 id="categorias-casos" class="mb-2 mt-3 text-3xl">Quatro categorias. Toda a pesquisa.</h2><p class="m-0 text-muted-foreground">Escolha um assunto ou pesquise por empresa, cidade, serviço e documento.</p></div>
+  <div class="container space-y-7"><div><p class="m-0 text-xs font-bold uppercase tracking-widest text-brand-strong">ENCONTRE O PROBLEMA</p><h2 id="categorias-casos" class="mb-2 mt-3 text-3xl">{categories.length} categorias. Toda a pesquisa.</h2><p class="m-0 text-muted-foreground">Escolha um assunto ou pesquise por empresa, cidade, serviço e documento.</p></div>
    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">{categories.map(cat=><a class="group flex flex-col gap-3 rounded-lg border border-border bg-card p-5 no-underline hover:border-brand/60 focus-visible:ring-2 focus-visible:ring-brand" href={categoryHref(cat)}><span class="text-xs font-bold uppercase tracking-widest text-brand-strong">{cat.eyebrow}</span><strong class="text-xl text-foreground">{cat.title}</strong><p class="m-0 flex-1 text-sm leading-relaxed text-muted-foreground">{cat.description}</p><span class="text-sm font-semibold text-link">{caseCountFor(cat.slug)} casos · Explorar ↗</span></a>)}</div>
   </div>
  </section>

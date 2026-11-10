@@ -63,7 +63,7 @@ const pathways = [
     <a slot="action" class="text-link font-semibold" href={casePath(featuredCase)}>Acompanhar o caso em destaque ↗</a>
     <CaseCard item={featuredCase} featured/>
    </Section>}
-  <Section tone="muted" eyebrow="ACERVO DE PESQUISA" title="Não é só um problema. São setores inteiros cobrados." description="Viagens, entregas, móveis e energia. Todas as pesquisas do CasoAberto estão organizadas num único arquivo, com buscas por empresa, cidade, problema e categoria.">
+  <Section tone="muted" eyebrow="ACERVO DE PESQUISA" title="Não é só um problema. São setores inteiros cobrados." description="Viagens, entregas, móveis, energia e política. Todas as pesquisas do CasoAberto estão organizadas num único arquivo, com buscas por empresa, cidade, problema e categoria.">
     <a slot="action" class="text-link font-semibold" href="/casos/#pesquisar-casos">Pesquisar todos os casos ↗</a>
     <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
       {categories.map(cat=><a class="flex flex-col gap-4 rounded-lg border border-border bg-card p-5 no-underline hover:border-brand/60" href={categoryHref(cat)}>

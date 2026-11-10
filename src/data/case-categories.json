@@ -85,6 +85,35 @@
         "rio de janeiro",
         "sao paulo"
       ]
+    },
+    {
+      "slug": "politica-e-direitos",
+      "title": "Política e direitos",
+      "eyebrow": "INSTITUIÇÕES · TRANSPARÊNCIA · DIREITOS",
+      "description": "O poder decide. O dinheiro circula. Os direitos são cobrados. Quem assinou, quem recebeu, quem investiga e onde está a resposta documentada?",
+      "case_ids": [
+        "POL-001",
+        "POL-002",
+        "POL-003",
+        "POL-004",
+        "POL-005",
+        "POL-006",
+        "POL-007"
+      ],
+      "search_terms": [
+        "congresso",
+        "stf",
+        "pf",
+        "ministerio",
+        "justica",
+        "eleicoes",
+        "orçamento",
+        "bets",
+        "patrocinio",
+        "direitos",
+        "povos indigenas",
+        "emendas"
+      ]
     }
   ]
 }
