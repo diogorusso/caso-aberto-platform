@@ -1,11 +1,14 @@
 /** Structural gate for the single public case library and its categories. */
 import {existsSync,readFileSync} from 'node:fs';
 const read=p=>JSON.parse(readFileSync(new URL('../src/data/'+p+'.json',import.meta.url),'utf8'));
-const source=read('casos'),atlas=read('public-case-atlas'),politics=read('political-observatory'),config=read('case-categories');
+const source=read('casos'),atlas=read('public-case-atlas'),politics=read('political-observatory'),platforms=read('platform-observatory'),config=read('case-categories');
 const fail=x=>{console.error('[case-catalog] '+x);process.exitCode=1};
 if(config.featured_case_id!=='CA-001')fail('Florense must remain the featured case.');
 if(!source.some(c=>c.id===config.featured_case_id&&c.slug==='florense-ipanema-rj-atraso-moveis-planejados'))fail('Featured case is not a valid owned dossier.');
-const items=[...source,...atlas.cases,...politics.cases],ids=new Set(items.map(i=>i.id));
+const platformCase={id:'PLAT-2026-CASE',slug:'meta-eleicoes-2026-governanca-plataformas'};
+const items=[...source,...atlas.cases,...politics.cases,platformCase],ids=new Set(items.map(i=>i.id));
+if(platforms.records?.length<5||new Set(platforms.records.map(r=>r.id)).size!==platforms.records.length)fail('Platform case requires five distinct sourced events.');
+if(!platforms.records.every(r=>r.source_url?.startsWith('https://')))fail('Platform record missing source link.');
 if(ids.size!==items.length)fail('Duplicate case identifiers.');
 const listed=new Map(),slugs=new Set();
 for(const group of config.categories||[]){
@@ -28,5 +31,5 @@ const needed=[
 'src/pages/index.astro'];
 for(const path of needed)if(!existsSync(new URL('../'+path,import.meta.url)))fail('Missing library UI '+path);
 for(const name of ['src/pages/casos/categoria/[slug]/index.astro'])if(existsSync(new URL('../'+name,import.meta.url))&&!readFileSync(new URL('../'+name,import.meta.url),'utf8').includes('getStaticPaths'))fail('Case category is not statically generated.');
-if(!process.exitCode)console.log('Unified case library validated: '+ids.size+' cases ('+source.length+' flagship, '+atlas.cases.length+' consumer studies, '+politics.cases.length+' civic investigations), '+atlas.stories.length+' personal stories, '+slugs.size+' categories.');
+if(!process.exitCode)console.log('Unified case library validated: '+ids.size+' cases ('+source.length+' flagship, '+atlas.cases.length+' consumer studies, '+politics.cases.length+' civic investigations, 1 platform study), '+atlas.stories.length+' personal stories, '+slugs.size+' categories.');
 if(process.exitCode)process.exit(1);
