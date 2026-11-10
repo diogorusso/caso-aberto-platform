@@ -18,7 +18,7 @@ import CaseUpdates from '../../../components/CaseUpdates.astro';
 import CaseQuestions from '../../../components/CaseQuestions.astro';
 import ParticipationCTA from '../../../components/ParticipationCTA.astro';
 import EditorialVerdict from '../../../components/EditorialVerdict.astro';
-import ImpactTeaser from '../../../components/ImpactTeaser.astro';
+import CaseVisualStory from '../../../components/CaseVisualStory.astro';
 import CaseCompanyReference from '../../../components/CaseCompanyReference.astro';
 import PrecedentComparison from '../../../components/PrecedentComparison.astro';
 import CollapseSignalsMatrix from '../../../components/CollapseSignalsMatrix.astro';
@@ -84,7 +84,7 @@ const c = copy.case;
     <ConsumerRiskWarning href={romaHref} />
   </Section>}
   <CollapseSignalsMatrix item={item}/>
-  <ImpactTeaser caseItem={item}/>
+  <CaseVisualStory caseId={item.id}/>
   <PrecedentComparison item={item} compact/>
 
   <!-- DISCURSO × REALIDADE -->
