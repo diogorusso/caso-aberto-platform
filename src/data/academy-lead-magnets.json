@@ -49,7 +49,7 @@
       "steps": [
         {
           "heading": "Anote o evento observável",
-          "prompt": "Qual conteúdo foi exibido, quando e em qual produto? Registre sem interpretar intenção."
+          "prompt": "Qual conteúdo foi exibido, quando e em qual produto? Registre sem interpretar intenção. Identifique a condição observável para conferir sua resposta."
         },
         {
           "heading": "Classifique a origem visível",
@@ -98,7 +98,7 @@
         },
         {
           "heading": "Revise a saída e os registros",
-          "prompt": "Onde o resultado aparece? Que logs ou memórias podem continuar depois do uso?"
+          "prompt": "Onde o resultado aparece? Que logs ou memórias podem continuar depois do uso? Identifique a condição observável para conferir sua resposta."
         },
         {
           "heading": "Planeje a revogação",
@@ -135,7 +135,7 @@
         },
         {
           "heading": "Formule uma pergunta",
-          "prompt": "Escreva uma solicitação que possa ser respondida com documento, decisão, medida ou data."
+          "prompt": "Escreva uma solicitação que possa ser respondida com documento, decisão, medida ou data. Identifique a condição observável para conferir sua resposta."
         },
         {
           "heading": "Registre acompanhamento",
@@ -143,7 +143,7 @@
         }
       ],
       "fields": [
-        "Fato e data",
+        "Fato e data do caso analisado",
         "Instituição e pergunta verificável",
         "Protocolo ou data de reavaliação"
       ],
