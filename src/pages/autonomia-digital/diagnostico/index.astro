@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const grupos=[
+ {title:'Dados observáveis',items:['Identifiquei os navegadores, extensões e contas que uso em contextos diferentes.','Revisei permissões de localização, microfone, câmera e contatos.','Entendo a diferença entre cookies, identificadores de publicidade e fingerprinting.','Sei que um teste de fingerprint não identifica automaticamente minha pessoa.']},
+ {title:'Identidade e recuperação',items:['Tenho método de recuperação para meu e-mail principal e minhas contas mais críticas.','Uso autenticação forte e não compartilho códigos de recuperação.','Revisei os acessos de aplicativos terceiros e tokens ativos.','Tenho um plano para bloqueio de conta, roubo de celular e fraude por impersonação.']},
+ {title:'Algoritmos e influência',items:['Sei distinguir anúncio pago, recomendação, busca e conteúdo editorial.','Consigo acessar fontes originais antes de compartilhar uma denúncia.','Comparei o mesmo assunto fora do meu feed personalizado.','Sei identificar quando dados pessoais foram usados para segmentar mensagens.']},
+ {title:'Agentes e serviços de IA',items:['Sei quais conectores e pastas um assistente pode acessar.','Não envio documentos privados a ferramentas sem analisar finalidade e retenção.','Exijo autorização explícita antes de mensagens, pagamentos ou publicações em meu nome.','Consigo revogar permissões e verificar se a revogação realmente funcionou.']}
+];
+---
+<BaseLayout title="Diagnóstico gratuito de pegada digital | CasoAberto" description="Checklist local e imprimível de pegadas digitais, identidade, algoritmos e IA. Sem conta ou coleta de respostas.">
+  <section class="container max-w-4xl space-y-5 py-14"><p class="m-0 text-xs font-bold tracking-widest text-brand-strong">FERRAMENTA ABERTA · AUDITORIA LOCAL</p><h1 class="m-0 text-4xl">O que a internet pode observar sobre você?</h1><p class="text-lg">Marque o que você já consegue verificar. Itens desmarcados são perguntas para investigar, não um cálculo de risco pessoal. Imprima ou anote seus próprios resultados.</p><p class="text-sm text-muted-foreground">As marcações ficam apenas nesta página enquanto ela estiver aberta. Não há cadastro, envio, armazenamento ou pontuação de perfil.</p></section>
+  <div class="container max-w-4xl space-y-6 pb-14">
+    {grupos.map((grupo,i) => <section class="border border-border p-6" aria-labelledby={'grupo-'+i}><h2 id={'grupo-'+i} class="mt-0 text-xl">{String(i+1).padStart(2,'0')} · {grupo.title}</h2><div class="space-y-4">{grupo.items.map(item => <label class="flex cursor-pointer items-start gap-3 border-t border-border pt-3"><input type="checkbox" class="mt-1 size-5 shrink-0 accent-current" /><span>{item}</span></label>)}</div></section>)}
+    <section class="space-y-3 border-l-4 border-brand bg-muted p-6"><h2 class="mt-0 text-xl">Seu próximo passo</h2><p>Escolha uma pergunta não resolvida. Identifique qual ator observa seus dados, o que a evidência realmente demonstra e como testar uma proteção sem expor outras pessoas. Registre a data da revisão em suas próprias notas.</p><div class="flex flex-wrap gap-4"><a class="text-link" href="/autonomia-digital/">Voltar às trilhas ↗</a><a class="text-link" href="https://ssd.eff.org/" rel="noopener noreferrer">Guia de segurança da EFF ↗</a></div></section>
+  </div>
+</BaseLayout>
