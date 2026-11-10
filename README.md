@@ -196,3 +196,9 @@ The project now covers **individual, community, institutional and digital-platfo
 This first phase includes a five-source Meta/Brazil 2026 platform observatory with separate treatment of independent research, official records and Meta's response. The source register is `src/data/platform-observatory.json`, rendered at `/observatorio/plataformas/`. Validate it using `npm run verify:civic` (also part of `npm run verify:data`). Dated documented facts are not conclusive proof of intentional partisan interference.
 
 Public tools include a local digital-exposure checklist and a print-friendly action notebook. **No user identity, cause membership, upload, message sending, storage, donation or subscription workflow is live.** Such capabilities require the security and rights gates set out in the architecture. Existing case pages and editorial rules remain intact.
+
+## Educational publishing and product boundary — 2026-11-09
+
+**The private 56-chapter playbook is the principal education product—not a free online book.** Public pages are distinct, original short insights and simple microexercises that provide immediate value while linking to planned courses. `/academia/` lists four differentiated product tracks; all are in preparation, with no price, purchase, enrollments or protected course delivery enabled.
+
+`src/data/learning-publications.json` defines public editorial snippets. `src/data/education-products.json` defines educational offerings without commerce. `src/data/content-distribution-queue.json` stages 12 multi-channel content angles with draft status; no content is posted automatically. The full manuscripts stay exclusively in the private research wiki. The script `npm run verify:publications` (part of `npm run verify:data`) enforces snippet size, link integrity and safe product status.
