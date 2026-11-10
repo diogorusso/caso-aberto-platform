@@ -114,6 +114,30 @@
         "povos indigenas",
         "emendas"
       ]
+    },
+    {
+      "slug": "plataformas-e-algoritmos",
+      "title": "Plataformas e algoritmos",
+      "eyebrow": "META · ELEIÇÕES · PUBLICIDADE · MODERAÇÃO",
+      "description": "Anúncios, bloqueios, decisões de moderação e dados que interferem no debate público. Quem define as regras? Quem entrega os documentos? Quem responde?",
+      "case_ids": [
+        "PLAT-2026-CASE"
+      ],
+      "search_terms": [
+        "meta",
+        "facebook",
+        "instagram",
+        "whatsapp",
+        "tse",
+        "netlab",
+        "anistia",
+        "publicidade",
+        "algoritmos",
+        "eleições",
+        "desinformação",
+        "mpf",
+        "moderação"
+      ]
     }
   ]
 }

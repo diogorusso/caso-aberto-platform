@@ -5,6 +5,7 @@
 import schema from '../data/case-categories.json';
 import atlas from '../data/public-case-atlas.json';
 import politics from '../data/political-observatory.json';
+import platforms from '../data/platform-observatory.json';
 import {cases, casePath} from './cases';
 
 export type CaseCategory={
@@ -60,7 +61,27 @@ export const caseStudies: CaseResearchEntry[]=[
      ...item.facts.map(fact=>fact.finding),...item.questions,...category.search_terms].join(' '),
    sourceCount:item.source_ids.length,storyCount:0
   };
- })
+ }),
+ ...[{
+  id:'PLAT-2026-CASE',
+  slug:'meta-eleicoes-2026-governanca-plataformas',
+  kind:'caso' as const,
+  title:'Meta e eleições 2026: quem responde pelos anúncios e pela moderação?',
+  company:'Meta · Facebook · Instagram',
+  summary:'Testes de anúncios, plano da Meta no TSE, dados do NetLab, ação do MPF e resposta pública da plataforma. Cinco registros, uma investigação documental.',
+  category:categoryFor('PLAT-2026-CASE').title,
+  categorySlug:categoryFor('PLAT-2026-CASE').slug,
+  href:'/observatorio/plataformas/',
+  status:'Transparência, anúncios e decisões de moderação · 2026',
+  date:platforms.reviewed_at,
+  location:'Brasil',
+  featured:false,
+  searchText:[platforms.topic,platforms.framing,...platforms.records.map(record=>[
+   record.platform,record.headline,record.finding,record.type,record.source_kind
+  ].join(' ')),...categoryFor('PLAT-2026-CASE').search_terms].join(' '),
+  sourceCount:platforms.records.length,
+  storyCount:0
+ }]
 ];
 const caseBySlug=new Map(caseStudies.map(item=>[item.slug,item]));
 export const personalStories:CaseResearchEntry[]=atlas.stories.map(person=>{
