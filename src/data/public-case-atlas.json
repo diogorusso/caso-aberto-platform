@@ -333,6 +333,357 @@
           "kind": "Jornalismo"
         }
       ]
+    },
+    {
+      "id": "EXT-005",
+      "slug": "grao-de-gente-recuperacao-judicial-pedidos-bebe",
+      "company": "Grão de Gente",
+      "sector": "Quarto de bebê, e-commerce e recuperação judicial",
+      "state": "Brasil · documentos 2024–2026",
+      "headline": "O bebê nasceu. O quarto não chegou. O que mudou com a recuperação judicial?",
+      "deck": "Compras para recém-nascidos, atrasos e créditos anteriores a 22 de março de 2024: a própria empresa reconhece a recuperação judicial e explica os canais de atendimento aos consumidores.",
+      "status_label": "Recuperação judicial declarada pela empresa; situação processual atual exige consulta aos autos",
+      "reviewed_at": "2026-11-10",
+      "first_record": "2024-03-22",
+      "record_type": "fontes-oficiais-e-reportagem",
+      "key_fact": {
+        "metric": "22/03/2024",
+        "label": "data do pedido de recuperação judicial declarada pela Grão de Gente",
+        "period": "Data informada pela própria empresa, não data de falência ou de quitação de credores",
+        "source_url": "https://www.graodegente.com.br/institucional/comunicado-ao-mercado/"
+      },
+      "lead": "A montagem do quarto de um recém-nascido tem um prazo que não é apenas comercial. Os relatos públicos sobre pedidos não entregues mostram o impacto de não receber produtos necessários quando a família espera o nascimento. A situação do crédito deve ser analisada conforme a data da compra e o procedimento vigente.",
+      "verified": [
+        "No comunicado institucional, a Grão de Gente declara ter solicitado recuperação judicial em 22 de março de 2024 e afirma que está tratando pedidos anteriores no âmbito do plano e da habilitação de credores.",
+        "Em setembro de 2024, Mercado&Consumo entrevistou representante da empresa sobre reestruturação, redução de portfólio e atendimento; números de reclamação citados no veículo têm período próprio e não são registros de um Procon.",
+        "Há relatos públicos tanto de pedidos ainda sem reembolso em abril de 2026 quanto de produto entregue com atraso em 2024. Portanto, a conclusão de cada compra precisa ser individualizada."
+      ],
+      "timeline": [
+        {
+          "date": "2024-03-22",
+          "label": "Pedido de recuperação judicial declarado",
+          "description": "O comunicado da companhia fixa a data e distingue compras anteriores e posteriores; não determina desfecho individual.",
+          "source_url": "https://www.graodegente.com.br/institucional/comunicado-ao-mercado/"
+        },
+        {
+          "date": "2024-09-16",
+          "label": "Reportagem descreve reestruturação operacional",
+          "description": "Mercado&Consumo reúne posição de gestão e dados históricos de queixas com recorte específico.",
+          "source_url": "https://mercadoeconsumo.com.br/16/09/2024/noticias/grao-de-gente-reduz-portfolio-e-enxuga-operacao-em-meio-a-recuperacao-judicial/amp/"
+        },
+        {
+          "date": "2026-02-26",
+          "label": "Consumidora registra pedido de reembolso",
+          "description": "Reclamação pública informa compra de itens de bebê e busca de restituição; resposta posterior não confirma quitação.",
+          "source_url": "https://www.reclameaqui.com.br/grao-de-gente/compra-nao-entregue-e-falta-de-reembolso-na-grao-de-gente-apos-recuperacao-judicial_aoKGQqIVYALwVr26/"
+        }
+      ],
+      "other_side": "A empresa afirma que reorganizou suas operações, diferencia pedidos anteriores e posteriores ao pedido de recuperação judicial e disponibiliza atendimento próprio. Uma reportagem também registrou declarações de gestão sobre logística, portfólio e reorganização. Essa manifestação não comprova que cada consumidor teve sua situação solucionada.",
+      "other_side_url": "https://www.graodegente.com.br/institucional/comunicado-ao-mercado/",
+      "questions": [
+        "A compra foi realizada antes ou depois de 22 de março de 2024?",
+        "Há comprovação documental de entrega, restituição ou reconhecimento do crédito?",
+        "Qual orientação é realmente aplicável à etapa atual do processo judicial, e qual a resposta individual da empresa?"
+      ],
+      "steps": [
+        "Preserve em arquivo privado pedido, pagamento, data prometida e tentativas de atendimento.",
+        "Consulte a manifestação institucional e, para créditos em recuperação judicial, os documentos processuais vigentes em fonte oficial.",
+        "Diferencie a entrega efetiva de uma resposta genérica, e a habilitação de crédito do recebimento do dinheiro."
+      ],
+      "limits": "Comunicado de recuperação judicial e relatos de consumidores não equivalem à decretação de falência. O CasoAberto não verificou pedidos individuais, pagamento em juízo ou situação atual de cada credor; uma entrega tardia documentada não elimina os outros relatos.",
+      "guide_slug": "compra-online-nao-entregue",
+      "story_slugs": [
+        "mae-pedido-bebe-grao-de-gente-reembolso",
+        "cliente-grao-de-gente-recebeu-atrasado"
+      ],
+      "sources": [
+        {
+          "name": "Grão de Gente — comunicado institucional",
+          "url": "https://www.graodegente.com.br/institucional/comunicado-ao-mercado/",
+          "kind": "Posição da empresa"
+        },
+        {
+          "name": "Mercado&Consumo — reestruturação em 2024",
+          "url": "https://mercadoeconsumo.com.br/16/09/2024/noticias/grao-de-gente-reduz-portfolio-e-enxuga-operacao-em-meio-a-recuperacao-judicial/amp/",
+          "kind": "Jornalismo",
+          "published_at": "2024-09-16"
+        },
+        {
+          "name": "Reclame Aqui — relato de restituição em 2026",
+          "url": "https://www.reclameaqui.com.br/grao-de-gente/compra-nao-entregue-e-falta-de-reembolso-na-grao-de-gente-apos-recuperacao-judicial_aoKGQqIVYALwVr26/",
+          "kind": "Reclamação individual não auditada",
+          "published_at": "2026-02-26"
+        },
+        {
+          "name": "Reclame Aqui — entrega com atraso e solução",
+          "url": "https://www.reclameaqui.com.br/grao-de-gente/previsao-de-entrega-05-01-e-nao-atualiza-pedido-nao-responde-contatos_8ncDc3L721J47uxW/",
+          "kind": "Reclamação individual concluída",
+          "published_at": "2024-01-10"
+        }
+      ]
+    },
+    {
+      "id": "EXT-006",
+      "slug": "lado-rosa-nao-entrega-procon-santa-catarina",
+      "company": "Lado Rosa / Lado Fit",
+      "sector": "Vestuário vendido pela internet",
+      "state": "Santa Catarina · 2022–2025",
+      "headline": "85 reclamações, multa e vendas online suspensas: o que aconteceu com a Lado Rosa?",
+      "deck": "O Procon-SC documentou atrasos, queixas de cancelamento, respostas e medidas administrativas durante 2025. Parte dos clientes obteve entrega ou reembolso; outros processos permaneceram pendentes no recorte.",
+      "status_label": "Processo e sanções administrativas de 2025; situação atual não inferida",
+      "reviewed_at": "2026-11-10",
+      "first_record": "2025-04-08",
+      "record_type": "fontes-oficiais-e-reportagem",
+      "key_fact": {
+        "metric": "85",
+        "label": "reclamações com processo administrativo de 2022 a julho de 2025, segundo Procon-SC",
+        "period": "Base acumulada citada em 09/07/2025; 15 novas queixas foram mencionadas separadamente e não estão somadas aqui",
+        "source_url": "https://www.procon.sc.gov.br/procon-sc-multa-a-lado-rosa-apos-85-reclamacoes-e-silencio-da-empresa/"
+      },
+      "lead": "Depois de meses de pedidos relatados como não entregues, um órgão de defesa do consumidor passou de reclamações individuais à fiscalização coletiva. O caso também ensina a diferença entre medida administrativa, reembolso concluído e uma compra ainda aguardando solução.",
+      "verified": [
+        "Em 8 de abril de 2025, o Procon-SC informou que recebeu 31 queixas da Lado Rosa ao longo de 2024 e 33 no início de 2025; disse que 20 casos individuais já haviam terminado com entrega ou reembolso e 13 ainda tramitavam no recorte.",
+        "Em 16 de maio, o órgão publicou novas denúncias de consumidores e explicou a existência de procedimento de ofício, independentemente de cada processo individual.",
+        "Em 9 de julho, o Procon-SC anunciou multa administrativa, citou 85 reclamações de 2022 em diante e relatou ausência de resposta aos trâmites daquele procedimento; a empresa teria possibilidade de recurso. Em etapa posterior, a companhia atribuiu parte dos atrasos à logística e à mudança de sistema."
+      ],
+      "timeline": [
+        {
+          "date": "2025-04-08",
+          "label": "Procon-SC abre procedimento de ofício",
+          "description": "Órgão divulga contagens e diferencia 20 casos resolvidos de 13 em andamento no recorte de abril.",
+          "source_url": "https://www.procon.sc.gov.br/procon-sc-instaura-processo-administrativo-contra-loja-lado-rosa/"
+        },
+        {
+          "date": "2025-05-16",
+          "label": "Zap Denúncias registra queixas adicionais",
+          "description": "O órgão descreve novas reclamações contra a loja e a continuidade do procedimento administrativo.",
+          "source_url": "https://www.procon.sc.gov.br/zap-denuncias-recebe-235-reclamacoes-em-1-semana/"
+        },
+        {
+          "date": "2025-07-09",
+          "label": "Procon-SC informa multa",
+          "description": "O informe menciona 85 reclamações acumuladas, mais 15 novas queixas e possibilidades administrativas de recurso; contagens não devem ser somadas sem identificar duplicidade.",
+          "source_url": "https://www.procon.sc.gov.br/procon-sc-multa-a-lado-rosa-apos-85-reclamacoes-e-silencio-da-empresa/"
+        }
+      ],
+      "other_side": "Em reunião descrita pelo Procon-SC em julho de 2025, representante da empresa atribuiu dificuldades de entrega a questões logísticas, crescimento rápido e mudança do sistema de informática. A justificativa é versão da empresa, não constatação independente de todas as causas.",
+      "other_side_url": "https://www.procon.sc.gov.br/procon-sc-aplica-medida-cautelar-e-suspende-a-lado-rosa-de-vender-pela-internet-por-30-dias/",
+      "questions": [
+        "Quantos dos registros de um período terminaram com entrega, estorno ou desistência da reclamação?",
+        "Qual a evidência da medida administrativa, seu prazo e eventual recurso?",
+        "Como comprovar a solução real de um pedido sem confundir resposta padrão com conclusão?"
+      ],
+      "steps": [
+        "Mantenha pedido, prazo, recibos e respostas em arquivo privado.",
+        "Consulte medidas do Procon-SC na data correta; não trate suspensão temporária de 2025 como proibição vigente em 2026.",
+        "Exija comprovante de entrega ou de restituição individual, sem repetir contagens de bases e períodos diferentes."
+      ],
+      "limits": "Medidas e multas administrativas não provam crimes, encerramento definitivo da empresa ou situação econômica atual. As 85 reclamações acumuladas não são necessariamente 85 pessoas únicas nem representam toda a carteira nacional de clientes.",
+      "guide_slug": "compra-online-nao-entregue",
+      "story_slugs": [],
+      "sources": [
+        {
+          "name": "Procon-SC — procedimento de ofício em abril",
+          "url": "https://www.procon.sc.gov.br/procon-sc-instaura-processo-administrativo-contra-loja-lado-rosa/",
+          "kind": "Órgão público",
+          "published_at": "2025-04-08"
+        },
+        {
+          "name": "Procon-SC — denúncias de maio",
+          "url": "https://www.procon.sc.gov.br/zap-denuncias-recebe-235-reclamacoes-em-1-semana/",
+          "kind": "Órgão público",
+          "published_at": "2025-05-16"
+        },
+        {
+          "name": "Procon-SC — multa de julho",
+          "url": "https://www.procon.sc.gov.br/procon-sc-multa-a-lado-rosa-apos-85-reclamacoes-e-silencio-da-empresa/",
+          "kind": "Órgão público",
+          "published_at": "2025-07-09"
+        },
+        {
+          "name": "Procon-SC — resposta empresarial em reunião",
+          "url": "https://www.procon.sc.gov.br/procon-sc-aplica-medida-cautelar-e-suspende-a-lado-rosa-de-vender-pela-internet-por-30-dias/",
+          "kind": "Órgão público"
+        }
+      ]
+    },
+    {
+      "id": "EXT-007",
+      "slug": "novo-mundo-goias-entregas-procon-novembro-2026",
+      "company": "Novo Mundo (varejo)",
+      "sector": "Móveis e eletrodomésticos",
+      "state": "Goiânia e Anápolis, Goiás · outubro/novembro 2026",
+      "headline": "2.203 ocorrências e clientes sem produto: o que a Novo Mundo precisa responder?",
+      "deck": "Procon Goiás notificou a varejista em novembro de 2026 para apresentar plano de solução, enquanto reportagens mostram entregas que ocorreram após reclamações e pedidos ainda sem resposta.",
+      "status_label": "Notificação e plano de ação anunciados em 09/11/2026; prazo ainda em curso nessa data",
+      "reviewed_at": "2026-11-10",
+      "first_record": "2026-10-28",
+      "record_type": "fontes-oficiais-e-reportagem",
+      "key_fact": {
+        "metric": "2.203",
+        "label": "ocorrências entre reclamações e denúncias, Procon Goiás",
+        "period": "Junho de 2025 a outubro de 2026; 410 demandas de 2026 relatadas pendentes em novembro, sem inferir clientes únicos",
+        "source_url": "https://portal6.com.br/2026/11/09/apos-notificacao-do-procon-goias-novo-mundo-promete-plano-para-resolver-mais-de-400-reclamacoes-pendentes/"
+      },
+      "lead": "Os consumidores descrevem prazos de entrega alterados, falta de confirmação e dificuldade para cancelar compras. O Procon Goiás registrou 2.203 ocorrências num período específico e cobrou soluções da rede. Algumas histórias documentam entrega após intervenção; outras ainda aguardavam resposta na data da reportagem.",
+      "verified": [
+        "Em 28 de outubro de 2026, o Portal 6 publicou entrevistas em Goiânia e Anápolis. Um consumidor relatou ter recebido a cama somente após procurar o Procon; outra família afirmava não ter recebido micro-ondas.",
+        "Em 9 de novembro de 2026, cobertura de informações do Procon Goiás apontou 2.203 ocorrências registradas entre junho de 2025 e outubro de 2026, com cerca de 410 pendências no recorte informado.",
+        "No mesmo dia, o Portal 6 publicou a resposta da Novo Mundo, que reconheceu dificuldades operacionais e anunciou a apresentação de um plano de ação. Promessa de plano não é comprovação de solução ou pagamento de todos os casos."
+      ],
+      "timeline": [
+        {
+          "date": "2026-10-28",
+          "label": "Reportagem reúne compras individuais",
+          "description": "Famílias descrevem diferentes situações: entrega de cama após procura ao Procon e micro-ondas sem data confirmada.",
+          "source_url": "https://portal6.com.br/2026/10/28/comprou-na-novo-mundo-clientes-de-anapolis-e-goiania-esperam-meses-e-so-recebem-depois-do-procon/"
+        },
+        {
+          "date": "2026-11-05",
+          "label": "Procon Goiás notifica a rede",
+          "description": "A comunicação de medidas e prazo foi reportada em 9 de novembro, referente à notificação de 5 de novembro.",
+          "source_url": "https://www.maisgoias.com.br/cidades/novo-mundo-acumula-22-mil-reclamacoes-em-goias-procon-da-dez-dias-para-empresa-agir/"
+        },
+        {
+          "date": "2026-11-09",
+          "label": "Empresa anuncia plano de ação",
+          "description": "Segundo o Portal 6, a Novo Mundo respondeu ao questionamento e disse que apresentaria plano para pendências; execução não era verificável nessa data.",
+          "source_url": "https://portal6.com.br/2026/11/09/apos-notificacao-do-procon-goias-novo-mundo-promete-plano-para-resolver-mais-de-400-reclamacoes-pendentes/"
+        }
+      ],
+      "other_side": "Em manifestação divulgada em 9 de novembro de 2026, a varejista reconheceu desafios operacionais relacionados à reorganização de suas atividades e informou que apresentaria medidas para resolver pendências. Essa é a resposta da empresa; não comprova entrega nem restituição individual.",
+      "other_side_url": "https://portal6.com.br/2026/11/09/apos-notificacao-do-procon-goias-novo-mundo-promete-plano-para-resolver-mais-de-400-reclamacoes-pendentes/",
+      "questions": [
+        "Qual foi a data contratual da entrega e qual a data comprovada de recebimento?",
+        "O compromisso anunciado ao Procon Goiás inclui respostas individualizadas, com prazo verificável?",
+        "Os 410 registros pendentes de 2026 foram resolvidos? Como a atualização oficial poderá ser confirmada?"
+      ],
+      "steps": [
+        "Preserve oferta, comprovante de pagamento, prazo e protocolos da unidade contratada.",
+        "Use canais oficiais de defesa do consumidor e peça prazo de entrega ou alternativa formal por escrito.",
+        "Consulte a atualização posterior do Procon Goiás para verificar se o plano prometido foi entregue, sem presumir descumprimento futuro."
+      ],
+      "limits": "Dados de 9/11/2026 não comprovam como o prazo do Procon se encerrou nem a situação atual da recuperação judicial. Procedimento administrativo e recuperação não equivalem à falência decretada. Relatos individuais não são o conjunto de 2.203 ocorrências do órgão.",
+      "guide_slug": "compra-online-nao-entregue",
+      "story_slugs": [
+        "felipe-cama-entregue-depois-procon",
+        "neusa-microondas-nao-entregue"
+      ],
+      "sources": [
+        {
+          "name": "Portal 6 — histórias de Goiânia e Anápolis",
+          "url": "https://portal6.com.br/2026/10/28/comprou-na-novo-mundo-clientes-de-anapolis-e-goiania-esperam-meses-e-so-recebem-depois-do-procon/",
+          "kind": "Jornalismo",
+          "published_at": "2026-10-28"
+        },
+        {
+          "name": "Mais Goiás — notificação do Procon Goiás",
+          "url": "https://www.maisgoias.com.br/cidades/novo-mundo-acumula-22-mil-reclamacoes-em-goias-procon-da-dez-dias-para-empresa-agir/",
+          "kind": "Jornalismo / informação do Procon Goiás",
+          "published_at": "2026-11-09"
+        },
+        {
+          "name": "Portal 6 — manifestação da Novo Mundo",
+          "url": "https://portal6.com.br/2026/11/09/apos-notificacao-do-procon-goias-novo-mundo-promete-plano-para-resolver-mais-de-400-reclamacoes-pendentes/",
+          "kind": "Jornalismo com resposta da empresa",
+          "published_at": "2026-11-09"
+        },
+        {
+          "name": "Rádio São Francisco — novas queixas em Anápolis",
+          "url": "https://radiosaochico.com.br/clientes-da-novo-mundo-em-anapolis-relatam-atrasos-e-delegado-orienta-quem-nao-recebeu-produtos/",
+          "kind": "Jornalismo",
+          "published_at": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "EXT-008",
+      "slug": "apagao-rio-julho-2026-light-ressarcimento",
+      "company": "Light — fornecimento de energia no Rio",
+      "sector": "Energia e serviços essenciais",
+      "state": "Rio de Janeiro, RJ · 29–30/07/2026",
+      "headline": "Um milhão de clientes afetados no pico: como o apagão parou o Rio?",
+      "deck": "Depois da ventania de julho de 2026, a Light divulgou estimativas de clientes sem energia; reportagens mostram trabalho interrompido, elevadores parados e dúvidas sobre ressarcimento.",
+      "status_label": "Interrupção de 29/07/2026 com atualizações históricas da Light, ONS e Aneel",
+      "reviewed_at": "2026-11-10",
+      "first_record": "2026-07-29",
+      "record_type": "fontes-oficiais-e-reportagem",
+      "key_fact": {
+        "metric": "1,1 milhão",
+        "label": "clientes potencialmente afetados no momento mais crítico, segundo a Light",
+        "period": "Pico comunicado pela empresa em julho de 2026; não soma de períodos nem contas ainda sem serviço em novembro",
+        "source_url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-07/vendaval-ainda-causa-danos-moradores-do-rio-de-janeiro"
+      },
+      "lead": "No fim de julho de 2026, uma ventania interrompeu o fornecimento em partes do Rio, afetando o trabalho, deslocamentos e a vida doméstica. A infraestrutura foi religada em etapas, e o número de clientes sem energia variou ao longo das horas.",
+      "verified": [
+        "Em 29 de julho, a Agência Brasil documentou ventos fortes, interrupções de energia e impacto em transportes; a Light informou que equipes trabalhavam para recomposição.",
+        "Em 30 de julho, reportagem da Agência Brasil citou a Light: cerca de 1,1 milhão de clientes afetados no pico e aproximadamente 320 mil ainda sem energia no horário da apuração; não são duas populações independentes a somar.",
+        "Entrevistados relataram mudanças de rotina, impossibilidade de home office e transtornos em prédios. A empresa atribuiu a complexidade dos reparos aos danos da ventania. Não há verificação individual de danos materiais pelo CasoAberto."
+      ],
+      "timeline": [
+        {
+          "date": "2026-07-29",
+          "label": "Ventania interrompe o fornecimento e transportes",
+          "description": "Agência Brasil informa o evento climático, resposta inicial da Light e consequências imediatas na capital.",
+          "source_url": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-07/ventania-causa-apagao-e-paralisa-transportes-no-rio-de-janeiro"
+        },
+        {
+          "date": "2026-07-30",
+          "label": "Reportagem ouve moradores e informa escala",
+          "description": "O balanço intermediário da Light indica pico de 1,1 milhão; relatos mostram perdas de rotina e trabalho.",
+          "source_url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-07/vendaval-ainda-causa-danos-moradores-do-rio-de-janeiro"
+        },
+        {
+          "date": "2026-07-30",
+          "label": "Nova atualização da quantidade sem serviço",
+          "description": "Agência Brasil registra centenas de milhares de clientes ainda afetados, com medidas de recomposição e acompanhamento da Aneel.",
+          "source_url": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-07/mais-de-200-mil-continuam-sem-energia-no-rio-apos-vendaval"
+        }
+      ],
+      "other_side": "A Light atribuiu as interrupções à ventania e a danos de rede, relatou mobilização de equipes e divulgou atualização progressiva do fornecimento. Dados da empresa e de reportagem não certificam a duração nem o prejuízo de cada instalação.",
+      "other_side_url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-07/vendaval-ainda-causa-danos-moradores-do-rio-de-janeiro",
+      "questions": [
+        "Qual foi o intervalo comprovado de interrupção na unidade e a resposta da distribuidora?",
+        "É possível separar um dano de equipamento, um prejuízo de trabalho e o tempo sem serviço?",
+        "Onde a distribuidora publicou informações acessíveis e revisadas sobre recuperação das áreas afetadas?"
+      ],
+      "steps": [
+        "Mantenha em arquivo pessoal a duração observada, protocolo da ocorrência e documentos do eventual prejuízo.",
+        "Compare os boletins datados da concessionária com registros do órgão regulador; não use contagens do pico como status presente.",
+        "Consulte a orientação atual de ressarcimento e as instâncias de recurso aplicáveis ao tipo de dano."
+      ],
+      "limits": "O pico foi estimativa divulgada pela Light durante julho de 2026; não permite inferir situação atual de fornecimento, prejuízo individual, dolo ou condenação. Este episódio no RJ é distinto do apagão da Enel SP em dezembro de 2025.",
+      "guide_slug": "apagao-prejuizo-ressarcimento",
+      "story_slugs": [
+        "ana-home-office-sem-luz-rio",
+        "marcia-apagao-elevador-rio"
+      ],
+      "sources": [
+        {
+          "name": "Agência Brasil — interrupções e transportes",
+          "url": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-07/ventania-causa-apagao-e-paralisa-transportes-no-rio-de-janeiro",
+          "kind": "Jornalismo",
+          "published_at": "2026-07-29"
+        },
+        {
+          "name": "Agência Brasil — moradores e escala do apagão",
+          "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-07/vendaval-ainda-causa-danos-moradores-do-rio-de-janeiro",
+          "kind": "Jornalismo",
+          "published_at": "2026-07-30"
+        },
+        {
+          "name": "Agência Brasil — atualização e monitoramento",
+          "url": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-07/mais-de-200-mil-continuam-sem-energia-no-rio-apos-vendaval",
+          "kind": "Jornalismo",
+          "published_at": "2026-07-30"
+        },
+        {
+          "name": "CNN Brasil — transparência de mapa de ocorrências",
+          "url": "https://www.cnnbrasil.com.br/nacional/sudeste/rj/light-priva-site-sobre-ocorrencias-em-meio-a-apagao-e-alega-teste/",
+          "kind": "Jornalismo",
+          "published_at": "2026-07-29"
+        }
+      ]
     }
   ],
   "stories": [
