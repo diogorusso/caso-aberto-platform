@@ -53,3 +53,8 @@ Scope: a static Brazilian civic research, citizen-organization education, digita
 40. Public SEO, social posts, newsletters, short videos, FAQ, checklists and lead magnets must be created around original research questions, not mechanical slices of the private playbook. Queue in `src/data/content-distribution-queue.json` is draft-only. No automatic mass campaign or political profiling. Keep essential civic rights/safety resources open.
 
 37. The local Cause Workspace exposes list, board and month calendar for tasks and a user-edited AI research brief. These functions only read local session data; never claim the platform sent prompts to an AI API, contacted institutions, delivered reminders or safely stored confidential information. Keep storage opt-in and label it as unencrypted.
+
+42. Four free lead-magnet worksheets are defined in `src/data/academy-lead-magnets.json` and rendered by one reusable static route. They do NOT collect PII, enroll leads, store responses or reveal premium instruction. Validate them with `npm run verify:lead-magnets`.
+43. Public insight discovery should be grouped by distinct educational themes, with a small number of truly related internal links and explicit sources. Do not manufacture near-duplicate SEO routes or publish sequential chapter reconstructions.
+
+44. The offline editorial workbench (`npm run content:preview`) generates only `build/editorial-preview/index.html`, which is local, unindexed, not published and built from approved public snippets. It must never be placed in `public/`, `src/pages/` or `dist/`. The editor must approve source relevance, privacy, factual integrity, visuals and destination before distribution. Check `npm run verify:editorial-preview`.

@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "reviewed_at": "2026-11-09",
+  "policy": "Fichas públicas introdutórias independentes; material premium e playbook completo não são incluídos. Não há formulário de coleta, lead capture, conta ou venda.",
+  "items": [
+    {
+      "slug": "pegadas-digitais",
+      "title": "Seu mapa de exposição em uma página",
+      "tagline": "A primeira pergunta de privacidade não é qual aplicativo instalar, mas quem observa seus dados e o que isso muda.",
+      "kind": "Inventário de cinco observações",
+      "intro": "Use esta ficha apenas com seus próprios dispositivos e contas. Ela ajuda a delimitar um problema, não a rastrear pessoas nem a provar ausência total de coleta.",
+      "steps": [
+        {
+          "heading": "Nomeie o contexto",
+          "prompt": "Escolha um único contexto: navegador pessoal, app que você controla ou uma conta sua. Não misture todos os serviços."
+        },
+        {
+          "heading": "Identifique um observador possível",
+          "prompt": "Registre somente o serviço ou entidade que aparece no uso normal. Marque como desconhecido o que você não consegue verificar."
+        },
+        {
+          "heading": "Descreva um sinal",
+          "prompt": "Qual dado ou permissão você observou de fato? Exemplo: acesso declarado à localização, cookie ou conta conectada."
+        },
+        {
+          "heading": "Defina a consequência",
+          "prompt": "O que esse dado pode permitir? Separe observação comprovada e inferência que precisa de confirmação."
+        },
+        {
+          "heading": "Escolha uma proteção testável",
+          "prompt": "Um ajuste de permissão, revisão de login ou pedido de informação. Anote o resultado observável, sem prometer invisibilidade."
+        }
+      ],
+      "fields": [
+        "Sistema ou contexto analisado",
+        "Sinal observado e origem",
+        "Proteção escolhida e data de revisão"
+      ],
+      "limits": "O inventário não mede toda a publicidade programática, identificadores de servidor, cópias passadas ou inferências de terceiros.",
+      "entry_slug": "vpn-nao-e-um-plano-de-seguranca",
+      "cta": "Ler a primeira pergunta sobre seu modelo de ameaça"
+    },
+    {
+      "slug": "algoritmos-e-poder",
+      "title": "Uma tela não prova manipulação: ficha de observação",
+      "tagline": "Antes de chamar um conteúdo de propaganda paga ou manipulação algorítmica, registre o que a tela realmente mostra.",
+      "kind": "Ficha de classificação de uma exposição",
+      "intro": "Trabalhe com uma publicação que você mesmo viu. Não colete dados de contas de terceiros nem tente medir convicções políticas individuais.",
+      "steps": [
+        {
+          "heading": "Anote o evento observável",
+          "prompt": "Qual conteúdo foi exibido, quando e em qual produto? Registre sem interpretar intenção. Identifique a condição observável para conferir sua resposta."
+        },
+        {
+          "heading": "Classifique a origem visível",
+          "prompt": "Marque se é anúncio rotulado, conta seguida, resultado de busca, recomendação ou origem desconhecida."
+        },
+        {
+          "heading": "Diga qual resultado você mediu",
+          "prompt": "Exibição, posição, clique ou engajamento não são mudança de opinião. Escolha apenas o que é visível."
+        },
+        {
+          "heading": "Liste explicações alternativas",
+          "prompt": "Histórico, idioma, horário e contas seguidas podem modificar o resultado. Quais permanecem sem controle?"
+        },
+        {
+          "heading": "Escreva a pergunta verificável",
+          "prompt": "Transforme sua observação numa pergunta a investigar com fontes, recorte, período e possíveis contraprovas."
+        }
+      ],
+      "fields": [
+        "Data e origem do item",
+        "O que foi observado sem inferência",
+        "Explicação alternativa a investigar"
+      ],
+      "limits": "Uma observação individual não mede alcance agregado, causalidade, favoritismo deliberado ou efeito eleitoral.",
+      "entry_slug": "como-auditar-o-feed-sem-confundir-causas",
+      "cta": "Ler o insight sobre influência e causalidade"
+    },
+    {
+      "slug": "ia-agentes-e-protecao",
+      "title": "Sua IA tem permissão demais? Checklist de cinco perguntas",
+      "tagline": "Assistentes conectados podem ler, editar, enviar ou apagar. Descubra o que foi realmente autorizado antes de executar uma automação.",
+      "kind": "Revisão introdutória de conectores",
+      "intro": "Revise somente integrações que você controla. Nunca cole chaves de API, senhas, mensagens ou documentos privados nesta ficha.",
+      "steps": [
+        {
+          "heading": "Inventarie a ferramenta",
+          "prompt": "Qual agente e qual aplicativo estão conectados? Defina o recurso que a integração precisa acessar."
+        },
+        {
+          "heading": "Distinga leitura e escrita",
+          "prompt": "A permissão autoriza apenas consulta ou também envio, edição, exclusão e compartilhamento?"
+        },
+        {
+          "heading": "Identifique a aprovação humana",
+          "prompt": "Que ação exige sua confirmação? O destinatário e o conteúdo são visíveis antes de executar?"
+        },
+        {
+          "heading": "Revise a saída e os registros",
+          "prompt": "Onde o resultado aparece? Que logs ou memórias podem continuar depois do uso? Identifique a condição observável para conferir sua resposta."
+        },
+        {
+          "heading": "Planeje a revogação",
+          "prompt": "Localize o controle de desconexão e a documentação oficial para remover permissões quando não forem mais necessárias."
+        }
+      ],
+      "fields": [
+        "Agente e conexão revisados",
+        "Ação mais sensível autorizada",
+        "Controle de aprovação ou revogação encontrado"
+      ],
+      "limits": "O checklist não testa tecnicamente tokens, retenção em servidores ou conteúdo já transferido; estes exigem uma auditoria separada.",
+      "entry_slug": "agentes-de-ia-e-permissoes",
+      "cta": "Ler o insight sobre agentes e limites"
+    },
+    {
+      "slug": "cidadania-e-direitos",
+      "title": "Pedido público bem documentado: ficha de partida",
+      "tagline": "Uma cobrança fica mais forte quando diz qual fato existe, o que precisa ser respondido e em que prazo será revisada.",
+      "kind": "Roteiro de demanda verificável",
+      "intro": "A ficha é individual e não envia mensagens. Use um pedido informativo, não uma campanha de assédio, e mantenha fora do papel dados sensíveis de testemunhas ou terceiros.",
+      "steps": [
+        {
+          "heading": "Descreva o fato",
+          "prompt": "Qual acontecimento, decisão ou serviço concreto você quer entender? Separe fato, relato e suspeita."
+        },
+        {
+          "heading": "Identifique uma fonte consultável",
+          "prompt": "Anote o documento público, protocolo ou URL original. Se não houver fonte, registre a lacuna."
+        },
+        {
+          "heading": "Escolha o responsável institucional",
+          "prompt": "Qual organização é competente para responder? Verifique o canal oficial em vez de procurar pessoas para pressionar."
+        },
+        {
+          "heading": "Formule uma pergunta",
+          "prompt": "Escreva uma solicitação que possa ser respondida com documento, decisão, medida ou data. Identifique a condição observável para conferir sua resposta."
+        },
+        {
+          "heading": "Registre acompanhamento",
+          "prompt": "Defina prazo de revisão, resposta recebida e pendências; não trate o simples envio como resultado obtido."
+        }
+      ],
+      "fields": [
+        "Fato e data do caso analisado",
+        "Instituição e pergunta verificável",
+        "Protocolo ou data de reavaliação"
+      ],
+      "limits": "Uma ficha não substitui orientação jurídica, consentimento de participantes nem verificação de alegações antes de torná-las públicas.",
+      "entry_slug": "lgpd-direitos-e-decisoes-algoritmicas",
+      "cta": "Ler o insight sobre pedidos específicos"
+    }
+  ]
+}

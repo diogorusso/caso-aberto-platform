@@ -2,12 +2,15 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import products from '../../../data/education-products.json';
 import catalog from '../../../data/learning-publications.json';
+import magnets from '../../../data/academy-lead-magnets.json';
 export function getStaticPaths(){return products.tiers.map(product=>({params:{slug:product.slug},props:{product}}));}
 type Product=typeof products.tiers[number];
 const {product}=Astro.props as {product:Product};
 const samples=catalog.articles.filter(a=>product.sample_slugs.includes(a.slug));
+const magnet=magnets.items.find(item=>item.slug===product.slug);
 ---
 <BaseLayout title={product.name+' — Academia CasoAberto'} description={product.promise}>
 <section class="bg-primary py-16 text-primary-foreground"><div class="container max-w-5xl space-y-5"><p class="m-0 text-xs font-bold uppercase tracking-wider text-[#ff917e]">PROGRAMA EDUCACIONAL · EM PRODUÇÃO</p><h1 class="m-0 text-4xl md:text-6xl">{product.name}</h1><p class="max-w-4xl text-xl text-white/80">{product.promise}</p><p class="text-sm text-white/60">Formato proposto: {product.type}. Sem turma, compra ou inscrição ativa.</p><a class="inline-block border border-white/50 px-5 py-3 text-sm font-semibold text-white no-underline hover:bg-white/10" href={product.entry_resource_url}>Abrir material gratuito ↗</a></div></section>
+{magnet && <section class="container py-8"><div class="grid gap-5 border-l-4 border-brand bg-muted p-6 md:grid-cols-[1fr_auto] md:items-center"><div><p class="m-0 text-xs font-bold uppercase tracking-wider text-brand-strong">EXERCÍCIO GRATUITO · SEM CADASTRO</p><h2 class="mb-2 mt-2 text-2xl">{magnet.title}</h2><p class="m-0 max-w-3xl">{magnet.tagline}</p></div><a class="text-link font-semibold" href={'/academia/'+product.slug+'/ferramenta-gratuita/'}>Abrir ficha e imprimir ↗</a></div></section>}
 <section class="container grid gap-10 py-14 lg:grid-cols-[1fr_1fr]"><div class="space-y-5"><h2 class="m-0 text-3xl">Para quem é</h2><p>{product.audience}</p><h2 class="m-0 text-3xl">Entregáveis planejados</h2><ul class="list-disc space-y-3 pl-5">{product.premium_deliverables.map(d=><li>{d}</li>)}</ul><p class="text-sm text-muted-foreground">Plano de produto, não curso, certificado ou entrega já disponibilizada.</p></div><div class="space-y-5 border-l-4 border-brand bg-muted p-6"><h2 class="m-0 text-2xl">Amostras abertas</h2><p>Leia perguntas pontuais e suas fontes. O método completo, os exercícios avançados e a progressão ficam preservados no acervo educacional.</p><ul class="space-y-3">{samples.map(s=><li><a class="text-link" href={'/autonomia-digital/guias/'+s.slug+'/'}>{s.title} ↗</a></li>)}</ul><a class="text-link font-semibold" href="/autonomia-digital/guias/">Outros insights ↗</a></div></section>
 </BaseLayout>
