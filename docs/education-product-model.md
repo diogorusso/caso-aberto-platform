@@ -60,3 +60,9 @@ O índice `/autonomia-digital/guias/` agora agrupa as perguntas de acordo com os
 ## Ateliê editorial local
 
 Run `npm run content:preview` to build a self-contained visual review at `build/editorial-preview/index.html`. To preview one curated content item, use `npm run content:preview -- --slug=arquivo-deepfake`. The HTML displays four-panel carousel mockups, copy, video scripts, newsletter introductions, citations and scope notes. It is **only a local file**, not an authenticated workspace, public landing page or distributed campaign. The generator reads public-snippet-derived drafts, never private playbook manuscripts. The HTML escapes source strings and loads no remote script or image. Content requires fresh source verification and human approval before any publication. Never move this output under `public/` or `dist/`.
+
+## Próxima etapa: embalagem privada da obra
+
+Há agora um utilitário de release offline para materiais educacionais que já estejam concluídos e revisados em diretório privado. Com chave AES-256-GCM externa, npm run course:package gera pacote cifrado e manifesto de integridade fora do checkout público. npm run course:verify confirma integridade sem extrair conteúdo. O build público executa uma auditoria adicional em dist/ para impedir o vazamento acidental de arquivos de curso e caminhos da wiki. Consulte docs/private-education-release.md.
+
+Essa ferramenta não implementa pagamento, autenticação de aluno, autorização de download nem produtos já disponíveis. Essas capacidades requerem infraestrutura privada antes de anunciar qualquer matrícula.
