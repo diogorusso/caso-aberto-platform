@@ -1,0 +1,37 @@
+{
+  "updated_at": "2026-11-10",
+  "title": "Reclamações fundamentadas registradas em 2024",
+  "source_url": "https://www.procon.sp.gov.br/procon-sp-divulga-cadastro-das-empresas-mais-reclamadas-em-2024/",
+  "published_at": "2025-03-14",
+  "scope": "Exercício 2024: 238.995 Fundação Procon-SP mais 16.541 de 71 Procons municipais conveniados no total combinado.",
+  "total": {
+    "value": 255536,
+    "label": "reclamações fundamentadas no cadastro estadual",
+    "description": "238.995 da Fundação e 16.541 dos Procons municipais; não é uma estatística do CasoAberto."
+  },
+  "companies": [
+    {
+      "name": "Yeesco",
+      "value": 10647,
+      "case_slug": "yeesco-compras-online-nao-entregues",
+      "resolution_rate_pct": 29.6
+    },
+    {
+      "name": "Enel Eletropaulo",
+      "value": 8508,
+      "case_slug": "enel-sp-apagao-2025-ressarcimento",
+      "resolution_rate_pct": 16.4
+    },
+    {
+      "name": "Hurb Technologies",
+      "value": 7554,
+      "case_slug": "hurb-pacotes-flexiveis-viagens-reembolso",
+      "resolution_rate_pct": 0.3
+    }
+  ],
+  "rate": {
+    "value": 29.1,
+    "label": "resolvidas na segunda fase na Fundação Procon-SP",
+    "scope": "Somente as reclamações da Fundação, não todas as queixas do Estado."
+  }
+}
