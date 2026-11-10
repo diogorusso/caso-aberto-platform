@@ -55,3 +55,8 @@ O gate `npm run verify:curated-content` confere versão, referências, mapeament
 Os quatro programas possuem uma ficha própria em `/academia/:slug/ferramenta-gratuita/`, gerada pela mesma página estática a partir de `src/data/academy-lead-magnets.json`. Cada ficha oferece um problema único, cinco perguntas introdutórias, três campos para preenchimento em papel e um limite explícito do que demonstra. A ficha é pronta para impressão ou "Salvar como PDF" via navegador. **Não há formulário enviado a servidor, lead capture, pixel de conversão ou promessa de acesso premium**.
 
 O índice `/autonomia-digital/guias/` agora agrupa as perguntas de acordo com os produtos educacionais e as páginas de insight trazem até três materiais de leitura relacionados. Isso constrói caminhos úteis de SEO e educação sem multiplicar páginas idênticas. `npm run verify:lead-magnets` garante ligações, limites e presença das quatro fichas.
+
+
+## Ateliê editorial local
+
+Run `npm run content:preview` to build a self-contained visual review at `build/editorial-preview/index.html`. To preview one curated content item, use `npm run content:preview -- --slug=arquivo-deepfake`. The HTML displays four-panel carousel mockups, copy, video scripts, newsletter introductions, citations and scope notes. It is **only a local file**, not an authenticated workspace, public landing page or distributed campaign. The generator reads public-snippet-derived drafts, never private playbook manuscripts. The HTML escapes source strings and loads no remote script or image. Content requires fresh source verification and human approval before any publication. Never move this output under `public/` or `dist/`.
