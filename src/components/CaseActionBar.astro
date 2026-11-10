@@ -1,0 +1,34 @@
+---
+import {MessageCircle,Share2,Link2,Printer,ClipboardList,ExternalLink} from 'lucide-react';
+interface Props {title:string;href:string;summary?:string;printHref?:string;compact?:boolean;showComplaint?:boolean}
+const {title,href,summary='',printHref,compact=false,showComplaint=true}=Astro.props;
+const url=new URL(href,'https://casoaberto.pages.dev').href;
+const message='CasoAberto | '+title+'\n'+summary.slice(0,240)+'\n\nLeia o caso completo: cronologia, fontes e respostas:\n'+url;
+const whatsapp='https://wa.me/?text='+encodeURIComponent(message);
+const facebook='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url);
+const x='https://twitter.com/intent/tweet?text='+encodeURIComponent('Caso documentado: '+title.slice(0,115))+'&url='+encodeURIComponent(url);
+const telegram='https://t.me/share/url?url='+encodeURIComponent(url)+'&text='+encodeURIComponent(title);
+const btn='inline-flex min-h-11 items-center justify-center gap-2 rounded-md border px-3.5 py-2 text-sm font-bold no-underline transition-colors focus-visible:ring-2 focus-visible:ring-brand';
+---
+<div class:list={['flex flex-wrap items-center gap-2.5',!compact&&'rounded-xl border border-border bg-card p-4 md:p-5']} data-print-hide aria-label={'Compartilhar e agir: '+title}>
+ {!compact&&<div class="w-full"><p class="m-0 text-xs font-extrabold uppercase tracking-wider text-brand-strong">FAÇA O CASO CIRCULAR · COM AS FONTES</p><h2 class="mb-0 mt-1 text-xl">Compartilhe o caso completo. Cobre uma resposta documentada.</h2></div>}
+ <a class={btn+' border-[#1c9c64] bg-[#168557] text-white hover:bg-[#116e48]'} href={whatsapp} target="_blank" rel="noopener noreferrer" aria-label={'Compartilhar caso no WhatsApp: '+title}><MessageCircle size={17} aria-hidden="true"/> WhatsApp</a>
+ <a class={btn+' border-border bg-background text-foreground hover:border-brand'} href={x} target="_blank" rel="noopener noreferrer" aria-label={'Compartilhar no X: '+title}><Share2 size={16} aria-hidden="true"/> X</a>
+ <a class={btn+' border-border bg-background text-foreground hover:border-brand'} href={facebook} target="_blank" rel="noopener noreferrer" aria-label={'Compartilhar no Facebook: '+title}>Facebook ↗</a>
+ <a class={btn+' border-border bg-background text-foreground hover:border-brand'} href={telegram} target="_blank" rel="noopener noreferrer" aria-label={'Compartilhar no Telegram: '+title}>Telegram ↗</a>
+ <button type="button" class={btn+' cursor-pointer border-border bg-background text-foreground hover:border-brand'} data-case-copy-url={url} aria-label={'Copiar link do caso: '+title}><Link2 size={17} aria-hidden="true"/> Copiar link</button>
+ {printHref&&<a class={btn+' border-border bg-background text-foreground hover:border-brand'} href={printHref}><Printer size={17} aria-hidden="true"/> Imprimir dossiê</a>}
+ {showComplaint&&<a class={btn+' border-border bg-background text-foreground hover:border-brand'} href="https://www.consumidor.gov.br/" target="_blank" rel="noopener noreferrer"><ClipboardList size={17} aria-hidden="true"/> Registrar reclamação <ExternalLink size={13} aria-hidden="true"/></a>}
+</div>
+<script>
+ document.addEventListener('click',async(event)=>{
+  const target=event.target;
+  if(!(target instanceof Element))return;
+  const button=target.closest('[data-case-copy-url]');
+  if(!(button instanceof HTMLButtonElement))return;
+  const url=button.dataset.caseCopyUrl;
+  if(!url)return;
+  try{await navigator.clipboard.writeText(url);button.textContent='Link copiado ✓';}
+  catch{window.prompt('Copie o link do caso',url);}
+ });
+</script>
