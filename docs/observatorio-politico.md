@@ -1,6 +1,6 @@
 # Observatório de poder, dinheiro e direitos — CasoAberto
 
-**Revisão inaugural:** 10/11/2026. **Destino:** repositório `diogorusso/caso-aberto-platform`, site estático Astro/Cloudflare Pages. A publicação de um registro não prova que o instituto conduziu investigação criminal ou contatou uma parte. É pesquisa documental sobre fontes públicas, com atualização editorial sob demanda.
+**Revisão inaugural:** 10/11/2026. Cada dossiê mantém também `reviewed_at` individual para que uma atualização de um caso não apareça como revisão de todos. **Destino:** repositório `diogorusso/caso-aberto-platform`, site estático Astro/Cloudflare Pages. A publicação de um registro não prova que o instituto conduziu investigação criminal ou contatou uma parte. É pesquisa documental sobre fontes públicas, com atualização editorial sob demanda.
 
 ## Arquitetura entregue
 
