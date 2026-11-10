@@ -256,3 +256,18 @@ Seven newly researched studies are sourced from TJSP, CVM, Senacon, MPRS, Folha,
 A sourced national-context card presents official Procon-SP **2024** numbers (255,536 complaints in the combined registry), clearly separated from this project's counts. Sharing via WhatsApp, Facebook, X and Telegram uses the case's complete static link; copying, print and official complaint links are also available without a new backend.
 
 See `docs/research-ledger-coverage-and-sharing.md`. Run `npm run verify:research-ledger`, `npm run verify:data`, `npm run check`, `npm run build`.
+
+
+## Visual impact storytelling and print-ready cases — 2026-11-10
+
+The old slider-based impact calculator and its fabricated financial, campaign reach and lawsuit assumptions are removed. Every documented case now has a shared **evidence-first visual narrative** with dated KPIs, accessible SVG charts, the most material conditional consequence, verification triggers, a resolution checkpoint, and directly linked **A4 print material**.
+
+- **Data:** `src/data/impact-stories.json` (original 17 case narratives; now expanded to 24), derived from the original, separately reviewed consumer, public and political case files.
+- **Reusable UI:** `src/components/CaseVisualStory.astro`, `src/components/CaseEvidenceChart.astro`, `src/lib/visual-impact.ts`. No hydrated chart runtime is necessary for static SVG display; charts share the shadcn/Tailwind color and spacing system, and respect reduced motion.
+- **Every case page:** first-party `/casos/:slug/`, third-party `/casos/arquivo-publico/:slug/`, political `/observatorio/politica/:slug/`, and platform `/observatorio/plataformas/`.
+- **Print:** `/casos/imprimir/:slug/` (one A4 evidence sheet per case). Existing multi-format Florense print studio is preserved, and linked from the inline case panel.
+- **Reusable evidence export:** `/casos/impacto.json` for public case metadata, indicators, documented chronology and print links.
+- **Navigation:** three progressive tracks on case pages (understand, verify, share material) while existing deep case URLs remain valid.
+- **Validation:** `npm run verify:visual-stories`, included in `verify:data` and `build`.
+
+Detailed design, modeling and editorial rules: [docs/visual-impact-storytelling.md](docs/visual-impact-storytelling.md). For future chat/agent tasks, load `.cursor/skills/casoaberto-visual-data-storytelling/SKILL.md` along with the PT-BR tone skill.

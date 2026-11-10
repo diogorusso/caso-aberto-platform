@@ -1,12 +1,8 @@
 ---
-import { type Case } from '../lib/cases';
-import { type Brand, type BrandUnit } from '../lib/brands';
-import { impactForSelection, brandSnapshot } from '../lib/impact';
+import type { Case } from '../lib/cases';
+import type { Brand, BrandUnit } from '../lib/brands';
 import ImpactBody from './ImpactBody.astro';
 interface Props { caseItem?: Case; brand?: Brand; unit?: BrandUnit; embedded?: boolean }
-const { caseItem, brand, unit } = Astro.props;
-const data = impactForSelection({ caseItem, brand, unit });
-const snapshotBrand = brand || (caseItem?.empresa_slug ? findBrand(caseItem.empresa_slug) : undefined);
-const snapshot = snapshotBrand && !unit ? brandSnapshot(snapshotBrand) : null;
+const {caseItem, brand, unit}=Astro.props;
 ---
-<ImpactBody caseItem={caseItem} brand={brand} unit={unit} />
+<ImpactBody caseItem={caseItem} brand={brand} unit={unit}/>
