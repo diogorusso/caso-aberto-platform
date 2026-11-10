@@ -1,0 +1,907 @@
+{
+  "version": 1,
+  "as_of": "2026-11-09",
+  "source_vault": "private_repo_only",
+  "source_chapters_total": 56,
+  "notice": "Metadata only. No private chapter text, exact internal chapter titles, premium labs, answer keys, media or source originals are stored here.",
+  "chapters": [
+    {
+      "id": "01",
+      "primary_product": "pegadas-digitais",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "02",
+      "primary_product": "pegadas-digitais",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "03",
+      "primary_product": "pegadas-digitais",
+      "private_source": true,
+      "snippet_urls": [
+        "/autonomia-digital/guias/leiloes-de-anuncios-e-perfis-invisiveis/"
+      ],
+      "public_status": "original_insight_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "04",
+      "primary_product": "pegadas-digitais",
+      "private_source": true,
+      "snippet_urls": [
+        "/autonomia-digital/guias/como-remover-dados-de-corretores/"
+      ],
+      "public_status": "original_insight_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "05",
+      "primary_product": "algoritmos-e-poder",
+      "private_source": true,
+      "snippet_urls": [
+        "/autonomia-digital/guias/como-auditar-o-feed-sem-confundir-causas/"
+      ],
+      "public_status": "original_insight_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "06",
+      "primary_product": "algoritmos-e-poder",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "07",
+      "primary_product": "pegadas-digitais",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "08",
+      "primary_product": "cidadania-e-direitos",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "09",
+      "primary_product": "cidadania-e-direitos",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "10",
+      "primary_product": "cidadania-e-direitos",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "11",
+      "primary_product": "pegadas-digitais",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "12",
+      "primary_product": "cidadania-e-direitos",
+      "private_source": true,
+      "snippet_urls": [
+        "/autonomia-digital/guias/revogacao-de-consentimento-na-pratica/",
+        "/autonomia-digital/guias/lgpd-direitos-e-decisoes-algoritmicas/"
+      ],
+      "public_status": "original_insight_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "13",
+      "primary_product": "ia-agentes-e-protecao",
+      "private_source": true,
+      "snippet_urls": [
+        "/autonomia-digital/guias/agentes-de-ia-e-permissoes/"
+      ],
+      "public_status": "original_insight_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "14",
+      "primary_product": "cidadania-e-direitos",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "15",
+      "primary_product": "cidadania-e-direitos",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "16",
+      "primary_product": "cidadania-e-direitos",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "17",
+      "primary_product": "pegadas-digitais",
+      "private_source": true,
+      "snippet_urls": [
+        "/autonomia-digital/guias/leiloes-de-anuncios-e-perfis-invisiveis/"
+      ],
+      "public_status": "original_insight_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "18",
+      "primary_product": "pegadas-digitais",
+      "private_source": true,
+      "snippet_urls": [
+        "/autonomia-digital/guias/como-remover-dados-de-corretores/"
+      ],
+      "public_status": "original_insight_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "19",
+      "primary_product": "algoritmos-e-poder",
+      "private_source": true,
+      "snippet_urls": [
+        "/autonomia-digital/guias/como-auditar-o-feed-sem-confundir-causas/"
+      ],
+      "public_status": "original_insight_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "20",
+      "primary_product": "cidadania-e-direitos",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "21",
+      "primary_product": "ia-agentes-e-protecao",
+      "private_source": true,
+      "snippet_urls": [
+        "/autonomia-digital/guias/agentes-de-ia-e-permissoes/"
+      ],
+      "public_status": "original_insight_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "22",
+      "primary_product": "algoritmos-e-poder",
+      "private_source": true,
+      "snippet_urls": [
+        "/autonomia-digital/guias/lgpd-direitos-e-decisoes-algoritmicas/"
+      ],
+      "public_status": "original_insight_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "23",
+      "primary_product": "cidadania-e-direitos",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "24",
+      "primary_product": "ia-agentes-e-protecao",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "25",
+      "primary_product": "cidadania-e-direitos",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "26",
+      "primary_product": "ia-agentes-e-protecao",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "27",
+      "primary_product": "algoritmos-e-poder",
+      "private_source": true,
+      "snippet_urls": [
+        "/autonomia-digital/guias/lgpd-direitos-e-decisoes-algoritmicas/"
+      ],
+      "public_status": "original_insight_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "28",
+      "primary_product": "pegadas-digitais",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "29",
+      "primary_product": "pegadas-digitais",
+      "private_source": true,
+      "snippet_urls": [
+        "/autonomia-digital/guias/quando-deletar-nao-apaga/"
+      ],
+      "public_status": "original_insight_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "30",
+      "primary_product": "pegadas-digitais",
+      "private_source": true,
+      "snippet_urls": [
+        "/autonomia-digital/guias/leiloes-de-anuncios-e-perfis-invisiveis/"
+      ],
+      "public_status": "original_insight_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "31",
+      "primary_product": "pegadas-digitais",
+      "private_source": true,
+      "snippet_urls": [
+        "/autonomia-digital/guias/leiloes-de-anuncios-e-perfis-invisiveis/"
+      ],
+      "public_status": "original_insight_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "32",
+      "primary_product": "ia-agentes-e-protecao",
+      "private_source": true,
+      "snippet_urls": [
+        "/autonomia-digital/guias/deepfake-prova-ou-encenacao/"
+      ],
+      "public_status": "original_insight_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "33",
+      "primary_product": "cidadania-e-direitos",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "34",
+      "primary_product": "ia-agentes-e-protecao",
+      "private_source": true,
+      "snippet_urls": [
+        "/autonomia-digital/guias/deepfake-prova-ou-encenacao/"
+      ],
+      "public_status": "original_insight_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "35",
+      "primary_product": "pegadas-digitais",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "36",
+      "primary_product": "cidadania-e-direitos",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "37",
+      "primary_product": "pegadas-digitais",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "38",
+      "primary_product": "algoritmos-e-poder",
+      "private_source": true,
+      "snippet_urls": [
+        "/autonomia-digital/guias/como-auditar-o-feed-sem-confundir-causas/"
+      ],
+      "public_status": "original_insight_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "39",
+      "primary_product": "pegadas-digitais",
+      "private_source": true,
+      "snippet_urls": [
+        "/autonomia-digital/guias/revogacao-de-consentimento-na-pratica/",
+        "/autonomia-digital/guias/quando-deletar-nao-apaga/"
+      ],
+      "public_status": "original_insight_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "40",
+      "primary_product": "pegadas-digitais",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "41",
+      "primary_product": "algoritmos-e-poder",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "42",
+      "primary_product": "pegadas-digitais",
+      "private_source": true,
+      "snippet_urls": [
+        "/autonomia-digital/guias/como-remover-dados-de-corretores/",
+        "/autonomia-digital/guias/revogacao-de-consentimento-na-pratica/",
+        "/autonomia-digital/guias/lgpd-direitos-e-decisoes-algoritmicas/",
+        "/autonomia-digital/guias/quando-deletar-nao-apaga/"
+      ],
+      "public_status": "original_insight_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "43",
+      "primary_product": "ia-agentes-e-protecao",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "44",
+      "primary_product": "algoritmos-e-poder",
+      "private_source": true,
+      "snippet_urls": [
+        "/autonomia-digital/guias/como-auditar-o-feed-sem-confundir-causas/"
+      ],
+      "public_status": "original_insight_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "45",
+      "primary_product": "ia-agentes-e-protecao",
+      "private_source": true,
+      "snippet_urls": [
+        "/autonomia-digital/guias/agentes-de-ia-e-permissoes/"
+      ],
+      "public_status": "original_insight_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "46",
+      "primary_product": "ia-agentes-e-protecao",
+      "private_source": true,
+      "snippet_urls": [
+        "/autonomia-digital/guias/agentes-de-ia-e-permissoes/"
+      ],
+      "public_status": "original_insight_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "47",
+      "primary_product": "ia-agentes-e-protecao",
+      "private_source": true,
+      "snippet_urls": [
+        "/autonomia-digital/guias/agentes-de-ia-e-permissoes/"
+      ],
+      "public_status": "original_insight_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "48",
+      "primary_product": "pegadas-digitais",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "49",
+      "primary_product": "pegadas-digitais",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "50",
+      "primary_product": "ia-agentes-e-protecao",
+      "private_source": true,
+      "snippet_urls": [
+        "/autonomia-digital/guias/agentes-de-ia-e-permissoes/",
+        "/autonomia-digital/guias/deepfake-prova-ou-encenacao/"
+      ],
+      "public_status": "original_insight_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "51",
+      "primary_product": "ia-agentes-e-protecao",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "52",
+      "primary_product": "ia-agentes-e-protecao",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "53",
+      "primary_product": "pegadas-digitais",
+      "private_source": true,
+      "snippet_urls": [
+        "/autonomia-digital/guias/como-remover-dados-de-corretores/"
+      ],
+      "public_status": "original_insight_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "54",
+      "primary_product": "pegadas-digitais",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "55",
+      "primary_product": "algoritmos-e-poder",
+      "private_source": true,
+      "snippet_urls": [
+        "/autonomia-digital/guias/quando-deletar-nao-apaga/"
+      ],
+      "public_status": "original_insight_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    },
+    {
+      "id": "56",
+      "primary_product": "pegadas-digitais",
+      "private_source": true,
+      "snippet_urls": [],
+      "public_status": "not_yet_published",
+      "idea_formats": [
+        "independent_search_question",
+        "fact_check_faq",
+        "short_social",
+        "newsletter",
+        "free_microexercise"
+      ],
+      "editorial_gate": "Draft independent insight from verified sources, not sequential copy of private chapter."
+    }
+  ]
+}
