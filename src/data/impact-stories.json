@@ -1,0 +1,177 @@
+{
+  "version": 1,
+  "updated_at": "2026-11-10",
+  "framework": "Conseqüência condicional vinculada a um fato do registro, nunca probabilidade ou valor fictício.",
+  "cases": [
+    {
+      "id": "CA-001",
+      "audience": "Consumidor que pagou por móveis planejados",
+      "exposure": "Dinheiro comprometido e ambiente sem entrega integral confirmada.",
+      "headline": "Pagou. O imóvel continua esperando. Quem responde pelo próximo atraso?",
+      "worst_case": "Se a entrega integral continuar sem comprovação, o valor já pago segue comprometido e o consumidor continua sem concluir o uso planejado do imóvel, podendo enfrentar custos adicionais ainda não quantificados.",
+      "threshold": "Novo prazo descumprido, ausência de cronograma escrito ou documentação de entrega incompleta.",
+      "resolution": "Comprovante de entrega integral aceita pelo consumidor ou restituição documentada e encerramento efetivo do conflito.",
+      "action": "Exigir o cronograma assinado, a identificação da contratante e a comprovação da entrega, item por item."
+    },
+    {
+      "id": "EXT-001",
+      "audience": "Quem comprou pacote de viagem sem emissão ou reembolso",
+      "exposure": "Viagem perdida, pagamento retido e novo planejamento sem resposta.",
+      "headline": "A viagem não acontece. O dinheiro não volta. Até quando?",
+      "worst_case": "Se emissão e restituição continuarem sem solução, a pessoa perde a utilidade da viagem contratada e permanece sem o recurso pago para reorganizar as férias; o desfecho depende do contrato e dos atos posteriores.",
+      "threshold": "Falta de confirmação de bilhete, cancelamentos reiterados ou restituição prometida que não ocorreu.",
+      "resolution": "Bilhete e hospedagem efetivamente emitidos ou devolução concluída e comprovada.",
+      "action": "Cobrar confirmação documental da reserva ou restituição com prazo e responsável."
+    },
+    {
+      "id": "EXT-002",
+      "audience": "Consumidor que teve o serviço cancelado e virou credor",
+      "exposure": "Prestação não entregue e crédito sujeito a etapas de recuperação judicial.",
+      "headline": "Sem passagem e agora na fila de credores. Quem garante a reparação?",
+      "worst_case": "Se o crédito não for reconhecido ou satisfeito nos termos aplicáveis, a viagem não realizada pode evoluir para espera prolongada por pagamento no processo de recuperação judicial.",
+      "threshold": "Divergência de valor na relação de credores, prazo processual não observado ou falta de pagamento conforme o plano vigente.",
+      "resolution": "Crédito corretamente reconhecido e obrigação cumprida ou acordo efetivamente pago.",
+      "action": "Conferir documentos do contrato, lista pertinente de credores e decisões vigentes do juízo."
+    },
+    {
+      "id": "EXT-003",
+      "audience": "Quem pagou compra online e não recebeu",
+      "exposure": "Pagamento realizado sem confirmação de entrega da mercadoria.",
+      "headline": "O rastreio mudou. E a compra? Quem entregou de verdade?",
+      "worst_case": "Se a empresa continuar sem comprovar entrega nem devolver o pagamento, o consumidor permanece sem a mercadoria e sem o valor necessário para repor a compra.",
+      "threshold": "Rastreio sem comprovante de recebimento, novo prazo vencido ou cancelamento sem reembolso.",
+      "resolution": "Comprovante de recebimento da mercadoria correta ou estorno confirmado.",
+      "action": "Solicitar prova de entrega e alternativa de restituição formal com data."
+    },
+    {
+      "id": "EXT-004",
+      "audience": "Famílias afetadas por interrupção de energia",
+      "exposure": "Serviço essencial interrompido, alimentos e equipamentos potencialmente expostos.",
+      "headline": "Ficou no escuro. O prejuízo ficou com quem?",
+      "worst_case": "Se a interrupção e a resposta sobre ressarcimento não forem resolvidas, famílias podem suportar perdas materiais sem solução documentada, especialmente quando o serviço essencial falha por períodos prolongados.",
+      "threshold": "Nova falha, pedido individual sem decisão ou indenização anunciada sem pagamento comprovado.",
+      "resolution": "Restabelecimento acompanhado de análise e conclusão documentada dos pedidos pertinentes.",
+      "action": "Registrar período de interrupção, provas dos danos e resposta da distribuidora nos canais oficiais."
+    },
+    {
+      "id": "EXT-005",
+      "audience": "Famílias que pagaram por produtos do quarto de bebê",
+      "exposure": "Itens essenciais da preparação familiar sem entrega na data prometida.",
+      "headline": "O bebê chega. O pedido não. Quem assume a urgência?",
+      "worst_case": "Se o produto continuar sem entrega nem restituição durante uma recuperação judicial, a família pode ter de substituir bens necessários e ainda acompanhar a habilitação e o pagamento do crédito.",
+      "threshold": "Entrega não comprovada, crédito não tratado formalmente ou nova promessa sem execução.",
+      "resolution": "Produtos recebidos ou ressarcimento confirmado, com situação do crédito atualizada.",
+      "action": "Verificar a obrigação contratada e os atos recentes da recuperação judicial."
+    },
+    {
+      "id": "EXT-006",
+      "audience": "Consumidores de vestuário comprado pela internet",
+      "exposure": "Compra paga, prazo não cumprido e necessidade de restituição.",
+      "headline": "Cobrou. Pagou. E a entrega segue sem prova?",
+      "worst_case": "Persistindo o atraso sem correção ou restituição, o consumidor perde a utilidade da compra e continua com recursos comprometidos; cada reclamação precisa de seu desfecho próprio.",
+      "threshold": "Falta de confirmação de postagem/entrega, resposta genérica ou reembolso atrasado.",
+      "resolution": "Entrega comprovada ou devolução executada.",
+      "action": "Reunir pedido, prazos, contato e prova do efetivo resultado."
+    },
+    {
+      "id": "EXT-007",
+      "audience": "Clientes que aguardam entrega de móveis e eletrodomésticos",
+      "exposure": "Dinheiro comprometido enquanto o produto necessário não chega.",
+      "headline": "A loja apresenta um plano. Qual pedido foi realmente entregue?",
+      "worst_case": "Se as pendências reportadas não forem concluídas, famílias podem continuar sem bens essenciais e com recursos comprometidos, mesmo após anúncios de planos operacionais.",
+      "threshold": "Pedido pendente após data confirmada, ausência de prova de entrega ou devolução.",
+      "resolution": "Conclusão individual documentada, não apenas redução agregada de reclamações.",
+      "action": "Confrontar cada pedido com comprovantes de entrega, solução ou restituição."
+    },
+    {
+      "id": "EXT-008",
+      "audience": "Moradores afetados pelo apagão no Rio",
+      "exposure": "Rotina, renda, segurança e serviços dependentes de energia ficam vulneráveis.",
+      "headline": "A luz voltou. Quem responde pelo dano do apagão?",
+      "worst_case": "Se novas interrupções ocorrerem ou os danos não forem apurados, moradores podem enfrentar perdas repetidas e falta de ressarcimento, sem que a restauração do serviço resolva os impactos anteriores.",
+      "threshold": "Falha recorrente, pedido de reparação sem resposta ou estimativa pública não compatível com registros individuais.",
+      "resolution": "Serviço restabelecido e pedidos de ressarcimento analisados com respostas e pagamentos verificáveis quando cabíveis.",
+      "action": "Guardar período, protocolos e provas dos danos, cobrando análise individual pela concessionária."
+    },
+    {
+      "id": "POL-001",
+      "audience": "Consumidores, trabalhadores e instituições afetados pelo regime de apostas",
+      "exposure": "Mudança de regime, dúvidas sobre saldos, fiscalização e publicidade.",
+      "headline": "As bets foram proibidas. Quem protege o dinheiro já depositado?",
+      "worst_case": "Se a transição de autorizações, saldos e fiscalização permanecer sem execução clara, consumidores podem enfrentar dificuldades para reaver valores ou entender seus direitos enquanto a disputa legislativa e judicial avança.",
+      "threshold": "Alteração no texto da MP, decisão judicial sobre eficácia ou ausência de comprovação de restituições previstas.",
+      "resolution": "Regime final publicado, decisões de constitucionalidade registradas e prestação de contas verificável sobre a transição.",
+      "action": "Cobrar regras públicas sobre saldos, prazos, fiscalização e execução da medida."
+    },
+    {
+      "id": "POL-002",
+      "audience": "Torcedores, clubes e público exposto à publicidade de apostas",
+      "exposure": "Financiamento esportivo e exposição publicitária submetidos a um regime legal em disputa.",
+      "headline": "Quem banca a camisa? Quem responde pelo efeito do patrocínio?",
+      "worst_case": "Se clubes e operadoras não tornarem públicas as mudanças contratuais após a proibição, torcedores podem ficar sem saber quais vínculos permanecem e que exposição à publicidade ainda está sendo mantida.",
+      "threshold": "Patrocínio anunciado como vigente sem contrato atualizado, exibição após mudança regulatória ou decisão judicial ignorada.",
+      "resolution": "Divulgação datada da situação de cada contrato e cumprimento documentado das regras aplicáveis.",
+      "action": "Exigir transparência de contratos, aditivos, publicidade e participação processual dos clubes."
+    },
+    {
+      "id": "POL-003",
+      "audience": "População que acompanha investigações de autoridades públicas",
+      "exposure": "Apurações seguem enquanto fatos sobre medidas judiciais e deslocamento ainda são contestados.",
+      "headline": "Saiu do país. Os inquéritos continuaram. Quais decisões vêm agora?",
+      "worst_case": "Se informações públicas sobre medidas, competência e andamento não forem atualizadas, a sociedade pode perder a capacidade de acompanhar a responsabilização institucional e distinguir investigação de decisão definitiva.",
+      "threshold": "Nova medida judicial, pedido internacional ou mudança comprovada do estágio processual.",
+      "resolution": "Atos oficiais de encerramento, julgamento ou medida processual documentados com manifestação da defesa.",
+      "action": "Acompanhar decisões públicas dos autos e a versão processual da defesa."
+    },
+    {
+      "id": "POL-004",
+      "audience": "Representantes eleitas e pessoas expostas à violência política",
+      "exposure": "Ameaças podem restringir a liberdade de participação e representação pública.",
+      "headline": "Ameaçaram uma representante eleita. Quem garante que ela possa exercer o mandato?",
+      "worst_case": "Se as ameaças persistirem sem resposta institucional eficaz, a participação política pode ser constrangida e outras pessoas podem deixar de exercer direitos por receio de violência.",
+      "threshold": "Novo ato formal divulgado pela PF, decisão pública ou indicação institucional de falha no atendimento à vítima.",
+      "resolution": "Apuração e proteção acompanhadas por órgãos competentes, com responsabilidades formalmente estabelecidas quando comprovadas.",
+      "action": "Cobrar dados públicos sobre a resposta institucional sem divulgar rotinas, locais ou medidas de proteção."
+    },
+    {
+      "id": "POL-005",
+      "audience": "Comunidades indígenas expostas a intimidação pós-eleitoral",
+      "exposure": "Segurança coletiva e liberdade de voto ameaçadas por denúncias de retaliação.",
+      "headline": "Votar não pode virar risco de sofrer violência. Quem investiga cada denúncia?",
+      "worst_case": "Se a intimidação denunciada persistir sem investigação e proteção adequadas, comunidades podem ter o exercício de direitos políticos e a segurança coletiva comprometidos.",
+      "threshold": "Novo procedimento público, atualização dos números com método ou comprovação de falta de providências.",
+      "resolution": "Medidas públicas de prevenção, apuração de cada ocorrência e proteção sem exposição de pessoas ameaçadas.",
+      "action": "Cobrar providências dos órgãos responsáveis com dados agregados e fontes seguras."
+    },
+    {
+      "id": "POL-006",
+      "audience": "Eleitores indígenas que dependem de acesso e apoio ao voto",
+      "exposure": "Falhas de transporte e apoio linguístico podem impedir o exercício do voto.",
+      "headline": "O voto é um direito. Quem garantiu que a urna fosse acessível?",
+      "worst_case": "Se barreiras logísticas ou linguísticas se repetirem sem correção, eleitores podem ficar privados do exercício efetivo do voto apesar de estarem formalmente aptos.",
+      "threshold": "Resposta do TSE ou relatório pós-pleito indicando medidas realizadas e reclamações avaliadas.",
+      "resolution": "Medidas de acesso executadas e documentadas, acompanhadas de respostas às representações recebidas.",
+      "action": "Conferir providências oficiais e relatórios sem identificar eleitores ou locais sensíveis."
+    },
+    {
+      "id": "POL-007",
+      "audience": "Cidadãos que dependem de serviços financiados por emendas",
+      "exposure": "Recursos públicos podem chegar sem cadeia verificável entre indicação e entrega.",
+      "headline": "A emenda foi paga. Qual serviço chegou ao cidadão?",
+      "worst_case": "Se a rastreabilidade de indicação, empenho, pagamento e execução não for implementada, irregularidades ou entregas não comprovadas podem continuar difíceis de identificar e corrigir.",
+      "threshold": "Entrega do plano de código único ou nova auditoria com execução e recomposição identificadas.",
+      "resolution": "Dados públicos ligados por identificador verificável e providências sobre achados de auditoria documentadas.",
+      "action": "Exigir referência de emenda, beneficiário, pagamento, objeto e entrega na plataforma pública."
+    },
+    {
+      "id": "PLAT-2026-CASE",
+      "audience": "Pessoas expostas a anúncios e moderação política em plataformas",
+      "exposure": "Conteúdo eleitoral e moderação de alcance sem verificação transparente da eficácia das medidas.",
+      "headline": "A plataforma apresentou um plano. Quem comprovou que ele funciona?",
+      "worst_case": "Se os compromissos declarados de moderação e transparência não forem auditados na prática, usuários podem continuar sem saber como anúncios e decisões da plataforma afetam o debate público.",
+      "threshold": "Novo teste independente, relatório oficial sobre execução ou decisão pública com providências exigidas.",
+      "resolution": "Resultados auditáveis, dados de transparência e processos de recurso efetivamente verificáveis.",
+      "action": "Cobrar métricas publicadas, metodologias e efetividade real dos controles anunciados."
+    }
+  ]
+}
