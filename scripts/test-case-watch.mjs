@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
+import {execFileSync} from 'node:child_process';
 import {planReviews,validatePolicy,sourceCases,issueBody,addDays} from './case-watch-core.mjs';
 const read=name=>JSON.parse(readFileSync(new URL('../src/data/'+name+'.json',import.meta.url),'utf8'));
 const policy=read('case-watch-policy');
@@ -65,4 +66,15 @@ test('invalid case IDs and dates fail closed',()=>{
  assert.throws(()=>planReviews({policy,index:records,today:'2026-11-31'}));
  assert.throws(()=>planReviews({policy,index:records,today:'2026-11-11',caseId:'POL-999'}));
  assert.equal(addDays('2026-11-10',2),'2026-11-12');
+});
+
+test('one-case agent capsules stay valid JSON and under the hard token input cap',()=>{
+ for(const id of ['CA-001','EXT-009','POL-001','PLAT-2026-CASE']){
+  const output=execFileSync(process.execPath,[new URL('./case-review-packet.mjs',import.meta.url).pathname,'--case',id,'--max-chars','4200'],{encoding:'utf8'});
+  assert.ok(output.length<=4201,'Capsule too long '+id);
+  const packet=JSON.parse(output);
+  assert.equal(packet.id,id);
+  assert.ok(packet.sources.length>=1);
+  assert.ok(packet.next_action.includes('Sem alteração material'));
+ }
 });
