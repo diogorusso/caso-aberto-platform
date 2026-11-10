@@ -246,3 +246,17 @@ A pesquisa cívica pública agora tem um eixo independente dos casos de consumo:
 Comando conversacional de execução para um agente com ferramentas GitHub/web: **"Atualize o observatório político do CasoAberto; confira fontes e decisões novas desde a revisão anterior, revise os fatos e vínculos, execute validação e build e publique a versão confirmada no site estático."**
 
 Nenhuma dessas funções implanta monitoramento contínuo, coleta perfis políticos, transmite mensagens de campanha, modifica o Worker privado ou atribui culpa por patrocínio/associação. Referências e patrocínios históricos devem continuar com data e status explícitos. A revisão editorial de fatos sensíveis exige conferência humana e histórico de correções.
+
+## Visual impact storytelling and print-ready cases — 2026-11-10
+
+The old slider-based impact calculator and its fabricated financial, campaign reach and lawsuit assumptions are removed. Every documented case now has a shared **evidence-first visual narrative** with dated KPIs, accessible SVG charts, the most material conditional consequence, verification triggers, a resolution checkpoint, and directly linked **A4 print material**.
+
+- **Data:** `src/data/impact-stories.json` (17 case narratives), derived from the original, separately reviewed consumer, public and political case files.
+- **Reusable UI:** `src/components/CaseVisualStory.astro`, `src/components/CaseEvidenceChart.astro`, `src/lib/visual-impact.ts`. No hydrated chart runtime is necessary for static SVG display; charts share the shadcn/Tailwind color and spacing system, and respect reduced motion.
+- **Every case page:** first-party `/casos/:slug/`, third-party `/casos/arquivo-publico/:slug/`, political `/observatorio/politica/:slug/`, and platform `/observatorio/plataformas/`.
+- **Print:** `/casos/imprimir/:slug/` (one A4 evidence sheet per case). Existing multi-format Florense print studio is preserved, and linked from the inline case panel.
+- **Reusable evidence export:** `/casos/impacto.json` for public case metadata, indicators, documented chronology and print links.
+- **Navigation:** three progressive tracks on case pages (understand, verify, share material) while existing deep case URLs remain valid.
+- **Validation:** `npm run verify:visual-stories`, included in `verify:data` and `build`.
+
+Detailed design, modeling and editorial rules: [docs/visual-impact-storytelling.md](docs/visual-impact-storytelling.md). For future chat/agent tasks, load `.cursor/skills/casoaberto-visual-data-storytelling/SKILL.md` along with the PT-BR tone skill.
