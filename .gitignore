@@ -13,3 +13,6 @@ private-evidence/
 
 # Offline editorial briefs; generated from public snippets, never deployed
 build/editorial-drafts/
+
+# Ephemeral source fingerprints, queue packets and human review notes (never published)
+.case-watch-cache/
