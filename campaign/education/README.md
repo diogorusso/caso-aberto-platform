@@ -1,14 +1,11 @@
-# Distribuição educacional CasoAberto
+# CasoAberto — distribuição educativa com fontes
 
-Este diretório contém **12 pacotes de divulgação prontos para revisão**, criados a partir dos insights públicos, não do playbook privado. Cada pacote inclui legenda, roteiro curto, quatro quadros para carrossel, abertura de newsletter e fonte. Não há postagem automática.
+Os **12 pacotes** em `drafts/` são materiais editoriais para revisão. Eles oferecem rascunho de card, vídeo curto, newsletter e FAQ, **não são conteúdos publicados nem mensagens enviadas**.
 
-## Política de publicação
+Cada pacote usa somente uma pergunta original do `src/data/content-distribution-queue.json`, uma amostra pública revisada em `src/data/learning-publications.json` e fontes externas. O conteúdo premium completo permanece na wiki e em seu ambiente educacional futuro, não neste repositório.
 
-1. Conferir a fonte primária, o período e a interpretação; evitar declarar resultados empíricos que não foram medidos.
-2. Revisar o tom, a acessibilidade, cada legenda e qualquer elemento visual antes de publicar.
-3. Respeitar privacidade, licenciamento, direitos de imagem e identidades protegidas.
-4. Manter o conteúdo cívico informativo; não explorar perfis políticos sensíveis, medo pessoal ou assédio.
-5. Usar URL do insight público e uma prévia educacional, sem falsa oferta de compra.
-6. Registrar data, versão aprovada e canal no fluxo editorial antes de distribuir.
+Arquitetura: amostra pública / problema específico → recorte e fontes → microexercício gratuito → apresentação do programa na `/academia/`. O catálogo é informativo e não realiza pagamentos.
 
-O currículo integral de 56 capítulos permanece privado. Os pacotes não devem conter protocolos, soluções ou trechos extensos do produto pago.
+Gerador para novas revisões: `npm run content:pack`. A saída automatizada fica em `build/editorial-drafts/`, ignorada pelo Git, para evitar publicação acidental. Reconciliar manualmente diferenças com os briefs versionados em `campaign/education/drafts/` antes de atualizar assets.
+
+Os rascunhos não indicam segmentação por preferências políticas, captura de e-mails, uso de bots ou promessa de novos fatos. Publicação, circulação e revisão de qualquer peça exigem aprovação humana.

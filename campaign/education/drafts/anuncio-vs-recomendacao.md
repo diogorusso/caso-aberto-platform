@@ -1,0 +1,71 @@
+# Anúncio não é recomendação
+
+**Status:** RASCUNHO · revisão humana obrigatória · **não publicado**  
+**Pauta:** anuncio-vs-recomendacao  
+**Produto educacional relacionado:** Quem Controla o Feed? — Algoritmos e Poder (`/academia/algoritmos-e-poder/`)  
+**Insight original:** `/autonomia-digital/guias/leiloes-de-anuncios-e-perfis-invisiveis/`  
+**Material de origem:** apenas recorte público e fontes listadas, jamais a íntegra do playbook.
+
+## Card educativo (texto-base)
+
+**Anúncio não é recomendação**
+
+Como separar conteúdo pago do ranking orgânico?
+
+Uma captura isolada não comprova compra de alcance.
+
+Saiba mais com fontes: /autonomia-digital/guias/leiloes-de-anuncios-e-perfis-invisiveis/
+
+**Nota de produção:** este card precisa de revisão factual e identidade visual; não tratar ilustração como prova.
+
+## Vídeo curto — roteiro de 4 blocos
+
+| Bloco | Mensagem | Recurso visual |
+| --- | --- | --- |
+| 1 · Gancho | Anúncio não é recomendação | Tipografia e infografia, não imagem sintética de evidência |
+| 2 · Pergunta | Como separar conteúdo pago do ranking orgânico? | Fluxo ou esquema com variáveis identificadas |
+| 3 · Limite | Uma captura isolada não comprova compra de alcance. | Destaque visual da distinção e do que é desconhecido |
+| 4 · Aprofundar | Leia o insight com referências: /autonomia-digital/guias/leiloes-de-anuncios-e-perfis-invisiveis/ | URL legível, fonte e data |
+
+**Revisão antes de gravação:** checar se a pergunta é informativa, se as fontes sustentam o enquadramento e se alguma cena pode sugerir fato não comprovado.
+
+## Newsletter educativa — rascunho
+
+**Assunto:** Anúncio não é recomendação
+
+**Prévia:** Uma pergunta sobre tecnologia e autonomia digital que vale investigar.
+
+**Por que importa?** Como separar conteúdo pago do ranking orgânico?
+
+**Conceito inicial:** Quando uma página ou aplicativo tem espaço publicitário, uma cadeia de fornecedores pode participar da escolha do anúncio: publisher, SDK, exchange, plataforma de compra, anunciantes e outros intermediários. O conjunto de informações transmitido varia por integração, legislação, consentimento e regras internas; não existe um pacote universal em todas as impressões.
+
+**O que não podemos presumir:** Uma captura isolada não comprova compra de alcance.
+
+**Para aprofundar:** /autonomia-digital/guias/leiloes-de-anuncios-e-perfis-invisiveis/ — com fontes e atividade de entrada.
+
+**Programa relacionado:** Quem Controla o Feed? — Algoritmos e Poder. Encontre o escopo educacional em /academia/algoritmos-e-poder/. Produto em desenvolvimento; sem matrícula aberta ou cobrança disponível.
+
+## Pergunta SEO / FAQ complementar
+
+**Pergunta:** Como separar conteúdo pago do ranking orgânico?
+
+**Resposta a revisar:** Uma captura isolada não comprova compra de alcance. Consulte os dados e o mecanismo descritos em /autonomia-digital/guias/leiloes-de-anuncios-e-perfis-invisiveis/ antes de afirmar que uma ação ou evento ocorreu.
+
+Esta é uma pergunta editorial complementar. Não publicar uma nova página que apenas duplique o insight existente.
+
+## Fontes de verificação
+
+- [FTC — Mobilewalla e real-time bidding](https://search.ftc.gov/policy/advocacy-research/tech-at-ftc/2024/12/unpacking-real-time-bidding-through-ftcs-case-mobilewalla)
+- [FTC — ordem contra Gravy Analytics e Venntel](https://search.ftc.gov/news-events/news/press-releases/2025/01/ftc-finalizes-order-prohibiting-gravy-analytics-venntel-selling-sensitive-location-data)
+- [W3C — Fingerprinting Guidance](https://www.w3.org/TR/fingerprinting-guidance/)
+
+## Checklist antes da publicação
+
+- [ ] Fonte original revisada, data e contexto confirmados
+- [ ] Nenhum dado pessoal/sensível ou perfil político utilizado na distribuição
+- [ ] Nenhuma promessa de curso disponível ou de resultado mensurado
+- [ ] Peças adaptadas ao formato sem fabricar provas nem testemunhos
+- [ ] Revisão de acessibilidade, direitos de imagem, links e correções
+- [ ] Revisão editorial humana com aprovação explícita
+
+**Limite editorial:** Uma captura isolada não comprova compra de alcance.
