@@ -49,7 +49,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           mkdir -p .case-watch-cache
-          gh issue list --state open --limit 250 --json title > .case-watch-cache/open-issues.json
+          gh issue list --state all --limit 250 --json title,state,closedAt > .case-watch-cache/open-issues.json
       - name: Validate registry and no-model tests
         run: |
           node scripts/case-watch.mjs --validate
