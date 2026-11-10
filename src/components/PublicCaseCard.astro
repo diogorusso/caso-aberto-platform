@@ -12,6 +12,7 @@ const url='https://casoaberto.pages.dev/casos/arquivo-publico/'+study.slug+'/';
 const whatsapp='https://wa.me/?text='+encodeURIComponent('CasoAberto: '+study.headline+'\nLeia documentos, cronologia e perguntas: '+url);
 ---
 <article class="flex flex-col gap-4 border border-border bg-card p-6">
+  <img src={"/og/casos/"+study.slug+".png"} alt={"Imagem de apresentação do caso "+study.company} class="aspect-[1200/630] w-full rounded-md border border-border object-cover" width="1200" height="630" loading="lazy" decoding="async"/>
   <div class="flex flex-wrap items-center justify-between gap-2 text-xs font-semibold uppercase tracking-wide">
     <span class="text-brand-strong">{study.sector}</span>
     <span class="text-muted-foreground">PESQUISA CASOABERTO · {study.reviewed_at.split('-').reverse().join('/')}</span>

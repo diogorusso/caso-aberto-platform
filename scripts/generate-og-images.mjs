@@ -19,7 +19,7 @@ const split=(text,max=25,lines=4)=>{
   else current=(current?current+' ':'')+word;
  }
  if(current)chunks.push(current);
- if(chunks.length>lines){const last=chunks.slice(lines-1).join(' ');chunks.splice(lines-1,chunks.length-last.length+1,last.slice(0,max-1)+'…');}
+ if(chunks.length>lines){const last=chunks.slice(lines-1).join(' ');chunks.splice(lines-1,chunks.length-(lines-1),last.slice(0,max-1)+'…');}
  return chunks.slice(0,lines);
 };
 const text=(value,x,y,size,color='#f1f1e7',weight=700)=>'<text x="'+x+'" y="'+y+'" font-family="Arial, Liberation Sans, sans-serif" font-size="'+size+'" font-weight="'+weight+'" fill="'+color+'">'+escape(value)+'</text>';
@@ -68,7 +68,9 @@ async function render(item,file){
    layers.push({input:badge,left:820,top:524});
   }
  }
- await sharp(layout(item)).composite(layers).png({compressionLevel:8,palette:true,effort:7}).toFile(file);
+ const renderer=sharp(layout(item));
+ if(layers.length)renderer.composite(layers);
+ await renderer.png({compressionLevel:8,palette:true,effort:7}).toFile(file);
 }
 let n=0;
 for(const item of sources){await render(item,join(directory,'casos',item.slug+'.png'));n++}
