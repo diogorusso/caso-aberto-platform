@@ -7,7 +7,7 @@ const cell = (raw: unknown): string => {
   return '"' + s.replaceAll('"','""') + '"';
 };
 export const GET: APIRoute = () => {
-  const columns = ['id','date','platform','type','source_kind','headline','finding','scope','limits','source_label','source_url'] as const;
-  const rows = [columns.map(cell).join(','),...ledger.records.map(item=>columns.map(key=>cell(item[key])).join(','))];
+  const columns = ['id','date','platform','type','source_kind','evidence_class','status','review_due','headline','finding','scope','limits','right_of_reply','source_label','source_url'] as const;
+  const rows = [columns.map(cell).join(','),...ledger.records.map(item=>columns.map(key=>cell((item as Record<string,unknown>)[key])).join(','))];
   return new Response('\uFEFF'+rows.join('\r\n')+'\r\n',{headers:{'Content-Type':'text/csv; charset=utf-8','Content-Disposition':'attachment; filename="casoaberto-observatorio-plataformas.csv"','Cache-Control':'public, max-age=3600','X-Content-Type-Options':'nosniff'}});
 };

@@ -5,13 +5,51 @@ import CaseActionHub from '../../../components/CaseActionHub.astro';
 import CaseVisualStory from '../../../components/CaseVisualStory.astro';
 import CivicPageHeader from '../../../components/CivicPageHeader.astro';
 import ledger from '../../../data/platform-observatory.json';
+
+const classLabel: Record<string,string> = {
+  observed: 'Observado / documentado',
+  alleged: 'Alegado / pedido',
+  official_decision: 'Ato oficial',
+  company_response: 'Resposta da empresa',
+  analysis: 'Análise com método'
+};
+const types = [...new Set(ledger.records.map(r => r.type))].sort((a,b)=>a.localeCompare(b,'pt-BR'));
+const kinds = [...new Set(ledger.records.map(r => r.source_kind))].sort((a,b)=>a.localeCompare(b,'pt-BR'));
+const classes = [...new Set(ledger.records.map(r => r.evidence_class))].sort();
+const ordered = ledger.records.slice().sort((a,b)=>a.date < b.date ? -1 : a.date > b.date ? 1 : a.id.localeCompare(b.id));
 ---
 <BaseLayout image="/og/casos/meta-eleicoes-2026-governanca-plataformas.png" title="Observatório de Plataformas — Moderação, IA e transparência | CasoAberto" description="Arquivo documental de pesquisas independentes, decisões, incidentes e posicionamentos de plataformas, com fontes, datas, escopo e limites.">
-  <CivicPageHeader eyebrow="CASOABERTO · PESQUISA DOCUMENTADA · PLATAFORMAS" title="A publicidade passa. A plataforma decide. Quem responde?" lead="Meta, eleições brasileiras de 2026, anúncios políticos e decisões de moderação: cinco registros documentados, fontes verificáveis e perguntas diretas sobre quem controla as regras." />
+  <CivicPageHeader eyebrow="CASOABERTO · PESQUISA DOCUMENTADA · PLATAFORMAS" title="A publicidade passa. A plataforma decide. Quem responde?" lead={`Meta, eleições brasileiras de 2026, anúncios políticos e decisões de moderação: ${ledger.records.length} registros documentados, classes de evidência separadas e perguntas diretas sobre quem controla as regras.`} />
   <div class="container py-5"><CaseActionBar title="Meta e eleições 2026: quem responde pela transparência dos anúncios?" summary="Pesquisas, atos oficiais e respostas documentadas sobre anúncios e moderação." href="/observatorio/plataformas/" caseId="PLAT-2026-CASE" printHref="/casos/imprimir/meta-eleicoes-2026-governanca-plataformas/" showComplaint={false}/></div>
   <CaseActionHub caseId="PLAT-2026-CASE" compact/>
   <CaseVisualStory caseId="PLAT-2026-CASE"/>
-  <section class="container space-y-5 py-12"><h2 class="m-0 text-3xl">O que os documentos revelam?</h2><p class="max-w-4xl">{ledger.framing}</p><p class="max-w-4xl text-muted-foreground">Um experimento mede seu desenho de teste; uma ação judicial registra os pedidos de quem a propôs; a manifestação de uma empresa é sua posição; uma decisão judicial é ato de autoridade, com instância e estágio. Nenhum destes registros, sozinho, permite calcular quantas pessoas foram prejudicadas ou quem venceu uma eleição.</p><p class="text-sm text-muted-foreground">Revisão editorial: {ledger.reviewed_at.split('-').reverse().join('/')} · {ledger.records.length} registros documentais selecionados · não representa todos os episódios.</p></section>
-  <section class="bg-muted py-12"><div class="container space-y-6"><h2 class="m-0 text-3xl">Meta e eleições: os fatos em ordem</h2><ol class="list-none space-y-5 p-0">{ledger.records.map(item => <li class="space-y-4 border-l-4 border-brand bg-card p-6"><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground"><span>{item.id}</span><span>{item.date.split('-').reverse().join('/')}</span><span>{item.source_kind}</span></div><h3 class="m-0 text-xl">{item.headline}</h3><p class="m-0">{item.finding}</p><p class="m-0 text-sm"><strong>Recorte:</strong> {item.scope}</p><p class="m-0 text-sm text-muted-foreground"><strong>O que não demonstra:</strong> {item.limits}</p><a class="text-link font-semibold" href={item.source_url} rel="noopener noreferrer">Fonte original: {item.source_label} ↗</a></li>)}</ol></div></section>
+  <section class="container space-y-5 py-12"><h2 class="m-0 text-3xl">O que os documentos revelam?</h2><p class="max-w-4xl">{ledger.framing}</p><p class="max-w-4xl text-muted-foreground">{ledger.methodology}</p><p class="text-sm text-muted-foreground">Revisão editorial: {ledger.reviewed_at.split('-').reverse().join('/')} · {ledger.records.length} registros documentais · próxima revisão programada por registro · não representa todos os episódios.</p><div class="flex flex-wrap gap-4 text-sm"><a class="text-link font-semibold" href="/instituto/dados/plataformas.json">Baixar JSON ↗</a><a class="text-link font-semibold" href="/instituto/dados/plataformas.csv">Baixar CSV ↗</a><a class="text-link font-semibold" href="/instituto/dados/">Metodologia e conjuntos ↗</a></div></section>
+  <section class="border-y bg-muted py-10"><div class="container space-y-4"><h2 class="m-0 text-2xl">Filtrar o arquivo</h2><p class="m-0 max-w-3xl text-sm text-muted-foreground">Use os filtros para separar tipo de evento, instituição/fonte e classe de evidência. Nada aqui soma amostras sobrepostas nem transforma petição em sentença.</p><form id="ledger-filter" class="grid gap-3 md:grid-cols-3">
+    <label class="text-sm font-semibold">Tipo de evento<select name="type" class="mt-1 w-full border border-border bg-card px-3 py-2"><option value="">Todos</option>{types.map(t => <option value={t}>{t}</option>)}</select></label>
+    <label class="text-sm font-semibold">Instituição / fonte<select name="kind" class="mt-1 w-full border border-border bg-card px-3 py-2"><option value="">Todas</option>{kinds.map(k => <option value={k}>{k}</option>)}</select></label>
+    <label class="text-sm font-semibold">Classe de evidência<select name="klass" class="mt-1 w-full border border-border bg-card px-3 py-2"><option value="">Todas</option>{classes.map(c => <option value={c}>{classLabel[c] || c}</option>)}</select></label>
+  </form><p id="ledger-count" class="text-sm text-muted-foreground" aria-live="polite">{ordered.length} registros visíveis</p></div></section>
+  <section class="bg-card py-12"><div class="container space-y-6"><h2 class="m-0 text-3xl">Meta e eleições: os fatos em ordem</h2><ol id="ledger-list" class="list-none space-y-5 p-0">{ordered.map(item => <li class="ledger-item space-y-4 border-l-4 border-brand bg-background p-6" data-type={item.type} data-kind={item.source_kind} data-klass={item.evidence_class}><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground"><span>{item.id}</span><span>{item.date.split('-').reverse().join('/')}</span><span>{item.source_kind}</span><span>{classLabel[item.evidence_class] || item.evidence_class}</span></div><h3 class="m-0 text-xl">{item.headline}</h3><p class="m-0">{item.finding}</p><p class="m-0 text-sm"><strong>Recorte:</strong> {item.scope}</p><p class="m-0 text-sm text-muted-foreground"><strong>O que não demonstra:</strong> {item.limits}</p><p class="m-0 text-sm text-muted-foreground"><strong>Direito de resposta / correção:</strong> {item.right_of_reply}</p><p class="m-0 text-xs text-muted-foreground">Revisão programada: {item.review_due.split('-').reverse().join('/')}</p><a class="text-link font-semibold" href={item.source_url} rel="noopener noreferrer">Fonte original: {item.source_label} ↗</a></li>)}</ol></div></section>
   <section class="container space-y-5 py-14"><h2 class="m-0 text-3xl">Quais respostas ainda faltam?</h2><div class="grid gap-4 md:grid-cols-3"><article class="border border-border p-5"><h3>Moderação e recurso</h3><p class="text-sm text-muted-foreground">Taxas de decisões revertidas, tempo de revisão e documentação de diferenças por contexto.</p></article><article class="border border-border p-5"><h3>Transparência publicitária</h3><p class="text-sm text-muted-foreground">Bibliotecas de anúncios, períodos, pagadores, denominadores, preços e lacunas de observação.</p></article><article class="border border-border p-5"><h3>Auditoria de algoritmos</h3><p class="text-sm text-muted-foreground">Amostragem, grupos de controle, causalidade, métricas e limites do que se pode inferir sem acesso interno.</p></article></div><p class="text-muted-foreground">Essas são frentes de pesquisa previstas, não resultados empíricos já obtidos pelo CasoAberto. O arquivo será revisado conforme novas evidências e decisões sejam publicadas.</p><a class="text-link font-semibold" href="/instituto/">Conhecer o método do instituto ↗</a></section>
 </BaseLayout>
+<script>
+  const form = document.getElementById('ledger-filter');
+  const items = [...document.querySelectorAll('.ledger-item')];
+  const count = document.getElementById('ledger-count');
+  const apply = () => {
+    if (!(form instanceof HTMLFormElement)) return;
+    const data = new FormData(form);
+    const type = String(data.get('type') || '');
+    const kind = String(data.get('kind') || '');
+    const klass = String(data.get('klass') || '');
+    let visible = 0;
+    for (const item of items) {
+      if (!(item instanceof HTMLElement)) continue;
+      const show = (!type || item.getAttribute('data-type') === type) && (!kind || item.getAttribute('data-kind') === kind) && (!klass || item.getAttribute('data-klass') === klass);
+      item.hidden = !show;
+      if (show) visible += 1;
+    }
+    if (count) count.textContent = visible + ' registros visíveis';
+  };
+  form?.addEventListener('change', apply);
+</script>

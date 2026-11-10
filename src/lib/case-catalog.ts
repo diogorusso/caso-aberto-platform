@@ -68,7 +68,7 @@ export const caseStudies: CaseResearchEntry[]=[
   kind:'caso' as const,
   title:'Meta e eleições 2026: quem responde pelos anúncios e pela moderação?',
   company:'Meta · Facebook · Instagram',
-  summary:'Testes de anúncios, plano da Meta no TSE, dados do NetLab, ação do MPF e resposta pública da plataforma. Cinco registros, uma investigação documental.',
+  summary:'Testes de anúncios, planos e portarias do TSE, dados do NetLab, ações do MPF, decisões judiciais e respostas da Meta. Vinte e cinco registros em uma investigação documental.',
   category:categoryFor('PLAT-2026-CASE').title,
   categorySlug:categoryFor('PLAT-2026-CASE').slug,
   href:'/observatorio/plataformas/',

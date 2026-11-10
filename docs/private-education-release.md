@@ -29,7 +29,9 @@ A geração aplica limites de tamanho e tipo, não segue links simbólicos, reje
 - Não cria materiais didáticos do nada; a origem precisa ser um produto revisado, não uma cópia automática do playbook.
 - Não publica nenhuma release criptografada ou documento privado no Astro.
 
-## Gate comercial antes de liberar matrícula
+## Gate comercial antes de liberar matrícula (ops do dono, fora do backlog público)
+
+O repositório já entrega: embalagem AES-256-GCM offline, verificação de integridade, auditoria anti-vazamento do `dist/` e catálogo público honesto em `em-producao`. Antes de qualquer matrícula anunciada:
 
 1. Concluir cada curso, direitos, fonte, exercícios, acessibilidade e atendimento ao aluno.
 2. Preparar releases criptografadas verificadas em armazenamento privado, com backups.

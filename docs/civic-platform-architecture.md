@@ -1,6 +1,6 @@
 # CasoAberto — Civic operating system, research institute and digital autonomy school
 
-Status: public institute, curated education catalog and an **individual local-first Cause Workspace** ship through Astro/React on Cloudflare Pages. No server-side login, database, uploads, multi-user cause workspaces, autonomous agents or behavioral profiling are deployed. Private collaboration and authenticated course delivery remain roadmap items.
+Status: public institute, curated education catalog and an **individual local-first Cause Workspace** ship through Astro/React on Cloudflare Pages. The private Cause Collaboration API candidate (`services/cause-api/`) and the offline premium-course packager ship in-repo with fail-closed tests; they are **not** live production services. No public server-side login, uploads, autonomous agents or behavioral profiling are attached to the Astro site. Owner-authorized Cloudflare Access/D1/Stripe launch remains an ops checklist outside the public backlog.
 
 ## Product mandate
 
@@ -42,7 +42,7 @@ Repository: `diogorusso/obsidian-to-html`. Do not publish the private wiki's ful
 | Pedagogy, science, original references | `.../25-research-method-evidence-register-and-learning-assessment.md`, `.../_meta/source-map.md`, `.../38-algorithmic-literacy-equity-and-teaching-evidence.md` |
 | Rushkoff and programming agency | `wiki/playbooks/past-data-future-creation/32-program-or-be-programmed-ten-digital-biases-in-ai.md`, `33-value-the-human-rushkoffs-eleventh-command.md` |
 
-Archive of earlier deep research: **“Meta e as eleições brasileiras de 2026: linha do tempo documentada, arquivo de evidências e kit de publicação”**, closed 2026-10-23. It describes 25 dated entries and classes A–D. The public observatory starts with a smaller five-source sample independently cross-checked on 2026-11-09, including a Meta statement updated 2026-11-06. Do not pretend the 25-entry CSV was imported or its files are present here.
+Archive of earlier deep research: **“Meta e as eleições brasileiras de 2026: linha do tempo documentada, arquivo de evidências e kit de publicação”**, closed 2026-10-23. The public observatory now carries **25 independently re-verified records** in `src/data/platform-observatory.json` (reviewed 2026-11-10), with evidence classes, review cadence, right-of-reply notes, JSON/CSV export and on-page filters. Private archive originals stay out of this checkout; each public row links only to HTTPS primary sources.
 
 ### Editorial method and publication contract
 

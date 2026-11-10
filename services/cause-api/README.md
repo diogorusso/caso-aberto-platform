@@ -59,6 +59,6 @@ Cloudflare rate-limit binding (approximate, PoP-local): https://developers.cloud
 
 All state-changing API requests must come from the configured private Origin and include the Access-signed JWT header. Never use the public site to collect secret invite tokens or participant identities.
 
-## Unresolved before any production launch
+## Production launch checklist (owner ops — not an open product backlog item)
 
-No full production readiness claim: security review, explicit private-service consent language, legal basis and retention windows, data deletion/correction, owner transfer, tenant/service abuse moderation, rate-limit stress validation, incident runbooks, CORS/Access end-to-end test and verified live deployment all remain. The owner must authorize infrastructure changes and supply verified Cloudflare identifiers; the current repo contains only source and template configuration.
+Repo acceptance for the collaboration API candidate is complete: Access JWT verification, D1 schema, role isolation, invite/revoke/leave/audit paths and fail-closed tests ship under `npm run verify:cause-api`. No full production readiness claim until the owner authorizes infrastructure: security review, consent language, retention/deletion, owner transfer, abuse moderation, rate-limit stress validation, incident runbooks, CORS/Access end-to-end test and verified live deployment with real Cloudflare identifiers. The public Astro site stays disconnected until that ops gate passes.

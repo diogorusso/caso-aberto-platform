@@ -65,4 +65,4 @@ Run `npm run content:preview` to build a self-contained visual review at `build/
 
 Há agora um utilitário de release offline para materiais educacionais que já estejam concluídos e revisados em diretório privado. Com chave AES-256-GCM externa, npm run course:package gera pacote cifrado e manifesto de integridade fora do checkout público. npm run course:verify confirma integridade sem extrair conteúdo. O build público executa uma auditoria adicional em dist/ para impedir o vazamento acidental de arquivos de curso e caminhos da wiki. Consulte docs/private-education-release.md.
 
-Essa ferramenta não implementa pagamento, autenticação de aluno, autorização de download nem produtos já disponíveis. Essas capacidades requerem infraestrutura privada antes de anunciar qualquer matrícula.
+Essa ferramenta não implementa pagamento, autenticação de aluno, autorização de download nem produtos já disponíveis. O catálogo público permanece em `em-producao` até infraestrutura privada de identidade/entitlement e checkout verificado existirem. Esse passo é checklist operacional do dono — não item aberto do backlog do site estático.
