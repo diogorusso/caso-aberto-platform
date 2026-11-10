@@ -109,7 +109,7 @@ npm run case:complete -- \
   --apply
 ```
 
-`--apply` exige GH_TOKEN; sem ele a ferramenta só mostra prévia. O exemplo acima não registra uma aprovação, documento ou resultado real.
+`--apply` exige GH_TOKEN; sem ele a ferramenta só mostra prévia. O exemplo acima não registra uma aprovação, documento ou resultado real. \`--method automated\` documenta pesquisa de agente e só permite \`no-change\`; uma publicação ou encerramento definitivo exige revisão editorial humana real quando aplicável.
 
 ### Publicar fato novo
 
