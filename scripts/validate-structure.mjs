@@ -76,7 +76,7 @@ for(const route of impactRoutes){
  if(!existsSync(path)||!readFileSync(path,'utf8').includes('getStaticPaths')){console.error('Missing impact pSEO route',route);bad++;}
 }
 // Impact UI is Tailwind/shadcn; check its owning components instead of a stylesheet.
-for(const f of ['components/ImpactBody.astro','components/ImpactSimulator.tsx','components/ui/kpi-card.tsx']){
+for(const f of ['components/ImpactBody.astro','components/CaseVisualStory.astro','components/CaseEvidenceChart.astro','components/ui/kpi-card.tsx']){
  if(!existsSync(resolve(src,f))){console.error('Missing impact dashboard component',f);bad++;}
 }
 
