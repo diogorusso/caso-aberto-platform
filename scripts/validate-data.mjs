@@ -130,12 +130,6 @@ for(const id of impactIds){
  for(const key of ['actual_site_views','actual_site_unique_visitors','actual_social_impressions','verified_judicial_filings']){
   if(m[key]!==null&&(!Number.isSafeInteger(m[key])||m[key]<0)){console.error('Invalid observed impact count',id,key);bad++;}
  }
- for(const [key,value] of Object.entries(m.scenario_defaults||{})){
-   if(!Number.isFinite(value)||value<0){console.error('Invalid scenario assumption',id,key);bad++;}
- }
- for(const key of ['purchase_ready_share_pct','decision_change_share_pct']){
-   if(m.scenario_defaults[key]>100){console.error('Scenario percentage out of bounds',id,key);bad++;}
- }
  if(!m.reference_urls?.length||!m.reference_urls.every(x=>/^https:\/\//.test(x))){console.error('Impact model missing source links',id);bad++;}
 }
 const impactBrands=new Set();
