@@ -52,6 +52,8 @@ const c = copy.case;
   <CaseIntro item={item}/>
   {caseVerdict && <EditorialVerdict verdict={caseVerdict} subject={item.empresa_resumo} prominence="hero" caseHref={base+'evidencias/'} brand={caseBrand} unit={caseUnit}/>}
 
+  <CaseVisualStory caseId={item.id}/>
+
   <!-- O CASO -->
   <Section id="o-caso" eyebrow={c.summary.eyebrow} title={c.summary.title}>
     <div class="grid gap-8 lg:grid-cols-[1.6fr_1fr]">
@@ -84,7 +86,6 @@ const c = copy.case;
     <ConsumerRiskWarning href={romaHref} />
   </Section>}
   <CollapseSignalsMatrix item={item}/>
-  <CaseVisualStory caseId={item.id}/>
   <PrecedentComparison item={item} compact/>
 
   <!-- DISCURSO × REALIDADE -->
