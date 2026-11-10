@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
+import CaseCard from '../../../../components/CaseCard.astro';
+import CaseResearchExplorer from '../../../../components/islands/CaseResearchExplorer';
+import {categories,featuredCase,entriesForCategory,caseCountFor,categoryHref} from '../../../../lib/case-catalog';
+export function getStaticPaths(){return categories.map(category=>({params:{slug:category.slug},props:{category}}));}
+type Category=typeof categories[number];
+const {category}=Astro.props as {category:Category};
+const entries=entriesForCategory(category.slug);
+const highlight=featuredCase&&category.case_ids.includes(featuredCase.id)?featuredCase:null;
+const path=categoryHref(category);
+---
+<BaseLayout title={category.title+': casos documentados e relatos | CasoAberto'} description={category.description} breadcrumbs={[{name:'Início',item:'/'},{name:'Casos',item:'/casos/'},{name:category.title,item:path}]}>
+ <Breadcrumbs items={[{label:'Início',href:'/'},{label:'Casos',href:'/casos/'},{label:category.title,href:path}]}/>
+ <header class="bg-primary py-14 text-primary-foreground md:py-20"><div class="container space-y-5"><p class="m-0 text-xs font-bold uppercase tracking-widest text-[#ff917e]">{category.eyebrow}</p><h1 class="m-0 max-w-4xl text-4xl md:text-6xl">{category.title}. Quem assume a responsabilidade?</h1><p class="max-w-3xl text-xl text-white/80">{category.description}</p><p class="m-0 text-sm font-semibold text-white/70">{caseCountFor(category.slug)} casos documentados nesta categoria</p></div></header>
+ {highlight&&<section class="container space-y-5 py-12"><p class="m-0 text-xs font-bold uppercase tracking-widest text-brand-strong">CASO EM DESTAQUE</p><CaseCard item={highlight} featured/></section>}
+ <section class="container space-y-6 py-12"><div class="flex flex-wrap items-end justify-between gap-4"><h2 class="m-0 text-2xl">Encontre o caso e confira a cobrança</h2><a class="text-link text-sm" href="/casos/#pesquisar-casos">Pesquisar em todas as categorias ↗</a></div><CaseResearchExplorer client:idle entries={entries} categories={categories} lockedCategory={category.slug}/></section>
+ <section class="border-t bg-muted py-12"><div class="container space-y-5"><h2 class="m-0 text-2xl">Outras categorias</h2><div class="flex flex-wrap gap-3">{categories.filter(item=>item.slug!==category.slug).map(item=><a class="inline-flex min-h-11 items-center border border-border bg-card px-4 py-2 font-semibold text-link" href={categoryHref(item)}>{item.title} ↗</a>)}</div></div></section>
+</BaseLayout>
