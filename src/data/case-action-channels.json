@@ -244,6 +244,15 @@
       "step": "compliance",
       "kind": "empresa",
       "note": "Exclusivo para questões éticas, fraude, assédio e integridade; não substitui o SAC ou a Ouvidoria para falta d'água e fatura."
+    },
+    "novo-mundo-sup": {
+      "title": "Novo Mundo — central de atendimento",
+      "url": "https://www.novomundo.com.br/atendimento",
+      "purpose": "Consultar pedidos, entrega, troca, cancelamento e solicitação de ressarcimento",
+      "source_url": "https://www.novomundo.com.br/atendimento",
+      "step": "empresa",
+      "kind": "empresa",
+      "note": "A página oficial informa (62) 98562-7000 e faleconosco@novomundo.com.br; confira os detalhes e abra protocolo no canal da compra."
     }
   },
   "regional": {
@@ -294,6 +303,9 @@
     ],
     "EXT-014": [
       "prime-video-support"
+    ],
+    "EXT-007": [
+      "novo-mundo-sup"
     ]
   },
   "issues": {
