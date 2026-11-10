@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import catalog from '../../../../data/learning-publications.json';
+export function getStaticPaths(){return catalog.articles.map(article=>({params:{slug:article.slug},props:{article}}));}
+type Article=typeof catalog.articles[number];
+const {article}=Astro.props as {article:Article};
+const path='/autonomia-digital/guias/'+article.slug+'/';
+---
+<BaseLayout title={article.title+' | CasoAberto'} description={article.summary} type="article" datePublished={article.published_at} dateModified={article.updated_at} breadcrumbs={[{name:'Início',item:'/'},{name:'Autonomia Digital',item:'/autonomia-digital/'},{name:'Guias',item:'/autonomia-digital/guias/'},{name:article.title,item:path}]}>
+<article>
+<header class="bg-primary py-16 text-primary-foreground"><div class="container max-w-5xl space-y-5"><p class="m-0 text-xs font-bold uppercase tracking-wider text-[#ff917e]">ESCOLA ABERTA · PESQUISA APLICADA</p><h1 class="m-0 text-4xl md:text-6xl">{article.title}</h1><p class="max-w-3xl text-xl text-white/80">{article.summary}</p><p class="text-sm text-white/60">Publicado em {article.published_at.split('-').reverse().join('/')} · revisado em {article.updated_at.split('-').reverse().join('/')}</p></div></header>
+<div class="container grid max-w-6xl gap-10 py-14 lg:grid-cols-[minmax(0,1fr)_16rem]">
+<div class="min-w-0 space-y-10">{article.sections.map((s,i)=><section class="space-y-4" id={'secao-'+i}><h2 class="m-0 text-2xl">{s.heading}</h2>{s.paragraphs.map(p=><p class="m-0 leading-relaxed">{p}</p>)}</section>)}
+<section class="space-y-4 border-l-4 border-brand bg-muted p-6"><p class="m-0 text-xs font-bold uppercase tracking-wider text-brand-strong">LABORATÓRIO PRÁTICO</p><h2 class="m-0 text-2xl">{article.lab.title}</h2><ol class="list-decimal space-y-3 pl-5">{article.lab.steps.map(step=><li>{step}</li>)}</ol><a class="text-link font-semibold" href={'/autonomia-digital/ferramentas/'+article.slug+'/'}>Abrir e imprimir a ficha de exercício ↗</a></section>
+<section class="space-y-5"><h2 class="m-0 text-2xl">Perguntas que precisam de resposta</h2>{article.questions.map(q=><div class="border-t border-border pt-4"><h3 class="m-0 text-lg">{q.q}</h3><p class="mt-2">{q.a}</p></div>)}</section>
+<section class="space-y-4 border-t border-border pt-7"><h2 class="m-0 text-2xl">Fontes e verificação</h2><p class="text-sm text-muted-foreground">Os links fundamentam os conceitos e estudos citados. Exemplos e exercícios são síntese editorial, não resultados de campo próprios do CasoAberto.</p><ul class="space-y-3">{article.sources.map(s=><li><a class="text-link break-words" href={s.url} rel="noopener noreferrer">{s.name} ↗</a></li>)}</ul></section></div>
+<aside class="h-fit space-y-4 border-t-4 border-brand bg-card p-6 lg:sticky lg:top-24"><h2 class="m-0 text-lg">Aplique o conhecimento</h2><p class="text-sm text-muted-foreground">O aprendizado só é útil quando você consegue formular uma pergunta, reunir fontes e testar o que mudou.</p><a class="block text-link text-sm" href={'/autonomia-digital/ferramentas/'+article.slug+'/'}>Ficha gratuita para imprimir ↗</a><a class="block text-link text-sm" href="/organizar/espaco-de-causa/">Organizar um dossiê próprio ↗</a><a class="block text-link text-sm" href="/autonomia-digital/guias/">Todos os guias ↗</a></aside>
+</div>
+</article>
+</BaseLayout>
