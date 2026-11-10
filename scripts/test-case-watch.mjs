@@ -38,7 +38,7 @@ test('completed no-change review defers recheck until next cadence',()=>{
 });
 test('closed cases are excluded even if forced',()=>{
  const copy=structuredClone(policy);
- const item=copy.cases.find(c=>c.id==='CA-001');item.mode='closed';item.closed_at='2026-11-18';item.closure_source_url='https://example.org/prova';
+ const item=copy.cases.find(c=>c.id==='CA-001');item.mode='closed';item.closed_at='2026-11-18';item.closure_source_url=records.find(x=>x.id==='CA-001').source_urls[0];
  const index=records.map(c=>c.id==='CA-001'?{...c,status:'Resolvido e comprovado',date:'2026-11-18'}:c);
  assert.deepEqual(validatePolicy(copy,index),[]);
  assert.equal(planReviews({policy:copy,index,today:'2026-11-20',caseId:'CA-001',force:true}).length,0);
