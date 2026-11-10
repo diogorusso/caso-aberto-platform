@@ -206,3 +206,7 @@ Public tools include a local digital-exposure checklist and a print-friendly act
 ### Cause Workspace UI (local-first)
 
 The individual cause notebook at `/organizar/espaco-de-causa/` now supports shared **list, board and calendar** views for tasks, evidence, response requests and activity log. It generates an editable **research brief** that the user may explicitly copy into an AI service of their choosing. CasoAberto never sends the brief, invokes an external AI model, or contacts institutions. Optional browser storage is unencrypted; JSON export/import gives portability but not confidential cloud backup.
+
+## Offline private course packaging
+
+The full 56-chapter playbook remains private. When a paid course is actually complete and editorially reviewed in a private workspace, npm run course:package can create an AES-256-GCM encrypted course bundle and an integrity manifest, outside the public repository and with an explicit owner confirmation. A 32-byte key is supplied only through the local environment; no keys or actual course manuscripts are committed. npm run course:verify checks the bundle without writing plaintext. See docs/private-education-release.md for the boundaries. CI tests crypto integrity and audits dist/ for accidental course/research exports. This is NOT checkout, entitlement, payment, or hosted premium delivery.
