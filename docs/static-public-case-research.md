@@ -41,3 +41,13 @@ O arquivo de terceiros é distinto de um dossiê originado de contrato próprio.
 ## Uso de dados, IA e conteúdos educacionais
 
 A automação editorial só pode apoiar classificação, extração de recortes, deduplicação, verificação e rascunhos. A revisão factual humana é obrigatória. Não fazer scraping de documentos pessoais, perfilagem política, disparos, avaliações falsas ou publicações de testemunhos fingindo serem do projeto. A obra completa da autonomia digital permanece como produto privado; os guias de consumo aqui publicados são material original público e não substituem os cursos.
+
+## Segundo lote: mais três setores e um evento regional
+
+Novo recorte revisado em 10/11/2026: Grão de Gente (produtos para bebês e recuperação judicial declarada), Lado Rosa (fiscalização estadual de vestuário), Novo Mundo (varejo e medida do Procon Goiás em novembro de 2026) e Light no apagão de julho de 2026 no Rio de Janeiro. As fontes primárias e atribuições estão em `src/data/public-case-atlas.json`.
+
+Seis histórias adicionais incluem duas compras de produtos infantis com desfechos distintos (uma restituição ainda não comprovada em abril de 2026 e uma entrega tardia confirmada em agosto de 2024), dois relatos do Portal 6 (entrega após Procon e micro-ondas ainda pendente em outubro de 2026) e duas entrevistas da Agência Brasil sobre impactos de falta de energia no Rio (uma sem recomposição à saída para o trabalho, outra com retorno no dia seguinte). Nenhum relato comprova posição atual de terceiro além da sua fonte.
+
+Ao escrever sobre Novo Mundo, o dado de 2.203 ocorrências do Procon Goiás entre junho de 2025 e outubro de 2026 reúne **reclamações e denúncias**, não 2.203 pessoas únicas. Cerca de 410 pendências informadas em 9/11/2026 não devem ser descritas como pendentes eternamente. O plano de ação anunciado pela companhia naquela data não é prova de execução. Lado Rosa: as contagens de 85 registros acumulados até julho de 2025, 15 queixas novas e 20 resoluções anteriores pertencem a recortes distintos. Não somar sem reconciliação. Light RJ 2026 e Enel SP 2025 são casos, concessionárias e regiões distintos.
+
+Novos links usam o mesmo componente e templates estáticos; os guias já publicados de compra online e apagão agora incluem os casos correspondentes. Um quarto guia explica por que entrega, restituição e habilitação de crédito são eventos diferentes durante recuperação judicial.
