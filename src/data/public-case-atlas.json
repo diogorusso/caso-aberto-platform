@@ -982,7 +982,7 @@
         "Peça informação específica sobre acesso e eventual reparação no canal contratado, documentando a resposta."
       ],
       "limits": "Notificações e reclamações são fatos do procedimento administrativo, não constatação final de superlotação, culpa empresarial ou número de pessoas indenizáveis. O registro não afirma que uma pessoa específica ficou impedida de entrar.",
-      "guide_slug": "passagem-ou-pacote-de-viagem-nao-entregue",
+      "guide_slug": "ingresso-show-falha-acesso-revenda",
       "story_slugs": [],
       "sources": [
         {
@@ -1062,7 +1062,7 @@
         "Cobre publicamente número de demandas recebidas e resolvidas no período prometido, sem divulgar dados dos moradores."
       ],
       "limits": "As medidas anunciadas não são prova de que o abastecimento foi restabelecido em cada município ou de que todos os processos foram encerrados. Cinco regiões indicam modelo de atendimento, não número de reclamações.",
-      "guide_slug": "apagao-prejuizo-ressarcimento",
+      "guide_slug": "agua-esgoto-falha-atendimento-concessionaria",
       "story_slugs": [],
       "sources": [
         {
@@ -1136,7 +1136,7 @@
         "Solicite à empresa a cláusula, o histórico de comunicação e uma solução formal para o contrato específico."
       ],
       "limits": "Investigação preliminar da Senacon não é decisão administrativa final ou condenação judicial. O valor de R$ 10 é preço da modalidade adicional informado no recorte, não prejuízo comprovado de todo assinante.",
-      "guide_slug": "compra-online-nao-entregue",
+      "guide_slug": "streaming-assinatura-anuncios-alteracao-contrato",
       "story_slugs": [],
       "sources": [
         {
@@ -1210,7 +1210,7 @@
         "Cobre identificação, entrega válida e solução individual por canal verificável."
       ],
       "limits": "Cinco é contagem das plataformas nomeadas na cautelar, não de casos comprovados de fraude ou contratos prejudicados. A aplicação e vigência posterior da decisão dependem de consulta aos registros administrativos.",
-      "guide_slug": "passagem-ou-pacote-de-viagem-nao-entregue",
+      "guide_slug": "ingresso-show-falha-acesso-revenda",
       "story_slugs": [],
       "sources": [
         {
