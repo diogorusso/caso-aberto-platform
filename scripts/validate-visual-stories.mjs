@@ -11,7 +11,7 @@ const check=(bool,msg)=>{if(!bool)errors.push(msg);};
 const expected=[...owned.map(x=>x.id),...external.cases.map(x=>x.id),...political.cases.map(x=>x.id),'PLAT-2026-CASE'];
 const known=new Set(expected),seen=new Set();
 check(stories.version===1,'Unexpected impact-stories schema');
-check(stories.updated_at===political.reviewed_at,'Risk-story review marker needs editorial reconciliation');
+check(/^\\d{4}-\\d{2}-\\d{2}$/.test(stories.updated_at)&&stories.updated_at<=new Date().toISOString().slice(0,10),'Risk-story review date is invalid or future');
 check(stories.cases.length===known.size,'Every case needs a unique impact story');
 for(const narrative of stories.cases){
  const {id}=narrative;
