@@ -253,6 +253,15 @@
       "step": "empresa",
       "kind": "empresa",
       "note": "A página oficial informa (62) 98562-7000 e faleconosco@novomundo.com.br; confira os detalhes e abra protocolo no canal da compra."
+    },
+    "stubhub-sup": {
+      "title": "StubHub — central de ajuda aos compradores",
+      "url": "https://support.stubhub.com/br/articles/61000276393-garantia-fanprotect-de-stubhub",
+      "purpose": "Suporte sobre entrega de bilhetes, autenticidade, ingresso invalidado e garantia FanProtect",
+      "source_url": "https://support.stubhub.com/br/articles/61000276393-garantia-fanprotect-de-stubhub",
+      "step": "empresa",
+      "kind": "empresa",
+      "note": "Central oficial da StubHub possui ajuda sobre ingresso não recebido, transferência móvel e evento cancelado. A plataforma cobre apenas compras feitas ali."
     }
   },
   "regional": {
@@ -306,6 +315,9 @@
     ],
     "EXT-007": [
       "novo-mundo-sup"
+    ],
+    "EXT-015": [
+      "stubhub-sup"
     ]
   },
   "issues": {
