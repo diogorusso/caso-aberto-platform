@@ -9,6 +9,7 @@ const args=process.argv.slice(2);
 const val=key=>{const idx=args.indexOf(key);return idx>=0?args[idx+1]||'':'';};
 const id=val('--case'),outcome=val('--outcome'),note=val('--note'),evidence=val('--source'),commit=val('--commit');
 const reviewer=val('--reviewer');
+const method=val('--method')||'human';
 const yes=args.includes('--apply');
 const repo='diogorusso/caso-aberto-platform';
 const read=name=>JSON.parse(readFileSync(new URL('../src/data/'+name+'.json',import.meta.url),'utf8'));
@@ -17,7 +18,9 @@ const policy=read('case-watch-policy').cases.find(x=>x.id===id);
 const entry=records.find(x=>x.id===id);
 if(!entry||!policy)throw new Error('Unknown or unregistered case');
 if(!['no-change','published','closed'].includes(outcome))throw new Error('Use --outcome no-change|published|closed');
-if(reviewer.trim().length<3||note.trim().length<55)throw new Error('Named human editorial review and substantial result note required');
+if(!['human','automated'].includes(method))throw new Error('Use --method human|automated');
+if(reviewer.trim().length<3||note.trim().length<55)throw new Error('Reviewer/agent identifier and substantial verification note required');
+if(method==='automated'&&outcome!=='no-change')throw new Error('Automated completion only supports no-change. Publication and definitive closure require independent editorial approval.');
 if(!/^https:\/\/[a-z0-9.-]+\//i.test(evidence))throw new Error('A public HTTPS verification source is required');
 if(outcome==='published'&&!/^[0-9a-f]{40}$/.test(commit))throw new Error('A verified 40-digit published commit SHA is required');
 if(outcome==='closed'&&(policy.mode!=='closed'||!policy.closed_at||policy.closure_source_url!==evidence))throw new Error('First publish and validate case resolution, then explicitly close its monitoring policy with matching closure source');
@@ -35,7 +38,8 @@ const today=new Date().toISOString().slice(0,10);
 const body=['### Revisão editorial concluída · '+today,
  '**Caso:** '+id,
  '**Resultado:** '+outcome,
- '**Verificado por:** '+reviewer,
+ '**Verificação:** '+(method==='automated'?'automação de pesquisa (sem aprovação editorial humana)':'revisão editorial humana'),
+ '**Executado por:** '+reviewer,
  '**Documento conferido:** '+evidence,
  ...(commit?['**Commit publicado:** '+commit]:[]),
  '**Registro:** '+note,
