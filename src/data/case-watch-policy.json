@@ -1,0 +1,264 @@
+{
+  "version": 1,
+  "updated_at": "2026-11-10",
+  "schedule": {
+    "timezone": "America/Sao_Paulo",
+    "daily_utc": "12:23",
+    "max_source_requests_per_run": 12,
+    "max_requests_per_case": 2,
+    "request_timeout_ms": 8500,
+    "max_response_bytes": 100000,
+    "max_review_cases_per_run": 8
+  },
+  "lifecycle": {
+    "active": "Verificação automática e fila editorial",
+    "paused": "Monitoramento suspenso por decisão editorial",
+    "closed": "Não reabrir ou vigiar sem fato novo aprovado"
+  },
+  "cases": [
+    {
+      "id": "CA-001",
+      "mode": "active",
+      "priority": "high",
+      "interval_days": 1,
+      "focus": "Conferir entrega integral ou restituição, cronograma documentado, resposta da empresa e status de reclamações, sem exposição de documentos privados.",
+      "watch_urls": [],
+      "deadlines": [],
+      "closure_evidence": "Entrega integral aceita ou restituição executada, com documento verificável e atualização editorial."
+    },
+    {
+      "id": "EXT-001",
+      "mode": "active",
+      "priority": "standard",
+      "interval_days": 7,
+      "focus": "Consultar atos novos sobre Hurb (Hotel Urbano): Fiscalização e cobranças documentadas · 2023–2025; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
+      "watch_urls": [],
+      "deadlines": [],
+      "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
+    },
+    {
+      "id": "EXT-002",
+      "mode": "active",
+      "priority": "standard",
+      "interval_days": 7,
+      "focus": "Consultar atos novos sobre 123milhas / Grupo 123 Milhas: Recuperação judicial e créditos · 2023–2025; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
+      "watch_urls": [],
+      "deadlines": [],
+      "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
+    },
+    {
+      "id": "EXT-003",
+      "mode": "active",
+      "priority": "standard",
+      "interval_days": 7,
+      "focus": "Consultar atos novos sobre Yeesco: Entregas e reclamações registradas · 2024–2025; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
+      "watch_urls": [],
+      "deadlines": [],
+      "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
+    },
+    {
+      "id": "EXT-004",
+      "mode": "active",
+      "priority": "standard",
+      "interval_days": 7,
+      "focus": "Consultar atos novos sobre Enel Distribuição São Paulo: Apagão, decisão e fiscalização · 2025–2026; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
+      "watch_urls": [],
+      "deadlines": [],
+      "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
+    },
+    {
+      "id": "EXT-005",
+      "mode": "active",
+      "priority": "standard",
+      "interval_days": 7,
+      "focus": "Consultar atos novos sobre Grão de Gente: Recuperação judicial e entregas · 2024–2026; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
+      "watch_urls": [],
+      "deadlines": [],
+      "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
+    },
+    {
+      "id": "EXT-006",
+      "mode": "active",
+      "priority": "standard",
+      "interval_days": 7,
+      "focus": "Consultar atos novos sobre Lado Rosa / Lado Fit: Fiscalização e multa do Procon-SC · 2025; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
+      "watch_urls": [],
+      "deadlines": [],
+      "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
+    },
+    {
+      "id": "EXT-007",
+      "mode": "active",
+      "priority": "high",
+      "interval_days": 3,
+      "focus": "Consultar atos novos sobre Novo Mundo (varejo): Cobrança do Procon Goiás · novembro de 2026; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
+      "watch_urls": [],
+      "deadlines": [],
+      "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
+    },
+    {
+      "id": "EXT-008",
+      "mode": "active",
+      "priority": "standard",
+      "interval_days": 7,
+      "focus": "Consultar atos novos sobre Light — fornecimento de energia no Rio: Apagão do Rio e recomposição · julho de 2026; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
+      "watch_urls": [],
+      "deadlines": [],
+      "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
+    },
+    {
+      "id": "EXT-009",
+      "mode": "active",
+      "priority": "high",
+      "interval_days": 3,
+      "focus": "Consultar atos novos sobre Grupo Casas Bahia: Processamento de recuperação judicial deferido em 21/10/2026; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
+      "watch_urls": [],
+      "deadlines": [],
+      "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
+    },
+    {
+      "id": "EXT-010",
+      "mode": "active",
+      "priority": "high",
+      "interval_days": 3,
+      "focus": "Consultar atos novos sobre Grupo Toky — Tok&Stok e Mobly: Processamento deferido pela Justiça em 12/06/2026; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
+      "watch_urls": [],
+      "deadlines": [],
+      "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
+    },
+    {
+      "id": "EXT-011",
+      "mode": "active",
+      "priority": "high",
+      "interval_days": 3,
+      "focus": "Consultar atos novos sobre Marabraz: Processamento da recuperação judicial reportado em 28/10/2026; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
+      "watch_urls": [],
+      "deadlines": [],
+      "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
+    },
+    {
+      "id": "EXT-012",
+      "mode": "active",
+      "priority": "high",
+      "interval_days": 3,
+      "focus": "Consultar atos novos sobre Live Nation Brasil e Ticketmaster Brasil: Notificações da Senacon em outubro de 2026; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
+      "watch_urls": [],
+      "deadlines": [],
+      "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
+    },
+    {
+      "id": "EXT-013",
+      "mode": "active",
+      "priority": "high",
+      "interval_days": 3,
+      "focus": "Consultar atos novos sobre Corsan / Aegea: Compromissos anunciados e monitoramento em outubro/2026; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
+      "watch_urls": [],
+      "deadlines": [],
+      "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
+    },
+    {
+      "id": "EXT-014",
+      "mode": "active",
+      "priority": "high",
+      "interval_days": 3,
+      "focus": "Consultar atos novos sobre Amazon Prime Video: Averiguação preliminar iniciada pela Senacon em 10/09/2026; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
+      "watch_urls": [],
+      "deadlines": [],
+      "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
+    },
+    {
+      "id": "EXT-015",
+      "mode": "active",
+      "priority": "high",
+      "interval_days": 3,
+      "focus": "Consultar atos novos sobre Viagogo, StubHub, TicketSwap, BuyTicket e FunBuyNet: Medidas cautelares anunciadas em 28/10/2026; conferir respostas oficiais, fase administrativa/judicial e eventual resolução individual.",
+      "watch_urls": [],
+      "deadlines": [],
+      "closure_evidence": "Conclusão administrativa ou judicial aplicável documentada, correção publicada e ausência de providências pendentes no recorte do dossiê."
+    },
+    {
+      "id": "POL-001",
+      "mode": "active",
+      "priority": "high",
+      "interval_days": 2,
+      "focus": "Consultar andamento e emendas da MP no Congresso, andamento da ADI 8027, peças juntadas e atos de fiscalização da SPA.",
+      "watch_urls": [],
+      "deadlines": [
+        "2026-11-23"
+      ],
+      "closure_evidence": "Desfecho procedimental ou institucional demonstrado por ato público, com contraditório, cronologia e fontes atualizados; proteção de vítimas preservada."
+    },
+    {
+      "id": "POL-002",
+      "mode": "active",
+      "priority": "high",
+      "interval_days": 2,
+      "focus": "Revisar peças da ADI, comunicados dos clubes e contratos publicados; atualizar o mapa com coluna de situação pós-MP quando houver prova individual.",
+      "watch_urls": [],
+      "deadlines": [],
+      "closure_evidence": "Desfecho procedimental ou institucional demonstrado por ato público, com contraditório, cronologia e fontes atualizados; proteção de vítimas preservada."
+    },
+    {
+      "id": "POL-003",
+      "mode": "active",
+      "priority": "high",
+      "interval_days": 2,
+      "focus": "Buscar no STF e na PF atos oficiais novos e a versão integral da defesa; distinguir fatos migratórios comprovados, reportagens e decisões judiciais.",
+      "watch_urls": [],
+      "deadlines": [],
+      "closure_evidence": "Desfecho procedimental ou institucional demonstrado por ato público, com contraditório, cronologia e fontes atualizados; proteção de vítimas preservada."
+    },
+    {
+      "id": "POL-004",
+      "mode": "active",
+      "priority": "urgent",
+      "interval_days": 1,
+      "focus": "Acompanhar notas da PF/MJSP, decisões públicas, órgãos eleitorais e pesquisa de violência política; proibir rastreamento de localização ou segurança da vítima.",
+      "watch_urls": [],
+      "deadlines": [],
+      "closure_evidence": "Desfecho procedimental ou institucional demonstrado por ato público, com contraditório, cronologia e fontes atualizados; proteção de vítimas preservada."
+    },
+    {
+      "id": "POL-005",
+      "mode": "active",
+      "priority": "urgent",
+      "interval_days": 1,
+      "focus": "Acompanhar notas oficiais e respostas de órgãos de apuração e das organizações indígenas; publicar somente contagens com data e denominador.",
+      "watch_urls": [],
+      "deadlines": [],
+      "closure_evidence": "Desfecho procedimental ou institucional demonstrado por ato público, com contraditório, cronologia e fontes atualizados; proteção de vítimas preservada."
+    },
+    {
+      "id": "POL-006",
+      "mode": "active",
+      "priority": "high",
+      "interval_days": 2,
+      "focus": "Revisar documentos do TSE/MPE e relatórios pós-eleição sobre atendimento e acessibilidade em territórios indígenas.",
+      "watch_urls": [],
+      "deadlines": [],
+      "closure_evidence": "Desfecho procedimental ou institucional demonstrado por ato público, com contraditório, cronologia e fontes atualizados; proteção de vítimas preservada."
+    },
+    {
+      "id": "POL-007",
+      "mode": "active",
+      "priority": "high",
+      "interval_days": 2,
+      "focus": "Em 30/11 revisar petições e decisões da ADPF 854, além de dados abertos do Siafi e Transferegov.",
+      "watch_urls": [],
+      "deadlines": [
+        "2026-11-30"
+      ],
+      "closure_evidence": "Desfecho procedimental ou institucional demonstrado por ato público, com contraditório, cronologia e fontes atualizados; proteção de vítimas preservada."
+    },
+    {
+      "id": "PLAT-2026-CASE",
+      "mode": "active",
+      "priority": "standard",
+      "interval_days": 7,
+      "focus": "Verificar desdobramentos da ação do MPF, resultados de transparência e execução de compromissos da plataforma.",
+      "watch_urls": [],
+      "deadlines": [],
+      "closure_evidence": "Ato institucional conclusivo ou conclusão editorial formal, com fonte e histórico de correções."
+    }
+  ]
+}
