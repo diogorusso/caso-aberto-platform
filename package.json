@@ -8,7 +8,7 @@
     "build": "npm run verify:data && astro build && npm run verify:public-bundle",
     "preview": "astro preview",
     "check": "astro check",
-    "verify:data": "node scripts/validate-data.mjs && node scripts/validate-structure.mjs && node scripts/validate-civic-research.mjs && npm run verify:publications && npm run verify:content-packs && npm run verify:curated-content && npm run verify:education-coverage && npm run verify:lead-magnets && npm run verify:editorial-preview && npm run verify:course-crypto",
+    "verify:data": "node scripts/validate-data.mjs && node scripts/validate-structure.mjs && node scripts/validate-civic-research.mjs && npm run verify:publications && npm run verify:content-packs && npm run verify:curated-content && npm run verify:education-coverage && npm run verify:lead-magnets && npm run verify:editorial-preview && npm run verify:course-crypto && npm run verify:cause-api",
     "new:company": "node scripts/new-company.mjs",
     "verify:structure": "node scripts/validate-structure.mjs",
     "verify:civic": "node scripts/validate-civic-research.mjs",
@@ -24,7 +24,8 @@
     "course:package": "node scripts/create-private-course-release.mjs",
     "course:verify": "node scripts/verify-private-course-release.mjs",
     "verify:course-crypto": "node --test scripts/test-private-course.mjs",
-    "verify:public-bundle": "node scripts/audit-public-education-bundle.mjs"
+    "verify:public-bundle": "node scripts/audit-public-education-bundle.mjs",
+    "verify:cause-api": "npm --prefix services/cause-api run verify"
   },
   "dependencies": {
     "@astrojs/react": "^7.1.5",

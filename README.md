@@ -210,3 +210,7 @@ The individual cause notebook at `/organizar/espaco-de-causa/` now supports shar
 ## Offline private course packaging
 
 The full 56-chapter playbook remains private. When a paid course is actually complete and editorially reviewed in a private workspace, npm run course:package can create an AES-256-GCM encrypted course bundle and an integrity manifest, outside the public repository and with an explicit owner confirmation. A 32-byte key is supplied only through the local environment; no keys or actual course manuscripts are committed. npm run course:verify checks the bundle without writing plaintext. See docs/private-education-release.md for the boundaries. CI tests crypto integrity and audits dist/ for accidental course/research exports. This is NOT checkout, entitlement, payment, or hosted premium delivery.
+
+## Private community collaboration service — source only
+
+A separate, **not deployed**, Cloudflare Worker + D1 prototype lives in services/cause-api/. It performs cryptographic verification of Access JWTs, isolates cause membership and roles, supports tasks, HTTPS evidence links, private institutional request drafts, single-use invitations, revocation and audit events. No API keys or database identifiers are committed. It is **not the public Astro site's backend**, not available to users and not a claim of secure operational citizen accounts. Validate with npm run verify:cause-api and review all manual deployment gates in services/cause-api/README.md before configuring real Cloudflare resources.
