@@ -3,7 +3,7 @@ import {brl,casePath,type Case} from '../lib/cases';
 import {type Brand,type BrandUnit,findBrand,verdictForCase,statusLabel} from '../lib/brands';
 import BrandTag from './BrandTag.astro';
 import {impactForSelection,brandSnapshot,statusGroups} from '../lib/impact';
-import ImpactSimulator from './ImpactSimulator.tsx';
+import CaseVisualStory from './CaseVisualStory.astro';
 import PrecedentComparison from './PrecedentComparison.astro';
 import VerdictMiniSummary from './VerdictMiniSummary.astro';
 import VerdictStatusBadge from './VerdictStatusBadge';
@@ -51,7 +51,7 @@ const tagUnit=unit||(caseItem?.unidade_slug?tagBrand?.units.find((u)=>u.slug===c
           <p class="m-0 max-w-xl text-lg text-muted-foreground">Pagamentos relatados, tempo transcorrido, reclamações públicas, documentos e decisões pendentes — cada indicador com recorte e fonte.</p>
           <div class="flex flex-wrap gap-2.5">
             <ButtonLink href="#painel-observado">Ver indicadores ↓</ButtonLink>
-            {modeled && <ButtonLink variant="outline" href="#simulador-impacto">Calcular cenários ↓</ButtonLink>}
+            {modeled && <ButtonLink variant="outline" href="#cenario-documental">Ver o que acontece se continuar ↓</ButtonLink>}
             <ButtonLink variant="outline" href={evidenceRoute}>Ver documentos ↗</ButtonLink>
           </div>
         </div>
@@ -133,9 +133,9 @@ const tagUnit=unit||(caseItem?.unidade_slug?tagBrand?.units.find((u)=>u.slug===c
     <a class="text-link text-sm" href={sourceRoute}>Ler cada reclamação e confirmar o estado atual ↗</a>
   </Section>
 
-  {modeled && (
-    <Section id="simulador-impacto" tone="muted" size="md">
-      <ImpactSimulator client:load reportedPayment={data.reportedPaymentTotal} daysHeld={data.holdDays||0} daysDelay={data.delayMin||0} asOf={modeled.snapshot_date} defaults={modeled.scenario_defaults}/>
+  {linkedCase && (
+    <Section id="cenario-documental" tone="muted" size="md">
+      <CaseVisualStory caseId={linkedCase.id} compact />
     </Section>
   )}
 
