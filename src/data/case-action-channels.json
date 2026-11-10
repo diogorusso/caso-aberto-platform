@@ -217,6 +217,33 @@
       "step": "empresa",
       "kind": "empresa",
       "note": "Arsesp lista telefone 0800 727 2120 e emergência 0800 727 2196; confirme sempre os canais atuais."
+    },
+    "florense-ipanema": {
+      "title": "Florense Ipanema — contato da unidade",
+      "url": "https://florense.com.br/franquias/ipanema",
+      "purpose": "Atendimento da loja identificada no caso Florense Ipanema",
+      "source_url": "https://florense.com.br/franquias/ipanema",
+      "step": "empresa",
+      "kind": "empresa",
+      "note": "A página oficial da unidade publica telefone (21) 2247-9488 e email florense@florenseipanema.com.br. Confira a contratante no contrato e mantenha protocolo do atendimento."
+    },
+    "prime-video-support": {
+      "title": "Prime Video — central de suporte da assinatura",
+      "url": "https://www.primevideo.com/help",
+      "purpose": "Atendimento da assinatura, publicidade, cobrança e condições do serviço",
+      "source_url": "https://www.primevideo.com/help",
+      "step": "empresa",
+      "kind": "empresa",
+      "note": "A central oficial direciona assuntos de conta, assinatura e pagamento ao suporte; o formulário de compliance de conteúdo é outro procedimento."
+    },
+    "aegea-integridade": {
+      "title": "Corsan/Aegea — canal de integridade",
+      "url": "https://www.corsan.com.br/canal-de-denuncia/",
+      "purpose": "Relatar indícios de irregularidade ética ou corrupção, se documentados",
+      "source_url": "https://www.corsan.com.br/canal-de-denuncia/",
+      "step": "compliance",
+      "kind": "empresa",
+      "note": "Exclusivo para questões éticas, fraude, assédio e integridade; não substitui o SAC ou a Ouvidoria para falta d'água e fatura."
     }
   },
   "regional": {
@@ -239,6 +266,7 @@
   },
   "related": {
     "CA-001": [
+      "florense-ipanema",
       "florense-fabrica"
     ],
     "EXT-004": [
@@ -261,9 +289,12 @@
     ],
     "EXT-013": [
       "corsan-sup",
-      "corsan-ouvidoria"
+      "corsan-ouvidoria",
+      "aegea-integridade"
     ],
-    "EXT-014": []
+    "EXT-014": [
+      "prime-video-support"
+    ]
   },
   "issues": {
     "CA-001": "entrega e montagem dos móveis planejados pagos e prazos descumpridos",
