@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CivicPageHeader from '../../components/CivicPageHeader.astro';
 const areas = [
   {name:'Dossiês e transparência',detail:'Casos individuais ou coletivos, fatos, contratos, órgãos, empresas, respostas e versões documentadas.',href:'/casos/',action:'Examinar casos'},
+  {name:'Observatório político e direitos',detail:'Bets, patrocínios, instituições, violência política, direitos indígenas e emendas: investigação com documentos, nomes e respostas.',href:'/observatorio/politica/',action:'Examinar o poder'},
   {name:'Observatório de plataformas',detail:'Documentação de moderação, alcance, anúncios, IA e dever de transparência, incluindo fontes contraditórias.',href:'/observatorio/plataformas/',action:'Ler observatório'},
   {name:'Organização comunitária',detail:'Do registro individual à ação pública verificável, com responsabilidades, objetivos e acompanhamento de respostas.',href:'/organizar/',action:'Aprender a organizar'},
   {name:'Autonomia e autodefesa digital',detail:'Ferramentas e educação sobre rastreabilidade, fingerprinting, recomendação algorítmica e proteção de dados.',href:'/autonomia-digital/',action:'Explorar a escola'}
@@ -19,7 +20,7 @@ const metodo = [
 <BaseLayout title="Instituto CasoAberto — Pesquisa, dados e cidadania digital" description="Instituto independente de pesquisa aplicada: investigação documental, plataformas digitais, organização cidadã, direitos e autonomia digital.">
   <CivicPageHeader eyebrow="INSTITUTO CASOABERTO · PESQUISA APLICADA" title="Transformar dados em capacidade de agir." lead="Problemas pessoais, comunitários e institucionais precisam de mais do que indignação. Precisam de investigação verificável, ferramentas abertas e acompanhamento público de resultados." note="O instituto é uma frente de trabalho do CasoAberto; não é órgão público, regulador ou laboratório universitário." />
   <section class="container space-y-8 py-14" aria-labelledby="areas">
-    <div class="space-y-3"><h2 id="areas" class="m-0 text-3xl">Quatro frentes. Uma infraestrutura de interesse público.</h2><p class="max-w-3xl text-muted-foreground">O mesmo método atende desde um contrato descumprido até a fiscalização de sistemas que moldam a vida pública.</p></div>
+    <div class="space-y-3"><h2 id="areas" class="m-0 text-3xl">Frentes complementares. Uma infraestrutura de interesse público.</h2><p class="max-w-3xl text-muted-foreground">O mesmo método atende desde um contrato descumprido até a fiscalização de sistemas que moldam a vida pública.</p></div>
     <div class="grid gap-4 md:grid-cols-2">
       {areas.map(area => <article class="flex flex-col gap-4 border border-border bg-card p-6"><h3 class="m-0 text-xl">{area.name}</h3><p class="m-0 flex-1 text-muted-foreground">{area.detail}</p><a class="text-link font-semibold" href={area.href}>{area.action} ↗</a></article>)}
     </div>
