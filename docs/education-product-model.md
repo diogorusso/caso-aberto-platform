@@ -1,0 +1,44 @@
+# CasoAberto — operacionalização do conteúdo público e do produto educacional
+
+**Decisão de produto:** o playbook completo de 56 capítulos e seus protocolos avançados continuam sendo o ativo educacional reservado. O site público não deve copiar capítulos nem publicar uma série de resumos que permita reconstruir gratuitamente a obra completa. O CasoAberto publica apenas perguntas independentes, insights curtos com fontes, exercícios introdutórios e materiais de utilidade cívica.
+
+## Quatro camadas e onde cada uma vive
+
+| Tipo | Fonte | Distribuição |
+| --- | --- | --- |
+| Acervo autoral | `diogorusso/obsidian-to-html`, wiki e playbooks | Privado; nenhuma cópia integral no build Astro |
+| Snippets úteis | `src/data/learning-publications.json` | Site SEO com 1–2 insights, duas perguntas, fontes e um exercício de entrada |
+| Produtos educacionais | `src/data/education-products.json` | Apenas página de apresentação em `/academia/`, sem acesso premium, cadastro ou pagamento |
+| Distribuição derivada | `src/data/content-distribution-queue.json` | Pautas **não publicadas**, convertidas em briefs por `npm run content:pack` |
+
+## Operação editorial em três portas
+
+1. **Pesquisa:** confirme os fatos nas fontes originais do repositório de pesquisa e verifique data, contexto e limitações. Não trate alegações ou simulações como observação.
+2. **Recorte público:** escolha uma pergunta específica respondível, escreva insight independente e vincule fontes originais e um microexercício. O teste automatizado `npm run verify:publications` bloqueia excesso de texto, snippets órfãos e programas ficticiamente ativos.
+3. **Distribuição e receita:** prepare drafts de card, FAQ, roteiro curto e newsletter **a partir do snippet público**, não do playbook privado. Leve o leitor ao produto correspondente; mantenha apenas a descrição comercial até que checkout e entrega autenticada funcionem.
+
+Para gerar os briefs **sem API de IA, sem envio externo e sem publicação**:
+
+```bash
+npm run content:pack
+npm run content:pack -- --slug=privacidade-sem-ilusoes
+```
+
+Os arquivos `build/editorial-drafts/*.md` e `*.json` devem ser revisados e produzidos antes de serem publicados; a pasta é ignorada pelo Git. Fonte, autoria, contexto, imagem licenciada, data e finalização editorial precisam ser confirmados. A presença de um brief não é aprovação nem disparo de campanha.
+
+### Produto educacional real vs. amostra gratuita
+
+**Gratuito** — um insight delimitado, com valor próprio, referências verificáveis, uma ação simples, informação básica de segurança/direitos e links para instrumentos públicos.
+
+**Premium, somente depois de estar pronto** — progressão didática, conteúdo original extenso, protocolos completos, casos comentados, rubricas de avaliação, feedback, laboratórios avançados, materiais para docentes e atualizações. A entrega deve acontecer em plataforma com autorização real no servidor, controle de acesso por titular, termos e política de reembolso. Esconder um PDF em Javascript, CSS, `public/` ou `dist/` não constitui proteção.
+
+**Monetização futura** — cobrança transparente por aprofundamento educacional; não condicionar acesso à documentação de casos, dados do instituto ou direitos básicos à compra. Não há checkout, métricas de conversão nem captura de e-mails neste release.
+
+## Qualidade, medição e próximos incrementos
+
+- Cada pauta tem `slug`, pergunta, mecanismo, `article_slug`, `product_slug`, limite da evidência e formatos possíveis.
+- SEO: uma intenção distinta por página, título útil, resposta breve própria, fonte e revisão; não produzir centenas de variações que repetem o mesmo parágrafo.
+- Provas: contagens somente com denominadores; sem inferir mudança política ou psicológica a partir de um clique/visita.
+- Produto: quando existir plataforma de venda, medir apenas eventos com consentimento e finalidade documentada; nunca perfis de convicção política de leitores.
+- Revisão: a fila gerada é pauta, não fato já publicado; acompanhar versões e correções posteriores em cada meio.
+- Verificação: `npm run verify:data && npm run check && npm run build` e `npm run verify:content-packs`.
