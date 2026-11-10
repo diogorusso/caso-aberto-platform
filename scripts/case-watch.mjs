@@ -23,17 +23,19 @@ if(errors.length){for(const e of errors)console.error('[case-watch] '+e);process
 if(has('--validate')){console.log('Case watch policy valid for '+index.length+' dossiers');process.exit(0);}
 const state=existsSync(statePath)?JSON.parse(readFileSync(statePath,'utf8')):{version:1,sources:{}};
 if(state.version!==1||typeof state.sources!=='object'||!state.sources)throw new Error('Unsupported cache state; no claims will be published');
-let open=[];
+let open=[];const completedAt={};
 if(existsSync(issuesPath)){
  const raw=JSON.parse(readFileSync(issuesPath,'utf8'));
  if(!Array.isArray(raw))throw new Error('Expected array of GitHub issue titles');
- open=raw.flatMap(value=>{
+ for(const value of raw){
   const title=typeof value==='string'?value:value?.title||'';
   const m=title.match(/^\[case-watch:([A-Z0-9-]+)\]/);
-  return m?[m[1]]:[];
- });
+  if(!m)continue;
+  if(typeof value==='string'||value.state==='OPEN')open.push(m[1]);
+  else if(value.state==='CLOSED'&&typeof value.closedAt==='string')completedAt[m[1]]=value.closedAt.slice(0,10);
+ }
 }
-const candidates=planReviews({policy,index,today,openIssueIds:open,caseId:arg('--case'),force:has('--force')});
+const candidates=planReviews({policy,index,today,openIssueIds:open,completedAt,caseId:arg('--case'),force:has('--force')});
 const maxReq=policy.schedule.max_source_requests_per_run;
 const maxBytes=policy.schedule.max_response_bytes;
 const changed=[],failures=[],checks=[];
