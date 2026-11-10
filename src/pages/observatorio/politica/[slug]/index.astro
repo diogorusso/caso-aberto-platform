@@ -6,15 +6,14 @@ type Study = typeof ledger.cases[number];
 const {study}=Astro.props as {study:Study};
 const base='/observatorio/politica/';
 const caseUrl=base+study.slug+'/';
-const bySource=new Map(ledger.sources.map(source=>[source.id,source]));
-const sources=study.source_ids.map(id=>bySource.get(id)).filter(Boolean);
-const entities=study.entity_ids.map(id=>ledger.entities.find(entity=>entity.id===id)).filter(Boolean);
+const bySource=new Map(ledger.sources.map(source=>[source.id,source] as const));
+const sources=study.source_ids.map(id=>bySource.get(id)).filter((value): value is (typeof ledger.sources)[number] => value !== undefined);
+const entities=study.entity_ids.map(id=>ledger.entities.find(entity=>entity.id===id)).filter((value): value is (typeof ledger.entities)[number] => value !== undefined);
 const relationships=ledger.relationships.filter(edge=>edge.case_id===study.id);
 const related=ledger.cases.filter(other=>other.id!==study.id&&(other.topic===study.topic||other.entity_ids.some(id=>study.entity_ids.includes(id)))).slice(0,4);
 const sponsors=study.id==='POL-002'?ledger.sponsorships:[];
-const date=s=>s?.split('-').reverse().join('/')||'Data não identificada';
-const sourceLink=id=>bySource.get(id)?.url||'#fontes';
-const sourceTitle=id=>bySource.get(id)?.title||'Fonte';
+const date=(s: string | null | undefined)=>s?.split('-').reverse().join('/')||'Data não identificada';
+const sourceLink=(id: string)=>bySource.get(id)?.url||'#fontes';
 ---
 <BaseLayout title={study.title+' | Observatório CasoAberto'} description={study.summary} type="article" dateModified={ledger.reviewed_at} breadcrumbs={[{name:'Início',item:'/'},{name:'Observatório político',item:base},{name:study.title,item:caseUrl}]}>
 <article>
