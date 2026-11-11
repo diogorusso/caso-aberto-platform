@@ -14,7 +14,7 @@ const comparable=linkedPrecedents(item.id);
 const crumbs=[...crumbFor(item),{label:'Precedentes de risco',href:comparisonPath(item.slug)}];
 ---
 <BaseLayout title={'Precedentes de falência e recuperação judicial: '+item.empresa_resumo+'| CasoAberto'}
- description={'Roma Imobili e Lojas KD faliram; Kitchens entrou em recuperação judicial com créditos de clientes por móveis não entregues. Análise setorial: atraso grave sem prazo razoável pode denotar problema maior. Compare com '+item.empresa_resumo+' antes de assinar — ou de continuar pagando.'}
+ description={'Roma Mobili e Lojas KD faliram; Kitchens entrou em recuperação judicial com créditos de clientes por móveis não entregues. Análise setorial: atraso grave sem prazo razoável pode denotar problema maior. Compare com '+item.empresa_resumo+' antes de assinar — ou de continuar pagando.'}
  type="article" dateModified={raw.updated_at} breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}>
  <Breadcrumbs items={crumbs}/>
  <header class="bg-forest py-14 text-forest-foreground md:py-20 [&_h1]:my-4 [&_h1_em]:text-brand [&_h1_em]:not-italic [&>div>p]:max-w-3xl [&>div>p]:text-lg [&>div>p]:text-white/75 [&_.eyebrow]:text-brand"><div class="container">

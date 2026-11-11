@@ -13,7 +13,7 @@ const crumbs = [...crumbFor(item), {label:'Alerta Roma Mobili', href:`${casePath
 ---
 <BaseLayout
   title={`${roma.title} | ${item.empresa_resumo} | CasoAberto`}
-  description="Roma Imobili quebrou depois de clientes pagarem e não receberem. Na Florense Ipanema, atraso grave sem prazo razoável pode denotar problema maior. Será que você quer correr o mesmo risco?"
+  description="Roma Mobili quebrou depois de clientes pagarem e não receberem. Na Florense Ipanema, atraso grave sem prazo razoável pode denotar problema maior. Será que você quer correr o mesmo risco?"
   type="article"
   dateModified={item.status_data}
   breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}
