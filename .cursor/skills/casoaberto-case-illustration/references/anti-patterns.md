@@ -129,6 +129,27 @@ Estes padrões são **proibidos em todo o catálogo**, não “exceções aceit�
 
 ---
 
+## 7b. Fachada estrangeira + crédito-desculpa
+
+**Arquivo:** `05-stubhub-facade-vs-senacon-resale.jpg` (hero EXT-015, 2026-11-11)
+
+| Campo | Valor |
+| --- | --- |
+| Headline | “Quem vende seu ingresso? A Senacon cobrou cinco plataformas de revenda.” |
+| Foto | Fachada StubHub (EUA) à noite |
+| Credit | “ilustra revenda…; **não** … o processo Senacon brasileiro” |
+| UI | Placa branca do logo viagogo flutuando **acima** do H1 |
+
+**Por que falha:** a capa mostra uma loja estrangeira; o crédito confessa que a foto **não** é o mecanismo brasileiro. Logo-chip no hero tenta “salvar” a identificação. Mesmo erro da plateia: atmosfera/marca no lugar da cobrança Senacon/MJ.
+
+**Teste rápido:** se o `credit` precisa negar país, órgão ou processo, a foto já está errada — troque a imagem; não “honeste” o erro no texto.
+
+**Correção:** arena da Senacon (Ministério da Justiça / órgão de defesa do consumidor no tema) **ou** mecanismo concreto de revenda/ingresso no Brasil — exclusiva, sem plateia, sem fachada-muleta, sem logo solto entre eyebrow e título (logo só na figcaption da foto).
+
+**Nome:** `facade-apology-credit`
+
+---
+
 ## 8. Imagem repetida no catálogo
 
 **Sintoma:** dois ou mais `case_id` compartilham o mesmo path `/media/...`, a mesma URL Commons, ou a mesma fachada/cena com crop diferente (ex.: Congresso para ameaças **e** para emendas).
@@ -149,5 +170,7 @@ Estes padrões são **proibidos em todo o catálogo**, não “exceções aceit�
 4. Algum outro ID no manifesto já usa este `photo` / `photo_source` / File Commons / cena?
 5. O `credit` admite que é ilustração — e mesmo assim a metáfora é honesta?
 6. Há risco a pessoa/comunidade (retrato, ritual íntimo, localização sensível)?
+7. O `credit` precisa **negar** país, órgão ou processo (“não é o Senacon brasileiro”)? → rejeitar.
+8. Há placa de logo flutuando entre eyebrow e H1 em vez de figcaption? → mover / remover.
 
-Se 1=não, 2=sim, 3=sim, 4=sim ou 6=sim → rejeitar.
+Se 1=não, 2=sim, 3=sim, 4=sim, 6=sim, 7=sim ou 8=sim → rejeitar.

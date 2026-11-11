@@ -16,7 +16,8 @@ const catalogEntry=caseStudies.find(item=>item.id===study.id);
 const nearby=caseStudies.filter(item=>item.categorySlug===catalogEntry?.categorySlug&&item.id!==study.id).slice(0,3);
 const visual=visualAssetForCase(study.id);
 const image=primaryImageForCase(study.id);
-const imageSrc=image?.src||('/og/casos/'+study.slug+'.png');
+const imageSrc=image?.kind==='photo'?image.src:null;
+if(!imageSrc) throw new Error('Public archive case '+study.id+' missing required on-page photo in case-visual-assets.json');
 const logo=visual?.logo;
 ---
 <BaseLayout image={'/og/casos/'+study.slug+'.png'} title={study.headline+' | Pesquisa CasoAberto'} description={study.deck} type="article" dateModified={study.reviewed_at} breadcrumbs={[{name:'Início',item:'/'},{name:'Casos',item:'/casos/'},{name:study.company,item:caseUrl}]}>
@@ -25,11 +26,6 @@ const logo=visual?.logo;
     <div class="container grid max-w-6xl items-start gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(16rem,0.85fr)]">
       <div class="stack-tight max-w-5xl">
         <p class="m-0 text-xs font-bold uppercase tracking-wider text-[#ff917e]">CASO DOCUMENTADO · {study.sector}</p>
-        {logo && (
-          <span class="inline-flex h-12 items-center justify-center border border-white/20 bg-white px-3 shadow-sm">
-            <img src={logo} alt={'Logotipo '+study.company} class="max-h-8 max-w-[10rem] object-contain" width="160" height="32" loading="eager" decoding="async"/>
-          </span>
-        )}
         <div class="space-y-5 md:space-y-6">
           <h1 class="m-0 text-4xl leading-tight md:text-6xl">{study.headline}</h1>
           <CaseVisibilityBadge caseId={study.id} variant="header" tone="inverse" />
@@ -39,7 +35,14 @@ const logo=visual?.logo;
       </div>
       <figure class="m-0 overflow-hidden border border-white/15 bg-black/20">
         <img src={imageSrc} alt={'Imagem de reconhecimento do caso '+study.company} width="1200" height="630" class="aspect-[1200/630] w-full object-cover" loading="eager" decoding="async"/>
-        <figcaption class="border-t border-white/10 px-4 py-3 text-xs leading-snug text-white/70">{visual?.credit || 'Arte editorial do dossiê · tipografia e dados públicos'}{visual?.photo_source && <> · <a class="text-[#ff917e] underline" href={visual.photo_source} target="_blank" rel="noopener noreferrer">Fonte da imagem ↗</a></>}</figcaption>
+        <figcaption class="flex items-start gap-3 border-t border-white/10 px-4 py-3 text-xs leading-snug text-white/70">
+          {logo && (
+            <span class="inline-flex h-10 shrink-0 items-center justify-center border border-white/15 bg-white px-2.5">
+              <img src={logo} alt="" class="max-h-6 max-w-[7.5rem] object-contain" width="120" height="24" loading="eager" decoding="async"/>
+            </span>
+          )}
+          <span class="min-w-0">{visual?.credit || 'Fotografia documentada do dossiê'}{visual?.photo_source && <> · <a class="text-[#ff917e] underline" href={visual.photo_source} target="_blank" rel="noopener noreferrer">Fonte da imagem ↗</a></>}</span>
+        </figcaption>
       </figure>
     </div>
   </header>

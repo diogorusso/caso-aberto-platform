@@ -13,7 +13,8 @@ const {study,compact=false} = Astro.props;
 const href='/casos/arquivo-publico/'+study.slug+'/';
 const visual = study.id ? visualAssetForCase(study.id) : undefined;
 const image = study.id ? primaryImageForCase(study.id) : undefined;
-const imageSrc = image?.src || ('/og/casos/'+study.slug+'.png');
+const imageSrc = image?.kind === 'photo' ? image.src : null;
+if (study.id && !imageSrc) throw new Error('PublicCaseCard missing required photo for '+study.id);
 const logo = visual?.logo;
 const sourceCount = study.sources?.length;
 ---

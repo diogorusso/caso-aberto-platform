@@ -5,6 +5,7 @@ import CaseActionBar from '../../../../components/CaseActionBar.astro';
 import CaseActionHub from '../../../../components/CaseActionHub.astro';
 import CaseVisibilityBadge from '../../../../components/CaseVisibilityBadge.astro';
 import ledger from '../../../../data/political-observatory.json';
+import {primaryImageForCase, visualAssetForCase} from '../../../../lib/case-media';
 export function getStaticPaths() { return ledger.cases.map(study=>({params:{slug:study.slug},props:{study}})); }
 type Study = typeof ledger.cases[number];
 const {study}=Astro.props as {study:Study};
@@ -18,6 +19,10 @@ const related=ledger.cases.filter(other=>other.id!==study.id&&(other.topic===stu
 const sponsors=study.id==='POL-002'?ledger.sponsorships:[];
 const date=(s: string | null | undefined)=>s?.split('-').reverse().join('/')||'Data não identificada';
 const sourceLink=(id: string)=>bySource.get(id)?.url||'#fontes';
+const visual=visualAssetForCase(study.id);
+const hero=primaryImageForCase(study.id);
+const heroSrc=hero?.kind==='photo'?hero.src:null;
+if(!heroSrc) throw new Error('Political case '+study.id+' missing required on-page photo in case-visual-assets.json');
 ---
 <BaseLayout image={'/og/casos/'+study.slug+'.png'} title={study.title+' | Observatório CasoAberto'} description={study.summary} type="article" dateModified={study.reviewed_at} breadcrumbs={[{name:'Início',item:'/'},{name:'Observatório político',item:base},{name:study.title,item:caseUrl}]}>
 <article>
@@ -36,8 +41,8 @@ const sourceLink=(id: string)=>bySource.get(id)?.url||'#fontes';
     <p class="m-0 border-l-4 border-brand pl-4 text-sm font-semibold">{study.status}</p>
    </div>
    <figure class="m-0 overflow-hidden border border-white/15 bg-black/20">
-    <img src={'/og/casos/'+study.slug+'.png'} alt={'Capa editorial do caso '+study.title} width="1200" height="630" class="aspect-[1200/630] w-full object-cover" loading="eager" decoding="async"/>
-    <figcaption class="border-t border-white/10 px-4 py-3 text-xs leading-snug text-white/70">Arte editorial do dossiê · sem retrato inventado</figcaption>
+    <img src={heroSrc} alt={'Imagem documental do caso '+study.title} width="1200" height="630" class="aspect-[1200/630] w-full object-cover" loading="eager" decoding="async"/>
+    <figcaption class="border-t border-white/10 px-4 py-3 text-xs leading-snug text-white/70">{visual?.credit || 'Fotografia documentada do dossiê'}{visual?.photo_source && <> · <a class="text-[#ff917e] underline" href={visual.photo_source} target="_blank" rel="noopener noreferrer">Fonte da imagem ↗</a></>}</figcaption>
    </figure>
   </div>
  </header>

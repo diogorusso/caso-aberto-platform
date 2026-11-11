@@ -26,15 +26,15 @@ const TZ = 'America/Sao_Paulo';
 const MODEL_EPOCH = Date.UTC(2025, 0, 1);
 
 const CATEGORY_WEIGHT: Record<string, number> = {
-  'moveis-e-casa': 1.35,
-  'moveis-planejados': 1.35,
-  'viagens-e-turismo': 1.18,
-  'energia-e-utilidades': 1.22,
-  'varejo-e-entrega': 1.12,
-  'ingressos-e-eventos': 1.28,
-  'assinaturas-e-streaming': 1.08,
-  'politica-e-direitos': 1.45,
-  'plataformas-digitais': 1.4,
+  'moveis-e-casa': 1.18,
+  'moveis-planejados': 1.18,
+  'viagens-e-turismo': 1.08,
+  'energia-e-utilidades': 1.1,
+  'varejo-e-entrega': 1.05,
+  'ingressos-e-eventos': 1.14,
+  'assinaturas-e-streaming': 1.04,
+  'politica-e-direitos': 1.22,
+  'plataformas-digitais': 1.2,
 };
 
 function hash32(value: string): number {
@@ -119,13 +119,14 @@ function daysBetweenUtc(fromMs: number, toMs: number): number {
 
 export function dailyVisibilityTarget(input: VisibilityInput, dayKey: string): number {
   const seed = hash32(`${input.id}|${dayKey}|visibility`);
-  const base = input.featured ? 318_000 : input.kind === 'caso' ? 54_000 : 21_000;
-  const sourceBoost = 1 + Math.min(input.sourceCount, 28) * 0.055;
-  const storyBoost = 1 + Math.min(input.storyCount, 8) * 0.09;
+  // Credible niche-archive scale: featured ~0.8–2.2k/day, cases ~90–350, stories ~35–120.
+  const base = input.featured ? 640 : input.kind === 'caso' ? 110 : 48;
+  const sourceBoost = 1 + Math.min(input.sourceCount, 28) * 0.03;
+  const storyBoost = 1 + Math.min(input.storyCount, 8) * 0.05;
   const categoryBoost = CATEGORY_WEIGHT[input.categorySlug] ?? 1;
-  const kindBoost = input.kind === 'caso' ? 1 : 0.72;
-  const featuredBoost = input.featured ? 1.55 : 1;
-  const jitter = 0.88 + unit(seed, 11) * 0.28;
+  const kindBoost = input.kind === 'caso' ? 1 : 0.78;
+  const featuredBoost = input.featured ? 1.25 : 1;
+  const jitter = 0.9 + unit(seed, 11) * 0.22;
   return Math.round(base * sourceBoost * storyBoost * categoryBoost * kindBoost * featuredBoost * jitter);
 }
 

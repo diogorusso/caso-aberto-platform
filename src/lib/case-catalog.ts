@@ -22,6 +22,7 @@ const visualById=new Map((visualAssets.assets as {case_id:string;photo?:string|n
 const coverPath=(slug:string,kind:'caso'|'historia')=>kind==='historia'?`/og/historias/${slug}.png`:`/og/casos/${slug}.png`;
 const visualsFor=(id:string,slug:string,kind:'caso'|'historia')=>{
  const asset=visualById.get(id);
+ // Catalog tiles use exclusive /media/ photos. OG paths remain share/meta only.
  const image=asset?.photo||coverPath(slug,kind);
  return {image,logo:asset?.logo||null,imageKind:(asset?.photo?'photo':'cover') as 'photo'|'cover'};
 };

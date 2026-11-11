@@ -20,6 +20,10 @@ This file is the portable brief those hosts should treat as standing orders when
 5. **Honesty:** credit + source required; `is_incident_photo` only for verified incident photos.
 6. **Safety:** no invented faces, no threatened-person portraits, no ornamentalizing communities.
 7. **Voice pair:** image sustains §31 confrontational question; never contradicts it.
-8. **Fallback:** no ethical unique photo → OG typographic cover for that slug — not a lying filler.
+8. **Real photo always on-page:** every case/story MUST have an exclusive `/media/` `photo` for catalog cards, heroes and dossier figures. **Never** ship OG typographic placeholders as the on-page image (POL/EXT/PLAT/histórias included). `/og/` is **share/meta only**.
+9. **OG share cards embed the photo:** `npm run og:build` must composite the same exclusive `/media/` cover into every `/og/casos|historias/*.png` (plus logo plate when available) — never regenerate text-only share art when a photo exists.
+10. **No ethical unique photo?** Keep searching Commons / Agência Brasil / institutional arenas that fit the claim — do not “solve” with OG on the page. If a candidate fails safety, choose another arena photo; only leave `photo` empty while actively sourcing (validators must fail publish).
+11. **No apology credit:** if `credit` must say what the photo is *not* (wrong country, wrong organ, inverted proof), reject and replace — do not keep a StubHub/storefront/crowd mule for a Brazilian Senacon claim.
+12. **No floating logo chip above the H1:** brand mark belongs in the photo figcaption / recognition plate, never as a white rectangle between eyebrow and headline.
 
 Full workflow: parent `SKILL.md`. Anti-patterns: `anti-patterns.md`. Rubric: `selection-rubric.md`. Sources: `source-and-safety.md`.

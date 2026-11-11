@@ -1,6 +1,6 @@
 /** Resolve sourced case visuals without inventing logos or incident photos.
- * Real store/logo files live under /media/ via company-media + case-visual-assets.
- * Every catalogued case also has a generated OG cover under /og/ for list/hero identity.
+ * Real exclusive photos live under /media/ via case-visual-assets — required for every
+ * on-page card, hero and catalog tile. Generated /og/ PNGs are share/meta only.
  */
 import media from '../data/company-media.json';
 import visualAssets from '../data/case-visual-assets.json';
@@ -39,14 +39,13 @@ export function brandMediaForSlug(brandSlug: string) {
   return (media.brands as Record<string, any>)[brandSlug];
 }
 
-/** Prefer verified store/brand photo, else editorial OG cover. Never treats OG as an incident photo. */
+/** On-page visual: exclusive /media/ photo only. OG covers are never primary UI imagery. */
 export function primaryImageForCase(caseId: string): {src: string; kind: 'photo' | 'cover'; source?: string | null; credit?: string | null} | null {
   const asset = byId.get(caseId);
   if (asset?.photo) {
     return {src: asset.photo, kind: 'photo', source: asset.photo_source, credit: asset.credit};
   }
-  const cover = coverForCaseId(caseId);
-  return cover ? {src: cover, kind: 'cover', credit: 'Arte editorial CasoAberto · tipografia e dados do dossiê'} : null;
+  return null;
 }
 
 export function logoForCase(caseId: string): {src: string; source?: string | null} | null {

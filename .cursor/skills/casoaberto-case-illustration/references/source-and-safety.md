@@ -66,15 +66,15 @@ Anti-padrão: `image-reuse` (ver `anti-patterns.md`).
 5. `npm run verify:case-actions` (exige asset por caso de pesquisa; `is_incident_photo` false salvo verificado)
 6. Conferir card em `CaseResearchExplorer` — a imagem vem de `entry.image` / `primaryImageForCase`
 
-## Quando usar só o OG
+## Open Graph (`/og/`) — só meta social, nunca on-page
 
-Use fallback tipográfico (`/og/casos/:slug.png`) se:
+`/og/casos/:slug.png` exists for WhatsApp/X/LinkedIn share and `<meta property="og:image">` only. It is **not** an on-page cover. If you lack an ethical unique photo:
 
-- não há foto licenciável do mecanismo
-- qualquer candidato falha Honesty ou segurança
-- o único “bom” visual exporia pessoa em risco
+- keep searching Commons / Agência Brasil / institutional arenas that fit the claim
+- reject unsafe candidates; pick another arena photo — do not publish OG as the dossier figure
+- if the only strong visual would expose a threatened person, use a safe institutional arena instead
 
-Melhor card tipográfico honesto do que foto linda mentirosa.
+Better a hard search for a claim-fit licensed photo than a lying stock image or an on-page OG placeholder.
 
 ## Relação com logos
 

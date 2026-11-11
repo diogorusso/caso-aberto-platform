@@ -27,7 +27,8 @@ Adapter Cursor apenas: `.cursor/rules/casoaberto-case-illustration.mdc` — **n�
 | **Catálogo `/casos/`** | cards do `CaseResearchExplorer` — primeira impressão visual |
 | **Todos os casos** | CA, EXT, POL, PLAT — mesma disciplina, fatos diferentes |
 | **Histórias** | `PUB-*` — ilustração temática exclusiva; nunca o rosto inventado do relato |
-| **Arquivo público / OG** | `photo` preferida; OG tipográfico só como fallback honesto |
+| **Arquivo público / heróis** | **sempre** `photo` em `/media/` — OG tipográfico **nunca** on-page |
+| **Share / Open Graph** | `/og/` só para meta social — não é capa do dossiê |
 | **Manifesto** | `src/data/case-visual-assets.json` — fonte da verdade |
 
 - Florense com foto da loja = **exemplo de fit**, não licença para stock genérico nos outros.
@@ -41,7 +42,7 @@ Adapter Cursor apenas: `.cursor/rules/casoaberto-case-illustration.mdc` — **n�
 | Escolhe foto que sustenta a **pergunta incômoda** do caso | Usa stock do setor porque “combina com a categoria” |
 | Uma foto **exclusiva** por `case_id` / história | Reutiliza path, URL Commons ou quase-duplicata |
 | Credita fonte; marca ilustração vs incidente | Inventa incidente, deepfake ou retrato de ameaçado |
-| Prefere OG tipográfico a foto mentirosa | Salva fit fraco com logo no canto |
+| Busca outra foto ética/única; OG só no share | Usa placeholder tipográfico no card/hero |
 | Alinha imagem à voz de confronto | Bonito, neutro, RP ou turismo |
 
 **ZERO FOTOS GENÉRICAS CORINGA.** Congresso, urna, estádio, plateia de show e caixa na porta **não** são curingas. Cada um só entra se for o mecanismo do dossiê — e só em **um** ID.
@@ -96,6 +97,8 @@ Rubrica mínima **4/5** (`references/selection-rubric.md`). Unicidade falhou →
 | MP bets + audiência genérica + logo | Logo-muleta | CPI/rito da MP / STF no tema |
 | Emendas ou ameaças + Congresso genérico | Brasília coringa (e reuso) | Rastreio orçamentário **ou** proteção/PF — **fotos diferentes** |
 | Revenda + plateia de festival | Show ≠ Senacon/revenda | Bilheteria, plataforma, fiscalização |
+| Revenda Senacon + fachada StubHub estrangeira | Crédito confessa: “não é o processo brasileiro” | Arena Senacon/MJ **ou** mecanismo de revenda no BR — sem fachada-muleta |
+| Logo branco solto acima do H1 | Chip corporativo disputa a pergunta | Logo só na figcaption / placa da foto — nunca entre eyebrow e título |
 
 Anti-exemplos em foto: `assets/anti-examples/`. Nomes: `references/anti-patterns.md`.
 
@@ -109,11 +112,12 @@ Anti-exemplos em foto: `assets/anti-examples/`. Nomes: `references/anti-patterns
 - Violência política: sem retrato da pessoa ameaçada; sem rotina/endereço
 - Povos indígenas: registro coletivo creditado ou arena que deveria apurar — sem ornamentalizar
 - Patrocínio de bets ilustra relação econômica documentada — não prova de crime
-- Sem licença/crédito → OG tipográfico do slug
+- Sem licença/crédito → **buscar outra foto** ética/única (Commons / Agência Brasil / arena institucional). **Não** publicar capa tipográfica na página.
 - Atualizar só o ID em `case-visual-assets.json`; arquivo novo em `public/media/...`
 - Foto deve **sustentar** o tom confrontacional — nunca contradizer a pergunta
+- **Lei da foto real:** cards, heróis, arquivo público, observatório político e plataformas usam **sempre** `photo` em `/media/`. `/og/*.png` é **só** meta social / WhatsApp / X — nunca o `<img>` principal do dossiê.
 
-### Tipos permitidos (escolha um)
+### Tipos permitidos (escolha um) — tipos A–E são on-page
 
 | Tipo | Quando | Proibido como coringa |
 |---|---|---|
@@ -122,7 +126,7 @@ Anti-exemplos em foto: `assets/anti-examples/`. Nomes: `references/anti-patterns
 | C. Arena institucional | Órgão/rito **do** caso | Qualquer Congresso |
 | D. Financiamento / publicidade | Bets, clubes, emendas | Só torcida |
 | E. Direitos / povos / voto | Acesso, denúncia coletiva, proteção | Ritual close; urna isolada |
-| F. OG tipográfico | Sem foto ética/licenciável/única | Stock mentiroso “só por preencher” |
+| Meta social `/og/` | Share cards / Open Graph **apenas** | Usar OG como hero/card on-page |
 
 ## 5. Anti-padrão — NÃO regenerar / NÃO manter
 
@@ -139,7 +143,23 @@ Card político sobre emendas / ameaças / voto
 + “é o setor, serve”
 ```
 
+```
+Card Senacon / revenda BR
++ fachada StubHub / loja estrangeira / show
++ credit que admite: “não é o processo Senacon brasileiro”
+→ o crédito vira desculpa da foto errada
+```
+
+```
+Hero do dossiê
++ placa branca de logo flutuando entre eyebrow e H1
++ foto que o credit precisa desmentir
+→ chip salva a marca; a pergunta some
+```
+
 Isso é stock-coringa do LLM. Apagar. Não “ajustar crop”. Voltar à fórmula / `VISUAL_NOUN` / unicidade.
+
+**Lei do crédito:** se o `credit` precisa dizer o que a foto **não** é (país errado, processo errado, prova invertida), a foto já falhou — troque a imagem; não “honeste” o erro no texto.
 
 ## 6. Superfícies de dados / UI
 
@@ -151,7 +171,7 @@ Isso é stock-coringa do LLM. Apagar. Não “ajustar crop”. Voltar à fórmul
 | `PublicCaseCard.astro` | arquivo público |
 | `scripts/fetch-case-photos.mjs` | download 1600×900 |
 | `company-media.json` | loja/logo institucional (pode alimentar fit; não libera reuso de capa) |
-| `/og/casos/:slug.png` | fallback tipográfico por slug |
+| `/og/casos/:slug.png` | **só** Open Graph / share — nunca hero on-page; gerado por `og:build` **com a mesma `photo` exclusiva** embutida (não tipografia vazia) |
 
 ## 7. Checklist (igual à disciplina do tom)
 
@@ -162,8 +182,10 @@ Isso é stock-coringa do LLM. Apagar. Não “ajustar crop”. Voltar à fórmul
 - [ ] Sem prova invertida nem setor-coringa
 - [ ] Sem retrato inventado / pessoa ameaçada exposta
 - [ ] `credit` + `photo_source` honestos; `is_incident_photo` correto
+- [ ] Todo ID tem `photo` real em `/media/` (validators falham sem arquivo)
+- [ ] Nenhuma página POL/EXT/PLAT/história renderiza `/og/` como `<img>` principal
 - [ ] Sustenta a pergunta confrontacional (skill de tom)
-- [ ] Rubrica ≥ 4/5 ou OG fallback declarado
+- [ ] Rubrica ≥ 4/5 — se falhar, outra foto, não placeholder
 
 ## Fluxo curto de execução
 

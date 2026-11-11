@@ -33,6 +33,10 @@ Fiel ao claim · fiel à consequência · específica · exclusiva · documental
 - Logo não salva foto errada; logos da mesma marca podem repetir — capas não
 - Prova invertida proibida (ex.: pacote na porta para “não chegou?”)
 - Congresso / urna / estádio / plateia não são curingas de categoria
+- Crédito-desculpa proibido (“não é o Senacon brasileiro”) — troque a foto
+- Logo nunca flutuando entre eyebrow e H1; só na figcaption da capa
 - Sem retrato inventado, deepfake ou pessoa ameaçada exposta
-- Sem foto ética/única → OG tipográfico do slug, não stock mentiroso
+- On-page **sempre** foto real exclusiva em `/media/` (cards, heróis, POL/EXT/PLAT)
+- `/og/` é **só** share/meta — nunca placeholder tipográfico no dossiê
+- Sem foto ética/única → buscar outra arena creditada; não publicar OG como capa
 - Fonte: `src/data/case-visual-assets.json`

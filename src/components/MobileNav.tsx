@@ -26,8 +26,8 @@ export default function MobileNav({ items, current }: { items: NavItem[]; curren
                   href={item.href}
                   aria-current={navItemIsActive(item, current) ? 'page' : undefined}
                   className={cn(
-                    'px-3 py-2.5 text-sm font-semibold transition-colors hover:bg-accent',
-                    navItemIsActive(item, current) && 'bg-accent',
+                    'border-l-2 border-transparent px-3 py-2.5 text-sm font-semibold transition-colors hover:text-foreground',
+                    navItemIsActive(item, current) ? 'border-brand text-foreground' : 'text-muted-foreground',
                   )}
                 >
                   {item.label}
