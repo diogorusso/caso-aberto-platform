@@ -2,7 +2,7 @@
 
 Fonte: guia legal. Banco de voz para **toda a plataforma** (FTUE, app, todos os casos) — não só Florense. Adaptar com fatos atribuídos; não inventar.
 
-## Exemplo autorizado Florense/Roma (registro, não escopo)
+## Exemplo autorizado Florense/Roma — campanha (registro, não escopo)
 
 ```
 Será que seu móvel planejado será entregue?
@@ -10,6 +10,16 @@ A Florense não entregou o meu.
 Será que está falindo como ocorreu há dois anos com a Roma?
 Melhor não correr o risco. Busque outro fornecedor.
 Saiba mais em https://casoaberto.pages.dev/casos/florense-ipanema-rj-atraso-moveis-planejados/
+```
+
+## Exemplo autorizado — veredito / análise setorial (legal · 2026-11-11)
+
+```
+Análise setorial — Pode haver risco de quebra e mais clientes ficarem sem solução?
+Em nossa análise, um atraso deste tamanho sem que a empresa desse porte consiga sequer se comprometer com um prazo razoável pode denotar mais do que uma falha operacional e sim um problema maior. Quem conhece este setor se lembra logo do caso da Roma Mobili que quebrou depois de clientes pagarem e não receberem. Será que você quer correr o mesmo risco? Busque outro fornecedor.
+Relembre o caso da Roma Mobili nos links abaixo.
+
+Vale para: Novas compras e contratações bem como contratos recentes … Ou seja, recomendamos que não compre … e que, se ainda não pagou a integralidade e ainda for possível, considere a rescisão pelo receio de não receber o contratado.
 ```
 
 ## 1. Atraso e desorganização operacional

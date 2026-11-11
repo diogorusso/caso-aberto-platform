@@ -92,7 +92,9 @@ Revisar fraco **sem** inflar gravidade.
 - Mobiliza verificação — não “bem-vindo educadamente ao portal”  
 - Exemplos de registro: “Antes de pagar, descubra quem cumpre — e quem não cumpre.” / “Pagou. Não recebeu. Cadê a resposta?”
 
-## 3. Exemplo autorizado (Florense / Roma) — não é o único caso
+## 3. Exemplos autorizados (Florense / Roma) — não são o único caso
+
+### 3a. Campanha / share / recognition (curto e cortante)
 
 ```
 Será que seu móvel planejado será entregue?
@@ -102,7 +104,35 @@ Melhor não correr o risco. Busque outro fornecedor.
 Saiba mais em https://casoaberto.pages.dev/casos/florense-ipanema-rj-atraso-moveis-planejados/
 ```
 
-Mesmo **registro** para outros casos: trocar empresa, fato atribuído, precedente (se houver link) e URL. Não colar disclaimer.
+### 3b. Veredito editorial / análise setorial (autorizado pelo legal · 2026-11-11)
+
+Pergunta do bloco de posição:
+
+```
+Análise setorial — Pode haver risco de quebra e mais clientes ficarem sem solução?
+```
+
+Contexto do bloco:
+
+```
+Em nossa análise, um atraso deste tamanho sem que a empresa desse porte consiga sequer se comprometer com um prazo razoável pode denotar mais do que uma falha operacional e sim um problema maior. Quem conhece este setor se lembra logo do caso da Roma Mobili que quebrou depois de clientes pagarem e não receberem. Será que você quer correr o mesmo risco? Busque outro fornecedor.
+Relembre o caso da Roma Mobili nos links abaixo:
+```
+
+Escopo (“Vale para:”):
+
+```
+Novas compras e contratações bem como contratos recentes com a unidade de Ipanema, seja qual for a forma de pagamento, até a conclusão comprovada do caso e o esclarecimento de quem responde pelo contrato. Ou seja, recomendamos que não compre com a empresa e que, caso tenha celebrado contrato porém ainda não tenha pago a integralidade e ainda seja possível avaliar outra opção, considere a rescisão do contrato vigente pelo receio de não receber o contratado.
+```
+
+**O que este registro acrescenta à voz (obrigatório em vereditos):**
+
+1. **Análise setorial nomeada** — a pergunta expõe risco de quebra / clientes sem solução sem converter atraso em decreto de falência  
+2. **Mecanismo ampliado** — atraso grave + incapacidade de comprometer prazo razoável = sinal de problema maior, não “só operação”  
+3. **Precedente setorial explícito** — Roma Mobili como memória do setor; links abaixo do bloco  
+4. **Alcance de proteção** — não só “não compre”; também quem tem contrato recente, não pagou tudo e ainda pode rescindir  
+
+Mesmo **registro** para outros casos: trocar empresa, fato atribuído, precedente (se houver link) e URL. Não colar disclaimer-absolvição.
 
 ## 4. Regras para o agente (legal)
 
@@ -126,9 +156,12 @@ Mesmo **registro** para outros casos: trocar empresa, fato atribuído, precedent
 ### Precedente × risco
 
 - OK: risco ao consumidor; pergunta legítima; “não precisa estar falindo para ser risco sério”
-- OK: precedente (ex.: Roma) como alerta de quem pagou e não recebeu — quando o caso linkar
+- OK: **análise setorial** — atraso grave sem prazo razoável pode denotar problema maior; risco de quebra / clientes sem solução como pergunta de alerta
+- OK: precedente (ex.: Roma Mobili) como memória do setor — quando o caso linkar; “relembre nos links abaixo”
+- OK: escopo amplo — novas compras **e** contratos recentes ainda rescindíveis / não pagos por completo
 - Proibido: afirmar falência/insolvência da empresa atual sem decreto
-- Proibido: disclaimer-absolvição no bloco de alerta
+- Proibido: disclaimer-absolvição no bloco de alerta (“Sejamos claros / não afirmamos…”)
+- Proibido: reduzir o alerta a “só novas compras” quando o legal autorizou rescisão de contrato recente
 
 ## 5. Anti-padrão — NÃO regenerar
 

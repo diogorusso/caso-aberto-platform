@@ -45,11 +45,11 @@
       ],
       "verdict": {
         "status": "nao_recomendamos",
-        "scope": "Novas contratações com a marca enquanto o caso Florense Ipanema seguir sem solução confirmada e sem resposta documentada.",
+        "scope": "Novas compras e contratações bem como contratos recentes com a marca, seja qual for a forma de pagamento, enquanto o caso Florense Ipanema seguir sem solução confirmada e sem resposta documentada. Ou seja, recomendamos que não compre com a empresa e que, caso tenha celebrado contrato porém ainda não tenha pago a integralidade e ainda seja possível avaliar outra opção, considere a rescisão do contrato vigente pelo receio de não receber o contratado.",
         "headline": "Não recomendamos contratar a Florense enquanto este caso não for resolvido.",
-        "lead": "Não assuma esse risco. Na dúvida, escolha outro fornecedor. Antes de assinar, você precisa saber quando vai receber e quem responde pelo contrato — pague à vista ou parcelado.",
-        "question": "O que a Florense precisa responder antes que alguém assine um novo contrato?",
-        "context": "Um consumidor relata R$ 190 mil pagos e atraso na unidade Ipanema. A Roma faliu há dois anos depois de clientes pagarem e não receberem — até onde pode chegar o prejuízo. Melhor não correr o risco. Busque outro fornecedor.",
+        "lead": "Não assuma esse risco. Na dúvida, escolha outro fornecedor. Antes de assinar — ou de continuar pagando — você precisa saber quando vai receber e quem responde pelo contrato.",
+        "question": "Análise setorial — Pode haver risco de quebra e mais clientes ficarem sem solução?",
+        "context": "Em nossa análise, um atraso deste tamanho sem que a empresa desse porte consiga sequer se comprometer com um prazo razoável pode denotar mais do que uma falha operacional e sim um problema maior. Quem conhece este setor se lembra logo do caso da Roma Mobili que quebrou depois de clientes pagarem e não receberem. Será que você quer correr o mesmo risco? Busque outro fornecedor. Relembre o caso da Roma Mobili nos links abaixo:",
         "basis": [
           "Caso Florense Ipanema: o consumidor relata R$ 190 mil pagos integralmente e prazo de entrega da primeira semana de outubro de 2026 descumprido.",
           "Empresa notificada extrajudicialmente em 30/10/2026; denúncia pública em 03/11/2026; Procon/RJ acionado, segundo o consumidor.",
@@ -94,11 +94,11 @@
           "summary": "Aqui, um consumidor relata ter pago R$ 190 mil e esperar até hoje pela entrega e montagem. Outra reclamação pública de 2026 contra a mesma unidade foi resolvida depois.",
           "verdict": {
             "status": "nao_recomendamos",
-            "scope": "Novas compras e contratações na unidade de Ipanema, seja qual for a forma de pagamento, até a conclusão comprovada do caso e o esclarecimento de quem responde pelo contrato.",
+            "scope": "Novas compras e contratações bem como contratos recentes com a unidade de Ipanema, seja qual for a forma de pagamento, até a conclusão comprovada do caso e o esclarecimento de quem responde pelo contrato. Ou seja, recomendamos que não compre com a empresa e que, caso tenha celebrado contrato porém ainda não tenha pago a integralidade e ainda seja possível avaliar outra opção, considere a rescisão do contrato vigente pelo receio de não receber o contratado.",
             "headline": "Não recomendamos comprar na Florense Ipanema enquanto este caso não for resolvido.",
             "lead": "Na dúvida, escolha outro fornecedor. Um consumidor relata R$ 190 mil pagos, prazo descumprido e nenhuma entrega confirmada até agora.",
-            "question": "Quem responde por este pedido — e quando os móveis serão entregues?",
-            "context": "Nossa posição se baseia neste pedido e nos registros da unidade. Roma quebrou depois de clientes pagarem e não receberem. Será que você quer correr o mesmo risco? Busque outro fornecedor.",
+            "question": "Análise setorial — Pode haver risco de quebra e mais clientes ficarem sem solução?",
+            "context": "Em nossa análise, um atraso deste tamanho sem que a empresa desse porte consiga sequer se comprometer com um prazo razoável pode denotar mais do que uma falha operacional e sim um problema maior. Quem conhece este setor se lembra logo do caso da Roma Mobili que quebrou depois de clientes pagarem e não receberem. Será que você quer correr o mesmo risco? Busque outro fornecedor. Relembre o caso da Roma Mobili nos links abaixo:",
             "basis": [
               "R$ 190 mil pagos integralmente em julho de 2026, segundo o consumidor.",
               "Entrega prometida para a primeira semana de outubro de 2026; equipe faltou a agendamentos depois disso, segundo o relato.",
@@ -131,7 +131,7 @@
       "faq": [
         {
           "question": "A Florense está falindo?",
-          "answer": "Uma empresa não precisa estar falindo para ser risco sério ao consumidor. Basta receber, não entregar e não apresentar solução verificável. A Florense não entregou o móvel deste dossiê. Roma quebrou depois de clientes pagarem e não receberem. Será que você quer correr o risco? Melhor buscar outro fornecedor enquanto este caso estiver aberto."
+          "answer": "Em nossa análise setorial, um atraso deste tamanho sem compromisso com prazo razoável pode denotar mais do que falha operacional — e quem conhece o setor lembra da Roma Mobili, que quebrou depois de clientes pagarem e não receberem. Uma empresa não precisa estar falindo para ser risco sério: basta receber, não entregar e não apresentar solução verificável. Será que você quer correr o mesmo risco? Busque outro fornecedor enquanto este caso estiver aberto."
         },
         {
           "question": "Qual é a empresa por trás da Florense Ipanema?",
@@ -139,7 +139,7 @@
         },
         {
           "question": "Por que o CasoAberto não recomenda contratar a Florense neste momento?",
-          "answer": "Porque um consumidor relata ter pago R$ 190 mil, o prazo foi descumprido e, até a última revisão, nada foi concluído. Vale para qualquer forma de pagamento. Se a empresa resolver e provar, revisamos."
+          "answer": "Porque um consumidor relata ter pago R$ 190 mil, o prazo foi descumprido e, até a última revisão, nada foi concluído. Vale para novas compras e para contratos recentes — qualquer forma de pagamento. Se ainda não pagou a integralidade e ainda dá para avaliar outra opção, considere a rescisão pelo receio de não receber o contratado. Se a empresa resolver e provar, revisamos."
         },
         {
           "question": "Onde ver as outras reclamações Florense?",

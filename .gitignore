@@ -11,8 +11,8 @@ evidence-private/
 private-evidence/
 *.private-evidence.json
 
-# Offline editorial briefs; generated from public snippets, never deployed
-build/editorial-drafts/
+# Local tooling / offline editorial output — never deploy
+build/
 
 # Ephemeral source fingerprints, queue packets and human review notes (never published)
 .case-watch-cache/
