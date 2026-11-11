@@ -2,10 +2,10 @@ import { MenuIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
+import type { NavItem } from '@/lib/navigation';
+import { bestMatchingHref, navItemIsActive } from '@/lib/navigation';
 
-interface Item { label: string; href: string }
-
-export default function MobileNav({ items, current }: { items: Item[]; current: string }) {
+export default function MobileNav({ items, current }: { items: NavItem[]; current: string }) {
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -13,25 +13,47 @@ export default function MobileNav({ items, current }: { items: Item[]; current: 
           <MenuIcon className="size-5" />
         </Button>
       </SheetTrigger>
-      <SheetContent side="right" className="w-[min(20rem,85vw)]">
+      <SheetContent side="right" className="w-[min(22rem,88vw)] overflow-y-auto">
         <SheetHeader>
           <SheetTitle>CasoAberto</SheetTitle>
-          <SheetDescription>Casos, organização cidadã, pesquisa e autonomia digital.</SheetDescription>
+          <SheetDescription>Casos, artigos, organização e pesquisa com fontes.</SheetDescription>
         </SheetHeader>
-        <nav aria-label="Principal" className="grid gap-1 px-4">
+        <nav aria-label="Principal" className="grid gap-5 px-4 pb-8">
           {items.map((item) => (
-            <SheetClose asChild key={item.href}>
-              <a
-                href={item.href}
-                aria-current={current.startsWith(item.href) ? 'page': undefined}
-                className={cn(
-                  'px-3 py-2.5 text-sm font-medium transition-colors hover:bg-accent',
-                  current.startsWith(item.href) && 'bg-accent font-semibold',
-                )}
-              >
-                {item.label}
-              </a>
-            </SheetClose>
+            <div key={item.href} className="grid gap-1">
+              <SheetClose asChild>
+                <a
+                  href={item.href}
+                  aria-current={navItemIsActive(item, current) ? 'page' : undefined}
+                  className={cn(
+                    'px-3 py-2.5 text-sm font-semibold transition-colors hover:bg-accent',
+                    navItemIsActive(item, current) && 'bg-accent',
+                  )}
+                >
+                  {item.label}
+                </a>
+              </SheetClose>
+              {item.children?.length ? (
+                <div className="ml-2 grid gap-0.5 border-l border-border pl-2">
+                  {item.children.map((child) => {
+                    const activeChild = bestMatchingHref(current, item.children ?? []) === child.href;
+                    return (
+                    <SheetClose asChild key={`${item.href}-${child.href}-${child.label}`}>
+                      <a
+                        href={child.href}
+                        aria-current={activeChild ? 'page' : undefined}
+                        className={cn(
+                          'px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground',
+                          activeChild && 'bg-accent font-medium text-foreground',
+                        )}
+                      >
+                        {child.label}
+                      </a>
+                    </SheetClose>
+                  )})}
+                </div>
+              ) : null}
+            </div>
           ))}
         </nav>
       </SheetContent>

@@ -1,0 +1,125 @@
+---
+/**
+ * Quiet visibility metric under case titles.
+ * Red danger mark + thin count + live pulse on silence line.
+ */
+import { AlertTriangle } from 'lucide-react';
+import { caseStudies, personalStories } from '../lib/case-catalog';
+import { formatVisibilityCount, visibilityFromInput } from '../lib/case-visibility-model';
+import { visibilityInputFromEntry } from '../lib/case-visibility';
+import { copy } from '../lib/copy';
+
+interface Props {
+  caseId: string;
+  variant?: 'header' | 'card' | 'inline';
+  tone?: 'light' | 'inverse';
+  className?: string;
+}
+
+const { caseId, variant = 'header', tone = 'light', className } = Astro.props;
+const entry = caseStudies.find((item) => item.id === caseId) || personalStories.find((item) => item.id === caseId);
+const input = entry ? visibilityInputFromEntry(entry) : null;
+const snapshot = input ? visibilityFromInput(input, new Date()) : null;
+const t = copy.visibility;
+const inverse = tone === 'inverse';
+const today = snapshot ? formatVisibilityCount(snapshot.today) : '';
+const isInline = variant === 'inline';
+const isCompact = variant === 'card' || isInline;
+const isHeader = variant === 'header';
+const iconSize = isCompact ? 15 : 17;
+---
+{snapshot && input && (
+  <div
+    class:list={[
+      'case-visibility-metric flex w-fit max-w-full flex-col items-start justify-start text-left',
+      inverse
+        ? 'border border-white/15 bg-white/5 px-4 py-3'
+        : 'border border-border bg-muted/60 px-3.5 py-2.5',
+      isHeader && 'mt-7 md:mt-9',
+      isCompact && 'mt-4',
+      className,
+    ]}
+    data-visibility-metric
+    data-visibility-input={JSON.stringify(input)}
+    role="group"
+    aria-label={`${today} ${t.metricLabel}. ${t.label}`}
+  >
+    <span class="flex items-center gap-2">
+      <AlertTriangle
+        className={inverse ? 'shrink-0 text-brand' : 'shrink-0 text-brand-strong'}
+        size={iconSize}
+        strokeWidth={2}
+        aria-hidden="true"
+      />
+      <span
+        class:list={[
+          'case-visibility-metric__count tabular-nums',
+          isCompact ? 'text-sm' : 'text-base md:text-[1.05rem]',
+          inverse ? 'text-white' : 'text-foreground',
+        ]}
+        data-visibility-today
+      >{today}</span>
+      <span
+        class:list={[
+          'text-[0.625rem] font-semibold uppercase tracking-[0.16em]',
+          inverse ? 'text-brand' : 'text-brand-strong',
+        ]}
+      >{t.metricLabel}</span>
+    </span>
+    {!isInline && (
+      <span
+        class:list={[
+          'mt-3 flex flex-wrap items-center justify-start gap-x-1.5 gap-y-1 text-left text-[0.8125rem] font-normal leading-snug tracking-wide',
+          inverse ? 'text-white/80' : 'text-foreground/75',
+        ]}
+      >
+        <span>{t.seen}</span>
+        <span class="inline-flex items-center gap-1.5">
+          <span class="visibility-live-dot" aria-hidden="true">
+            <svg viewBox="0 0 8 8" width="7" height="7" class="block overflow-visible">
+              <circle class="visibility-live-dot__core" cx="4" cy="4" r="2.2" />
+              <circle class="visibility-live-dot__pulse" cx="4" cy="4" r="2.2" fill="none" />
+            </svg>
+          </span>
+          <span class:list={[inverse ? 'font-medium text-white' : 'font-medium text-foreground']}>{t.silent}</span>
+        </span>
+      </span>
+    )}
+    {isInline && (
+      <span
+        class:list={[
+          'mt-3 inline-flex items-center justify-start gap-1.5 text-left text-[0.8125rem] font-normal',
+          inverse ? 'text-white/80' : 'text-foreground/75',
+        ]}
+      >
+        <span class="visibility-live-dot" aria-hidden="true">
+          <svg viewBox="0 0 8 8" width="7" height="7" class="block overflow-visible">
+            <circle class="visibility-live-dot__core" cx="4" cy="4" r="2.2" />
+            <circle class="visibility-live-dot__pulse" cx="4" cy="4" r="2.2" fill="none" />
+          </svg>
+        </span>
+        <span class:list={[inverse ? 'font-medium text-white' : 'font-medium text-foreground']}>{t.silent}</span>
+      </span>
+    )}
+  </div>
+)}
+
+{snapshot && input && (
+  <script type="module" define:vars={{ metricLabel: t.metricLabel, label: t.label }}>
+    import { formatVisibilityCount, visibilityFromInput } from '../lib/case-visibility-model.ts';
+
+    function refresh() {
+      for (const node of document.querySelectorAll('[data-visibility-metric][data-visibility-input]')) {
+        try {
+          const input = JSON.parse(node.getAttribute('data-visibility-input') || '');
+          const snap = visibilityFromInput(input, new Date());
+          const el = node.querySelector('[data-visibility-today]');
+          if (el) el.textContent = formatVisibilityCount(snap.today);
+          node.setAttribute('aria-label', `${formatVisibilityCount(snap.today)} ${metricLabel}. ${label}`);
+        } catch {}
+      }
+    }
+    refresh();
+    document.addEventListener('astro:page-load', refresh);
+  </script>
+)}

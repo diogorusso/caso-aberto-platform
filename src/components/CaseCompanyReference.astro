@@ -1,9 +1,15 @@
 ---
+/*
+ * Compact company pointer on case pages.
+ * Logo + name + one verdict badge + impact drawer + profile CTA.
+ * Store photo stays in CaseIntro / company profile — not repeated with overlays.
+ */
 import media from '../data/company-media.json';
 import { forCase, brandPath, unitPath, statusLabel } from '../lib/brands';
 import type { Case } from '../lib/cases';
 import VerdictStatusBadge from './VerdictStatusBadge';
 import ButtonLink from './layout/ButtonLink.astro';
+import CaseImpactDrawer from './CaseImpactDrawer.astro';
 import { copy } from '@/lib/copy';
 const t = copy.companyRef;
 interface Props { item: Case }
@@ -11,32 +17,40 @@ const { item } = Astro.props;
 const brand = forCase(item);
 const unit = brand?.units.find((u) => u.slug === item.unidade_slug);
 const visuals = brand ? (media.brands as Record<string, any>)[brand.slug] : undefined;
-const photo = unit ? visuals?.units?.[unit.slug]?.image : undefined;
 const href = brand ? (unit ? unitPath(brand, unit) : brandPath(brand)) : '/empresas/';
 const rated = unit || brand;
-const badgeLabel = (rated as any)?.recognition?.badge || (brand as any)?.recognition?.badge;
 ---
 {brand && rated && (
   <section class="border-b bg-card py-6">
-    <div class="container grid items-center gap-5 md:grid-cols-[1fr_auto] lg:grid-cols-[1fr_12rem_auto]">
-      <div class="flex min-w-0 items-center gap-4">
-        {visuals?.logo?.src && <img class="h-12 w-28 shrink-0 border bg-white object-contain p-2" src={visuals.logo.src} alt={visuals.logo.alt} width="112" height="48" loading="lazy" />}
-        <div class="min-w-0 space-y-1">
+    <div class="container flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+      <div class="flex min-w-0 items-start gap-4 sm:items-center">
+        {visuals?.logo?.src ? (
+          <img
+            class="h-12 w-28 shrink-0 border border-border bg-white object-contain p-2"
+            src={visuals.logo.src}
+            alt={visuals.logo.alt}
+            width="112"
+            height="48"
+            loading="lazy"
+          />
+        ) : (
+          <span class="grid h-12 w-12 shrink-0 place-items-center border border-border bg-muted text-sm font-extrabold" aria-hidden="true">
+            {brand.name.slice(0, 2).toUpperCase()}
+          </span>
+        )}
+        <div class="min-w-0 space-y-1.5">
           <p class="m-0 text-xs font-semibold uppercase tracking-wider text-brand-strong">{t.eyebrow}</p>
-          <h2 class="m-0 text-xl">{unit?.name || brand.name}</h2>
-          <p class="m-0 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">{unit?.location || brand.location} <VerdictStatusBadge status={rated.verdict.status} label={statusLabel(rated.verdict.status)} /></p>
+          <h2 class="m-0 text-xl leading-tight">{unit?.name || brand.name}</h2>
+          <div class="flex flex-wrap items-center gap-2">
+            <p class="m-0 text-sm text-muted-foreground">{unit?.location || brand.location}</p>
+            <VerdictStatusBadge status={rated.verdict.status} label={statusLabel(rated.verdict.status)} />
+          </div>
         </div>
       </div>
-      {photo?.src && (
-        <figure class="m-0 flex items-center gap-3">
-          <span class="relative inline-block">
-            <img class="h-20 w-32 border object-cover" src={photo.src} alt={photo.alt} width="128" height="80" loading="lazy" />
-            {badgeLabel && <span class="absolute left-0 top-0 bg-destructive px-2 py-1 text-[0.6rem] font-extrabold uppercase tracking-wider text-white shadow-sm" role="note">{badgeLabel}</span>}
-          </span>
-          <figcaption class="max-w-[16rem] text-[0.68rem] leading-snug text-muted-foreground">{t.photoCaption} · <a class="text-link" href={photo.source_url} target="_blank" rel="noopener noreferrer">Fonte ↗</a></figcaption>
-        </figure>
-      )}
-      <ButtonLink href={href}>{t.link} ↗</ButtonLink>
+      <div class="flex flex-wrap items-center gap-2.5">
+        <CaseImpactDrawer caseId={item.id} size="sm" />
+        <ButtonLink href={href}>{t.link} ↗</ButtonLink>
+      </div>
     </div>
   </section>
 )}

@@ -6,6 +6,7 @@ import schema from '../data/case-categories.json';
 import atlas from '../data/public-case-atlas.json';
 import politics from '../data/political-observatory.json';
 import platforms from '../data/platform-observatory.json';
+import visualAssets from '../data/case-visual-assets.json';
 import {cases, casePath} from './cases';
 
 export type CaseCategory={
@@ -15,6 +16,14 @@ export type CaseResearchEntry={
  id:string;slug:string;kind:'caso'|'historia';title:string;company:string;summary:string;
  category:string;categorySlug:string;href:string;status:string;date:string;location:string;
  featured:boolean;searchText:string;sourceCount:number;storyCount:number;
+ image:string;logo:string|null;imageKind:'photo'|'cover';
+};
+const visualById=new Map((visualAssets.assets as {case_id:string;photo?:string|null;logo?:string|null}[]).map(item=>[item.case_id,item]));
+const coverPath=(slug:string,kind:'caso'|'historia')=>kind==='historia'?`/og/historias/${slug}.png`:`/og/casos/${slug}.png`;
+const visualsFor=(id:string,slug:string,kind:'caso'|'historia')=>{
+ const asset=visualById.get(id);
+ const image=asset?.photo||coverPath(slug,kind);
+ return {image,logo:asset?.logo||null,imageKind:(asset?.photo?'photo':'cover') as 'photo'|'cover'};
 };
 export const categories: CaseCategory[]=schema.categories;
 const categoryMap=new Map(categories.flatMap(c=>c.case_ids.map(id=>[id,c] as const)));
@@ -35,7 +44,8 @@ export const caseStudies: CaseResearchEntry[]=[
    featured:item.id===schema.featured_case_id,
    searchText:[item.empresa,item.titulo,item.chamada,item.resumo,item.impacto,item.categoria,item.local,item.status,
      ...item.cronologia.map(t=>t.titulo+' '+t.texto),...category.search_terms].filter(Boolean).join(' '),
-   sourceCount:item.fontes.length,storyCount:0
+   sourceCount:item.fontes.length,storyCount:0,
+   ...visualsFor(item.id,item.slug,'caso')
   };
  }),
  ...atlas.cases.map(item=>{
@@ -47,7 +57,8 @@ export const caseStudies: CaseResearchEntry[]=[
    location:item.state,featured:false,
    searchText:[item.company,item.headline,item.deck,item.sector,item.state,item.lead,item.status_label,
      ...item.verified,...item.questions,...category.search_terms].join(' '),
-   sourceCount:item.sources.length,storyCount:item.story_slugs.length
+   sourceCount:item.sources.length,storyCount:item.story_slugs.length,
+   ...visualsFor(item.id,item.slug,'caso')
   };
  }),
  ...politics.cases.map(item=>{
@@ -59,7 +70,8 @@ export const caseStudies: CaseResearchEntry[]=[
    location:item.scope,featured:false,
    searchText:[item.topic,item.title,item.summary,item.scope,item.opening,item.status,
      ...item.facts.map(fact=>fact.finding),...item.questions,...category.search_terms].join(' '),
-   sourceCount:item.source_ids.length,storyCount:0
+   sourceCount:item.source_ids.length,storyCount:0,
+   ...visualsFor(item.id,item.slug,'caso')
   };
  }),
  ...[{
@@ -77,10 +89,11 @@ export const caseStudies: CaseResearchEntry[]=[
   location:'Brasil',
   featured:false,
   searchText:[platforms.topic,platforms.framing,...platforms.records.map(record=>[
-   record.platform,record.headline,record.finding,record.type,record.source_kind
+    record.platform,record.headline,record.finding,record.type,record.source_kind
   ].join(' ')),...categoryFor('PLAT-2026-CASE').search_terms].join(' '),
   sourceCount:platforms.records.length,
-  storyCount:0
+  storyCount:0,
+  ...visualsFor('PLAT-2026-CASE','meta-eleicoes-2026-governanca-plataformas','caso')
  }]
 ];
 const caseBySlug=new Map(caseStudies.map(item=>[item.slug,item]));
@@ -88,6 +101,9 @@ export const personalStories:CaseResearchEntry[]=atlas.stories.map(person=>{
  const related=person.case_slugs.map(slug=>caseBySlug.get(slug)).filter((value):value is CaseResearchEntry=>Boolean(value));
  const category=related[0]?categoryFor(related[0].id):undefined;
  if(!category)throw new Error('Story missing linked case: '+person.slug);
+ const inherited=related[0];
+ const own=visualsFor(person.id,person.slug,'historia');
+ const preferOwn=Boolean(visualById.get(person.id)?.photo);
  return {
   id:person.id,slug:person.slug,kind:'historia',title:person.headline,
   company:related.map(entry=>entry.company).join(' · '),summary:person.deck,
@@ -95,7 +111,10 @@ export const personalStories:CaseResearchEntry[]=atlas.stories.map(person=>{
   status:person.source_outcome,date:person.source_published_at,location:person.place,featured:false,
   searchText:[person.display_name,person.headline,person.deck,person.persona,person.category,
     person.place,...person.narrative, ...related.map(e=>e.company), ...category.search_terms].join(' '),
-  sourceCount:person.sources.length,storyCount:0
+  sourceCount:person.sources.length,storyCount:0,
+  image:preferOwn?own.image:(inherited?.image||own.image),
+  logo:preferOwn?own.logo:(inherited?.logo||own.logo),
+  imageKind:preferOwn?own.imageKind:(inherited?.imageKind||own.imageKind)
  };
 });
 export const allResearch=[...caseStudies,...personalStories];

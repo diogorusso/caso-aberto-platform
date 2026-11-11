@@ -1,30 +1,62 @@
 ---
+import {primaryImageForCase, visualAssetForCase} from '../lib/case-media';
+import { ArrowUpRight, FolderOpen } from 'lucide-react';
 interface Props {
   study: {
-    slug: string; company: string; sector: string; headline: string; deck: string;
+    id?: string; slug: string; company: string; sector: string; headline: string; deck: string;
     status_label: string; key_fact: {metric:string;label:string;period:string};
-    reviewed_at: string; record_type: string;
+    reviewed_at: string; record_type: string; sources?: {name:string;url:string}[];
   };
   compact?: boolean;
 }
 const {study,compact=false} = Astro.props;
-const url='https://casoaberto.pages.dev/casos/arquivo-publico/'+study.slug+'/';
-const whatsapp='https://wa.me/?text='+encodeURIComponent('CasoAberto: '+study.headline+'\nLeia documentos, cronologia e perguntas: '+url);
+const href='/casos/arquivo-publico/'+study.slug+'/';
+const visual = study.id ? visualAssetForCase(study.id) : undefined;
+const image = study.id ? primaryImageForCase(study.id) : undefined;
+const imageSrc = image?.src || ('/og/casos/'+study.slug+'.png');
+const logo = visual?.logo;
+const sourceCount = study.sources?.length;
 ---
-<article class="flex flex-col gap-4 border border-border bg-card p-6">
-  <img src={"/og/casos/"+study.slug+".png"} alt={"Imagem de apresentação do caso "+study.company} class="aspect-[1200/630] w-full rounded-md border border-border object-cover" width="1200" height="630" loading="lazy" decoding="async"/>
+<a
+  href={href}
+  target="_blank"
+  rel="noopener noreferrer"
+  class:list={[
+    'group flex flex-col gap-4 border border-border bg-card p-6 text-inherit no-underline transition-[border-color,box-shadow,transform] duration-200',
+    'hover:-translate-y-0.5 hover:border-brand/60 hover:shadow-md',
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2',
+  ]}
+  aria-label={'Abrir investigação: '+study.headline}
+>
+  <div class="relative overflow-hidden rounded-md border border-border">
+    <img src={imageSrc} alt="" class="aspect-[1200/630] w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" width="1200" height="630" loading="lazy" decoding="async"/>
+    {logo && (
+      <span class="absolute bottom-3 left-3 inline-flex h-11 max-w-[9.5rem] items-center justify-center border border-border bg-white px-2.5 shadow-sm">
+        <img src={logo} alt="" class="max-h-7 max-w-[8.5rem] object-contain" width="120" height="36" loading="lazy" decoding="async"/>
+      </span>
+    )}
+  </div>
   <div class="flex flex-wrap items-center justify-between gap-2 text-xs font-semibold uppercase tracking-wide">
     <span class="text-brand-strong">{study.sector}</span>
-    <span class="text-muted-foreground">PESQUISA CASOABERTO · {study.reviewed_at.split('-').reverse().join('/')}</span>
+    <span class="text-muted-foreground">PESQUISA · {study.reviewed_at.split('-').reverse().join('/')}</span>
   </div>
-  <h3 class:list={["m-0 leading-tight",compact?"text-xl":"text-2xl"]}>{study.headline}</h3>
-  <p class="m-0 text-sm font-semibold">{study.company}</p>
+  <h3 class:list={["m-0 leading-tight text-foreground transition-colors group-hover:text-brand-strong",compact?"text-xl":"text-2xl"]}>{study.headline}</h3>
+  <p class="m-0 text-sm font-semibold text-muted-foreground">{study.company}</p>
   <p class="m-0 flex-1 text-muted-foreground">{study.deck}</p>
   <div class="border-l-4 border-brand bg-muted p-4">
     <strong class="text-2xl">{study.key_fact.metric}</strong>
     <p class="m-0 text-sm">{study.key_fact.label}</p>
-    <p class="mt-2 text-xs text-muted-foreground">{study.key_fact.period}</p>
+    <p class="mt-2 mb-0 text-xs text-muted-foreground">{study.key_fact.period}</p>
   </div>
   <p class="m-0 text-xs text-muted-foreground">{study.status_label}</p>
-  <div class="flex flex-wrap items-center justify-between gap-3 border-t border-border pt-3"><a class="text-link font-semibold" href={'/casos/arquivo-publico/'+study.slug+'/'}>Abrir investigação ↗</a><a class="inline-flex min-h-11 items-center rounded-md border border-[#1c9c64] px-3 py-2 text-sm font-bold text-[#168557] no-underline hover:bg-muted" href={whatsapp} target="_blank" rel="noopener noreferrer">Compartilhar WhatsApp ↗</a></div>
-</article>
+  <div class="mt-auto flex items-center justify-between gap-3 border-t border-border pt-3">
+    <span class="inline-flex items-center gap-2 text-xs text-muted-foreground">
+      <FolderOpen size={15} aria-hidden="true"/>
+      {typeof sourceCount === 'number' ? (sourceCount === 1 ? '1 fonte' : sourceCount+' fontes') : 'Investigação documentada'}
+    </span>
+    <span class="inline-flex items-center gap-1 text-sm font-bold text-brand-strong">
+      Abrir investigação
+      <ArrowUpRight size={16} className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true"/>
+    </span>
+  </div>
+</a>

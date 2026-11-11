@@ -1,0 +1,69 @@
+---
+/**
+ * Compact logo wall above the footer: perfect federal grid + link to the full directory.
+ */
+import InstitutionSealTile from './InstitutionSealTile.astro';
+import { bannerChannels, institutionSeals } from '@/lib/institution-seals';
+
+const data = institutionSeals as typeof institutionSeals & {
+  banner_label?: string;
+  banner_cta?: string;
+  banner_cta_href?: string;
+};
+const banner = bannerChannels();
+const ctaHref = data.banner_cta_href || '/orgaos-oficiais/';
+const ctaLabel = data.banner_cta || 'Ver todos os órgãos oficiais';
+const onDirectoryPage = Astro.url.pathname.includes('/orgaos-oficiais');
+---
+{!onDirectoryPage && (
+<section
+  class="border-t border-border bg-[#eef1ea] py-12 md:py-16"
+  aria-labelledby="institution-seals-title"
+  data-print-hide
+>
+  <div class="container space-y-8">
+    <header class="mx-auto max-w-3xl text-center">
+      <p class="m-0 text-[0.7rem] font-extrabold uppercase tracking-[0.18em] text-brand-strong">
+        {data.eyebrow}
+      </p>
+      <h2 id="institution-seals-title" class="mb-3 mt-3 text-2xl leading-tight md:text-3xl">
+        {data.title}
+      </h2>
+      <p class="m-0 text-sm leading-relaxed text-muted-foreground md:text-base">
+        {data.description}
+      </p>
+    </header>
+
+    <div class="space-y-4">
+      <h3 class="m-0 text-center text-xs font-extrabold uppercase tracking-[0.16em] text-foreground/70">
+        {data.banner_label || data.federal_label}
+      </h3>
+      <ul
+        class="m-0 mx-auto grid max-w-6xl list-none grid-cols-2 gap-3 p-0 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6"
+        role="list"
+      >
+        {banner.map((item) => (
+          <li class="m-0 min-w-0">
+            <InstitutionSealTile
+              name={item.name}
+              short={item.short}
+              href={item.href}
+              logo={item.logo}
+              alt={item.alt}
+            />
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="flex justify-center pt-2">
+      <a
+        href={ctaHref}
+        class="inline-flex items-center gap-2 border border-[#c5d0c4] bg-white px-5 py-3 text-sm font-bold text-foreground no-underline transition-colors hover:border-brand hover:text-brand-strong focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+      >
+        {ctaLabel} ↗
+      </a>
+    </div>
+  </div>
+</section>
+)}

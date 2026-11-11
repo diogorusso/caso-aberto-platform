@@ -1,7 +1,24 @@
 ---
 import Section from './layout/Section.astro';
 import CaseActionBar from './CaseActionBar.astro';
-interface Props {title?:string;summary?:string;caseHref?:string}
-const {title='Compartilhe esta investigação',summary='',caseHref=Astro.url.pathname}=Astro.props;
+interface Props {title?:string;summary?:string;caseHref?:string;caseId?:string}
+const {title='Compartilhe esta investigação',summary='',caseHref=Astro.url.pathname,caseId}=Astro.props;
+const slug = caseHref.split('/').filter(Boolean).pop() || '';
 ---
-<div data-print-hide><Section tone="dark" eyebrow="COMPARTILHE A COBRANÇA" title="A empresa controla a publicidade. Você pode compartilhar os fatos." description="Cronologia, documentos e perguntas num único endereço. Envie para quem precisa conferir."><CaseActionBar title={title} summary={summary} href={caseHref} printHref={'/casos/imprimir/'+caseHref.split('/').filter(Boolean).pop()+'/'} /></Section></div>
+<div data-print-hide>
+  <Section
+    tone="dark"
+    eyebrow="COMPARTILHE A COBRANÇA"
+    title="Um link. Fontes incluídas."
+    description="Escreva a cobrança com textos prontos ou envie o dossiê completo. Cada botão faz uma coisa só."
+  >
+    <CaseActionBar
+      compact
+      title={title}
+      summary={summary}
+      href={caseHref}
+      caseId={caseId}
+      printHref={'/casos/imprimir/'+slug+'/'}
+    />
+  </Section>
+</div>

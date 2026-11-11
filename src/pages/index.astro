@@ -10,7 +10,6 @@ import Eyebrow from '../components/layout/Eyebrow.astro';
 import ButtonLink from '../components/layout/ButtonLink.astro';
 import ResearchMetrics from '../components/ResearchMetrics.astro';
 import ResearchBenchmarks from '../components/ResearchBenchmarks.astro';
-import CaseActionBar from '../components/CaseActionBar.astro';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '../components/ui/card';
 
 const companyStatuses = ratingDefinitions.slice().sort((a,b) => b.sort - a.sort);
@@ -33,15 +32,16 @@ const pathways = [
   breadcrumbs={[{name:'Início',item:'/'}]}
 >
   <section class="relative overflow-hidden bg-primary py-14 text-primary-foreground md:py-24" aria-labelledby="platform-home-title">
-    <div class="container relative z-10 space-y-7">
+    <div class="container relative z-10 stack-copy">
       <Eyebrow inverse class="flex items-center gap-2.5"><span class="size-2 bg-brand" aria-hidden="true"></span> CASOABERTO · PESQUISA, AUTONOMIA E AÇÃO CIDADÃ</Eyebrow>
       <h1 id="platform-home-title" class="m-0 max-w-5xl text-5xl leading-[0.98] tracking-[-0.06em] sm:text-6xl lg:text-8xl">O consumidor cobra.<br /><em class="text-[#ff917e] not-italic">Quem responde?</em></h1>
       <p class="m-0 max-w-2xl text-lg leading-relaxed text-white/75 md:text-xl">Dados públicos, pesquisa verificável e tecnologia a serviço de quem precisa de respostas. Investigue empresas, instituições e plataformas, organize demandas coletivas e aprenda a controlar sua presença digital.</p>
-      <div class="flex flex-wrap gap-2.5">
-        <ButtonLink variant="brand" size="lg" href="/casos/">Investigar os casos <span aria-hidden="true">↗</span></ButtonLink>
-        {featuredCase&&<ButtonLink variant="outline-inverse" size="lg" href={casePath(featuredCase)}>Caso em destaque <span aria-hidden="true">↗</span></ButtonLink>}
+      <div class="stack-tight pt-1">
+        <div>
+          <ButtonLink variant="brand" size="lg" href="/casos/">Investigar os casos <span aria-hidden="true">↗</span></ButtonLink>
+        </div>
+        <p class="m-0 border-t border-white/15 pt-4 text-sm font-medium text-white/60">Evidências rastreáveis <span aria-hidden="true" class="text-brand">·</span> Organização cidadã <span aria-hidden="true" class="text-brand">·</span> Autonomia e direitos digitais</p>
       </div>
-      <p class="m-0 border-t border-white/15 pt-6 text-sm font-medium text-white/60">Evidências rastreáveis <span aria-hidden="true" class="text-brand">·</span> Organização cidadã <span aria-hidden="true" class="text-brand">·</span> Autonomia e direitos digitais</p>
     </div>
     <div class="pointer-events-none absolute -right-4 -bottom-32 hidden text-[min(50vw,40rem)] leading-none font-black tracking-[-0.12em] text-forest select-none lg:block" aria-hidden="true">CA</div>
   </section>
@@ -49,9 +49,8 @@ const pathways = [
   <ResearchMetrics/>
 
   {featuredCase&&<Section eyebrow="CASO EM DESTAQUE · A COBRANÇA COMEÇA AQUI" title="R$ 190 mil pagos. Prazo estourado. Cadê os móveis?" description="A contratação da unidade de Ipanema abriu o arquivo CasoAberto. O consumidor pagou. A entrega não ocorreu no prazo relatado. Contrato, cronologia, empresa e perguntas estão publicados.">
-    <a slot="action" class="text-link font-semibold" href={casePath(featuredCase)}>Acompanhar o caso em destaque ↗</a>
+    <a slot="action" class="text-link font-semibold" href={casePath(featuredCase)}>Abrir o caso em destaque ↗</a>
     <CaseCard item={featuredCase} featured/>
-    <CaseActionBar title={featuredCase.titulo} summary={featuredCase.resumo} href={casePath(featuredCase)} caseId={featuredCase.id} printHref={"/casos/imprimir/"+featuredCase.slug+"/"}/>
    </Section>}
   <Section tone="muted" eyebrow="ACERVO DE PESQUISA" title="Não é só um problema. São setores inteiros cobrados." description="Viagens, entregas, móveis, energia e política. Todas as pesquisas do CasoAberto estão organizadas num único arquivo, com buscas por empresa, cidade, problema e categoria.">
     <a slot="action" class="text-link font-semibold" href="/casos/#pesquisar-casos">Pesquisar todos os casos ↗</a>
@@ -173,9 +172,9 @@ const pathways = [
       <Eyebrow inverse>DECISÕES MAIS INFORMADAS</Eyebrow>
       <h2 class="m-0 max-w-4xl text-4xl sm:text-5xl lg:text-7xl">Dados para compreender.<br/>Ferramentas para agir.</h2>
       <p class="m-0 max-w-2xl text-lg text-white/75">Investigue com fontes. Organize sem perder o controle da sua identidade, dos seus dados e das suas decisões.</p>
-      <div class="flex flex-wrap gap-2.5 pt-2">
-        <ButtonLink variant="inverse" size="lg" href="/instituto/">Pesquisar com o instituto ↗</ButtonLink>
-        <ButtonLink variant="outline-inverse" size="lg" href="/autonomia-digital/diagnostico/">Diagnóstico digital gratuito ↗</ButtonLink>
+      <div class="space-y-3 pt-2">
+        <ButtonLink variant="inverse" size="lg" href="/casos/">Abrir o arquivo de casos ↗</ButtonLink>
+        <p class="m-0 text-sm text-white/65">Depois: <a class="font-semibold text-brand no-underline hover:underline" href="/instituto/">instituto</a> · <a class="font-semibold text-brand no-underline hover:underline" href="/artigos/">artigos</a> · <a class="font-semibold text-brand no-underline hover:underline" href="/autonomia-digital/diagnostico/">diagnóstico digital</a></p>
       </div>
     </div>
   </section>

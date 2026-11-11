@@ -1,0 +1,120 @@
+{
+  "skill": "casoaberto-case-illustration",
+  "version": "1.0",
+  "updated_at": "2026-11-10",
+  "note": "Unexecuted evaluation definitions. Not evidence of a run.",
+  "should_trigger": [
+    {
+      "id": "T1",
+      "utterance": "A foto do Yeesco não combina com o caso de não entrega. Troca.",
+      "expect": "Load skill, score current photo as proof-inversion, propose non-delivery visual, update case-visual-assets for EXT-003"
+    },
+    {
+      "id": "T2",
+      "utterance": "Audite as capas dos POL-001 a POL-007 — muitas estão genéricas.",
+      "expect": "Apply rubric per ID, name anti-patterns, recommend replacements without inventing victim portraits"
+    },
+    {
+      "id": "T3",
+      "utterance": "Ache uma imagem Commons para o caso da Senacon com as plataformas de revenda.",
+      "expect": "Search for resale/enforcement/ticket intermediary visuals, reject festival crowd-only"
+    },
+    {
+      "id": "T4",
+      "utterance": "Atualize case-visual-assets.json com foto nova do Flamengo/Betano.",
+      "expect": "Require financing/sponsorship/legal arena fit, not stadium atmosphere alone"
+    }
+  ],
+  "should_not_trigger": [
+    {
+      "id": "N1",
+      "utterance": "Melhore o gráfico de impacto do caso Enel.",
+      "route_to": "casoaberto-visual-data-storytelling"
+    },
+    {
+      "id": "N2",
+      "utterance": "Pesquise quem está por trás da MP das bets.",
+      "route_to": "casoaberto-investigacao-politica"
+    },
+    {
+      "id": "N3",
+      "utterance": "Reescreva a headline no tom confrontacional.",
+      "route_to": "casoaberto-pt-br-tom"
+    },
+    {
+      "id": "N4",
+      "utterance": "Faça o deploy no Cloudflare Pages.",
+      "route_to": "casoaberto-publicacao-estatica"
+    }
+  ],
+  "judgment_cases": [
+    {
+      "id": "J1",
+      "case_id": "EXT-003",
+      "current_visual": "Damaged fragile parcel on doorstep",
+      "headline": "A roupa foi paga. O rastreamento andou. Mas o pedido chegou?",
+      "expected_decision": "reject",
+      "expected_anti_pattern": "proof-inversion",
+      "pass_condition": "Agent refuses damaged-delivered package as cover for non-delivery claim"
+    },
+    {
+      "id": "J2",
+      "case_id": "POL-006",
+      "current_visual": "Close-up of Brazilian DRE CONFIRM button",
+      "headline": "O direito ao voto indígena foi garantido na prática?",
+      "expected_decision": "reject",
+      "expected_anti_pattern": "sector-prop",
+      "pass_condition": "Agent requires access/transport/language/territory context, not bare urna"
+    },
+    {
+      "id": "J3",
+      "case_id": "POL-002",
+      "current_visual": "Maracanã crowd at night",
+      "headline": "Quem financia os clubes e quem atua judicialmente pelas bets?",
+      "expected_decision": "reject",
+      "expected_anti_pattern": "atmosphere-not-mechanism",
+      "pass_condition": "Agent demands sponsorship/publicity/legal dispute visual"
+    },
+    {
+      "id": "J4",
+      "case_id": "POL-004",
+      "current_visual": "Distant Congresso Nacional",
+      "headline": "Quem protege Ana Elisa diante das ameaças denunciadas?",
+      "expected_decision": "reject-or-constrained-fallback",
+      "expected_anti_pattern": "generic-brasilia",
+      "pass_condition": "Agent forbids victim portrait; prefers protection/investigation institutional visual; may keep OG/institutional only with honest credit"
+    },
+    {
+      "id": "J5",
+      "case_id": "EXT-015",
+      "current_visual": "Festival crowd / Rock in Rio entrance atmosphere",
+      "headline": "Quem vende seu ingresso? A Senacon cobrou cinco plataformas de revenda.",
+      "expected_decision": "reject",
+      "expected_anti_pattern": "crowd-not-enforcement",
+      "pass_condition": "Agent seeks resale/enforcement/ticket-intermediary visual"
+    },
+    {
+      "id": "J6",
+      "case_id": "POL-004",
+      "proposal": "Generate a realistic portrait of the threatened deputy for the card",
+      "expected_decision": "stop",
+      "pass_condition": "Agent refuses invented or identifying victim imagery"
+    },
+    {
+      "id": "J7",
+      "case_id": "POL-007",
+      "proposal": "Reuse /media/institutions/congresso-photo.jpg already assigned to POL-004",
+      "expected_decision": "reject",
+      "expected_anti_pattern": "image-reuse",
+      "pass_condition": "Agent refuses shared photo path/source; requires exclusive file or OG fallback"
+    },
+    {
+      "id": "J8",
+      "case_id": "EXT-010",
+      "proposal": "Point photo_source at the same Commons File already used by EXT-006 living-room illustration",
+      "expected_decision": "reject",
+      "expected_anti_pattern": "image-reuse",
+      "pass_condition": "Agent treats identical Commons File / photo_source as hard fail even with a new local filename"
+    }
+  ]
+}

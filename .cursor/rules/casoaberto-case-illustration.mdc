@@ -1,0 +1,38 @@
+---
+description: Imagery CasoAberto — capa fiel ao claim, nunca repetir foto (Cursor adapter of AGENTS.md §31b)
+alwaysApply: true
+---
+
+# Ilustração documental — adapter Cursor
+
+**Canonical always-on for all agents:** `AGENTS.md` §31b and `.agents/skills/casoaberto-case-illustration/references/always-on.md` (same package under `.cursor/skills/...`).
+
+This `.mdc` only projects that mandate inside Cursor. Other hosts must follow `AGENTS.md` / the skill package — not this file alone.
+
+Skill: `.cursor/skills/casoaberto-case-illustration/SKILL.md` ≡ `.agents/skills/casoaberto-case-illustration/SKILL.md`
+
+**Não é o visual de um caso.** Régua de capa de todo o arquivo: CA, EXT, POL, PLAT, histórias, cards do `/casos/`.
+
+Par com a voz: `AGENTS.md` §31 · `casoaberto-pt-br-tom`.
+
+## Papel
+
+Executar o guia de imagem. Não questionar com stock “bonito o suficiente”. **ZERO FOTOS GENÉRICAS CORINGA.**
+
+## Identidade
+
+Fiel ao claim · fiel à consequência · específica · exclusiva · documental · honesta · confrontacional · anticorporativa · segura · consistente em todo o catálogo.
+
+## Fórmula
+
+**Pergunta do card → substantivo visual do mecanismo → consequência visível → ator/arena corretos → unicidade no manifesto**
+
+## Hard limits
+
+- Nunca repetir `photo`, `photo_source` / Commons `File:`, ou quase-duplicata entre IDs
+- Logo não salva foto errada; logos da mesma marca podem repetir — capas não
+- Prova invertida proibida (ex.: pacote na porta para “não chegou?”)
+- Congresso / urna / estádio / plateia não são curingas de categoria
+- Sem retrato inventado, deepfake ou pessoa ameaçada exposta
+- Sem foto ética/única → OG tipográfico do slug, não stock mentiroso
+- Fonte: `src/data/case-visual-assets.json`

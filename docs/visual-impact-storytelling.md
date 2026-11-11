@@ -12,8 +12,10 @@ O objetivo agora é responder: **o que está documentado, quem pode ser afetado,
 
 - `src/data/impact-stories.json`: texto editorial específico de cada caso. São 17 narrativas cobrindo CA-001, oito estudos externos, sete investigações políticas e o observatório de plataformas.
 - `src/lib/visual-impact.ts`: camada que calcula KPIs sem fundir universos; gera métricas, trilha temporal, barras, referência documental e caminho de impressão a partir das fontes existentes.
-- `src/components/CaseEvidenceChart.astro`: gráfico acessível com SVG estático, tipografia, bordas, espaços e cores do design system shadcn/Tailwind existente. Anima traçado/barra respeitando `prefers-reduced-motion`; o conteúdo é lido sem hidratação JavaScript. Evita Recharts no frontend quando o render estático já entrega a história com menor custo e acessibilidade nativa.
-- `src/components/CaseVisualStory.astro`: headline, badges, ícones Lucide, quatro KPIs, gráfico, consequência mais crítica plausível, situação atual, prova de resolução e material A4 integrado.
+- `src/components/CaseEvidenceChart.astro`: progressive enhancement. No browser moderno carrega a ilha `EvidenceChart` (shadcn Chart + Recharts + Motion) com tooltips, hover e animação; sem JS/`noscript` e na impressão permanece o SVG/tabela estáticos. Datas e magnitudes continuam vindas do dossiê.
+- `src/components/islands/EvidenceChart.tsx`, `ImpactMetricGrid.tsx`, `StoryConsequencePanel.tsx`, `ResearchMetricsBoard.tsx`: ilhas React com Motion (`motion/react`), `prefers-reduced-motion` e tipografia/cores do design system.
+- `src/components/CaseVisualStory.astro`: headline, badges, ícones Lucide, quatro KPIs animados, gráfico interativo, consequência mais crítica plausível, situação atual, prova de resolução e material A4 integrado.
+- `src/lib/case-visibility.ts` + `CaseVisibilityBadge.astro` / `CaseVisibilityCounter.tsx`: métrica sutil e reutilizável de alcance projetado (não analytics). Snapshot uma vez por reload; cresce no dia (`America/Sao_Paulo`). Mesmo chip no meta do header e nos cards: `👁 NNN olhos hoje` (tooltip/aria: “Já viram o risco. A empresa ainda cala.”).
 - `src/pages/casos/imprimir/[slug].astro`: uma ficha pública por caso, URL estável, impressão pelo navegador, quatro fontes destacadas com títulos, fonte completa no caso, sem dados pessoais.
 - `src/pages/casos/impacto.json.ts`: JSON estático com casos, KPIs, cronologia, fonte e ligações de impressão, para outros agentes/serviços reutilizarem o registro sem scraping da UI.
 - `src/components/CaseSectionHub.astro`: organiza rotas de aprofundamento em **Entenda → Comprove → Tenha o material em mãos**, mantendo URLs históricas.
@@ -31,7 +33,9 @@ O objetivo agora é responder: **o que está documentado, quem pode ser afetado,
 
 **Permitido:** valor relatado com atribuição, tempo entre duas datas do próprio caso, contagem de URLs únicas, número de evidências no arquivo, reclamações com seu denominador, marcos documentais com fonte, distribuição histórica de patrocinadores conforme levantamento datado.
 
-**Jamais fabricar:** visitantes do CasoAberto, torcida alcançada, eleitores influenciados, probabilidade de falência, faturamento perdido, ações judiciais hipotéticas ou valores indenizatórios não calculados na fonte.
+**Jamais fabricar:** visitantes reais do CasoAberto como analytics, torcida alcançada, eleitores influenciados, probabilidade de falência, faturamento perdido, ações judiciais hipotéticas ou valores indenizatórios não calculados na fonte.
+
+**Projeção de alcance permitida:** o contador de visibilidade (`case-visibility.ts`) é modelo editorial de exposição em circulação — rotulado como projeção/alcance, não como medição de pageviews. Serve para comunicar impacto e pressão pública; não substitui KPIs documentais.
 
 O gráfico de cronologia conta os **marcos catalogados no dossiê** e não o volume total de incidentes no país. O de barras é construído de registros da mesma população (classes de reclamações) ou de uma fotografia histórica de clubes patrocinados; há texto de origem próximo ao visual.
 

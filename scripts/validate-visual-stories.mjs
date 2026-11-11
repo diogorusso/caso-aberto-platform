@@ -30,14 +30,27 @@ for(const key of Object.keys(impact.case_models)){
  check(!impact.case_models[key].scenario_defaults,'Deprecated sliders/model levers still present '+key);
 }
 const required={
- 'src/components/CaseVisualStory.astro':'caseStory(caseId)',
+ 'src/components/CaseVisualStory.astro':'IMPACTO DOCUMENTADO',
  'src/components/CaseEvidenceChart.astro':'role="img"',
+ 'src/components/islands/EvidenceChart.tsx':'recharts',
+ 'src/components/islands/ImpactStoryDrawer.tsx':'Se a situação continuar',
+ 'src/components/CaseImpactDrawer.astro':'ImpactStoryDrawer',
+ 'src/components/CaseVisibilityBadge.astro':'data-visibility-metric',
+ 'src/components/CaseIntro.astro':'CaseVisibilityBadge',
+ 'src/components/CaseCard.astro':'CaseVisibilityBadge',
+ 'src/components/islands/CaseVisibilityCounter.tsx':'visibilityFromInput',
+ 'src/lib/case-visibility-model.ts':'visibilityDayProgress',
+ 'src/lib/case-visibility.ts':'visibilityInputFromEntry',
+ 'src/lib/copy.ts':'Já viram o risco. A empresa ainda cala.',
+ 'src/components/ui/chart.tsx':'ChartContainer',
  'src/pages/casos/[slug]/index.astro':'<CaseVisualStory caseId={item.id}/>',
- 'src/pages/casos/arquivo-publico/[slug]/index.astro':'<CaseVisualStory caseId={study.id}/>',
- 'src/pages/observatorio/politica/[slug]/index.astro':'<CaseVisualStory caseId={study.id}/>',
- 'src/pages/observatorio/plataformas/index.astro':'<CaseVisualStory caseId="PLAT-2026-CASE"/>',
+ 'src/pages/casos/arquivo-publico/[slug]/index.astro':'CaseVisibilityBadge',
+ 'src/pages/observatorio/politica/[slug]/index.astro':'CaseVisibilityBadge',
+ 'src/pages/observatorio/plataformas/index.astro':'CaseVisibilityBadge',
+ 'src/pages/historias/[slug]/index.astro':'CaseVisibilityBadge',
  'src/pages/casos/imprimir/[slug].astro':'getStaticPaths',
  'src/components/ImpactBody.astro':'<CaseVisualStory caseId={linkedCase.id} compact />',
+ 'src/components/islands/CaseResearchExplorer.tsx':'CaseVisibilityCounter',
 };
 for(const [path,needle] of Object.entries(required)){
  const target=new URL('../'+path,import.meta.url);
@@ -49,5 +62,16 @@ check(!existsSync(simulator),'Deprecated calculator/sliders still shipped');
 for(const article of external.cases)check(article.timeline.length>=2&&article.sources.length>=2,'External case lacks chart provenance '+article.id);
 for(const article of political.cases)check(article.timeline.length>=2&&article.source_ids.length>=2,'Political case lacks chart provenance '+article.id);
 check(platform.records.length>=2,'Platform observatory lacks time series source');
+// Visibility projection model: deterministic day curve must keep rising.
+{
+ const model=readFileSync(new URL('../src/lib/case-visibility-model.ts',import.meta.url),'utf8');
+ check(model.includes('America/Sao_Paulo'),'Visibility model missing Sao Paulo day clock');
+ check(model.includes('visibilityDayProgress'),'Visibility day progress missing');
+ check(copyHasVisibility(),'Visibility confrontational copy missing from copy.ts');
+}
+function copyHasVisibility(){
+ const copy=readFileSync(new URL('../src/lib/copy.ts',import.meta.url),'utf8');
+ return copy.includes('olhos hoje')&&copy.includes('Já viram o risco. A empresa ainda cala.');
+}
 if(errors.length){for(const error of errors)console.error('[visual-stories]',error);process.exit(1);}
-console.log('Visual story validation: '+known.size+' cases, universal print route, source-backed charts, no numeric sliders.');
+console.log('Visual story validation: '+known.size+' cases, universal print route, source-backed charts, visibility projections, no numeric sliders.');

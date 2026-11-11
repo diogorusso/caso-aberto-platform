@@ -1,0 +1,35 @@
+---
+/** Astro bridge: serialize caseActionPlan() into the action drawer island. */
+import ActionDrawer from './islands/ActionDrawer';
+import { caseActionPlan } from '../lib/case-actions';
+interface Props {
+  caseId: string;
+  triggerLabel?: string;
+  size?: 'sm' | 'default';
+  variant?: 'default' | 'brand';
+  className?: string;
+}
+const { caseId, size = 'default', variant = 'brand', className } = Astro.props;
+const plan = caseActionPlan(caseId);
+const triggerLabel =
+  Astro.props.triggerLabel || (plan.isCivic ? 'Pedir informação pública' : 'Escrever cobrança');
+const payload = {
+  id: plan.id,
+  title: plan.title,
+  company: plan.company,
+  summary: plan.summary,
+  href: plan.href,
+  isCivic: plan.isCivic,
+  judicialNote: plan.judicialNote,
+  templates: plan.templates,
+  channels: plan.channels,
+};
+---
+<ActionDrawer
+  client:load
+  plan={payload}
+  triggerLabel={triggerLabel}
+  size={size}
+  variant={variant}
+  className={className}
+/>

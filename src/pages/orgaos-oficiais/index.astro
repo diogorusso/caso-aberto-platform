@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CivicPageHeader from '../../components/CivicPageHeader.astro';
+import InstitutionSealTile from '../../components/InstitutionSealTile.astro';
+import {
+  allChannels,
+  institutionSeals,
+  roleLabel,
+  type InstitutionChannel,
+  type InstitutionState,
+} from '@/lib/institution-seals';
+
+const data = institutionSeals as typeof institutionSeals & {
+  page_title?: string;
+  page_description?: string;
+  participation_label?: string;
+  participation?: InstitutionChannel[];
+};
+const federal = data.federal as InstitutionChannel[];
+const participation = data.participation || [];
+const featuredStates = (data.states as InstitutionState[]).filter((s) => s.featured);
+const allStates = data.states as InstitutionState[];
+const proconByState = allStates.map((state) => {
+  const procon = state.channels.find((c) => c.role === 'procon') || state.channels[0];
+  return { uf: state.uf, name: state.name, channel: procon };
+});
+const total = allChannels().length;
+const pageTitle = `${data.page_title || 'Órgãos oficiais'} | CasoAberto`;
+const pageDescription =
+  data.page_description ||
+  'Mapa de selos e canais oficiais usados na pesquisa CasoAberto: União, petições, enquetes, consultas e Procons de todos os estados.';
+---
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <CivicPageHeader
+    eyebrow="ÓRGÃOS OFICIAIS · FONTES PÚBLICAS"
+    title="Os canais oficiais existem. Use-os."
+    lead={`${total} selos e portais oficiais: União, Congresso, petições, enquetes, consultas públicas, Procons, tribunais e defensorias. Cada link abre o site da instituição.`}
+    note="CasoAberto não é órgão do governo. Estes são os canais públicos usados na pesquisa — cobrem, documentam e conferem a fonte."
+  />
+
+  <section class="border-b bg-[#eef1ea] py-12 md:py-14" aria-labelledby="federal-dir-title">
+    <div class="container space-y-6">
+      <div class="max-w-3xl">
+        <p class="m-0 text-[0.7rem] font-extrabold uppercase tracking-[0.16em] text-brand-strong">01 · União</p>
+        <h2 id="federal-dir-title" class="mb-2 mt-2 text-2xl md:text-3xl">{data.federal_label}</h2>
+        <p class="m-0 text-sm text-muted-foreground">Executivo, Congresso, reguladores e Justiça federal com selo oficial.</p>
+      </div>
+      <ul class="m-0 grid list-none grid-cols-2 gap-3 p-0 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7" role="list">
+        {federal.map((item) => (
+          <li class="m-0 min-w-0">
+            <InstitutionSealTile name={item.name} short={item.short} href={item.href} logo={item.logo} alt={item.alt} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  {participation.length > 0 && (
+    <section class="border-b bg-card py-12 md:py-14" aria-labelledby="participation-dir-title">
+      <div class="container space-y-6">
+        <div class="max-w-3xl">
+          <p class="m-0 text-[0.7rem] font-extrabold uppercase tracking-[0.16em] text-brand-strong">02 · Participação</p>
+          <h2 id="participation-dir-title" class="mb-2 mt-2 text-2xl md:text-3xl">{data.participation_label}</h2>
+          <p class="m-0 text-sm text-muted-foreground">Petição, abaixo-assinado legislativo, enquete e consulta pública — só canais oficiais.</p>
+        </div>
+        <ul class="m-0 grid list-none grid-cols-2 gap-3 p-0 sm:grid-cols-3 lg:grid-cols-6" role="list">
+          {participation.map((item) => (
+            <li class="m-0 min-w-0">
+              <InstitutionSealTile
+                name={item.name}
+                short={item.short}
+                href={item.href}
+                logo={item.logo}
+                alt={item.alt}
+                caption={`${roleLabel(item.role)} ↗`}
+              />
+            </li>
+          ))}
+        </ul>
+        <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {participation.map((item) => (
+            item.note ? (
+              <article class="border border-border bg-muted/40 p-4">
+                <h3 class="m-0 text-base">{item.short}</h3>
+                <p class="mb-0 mt-2 text-sm leading-relaxed text-muted-foreground">{item.note}</p>
+                <a class="mt-3 inline-block text-sm font-semibold text-link" href={item.href} target="_blank" rel="noopener noreferrer">Abrir {item.short} ↗</a>
+              </article>
+            ) : null
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="border-b bg-[#eef1ea] py-12 md:py-14" aria-labelledby="featured-dir-title">
+    <div class="container space-y-8">
+      <div class="max-w-3xl">
+        <p class="m-0 text-[0.7rem] font-extrabold uppercase tracking-[0.16em] text-brand-strong">03 · Estados documentados</p>
+        <h2 id="featured-dir-title" class="mb-2 mt-2 text-2xl md:text-3xl">{data.featured_label}</h2>
+        <p class="m-0 text-sm text-muted-foreground">Governo, Procon, tribunal e defensoria onde a pesquisa CasoAberto já cobrou respostas.</p>
+      </div>
+      {featuredStates.map((state) => (
+        <div class="space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="text-[0.7rem] font-black uppercase tracking-[0.18em] text-brand-strong">{state.uf}</span>
+            <span class="h-px flex-1 bg-[#d5ddd4]" aria-hidden="true"></span>
+            <span class="text-sm font-semibold text-foreground">{state.name}</span>
+          </div>
+          <ul class="m-0 grid list-none grid-cols-2 gap-3 p-0 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5" role="list">
+            {state.channels.map((item) => (
+              <li class="m-0 min-w-0">
+                <InstitutionSealTile
+                  name={item.name}
+                  short={item.short}
+                  href={item.href}
+                  logo={item.logo}
+                  alt={item.alt}
+                  caption={`${roleLabel(item.role)} ↗`}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-card py-12 md:py-14" aria-labelledby="procons-dir-title">
+    <div class="container space-y-6">
+      <div class="max-w-3xl">
+        <p class="m-0 text-[0.7rem] font-extrabold uppercase tracking-[0.16em] text-brand-strong">04 · Todos os estados</p>
+        <h2 id="procons-dir-title" class="mb-2 mt-2 text-2xl md:text-3xl">{data.other_label}</h2>
+        <p class="m-0 text-sm text-muted-foreground">Brasão oficial e link do Procon estadual — as 27 unidades da federação.</p>
+      </div>
+      <ul class="m-0 grid list-none grid-cols-3 gap-2.5 p-0 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-11" role="list">
+        {proconByState.map(({ uf, channel }) => (
+          <li class="m-0 min-w-0">
+            <InstitutionSealTile
+              name={channel.name}
+              short={uf}
+              href={channel.href}
+              logo={channel.logo}
+              alt={channel.alt}
+              caption="Procon ↗"
+              compact
+            />
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="border-t bg-muted py-12">
+    <div class="container flex flex-col items-start justify-between gap-5 md:flex-row md:items-center">
+      <div>
+        <h2 class="m-0 text-2xl">Ache o caso. Abra a fonte. Cobre a resposta.</h2>
+        <p class="mb-0 mt-2 max-w-2xl text-sm text-muted-foreground">O arquivo CasoAberto liga cada investigação aos canais oficiais. Não invente o caminho.</p>
+      </div>
+      <div class="flex flex-wrap gap-4">
+        <a class="text-link font-semibold" href="/casos/">Pesquisar casos ↗</a>
+        <a class="text-link font-semibold" href="/organizar/caderno-de-acao/">Documentar meu problema ↗</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

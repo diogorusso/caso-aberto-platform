@@ -21,7 +21,7 @@ const tones: Record<SectionTone, string> = {
   contrast: 'bg-primary text-primary-foreground',
   accent: 'bg-brand-strong text-white',
 };
-const sizes = { sm: 'py-10 md:py-12', md: 'py-14 md:py-20', lg: 'py-16 md:py-24' };
+const sizes = { sm: 'py-10 md:py-12', md: 'py-12 md:py-16', lg: 'py-14 md:py-20' };
 const inverse = tone === 'dark' || tone === 'contrast' || tone === 'accent';
 const hasAction = Astro.slots.has('action');
 const hasTitle = Astro.slots.has('title');
@@ -30,8 +30,8 @@ const hasTitle = Astro.slots.has('title');
   <div class="container">
     <div class={cn(narrow && 'mx-auto max-w-3xl')}>
       {(eyebrow || title || hasTitle) && (
-        <header class="mb-8 flex flex-col gap-5 md:mb-10 md:flex-row md:items-end md:justify-between">
-          <div class="max-w-3xl space-y-3">
+        <header class="mb-6 flex flex-col gap-4 md:mb-8 md:flex-row md:items-end md:justify-between">
+          <div class="stack-copy max-w-3xl">
             {eyebrow && <Eyebrow inverse={inverse}>{eyebrow}</Eyebrow>}
             {hasTitle ? <h2 class="m-0"><slot name="title" /></h2> : title && <h2 class="m-0">{title}</h2>}
             {description && <p class={cn('m-0 text-lg leading-relaxed', inverse ? 'text-white/75' : 'text-muted-foreground')}>{description}</p>}

@@ -17,5 +17,5 @@ if(!entry)throw new Error('Missing case action OG entry: '+id);
   </div>
  </div>
  <CaseActionHub caseId={id}/>
- <section class="container space-y-5 py-12"><h2 class="m-0 text-2xl">Faça a pesquisa circular.</h2><CaseActionBar caseId={plan.id} title={plan.title} summary={plan.summary} href={plan.href} printHref={'/casos/imprimir/'+entry.slug+'/'} showComplaint={!plan.isCivic}/></section>
+ <section class="container space-y-5 py-12"><h2 class="m-0 text-2xl">Faça a pesquisa circular.</h2><CaseActionBar compact caseId={plan.id} title={plan.title} summary={plan.summary} href={plan.href} printHref={'/casos/imprimir/'+entry.slug+'/'} showComplaint={!plan.isCivic}/></section>
 </BaseLayout>

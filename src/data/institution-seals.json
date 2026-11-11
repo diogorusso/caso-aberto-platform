@@ -1,0 +1,819 @@
+{
+  "version": 2,
+  "reviewed_at": "2026-11-10",
+  "eyebrow": "Órgãos oficiais",
+  "title": "As instituições públicas. Os canais oficiais. A cobrança começa aqui.",
+  "description": "Selos oficiais da União e de todos os estados: Procon, governo, tribunais e defensorias usadas na pesquisa CasoAberto. Abra o site oficial e confira a fonte.",
+  "federal_label": "União e órgãos federais",
+  "states_label": "Estados e Distrito Federal",
+  "featured_label": "Estados com casos documentados",
+  "other_label": "Procons estaduais",
+  "federal": [
+    {
+      "id": "brasil",
+      "name": "República Federativa do Brasil",
+      "short": "Brasil",
+      "href": "https://www.gov.br/",
+      "logo": "/media/institutions/seals/brasil-brasao.png",
+      "alt": "Brasão de armas da República Federativa do Brasil",
+      "logo_source": "https://commons.wikimedia.org/wiki/File:Coat_of_arms_of_Brazil_(variant_1).svg"
+    },
+    {
+      "id": "govbr",
+      "name": "Portal Gov.br",
+      "short": "Gov.br",
+      "href": "https://www.gov.br/",
+      "logo": "/media/institutions/seals/govbr.svg",
+      "alt": "Logotipo oficial do portal Gov.br",
+      "logo_source": "https://commons.wikimedia.org/wiki/File:Gov.br_logo.svg"
+    },
+    {
+      "id": "consumidor-gov",
+      "name": "Consumidor.gov.br",
+      "short": "Consumidor.gov",
+      "href": "https://www.consumidor.gov.br/",
+      "logo": "/media/institutions/seals/governo-federal.png",
+      "alt": "Identidade visual Brasil — portal Consumidor.gov.br",
+      "logo_source": "https://commons.wikimedia.org/wiki/File:Brazilian_government_logo_(2025).svg"
+    },
+    {
+      "id": "senacon",
+      "name": "Senacon — Ministério da Justiça",
+      "short": "Senacon",
+      "href": "https://www.gov.br/mj/pt-br/assuntos/seus-direitos/consumidor",
+      "logo": "/media/institutions/seals/brasil-brasao.png",
+      "alt": "Brasão da República — Senacon / MJSP",
+      "logo_source": "https://commons.wikimedia.org/wiki/File:Coat_of_arms_of_Brazil_(variant_1).svg"
+    },
+    {
+      "id": "cgu",
+      "name": "Controladoria-Geral da União — Fala.BR",
+      "short": "CGU / Fala.BR",
+      "href": "https://falabr.cgu.gov.br/v2/",
+      "logo": "/media/institutions/seals/governo-federal.png",
+      "alt": "Identidade Brasil — CGU / Fala.BR",
+      "logo_source": "https://commons.wikimedia.org/wiki/File:Brazilian_government_logo_(2025).svg"
+    },
+    {
+      "id": "aneel",
+      "name": "ANEEL",
+      "short": "ANEEL",
+      "href": "https://www.gov.br/aneel/pt-br",
+      "logo": "/media/institutions/seals/aneel.png",
+      "alt": "Logotipo oficial da ANEEL",
+      "logo_source": "https://commons.wikimedia.org/wiki/File:Aneel.png"
+    },
+    {
+      "id": "anatel",
+      "name": "Anatel",
+      "short": "Anatel",
+      "href": "https://www.gov.br/anatel/pt-br",
+      "logo": "/media/institutions/seals/anatel.png",
+      "alt": "Logotipo oficial da Anatel",
+      "logo_source": "https://commons.wikimedia.org/wiki/File:Anatel_Logo.svg"
+    },
+    {
+      "id": "cnj",
+      "name": "Conselho Nacional de Justiça",
+      "short": "CNJ",
+      "href": "https://www.cnj.jus.br/",
+      "logo": "/media/institutions/seals/cnj.png",
+      "alt": "Logotipo oficial do CNJ",
+      "logo_source": "https://commons.wikimedia.org/wiki/File:Logo_cnj.jpg"
+    },
+    {
+      "id": "stj",
+      "name": "Superior Tribunal de Justiça",
+      "short": "STJ",
+      "href": "https://www.stj.jus.br/",
+      "logo": "/media/institutions/seals/stj.svg",
+      "alt": "Logotipo oficial do STJ",
+      "logo_source": "https://commons.wikimedia.org/wiki/File:Superior_Tribunal_de_Justi%C3%A7a_logo.svg"
+    },
+    {
+      "id": "stf",
+      "name": "Supremo Tribunal Federal",
+      "short": "STF",
+      "href": "https://www.stf.jus.br/",
+      "logo": "/media/institutions/seals/stf-brasao.png",
+      "alt": "Brasão usado pelo STF",
+      "logo_source": "https://commons.wikimedia.org/wiki/File:Coat_of_arms_of_Brazil_(variant_B%26W_from_STF).svg"
+    },
+    {
+      "id": "mpf",
+      "name": "Ministério Público Federal",
+      "short": "MPF",
+      "href": "https://www.mpf.mp.br/",
+      "logo": "/media/institutions/seals/brasil-brasao.png",
+      "alt": "Brasão da República — Ministério Público Federal",
+      "logo_source": "https://commons.wikimedia.org/wiki/File:Coat_of_arms_of_Brazil_(variant_1).svg"
+    },
+    {
+      "id": "senado",
+      "name": "Senado Federal",
+      "short": "Senado",
+      "href": "https://www12.senado.leg.br/hpsenado",
+      "logo": "/media/institutions/seals/senado.png",
+      "alt": "Logotipo oficial do Senado Federal",
+      "logo_source": "https://commons.wikimedia.org/wiki/File:S%C3%ADmbolo_do_Senado_Federal_do_Brasil.svg"
+    },
+    {
+      "id": "camara",
+      "name": "Câmara dos Deputados",
+      "short": "Câmara",
+      "href": "https://www.camara.leg.br/",
+      "logo": "/media/institutions/seals/camara.png",
+      "alt": "Logotipo oficial da Câmara dos Deputados",
+      "logo_source": "https://www2.camara.leg.br/logo.png"
+    }
+  ],
+  "states": [
+    {
+      "uf": "RJ",
+      "name": "Rio de Janeiro",
+      "featured": true,
+      "channels": [
+        {
+          "id": "rj-governo",
+          "role": "governo",
+          "short": "Governo RJ",
+          "name": "Governo do Estado do Rio de Janeiro",
+          "href": "https://www.rj.gov.br/",
+          "logo": "/media/institutions/seals/governo-rj.png",
+          "alt": "Brasão oficial do Estado do Rio de Janeiro",
+          "logo_source": "https://www.rj.gov.br/assets/images/rjlogo.svg"
+        },
+        {
+          "id": "rj-procon",
+          "role": "procon",
+          "short": "Procon-RJ",
+          "name": "Procon Rio de Janeiro",
+          "href": "https://www.procononline.rj.gov.br/",
+          "logo": "/media/institutions/seals/states/RJ.png",
+          "alt": "Brasão do RJ — Procon",
+          "logo_source": "https://commons.wikimedia.org/wiki/File:Bras%C3%A3o_do_estado_do_Rio_de_Janeiro.svg"
+        },
+        {
+          "id": "rj-tj",
+          "role": "tj",
+          "short": "TJRJ",
+          "name": "Tribunal de Justiça do Rio de Janeiro",
+          "href": "https://www.tjrj.jus.br/",
+          "logo": "/media/institutions/seals/tjrj.png",
+          "alt": "Logotipo do Poder Judiciário do RJ",
+          "logo_source": "https://www.tjrj.jus.br/o/theme-tjrj-new/images/header/logo-tjrj.png"
+        },
+        {
+          "id": "rj-defensoria",
+          "role": "defensoria",
+          "short": "Defensoria RJ",
+          "name": "Defensoria Pública do Rio de Janeiro",
+          "href": "https://defensoria.rj.def.br/Atendimento/",
+          "logo": "/media/institutions/seals/defensoria-rj-color.png",
+          "alt": "Logotipo da Defensoria Pública do RJ",
+          "logo_source": "https://defensoria.rj.def.br/Content/portal2025/images/logo/logo.svg"
+        },
+        {
+          "id": "rj-prefeitura",
+          "role": "prefeitura",
+          "short": "Prefeitura Rio",
+          "name": "Prefeitura da Cidade do Rio de Janeiro",
+          "href": "https://www.rio.rj.gov.br/",
+          "logo": "/media/institutions/seals/rio-cidade-brasao.png",
+          "alt": "Brasão da Cidade do Rio de Janeiro",
+          "logo_source": "https://commons.wikimedia.org/wiki/File:Bras%C3%A3o_da_cidade_do_Rio_de_Janeiro.svg"
+        }
+      ]
+    },
+    {
+      "uf": "SP",
+      "name": "São Paulo",
+      "featured": true,
+      "channels": [
+        {
+          "id": "sp-governo",
+          "role": "governo",
+          "short": "Governo SP",
+          "name": "Governo do Estado de São Paulo",
+          "href": "https://www.saopaulo.sp.gov.br/",
+          "logo": "/media/institutions/seals/states/SP.png",
+          "alt": "Brasão do Estado de São Paulo",
+          "logo_source": "https://commons.wikimedia.org/wiki/File:Bras%C3%A3o_do_estado_de_S%C3%A3o_Paulo.svg"
+        },
+        {
+          "id": "sp-procon",
+          "role": "procon",
+          "short": "Procon-SP",
+          "name": "Fundação Procon-SP",
+          "href": "https://www.procon.sp.gov.br/",
+          "logo": "/media/institutions/seals/states/SP.png",
+          "alt": "Brasão de SP — Procon",
+          "logo_source": "https://commons.wikimedia.org/wiki/File:Bras%C3%A3o_do_estado_de_S%C3%A3o_Paulo.svg"
+        },
+        {
+          "id": "sp-tj",
+          "role": "tj",
+          "short": "TJSP",
+          "name": "Tribunal de Justiça de São Paulo",
+          "href": "https://www.tjsp.jus.br/",
+          "logo": "/media/institutions/seals/tjsp.png",
+          "alt": "Logotipo oficial do TJSP",
+          "logo_source": "https://www.tjsp.jus.br/Download/Imagens/Logo/Logotipo_TJSP_original.png"
+        },
+        {
+          "id": "sp-defensoria",
+          "role": "defensoria",
+          "short": "Defensoria SP",
+          "name": "Defensoria Pública de São Paulo",
+          "href": "https://www.defensoria.sp.def.br/web/guest/atendimento/agende-seu-atendimento",
+          "logo": "/media/institutions/seals/defensoria-sp.png",
+          "alt": "Logotipo da Defensoria Pública de SP",
+          "logo_source": "https://www.defensoria.sp.def.br/o/defensoria-theme/images/nova_logo_DPESP.svg"
+        }
+      ]
+    },
+    {
+      "uf": "SC",
+      "name": "Santa Catarina",
+      "featured": true,
+      "channels": [
+        {
+          "id": "sc-governo",
+          "role": "governo",
+          "short": "Governo SC",
+          "name": "Governo de Santa Catarina",
+          "href": "https://www.sc.gov.br/",
+          "logo": "/media/institutions/seals/states/SC.png",
+          "alt": "Brasão de Santa Catarina",
+          "logo_source": "https://commons.wikimedia.org/wiki/File:Bras%C3%A3o_de_Santa_Catarina.svg"
+        },
+        {
+          "id": "sc-procon",
+          "role": "procon",
+          "short": "Procon-SC",
+          "name": "Procon Santa Catarina",
+          "href": "https://www.procon.sc.gov.br/",
+          "logo": "/media/institutions/seals/states/SC.png",
+          "alt": "Brasão de SC — Procon",
+          "logo_source": "https://commons.wikimedia.org/wiki/File:Bras%C3%A3o_de_Santa_Catarina.svg"
+        },
+        {
+          "id": "sc-tj",
+          "role": "tj",
+          "short": "TJSC",
+          "name": "Tribunal de Justiça de Santa Catarina",
+          "href": "https://www.tjsc.jus.br/",
+          "logo": "/media/institutions/seals/states/SC.png",
+          "alt": "Brasão de SC — TJSC",
+          "logo_source": "https://commons.wikimedia.org/wiki/File:Bras%C3%A3o_de_Santa_Catarina.svg"
+        }
+      ]
+    },
+    {
+      "uf": "RS",
+      "name": "Rio Grande do Sul",
+      "featured": true,
+      "channels": [
+        {
+          "id": "rs-governo",
+          "role": "governo",
+          "short": "Governo RS",
+          "name": "Governo do Rio Grande do Sul",
+          "href": "https://www.estado.rs.gov.br/",
+          "logo": "/media/institutions/seals/states/RS.png",
+          "alt": "Brasão do Rio Grande do Sul",
+          "logo_source": "https://commons.wikimedia.org/wiki/File:Bras%C3%A3o_do_Rio_Grande_do_Sul.svg"
+        },
+        {
+          "id": "rs-procon",
+          "role": "procon",
+          "short": "Procon-RS",
+          "name": "Procon Rio Grande do Sul",
+          "href": "https://procon.rs.gov.br/",
+          "logo": "/media/institutions/seals/states/RS.png",
+          "alt": "Brasão do RS — Procon",
+          "logo_source": "https://commons.wikimedia.org/wiki/File:Bras%C3%A3o_do_Rio_Grande_do_Sul.svg"
+        },
+        {
+          "id": "rs-tj",
+          "role": "tj",
+          "short": "TJRS",
+          "name": "Tribunal de Justiça do Rio Grande do Sul",
+          "href": "https://www.tjrs.jus.br/",
+          "logo": "/media/institutions/seals/states/RS.png",
+          "alt": "Brasão do RS — TJRS",
+          "logo_source": "https://commons.wikimedia.org/wiki/File:Bras%C3%A3o_do_Rio_Grande_do_Sul.svg"
+        },
+        {
+          "id": "rs-defensoria",
+          "role": "defensoria",
+          "short": "Defensoria RS",
+          "name": "Defensoria Pública do Rio Grande do Sul",
+          "href": "https://www.defensoria.rs.def.br/",
+          "logo": "/media/institutions/seals/states/RS.png",
+          "alt": "Brasão do RS — Defensoria",
+          "logo_source": "https://commons.wikimedia.org/wiki/File:Bras%C3%A3o_do_Rio_Grande_do_Sul.svg"
+        }
+      ]
+    },
+    {
+      "uf": "GO",
+      "name": "Goiás",
+      "featured": true,
+      "channels": [
+        {
+          "id": "go-governo",
+          "role": "governo",
+          "short": "Governo GO",
+          "name": "Governo de Goiás",
+          "href": "https://www.goias.gov.br/",
+          "logo": "/media/institutions/seals/states/GO.png",
+          "alt": "Brasão de Goiás",
+          "logo_source": "https://commons.wikimedia.org/wiki/File:Bras%C3%A3o_de_Goi%C3%A1s.svg"
+        },
+        {
+          "id": "go-procon",
+          "role": "procon",
+          "short": "Procon-GO",
+          "name": "Procon Goiás",
+          "href": "https://goias.gov.br/procon/",
+          "logo": "/media/institutions/seals/states/GO.png",
+          "alt": "Brasão de Goiás — Procon",
+          "logo_source": "https://commons.wikimedia.org/wiki/File:Bras%C3%A3o_de_Goi%C3%A1s.svg"
+        },
+        {
+          "id": "go-defensoria",
+          "role": "defensoria",
+          "short": "Defensoria GO",
+          "name": "Defensoria Pública de Goiás",
+          "href": "https://www.defensoria.go.gov.br/",
+          "logo": "/media/institutions/seals/states/GO.png",
+          "alt": "Brasão de Goiás — Defensoria",
+          "logo_source": "https://commons.wikimedia.org/wiki/File:Bras%C3%A3o_de_Goi%C3%A1s.svg"
+        }
+      ]
+    },
+    {
+      "uf": "MG",
+      "name": "Minas Gerais",
+      "featured": false,
+      "channels": [
+        {
+          "id": "procon-mg",
+          "role": "procon",
+          "short": "Procon Assembleia-MG",
+          "name": "Procon Assembleia-MG — Minas Gerais",
+          "href": "https://www.almg.gov.br/servicos/procon/inicial/",
+          "logo": "/media/institutions/seals/states/MG.png",
+          "alt": "Brasão oficial de Minas Gerais — canal Procon",
+          "logo_source": "https://commons.wikimedia.org/wiki/Category:Coats_of_arms_of_states_of_Brazil"
+        }
+      ]
+    },
+    {
+      "uf": "PR",
+      "name": "Paraná",
+      "featured": false,
+      "channels": [
+        {
+          "id": "procon-pr",
+          "role": "procon",
+          "short": "Procon-PR",
+          "name": "Procon-PR — Paraná",
+          "href": "https://www.procon.pr.gov.br/",
+          "logo": "/media/institutions/seals/states/PR.png",
+          "alt": "Brasão oficial de Paraná — canal Procon",
+          "logo_source": "https://commons.wikimedia.org/wiki/Category:Coats_of_arms_of_states_of_Brazil"
+        }
+      ]
+    },
+    {
+      "uf": "BA",
+      "name": "Bahia",
+      "featured": false,
+      "channels": [
+        {
+          "id": "procon-ba",
+          "role": "procon",
+          "short": "Procon-BA",
+          "name": "Procon-BA — Bahia",
+          "href": "https://www.ba.gov.br/procon",
+          "logo": "/media/institutions/seals/states/BA.png",
+          "alt": "Brasão oficial de Bahia — canal Procon",
+          "logo_source": "https://commons.wikimedia.org/wiki/Category:Coats_of_arms_of_states_of_Brazil"
+        }
+      ]
+    },
+    {
+      "uf": "PE",
+      "name": "Pernambuco",
+      "featured": false,
+      "channels": [
+        {
+          "id": "procon-pe",
+          "role": "procon",
+          "short": "Procon-PE",
+          "name": "Procon-PE — Pernambuco",
+          "href": "https://www.procon.pe.gov.br/",
+          "logo": "/media/institutions/seals/states/PE.png",
+          "alt": "Brasão oficial de Pernambuco — canal Procon",
+          "logo_source": "https://commons.wikimedia.org/wiki/Category:Coats_of_arms_of_states_of_Brazil"
+        }
+      ]
+    },
+    {
+      "uf": "CE",
+      "name": "Ceará",
+      "featured": false,
+      "channels": [
+        {
+          "id": "procon-ce",
+          "role": "procon",
+          "short": "Procon-CE",
+          "name": "Procon-CE — Ceará",
+          "href": "https://www.proconceara.ce.gov.br/",
+          "logo": "/media/institutions/seals/states/CE.png",
+          "alt": "Brasão oficial de Ceará — canal Procon",
+          "logo_source": "https://commons.wikimedia.org/wiki/Category:Coats_of_arms_of_states_of_Brazil"
+        }
+      ]
+    },
+    {
+      "uf": "DF",
+      "name": "Distrito Federal",
+      "featured": false,
+      "channels": [
+        {
+          "id": "procon-df",
+          "role": "procon",
+          "short": "Procon-DF",
+          "name": "Procon-DF — Distrito Federal",
+          "href": "https://www.procon.df.gov.br/",
+          "logo": "/media/institutions/seals/states/DF.png",
+          "alt": "Brasão oficial de Distrito Federal — canal Procon",
+          "logo_source": "https://commons.wikimedia.org/wiki/Category:Coats_of_arms_of_states_of_Brazil"
+        }
+      ]
+    },
+    {
+      "uf": "ES",
+      "name": "Espírito Santo",
+      "featured": false,
+      "channels": [
+        {
+          "id": "procon-es",
+          "role": "procon",
+          "short": "Procon-ES",
+          "name": "Procon-ES — Espírito Santo",
+          "href": "https://procon.es.gov.br/",
+          "logo": "/media/institutions/seals/states/ES.png",
+          "alt": "Brasão oficial de Espírito Santo — canal Procon",
+          "logo_source": "https://commons.wikimedia.org/wiki/Category:Coats_of_arms_of_states_of_Brazil"
+        }
+      ]
+    },
+    {
+      "uf": "MT",
+      "name": "Mato Grosso",
+      "featured": false,
+      "channels": [
+        {
+          "id": "procon-mt",
+          "role": "procon",
+          "short": "Procon-MT",
+          "name": "Procon-MT — Mato Grosso",
+          "href": "https://www.procon.mt.gov.br/",
+          "logo": "/media/institutions/seals/states/MT.png",
+          "alt": "Brasão oficial de Mato Grosso — canal Procon",
+          "logo_source": "https://commons.wikimedia.org/wiki/Category:Coats_of_arms_of_states_of_Brazil"
+        }
+      ]
+    },
+    {
+      "uf": "MS",
+      "name": "Mato Grosso do Sul",
+      "featured": false,
+      "channels": [
+        {
+          "id": "procon-ms",
+          "role": "procon",
+          "short": "Procon-MS",
+          "name": "Procon-MS — Mato Grosso do Sul",
+          "href": "https://www.procon.ms.gov.br/",
+          "logo": "/media/institutions/seals/states/MS.png",
+          "alt": "Brasão oficial de Mato Grosso do Sul — canal Procon",
+          "logo_source": "https://commons.wikimedia.org/wiki/Category:Coats_of_arms_of_states_of_Brazil"
+        }
+      ]
+    },
+    {
+      "uf": "PA",
+      "name": "Pará",
+      "featured": false,
+      "channels": [
+        {
+          "id": "procon-pa",
+          "role": "procon",
+          "short": "Procon-PA",
+          "name": "Procon-PA — Pará",
+          "href": "https://www.procon.pa.gov.br/",
+          "logo": "/media/institutions/seals/states/PA.png",
+          "alt": "Brasão oficial de Pará — canal Procon",
+          "logo_source": "https://commons.wikimedia.org/wiki/Category:Coats_of_arms_of_states_of_Brazil"
+        }
+      ]
+    },
+    {
+      "uf": "AM",
+      "name": "Amazonas",
+      "featured": false,
+      "channels": [
+        {
+          "id": "procon-am",
+          "role": "procon",
+          "short": "Procon-AM",
+          "name": "Procon-AM — Amazonas",
+          "href": "https://www.procon.am.gov.br/",
+          "logo": "/media/institutions/seals/states/AM.png",
+          "alt": "Brasão oficial de Amazonas — canal Procon",
+          "logo_source": "https://commons.wikimedia.org/wiki/Category:Coats_of_arms_of_states_of_Brazil"
+        }
+      ]
+    },
+    {
+      "uf": "MA",
+      "name": "Maranhão",
+      "featured": false,
+      "channels": [
+        {
+          "id": "procon-ma",
+          "role": "procon",
+          "short": "Procon-MA",
+          "name": "Procon-MA — Maranhão",
+          "href": "https://www.procon.ma.gov.br/",
+          "logo": "/media/institutions/seals/states/MA.png",
+          "alt": "Brasão oficial de Maranhão — canal Procon",
+          "logo_source": "https://commons.wikimedia.org/wiki/Category:Coats_of_arms_of_states_of_Brazil"
+        }
+      ]
+    },
+    {
+      "uf": "PB",
+      "name": "Paraíba",
+      "featured": false,
+      "channels": [
+        {
+          "id": "procon-pb",
+          "role": "procon",
+          "short": "Procon-PB",
+          "name": "Procon-PB — Paraíba",
+          "href": "https://procon.pb.gov.br/",
+          "logo": "/media/institutions/seals/states/PB.png",
+          "alt": "Brasão oficial de Paraíba — canal Procon",
+          "logo_source": "https://commons.wikimedia.org/wiki/Category:Coats_of_arms_of_states_of_Brazil"
+        }
+      ]
+    },
+    {
+      "uf": "RN",
+      "name": "Rio Grande do Norte",
+      "featured": false,
+      "channels": [
+        {
+          "id": "procon-rn",
+          "role": "procon",
+          "short": "Procon-RN",
+          "name": "Procon-RN — Rio Grande do Norte",
+          "href": "https://www.procon.rn.gov.br/",
+          "logo": "/media/institutions/seals/states/RN.png",
+          "alt": "Brasão oficial de Rio Grande do Norte — canal Procon",
+          "logo_source": "https://commons.wikimedia.org/wiki/Category:Coats_of_arms_of_states_of_Brazil"
+        }
+      ]
+    },
+    {
+      "uf": "AL",
+      "name": "Alagoas",
+      "featured": false,
+      "channels": [
+        {
+          "id": "procon-al",
+          "role": "procon",
+          "short": "Procon-AL",
+          "name": "Procon-AL — Alagoas",
+          "href": "https://procon.al.gov.br/",
+          "logo": "/media/institutions/seals/states/AL.png",
+          "alt": "Brasão oficial de Alagoas — canal Procon",
+          "logo_source": "https://commons.wikimedia.org/wiki/Category:Coats_of_arms_of_states_of_Brazil"
+        }
+      ]
+    },
+    {
+      "uf": "SE",
+      "name": "Sergipe",
+      "featured": false,
+      "channels": [
+        {
+          "id": "procon-se",
+          "role": "procon",
+          "short": "Procon-SE",
+          "name": "Procon-SE — Sergipe",
+          "href": "https://procon.se.gov.br/",
+          "logo": "/media/institutions/seals/states/SE.png",
+          "alt": "Brasão oficial de Sergipe — canal Procon",
+          "logo_source": "https://commons.wikimedia.org/wiki/Category:Coats_of_arms_of_states_of_Brazil"
+        }
+      ]
+    },
+    {
+      "uf": "PI",
+      "name": "Piauí",
+      "featured": false,
+      "channels": [
+        {
+          "id": "procon-pi",
+          "role": "procon",
+          "short": "Procon-PI",
+          "name": "Procon-PI — Piauí",
+          "href": "https://www.mppi.mp.br/internet/procon/",
+          "logo": "/media/institutions/seals/states/PI.png",
+          "alt": "Brasão oficial de Piauí — canal Procon",
+          "logo_source": "https://commons.wikimedia.org/wiki/Category:Coats_of_arms_of_states_of_Brazil"
+        }
+      ]
+    },
+    {
+      "uf": "TO",
+      "name": "Tocantins",
+      "featured": false,
+      "channels": [
+        {
+          "id": "procon-to",
+          "role": "procon",
+          "short": "Procon-TO",
+          "name": "Procon-TO — Tocantins",
+          "href": "https://procon.to.gov.br/",
+          "logo": "/media/institutions/seals/states/TO.png",
+          "alt": "Brasão oficial de Tocantins — canal Procon",
+          "logo_source": "https://commons.wikimedia.org/wiki/Category:Coats_of_arms_of_states_of_Brazil"
+        }
+      ]
+    },
+    {
+      "uf": "RO",
+      "name": "Rondônia",
+      "featured": false,
+      "channels": [
+        {
+          "id": "procon-ro",
+          "role": "procon",
+          "short": "Procon-RO",
+          "name": "Procon-RO — Rondônia",
+          "href": "https://procon.ro.gov.br/",
+          "logo": "/media/institutions/seals/states/RO.png",
+          "alt": "Brasão oficial de Rondônia — canal Procon",
+          "logo_source": "https://commons.wikimedia.org/wiki/Category:Coats_of_arms_of_states_of_Brazil"
+        }
+      ]
+    },
+    {
+      "uf": "AC",
+      "name": "Acre",
+      "featured": false,
+      "channels": [
+        {
+          "id": "procon-ac",
+          "role": "procon",
+          "short": "Procon-AC",
+          "name": "Procon-AC — Acre",
+          "href": "https://www.procon.ac.gov.br/",
+          "logo": "/media/institutions/seals/states/AC.png",
+          "alt": "Brasão oficial de Acre — canal Procon",
+          "logo_source": "https://commons.wikimedia.org/wiki/Category:Coats_of_arms_of_states_of_Brazil"
+        }
+      ]
+    },
+    {
+      "uf": "AP",
+      "name": "Amapá",
+      "featured": false,
+      "channels": [
+        {
+          "id": "procon-ap",
+          "role": "procon",
+          "short": "Procon-AP",
+          "name": "Procon-AP — Amapá",
+          "href": "https://www.procon.ap.gov.br/",
+          "logo": "/media/institutions/seals/states/AP.png",
+          "alt": "Brasão oficial de Amapá — canal Procon",
+          "logo_source": "https://commons.wikimedia.org/wiki/Category:Coats_of_arms_of_states_of_Brazil"
+        }
+      ]
+    },
+    {
+      "uf": "RR",
+      "name": "Roraima",
+      "featured": false,
+      "channels": [
+        {
+          "id": "procon-rr",
+          "role": "procon",
+          "short": "Portal RR",
+          "name": "Portal RR — Roraima",
+          "href": "https://portal.rr.gov.br/",
+          "logo": "/media/institutions/seals/states/RR.png",
+          "alt": "Brasão oficial de Roraima — canal Procon",
+          "logo_source": "https://commons.wikimedia.org/wiki/Category:Coats_of_arms_of_states_of_Brazil"
+        }
+      ]
+    }
+  ],
+  "participation_label": "Petições, abaixo-assinados e enquetes oficiais",
+  "participation": [
+    {
+      "id": "e-cidadania-ideia",
+      "name": "Senado e-Cidadania — Ideia Legislativa",
+      "short": "Ideia Legislativa",
+      "role": "peticao",
+      "href": "https://www12.senado.leg.br/ecidadania/principalideia",
+      "logo": "/media/institutions/seals/e-cidadania.png",
+      "alt": "Logotipo oficial do portal e-Cidadania do Senado Federal",
+      "note": "Petição / abaixo-assinado oficial: ideias com 20 mil apoios vão à CDH.",
+      "logo_source": "https://www12.senado.leg.br/ecidadania"
+    },
+    {
+      "id": "e-cidadania-consulta",
+      "name": "Senado e-Cidadania — Consulta Pública",
+      "short": "Consulta Senado",
+      "role": "enquete",
+      "href": "https://www12.senado.leg.br/ecidadania/principalmateria",
+      "logo": "/media/institutions/seals/senado.png",
+      "alt": "Logotipo oficial do Senado Federal — Consulta Pública",
+      "note": "Opine sobre projetos, PECs e medidas provisórias em tramitação no Senado.",
+      "logo_source": "https://www12.senado.leg.br/ecidadania"
+    },
+    {
+      "id": "camara-enquetes",
+      "name": "Câmara dos Deputados — Enquetes e Participe",
+      "short": "Enquetes Câmara",
+      "role": "enquete",
+      "href": "https://www.camara.leg.br/participe",
+      "logo": "/media/institutions/seals/camara.png",
+      "alt": "Logotipo oficial da Câmara dos Deputados",
+      "note": "Enquetes oficiais e debates interativos sobre propostas na Câmara.",
+      "logo_source": "https://www2.camara.leg.br/logo.png"
+    },
+    {
+      "id": "participa-mais-brasil",
+      "name": "Participa Mais Brasil — Consultas Públicas",
+      "short": "Participa Mais Brasil",
+      "role": "consulta",
+      "href": "https://www.gov.br/participamaisbrasil/",
+      "logo": "/media/institutions/seals/governo-federal.png",
+      "alt": "Identidade visual Brasil — Participa Mais Brasil",
+      "note": "Consultas públicas do Poder Executivo federal sobre políticas e normas.",
+      "logo_source": "https://www.gov.br/participamaisbrasil/"
+    },
+    {
+      "id": "consultas-govbr",
+      "name": "Gov.br — Consultas Públicas",
+      "short": "Consultas Gov.br",
+      "role": "consulta",
+      "href": "https://www.gov.br/pt-br/consultas-publicas",
+      "logo": "/media/institutions/seals/govbr.svg",
+      "alt": "Logotipo oficial Gov.br — consultas públicas",
+      "note": "Índice de consultas públicas abertas no portal do governo federal.",
+      "logo_source": "https://www.gov.br/pt-br/consultas-publicas"
+    },
+    {
+      "id": "tcu-cidadao",
+      "name": "TCU — Participação Cidadã",
+      "short": "TCU Cidadão",
+      "role": "consulta",
+      "href": "https://cidadao.tcu.gov.br/",
+      "logo": "/media/institutions/seals/tcu.png",
+      "alt": "Logotipo oficial do Tribunal de Contas da União",
+      "note": "Consultas e votação de temas de fiscalização do Tribunal de Contas da União.",
+      "logo_source": "https://commons.wikimedia.org/wiki/File:Tribunal_de_Contas_da_Uni%C3%A3o.png"
+    }
+  ],
+  "banner_ids": [
+    "brasil",
+    "govbr",
+    "consumidor-gov",
+    "senacon",
+    "cgu",
+    "aneel",
+    "anatel",
+    "cnj",
+    "stj",
+    "stf",
+    "mpf",
+    "senado"
+  ],
+  "banner_label": "União e órgãos federais",
+  "banner_cta": "Ver todos os órgãos oficiais",
+  "banner_cta_href": "/orgaos-oficiais/",
+  "page_title": "Órgãos oficiais: Procon, Justiça, petições e consultas",
+  "page_description": "Mapa de selos e canais oficiais usados na pesquisa CasoAberto: União, Congresso, petições, enquetes, consultas e Procons de todos os estados."
+}

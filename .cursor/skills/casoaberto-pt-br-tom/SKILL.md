@@ -162,8 +162,12 @@ Disclaimer do LLM. Apagar. Não substituir. Voltar à fórmula / exemplo autoriz
 - [ ] Hero institucional e investigação Florense em destaque na home; todos os casos juntos na busca
 - [ ] Fecha em pergunta, exigência ou ação
 
+## Imagem (par obrigatório)
+
+A capa do card deve **sustentar** esta voz — mesma pergunta, mesma consequência. Stock genérico, prova invertida ou foto repetida → `AGENTS.md` §31b + skill `casoaberto-case-illustration` (`.agents/skills/` ou `.cursor/skills/`). Não “compensar” copy agressiva com visual de folder. O `.mdc` de imagem é só adapter Cursor.
+
 ## Arquivos
 
 - Banco de exemplos (1–50 + A–F): [examples.md](examples.md)
 - Falhas do LLM: [llm-failure-modes.md](llm-failure-modes.md)
-- Regra always-on: `.cursor/rules/pt-br-tom-agressivo.mdc`
+- Always-on (todos os hosts): `AGENTS.md` §31 · adapter Cursor: `.cursor/rules/pt-br-tom-agressivo.mdc`

@@ -5,43 +5,40 @@ import { Separator } from '@/components/ui/separator';
 const latest = cases.reduce((a, b) => (a > b.status_data ? a : b.status_data), '');
 const groups = [
   {
-    title: 'Pesquise',
+    title: 'Casos',
     links: [
-      ['Perfis e avaliações de empresas', '/empresas/'],
-      ['Todos os casos documentados', '/casos/'],
-      ['Móveis e casa', '/casos/categoria/moveis-e-casa/'],
-      ['Viagens e turismo', '/casos/categoria/viagens-e-turismo/'],
-      ['Compras online', '/casos/categoria/compras-online/'],
-      ['Energia e serviços', '/casos/categoria/energia-e-servicos/'],
-      ['Política e direitos', '/casos/categoria/politica-e-direitos/'],
-      ['Histórias que estão por trás dos casos', '/historias/'],
-      ['Guias para consumidores', '/guias/casos-de-consumo/'],
-      ['Abrir reclamação e usar modelos', '/casos/'],
-      ['Como processar uma empresa', '/guias/como-acionar-empresa-na-justica/'],
-      ['Não recomendamos', '/avaliacoes/nao-recomendamos/'],
+      ['Todos os casos', '/casos/'],
+      ['Histórias documentadas', '/historias/'],
+      ['Empresas e avaliações', '/empresas/'],
+      ['Precedentes judiciais', '/precedentes/'],
       ['Consulta de CNPJ', '/cnpj/'],
-      ['Tipos de problema', '/problemas/'],
-      ['Falências e recuperações: precedentes', '/precedentes/'],
-      ['Explore cenários de impacto', '/cenarios/'],
-      ['Observatório de plataformas digitais', '/observatorio/plataformas/'],
-      ['Kit Boca a Boca para imprimir', '/kit-boca-a-boca/'],
+      ['Não recomendamos', '/avaliacoes/nao-recomendamos/'],
+      ['Kit Boca a Boca', '/kit-boca-a-boca/'],
     ],
   },
   {
-    title: 'Entenda o projeto',
+    title: 'Artigos',
     links: [
-      ['Sobre o projeto', '/sobre/'],
-      ['Política editorial e direito de resposta', '/sobre/criterios-de-publicacao/'],
-      ['Instituto de dados e pesquisa', '/instituto/'],
-      ['Organização cidadã', '/organizar/'],
+      ['Hub de artigos', '/artigos/'],
+      ['Guias ao consumidor', '/guias/casos-de-consumo/'],
+      ['Insights de autonomia digital', '/autonomia-digital/guias/'],
       ['Escola de autonomia digital', '/autonomia-digital/'],
-      ['Academia e produtos educacionais', '/academia/'],
-      ['Insights gratuitos', '/autonomia-digital/guias/'],
-      ['Diagnóstico gratuito de pegadas digitais', '/autonomia-digital/diagnostico/'],
-      ['Como funciona', '/como-funciona/'],
-      ['Critérios e metodologia', '/metodologia/'],
-      ['Análise de risco e cenários com dados', '/precedentes/'],
-      ['Como documentar atrasos', '/guias/o-que-fazer-atraso-moveis-planejados/'],
+      ['Academia', '/academia/'],
+      ['Diagnóstico gratuito', '/autonomia-digital/diagnostico/'],
+    ],
+  },
+  {
+    title: 'Instituto e projeto',
+    links: [
+      ['Instituto', '/instituto/'],
+      ['Dados abertos', '/instituto/dados/'],
+      ['Órgãos oficiais', '/orgaos-oficiais/'],
+      ['Observatório de plataformas', '/observatorio/plataformas/'],
+      ['Política e poder', '/observatorio/politica/'],
+      ['Organizar', '/organizar/'],
+      ['Metodologia', '/metodologia/'],
+      ['Sobre', '/sobre/'],
+      ['Critérios editoriais', '/sobre/criterios-de-publicacao/'],
       ['Atualizações (RSS)', '/rss.xml'],
     ],
   },
@@ -49,7 +46,7 @@ const groups = [
 ---
 <footer class="bg-[#0f1714] py-14 text-[#e3ebe2]" data-print-hide>
   <div class="container">
-    <div class="grid gap-10 md:grid-cols-[2fr_1fr_1fr]">
+    <div class="grid gap-10 md:grid-cols-[2fr_1fr_1fr_1fr]">
       <div class="space-y-4">
         <Identity />
         <p class="m-0 max-w-sm text-sm leading-relaxed text-white/60">Instituto e plataforma independentes para investigar, organizar demandas legítimas, proteger a autonomia digital e cobrar respostas com fontes verificáveis.</p>

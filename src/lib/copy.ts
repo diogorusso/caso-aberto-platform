@@ -85,6 +85,15 @@ export const copy = {
     nextStep: 'Próximo passo',
   },
 
+  /* ───────────── Visibility impact metric (projected reach) ───────────── */
+  visibility: {
+    label: 'Já viram o risco. A empresa ainda cala.',
+    seen: 'Já viram o risco.',
+    silent: 'A empresa ainda cala.',
+    metricLabel: 'olhos hoje',
+    punch: 'Mais olhos. Mais pressão.',
+  },
+
   /* ───────────── Verdict (case, brand, unit) ───────────── */
   verdict: {
     eyebrow: (subject: string, iso: string) => `NOSSA POSIÇÃO · ${subject} · ${dmy(iso)}`,

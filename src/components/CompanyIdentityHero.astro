@@ -86,21 +86,23 @@ const reviewed=selected.verdict.valid_as_of.split('-').reverse().join('/');
         <aside class="relative min-h-[420px] border-t border-border bg-muted lg:min-h-full lg:border-l lg:border-t-0" aria-label="Identificação visual da empresa">
           {image?.src ? (
             <figure class="absolute inset-0 m-0 flex flex-col">
-              <img
-                src={image.src}
-                alt={image.alt}
-                width="820"
-                height="600"
-                class="min-h-0 flex-1 object-cover"
-                loading="eager"
-                decoding="async"
-              />
-              {badgeLabel && (
-                <span class="absolute left-0 top-0 z-[2] inline-flex items-center gap-2 bg-destructive px-3.5 py-2.5 text-xs font-extrabold uppercase tracking-[0.12em] text-white shadow-lg" role="note" aria-label={`Posição editorial: ${badgeLabel}`}>
-                  <span class="size-2 bg-white" aria-hidden="true"></span>{badgeLabel}
-                </span>
-              )}
-              <figcaption class="relative z-[1] border-t border-white/10 bg-forest px-5 py-4 text-white">
+              <div class="relative min-h-0 flex-1">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  width="820"
+                  height="600"
+                  class="absolute inset-0 size-full object-cover"
+                  loading="eager"
+                  decoding="async"
+                />
+                {badgeLabel && (
+                  <span class="absolute left-0 top-0 z-[1] inline-flex max-w-[calc(100%-1rem)] items-center gap-2 bg-destructive px-3.5 py-2.5 text-xs font-extrabold uppercase tracking-[0.12em] text-white shadow-lg" role="note" aria-label={`Posição editorial: ${badgeLabel}`}>
+                    <span class="size-2 shrink-0 bg-white" aria-hidden="true"></span>{badgeLabel}
+                  </span>
+                )}
+              </div>
+              <figcaption class="relative z-[1] shrink-0 border-t border-white/10 bg-forest px-5 py-4 text-white">
                 <strong class="block text-[0.92rem] font-bold leading-snug">{image.title}</strong>
                 <span class="mt-1 block text-[0.76rem] text-white/78">{image.address || unitVisual?.address || brand.location}</span>
                 <small class="mt-1.5 block text-[0.7rem] leading-snug text-white/60">

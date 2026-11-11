@@ -3,8 +3,10 @@ import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import CaseVisualStory from '../../../../components/CaseVisualStory.astro';
 import CaseActionBar from '../../../../components/CaseActionBar.astro';
 import CaseActionHub from '../../../../components/CaseActionHub.astro';
+import CaseVisibilityBadge from '../../../../components/CaseVisibilityBadge.astro';
 import atlas from '../../../../data/public-case-atlas.json';
 import {caseStudies,categoryHref} from '../../../../lib/case-catalog';
+import {primaryImageForCase, visualAssetForCase} from '../../../../lib/case-media';
 export function getStaticPaths(){return atlas.cases.map(study=>({params:{slug:study.slug},props:{study}}));}
 type Study=typeof atlas.cases[number];
 const {study}=Astro.props as {study:Study};
@@ -12,11 +14,36 @@ const stories=atlas.stories.filter(person=>study.story_slugs.includes(person.slu
 const caseUrl='/casos/arquivo-publico/'+study.slug+'/';
 const catalogEntry=caseStudies.find(item=>item.id===study.id);
 const nearby=caseStudies.filter(item=>item.categorySlug===catalogEntry?.categorySlug&&item.id!==study.id).slice(0,3);
+const visual=visualAssetForCase(study.id);
+const image=primaryImageForCase(study.id);
+const imageSrc=image?.src||('/og/casos/'+study.slug+'.png');
+const logo=visual?.logo;
 ---
 <BaseLayout image={'/og/casos/'+study.slug+'.png'} title={study.headline+' | Pesquisa CasoAberto'} description={study.deck} type="article" dateModified={study.reviewed_at} breadcrumbs={[{name:'Início',item:'/'},{name:'Casos',item:'/casos/'},{name:study.company,item:caseUrl}]}>
 <article>
-  <header class="bg-primary py-16 text-primary-foreground"><div class="container max-w-5xl space-y-5"><p class="m-0 text-xs font-bold uppercase tracking-wider text-[#ff917e]">CASO DOCUMENTADO · {study.sector}</p><h1 class="m-0 text-4xl leading-tight md:text-6xl">{study.headline}</h1><p class="max-w-4xl text-xl text-white/80">{study.deck}</p><p class="m-0 text-sm text-white/60">Caso pesquisado: {study.state} · Revisão: {study.reviewed_at.split('-').reverse().join('/')}</p></div></header>
-  <div class="container py-5"><CaseActionBar title={study.headline} summary={study.deck} href={caseUrl} caseId={study.id} printHref={'/casos/imprimir/'+study.slug+'/'} /></div>
+  <header class="bg-primary py-12 text-primary-foreground md:py-16">
+    <div class="container grid max-w-6xl items-start gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(16rem,0.85fr)]">
+      <div class="stack-tight max-w-5xl">
+        <p class="m-0 text-xs font-bold uppercase tracking-wider text-[#ff917e]">CASO DOCUMENTADO · {study.sector}</p>
+        {logo && (
+          <span class="inline-flex h-12 items-center justify-center border border-white/20 bg-white px-3 shadow-sm">
+            <img src={logo} alt={'Logotipo '+study.company} class="max-h-8 max-w-[10rem] object-contain" width="160" height="32" loading="eager" decoding="async"/>
+          </span>
+        )}
+        <div class="space-y-5 md:space-y-6">
+          <h1 class="m-0 text-4xl leading-tight md:text-6xl">{study.headline}</h1>
+          <CaseVisibilityBadge caseId={study.id} variant="header" tone="inverse" />
+        </div>
+        <p class="m-0 max-w-4xl text-xl text-white/80">{study.deck}</p>
+        <p class="m-0 text-sm text-white/60">Caso pesquisado: {study.state} · Revisão: {study.reviewed_at.split('-').reverse().join('/')}</p>
+      </div>
+      <figure class="m-0 overflow-hidden border border-white/15 bg-black/20">
+        <img src={imageSrc} alt={'Imagem de reconhecimento do caso '+study.company} width="1200" height="630" class="aspect-[1200/630] w-full object-cover" loading="eager" decoding="async"/>
+        <figcaption class="border-t border-white/10 px-4 py-3 text-xs leading-snug text-white/70">{visual?.credit || 'Arte editorial do dossiê · tipografia e dados públicos'}{visual?.photo_source && <> · <a class="text-[#ff917e] underline" href={visual.photo_source} target="_blank" rel="noopener noreferrer">Fonte da imagem ↗</a></>}</figcaption>
+      </figure>
+    </div>
+  </header>
+  <div class="container py-5"><CaseActionBar compact title={study.headline} summary={study.deck} href={caseUrl} caseId={study.id} printHref={'/casos/imprimir/'+study.slug+'/'} /></div>
   <CaseActionHub caseId={study.id} compact/>
   <CaseVisualStory caseId={study.id}/>
   <div class="container grid max-w-6xl gap-10 py-14 lg:grid-cols-[minmax(0,1fr)_17rem]">
@@ -30,7 +57,7 @@ const nearby=caseStudies.filter(item=>item.categorySlug===catalogEntry?.category
       <section class="space-y-4 border-t border-border pt-7"><h2 class="m-0 text-2xl">Documentos e fontes da investigação</h2><ul class="space-y-3">{study.sources.map(s=><li><a class="text-link" href={s.url} rel="noopener noreferrer">{s.name} ↗</a><p class="m-0 text-xs text-muted-foreground">{s.kind}{s.published_at && <> · {s.published_at.split('-').reverse().join('/')}</>}</p></li>)}</ul></section>
       {nearby.length>0&&<section class="space-y-4 border-t border-border pt-7"><h2 class="m-0 text-2xl">Mais casos de {catalogEntry?.category}</h2><div class="grid gap-3 md:grid-cols-2">{nearby.map(item=><a class="block border border-border bg-card p-5 no-underline hover:border-brand" href={item.href}><p class="m-0 text-xs font-bold text-brand-strong">{item.company}</p><h3 class="mb-2 mt-2 text-lg text-foreground">{item.title}</h3><span class="text-sm font-semibold text-link">Conferir outro caso ↗</span></a>)}</div></section>}
     </div>
-    <aside class="h-fit space-y-4 border-t-4 border-brand bg-card p-6 lg:sticky lg:top-24"><h2 class="m-0 text-xl">Navegue pelo caso</h2><p class="m-0 text-sm text-muted-foreground">{study.company}<span class="block">{study.status_label}</span></p><a class="block text-link text-sm" href={'/guias/casos-de-consumo/'+study.guide_slug+'/'}>Guia prático ↗</a>{catalogEntry&&<a class="block text-link text-sm" href={categoryHref(catalogEntry.categorySlug)}>Mais casos: {catalogEntry.category} ↗</a>}<a class="block text-link text-sm" href={"/casos/imprimir/"+study.slug+"/"}>Imprimir ficha e fontes ↗</a><a class="block text-link text-sm" href="/casos/">Pesquisar todos os casos ↗</a><a class="block text-link text-sm" href="/historias/">Histórias de pessoas ↗</a><a class="block text-link text-sm" href="/organizar/caderno-de-acao/">Registrar um problema próprio ↗</a></aside>
+    <aside class="h-fit space-y-4 border-t-4 border-brand bg-card p-6 lg:sticky lg:top-24"><h2 class="m-0 text-xl">Próximo passo</h2><p class="m-0 text-sm text-muted-foreground">{study.company}<span class="block">{study.status_label}</span></p><p class="m-0 text-sm text-muted-foreground">Role o dossiê para fatos, respostas e fontes. Use um link só quando quiser sair desta página.</p><a class="block text-link text-sm font-semibold" href={'/guias/casos-de-consumo/'+study.guide_slug+'/'}>Guia prático deste problema ↗</a>{catalogEntry&&<a class="block text-link text-sm font-semibold" href={categoryHref(catalogEntry.categorySlug)}>Mais casos: {catalogEntry.category} ↗</a>}<a class="block text-link text-sm font-semibold" href={"/casos/imprimir/"+study.slug+"/"}>Imprimir ficha A4 ↗</a></aside>
   </div>
 </article>
 </BaseLayout>

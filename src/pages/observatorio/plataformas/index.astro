@@ -3,6 +3,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import CaseActionBar from '../../../components/CaseActionBar.astro';
 import CaseActionHub from '../../../components/CaseActionHub.astro';
 import CaseVisualStory from '../../../components/CaseVisualStory.astro';
+import CaseVisibilityBadge from '../../../components/CaseVisibilityBadge.astro';
 import CivicPageHeader from '../../../components/CivicPageHeader.astro';
 import ledger from '../../../data/platform-observatory.json';
 
@@ -19,8 +20,16 @@ const classes = [...new Set(ledger.records.map(r => r.evidence_class))].sort();
 const ordered = ledger.records.slice().sort((a,b)=>a.date < b.date ? -1 : a.date > b.date ? 1 : a.id.localeCompare(b.id));
 ---
 <BaseLayout image="/og/casos/meta-eleicoes-2026-governanca-plataformas.png" title="Observatório de Plataformas — Moderação, IA e transparência | CasoAberto" description="Arquivo documental de pesquisas independentes, decisões, incidentes e posicionamentos de plataformas, com fontes, datas, escopo e limites.">
-  <CivicPageHeader eyebrow="CASOABERTO · PESQUISA DOCUMENTADA · PLATAFORMAS" title="A publicidade passa. A plataforma decide. Quem responde?" lead={`Meta, eleições brasileiras de 2026, anúncios políticos e decisões de moderação: ${ledger.records.length} registros documentados, classes de evidência separadas e perguntas diretas sobre quem controla as regras.`} />
-  <div class="container py-5"><CaseActionBar title="Meta e eleições 2026: quem responde pela transparência dos anúncios?" summary="Pesquisas, atos oficiais e respostas documentadas sobre anúncios e moderação." href="/observatorio/plataformas/" caseId="PLAT-2026-CASE" printHref="/casos/imprimir/meta-eleicoes-2026-governanca-plataformas/" showComplaint={false}/></div>
+  <CivicPageHeader eyebrow="CASOABERTO · PESQUISA DOCUMENTADA · PLATAFORMAS" title="A publicidade passa. A plataforma decide. Quem responde?" lead={`Meta, eleições brasileiras de 2026, anúncios políticos e decisões de moderação: ${ledger.records.length} registros documentados, classes de evidência separadas e perguntas diretas sobre quem controla as regras.`}>
+    <CaseVisibilityBadge slot="underTitle" caseId="PLAT-2026-CASE" variant="header" tone="inverse" />
+  </CivicPageHeader>
+  <div class="container py-6">
+    <figure class="m-0 overflow-hidden border border-border bg-card md:max-w-3xl">
+      <img src="/og/casos/meta-eleicoes-2026-governanca-plataformas.png" alt="Capa editorial do observatório de plataformas" width="1200" height="630" class="aspect-[1200/630] w-full object-cover" loading="eager" decoding="async"/>
+      <figcaption class="border-t border-border px-4 py-3 text-xs text-muted-foreground">Arte editorial do dossiê · tipografia e dados públicos · sem logotipo inventado</figcaption>
+    </figure>
+  </div>
+  <div class="container py-5"><CaseActionBar compact title="Meta e eleições 2026: quem responde pela transparência dos anúncios?" summary="Pesquisas, atos oficiais e respostas documentadas sobre anúncios e moderação." href="/observatorio/plataformas/" caseId="PLAT-2026-CASE" printHref="/casos/imprimir/meta-eleicoes-2026-governanca-plataformas/" showComplaint={false}/></div>
   <CaseActionHub caseId="PLAT-2026-CASE" compact/>
   <CaseVisualStory caseId="PLAT-2026-CASE"/>
   <section class="container space-y-5 py-12"><h2 class="m-0 text-3xl">O que os documentos revelam?</h2><p class="max-w-4xl">{ledger.framing}</p><p class="max-w-4xl text-muted-foreground">{ledger.methodology}</p><p class="text-sm text-muted-foreground">Revisão editorial: {ledger.reviewed_at.split('-').reverse().join('/')} · {ledger.records.length} registros documentais · próxima revisão programada por registro · não representa todos os episódios.</p><div class="flex flex-wrap gap-4 text-sm"><a class="text-link font-semibold" href="/instituto/dados/plataformas.json">Baixar JSON ↗</a><a class="text-link font-semibold" href="/instituto/dados/plataformas.csv">Baixar CSV ↗</a><a class="text-link font-semibold" href="/instituto/dados/">Metodologia e conjuntos ↗</a></div></section>

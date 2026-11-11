@@ -1,0 +1,45 @@
+---
+interface Props {
+  name: string;
+  short: string;
+  href: string;
+  logo: string;
+  alt: string;
+  caption?: string;
+  compact?: boolean;
+}
+const { name, short, href, logo, alt, caption = 'Site oficial ↗', compact = false } = Astro.props;
+---
+<a
+  href={href}
+  target="_blank"
+  rel="noopener noreferrer"
+  class:list={[
+    'group flex h-full flex-col items-center justify-between border border-[#d5ddd4] bg-[#f7f8f3] text-center no-underline transition-colors hover:border-[#9aaba0] hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand',
+    compact ? 'gap-2 px-2 py-3.5' : 'aspect-square gap-3 px-3 py-5',
+  ]}
+  title={`${name} — abrir site oficial`}
+>
+  <span class:list={['grid w-full place-items-center', compact ? 'h-12' : 'flex-1']}>
+    <img
+      src={logo}
+      alt={alt}
+      width={compact ? 96 : 160}
+      height={compact ? 56 : 96}
+      loading="lazy"
+      decoding="async"
+      class:list={[
+        'object-contain opacity-95 transition-opacity group-hover:opacity-100',
+        compact ? 'max-h-11 max-w-[4.5rem]' : 'max-h-16 max-w-[8rem] sm:max-h-[4.5rem]',
+      ]}
+    />
+  </span>
+  <span class:list={['flex flex-col justify-end gap-0.5', compact ? 'min-h-0' : 'min-h-[2.5rem]']}>
+    <span class:list={['font-bold leading-snug tracking-wide text-foreground', compact ? 'text-[0.65rem]' : 'text-[0.75rem]']}>
+      {short}
+    </span>
+    <span class:list={['font-medium uppercase tracking-[0.08em] text-muted-foreground', compact ? 'text-[0.55rem]' : 'text-[0.62rem]']}>
+      {caption}
+    </span>
+  </span>
+</a>

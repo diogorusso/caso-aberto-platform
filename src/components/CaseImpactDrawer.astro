@@ -1,0 +1,44 @@
+---
+/** Astro bridge: serialize caseStory() into the impact drawer island. */
+import ImpactStoryDrawer from './islands/ImpactStoryDrawer';
+import {caseStory,printStoryPath} from '../lib/visual-impact';
+import {caseStudies} from '../lib/case-catalog';
+interface Props {
+  caseId: string;
+  triggerLabel?: string;
+  size?: 'sm' | 'default';
+  className?: string;
+}
+const {caseId, triggerLabel = 'Ver impacto e fontes', size = 'default', className} = Astro.props;
+const story = caseStory(caseId);
+const catalog = caseStudies.find((item) => item.id === caseId);
+const payload = {
+  id: story.id,
+  slug: catalog?.slug,
+  headline: story.headline,
+  audience: story.audience,
+  exposure: story.exposure,
+  worst_case: story.worst_case,
+  threshold: story.threshold,
+  resolution: story.resolution,
+  action: story.action,
+  href: story.href,
+  date: story.date,
+  metrics: story.metrics,
+  points: story.points,
+  bars: story.bars,
+  graphTitle: story.graphTitle,
+  graphDescription: story.graphDescription,
+  graphSource: story.graphSource || null,
+  printHref: printStoryPath(catalog?.slug || caseId.toLowerCase()),
+  sources: story.sources,
+};
+---
+<ImpactStoryDrawer
+  client:visible
+  caseId={caseId}
+  story={payload}
+  triggerLabel={triggerLabel}
+  size={size}
+  triggerClassName={className}
+/>

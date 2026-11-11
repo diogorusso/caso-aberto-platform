@@ -145,6 +145,99 @@
   .text-link {
     @apply font-semibold text-brand-strong underline decoration-brand-strong/40 underline-offset-4 transition-colors hover:text-foreground hover:decoration-foreground;
   }
+
+  /*
+   * Global vertical rhythm — use these instead of ad-hoc space-y-5/7/8.
+   * tight  12px  meta rows, CTA + helper
+   * copy   16px  eyebrow → title → lead → actions
+   * section 24px major blocks inside a page section
+   */
+  .stack-tight {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .stack-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+  .stack-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  /* Case visibility — readable meta under titles (not title weight) */
+  .case-visibility-metric__count {
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Live pulse beside “A empresa ainda cala.” — SVG circle (immune to square-corners). */
+  .visibility-live-dot {
+    display: inline-flex;
+    flex-shrink: 0;
+    width: 0.45rem;
+    height: 0.45rem;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+  }
+  .visibility-live-dot__core {
+    fill: var(--brand);
+  }
+  .visibility-live-dot__pulse {
+    stroke: var(--brand);
+    stroke-width: 1.2;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: visibility-live-pulse 1.6s ease-out infinite;
+  }
+  @keyframes visibility-live-pulse {
+    0% { transform: scale(1); opacity: 0.75; }
+    70% { transform: scale(2.6); opacity: 0; }
+    100% { transform: scale(2.6); opacity: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .visibility-live-dot__pulse { animation: none; opacity: 0; }
+  }
+  /* Astro component scripts must never participate in flex/grid rhythm. */
+  .stack-tight > script,
+  .stack-copy > script,
+  .stack-section > script {
+    display: none !important;
+  }
+
+  /*
+   * Impact / visual-story spacing contract.
+   * One rhythm for section stack, card gutters and card padding — stop mixing gap-3/4/5 and p-5/p-6.
+   */
+  .case-story {
+    --story-gap: 1rem;      /* between sibling cards/columns */
+    --story-stack: 1.5rem;  /* between major blocks in the section */
+    --story-pad: 1.25rem;   /* inner card padding */
+  }
+  .case-story-stack {
+    display: grid;
+    gap: var(--story-stack);
+  }
+  .case-story-grid {
+    display: grid;
+    gap: var(--story-gap);
+    align-items: stretch;
+  }
+  .case-story-card {
+    display: flex;
+    min-width: 0;
+    height: 100%;
+    flex-direction: column;
+    gap: 0.75rem;
+    border: 1px solid var(--border);
+    background: var(--card);
+    padding: var(--story-pad);
+  }
 }
 
 @media print {

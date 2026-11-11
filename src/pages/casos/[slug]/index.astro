@@ -136,5 +136,5 @@ const c = copy.case;
   <CaseCompanyReference item={item}/>
   <CaseSectionHub item={item} exclude={['resumo','linha-do-tempo','reclamacoes-publicas']}/>
   <div id="apoiar"><ParticipationCTA item={item} /></div>
-  <ShareActions title={item.titulo} summary={item.resumo} caseHref={base}/>
+  <ShareActions title={item.titulo} summary={item.resumo} caseHref={base} caseId={item.id}/>
 </BaseLayout>

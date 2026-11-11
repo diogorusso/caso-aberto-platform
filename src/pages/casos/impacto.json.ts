@@ -14,6 +14,7 @@ export const GET:APIRoute=()=>{
    indicators:story.metrics,documentary_milestones:story.points,
    evidence_graph:{title:story.graphTitle,description:story.graphDescription,source_url:story.graphSource||null,bars:story.bars||[]},
    source_urls:story.sources.map(source=>source.url),
+   sources:story.sources,
    print_url:'/casos/imprimir/'+entry.slug+'/'
   };
  });

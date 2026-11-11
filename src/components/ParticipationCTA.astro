@@ -22,7 +22,7 @@ const t = copy.participation;
     </div>
     <div class="flex flex-col items-start gap-3">
       <ButtonLink variant="brand" size="lg" href={mail}>{t.primaryCta} ↗</ButtonLink>
-      {item && <ButtonLink variant="outline-inverse" size="lg" href={`${casePath(item)}reclamacoes-publicas/`}>{t.secondaryCta} ↗</ButtonLink>}
+      {item && <p class="m-0 text-sm text-white/70"><a class="font-semibold text-brand no-underline hover:underline" href={`${casePath(item)}reclamacoes-publicas/`}>{t.secondaryCta} ↗</a></p>}
       <p class="m-0 text-sm text-white/60">{t.note}</p>
     </div>
   </div>

@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CivicPageHeader from '../../components/CivicPageHeader.astro';
+import guides from '../../data/public-case-guides.json';
+import catalog from '../../data/learning-publications.json';
+import programs from '../../data/education-products.json';
+import { personalStories } from '../../lib/case-catalog';
+
+const consumerGuides = guides.guides.slice(0, 6);
+const insights = catalog.articles
+  .slice()
+  .sort((a, b) => b.updated_at.localeCompare(a.updated_at))
+  .slice(0, 6);
+const stories = personalStories.slice(0, 4);
+const sections = [
+  {
+    eyebrow: 'DEFESA DO CONSUMIDOR',
+    title: 'Guias para documentar e cobrar',
+    description: 'Roteiros com fontes, perguntas e checklists. Sem esperar a empresa explicar o óbvio.',
+    href: '/guias/casos-de-consumo/',
+    cta: 'Ver todos os guias',
+  },
+  {
+    eyebrow: 'AUTONOMIA DIGITAL',
+    title: 'Insights sobre privacidade, IA e direitos',
+    description: 'Perguntas práticas com fontes externas. O playbook completo continua na Academia.',
+    href: '/autonomia-digital/guias/',
+    cta: 'Explorar insights',
+  },
+  {
+    eyebrow: 'HISTÓRIAS DOCUMENTADAS',
+    title: 'Quem ficou esperando?',
+    description: 'Relatos públicos com data, empresa e fonte. O prejuízo tem nome e cronologia.',
+    href: '/historias/',
+    cta: 'Ler histórias',
+  },
+  {
+    eyebrow: 'FORMAÇÃO',
+    title: 'Academia e escola aberta',
+    description: 'Pré-visualizações educativas, diagnóstico gratuito e ferramentas imprimíveis.',
+    href: '/academia/',
+    cta: 'Conhecer a Academia',
+  },
+];
+---
+<BaseLayout
+  title="Artigos e guias — CasoAberto"
+  description="Leituras práticas do CasoAberto: guias ao consumidor, insights de autonomia digital, histórias documentadas e formação aberta, com fontes e datas."
+  breadcrumbs={[{ name: 'Início', item: '/' }, { name: 'Artigos', item: '/artigos/' }]}
+>
+  <CivicPageHeader
+    eyebrow="CASOABERTO · ARTIGOS E GUIAS"
+    title="Ler para cobrar. Não para se acalmar."
+    lead="Guias, insights e histórias com fonte. Cada texto aponta um fato, uma pergunta e um próximo passo — sem absolver quem precisa responder."
+    note="As rotas originais de guias, autonomia digital e histórias permanecem. Este hub só organiza a descoberta."
+  />
+
+  <section class="container space-y-6 py-14" aria-labelledby="artigos-hub">
+    <div class="space-y-3">
+      <h2 id="artigos-hub" class="m-0 text-3xl">Quatro entradas. Uma biblioteca de ação.</h2>
+      <p class="m-0 max-w-3xl text-muted-foreground">Escolha o tipo de leitura. Os URLs profundos não mudam — você chega mais rápido ao que precisa usar.</p>
+    </div>
+    <div class="grid gap-4 md:grid-cols-2">
+      {sections.map((section) => (
+        <article class="flex flex-col gap-4 border border-border bg-card p-6">
+          <p class="m-0 text-xs font-bold uppercase tracking-wider text-brand-strong">{section.eyebrow}</p>
+          <h3 class="m-0 text-2xl">{section.title}</h3>
+          <p class="m-0 flex-1 text-muted-foreground">{section.description}</p>
+          <a class="text-link font-semibold" href={section.href}>{section.cta} ↗</a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-muted py-14" aria-labelledby="guias-recentes">
+    <div class="container space-y-7">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div class="space-y-2">
+          <h2 id="guias-recentes" class="m-0 text-3xl">Guias ao consumidor</h2>
+          <p class="m-0 max-w-2xl text-muted-foreground">Separe fato, prova e pedido. Depois cobre a resposta.</p>
+        </div>
+        <a class="text-link font-semibold" href="/guias/casos-de-consumo/">Abrir todos os guias ↗</a>
+      </div>
+      <div class="grid gap-4 md:grid-cols-3">
+        {consumerGuides.map((guide) => (
+          <article class="flex flex-col gap-3 border border-border bg-card p-5">
+            <p class="m-0 text-xs font-bold uppercase text-brand-strong">{guide.category}</p>
+            <h3 class="m-0 text-xl">{guide.title}</h3>
+            <p class="m-0 flex-1 text-sm text-muted-foreground">{guide.description}</p>
+            <a class="text-link text-sm font-semibold" href={`/guias/casos-de-consumo/${guide.slug}/`}>Ler guia ↗</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="container space-y-7 py-14" aria-labelledby="insights-recentes">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <div class="space-y-2">
+        <h2 id="insights-recentes" class="m-0 text-3xl">Insights de autonomia digital</h2>
+        <p class="m-0 max-w-2xl text-muted-foreground">{catalog.articles.length} perguntas publicadas · {programs.tiers.length} trilhas educativas.</p>
+      </div>
+      <a class="text-link font-semibold" href="/autonomia-digital/guias/">Ver todos os insights ↗</a>
+    </div>
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {insights.map((article) => (
+        <article class="flex flex-col gap-3 border border-border bg-card p-5">
+          <p class="m-0 text-xs font-semibold text-brand-strong">INSIGHT · {article.updated_at.split('-').reverse().join('/')}</p>
+          <h3 class="m-0 text-xl">{article.title}</h3>
+          <p class="m-0 flex-1 text-sm text-muted-foreground">{article.summary}</p>
+          <a class="text-link text-sm font-semibold" href={`/autonomia-digital/guias/${article.slug}/`}>Ler e conferir fontes ↗</a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="border-y bg-card py-14" aria-labelledby="historias-destaque">
+    <div class="container space-y-7">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div class="space-y-2">
+          <h2 id="historias-destaque" class="m-0 text-3xl">Histórias que sustentam os casos</h2>
+          <p class="m-0 max-w-2xl text-muted-foreground">Por trás do dossiê há uma pessoa, uma data e uma fonte. Leia antes de acreditar no comunicado oficial.</p>
+        </div>
+        <a class="text-link font-semibold" href="/historias/">Abrir arquivo de histórias ↗</a>
+      </div>
+      <div class="grid gap-4 md:grid-cols-2">
+        {stories.map((story) => (
+          <a class="block border border-border bg-background p-5 no-underline hover:border-brand" href={story.href}>
+            <p class="m-0 text-xs font-semibold text-brand-strong">{story.category}</p>
+            <h3 class="mb-2 mt-3 text-xl text-foreground">{story.title}</h3>
+            <p class="m-0 text-sm text-muted-foreground">{story.summary}</p>
+            <span class="mt-3 block text-link text-sm">Examinar relato ↗</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="container space-y-3 py-14">
+    <h2 class="m-0 text-3xl">Pronto para a próxima etapa?</h2>
+    <p class="m-0 max-w-2xl text-muted-foreground">Escolha um caminho. O restante continua acessível pelo menu e pelo rodapé.</p>
+    <p class="m-0"><a class="text-link font-semibold" href="/casos/">Voltar ao arquivo de casos ↗</a></p>
+  </section>
+</BaseLayout>

@@ -1,6 +1,7 @@
 ---
 import {caseActionPlan} from '../lib/case-actions';
-import {MessageCircle,Copy,Download,ExternalLink,FileCheck2,Scale,Landmark,ShieldCheck,ArrowRight} from 'lucide-react';
+import CaseActionDrawer from './CaseActionDrawer.astro';
+import {MessageCircle,Copy,Download,ExternalLink,FileCheck2,ShieldCheck,ArrowRight} from 'lucide-react';
 interface Props {caseId:string;compact?:boolean}
 const {caseId,compact=false}=Astro.props;
 const plan=caseActionPlan(caseId);
@@ -14,11 +15,14 @@ const btn='inline-flex min-h-11 items-center justify-center gap-2 rounded-md bor
    <p class="m-0 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.14em] text-brand-strong"><MessageCircle size={16} aria-hidden="true"/> COBRANÇA COM DOCUMENTOS · {plan.id}</p>
    <h2 id={'action-title-'+plan.id} class="m-0 max-w-4xl text-2xl leading-tight md:text-4xl">A resposta não chegou? Faça a pergunta certa. No canal certo.</h2>
    <p class="m-0 max-w-4xl text-base text-muted-foreground">{plan.templates.length} mensagens prontas para {plan.company}, com {plan.channels.length} canais identificados. Edite os fatos do seu caso. Copie, registre e acompanhe.</p>
-   <div class="flex flex-wrap gap-2">
-    <a href={compact?actionPath:'#modelos-'+plan.id} class={btn+' border-brand-strong bg-brand-strong text-white hover:opacity-90'}><Copy size={16} aria-hidden="true"/> Modelos de mensagens</a>
-    <a href={compact?actionPath+'#canais':'#canais'} class={btn+' border-border bg-card text-foreground hover:border-brand'}><Landmark size={16} aria-hidden="true"/> Canais para reclamar</a>
-    {!plan.isCivic&&<a href={compact?actionPath+'#justica':'#justica'} class={btn+' border-border bg-card text-foreground hover:border-brand'}><Scale size={16} aria-hidden="true"/> Abrir processo</a>}
-   </div>
+   {compact ? (
+    <div class="flex flex-wrap items-center gap-3">
+     <CaseActionDrawer caseId={caseId} />
+     <a href={actionPath} class="text-sm font-semibold text-link">Abrir página completa de cobrança ↗</a>
+    </div>
+   ) : (
+    <p class="m-0 max-w-3xl text-sm text-muted-foreground">Role a página: modelos, canais e caminho judicial estão abaixo, nesta ordem.</p>
+   )}
   </header>
   {!compact&&<>
    <div class="grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(18rem,.85fr)]">
@@ -60,9 +64,9 @@ const btn='inline-flex min-h-11 items-center justify-center gap-2 rounded-md bor
      {[['01 · Organizar','Separe contrato, comprovantes, prazos, registros de atendimento e valor pretendido.'],['02 · Verificar a via','Confira competência territorial, valor da causa, natureza do pedido e necessidade de representação.'],['03 · Protocolar','Use o canal do tribunal correspondente ou peça assistência jurídica; guarde recibo, número e intimações.']].map(item=><div class="space-y-2 border border-border bg-card p-5"><h4 class="m-0 text-lg">{item[0]}</h4><p class="m-0 text-sm text-muted-foreground">{item[1]}</p></div>)}
     </div>
     <p class="m-0 max-w-4xl text-sm text-muted-foreground">{plan.judicialNote}</p>
-    <div class="flex flex-wrap gap-3">
+    <div class="space-y-3">
      <a class={btn+' border-brand-strong bg-brand-strong text-white'} href="/guias/como-acionar-empresa-na-justica/">Passo a passo para entrar com ação <ArrowRight size={15} aria-hidden="true"/></a>
-     {plan.channels.filter(ch=>ch.step==='judicial').slice(0,3).map(ch=><a class={btn+' border-border bg-card text-link'} href={ch.url} target="_blank" rel="noopener noreferrer">{ch.title} ↗</a>)}
+     <p class="m-0 text-sm text-muted-foreground">Canais judiciais com fonte: {plan.channels.filter(ch=>ch.step==='judicial').slice(0,3).map((ch,i)=><><a class="font-semibold text-link" href={ch.url} target="_blank" rel="noopener noreferrer">{ch.title}</a>{i<2?' · ':''}</>)}</p>
     </div>
    </section>}
    <footer class="flex flex-wrap gap-4 border-t border-border pt-5 text-sm text-muted-foreground"><span class="inline-flex items-center gap-1"><FileCheck2 size={16} aria-hidden="true"/> {plan.templates.length} modelos editáveis</span><span class="inline-flex items-center gap-1"><ShieldCheck size={16} aria-hidden="true"/> {plan.channels.length} canais com fontes</span></footer>

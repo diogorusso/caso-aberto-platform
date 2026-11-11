@@ -1,5 +1,6 @@
 ---
 import SiteHeader from '../components/SiteHeader.astro';
+import InstitutionSealWall from '../components/InstitutionSealWall.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import '../styles/tailwind.css';
 import '../styles/print-kit.css';
@@ -96,6 +97,7 @@ const crumbLd = breadcrumbs?.length
     <a class="sr-only z-50 bg-background px-4 py-2 font-semibold focus:not-sr-only focus:fixed focus:top-2 focus:left-2" href="#conteudo">Pular para conteúdo</a>
     <SiteHeader />
     <main id="conteudo" class="min-h-[60vh]"><slot /></main>
+    <InstitutionSealWall />
     <SiteFooter />
   </body>
 </html>

@@ -8,8 +8,8 @@ import {categories,featuredCase,caseStudies,personalStories,allResearch,caseCoun
 ---
 <BaseLayout title="Casos documentados: empresas, problemas e histórias | CasoAberto" description="Pesquise todos os casos documentados do CasoAberto: Florense em destaque, viagens, móveis, compras online, energia, doze histórias e provas para conferir.">
  <Breadcrumbs items={[{label:'Início',href:'/'},{label:'Casos',href:'/casos/'}]}/>
- <header class="bg-primary py-14 text-primary-foreground md:py-20">
-  <div class="container space-y-5">
+ <header class="bg-primary py-12 text-primary-foreground md:py-16">
+  <div class="container stack-copy">
    <p class="m-0 text-xs font-extrabold uppercase tracking-[.18em] text-[#ff917e]">CASOABERTO · PESQUISA DOCUMENTADA</p>
    <h1 class="m-0 max-w-5xl text-4xl leading-[1.05] tracking-tight sm:text-5xl lg:text-7xl">Pagou. Não recebeu. <span class="text-[#ff917e]">Cadê a resposta?</span></h1>
    <p class="m-0 max-w-3xl text-lg leading-relaxed text-white/80">Móveis, viagens, compras, energia, política e direitos. Empresas e instituições aparecem com seus nomes, fatos, fontes e perguntas. Encontre o seu problema. Veja quem foi cobrado. Confira o resultado.</p>
@@ -20,7 +20,7 @@ import {categories,featuredCase,caseStudies,personalStories,allResearch,caseCoun
   <div class="container space-y-6">
    <div class="flex flex-wrap items-end justify-between gap-4"><div class="space-y-2"><p class="m-0 text-xs font-bold uppercase tracking-widest text-brand-strong">CASO EM DESTAQUE · INVESTIGAÇÃO CASOABERTO</p><h2 id="caso-destaque" class="m-0 text-3xl md:text-4xl">R$ 190 mil pagos. A entrega ficou para quando?</h2><p class="m-0 text-muted-foreground">Florense Ipanema. Contrato, cronologia, perguntas, fontes e atualizações do caso que abriu o arquivo.</p></div><a class="text-link font-semibold" href={'/casos/'+featuredCase.slug+'/'}>Acompanhar o caso completo ↗</a></div>
    <CaseCard item={featuredCase} featured/>
-   <CaseActionBar title={featuredCase.titulo} summary={featuredCase.resumo} href={"/casos/"+featuredCase.slug+"/"} caseId={featuredCase.id} printHref={"/casos/imprimir/"+featuredCase.slug+"/"}/>
+   <CaseActionBar compact title={featuredCase.titulo} summary={featuredCase.resumo} href={"/casos/"+featuredCase.slug+"/"} caseId={featuredCase.id} printHref={"/casos/imprimir/"+featuredCase.slug+"/"}/>
   </div>
  </section>}
  <section class="border-y bg-muted py-12" aria-labelledby="categorias-casos">

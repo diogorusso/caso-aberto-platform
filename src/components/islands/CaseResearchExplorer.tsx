@@ -1,6 +1,9 @@
 import {useEffect,useMemo,useState} from 'react';
-import {Search,ArrowUpRight,RotateCcw,FolderOpen,BookOpen,Share2} from 'lucide-react';
+import {Search,ArrowUpRight,RotateCcw,FolderOpen,BookOpen} from 'lucide-react';
 import type {CaseCategory,CaseResearchEntry} from '../../lib/case-catalog';
+import {visibilityInputFromEntry} from '../../lib/case-visibility';
+import {cn} from '../../lib/utils';
+import CaseVisibilityCounter from './CaseVisibilityCounter';
 
 interface Props {
  entries:CaseResearchEntry[];
@@ -114,32 +117,64 @@ export default function CaseResearchExplorer({entries,categories,lockedCategory}
    <p className="m-0 text-xs text-muted-foreground">Escolha um caso para ver provas, fontes e cobrança.</p>
   </div>
   <div className="grid gap-4 md:grid-cols-2" aria-label="Resultados de casos documentados">
-   {filtered.map(entry=><article key={entry.id} className={'group flex flex-col gap-4 rounded-lg border bg-card p-5 transition-colors hover:border-brand/60 md:p-6 '+(entry.featured?'border-brand ring-1 ring-brand/30':'border-border')}>
-    <img src={"/og/"+(entry.kind==="historia"?"historias/":"casos/")+entry.slug+".png"} alt={"Apresentação editorial: "+entry.company} width={1200} height={630} loading="lazy" decoding="async" className="aspect-[1200/630] w-full rounded-md border border-border object-cover"/>
-    <div className="flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-wider">
-     {entry.featured&&<span className="rounded bg-brand-strong px-2.5 py-1 text-white">CASO EM DESTAQUE</span>}
-     <span className="text-brand-strong">{resultLabel(entry)}</span>
-     <span className="text-muted-foreground">· {entry.category}</span>
-    </div>
-    <div className="space-y-2">
-     <p className="m-0 text-sm font-semibold text-muted-foreground">{entry.company}</p>
-     <h3 className="m-0 text-xl leading-snug md:text-2xl"><a className="text-foreground no-underline hover:text-brand-strong focus-visible:underline" href={entry.href}>{entry.title}</a></h3>
-     <p className="m-0 text-sm leading-relaxed text-muted-foreground">{entry.summary}</p>
-    </div>
-    <p className="m-0 text-xs text-muted-foreground">{entry.location} · {dateLabel(entry.date)}</p>
-    <div className="mt-auto flex flex-wrap items-center justify-between gap-3 border-t border-border pt-4">
-     <span className="inline-flex items-center gap-2 text-xs text-muted-foreground">
-      {entry.kind==='caso'?<FolderOpen size={15} aria-hidden="true"/>:<BookOpen size={15} aria-hidden="true"/>}
-      {entry.kind==='caso'?cap(entry.sourceCount,'fonte','fontes'):cap(entry.sourceCount,'referência','referências')}
-      {entry.storyCount>0?' · '+cap(entry.storyCount,'história','histórias'):''}
-     </span>
-     <a href={"https://wa.me/?text="+encodeURIComponent("CasoAberto: "+entry.title+"\nLeia o caso completo com fontes e cronologia: https://casoaberto.pages.dev"+entry.href)} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-10 items-center gap-1 text-xs font-bold text-link hover:underline" aria-label={"Compartilhar "+entry.title+" no WhatsApp"}><Share2 size={14} aria-hidden="true"/> WhatsApp</a>
-     {entry.kind==="caso"&&<a href={"/casos/acoes/"+entry.id+"/"} className="inline-flex min-h-10 items-center gap-1 text-sm font-bold text-brand-strong hover:underline">Agir / Modelos ↗</a>}
-     <a href={entry.href} className="inline-flex items-center gap-1 text-sm font-bold text-link hover:underline">
-      {entry.kind==='caso'?'Abrir caso':'Ler história'} <ArrowUpRight size={16} aria-hidden="true"/>
-     </a>
-    </div>
-   </article>)}
+   {filtered.map(entry=>(
+    <a
+     key={entry.id}
+     href={entry.href}
+     target="_blank"
+     rel="noopener noreferrer"
+     className={cn(
+      'group flex flex-col gap-4 rounded-lg border bg-card p-5 text-inherit no-underline transition-[border-color,box-shadow,transform] duration-200',
+      'hover:-translate-y-0.5 hover:border-brand/60 hover:shadow-md',
+      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2',
+      'active:translate-y-0 md:p-6',
+      entry.featured ? 'border-brand ring-1 ring-brand/30' : 'border-border',
+     )}
+     aria-label={(entry.kind==='caso'?'Abrir caso: ':'Ler história: ')+entry.title}
+    >
+     <div className="relative overflow-hidden rounded-md border border-border">
+      <img
+       src={entry.image}
+       alt=""
+       width={1200}
+       height={630}
+       loading="lazy"
+       decoding="async"
+       className="aspect-[1200/630] w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+      />
+      {entry.logo&&(
+       <span className="absolute bottom-3 left-3 inline-flex h-11 max-w-[9.5rem] items-center justify-center border border-border bg-white px-2.5 shadow-sm">
+        <img src={entry.logo} alt="" width={120} height={36} loading="lazy" decoding="async" className="max-h-7 max-w-[8.5rem] object-contain"/>
+       </span>
+      )}
+     </div>
+     <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs font-bold uppercase tracking-wider">
+      {entry.featured&&<span className="rounded bg-brand-strong px-2.5 py-1 text-white">CASO EM DESTAQUE</span>}
+      <span className="text-brand-strong">{resultLabel(entry)}</span>
+      <span className="text-muted-foreground">· {entry.category}</span>
+     </div>
+     <div className="space-y-2">
+      <p className="m-0 text-sm font-semibold text-muted-foreground">{entry.company}</p>
+      <div className="space-y-3 md:space-y-4">
+       <h3 className="m-0 text-xl leading-snug text-foreground transition-colors group-hover:text-brand-strong md:text-2xl">{entry.title}</h3>
+       <CaseVisibilityCounter input={visibilityInputFromEntry(entry)} />
+      </div>
+      <p className="m-0 text-sm leading-relaxed text-muted-foreground">{entry.summary}</p>
+     </div>
+     <p className="m-0 text-xs text-muted-foreground">{entry.location} · {dateLabel(entry.date)}</p>
+     <div className="mt-auto flex items-center justify-between gap-3 border-t border-border pt-4">
+      <span className="inline-flex items-center gap-2 text-xs text-muted-foreground">
+       {entry.kind==='caso'?<FolderOpen size={15} aria-hidden="true"/>:<BookOpen size={15} aria-hidden="true"/>}
+       {entry.kind==='caso'?cap(entry.sourceCount,'fonte','fontes'):cap(entry.sourceCount,'referência','referências')}
+       {entry.storyCount>0?' · '+cap(entry.storyCount,'história','histórias'):''}
+      </span>
+      <span className="inline-flex items-center gap-1 text-sm font-bold text-brand-strong">
+       {entry.kind==='caso'?'Abrir caso':'Ler história'}
+       <ArrowUpRight size={16} className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true"/>
+      </span>
+     </div>
+    </a>
+   ))}
   </div>
   {filtered.length===0&&<div className="rounded-lg border border-border bg-muted p-8 text-center">
    <Search className="mx-auto mb-3 size-7 text-brand-strong" aria-hidden="true"/>

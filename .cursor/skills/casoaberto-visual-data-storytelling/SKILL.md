@@ -27,3 +27,5 @@ Incluir ID em `src/data/impact-stories.json`, preencher `audience`, `exposure`, 
 
 ## Limites
 O gráfico mede o que está na base — não fabrica opinião pública, pressão acumulada, arrecadação, preferências eleitorais, cidadãos únicos ou perdas. A ficha pode ser impressa voluntariamente para consulta e debate público; não há disparos, contato dirigido com ameaças ou coleta de dados políticos. Preserve revisões e direitos de correção.
+
+**Foto de capa / card:** escolha e troca de ilustrações fotográficas (`case-visual-assets.json`, Commons, anti-padrões de imagem genérica) pertencem à skill `casoaberto-case-illustration`, não a esta.
