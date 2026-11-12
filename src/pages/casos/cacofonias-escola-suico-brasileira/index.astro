@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import CaseActionBar from '../../../components/CaseActionBar.astro';
+import CaseVisualStory from '../../../components/CaseVisualStory.astro';
+import dossier from '../../../data/cacofonias-escola-suico-brasileira.json';
+const permalink='/casos/cacofonias-escola-suico-brasileira/';
+const sourceMap=new Map(dossier.sources.map(source=>[source.id,source]));
+const sourceFor=(id:string)=>sourceMap.get(id);
+const dateBR=(value:string)=>value.split('-').reverse().join('/');
+---
+<BaseLayout
+ title={dossier.title+' | CasoAberto'}
+ description={dossier.deck}
+ type="article"
+ datePublished={dossier.reviewed_at}
+ dateModified={dossier.reviewed_at}
+ breadcrumbs={[{name:'Início',item:'/'},{name:'Casos',item:'/casos/'},{name:'Vinícius Cacofonias e Escola Suíço-Brasileira',item:permalink}]}
+>
+ <Breadcrumbs items={[{label:'Início',href:'/'},{label:'Casos',href:'/casos/'},{label:'Cacofonias e Escola Suíço-Brasileira',href:permalink}]}/>
+ <article>
+  <header class="bg-primary py-12 text-primary-foreground md:py-16">
+   <div class="container grid max-w-6xl gap-8 lg:grid-cols-[minmax(0,1.5fr)_minmax(13rem,.55fr)] lg:items-end">
+    <div class="space-y-5">
+     <p class="m-0 text-xs font-bold uppercase tracking-[.14em] text-[#ff917e]">PESQUISA DOCUMENTAL · DIREITOS E JUSTIÇA</p>
+     <h1 class="m-0 max-w-5xl text-4xl leading-[1.08] tracking-tight md:text-6xl">{dossier.title}</h1>
+     <p class="m-0 max-w-3xl text-lg leading-relaxed text-white/85">{dossier.deck}</p>
+     <div class="flex flex-wrap gap-x-5 gap-y-2 text-xs font-semibold uppercase tracking-wide text-white/65">
+      <span>Rio de Janeiro</span><span>Revisado em {dateBR(dossier.reviewed_at)}</span><span>Fontes e versões rastreáveis</span>
+     </div>
+    </div>
+    <div class="space-y-3 border-l-4 border-[#ff917e] bg-white/10 p-5">
+     <p class="m-0 text-[.7rem] font-bold uppercase tracking-[.13em] text-[#ff917e]">SITUAÇÃO NA DATA DE CORTE</p>
+     <p class="m-0 text-base leading-relaxed">{dossier.status}</p>
+     <a class="inline-block text-sm font-bold text-white underline underline-offset-4" href="#fontes">Consultar as fontes</a>
+    </div>
+   </div>
+  </header>
+  <div class="container max-w-6xl space-y-4 py-7">
+   <CaseActionBar compact caseId={dossier.id} title={dossier.title} summary={dossier.deck} href={permalink} printHref={'/casos/imprimir/'+dossier.slug+'/'} showComplaint={false}/>
+  </div>
+  <CaseVisualStory caseId={dossier.id}/>
+  <div class="container grid max-w-6xl gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem]">
+   <div class="space-y-12">
+    <section aria-labelledby="marcos-titulo" class="space-y-5">
+     <p class="m-0 text-xs font-bold uppercase tracking-widest text-brand-strong">QUATRO MARCOS, QUATRO LIMITES</p>
+     <h2 id="marcos-titulo" class="m-0 text-3xl md:text-4xl">O que já é possível documentar?</h2>
+     <div class="grid gap-3 md:grid-cols-2">
+      {dossier.fact_checks.map(fact=><div class="flex flex-col gap-3 rounded-lg border border-border bg-card p-5">
+       <div class="text-2xl font-black tracking-tight text-brand-strong">{fact.label}</div>
+       <h3 class="m-0 text-lg leading-snug">{fact.value}</h3>
+       <p class="m-0 text-sm leading-relaxed text-muted-foreground">{fact.note}</p>
+       {sourceFor(fact.source_id)&&<a class="mt-auto text-sm font-semibold text-link" href={sourceFor(fact.source_id)!.url} target="_blank" rel="noopener noreferrer">Fonte {fact.source_id} ↗</a>}
+      </div>)}
+     </div>
+    </section>
+    <section class="space-y-4 border-l-4 border-brand bg-muted p-6" aria-labelledby="resposta-institucional">
+     <p class="m-0 text-xs font-bold uppercase tracking-widest text-brand-strong">CONTRADITÓRIO · POSIÇÃO DA INSTITUIÇÃO</p>
+     <h2 id="resposta-institucional" class="m-0 text-2xl md:text-3xl">{dossier.institutional_response.heading}</h2>
+     <p class="m-0 text-base leading-relaxed">{dossier.institutional_response.summary}</p>
+     <p class="m-0 text-sm leading-relaxed text-muted-foreground">{dossier.institutional_response.still_open}</p>
+     <a class="text-sm font-semibold text-link" href={sourceFor(dossier.institutional_response.source_id)!.url} target="_blank" rel="noopener noreferrer">Ler nota da escola reproduzida na reportagem ↗</a>
+    </section>
+    <section class="space-y-5 rounded-lg border border-border bg-card p-6" aria-labelledby="compromissos-sis">
+     <p class="m-0 text-xs font-bold uppercase tracking-widest text-brand-strong">FONTE PRIMÁRIA · O QUE A ESCOLA PROMETE</p>
+     <h2 class="m-0 text-2xl md:text-3xl" id="compromissos-sis">{dossier.institutional_commitments.heading}</h2>
+     <p class="m-0 text-base leading-relaxed">{dossier.institutional_commitments.summary}</p>
+     <ul class="list-disc space-y-2 pl-5 text-sm leading-relaxed">{dossier.institutional_commitments.questions.map(question=><li>{question}</li>)}</ul>
+     <a class="inline-block text-sm font-bold text-link" href={sourceFor(dossier.institutional_commitments.source_id)!.url} target="_blank" rel="noopener noreferrer">Conferir o compromisso publicado pela própria SIS ↗</a>
+    </section>
+    <section class="space-y-6" aria-labelledby="cronologia">
+     <div class="space-y-2"><p class="m-0 text-xs font-bold uppercase tracking-widest text-brand-strong">DATAS ANTES DE ADJETIVOS</p><h2 id="cronologia" class="m-0 text-3xl md:text-4xl">Cronologia auditável</h2></div>
+     <ol class="space-y-5 border-l-2 border-border pl-6">
+      {dossier.timeline.map(entry=><li class="relative space-y-2 rounded-md border border-border bg-card p-5">
+       <span class="absolute -left-[1.95rem] top-6 h-3 w-3 rounded-full bg-brand-strong" aria-hidden="true"></span>
+       <div class="flex flex-wrap items-center gap-3"><time datetime={entry.date} class="text-sm font-extrabold text-brand-strong">{dateBR(entry.date)}</time>{('pending' in entry && entry.pending)&&<span class="rounded-md border border-border bg-muted px-2 py-1 text-xs font-semibold">Data noticiada · a confirmar</span>}</div>
+       <h3 class="m-0 text-xl">{entry.label}</h3><p class="m-0 text-sm leading-relaxed text-muted-foreground">{entry.description}</p>
+       {sourceFor(entry.source_id)&&<a class="inline-block text-sm font-semibold text-link" href={sourceFor(entry.source_id)!.url} target="_blank" rel="noopener noreferrer">Registro {entry.source_id} ↗</a>}
+      </li>)}
+     </ol>
+    </section>
+    <section class="space-y-6 border-t border-border pt-8" aria-labelledby="processos-mapa">
+     <div class="space-y-3">
+      <p class="m-0 text-xs font-bold uppercase tracking-widest text-brand-strong">AMPLIAÇÃO DA INVESTIGAÇÃO · HISTÓRICO DO GRUPO</p>
+      <h2 id="processos-mapa" class="m-0 text-3xl md:text-4xl">A escola judicializou a denúncia. Que outros processos envolvem a mantenedora?</h2>
+      <p class="m-0 max-w-3xl leading-relaxed">Localizamos referências processuais do caso Vinícius, uma demanda de consumo no TJRJ, reclamações trabalhistas e uma advertência educacional oficial aplicada à unidade de Brasília. O mapa separa pessoas jurídicas, ações principais, recursos, arquivos e registros históricos: não mistura simples distribuição com condenação.</p>
+     </div>
+     <div class="grid gap-3 md:grid-cols-3">
+      <div class="rounded-lg border border-border bg-card p-5"><p class="m-0 text-3xl font-black text-brand-strong">4</p><p class="m-0 mt-2 text-sm">referências processuais indexadas sobre Vinícius, incluindo instrumentos derivados</p></div>
+      <div class="rounded-lg border border-border bg-card p-5"><p class="m-0 text-3xl font-black text-brand-strong">1</p><p class="m-0 mt-2 text-sm">recurso de consumo encontrado na pauta oficial do TJRJ em 2024</p></div>
+      <div class="rounded-lg border border-border bg-card p-5"><p class="m-0 text-3xl font-black text-brand-strong">1</p><p class="m-0 mt-2 text-sm">advertência educacional oficial do DF vinculada à mantenedora em 2024</p></div>
+     </div>
+     <a class="inline-flex min-h-12 items-center rounded-md border border-primary bg-primary px-5 py-3 text-sm font-bold text-primary-foreground no-underline hover:bg-brand-strong" href="/casos/cacofonias-escola-suico-brasileira/processos-relacionados/">Examinar todos os processos, documentos e vínculos ↗</a>
+    </section>
+    <section class="space-y-5 border-t border-border pt-8" aria-labelledby="questionamentos">
+     <p class="m-0 text-xs font-bold uppercase tracking-widest text-brand-strong">COBRANÇA OBJETIVA</p>
+     <h2 id="questionamentos" class="m-0 text-3xl md:text-4xl">Quem pode responder? Com qual documento?</h2>
+     <ol class="list-decimal space-y-3 pl-6 text-base leading-relaxed">{dossier.questions.map(question=><li class="pl-1">{question}</li>)}</ol>
+    </section>
+    <section class="space-y-4 border-t border-border pt-8" aria-labelledby="limites">
+     <p class="m-0 text-xs font-bold uppercase tracking-widest text-brand-strong">CRITÉRIOS DE VERIFICAÇÃO</p>
+     <h2 id="limites" class="m-0 text-2xl md:text-3xl">Onde termina a reportagem e começa o documento?</h2>
+     <p class="m-0 leading-relaxed">{dossier.limits}</p>
+    </section>
+    <section class="space-y-5 border-t border-border pt-8" aria-labelledby="fontes" id="fontes">
+     <p class="m-0 text-xs font-bold uppercase tracking-widest text-brand-strong">FONTES ORIGINAIS · SEM CÓPIA DE MATÉRIAS</p>
+     <h2 class="m-0 text-3xl md:text-4xl">Confira as fontes</h2>
+     <ul class="space-y-3">{dossier.sources.map(source=><li class="rounded-md border border-border bg-card p-4">
+      <a class="font-semibold text-link" href={source.url} target="_blank" rel="noopener noreferrer">{source.name} ↗</a>
+      <p class="m-0 mt-2 text-xs text-muted-foreground">{source.id} · {source.kind} · {dateBR(source.date)}</p>
+     </li>)}</ul>
+    </section>
+   </div>
+   <aside class="h-fit space-y-5 lg:sticky lg:top-24">
+    <div class="rounded-md border border-border bg-card p-5">
+     <p class="m-0 text-xs font-bold uppercase tracking-wider text-brand-strong">SIGA A INVESTIGAÇÃO</p>
+     <h2 class="my-3 text-xl">Quando chegar uma decisão, o que muda?</h2>
+     <p class="m-0 text-sm leading-relaxed text-muted-foreground">Uma atualização só deve ser publicada após comparar documento, data e posição de cada parte.</p>
+     <ul class="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed">{dossier.editorial_steps.map(step=><li>{step}</li>)}</ul>
+    </div>
+    <div class="rounded-md border border-border bg-muted p-5">
+     <h2 class="m-0 text-lg">Material de pesquisa</h2><p class="mt-2 text-sm text-muted-foreground">Documentação de apoio e perguntas para revisão jurídica, sem publicar os originais privados.</p>
+     <a class="text-sm font-semibold text-link" href="https://github.com/diogorusso/caso-aberto-platform/tree/main/docs/casos/cacofonias-escola-suico-brasileira/" target="_blank" rel="noopener noreferrer">Abrir documentação do caso ↗</a>
+    </div>
+   </aside>
+  </div>
+ </article>
+</BaseLayout>

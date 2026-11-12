@@ -1,0 +1,179 @@
+{
+  "version": 1,
+  "id": "EXT-016",
+  "slug": "cacofonias-escola-suico-brasileira",
+  "reviewed_at": "2026-11-12",
+  "first_event": "2026-03-30",
+  "title": "Um pai denunciou mensagens sobre seu filho morto. Por que a escola o acionou na Justiça?",
+  "deck": "Vinícius Antunes (Cacofonias), Escola Suíço-Brasileira da Barra e o conflito sobre comentários ofensivos, manifestações públicas e medidas judiciais. Acompanhe as versões, as datas e os documentos ainda necessários.",
+  "school": "Escola Suíço-Brasileira da Barra · SIS Swiss International Schools do Brasil",
+  "status": "Disputa cível e criminal relatada pela imprensa; decisão, intimação e autos integrais pendentes de verificação",
+  "fact_checks": [
+    {
+      "label": "30/03/2026",
+      "value": "Morte de Francisco e Emanoelle após acidente na Tijuca",
+      "source_id": "F01",
+      "note": "A dinâmica exata era investigada pela 19ª DP; não se atribui culpa."
+    },
+    {
+      "label": "04/11/2026",
+      "value": "Ações cível e criminal noticiadas por veículos de imprensa",
+      "source_id": "F04",
+      "note": "Os números, a íntegra e a fase processual não foram examinados."
+    },
+    {
+      "label": "R$ 10 mil/dia",
+      "value": "Multa mencionada pela defesa e pela cobertura jornalística",
+      "source_id": "F06",
+      "note": "Valor relatado para eventual descumprimento; não é multa aplicada ou paga."
+    },
+    {
+      "label": "13/11/2026",
+      "value": "Data de comparecimento à 16ª DP informada pelo O Dia",
+      "source_id": "F08",
+      "note": "Validar com documento original e acompanhamento jurídico."
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-03-30",
+      "label": "Perda familiar",
+      "description": "Francisco, de nove anos, e sua mãe morrem em acidente envolvendo ônibus e bicicleta elétrica, na Tijuca. O acidente é um procedimento distinto desta disputa escolar.",
+      "source_id": "F01"
+    },
+    {
+      "date": "2026-11-04",
+      "label": "Entrevista de Vinícius e nota da escola",
+      "description": "Reportagem reúne relato de mensagens ofensivas atribuídas ao perfil pessoal de funcionário, tentativas de contato, notícias de ações judiciais e posicionamento institucional.",
+      "source_id": "F04"
+    },
+    {
+      "date": "2026-11-06",
+      "label": "Repercussão de restrição judicial",
+      "description": "VEJA RIO atualiza cobertura sobre medida restritiva, multa relatada e referência a audiência em março de 2027; ainda é preciso conferir os autos.",
+      "source_id": "F06"
+    },
+    {
+      "date": "2026-11-10",
+      "label": "Intimação na casa da mãe, segundo Vinícius",
+      "description": "O comunicador relata diligência policial na residência da mãe, por volta das 19h. Não está documentado quem definiu local ou horário.",
+      "source_id": "F08"
+    },
+    {
+      "date": "2026-11-11",
+      "label": "Cobertura da convocação",
+      "description": "O Dia noticia convocação para a 16ª DP em 13/11. Jornal relata ausência de resposta da polícia e da escola às perguntas sobre o procedimento até o fechamento.",
+      "source_id": "F08"
+    },
+    {
+      "date": "2026-11-13",
+      "label": "Próxima data noticiada — a confirmar",
+      "description": "Comparecimento à 16ª DP informado pelo O Dia. A pauta e eventual realização ainda dependem de documento e atualização posterior.",
+      "source_id": "F08",
+      "pending": true
+    }
+  ],
+  "institutional_response": {
+    "heading": "O que a escola respondeu",
+    "summary": "Em nota pública reproduzida pelo O Dia, a escola condenou manifestações ofensivas contra uma família enlutada, afirmou que comentário atribuído a empregado ocorreu em perfil pessoal sem autorização ou endosso institucional, disse ter procurado Vinícius e aberto apuração interna. Também relatou ataques à comunidade escolar e negou uma denúncia distinta de demissão de docente por motivo político.",
+    "source_id": "F04",
+    "still_open": "Ainda faltam documentos que indiquem a cronologia efetiva da comunicação, o escopo das medidas judiciais e as providências institucionais que possam ser divulgadas sem expor dados trabalhistas."
+  },
+  "questions": [
+    "Quais documentos e manifestações específicas motivaram as ações cível e criminal noticiadas?",
+    "Qual é o texto integral, a abrangência e a vigência da restrição judicial relatada? Houve recurso?",
+    "Que providências gerais, verificáveis e não invasivas foram tomadas após a denúncia inicial?",
+    "A escola teve alguma participação documentada na escolha do local ou horário da intimação? O que dizem os registros da 16ª DP?",
+    "Como proteger a liberdade de relato de um pai enlutado e o direito de resposta, a honra e a privacidade de todas as pessoas envolvidas?"
+  ],
+  "limits": "O CasoAberto não acessou petições, decisão judicial integral, intimação policial nem relatório de apuração interna. As afirmações sobre atos de terceiros derivam de fontes jornalísticas explicitamente citadas. Não se conclui prática de crime, abuso de autoridade nem participação da escola na definição da diligência. A família e a comunidade escolar não são destinatárias de cobranças individuais.",
+  "sources": [
+    {
+      "id": "F01",
+      "name": "VEJA RIO — Mãe e filho mortos em acidente na Tijuca (31/03)",
+      "date": "2026-03-31",
+      "url": "https://vejario.abril.com.br/cidade/mae-filho-mortos-acidente-bicicleta-tijuca-atropelamento/",
+      "kind": "Contexto do acidente"
+    },
+    {
+      "id": "F04",
+      "name": "O Dia — Humorista é processado por colégio; inclui nota oficial da SIS (04/11)",
+      "date": "2026-11-04",
+      "url": "https://odia.ig.com.br/rio-de-janeiro/2026/11/7319224-humorista-e-processado-por-colegio-apos-denuncia-sobre-funcionario.html",
+      "kind": "Entrevistas e posição institucional"
+    },
+    {
+      "id": "F05",
+      "name": "Correio da Manhã — Defesa, ações relatadas e contraponto da escola (04/11)",
+      "date": "2026-11-04",
+      "url": "https://www.cm.com.br/rio-de-janeiro/2026/11/332478-escola-suico-brasileira-processa-humorista-apos-denuncia-contra-funcionario-que-debochou-da-morte-de-seu-filho.html",
+      "kind": "Reportagem"
+    },
+    {
+      "id": "F06",
+      "name": "VEJA RIO — Por que a escola processou Cacofonias (05–06/11)",
+      "date": "2026-11-06",
+      "url": "https://vejario.abril.com.br/cidade/escola-suico-brasileira-cacofonias/",
+      "kind": "Reportagem e medida relatada"
+    },
+    {
+      "id": "F07",
+      "name": "Revista Fórum — Disputa por comentário de funcionário (04/11)",
+      "date": "2026-11-04",
+      "url": "https://revistaforum.com.br/brasil/escola-processa-humorista-cacofonias-que-denunciou-funcionario-por-debochar-da-morte-do-filho/",
+      "kind": "Reportagem e declarações"
+    },
+    {
+      "id": "F08",
+      "name": "O Dia — Intimação na residência da mãe e convocação (11/11)",
+      "date": "2026-11-11",
+      "url": "https://odia.ig.com.br/rio-de-janeiro/2026/11/7321593-humorista-cacofonias-critica-intimacao-entregue-a-mae-durante-a-noite.html",
+      "kind": "Relato e checagem jornalística"
+    },
+    {
+      "id": "F09",
+      "name": "Revista Fórum — Entrevista sobre a diligência (11/11)",
+      "date": "2026-11-11",
+      "url": "https://revistaforum.com.br/?p=425977",
+      "kind": "Entrevista"
+    },
+    {
+      "id": "F10",
+      "name": "TJRJ — Consultas de processos judiciais",
+      "date": "2026-11-12",
+      "url": "https://www.tjrj.jus.br/consultas/processos-jud/formas-dispo-consultas",
+      "kind": "Órgão oficial"
+    },
+    {
+      "id": "F13",
+      "name": "SIS Brasil — Sobre o grupo e missão institucional",
+      "date": "2026-11-12",
+      "url": "https://www.swissinternationalschool.com.br/sobre-nos",
+      "kind": "Fonte primária da instituição · página sem data de publicação; consultada em 12/11"
+    },
+    {
+      "id": "F14",
+      "name": "SIS Brasil — Escolas e vínculo entre unidades",
+      "date": "2026-11-12",
+      "url": "https://www.swissinternationalschool.com.br/localizacao",
+      "kind": "Fonte primária da instituição · página sem data de publicação; consultada em 12/11"
+    }
+  ],
+  "editorial_steps": [
+    "Consulte as fontes originais antes de reproduzir uma alegação ou número de processo.",
+    "Para atos judiciais, procure decisão e andamento atual com os representantes habilitados.",
+    "Para a intimação, peça esclarecimento documental sobre procedimento e autoridade responsável, não atribua culpa à escola sem registro.",
+    "Não publique fotos do filho, endereços de familiares, áudios ou documentos privados.",
+    "Se surgir decisão, resposta ou correção, registre data da ocorrência, data da fonte e revisão."
+  ],
+  "institutional_commitments": {
+    "heading": "O que a própria SIS promete publicamente?",
+    "summary": "Em seu site institucional, a SIS Brasil afirma buscar um ambiente seguro, no qual alunos recebam cuidado e incentivo. Trata-se de compromisso público da escola — não de prova sobre o que ocorreu no perfil pessoal do empregado.",
+    "source_id": "F13",
+    "questions": [
+      "Que padrões gerais de conduta pública, redes sociais e acolhimento orientam profissionais associados à escola?",
+      "Existe procedimento institucional documentado para receber e responder denúncias sobre mensagens atribuídas a empregados, mesmo quando publicadas fora do serviço?",
+      "A SIS pode informar a cronologia da apuração e o que mudou nos processos internos, respeitando direitos trabalhistas e pessoais?"
+    ]
+  }
+}

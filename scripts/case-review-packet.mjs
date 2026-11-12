@@ -4,7 +4,8 @@ import {readFileSync} from 'node:fs';
 import {sourceCases} from './case-watch-core.mjs';
 const read=n=>JSON.parse(readFileSync(new URL('../src/data/'+n+'.json',import.meta.url),'utf8'));
 const owned=read('casos'),external=read('public-case-atlas'),politics=read('political-observatory'),platforms=read('platform-observatory'),policy=read('case-watch-policy'),stories=read('impact-stories');
-const index=sourceCases(owned,external,politics,platforms);
+const legalDossier=read('cacofonias-escola-suico-brasileira');
+const index=sourceCases(owned,external,politics,platforms,legalDossier);
 const args=process.argv.slice(2);
 const arg=key=>{const i=args.indexOf(key);return i<0?'':args[i+1]||''};
 const id=arg('--case');
@@ -43,6 +44,11 @@ if(ownedCase){
  capsule.facts=political.facts.slice(-3).map(f=>clip(f.finding,290));
  capsule.timeline=political.timeline.slice(-3).map(e=>({date:e.date,title:clip(e.title,120)}));
  capsule.questions=political.questions.slice(0,3).map(s=>clip(s,220));
+}else if(row.kind==='legal'){
+ capsule.sources=legalDossier.sources.slice(-3).map(s=>({label:clip(s.name,95),url:s.url}));
+ capsule.facts=legalDossier.fact_checks.slice(0,3).map(s=>clip(s.value+' — '+s.note,300));
+ capsule.timeline=legalDossier.timeline.slice(-3).map(s=>({date:s.date,title:clip(s.label,120)}));
+ capsule.questions=legalDossier.questions.slice(0,3).map(s=>clip(s,220));
 }else{
  capsule.sources=platforms.records.slice(-3).map(s=>({label:clip(s.headline,95),url:s.source_url}));
  capsule.facts=platforms.records.slice(-3).map(s=>clip(s.finding,280));

@@ -9,7 +9,7 @@ import {planReviews,sourceCases,validatePolicy} from './case-watch-core.mjs';
 const root=resolve(import.meta.dirname,'..');
 const read=p=>JSON.parse(readFileSync(resolve(root,p),'utf8'));
 const policy=read('src/data/case-watch-policy.json');
-const index=sourceCases(read('src/data/casos.json'),read('src/data/public-case-atlas.json'),read('src/data/political-observatory.json'),read('src/data/platform-observatory.json'));
+const index=sourceCases(read('src/data/casos.json'),read('src/data/public-case-atlas.json'),read('src/data/political-observatory.json'),read('src/data/platform-observatory.json'),read('src/data/cacofonias-escola-suico-brasileira.json'));
 const args=process.argv.slice(2);
 const arg=name=>{const i=args.indexOf(name);return i<0?'':args[i+1]||'';};
 const has=name=>args.includes(name);

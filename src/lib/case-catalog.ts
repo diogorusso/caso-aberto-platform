@@ -6,6 +6,7 @@ import schema from '../data/case-categories.json';
 import atlas from '../data/public-case-atlas.json';
 import politics from '../data/political-observatory.json';
 import platforms from '../data/platform-observatory.json';
+import legalDossier from '../data/cacofonias-escola-suico-brasileira.json';
 import visualAssets from '../data/case-visual-assets.json';
 import {cases, casePath} from './cases';
 
@@ -95,6 +96,23 @@ export const caseStudies: CaseResearchEntry[]=[
   sourceCount:platforms.records.length,
   storyCount:0,
   ...visualsFor('PLAT-2026-CASE','meta-eleicoes-2026-governanca-plataformas','caso')
+ }],
+ ...[{
+  id:legalDossier.id,slug:legalDossier.slug,kind:'caso' as const,
+  title:legalDossier.title,company:legalDossier.school,summary:legalDossier.deck,
+  category:categoryFor(legalDossier.id).title,
+  categorySlug:categoryFor(legalDossier.id).slug,
+  href:'/casos/'+legalDossier.slug+'/',
+  status:legalDossier.status,date:legalDossier.reviewed_at,location:'Rio de Janeiro, RJ',
+  featured:false,
+  searchText:[legalDossier.title,legalDossier.deck,legalDossier.school,legalDossier.status,
+    ...legalDossier.fact_checks.map(e=>e.value+' '+e.note),
+    ...legalDossier.timeline.map(e=>e.label+' '+e.description),
+    ...legalDossier.questions,...categoryFor(legalDossier.id).search_terms].join(' '),
+  sourceCount:legalDossier.sources.length,storyCount:0,
+  // Legal-sensitivity exception: avoid reenacting the incident or using a grieving family's portrait.
+  // The archive card displays a typographic source-first state rather than a misleading "photo".
+  image:'',logo:null,imageKind:'cover' as const
  }]
 ];
 const caseBySlug=new Map(caseStudies.map(item=>[item.slug,item]));

@@ -6,12 +6,13 @@ export const addDays=(date,days)=>new Date(Date.parse(date+'T12:00:00Z')+days*86
 export const rank={urgent:0,high:1,standard:2};
 const importantKeys=['focus','closure_evidence'];
 const https=url=>typeof url==='string'&&/^https:\/\/[a-z0-9.-]+(?::443)?(?:\/|$)/i.test(url)&&!/@/.test(url.split('/').slice(0,3).join('/'));
-export const sourceCases=(owned,atlas,political,platform)=>{
+export const sourceCases=(owned,atlas,political,platform,legalDossier=null)=>{
  const out=[
   ...owned.map(item=>({id:item.id,slug:item.slug,href:'/casos/'+item.slug+'/',date:item.status_data,status:item.status,kind:'consumer',source_urls:item.fontes.map(s=>s.url)})),
   ...atlas.cases.map(item=>({id:item.id,slug:item.slug,href:'/casos/arquivo-publico/'+item.slug+'/',date:item.reviewed_at,status:item.status_label,kind:'external',source_urls:item.sources.map(s=>s.url)})),
   ...political.cases.map(item=>({id:item.id,slug:item.slug,href:'/observatorio/politica/'+item.slug+'/',date:item.reviewed_at,status:item.status,kind:'political',source_urls:item.source_ids.map(id=>political.sources.find(s=>s.id===id)?.url).filter(Boolean)})),
   {id:'PLAT-2026-CASE',slug:'meta-eleicoes-2026-governanca-plataformas',href:'/observatorio/plataformas/',date:platform.reviewed_at,status:'Registros institucionais acompanhados',kind:'platform',source_urls:platform.records.map(r=>r.source_url)},
+  ...(legalDossier?[{id:legalDossier.id,slug:legalDossier.slug,href:'/casos/'+legalDossier.slug+'/',date:legalDossier.reviewed_at,status:legalDossier.status,kind:'legal',source_urls:legalDossier.sources.map(s=>s.url)}]:[]),
  ];
  return out;
 };

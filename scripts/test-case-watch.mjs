@@ -5,7 +5,7 @@ import {execFileSync} from 'node:child_process';
 import {planReviews,validatePolicy,sourceCases,issueBody,addDays} from './case-watch-core.mjs';
 const read=name=>JSON.parse(readFileSync(new URL('../src/data/'+name+'.json',import.meta.url),'utf8'));
 const policy=read('case-watch-policy');
-const records=sourceCases(read('casos'),read('public-case-atlas'),read('political-observatory'),read('platform-observatory'));
+const records=sourceCases(read('casos'),read('public-case-atlas'),read('political-observatory'),read('platform-observatory'),read('cacofonias-escola-suico-brasileira'));
 test('all public cases have one bounded monitoring contract',()=>{
  assert.equal(records.length,policy.cases.length);
  assert.deepEqual(validatePolicy(policy,records),[]);

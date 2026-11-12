@@ -1,7 +1,7 @@
 {
   "version": 1,
   "featured_case_id": "CA-001",
-  "updated_at": "2026-11-10",
+  "updated_at": "2026-11-12",
   "categories": [
     {
       "slug": "moveis-e-casa",
@@ -102,7 +102,8 @@
         "POL-004",
         "POL-005",
         "POL-006",
-        "POL-007"
+        "POL-007",
+        "EXT-016"
       ],
       "search_terms": [
         "congresso",
@@ -116,7 +117,14 @@
         "patrocinio",
         "direitos",
         "povos indigenas",
-        "emendas"
+        "emendas",
+        "liberdade de expressão",
+        "censura",
+        "intimacao",
+        "escola suíço brasileira",
+        "cacofonias",
+        "vinicius antunes",
+        "direito de resposta"
       ]
     },
     {
