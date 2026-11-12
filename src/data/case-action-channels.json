@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "reviewed_at": "2026-11-10",
+  "reviewed_at": "2026-11-12",
   "channels": {
     "consumidor-gov": {
       "title": "Consumidor.gov.br",
@@ -262,6 +262,15 @@
       "step": "empresa",
       "kind": "empresa",
       "note": "Central oficial da StubHub possui ajuda sobre ingresso não recebido, transferência móvel e evento cancelado. A plataforma cobre apenas compras feitas ali."
+    },
+    "tjrj-consulta-processual": {
+      "title": "TJRJ — consulta pública de processos",
+      "url": "https://www.tjrj.jus.br/consultas/processos-jud/formas-dispo-consultas",
+      "purpose": "Consultar autos, decisões e movimentações públicas por número de processo ou pelas formas oficiais disponíveis",
+      "source_url": "https://www.tjrj.jus.br/consultas/processos-jud/formas-dispo-consultas",
+      "step": "judicial",
+      "kind": "judicial",
+      "note": "Não é canal para denúncias coletivas nem reclamações contra escola. Conteúdo sob sigilo somente por profissional ou parte habilitada."
     }
   },
   "regional": {
@@ -280,7 +289,8 @@
     "EXT-012": "SP",
     "EXT-013": "RS",
     "EXT-014": "BR",
-    "EXT-015": "BR"
+    "EXT-015": "BR",
+    "EXT-016": "RJ"
   },
   "related": {
     "CA-001": [
@@ -318,6 +328,9 @@
     ],
     "EXT-015": [
       "stubhub-sup"
+    ],
+    "EXT-016": [
+      "tjrj-consulta-processual"
     ]
   },
   "issues": {
@@ -336,7 +349,8 @@
     "EXT-012": "acesso, validação de ingresso e informações anunciadas para show",
     "EXT-013": "interrupção de água, qualidade de serviço ou cobrança",
     "EXT-014": "inserção de anúncios e alteração das condições do streaming",
-    "EXT-015": "revenda de ingressos, informações de preço e origem do vendedor"
+    "EXT-015": "revenda de ingressos, informações de preço e origem do vendedor",
+    "EXT-016": "Verificação documental de medidas judiciais, comunicações e esclarecimentos institucionais no caso Vinícius Antunes / SIS."
   },
   "official_paths": {
     "BR": [
