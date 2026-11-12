@@ -2,6 +2,8 @@ import stories from '../data/impact-stories.json';
 import atlas from '../data/public-case-atlas.json';
 import politics from '../data/political-observatory.json';
 import platforms from '../data/platform-observatory.json';
+import legalDossier from '../data/cacofonias-escola-suico-brasileira.json';
+import relatedRecords from '../data/sis-related-proceedings.json';
 import {cases,casePath,brl} from './cases';
 import {impactForSelection,statusGroups} from './impact';
 
@@ -78,6 +80,22 @@ export function caseStory(id:string):StoryGraph{
      graphDescription='Clubes por marca conforme fotografia jornalística de 18/09/2026. Contagem histórica de 13 clubes, anterior à MP de 25/09. Não representa contratos vigentes hoje.';
      graphSource=getSource('clubes-mapa');
     }
+   }else if(id===legalDossier.id){
+    title=legalDossier.title;status=legalDossier.status;date=legalDossier.reviewed_at;href='/casos/'+legalDossier.slug+'/';
+    const registered=relatedRecords.records;
+    metrics=[
+     {label:'Referências no mapa de processos',value:count(registered.length),note:'Documentos selecionados, incluindo recursos, arquivos, atos administrativos e registros históricos; não ações independentes.',href:href+'processos-relacionados/'},
+     {label:'Fontes do caso',value:count(legalDossier.sources.length),note:'Notícias identificadas e consulta oficial; não decisões judiciais autenticadas.'},
+     {label:'Marcos do caso',value:count(legalDossier.timeline.length),note:'Um marco futuro estava anunciado na data de corte; não conta como ato realizado.'},
+     {label:'Perguntas à instituição',value:count(legalDossier.questions.length),note:'Pedidos de esclarecimento sobre fatos e atos processuais, preservando contraditório.'}
+    ];
+    points=legalDossier.timeline.filter(e=>!('pending' in e && e.pending)).map(e=>({
+     date:e.date,title:e.label,url:legalDossier.sources.find(s=>s.id===e.source_id)?.url
+    }));
+    sources=legalDossier.sources.map(s=>src(s.name,s.url));
+    graphSource=sources[0]?.url;
+    graphTitle='Sequência das publicações documentadas';
+    graphDescription='Marcos da pesquisa; uma publicação ou intimação relatada não equivale à prova de conteúdo de decisão. Registros futuros são excluídos da linha até confirmação.';
    }else if(id==='PLAT-2026-CASE'){
     title='Meta e eleições 2026: anúncios e moderação';status='Registros documentais sob acompanhamento';date=platforms.reviewed_at;href='/observatorio/plataformas/';
     metrics=[
