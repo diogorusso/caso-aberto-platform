@@ -17,7 +17,8 @@ export const daysUtc = (from: string, to: string) => Math.round((Date.parse(to +
 export const formatDate = (iso: string) => iso.split('-').reverse().join('/');
 export const brlCompact = (n: number) => new Intl.NumberFormat('pt-BR', { notation: 'compact', compactDisplay: 'short', style: 'currency', currency: 'BRL', maximumFractionDigits: 1 }).format(n);
 export const stageDescription = (stage: string) => raw.stage_definitions[stage as keyof typeof raw.stage_definitions] || 'Desfecho em atualização';
-export const precedentDuration = (p: Precedent) => p.bankruptcy_decree_date ? daysUtc(p.start_date, p.bankruptcy_decree_date) : p.recovery_acceptance_date ? daysUtc(p.start_date, p.recovery_acceptance_date) : null;
+/** Only publish elapsed days when both milestone dates are unambiguous. */
+export const precedentDuration = (p: Precedent) => ('date_disputed' in p && p.date_disputed === true) ? null : p.bankruptcy_decree_date ? daysUtc(p.start_date, p.bankruptcy_decree_date) : p.recovery_acceptance_date ? daysUtc(p.start_date, p.recovery_acceptance_date) : null;
 export const researchMethodology = raw.common_analysis;
 
 export interface PrecedentEndpoint {
@@ -27,6 +28,7 @@ export interface PrecedentEndpoint {
 }
 /** The verified dated end of a precedent: a bankruptcy decree or, if none, the RJ processing decision. Never an inferred date. */
 export function precedentEndpoint(p: Precedent): PrecedentEndpoint | null {
+  if ('date_disputed' in p && p.date_disputed === true && !p.bankruptcy_decree_date) return null;
   if (p.bankruptcy_decree_date) return { date: p.bankruptcy_decree_date, label: 'sentença de falência', kind: 'falencia' };
   if (p.recovery_acceptance_date) return { date: p.recovery_acceptance_date, label: 'deferimento da recuperação judicial', kind: 'recuperacao' };
   return null;
