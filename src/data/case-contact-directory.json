@@ -288,6 +288,24 @@
       "verified_at": "2026-11-12",
       "role": "empresa",
       "note": "Telefone institucional da Barra identificado no site SIS; não é WhatsApp confirmado nem canal de intimação. Evitar mobilização telefônica ou contato com terceiros."
+    },
+    {
+      "id": "ucam-k2-administracao-judicial",
+      "case_ids": [
+        "EXT-017",
+        "EXT-018",
+        "EXT-019",
+        "EXT-020",
+        "EXT-021",
+        "EXT-022"
+      ],
+      "organization": "Administração Judicial UCAM — K2 Consultoria",
+      "medium": "portal",
+      "value": "https://k2consultoria.com/candido-mendes",
+      "source_url": "https://k2consultoria.com/candido-mendes",
+      "verified_at": "2026-11-12",
+      "role": "administracao_judicial",
+      "note": "Portal da administração judicial do processo 0093754-90.2020.8.19.0001. Serve para informes, plano e orientações a credores; não substitui reclamação trabalhista individual, sindicato ou protocolo pessoal."
     }
   ],
   "case_coverage": {
@@ -452,6 +470,48 @@
       ],
       "status": "partial",
       "note": "Três vias institucionais verificadas na página de contato da própria escola (formulário, e-mail e telefone). Não há WhatsApp oficial confirmado para este litígio. Não usar para envios automáticos, assédio ou comunicações em nome da defesa."
+    },
+    "EXT-017": {
+      "contact_ids": [
+        "ucam-k2-administracao-judicial"
+      ],
+      "status": "partial",
+      "note": "Canal da administração judicial verificado; contatos de unidades e sindicato ainda sob pesquisa sem inventar destinatários."
+    },
+    "EXT-018": {
+      "contact_ids": [
+        "ucam-k2-administracao-judicial"
+      ],
+      "status": "partial",
+      "note": "Canal da administração judicial verificado; contatos de unidades e sindicato ainda sob pesquisa sem inventar destinatários."
+    },
+    "EXT-019": {
+      "contact_ids": [
+        "ucam-k2-administracao-judicial"
+      ],
+      "status": "partial",
+      "note": "Canal da administração judicial verificado; contatos de unidades e sindicato ainda sob pesquisa sem inventar destinatários."
+    },
+    "EXT-020": {
+      "contact_ids": [
+        "ucam-k2-administracao-judicial"
+      ],
+      "status": "partial",
+      "note": "Canal da administração judicial verificado; contatos de unidades e sindicato ainda sob pesquisa sem inventar destinatários."
+    },
+    "EXT-021": {
+      "contact_ids": [
+        "ucam-k2-administracao-judicial"
+      ],
+      "status": "partial",
+      "note": "Canal da administração judicial verificado; contatos de unidades e sindicato ainda sob pesquisa sem inventar destinatários."
+    },
+    "EXT-022": {
+      "contact_ids": [
+        "ucam-k2-administracao-judicial"
+      ],
+      "status": "partial",
+      "note": "Canal da administração judicial verificado; contatos de unidades e sindicato ainda sob pesquisa sem inventar destinatários."
     }
   }
 }
