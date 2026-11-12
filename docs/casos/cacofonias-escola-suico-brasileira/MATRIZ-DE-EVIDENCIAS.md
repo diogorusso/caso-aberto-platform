@@ -4,7 +4,7 @@
 
 | Ref | Prova a preservar / obter | Estado em 12/11 | Finalidade e titular da coleta |
 | --- | --- | --- | --- |
-| E01 | Print da postagem fornecido ao CasoAberto (U01), com arquivo original e hash SHA-256 | P/S (arquivo recebido, URL não verificada) | Provar que declaração foi publicada; somente repositório seguro do editor/advogado, não GitHub |
+| E01 | Print da postagem fornecido ao CasoAberto (U01), original JPEG 797×1536; SHA-256 `05a8d8638ae031070c52f6c4904a6461131f42091610b56b7a853fe4b844418b` | P/S (arquivo recebido, URL não verificada) | Identificar integralmente a captura recebida, não autenticar o Instagram; somente repositório seguro do editor/advogado, não GitHub |
 | E02 | URLs, identificadores de post, capturas nativas e eventual ata notarial das **mensagens originais atribuídas ao funcionário** | A/F | Autoria, contexto, datas, integridade — coletar com Vinícius e advogado |
 | E03 | Conversa integral anterior/posterior, links, IDs de conta e preservação de eventuais edições/remoções | F/S | Distinguir fala, destinatário, ameaça atribuída, alcance e possíveis respostas; sem perfilamento da pessoa |
 | E04 | E-mails completos com cabeçalhos, anexos e respostas da escola | A/F/S | Sequência exata de tentativas de contato |
