@@ -9,7 +9,8 @@ Arquivos:
 1. [DOSSIÊ](DOSSIE-2026-11-12.md) — resumo executivo, contexto, versões, linha do tempo, contradições, perguntas objetivas e material editorial.
 2. [FONTES](FONTES.md) — referências datadas, URL original, independência, o que cada uma demonstra e seus limites.
 3. [MATRIZ DE EVIDÊNCIAS](MATRIZ-DE-EVIDENCIAS.md) — inventário verificável, prioridade de preservação, cadeia de custódia e lacunas.
-4. [BRIEFING JURÍDICO](BRIEFING-JURIDICO.md) — diligências e questões concretas para profissionais constituídos; versões da parte contrária.
+4. [MAPA DE PROCESSOS E REGULADORES](PROCESSOS-RELACIONADOS.md) — 16 referências com identidades jurídicas, decisões conhecidas, deduplicação e perguntas para o advogado.
+5. [BRIEFING JURÍDICO](BRIEFING-JURIDICO.md) — diligências e questões concretas para profissionais constituídos; versões da parte contrária.
 
 ## Publicação e atualização
 
