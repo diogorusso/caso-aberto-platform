@@ -15,18 +15,18 @@ const topic=relatedCases[0]?.categorySlug;
 <BaseLayout image={'/og/historias/'+person.slug+'.png'} title={person.headline+' | Histórias públicas CasoAberto'} description={person.deck} type="article" datePublished={person.source_published_at} dateModified={person.reviewed_at} breadcrumbs={[{name:'Início',item:'/'},{name:'Histórias',item:'/historias/'},{name:person.display_name,item:path}]}>
 <article>
 <header class="bg-primary py-12 text-primary-foreground md:py-16">
-  <div class="container max-w-5xl stack-tight">
+  <div class="container stack-tight">
     <p class="m-0 text-xs font-bold uppercase tracking-wider text-[#ff917e]">HISTÓRIA DOCUMENTADA · {person.category}</p>
     <div class="space-y-5 md:space-y-6">
-      <h1 class="m-0 max-w-5xl text-4xl md:text-6xl">{person.headline}</h1>
+      <h1 class="m-0 text-4xl md:text-6xl">{person.headline}</h1>
       <CaseVisibilityBadge caseId={person.id} variant="header" tone="inverse" />
     </div>
-    <p class="m-0 max-w-3xl text-xl text-white/80">{person.deck}</p>
+    <p class="m-0 text-xl text-white/80">{person.deck}</p>
     <p class="m-0 text-sm text-white/60">Fonte: {person.primary_source_name} · Revisado em {person.reviewed_at.split('-').reverse().join('/')}</p>
   </div>
 </header>
 <div class="container py-5"><CaseActionBar compact title={person.headline} summary={person.deck} href={path} showComplaint={false}/></div>
-<div class="container grid max-w-6xl gap-10 py-14 lg:grid-cols-[minmax(0,1fr)_17rem]">
+<div class="container grid gap-10 py-14 lg:grid-cols-[minmax(0,1fr)_17rem]">
 <div class="min-w-0 space-y-9">
 <section class="space-y-4"><p class="m-0 text-xs font-bold uppercase tracking-widest text-brand-strong">{person.display_name} · {person.persona}</p><h2 class="m-0 text-3xl">O que aconteceu com esta pessoa?</h2>{person.narrative.map(par=><p class="leading-relaxed">{par}</p>)}</section>
 <section class="space-y-3 border-l-4 border-brand bg-muted p-6"><h2 class="m-0 text-2xl">O que mudou até a última atualização?</h2><p class="m-0">{person.source_outcome}</p><p class="m-0 text-xs text-muted-foreground">Registro publicado em {person.source_published_at.split('-').reverse().join('/')}.</p></section>
