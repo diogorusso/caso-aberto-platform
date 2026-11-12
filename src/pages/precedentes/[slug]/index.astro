@@ -9,8 +9,8 @@ interface Props{precedent:Precedent}
 const {precedent:p}=Astro.props;
 const url=precedentPath(p);
 const isBankrupt=p.stage==='falencia_decretada';
-const relatedProceedings='related_proceedings' in p ? p.related_proceedings : [];
-const institutionalRecords='institutional_records' in p ? p.institutional_records : [];
+const relatedProceedings=('related_proceedings' in p ? p.related_proceedings : undefined) ?? [];
+const institutionalRecords=('institutional_records' in p ? p.institutional_records : undefined) ?? [];
 const hasLinkedCase=raw.case_links.some(link=>link.precedent_ids.includes(p.id));
 const schema={'@context':'https://schema.org','@type':'Article',headline:p.brand+': cronologia judicial e precedente de risco',dateModified:raw.updated_at,citation:p.sources.map(s=>s.url),about:{'@type':'Organization',name:p.brand}};
 ---
