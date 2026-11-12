@@ -2,6 +2,7 @@
 /** Astro bridge: serialize caseActionPlan() into the action drawer island. */
 import ActionDrawer from './islands/ActionDrawer';
 import { caseActionPlan } from '../lib/case-actions';
+import { caseContactPack } from '../lib/case-contacts';
 interface Props {
   caseId: string;
   triggerLabel?: string;
@@ -11,6 +12,7 @@ interface Props {
 }
 const { caseId, size = 'default', variant = 'brand', className } = Astro.props;
 const plan = caseActionPlan(caseId);
+const contactPack = caseContactPack(caseId);
 const triggerLabel =
   Astro.props.triggerLabel || (plan.isCivic ? 'Pedir informação pública' : 'Escrever cobrança');
 const payload = {
@@ -23,6 +25,14 @@ const payload = {
   judicialNote: plan.judicialNote,
   templates: plan.templates,
   channels: plan.channels,
+  contacts: contactPack.contacts,
+  publicMessage: contactPack.publicMessage,
+  privateRequest: contactPack.privateRequest,
+  caption: contactPack.caption,
+  posterHref: contactPack.posterHref,
+  caseUrl: contactPack.caseUrl,
+  subject: contactPack.subject,
+  gap: contactPack.gap,
 };
 ---
 <ActionDrawer
