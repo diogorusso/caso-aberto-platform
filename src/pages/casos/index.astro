@@ -23,6 +23,17 @@ import {categories,featuredCase,caseStudies,personalStories,allResearch,caseCoun
    <CaseActionBar compact title={featuredCase.titulo} summary={featuredCase.resumo} href={"/casos/"+featuredCase.slug+"/"} caseId={featuredCase.id} printHref={"/casos/imprimir/"+featuredCase.slug+"/"}/>
   </div>
  </section>}
+ <section class="border-t border-border bg-card py-10 md:py-12" aria-labelledby="destaque-escola-suica">
+  <div class="container grid max-w-6xl gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
+   <div class="space-y-3">
+    <p class="m-0 text-xs font-bold uppercase tracking-[.14em] text-brand-strong">NOVO DOSSIÊ DOCUMENTAL · 12/11/2026</p>
+    <h2 id="destaque-escola-suica" class="m-0 max-w-3xl text-2xl leading-tight md:text-3xl">Cacofonias e Escola Suíço-Brasileira: o que mostram as fontes sobre os processos?</h2>
+    <p class="m-0 max-w-3xl text-sm leading-relaxed text-muted-foreground">A perda de um filho, comentários ofensivos atribuídos a um funcionário, duas ações judiciais noticiadas e uma intimação questionada. Cronologia com a versão pública da instituição, fontes identificadas e documentos ainda necessários.</p>
+    <p class="m-0 text-xs text-muted-foreground">Reportagens verificadas; autos e intimação original pendentes de conferência.</p>
+   </div>
+   <a class="inline-flex min-h-12 items-center justify-center rounded-md border border-primary bg-primary px-5 py-3 text-sm font-bold text-primary-foreground no-underline hover:bg-brand-strong" href="/casos/cacofonias-escola-suico-brasileira/">Abrir o dossiê e as fontes ↗</a>
+  </div>
+ </section>
  <section class="border-y bg-muted py-12" aria-labelledby="categorias-casos">
   <div class="container space-y-7"><div><p class="m-0 text-xs font-bold uppercase tracking-widest text-brand-strong">ENCONTRE O PROBLEMA</p><h2 id="categorias-casos" class="mb-2 mt-3 text-3xl">{categories.length} categorias. Toda a pesquisa.</h2><p class="m-0 text-muted-foreground">Escolha um assunto ou pesquise por empresa, cidade, serviço e documento.</p></div>
    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">{categories.map(cat=><a class="group flex flex-col gap-3 rounded-lg border border-border bg-card p-5 no-underline hover:border-brand/60 focus-visible:ring-2 focus-visible:ring-brand" href={categoryHref(cat)}><span class="text-xs font-bold uppercase tracking-widest text-brand-strong">{cat.eyebrow}</span><strong class="text-xl text-foreground">{cat.title}</strong><p class="m-0 flex-1 text-sm leading-relaxed text-muted-foreground">{cat.description}</p><span class="text-sm font-semibold text-link">{caseCountFor(cat.slug)} casos · Explorar ↗</span></a>)}</div>
