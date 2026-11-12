@@ -26,48 +26,44 @@ const metrics = [
   [t.metrics.status(item.status_data), item.status],
 ];
 ---
-<section class="bg-forest text-forest-foreground">
-  <div class="container stack-section py-10 md:py-14">
-    <div class="mx-auto max-w-3xl">
-      <Eyebrow inverse>{t.eyebrow(item.id)}</Eyebrow>
-      <h1 class="mt-4 m-0 text-balance text-[1.85rem] font-bold leading-[1.15] tracking-tight sm:text-4xl md:text-[2.75rem] md:leading-[1.1]">{item.chamada}</h1>
-      <div class="mt-5">
-        <CaseVisibilityBadge caseId={item.id} variant="header" tone="inverse" />
-      </div>
-      <p class="mt-6 m-0 max-w-2xl text-lg leading-relaxed text-white/75 md:text-xl">{item.resumo}</p>
-      {photo?.src && (
-        <figure class="mt-9 m-0">
-          <div class="relative aspect-[16/9] overflow-hidden bg-black/25">
-            <img class="h-full w-full object-cover" src={photo.src} alt={photo.alt} loading="eager" decoding="async" />
-            <span class="absolute left-0 top-0 z-[1] inline-flex max-w-[calc(100%-1rem)] items-center gap-2 bg-destructive px-3 py-2 text-[0.68rem] font-extrabold uppercase tracking-[0.1em] text-white sm:text-xs" role="note" aria-label={`Posição editorial: ${badge}`}>
-              <span class="size-2 shrink-0 bg-white" aria-hidden="true"></span>{badge}
-            </span>
-          </div>
-          <figcaption class="mt-3 flex items-start gap-3 text-[0.7rem] leading-relaxed text-white/50">
-            {logo?.src && (
-              <span class="inline-flex h-8 shrink-0 items-center justify-center bg-white px-1.5">
-                <img class="max-h-4 max-w-[5.5rem] object-contain" src={logo.src} alt={logo.alt} loading="eager" decoding="async" />
-              </span>
-            )}
-            <span class="min-w-0 pt-0.5">
-              <strong class="font-semibold text-white/80">{subject}</strong>
-              {' — '}Imagem da unidade divulgada pela marca. Não é foto do conflito.
-              {photo.source_url && <> · <a class="text-[#ff917e]/90 no-underline underline-offset-2 hover:underline" href={photo.source_url} target="_blank" rel="noopener noreferrer">Fonte ↗</a></>}
-            </span>
-          </figcaption>
-        </figure>
-      )}
-      <div class="mt-8 flex flex-wrap items-center gap-3 border-t border-white/10 pt-6">
+<section class="bg-forest py-12 text-forest-foreground md:py-16">
+  <div class="container stack-section">
+    <div class="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.8fr)]">
+      <div class="stack-tight max-w-3xl">
+        <Eyebrow inverse>{t.eyebrow(item.id)}</Eyebrow>
+        <div>
+          <h1 class="m-0 text-balance">{item.chamada}</h1>
+          <CaseVisibilityBadge caseId={item.id} variant="header" tone="inverse" />
+        </div>
+        <p class="m-0 max-w-3xl text-lg leading-relaxed text-white/75">{item.resumo}</p>
         <CaseActionDrawer caseId={item.id} className="w-fit bg-brand text-brand-foreground hover:bg-brand/90" />
-        <p class="m-0 text-sm text-white/55">
+        <p class="m-0 text-sm text-white/65">
           Role para o impacto e o dossiê. Documentos:
           <a class="font-semibold text-brand no-underline hover:underline" href={`${base}evidencias/`}>{t.secondaryCta} ↗</a>
         </p>
       </div>
-      {Astro.slots.has('share') && (
-        <div class="mt-6 border-t border-white/10 pt-6">
-          <slot name="share" />
-        </div>
+
+      {photo?.src && (
+        <figure class="m-0 overflow-hidden border border-white/15 bg-black/20">
+          <div class="relative">
+            <img class="h-64 w-full object-cover sm:h-80" src={photo.src} alt={photo.alt} loading="eager" decoding="async" />
+            <span class="absolute left-0 top-0 z-[1] inline-flex max-w-[calc(100%-1rem)] items-center gap-2 bg-destructive px-3 py-2 text-[0.68rem] font-extrabold uppercase tracking-[0.1em] text-white shadow-lg sm:text-xs" role="note" aria-label={`Posição editorial: ${badge}`}>
+              <span class="size-2 shrink-0 bg-white" aria-hidden="true"></span>{badge}
+            </span>
+          </div>
+          <figcaption class="flex items-start gap-3 border-t border-white/10 px-4 py-3 text-xs leading-snug text-white/70">
+            {logo?.src && (
+              <span class="inline-flex h-11 shrink-0 items-center justify-center border border-border bg-white px-2.5">
+                <img class="max-h-7 max-w-[7.5rem] object-contain" src={logo.src} alt={logo.alt} loading="eager" decoding="async" />
+              </span>
+            )}
+            <div class="min-w-0">
+              <strong class="block text-white/90">{subject}</strong>
+              <span>Imagem da unidade divulgada pela marca. Não é foto do conflito.</span>
+              {photo.source_url && <a class="ml-1 font-bold text-brand no-underline hover:underline" href={photo.source_url} target="_blank" rel="noopener noreferrer">Fonte ↗</a>}
+            </div>
+          </figcaption>
+        </figure>
       )}
     </div>
 

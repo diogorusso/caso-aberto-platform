@@ -1,11 +1,10 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CaseActionBar from '../../../components/CaseActionBar.astro';
 import CaseActionHub from '../../../components/CaseActionHub.astro';
 import CaseVisualStory from '../../../components/CaseVisualStory.astro';
 import CaseVisibilityBadge from '../../../components/CaseVisibilityBadge.astro';
 import CivicPageHeader from '../../../components/CivicPageHeader.astro';
-import StickyWhatsAppBar from '../../../components/StickyWhatsAppBar.astro';
-import ViralShareRail from '../../../components/ViralShareRail.astro';
 import ledger from '../../../data/platform-observatory.json';
 import {primaryImageForCase, visualAssetForCase} from '../../../lib/case-media';
 
@@ -36,7 +35,7 @@ const ordered = ledger.records.slice().sort((a,b)=>a.date < b.date ? -1 : a.date
       <figcaption class="border-t border-border px-4 py-3 text-xs text-muted-foreground">{platformVisual?.credit || 'Fotografia documentada do dossiê'}{platformVisual?.photo_source && <> · <a class="text-link" href={platformVisual.photo_source} target="_blank" rel="noopener noreferrer">Fonte da imagem ↗</a></>}</figcaption>
     </figure>
   </div>
-  <div class="container py-5"><ViralShareRail compact caseId="PLAT-2026-CASE" title="Meta e eleições 2026: quem responde pela transparência dos anúncios?" href="/observatorio/plataformas/" summary="Pesquisas, atos oficiais e respostas documentadas sobre anúncios e moderação." printHref="/casos/imprimir/meta-eleicoes-2026-governanca-plataformas/" showComplaint={false} tone="dark" /></div>
+  <div class="container py-5"><CaseActionBar compact title="Meta e eleições 2026: quem responde pela transparência dos anúncios?" summary="Pesquisas, atos oficiais e respostas documentadas sobre anúncios e moderação." href="/observatorio/plataformas/" caseId="PLAT-2026-CASE" printHref="/casos/imprimir/meta-eleicoes-2026-governanca-plataformas/" showComplaint={false}/></div>
   <CaseActionHub caseId="PLAT-2026-CASE" compact/>
   <CaseVisualStory caseId="PLAT-2026-CASE"/>
   <section class="container space-y-5 py-12"><h2 class="m-0 text-3xl">O que os documentos revelam?</h2><p class="max-w-4xl">{ledger.framing}</p><p class="max-w-4xl text-muted-foreground">{ledger.methodology}</p><p class="text-sm text-muted-foreground">Revisão editorial: {ledger.reviewed_at.split('-').reverse().join('/')} · {ledger.records.length} registros documentais · próxima revisão programada por registro · não representa todos os episódios.</p><div class="flex flex-wrap gap-4 text-sm"><a class="text-link font-semibold" href="/instituto/dados/plataformas.json">Baixar JSON ↗</a><a class="text-link font-semibold" href="/instituto/dados/plataformas.csv">Baixar CSV ↗</a><a class="text-link font-semibold" href="/instituto/dados/">Metodologia e conjuntos ↗</a></div></section>
@@ -47,7 +46,6 @@ const ordered = ledger.records.slice().sort((a,b)=>a.date < b.date ? -1 : a.date
   </form><p id="ledger-count" class="text-sm text-muted-foreground" aria-live="polite">{ordered.length} registros visíveis</p></div></section>
   <section class="bg-card py-12"><div class="container space-y-6"><h2 class="m-0 text-3xl">Meta e eleições: os fatos em ordem</h2><ol id="ledger-list" class="list-none space-y-5 p-0">{ordered.map(item => <li class="ledger-item space-y-4 border-l-4 border-brand bg-background p-6" data-type={item.type} data-kind={item.source_kind} data-klass={item.evidence_class}><div class="flex flex-wrap gap-x-4 gap-y-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground"><span>{item.id}</span><span>{item.date.split('-').reverse().join('/')}</span><span>{item.source_kind}</span><span>{classLabel[item.evidence_class] || item.evidence_class}</span></div><h3 class="m-0 text-xl">{item.headline}</h3><p class="m-0">{item.finding}</p><p class="m-0 text-sm"><strong>Recorte:</strong> {item.scope}</p><p class="m-0 text-sm text-muted-foreground"><strong>O que não demonstra:</strong> {item.limits}</p><p class="m-0 text-sm text-muted-foreground"><strong>Direito de resposta / correção:</strong> {item.right_of_reply}</p><p class="m-0 text-xs text-muted-foreground">Revisão programada: {item.review_due.split('-').reverse().join('/')}</p><a class="text-link font-semibold" href={item.source_url} rel="noopener noreferrer">Fonte original: {item.source_label} ↗</a></li>)}</ol></div></section>
   <section class="container space-y-5 py-14"><h2 class="m-0 text-3xl">Quais respostas ainda faltam?</h2><div class="grid gap-4 md:grid-cols-3"><article class="border border-border p-5"><h3>Moderação e recurso</h3><p class="text-sm text-muted-foreground">Taxas de decisões revertidas, tempo de revisão e documentação de diferenças por contexto.</p></article><article class="border border-border p-5"><h3>Transparência publicitária</h3><p class="text-sm text-muted-foreground">Bibliotecas de anúncios, períodos, pagadores, denominadores, preços e lacunas de observação.</p></article><article class="border border-border p-5"><h3>Auditoria de algoritmos</h3><p class="text-sm text-muted-foreground">Amostragem, grupos de controle, causalidade, métricas e limites do que se pode inferir sem acesso interno.</p></article></div><p class="text-muted-foreground">Essas são frentes de pesquisa previstas, não resultados empíricos já obtidos pelo CasoAberto. O arquivo será revisado conforme novas evidências e decisões sejam publicadas.</p><a class="text-link font-semibold" href="/instituto/">Conhecer o método do instituto ↗</a></section>
-<StickyWhatsAppBar caseId="PLAT-2026-CASE" title="Meta e eleições 2026: quem responde pela transparência dos anúncios?" href="/observatorio/plataformas/" summary="Pesquisas, atos oficiais e respostas documentadas sobre anúncios e moderação." />
 </BaseLayout>
 <script>
   const form = document.getElementById('ledger-filter');

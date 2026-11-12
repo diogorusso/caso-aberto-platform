@@ -404,23 +404,23 @@
       "mode": "active",
       "priority": "high",
       "interval_days": 7,
-      "focus": "Monitorar comunicados que afetem a unidade operacional de Niterói no grupo UCAM.",
+      "focus": "Monitorar unidade de Niterói: RJ do grupo, processo 0100724-74.2018.5.01.0245 na 5ª VT e desdobramentos da disputa locatícia noticiada.",
       "watch_urls": [
         "https://k2consultoria.com/candido-mendes",
-        "https://www.migalhas.com.br/quentes/446533/stj-mantem-recuperacao-judicial-do-grupo-candido-mendes"
+        "https://www.candidomendes.edu.br/institucional/unidades/"
       ],
       "deadlines": [],
-      "closure_evidence": "Quitação documental dos créditos relevantes, encerramento judicial da RJ ou decreto/arquivamento público com evidência URL."
+      "closure_evidence": "Quitação documental dos créditos relevantes, encerramento judicial da RJ, desfecho locatício público ou decreto/arquivamento com evidência URL."
     },
     {
       "id": "EXT-022",
       "mode": "active",
       "priority": "high",
       "interval_days": 7,
-      "focus": "Monitorar pagamentos Classe I, informes a credores e manifestações do Sinpro/MP.",
+      "focus": "Monitorar Classe I, PEE/Pet 0004138, processos 0100818-91.2018.5.01.0028 e 0100724-74.2018.5.01.0245, Sinpro/MP e pagamentos do 4º aditivo.",
       "watch_urls": [
         "https://k2consultoria.com/candido-mendes",
-        "https://www.migalhas.com.br/quentes/446533/stj-mantem-recuperacao-judicial-do-grupo-candido-mendes"
+        "https://www.sinpro-rio.org.br/principal/a-existencia-da-candido-mendes-esta-em-jogo/"
       ],
       "deadlines": [],
       "closure_evidence": "Quitação documental dos créditos relevantes, encerramento judicial da RJ ou decreto/arquivamento público com evidência URL."

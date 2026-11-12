@@ -6,18 +6,18 @@
     "sector": "Ensino superior · recuperação judicial",
     "state": "Rio de Janeiro · 1999 a 2026",
     "headline": "Quem cobrou primeiro na Cândido Mendes — a Microsoft ou quem deu aula sem salário?",
-    "deck": "Do processo de software nos anos 1990 ao pedido de recuperação em 2020, ao 4º aditivo de 2025 e ao leilão da UPI de Ipanema em 2026: a crise atravessou décadas. Credores trabalhistas seguem no plano com deságio. A Microsoft já tinha fechado acordo.",
+    "deck": "Software nos anos 1990. Recuperação em 2020. 4º aditivo em 2025. Leilão de Ipanema em 2026. A Microsoft já tinha recebido. O professor ainda discute deságio.",
     "status_label": "Recuperação judicial em execução · 0093754-90.2020.8.19.0001",
     "reviewed_at": "2026-11-10",
     "first_record": "2017-01-10",
     "record_type": "fontes-oficiais-e-reportagem",
     "key_fact": {
-      "metric": "2020",
-      "label": "ano do pedido de recuperação judicial na 5ª Vara Empresarial do Rio",
-      "period": "Pedido em 11/05/2020. Em dezembro de 2025 o STJ manteve o processo (REsp 2.042.521). Não há decreto de falência neste recorte.",
+      "metric": "6 anos+",
+      "label": "de recuperação judicial sem quitação integral dos créditos trabalhistas",
+      "period": "Pedido em 11/05/2020 · processo 0093754-90.2020.8.19.0001 · STJ manteve a RJ em dez/2025 (REsp 2.042.521)",
       "source_url": "https://www.migalhas.com.br/quentes/446533/stj-mantem-recuperacao-judicial-do-grupo-candido-mendes"
     },
-    "lead": "A Cândido Mendes não sumiu de um dia para o outro. São anos de atraso salarial documentado, penhora do campus de Ipanema na briga com a Microsoft, pedido de recuperação judicial em 2020, tentativa do Ministério Público de convolar em falência em 2024, homologação do 4º aditivo em 2025 e leilão da UPI Joana Angélica em 2026. Abra os dossiês por unidade: /casos/arquivo-publico/candido-mendes-ipanema-microsoft-upi-joana-angelica/, /casos/arquivo-publico/candido-mendes-centro-upi-assembleia-creditos/, /casos/arquivo-publico/candido-mendes-campos-upi-anita-pecanha/, /casos/arquivo-publico/candido-mendes-niteroi-unidade-grupo-ucam/ e /casos/arquivo-publico/candido-mendes-professores-funcionarios-creditos-trabalhistas/.",
+    "lead": "A crise não começou ontem. Penhora do campus de Ipanema para a Microsoft. Pedido de recuperação judicial. Pedido do MP para convolar em falência. Aditivo homologado. Leilão da UPI Joana Angélica. Abra cada unidade: /casos/arquivo-publico/candido-mendes-ipanema-microsoft-upi-joana-angelica/, /casos/arquivo-publico/candido-mendes-centro-upi-assembleia-creditos/, /casos/arquivo-publico/candido-mendes-campos-upi-anita-pecanha/, /casos/arquivo-publico/candido-mendes-niteroi-unidade-grupo-ucam/ e /casos/arquivo-publico/candido-mendes-professores-funcionarios-creditos-trabalhistas/.",
     "verified": [
       "Em 2017, reportagem do Globo registrou acordo que encerrou quase 20 anos de disputa com a Microsoft: a universidade pagaria cerca de R$ 6 milhões no total, sendo R$ 3,11 milhões à Microsoft sobre uma cobrança que chegava a R$ 43,16 milhões, com o prédio de Ipanema ainda penhorado em garantia.",
       "Em 11/05/2020, ASBI e Instituto Cândido Mendes pediram recuperação judicial no processo 0093754-90.2020.8.19.0001. Reportagens da época citaram dívida na casa de R$ 400 milhões e milhares de alunos a menos desde 2014.",
@@ -84,14 +84,14 @@
     "other_side": "A administração judicial (K2) publica opções de pagamento, prazos de opção contra deságio do 4º aditivo e canais de comunicação com credores. A universidade também contestou publicamente o parecer do MP pela falência em 2024.",
     "other_side_url": "https://k2consultoria.com/candido-mendes",
     "questions": [
-      "Qual crédito trabalhista individual já foi pago, com qual deságio e em qual data bancária verificável?",
-      "Quais UPIs já foram alienadas e qual valor líquido entrou para a Classe I?",
-      "O leilão da UPI Joana Angélica de 2026 gerou arrematação homologada e depósito judicial comprovado?"
+      "Quanto da Classe I já saiu da conta — com comprovante — e quanto ainda é promessa de plano?",
+      "Quem recebeu primeiro: a credora de software em 2017 ou o professor habilitado em 2025?",
+      "O leilão de Ipanema depositou valor líquido para quem trabalhou?"
     ],
     "steps": [
-      "Abra o dossiê da sua unidade e o dossiê trabalhista antes de aceitar qualquer proposta de deságio.",
-      "Consulte o processo 0093754-90.2020.8.19.0001 no TJRJ e os informes da K2 com a data do ato.",
-      "Separe holerites, FGTS, sentenças e habilitação de crédito; cobre resposta escrita com valor, parcela e responsável."
+      "Abra o dossiê da sua unidade antes de assinar qualquer quitação com deságio.",
+      "Confira o processo 0093754-90.2020.8.19.0001 e a data do último informe da K2.",
+      "Cobre valor, parcela, classe e responsável — por escrito."
     ],
     "limits": "Este dossiê documenta recuperação judicial em curso, não falência decretada. Valores de dívida, deságio e leilão são os publicados nas fontes citadas e não equivalem a prejuízo individual comprovado de cada trabalhador ou aluno. O acordo Microsoft é processo civil histórico distinto do quadro atual de créditos no plano.",
     "guide_slug": "credito-trabalhista-universidade-recuperacao-judicial",
@@ -159,8 +159,8 @@
     "company": "UCAM Ipanema · Microsoft",
     "sector": "Ensino superior · software · alienação de imóvel",
     "state": "Ipanema · Rio de Janeiro · 1999 a 2026",
-    "headline": "A Microsoft cobrou o software. O prédio de Ipanema foi a garantia. E o salário?",
-    "deck": "Quase 20 anos de processo por cópias não autorizadas. Leilões em 2016. Acordo em 2017: a Microsoft recebeu R$ 3,11 milhões de uma cobrança de R$ 43 milhões. Em 2026, a mesma UPI Joana Angélica volta a leilão no plano de recuperação.",
+    "headline": "A Microsoft cobrou. O prédio de Ipanema foi a garantia. O salário ficou para quando?",
+    "deck": "Quase 20 anos de processo. Leilão em 2016. Acordo em 2017: R$ 3,11 milhões para a Microsoft sobre R$ 43 milhões cobrados. Em 2026, a mesma UPI Joana Angélica volta a leilão.",
     "status_label": "UPI Joana Angélica sob alienação no plano · leilão 2026 mantido",
     "reviewed_at": "2026-11-10",
     "first_record": "2017-01-10",
@@ -171,7 +171,7 @@
       "period": "Acordo reportado pelo Globo; o prédio de Ipanema seguia penhorado em garantia até o cumprimento integral",
       "source_url": "https://oglobo.globo.com/economia/suspenso-leilao-do-predio-da-candido-mendes-de-ipanema-20893304"
     },
-    "lead": "Enquanto professores e funcionários acumulavam atraso, a Microsoft — credora de software — levou o caso até a penhora e o leilão do campus de Ipanema. Fechou acordo, recebeu. Anos depois, o mesmo imóvel vira UPI no plano de recuperação judicial. Cruzar com a cronologia geral em /casos/arquivo-publico/candido-mendes-recuperacao-judicial-cronologia-grupo-ucam/ e com o dossiê trabalhista em /casos/arquivo-publico/candido-mendes-professores-funcionarios-creditos-trabalhistas/.",
+    "lead": "Em Ipanema, o imóvel virou garantia de software e depois UPI do plano. A Microsoft fechou acordo e recebeu. Quem dá aula ainda espera o crédito. Cruze com a cronologia em /casos/arquivo-publico/candido-mendes-recuperacao-judicial-cronologia-grupo-ucam/ e com o dossiê trabalhista em /casos/arquivo-publico/candido-mendes-professores-funcionarios-creditos-trabalhistas/.",
     "verified": [
       "O Globo descreveu disputa iniciada em 1999 por uso de cópias não autorizadas de softwares Microsoft, com o prédio da Rua Joana Angélica levado a leilão em 2016 sem interessados.",
       "No acordo de 2017, a Microsoft concordou em receber o equivalente a US$ 1 milhão (R$ 3,11 milhões) sobre débito de R$ 43,16 milhões; o escritório representante também reduziu sua cobrança, totalizando cerca de R$ 6 milhões.",
@@ -207,9 +207,9 @@
     "other_side": "No acordo de 2017, a defesa da universidade afirmou que o cumprimento integral cancelaria a penhora e que leilões anteriores tinham afetado a demanda de alunos em Ipanema. No plano atual, a alienação é apresentada como meio de pagar credores do processo de recuperação.",
     "other_side_url": "https://oglobo.globo.com/economia/suspenso-leilao-do-predio-da-candido-mendes-de-ipanema-20893304",
     "questions": [
-      "O acordo Microsoft de 2017 foi integralmente cumprido e a penhora cancelada em cartório?",
-      "Houve arrematante homologado no leilão de julho de 2026 e depósito do preço?",
-      "Qual parcela do produto da UPI Joana Angélica está vinculada à Classe I trabalhista?"
+      "O acordo de 2017 com a Microsoft foi cumprido até o cancelamento da penhora?",
+      "Houve arrematante e depósito judicial no leilão de 2026?",
+      "Qual fatia do preço da UPI Joana Angélica está vinculada à Classe I?"
     ],
     "steps": [
       "Compare a data do acordo Microsoft com a data do seu crédito trabalhista ou contrato de matrícula.",
@@ -252,8 +252,8 @@
     "company": "UCAM Centro · Rua da Assembleia",
     "sector": "Ensino superior · sede administrativa · UPI imobiliária",
     "state": "Centro · Rio de Janeiro · 2015 a 2026",
-    "headline": "Na Rua da Assembleia a greve começou. A UPI do Centro agora vai a quanto?",
-    "deck": "Escadarias da unidade Centro já foram palco de ato por salários atrasados. O mesmo endereço abriga assembleias de credores e aparece no plano como UPI Assembleia, com preço mínimo de R$ 52,5 milhões.",
+    "headline": "Na Assembleia cobraram salário. Agora a UPI do Centro vale R$ 52,5 milhões. Para quem?",
+    "deck": "Mesmo endereço: greve, AGC no Teatro João Theotonio e andares listados no edital. Preço mínimo da UPI Assembleia: R$ 52,5 milhões.",
     "status_label": "UPI Assembleia listada no 4º aditivo · sede da AGC",
     "reviewed_at": "2026-11-10",
     "first_record": "2020-05-11",
@@ -264,7 +264,7 @@
       "period": "Edital anexo ao 4º aditamento: 1º ao 7º andar da Rua da Assembleia, 10 — matrícula 21920-2-AS",
       "source_url": "https://k2consultoria.com/wp-content/uploads/2025/03/4o-aditivo-ao-PRJ.pdf"
     },
-    "lead": "O Centro não é só endereço de secretaria. É onde docentes já cobraram salário em atraso, onde a AGC foi convocada no Teatro João Theotonio e onde o plano segrega andares inteiros para alienação. Ligue à cronologia em /casos/arquivo-publico/candido-mendes-recuperacao-judicial-cronologia-grupo-ucam/ e ao dossiê trabalhista em /casos/arquivo-publico/candido-mendes-professores-funcionarios-creditos-trabalhistas/.",
+    "lead": "O Centro não é só secretaria. É onde docentes já pararam por atraso e onde o plano vende andares. Veja a cronologia em /casos/arquivo-publico/candido-mendes-recuperacao-judicial-cronologia-grupo-ucam/ e os créditos em /casos/arquivo-publico/candido-mendes-professores-funcionarios-creditos-trabalhistas/.",
     "verified": [
       "O 4º aditivo descreve a UPI Imobiliária Assembleia como o 1º ao 7º andar do imóvel da Rua da Assembleia, 10, com preço mínimo de R$ 52,5 milhões.",
       "Informes da K2 situam a Assembleia Geral de Credores de 2024 no Teatro João Theotonio, no próprio Edifício Centro Cândido Mendes, Rua da Assembleia 10.",
@@ -345,8 +345,8 @@
     "company": "UCAM Campos dos Goytacazes",
     "sector": "Ensino superior · campus interior · UPI imobiliária",
     "state": "Campos dos Goytacazes · RJ · 2020 a 2026",
-    "headline": "Em Campos a aula continua. O prédio da Anita Peçanha está no edital. Quem fica?",
-    "deck": "O calendário de 2026.2 ainda carrega o CNPJ da ASBI em recuperação judicial. O mesmo campus da Rua Anita Peçanha, 100, é UPI imobiliária com preço mínimo de cerca de R$ 31,4 milhões no 4º aditivo.",
+    "headline": "Em Campos a aula segue. O prédio da Anita Peçanha já tem preço no edital. Quem fica?",
+    "deck": "Calendário 2026.2 com ASBI em recuperação judicial. UPI Campos no 4º aditivo: cerca de R$ 31,4 milhões. Operar não é o mesmo que quitar crédito.",
     "status_label": "Campus em operação · UPI Campos listada no plano",
     "reviewed_at": "2026-11-10",
     "first_record": "2020-05-11",
@@ -357,7 +357,7 @@
       "period": "Rua Anita Peçanha, 100, Parque São Caetano — matrícula 10.550 · 4º aditivo",
       "source_url": "https://k2consultoria.com/wp-content/uploads/2025/03/4o-aditivo-ao-PRJ.pdf"
     },
-    "lead": "Fora da capital, a crise não é abstrata: o campus de Campos opera sob a mesma recuperação judicial e aparece como ativo a alienar. Veja a cronologia do grupo em /casos/arquivo-publico/candido-mendes-recuperacao-judicial-cronologia-grupo-ucam/ e o impacto sobre quem trabalha em /casos/arquivo-publico/candido-mendes-professores-funcionarios-creditos-trabalhistas/.",
+    "lead": "Fora da capital, o campus continua e o imóvel já está precificado para alienação. Cruze com /casos/arquivo-publico/candido-mendes-recuperacao-judicial-cronologia-grupo-ucam/ e /casos/arquivo-publico/candido-mendes-professores-funcionarios-creditos-trabalhistas/.",
     "verified": [
       "O edital do 4º aditivo inclui a UPI Imobiliária Campos dos Goytacazes no endereço da Rua Anita Peçanha, 100, com preço mínimo de R$ 31.406.058,06.",
       "O site da unidade Campos publica calendário acadêmico 2026.2 identificando a Associação Sociedade Brasileira de Instrução — em recuperação judicial — e o CNPJ 33.646.001/0001-67.",
@@ -442,28 +442,41 @@
     "id": "EXT-021",
     "slug": "candido-mendes-niteroi-unidade-grupo-ucam",
     "company": "UCAM Niterói",
-    "sector": "Ensino superior · unidade operacional",
-    "state": "Niterói · RJ · 2020 a 2026",
-    "headline": "Niterói também está sob a mesma recuperação. Quem responde por essa unidade?",
-    "deck": "A unidade de Niterói aparece no mapa oficial da UCAM. Não figura como UPI imobiliária separada no anexo do 4º aditivo — mas opera sob a mesma ASBI em recuperação judicial e o mesmo processo 0093754-90.2020.8.19.0001.",
-    "status_label": "Unidade operacional listada · mesma RJ do grupo",
+    "sector": "Ensino superior · unidade operacional · Justiça do Trabalho e locação",
+    "state": "Niterói · RJ · 2018 a 2026",
+    "headline": "Niterói tem vara trabalhista. Tem briga de aluguel. E a mesma recuperação. Quem responde?",
+    "deck": "Processo 0100724-74.2018.5.01.0245 na 5ª Vara do Trabalho de Niterói. Em 2025, reportagem aponta ordem de desocupação por dívida locatícia. Sem UPI própria no 4º aditivo — mesma ASBI, mesmo processo 0093754-90.2020.8.19.0001.",
+    "status_label": "Unidade operacional · RJ do grupo · disputa locatícia noticiada",
     "reviewed_at": "2026-11-10",
-    "first_record": "2020-05-11",
+    "first_record": "2018-01-01",
     "record_type": "fontes-oficiais-e-reportagem",
     "key_fact": {
-      "metric": "1 processo",
-      "label": "recuperação judicial do grupo que alcança a unidade de Niterói",
-      "period": "Processo 0093754-90.2020.8.19.0001 — 5ª Vara Empresarial do Rio; Niterói listada entre as unidades institucionais",
-      "source_url": "https://k2consultoria.com/candido-mendes"
+      "metric": "2 frentes",
+      "label": "trabalhista na 5ª VT de Niterói e RJ empresarial do grupo no Rio",
+      "period": "0100724-74.2018.5.01.0245 (código 0245 = 5ª VT Niterói) + recuperação 0093754-90.2020.8.19.0001 — partes e valores individuais só no PJe",
+      "source_url": "https://www.trt1.jus.br/conteudo-completo-das-varas-por-jurisdicao/-/categories/2274774"
     },
-    "lead": "Não precisa existir leilão local para a conta chegar. Em Niterói, aluno e trabalhador convivem com a mesma recuperação judicial do grupo. Compare com Ipanema e Campos — onde o imóvel virou UPI — em /casos/arquivo-publico/candido-mendes-ipanema-microsoft-upi-joana-angelica/ e /casos/arquivo-publico/candido-mendes-campos-upi-anita-pecanha/. Cronologia completa: /casos/arquivo-publico/candido-mendes-recuperacao-judicial-cronologia-grupo-ucam/.",
+    "lead": "Sem UPI no edital não significa sem conta. Em Niterói há número na Justiça do Trabalho e, em 2025, briga de aluguel noticiada com ordem de sair. Compare Ipanema e Campos — onde o imóvel virou UPI — em /casos/arquivo-publico/candido-mendes-ipanema-microsoft-upi-joana-angelica/ e /casos/arquivo-publico/candido-mendes-campos-upi-anita-pecanha/. Créditos de quem trabalhou: /casos/arquivo-publico/candido-mendes-professores-funcionarios-creditos-trabalhistas/.",
     "verified": [
       "A página institucional de unidades da UCAM lista Niterói com endereço na Rua Visconde do Uruguai, 480, Centro.",
+      "O número CNJ 0100724-74.2018.5.01.0245 é válido e o código de origem 0245 corresponde à 5ª Vara do Trabalho de Niterói na tabela oficial do TRT-1 — foro local da unidade.",
       "ASBI, Instituto Cândido Mendes e Soplantel são as recuperandas do processo único acompanhado pela K2; não há processo de RJ separado publicado para Niterói.",
       "O anexo de UPIs imobiliárias do 4º aditivo elenca Joana Angélica, Assembleia, Praça Pio X, Estrada das Canoas e Campos — sem UPI nominal de Niterói.",
-      "O Sinpro-Rio trata atrasos e a recuperação judicial da Cândido Mendes em chave coletiva da instituição, alcançando o quadro docente do grupo."
+      "Em agosto de 2025, a Enfoco noticiou disputa locatícia sobre imóvel usado pela UCAM na Av. Visconde do Rio Branco, com alegação de cerca de R$ 2 milhões de aluguel e ordem de desocupação ajustada ao calendário escolar; a universidade contestou a dívida."
     ],
     "timeline": [
+      {
+        "date": "2018-01-01",
+        "label": "Processo trabalhista na 5ª VT de Niterói",
+        "description": "Número 0100724-74.2018.5.01.0245 — ano 2018, TRT-1, origem 0245 (5ª Vara do Trabalho de Niterói). Partes, pedido e desfecho exigem consulta no PJe; não inventar valor individual.",
+        "source_url": "https://www.trt1.jus.br/conteudo-completo-das-varas-por-jurisdicao/-/categories/2274774"
+      },
+      {
+        "date": "2020-02-18",
+        "label": "TRT revoga PEE e devolve execuções às varas",
+        "description": "Presidência do TRT-1 revoga o Plano Especial de Execução (Ato 80/2018) na Pet 0004138-65.2017.5.01.0000 e manda as execuções fracionadas voltarem aos juízos originários — inclusive foros como Niterói.",
+        "source_url": "https://odia.ig.com.br/economia/2020/03/5877583-apos-decisao-da-justica--universidade-tera-que-pagar-mais-de-r--100-milhoes-a-ex-funcionarios.html"
+      },
       {
         "date": "2020-05-11",
         "label": "RJ do grupo alcança todas as unidades",
@@ -483,28 +496,46 @@
         "source_url": "https://k2consultoria.com/candido-mendes"
       },
       {
+        "date": "2025-08-20",
+        "label": "Justiça noticiada manda desocupar imóvel em Niterói",
+        "description": "Reportagem: proprietário alega cerca de R$ 2 milhões de aluguel; 2ª instância mantém desocupação com prazo alinhado ao calendário escolar. UCAM confirma o processo e contesta a dívida.",
+        "source_url": "https://enfoco.com.br/noticias/regiao/niteroi/imovel-usado-por-universidade-em-niteroi-vira-briga-na-justica-132734/"
+      },
+      {
         "date": "2026-11-10",
         "label": "Niterói permanece no mapa institucional",
         "description": "Site oficial continua listando a unidade de Niterói entre os campi da universidade.",
         "source_url": "https://www.candidomendes.edu.br/institucional/unidades/"
       }
     ],
-    "other_side": "A universidade mantém página ativa da unidade e a administração judicial informa canais únicos de credores para todo o grupo, sem criar polo processual separado por campus.",
-    "other_side_url": "https://www.candidomendes.edu.br/institucional/unidades/",
+    "other_side": "A universidade mantém página ativa da unidade, informa canais únicos de credores na RJ e, na disputa locatícia, afirmou continuidade das aulas até o fim do ano letivo e contestou valores cobrados pela proprietária.",
+    "other_side_url": "https://enfoco.com.br/noticias/regiao/niteroi/imovel-usado-por-universidade-em-niteroi-vira-briga-na-justica-132734/",
     "questions": [
-      "Qual CNPJ e qual polo processual respondem por contratos firmados em Niterói?",
-      "Há crédito trabalhista de Niterói habilitado e em qual classe?",
-      "Existe alienação operacional ou mudança de endereço da unidade não publicada no edital de UPIs?"
+      "Qual CNPJ e qual polo processual respondem por contratos e holerites de Niterói?",
+      "O processo 0100724-74.2018.5.01.0245 está sob stay da RJ, em execução ou arquivado — e em que valor habilitado?",
+      "Qual o endereço operacional após a ordem de desocupação noticiada em 2025?"
     ],
     "steps": [
       "Guarde contrato, holerite ou matrícula com a identificação da unidade de Niterói.",
-      "Consulte o processo do grupo e a lista de credores pela K2 — não espere um processo municipal separado.",
+      "Consulte no PJe TRT-1 o processo 0100724-74.2018.5.01.0245 e cruze com a lista de credores da K2 — não espere RJ municipal separada.",
       "Cruze com o dossiê trabalhista antes de aceitar quitação com deságio."
     ],
-    "limits": "Ausência de UPI nominal de Niterói no edital do 4º aditivo não significa ausência de risco operacional. Não há, neste recorte, reportagem específica de leilão do campus de Niterói; o vínculo é o processo e a mantenedora do grupo.",
+    "limits": "Ausência de UPI nominal de Niterói não apaga risco operacional nem crédito trabalhista local. O número CNJ mapeia a 5ª VT de Niterói; partes, valor e desfecho individuais só no PJe. A disputa locatícia de 2025 é via civil distinta da RJ e da reclamação trabalhista — não somar valores nem tratar reportagem como sentença transitada.",
     "guide_slug": "credito-trabalhista-universidade-recuperacao-judicial",
     "story_slugs": [],
     "sources": [
+      {
+        "name": "TRT-1 — tabela oficial da 5ª Vara do Trabalho de Niterói (código 0245)",
+        "url": "https://www.trt1.jus.br/conteudo-completo-das-varas-por-jurisdicao/-/categories/2274774",
+        "published_at": "2026-11-10",
+        "kind": "Documento oficial"
+      },
+      {
+        "name": "O Dia — TRT cancela PEE e cita débito acima de R$ 100 milhões",
+        "url": "https://odia.ig.com.br/economia/2020/03/5877583-apos-decisao-da-justica--universidade-tera-que-pagar-mais-de-r--100-milhoes-a-ex-funcionarios.html",
+        "published_at": "2020-03-04",
+        "kind": "Reportagem"
+      },
       {
         "name": "O Globo — pedido de recuperação judicial da UCAM",
         "url": "https://oglobo.globo.com/economia/com-divida-de-400-milhoes-universidade-candido-mendes-pede-recuperacao-judicial-24421857",
@@ -530,6 +561,12 @@
         "kind": "Documento do processo"
       },
       {
+        "name": "Enfoco — disputa locatícia e desocupação noticiada em Niterói",
+        "url": "https://enfoco.com.br/noticias/regiao/niteroi/imovel-usado-por-universidade-em-niteroi-vira-briga-na-justica-132734/",
+        "published_at": "2025-08-20",
+        "kind": "Reportagem"
+      },
+      {
         "name": "UCAM — unidades institucionais incluindo Niterói",
         "url": "https://www.candidomendes.edu.br/institucional/unidades/",
         "published_at": "2026-11-10",
@@ -541,27 +578,28 @@
     "id": "EXT-022",
     "slug": "candido-mendes-professores-funcionarios-creditos-trabalhistas",
     "company": "UCAM · professores e funcionários",
-    "sector": "Ensino superior · créditos trabalhistas · Classe I",
-    "state": "Rio de Janeiro · 2015 a 2026",
-    "headline": "Salário atrasou. FGTS atrasou. A Microsoft já tinha recebido. E agora?",
-    "deck": "O Sinpro documenta atrasos e ações por férias, salários e FGTS. O plano oferece pagamento com deságio. Enquanto isso, a cronologia mostra a Microsoft fechando acordo anos antes. Quem esperou mais na fila?",
-    "status_label": "Créditos trabalhistas sob 4º aditivo · ações sindicais em curso",
+    "sector": "Ensino superior · créditos trabalhistas · Classe I · TRT-1",
+    "state": "Rio de Janeiro · 2012 a 2026",
+    "headline": "O PEE caiu. As varas reabriram. A Microsoft já tinha recebido. E o salário?",
+    "deck": "Ato 80/2018 parcelava a dívida trabalhista. Em 2020 o TRT revogou o plano — mais de R$ 100 milhões, segundo O Dia. Processos 0100818-91.2018.5.01.0028 (28ª VT Rio) e 0100724-74.2018.5.01.0245 (5ª VT Niterói). Depois veio a RJ com deságio. Quem pagou primeiro?",
+    "status_label": "Créditos trabalhistas · PEE revogado · 4º aditivo com deságio",
     "reviewed_at": "2026-11-10",
     "first_record": "2017-01-10",
     "record_type": "fontes-oficiais-e-reportagem",
     "key_fact": {
-      "metric": "R$ 170 mi",
-      "label": "dívida trabalhista confessada citada na fase inicial do plano",
-      "period": "Estadão (2021): Classe I estimada em R$ 170 milhões, cerca de 71% da dívida então discutida no plano — não é pagamento individual comprovado",
-      "source_url": "https://www.estadao.com.br/economia/plano-de-recuperacao-da-candido-mendes-preve-venda-de-imoveis-e-desconto-em-divida-trabalhista/"
+      "metric": "> R$ 100 mi",
+      "label": "débito trabalhista citado quando o TRT revogou o Plano Especial de Execução",
+      "period": "O Dia (2020): cancelamento do PEE (Ato 80/2018) na Pet 0004138-65.2017.5.01.0000; execuções voltam às varas de origem — não é quitação individual",
+      "source_url": "https://odia.ig.com.br/economia/2020/03/5877583-apos-decisao-da-justica--universidade-tera-que-pagar-mais-de-r--100-milhoes-a-ex-funcionarios.html"
     },
-    "lead": "A pergunta incômoda não é se a universidade 'tem história'. É quem recebeu primeiro. A Microsoft encerrou acordo em 2017. Docentes e funcionários ainda negociam deságio dentro da recuperação judicial. Veja Ipanema/Microsoft em /casos/arquivo-publico/candido-mendes-ipanema-microsoft-upi-joana-angelica/ e a cronologia em /casos/arquivo-publico/candido-mendes-recuperacao-judicial-cronologia-grupo-ucam/.",
+    "lead": "A pergunta não é se a universidade “tem história”. É quem recebeu primeiro. Microsoft em 2017. Em 2018, Ato 80/2018 empacotava execuções no TRT. Em 2020 o PEE caiu e as varas — Rio e Niterói — voltaram a correr. Docentes e funcionários ainda negociam deságio na RJ. Veja Ipanema em /casos/arquivo-publico/candido-mendes-ipanema-microsoft-upi-joana-angelica/, Niterói em /casos/arquivo-publico/candido-mendes-niteroi-unidade-grupo-ucam/ e a cronologia em /casos/arquivo-publico/candido-mendes-recuperacao-judicial-cronologia-grupo-ucam/.",
     "verified": [
-      "Em 2021, o Estadão reportou plano que previa deságio a credores trabalhistas e citou dívida confessada da Classe I em cerca de R$ 170 milhões.",
-      "O Sinpro-Rio afirmou em março de 2023 que, apesar da recuperação judicial, a UCAM continuava atrasando salários e depósitos de FGTS.",
-      "Em outubro de 2024, o Sinpro informou manter ações contra a Cândido Mendes cobrando férias, salários atrasados de diversos períodos e FGTS, além de acompanhar a recuperação judicial.",
-      "O 4º aditivo homologado em 2025 estabelece regras de deságio e pagamento prioritário para Classe I, com opção de recusar o novo deságio em 30 dias e permanecer nas condições do plano original.",
-      "Em março de 2024, a manifestação do MP pela falência apontou descumprimento do plano e encargos trabalhistas correntes sem quitação — pedido depois reconsiderado."
+      "Em 12/04/2018 o TRT-1 deferiu novo Plano Especial de Execução (Ato 80/2018) à ASBI; a própria RJ posterior cita o plano e garantia real do ICAM.",
+      "Em 18–20/02/2020 a Presidência do TRT-1 revogou o PEE na Pet 0004138-65.2017.5.01.0000 por descumprimento de parcelas e mandou as execuções fracionadas voltarem aos juízos trabalhistas originários; O Dia situou o débito acima de R$ 100 milhões.",
+      "Os números CNJ 0100818-91.2018.5.01.0028 (origem 0028 = 28ª VT do Rio) e 0100724-74.2018.5.01.0245 (origem 0245 = 5ª VT de Niterói) são válidos e batem com a tabela oficial do TRT-1 — amostra da via trabalhista em foros distintos; partes e valores só no PJe.",
+      "Em 2021, o Estadão reportou plano de RJ com deságio a credores trabalhistas e citou dívida confessada da Classe I em cerca de R$ 170 milhões.",
+      "O Sinpro-Rio afirmou em março de 2023 que, apesar da recuperação judicial, a UCAM continuava atrasando salários e depósitos de FGTS; em outubro de 2024 manteve ações por férias, salários e FGTS.",
+      "O 4º aditivo homologado em 2025 estabelece regras de deságio e pagamento prioritário para Classe I, com opção de recusar o novo deságio em 30 dias e permanecer nas condições do plano original."
     ],
     "timeline": [
       {
@@ -571,8 +609,32 @@
         "source_url": "https://oglobo.globo.com/economia/suspenso-leilao-do-predio-da-candido-mendes-de-ipanema-20893304"
       },
       {
+        "date": "2018-03-01",
+        "label": "Processos nas 28ª VT Rio e 5ª VT Niterói",
+        "description": "0100818-91.2018.5.01.0028 (28ª Vara do Trabalho do Rio) e 0100724-74.2018.5.01.0245 (5ª Vara do Trabalho de Niterói). Códigos de origem conferidos na tabela oficial do TRT-1; capa e andamento no PJe. Data de distribuição exata só nos autos.",
+        "source_url": "https://www.trt1.jus.br/conteudo-completo-das-varas-por-jurisdicao/-/categories/2274774"
+      },
+      {
+        "date": "2018-04-12",
+        "label": "Ato 80/2018 — novo Plano Especial de Execução",
+        "description": "Presidência do TRT-1 defere PEE à ASBI com prestações mensais progressivas; reportagens e o RMA da RJ registram o ato como tentativa de concentrar execuções trabalhistas.",
+        "source_url": "https://odia.ig.com.br/economia/2020/03/5877583-apos-decisao-da-justica--universidade-tera-que-pagar-mais-de-r--100-milhoes-a-ex-funcionarios.html"
+      },
+      {
+        "date": "2020-02-18",
+        "label": "TRT revoga o PEE — execuções voltam às varas",
+        "description": "Decisão na Pet 0004138-65.2017.5.01.0000: descumpridas as parcelas do Ato 80/2018, o plano cai e as execuções fracionadas retornam aos juízos originários.",
+        "source_url": "https://odia.ig.com.br/economia/2020/03/5877583-apos-decisao-da-justica--universidade-tera-que-pagar-mais-de-r--100-milhoes-a-ex-funcionarios.html"
+      },
+      {
+        "date": "2020-10-01",
+        "label": "RMA registra PEE e endividamento trabalhista",
+        "description": "Administradora judicial da RJ resume o Ato 80/2018, parcelas progressivas e o aumento do passivo trabalhista após novas demissões — contexto das execuções que voltaram às varas.",
+        "source_url": "https://www.grantthornton.com.br/globalassets/1.-member-firms/brazil/processos-de-recuperacao-judicial/ucam/rma-outubro-2020.pdf"
+      },
+      {
         "date": "2021-03-15",
-        "label": "Plano cita dívida trabalhista de R$ 170 mi",
+        "label": "Plano de RJ cita dívida trabalhista de R$ 170 mi",
         "description": "Reportagem descreve proposta de venda de imóveis e deságio a credores trabalhistas que concentravam a maior parte da dívida.",
         "source_url": "https://www.estadao.com.br/economia/plano-de-recuperacao-da-candido-mendes-preve-venda-de-imoveis-e-desconto-em-divida-trabalhista/"
       },
@@ -601,22 +663,34 @@
         "source_url": "https://k2consultoria.com/candido-mendes"
       }
     ],
-    "other_side": "A K2 e o plano aprovado apresentam calculadora de deságio, percentuais da receita líquida e alienação de ativos como vias de pagamento. A universidade contestou o parecer do MP pela falência e seguiu pedindo soerguimento via aditivos.",
+    "other_side": "A K2 e o plano aprovado apresentam calculadora de deságio, percentuais da receita líquida e alienação de ativos como vias de pagamento. A universidade contestou o parecer do MP pela falência e seguiu pedindo soerguimento via aditivos. No PEE, a ASBI chegou a pedir reconsideração antes da revogação — indeferida na decisão de fevereiro/2020.",
     "other_side_url": "https://k2consultoria.com/candido-mendes",
     "questions": [
-      "Seu crédito está habilitado, em qual valor e em qual classe?",
-      "Você exerceu ou perdeu o prazo de opção contra o deságio do 4º aditivo?",
-      "Há depósito de FGTS na conta vinculada conforme a cláusula do plano?"
+      "Seu crédito está na lista do PEE revogado, habilitado na RJ — ou nas duas?",
+      "O processo da sua vara (ex.: 28ª VT Rio ou 5ª VT Niterói) está sob stay da recuperação?",
+      "Você exerceu ou perdeu o prazo de opção contra o deságio do 4º aditivo?"
     ],
     "steps": [
-      "Reúna holerites, TRCT, extrato de FGTS e decisões da Justiça do Trabalho em arquivo privado.",
-      "Confira seu nome/crédito nos autos e nos canais rj@candidomendes.edu.br / rjcandidomendes@k2consultoria.com indicados pela AJ.",
-      "Antes de aceitar deságio, compare a proposta com o plano original e busque orientação jurídica independente."
+      "Reúna holerites, TRCT, extrato de FGTS e o número CNJ da Justiça do Trabalho em arquivo privado.",
+      "Confira no PJe TRT-1 e nos canais rj@candidomendes.edu.br / rjcandidomendes@k2consultoria.com se o crédito consta na RJ.",
+      "Antes de aceitar deságio, compare a proposta com o plano original e com o que a vara de origem ainda cobra."
     ],
-    "limits": "R$ 170 milhões é cifra reportada na fase inicial do plano, não o saldo atual de cada credor. Atraso sindical documentado não substitui extrato individual. Acordo Microsoft é credora distinta em processo civil próprio; a comparação é cronológica e documental, não uma condenação criminal.",
+    "limits": "R$ 100 milhões (O Dia, 2020) e R$ 170 milhões (Estadão, 2021) são cifras de momentos distintos — PEE e plano de RJ — não o saldo atual de cada credor. Os dois processos de 2018 mapeiam juízos; não publicamos nomes nem valores individuais sem peça pública. Stay da RJ não extingue o crédito. Acordo Microsoft é via civil distinta.",
     "guide_slug": "credito-trabalhista-universidade-recuperacao-judicial",
     "story_slugs": [],
     "sources": [
+      {
+        "name": "O Dia — TRT cancela PEE e cita débito acima de R$ 100 milhões",
+        "url": "https://odia.ig.com.br/economia/2020/03/5877583-apos-decisao-da-justica--universidade-tera-que-pagar-mais-de-r--100-milhoes-a-ex-funcionarios.html",
+        "published_at": "2020-03-04",
+        "kind": "Reportagem"
+      },
+      {
+        "name": "TRT-1 — tabela oficial das Varas do Trabalho (códigos 0028 e 0245)",
+        "url": "https://www.trt1.jus.br/conteudo-completo-das-varas-por-jurisdicao/-/categories/2274774",
+        "published_at": "2026-11-10",
+        "kind": "Documento oficial"
+      },
       {
         "name": "Estadão — plano com deságio trabalhista e venda de imóveis",
         "url": "https://www.estadao.com.br/economia/plano-de-recuperacao-da-candido-mendes-preve-venda-de-imoveis-e-desconto-em-divida-trabalhista/",
@@ -651,6 +725,12 @@
         "name": "K2 Consultoria — regras do 4º aditivo aos credores",
         "url": "https://k2consultoria.com/candido-mendes",
         "published_at": "2025-03-12",
+        "kind": "Administração judicial"
+      },
+      {
+        "name": "Grant Thornton — RMA out/2020 cita Ato 80/2018 e passivo trabalhista",
+        "url": "https://www.grantthornton.com.br/globalassets/1.-member-firms/brazil/processos-de-recuperacao-judicial/ucam/rma-outubro-2020.pdf",
+        "published_at": "2020-10-01",
         "kind": "Administração judicial"
       }
     ]

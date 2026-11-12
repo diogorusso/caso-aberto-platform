@@ -85,6 +85,21 @@ Fontes: [UPI Joana Angélica](https://sindicatodosleiloeirosrj.com.br/editais/ca
 
 Os canais trabalhistas e regulatórios são linhas **independentes** do processo de recuperação. Nem todo ato contra uma entidade mantenedora afeta todas as ofertas acadêmicas. Para alunos, verificar individualmente autorização de curso, status e obrigações contratuais; para docentes e credores, conferir a natureza do crédito, classe e eventual habilitação.
 
+## 7b. Árvore trabalhista — TRT-1 (execução especial e juízos de origem)
+
+Antes da recuperação empresarial de 2020, a ASBI/UCAM já concentrava cobranças trabalhistas no TRT da 1ª Região. O **Plano Especial de Execução (PEE)** — Ato 80/2018 — parcelava o passivo; em **18–20/02/2020** a Presidência do TRT-1 **revogou** o plano na Pet `0004138-65.2017.5.01.0000` e determinou o retorno das execuções fracionadas aos juízos trabalhistas originários. Reportagem do *O Dia* situou o débito então acima de **R$ 100 milhões**. A decisão de deferimento da RJ (maio/2020) citou expressamente a suspensão do PEE/Ato 80/2018.
+
+| CNJ | Órgão (código de origem) | Papel documental | Fonte | O que falta no PJe |
+|---|---|---|---|---|
+| 0004138-65.2017.5.01.0000 | Presidência / PetCiv TRT-1 | Revogação do PEE (Ato 80/2018); restabelece execuções nos juízos originários | [O Dia](https://odia.ig.com.br/economia/2020/03/5877583-apos-decisao-da-justica--universidade-tera-que-pagar-mais-de-r--100-milhoes-a-ex-funcionarios.html) (cita a decisão; PDF espelho SAAERJ só em HTTP) · [Grant Thornton RMA](https://www.grantthornton.com.br/globalassets/1.-member-firms/brazil/processos-de-recuperacao-judicial/ucam/rma-outubro-2020.pdf) | Agravo regimental e distribuição de valores na CAEX |
+| 0100818-91.2018.5.01.0028 | **28ª Vara do Trabalho do Rio** (código `0028`) | Reclamação/execução de 2018 no foro da Capital — número CNJ válido; origem bate com a tabela oficial do TRT-1 | Tabela de varas TRT-1 · dígito verificador CNJ OK | Partes, valor, pedido, sentença e efeito da RJ/stay — só no PJe |
+| 0100724-74.2018.5.01.0245 | **5ª Vara do Trabalho de Niterói** (código `0245`) | Reclamação/execução de 2018 no foro de Niterói — número CNJ válido; origem bate com a tabela oficial do TRT-1 | Tabela de varas TRT-1 · dígito verificador CNJ OK | Partes, valor, pedido, sentença e efeito da RJ/stay — só no PJe |
+| 0170400-95.2002.5.01.0043 | 43ª Vara do Trabalho do Rio | Ação MPT × UCAM citada pelo SAAERJ (atraso salarial / FGTS) | [SAAERJ 2014](http://saaerj.org.br/category/universidade-candido-mendes/) | Cumprimento atual e eventuais recursos |
+
+**Consulta primária trabalhista:** PJe TRT-1 · tabela oficial de varas: https://www.trt1.jus.br/conteudo-completo-das-varas-por-jurisdicao/-/categories/2274774 . Em janeiro/2018 o SAAERJ protocolou denúncia ao MPT por atrasos de salário, 13º e férias. Os dois processos de 2018 acima **não substituem** a lista nominal de credores da RJ; são amostra da via trabalhista em juízos de Rio e Niterói. **Não publicar nomes de reclamantes, CPFs ou valores individuais** sem redigir e sem peça pública.
+
+**Linha civil paralela em Niterói (não trabalhista):** em 20/08/2025, a Enfoco noticiou disputa locatícia sobre imóvel usado pela UCAM na Av. Visconde do Rio Branco, com alegação de cerca de R$ 2 milhões de aluguel e ordem de desocupação ajustada ao calendário escolar; a UCAM contestou a dívida. Fonte: https://enfoco.com.br/noticias/regiao/niteroi/imovel-usado-por-universidade-em-niteroi-vira-briga-na-justica-132734/ .
+
 ## 8. Lacunas priorizadas e protocolo de revisão
 
 | Prioridade | Pergunta fechável | Evidência conclusiva esperada |
@@ -99,6 +114,8 @@ Os canais trabalhistas e regulatórios são linhas **independentes** do processo
 | P1 | A PGFN confirmou o acordo tributário citado em 2022? | Ato, valores e status de transação na fonte oficial |
 | P2 | Quais cursos/atos do MEC são pertinentes a estudantes afetados? | Consulta por curso, modalidade e campus no e-MEC + portaria identificada |
 | P2 | Quais queixas consumeristas ou trabalhistas têm processo e desfecho próprio? | Amostra deduplicada com número público, decisão e status, sem divulgar PII |
+| P0 | Qual o andamento e o efeito da RJ sobre `0100818-91.2018.5.01.0028` (28ª VT Rio) e `0100724-74.2018.5.01.0245` (5ª VT Niterói)? | Capas/movimentações do PJe TRT-1: partes (redigidas), classe, valor, última decisão, stay da RJ |
+| P1 | O agravo regimental da Pet `0004138-65.2017.5.01.0000` teve resultado após a revogação do PEE? | Acórdão/despacho do Órgão Especial e devolução dos autos às varas de origem |
 
 ### Procedimento de cada atualização
 

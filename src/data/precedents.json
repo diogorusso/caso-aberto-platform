@@ -1193,6 +1193,18 @@
       "summary": "O processo 0093754-90.2020.8.19.0001 reúne ASBI, ICAM e Soplantel. O processamento da recuperação foi deferido em maio de 2020. Em 12/03/2025 a Quinta Câmara de Direito Privado do TJRJ deu provimento ao recurso do comitê de credores e homologou o quarto aditivo ao plano. A administradora K2 publica regras de pagamento e fontes para conferir a relação de credores. Em 2026, o TJRJ publicou pautas de recursos ligados à recuperação e um edital programou leilão da UPI Joana Angélica. Não há, nas fontes aqui verificadas, decreto de falência ou comprovação da arrematação de julho de 2026. Em maio de 2022, a UCAM declarou pagamentos específicos a credores e um acordo tributário; esse relato histórico não demonstra situação de quitação em 2026.",
       "timeline": [
         {
+          "date": "2018-04-12",
+          "event": "TRT-1 defere Plano Especial de Execução (Ato 80/2018) à ASBI — via trabalhista anterior à RJ empresarial",
+          "type": "trabalhista",
+          "source_url": "https://odia.ig.com.br/economia/2020/03/5877583-apos-decisao-da-justica--universidade-tera-que-pagar-mais-de-r--100-milhoes-a-ex-funcionarios.html"
+        },
+        {
+          "date": "2020-02-18",
+          "event": "Presidência do TRT-1 revoga o PEE na Pet 0004138-65.2017.5.01.0000 e devolve execuções às varas de origem",
+          "type": "trabalhista",
+          "source_url": "https://odia.ig.com.br/economia/2020/03/5877583-apos-decisao-da-justica--universidade-tera-que-pagar-mais-de-r--100-milhoes-a-ex-funcionarios.html"
+        },
+        {
           "date": "2020-05-11",
           "event": "Universidade comunica pedido de recuperação judicial (nota publicada em 12/05)",
           "type": "pedido",

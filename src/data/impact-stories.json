@@ -296,22 +296,22 @@
     {
       "id": "EXT-021",
       "audience": "Alunos e trabalhadores da unidade Niterói",
-      "exposure": "Unidade operacional sob o mesmo processo de recuperação do grupo.",
-      "headline": "Niterói fora do edital de UPI. Dentro da mesma recuperação. Isso basta?",
-      "worst_case": "Se a unidade sofrer enxugamento operacional sem UPI própria publicada, a comunidade de Niterói pode perder serviços sem o mesmo destaque documental dos campi alienáveis.",
-      "threshold": "Fechamento, mudança de endereço ou demissões em massa sem ato publicado no processo.",
-      "resolution": "Comunicado formal da mantenedora e da AJ sobre a situação da unidade, com datas.",
-      "action": "Exija a mantenedora do contrato e o tratamento do crédito no processo único do grupo."
+      "exposure": "Unidade sob a mesma RJ, processo na 5ª VT de Niterói e disputa locatícia noticiada em 2025.",
+      "headline": "Niterói tem vara, tem aluguel na Justiça e a mesma recuperação. Quem segura o endereço?",
+      "worst_case": "Se a desocupação locatícia avançar sem endereço substituto publicado e o crédito trabalhista local ficar só no deságio da RJ, a comunidade de Niterói perde campus e quitação ao mesmo tempo.",
+      "threshold": "Nova ordem de imissão, mudança de endereço sem ato formal, ou arquivamento/stay do processo 0100724-74.2018.5.01.0245 sem habilitação clara na RJ.",
+      "resolution": "Comunicado da mantenedora e da AJ com endereço operacional, mais andamento PJe e posição do crédito na Classe I.",
+      "action": "Exija CNPJ do contrato, status do processo na 5ª VT e o tratamento do crédito no processo único do grupo."
     },
     {
       "id": "EXT-022",
       "audience": "Professores e funcionários credores da UCAM",
-      "exposure": "Atrasos de salário/FGTS e pagamento via plano com deságio.",
-      "headline": "A Microsoft já tinha recebido. O deságio agora é para quem deu aula?",
-      "worst_case": "Se o credor trabalhista aceitar deságio sem conferir habilitação e prazo de opção, reduz o crédito e ainda assim pode continuar sem depósito comprovado nas parcelas seguintes.",
-      "threshold": "Fim do prazo de opção, nova parcela vencida sem pagamento ou FGTS sem depósito na conta vinculada.",
-      "resolution": "Comprovante bancário das parcelas e regularização do FGTS conforme o plano vigente.",
-      "action": "Confira habilitação, classe e opção de deságio antes de assinar quitação."
+      "exposure": "PEE revogado em 2020, execuções nas varas do TRT-1 e pagamento via plano de RJ com deságio.",
+      "headline": "O PEE caiu. As varas reabriram. O deságio agora é para quem deu aula?",
+      "worst_case": "Se o credor aceitar deságio da RJ sem conferir a execução na vara de origem e o prazo de opção, reduz o crédito e ainda assim pode continuar sem depósito comprovado.",
+      "threshold": "Fim do prazo de opção, parcela vencida sem pagamento, FGTS sem depósito ou stay que trave a execução sem habilitação clara.",
+      "resolution": "Comprovante bancário das parcelas, regularização do FGTS e cruzamento entre PJe da vara e lista de credores da AJ.",
+      "action": "Confira o número CNJ na vara (Rio ou Niterói), a habilitação na RJ e a opção de deságio antes de assinar quitação."
     }
   ]
 }

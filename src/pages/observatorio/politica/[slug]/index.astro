@@ -1,10 +1,9 @@
 ---
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import CaseVisualStory from '../../../../components/CaseVisualStory.astro';
+import CaseActionBar from '../../../../components/CaseActionBar.astro';
 import CaseActionHub from '../../../../components/CaseActionHub.astro';
-import DocumentedCaseHeader from '../../../../components/DocumentedCaseHeader.astro';
-import StickyWhatsAppBar from '../../../../components/StickyWhatsAppBar.astro';
-import ViralShareRail from '../../../../components/ViralShareRail.astro';
+import CaseVisibilityBadge from '../../../../components/CaseVisibilityBadge.astro';
 import ledger from '../../../../data/political-observatory.json';
 import {primaryImageForCase, visualAssetForCase} from '../../../../lib/case-media';
 export function getStaticPaths() { return ledger.cases.map(study=>({params:{slug:study.slug},props:{study}})); }
@@ -27,31 +26,27 @@ if(!heroSrc) throw new Error('Political case '+study.id+' missing required on-pa
 ---
 <BaseLayout image={'/og/casos/'+study.slug+'.png'} title={study.title+' | Observatório CasoAberto'} description={study.summary} type="article" dateModified={study.reviewed_at} breadcrumbs={[{name:'Início',item:'/'},{name:'Observatório político',item:base},{name:study.title,item:caseUrl}]}>
 <article>
- <DocumentedCaseHeader
-   eyebrow={`${study.id} · ${study.topic}`}
-   title={study.title}
-   deck={study.summary}
-   caseId={study.id}
-   imageSrc={heroSrc}
-   imageAlt={'Imagem documental do caso '+study.title}
-   credit={visual?.credit ?? undefined}
-   photoSource={visual?.photo_source}
-   status={study.status}
-   meta={`Revisado em ${date(study.reviewed_at)}`}
- >
-   <ViralShareRail
-     slot="share"
-     embedded
-     compact
-     caseId={study.id}
-     title={study.title}
-     href={caseUrl}
-     summary={study.summary}
-     printHref={'/casos/imprimir/'+study.slug+'/'}
-     showComplaint={false}
-     tone="dark"
-   />
- </DocumentedCaseHeader>
+ <header class="bg-primary py-12 text-primary-foreground md:py-16">
+  <div class="container grid max-w-6xl items-start gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(16rem,0.85fr)]">
+   <div class="stack-tight">
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-bold uppercase tracking-[.15em]">
+      <span class="text-[#ff917e]">{study.id} · {study.topic}</span>
+      <span class="text-white/60">REVISADO EM {date(study.reviewed_at)}</span>
+    </div>
+    <div class="space-y-5 md:space-y-6">
+      <h1 class="m-0 max-w-5xl text-4xl leading-tight md:text-6xl">{study.title}</h1>
+      <CaseVisibilityBadge caseId={study.id} variant="header" tone="inverse" />
+    </div>
+    <p class="m-0 max-w-4xl text-lg text-white/80 md:text-xl">{study.summary}</p>
+    <p class="m-0 border-l-4 border-brand pl-4 text-sm font-semibold">{study.status}</p>
+   </div>
+   <figure class="m-0 overflow-hidden border border-white/15 bg-black/20">
+    <img src={heroSrc} alt={'Imagem documental do caso '+study.title} width="1200" height="630" class="aspect-[1200/630] w-full object-cover" loading="eager" decoding="async"/>
+    <figcaption class="border-t border-white/10 px-4 py-3 text-xs leading-snug text-white/70">{visual?.credit || 'Fotografia documentada do dossiê'}{visual?.photo_source && <> · <a class="text-[#ff917e] underline" href={visual.photo_source} target="_blank" rel="noopener noreferrer">Fonte da imagem ↗</a></>}</figcaption>
+   </figure>
+  </div>
+ </header>
+ <div class="container py-5"><CaseActionBar compact title={study.title} summary={study.summary} href={caseUrl} caseId={study.id} printHref={'/casos/imprimir/'+study.slug+'/'} showComplaint={false}/></div>
  <CaseActionHub caseId={study.id} compact/>
  <CaseVisualStory caseId={study.id}/>
  <div class="container grid max-w-7xl gap-12 py-12 lg:grid-cols-[minmax(0,1fr)_17rem]">
@@ -70,5 +65,4 @@ if(!heroSrc) throw new Error('Political case '+study.id+' missing required on-pa
   <aside class="h-fit space-y-4 border-t-4 border-brand bg-card p-6 lg:sticky lg:top-24"><h2 class="m-0 text-xl">Neste dossiê</h2><p class="m-0 text-sm text-muted-foreground">ID {study.id} · Revisão {date(ledger.reviewed_at)}. Role a página para fatos, cronologia, vínculos, perguntas e fontes — nesta ordem.</p><div class="space-y-3 border-t border-border pt-4"><a href={"/casos/imprimir/"+study.slug+"/"} class="block text-link text-sm font-semibold">Ficha pública A4 ↗</a><a href={base} class="block text-link text-sm font-semibold">Voltar ao observatório ↗</a><a href="/casos/" class="block text-link text-sm font-semibold">Arquivo completo de casos ↗</a></div></aside>
  </div>
 </article>
-<StickyWhatsAppBar caseId={study.id} title={study.title} href={caseUrl} summary={study.summary} />
 </BaseLayout>

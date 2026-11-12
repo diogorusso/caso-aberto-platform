@@ -12,8 +12,6 @@ import CaseActionHub from '../../../components/CaseActionHub.astro';
 import Requests from '../../../components/Requests.astro';
 import SourceList from '../../../components/SourceList.astro';
 import ShareActions from '../../../components/ShareActions.astro';
-import StickyWhatsAppBar from '../../../components/StickyWhatsAppBar.astro';
-import ViralShareRail from '../../../components/ViralShareRail.astro';
 import ConsumerRiskWarning from '../../../components/ConsumerRiskWarning.astro';
 import CorporateStatements from '../../../components/CorporateStatements.astro';
 import CaseMetrics from '../../../components/CaseMetrics.astro';
@@ -53,21 +51,9 @@ const c = copy.case;
   breadcrumbs={crumbs.map(x => ({name:x.label, item:x.href}))}
 >
   <Breadcrumbs items={crumbs} />
-  <CaseIntro item={item}>
-    <ViralShareRail
-      slot="share"
-      embedded
-      compact
-      caseId={item.id}
-      title={item.chamada || item.titulo}
-      href={base}
-      summary={item.resumo}
-      company={item.empresa_resumo}
-      printHref={`/casos/imprimir/${item.slug}/`}
-      tone="dark"
-    />
-  </CaseIntro>
+  <CaseIntro item={item}/>
   {caseVerdict && <EditorialVerdict verdict={caseVerdict} subject={item.empresa_resumo} prominence="hero" caseHref={base+'evidencias/'} brand={caseBrand} unit={caseUnit}/>}
+
   <CaseActionHub caseId={item.id} compact/>
   <CaseVisualStory caseId={item.id}/>
 
@@ -150,12 +136,5 @@ const c = copy.case;
   <CaseCompanyReference item={item}/>
   <CaseSectionHub item={item} exclude={['resumo','linha-do-tempo','reclamacoes-publicas']}/>
   <div id="apoiar"><ParticipationCTA item={item} /></div>
-  <ShareActions title={item.titulo} summary={item.resumo} caseHref={base} caseId={item.id} company={item.empresa_resumo}/>
-  <StickyWhatsAppBar
-    caseId={item.id}
-    title={item.chamada || item.titulo}
-    href={base}
-    summary={item.resumo}
-    company={item.empresa_resumo}
-  />
+  <ShareActions title={item.titulo} summary={item.resumo} caseHref={base} caseId={item.id}/>
 </BaseLayout>
