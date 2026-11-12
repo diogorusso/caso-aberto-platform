@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-10",
+  "updated_at": "2026-11-12",
   "framework": "Conseqüência condicional vinculada a um fato do registro, nunca probabilidade ou valor fictício.",
   "cases": [
     {
@@ -242,6 +242,16 @@
       "threshold": "Oferta sem indicação do vendedor, taxa inesperada ou ausência de validação do ingresso.",
       "resolution": "Bilhete válido entregue em prazo, informação contratual transparente e atendimento com conclusão documentada.",
       "action": "Exija origem do ingresso, preço total antes de pagar e documentos sobre entrega e reembolso quando cabível."
+    },
+    {
+      "id": "EXT-016",
+      "audience": "Pessoas que acompanham a proteção de crianças e a liberdade de manifestação em conflitos com instituições",
+      "exposure": "Há alegação pública de comentário ofensivo sobre uma criança falecida, judicialização do relato do pai e questionamento sobre como uma intimação foi entregue.",
+      "headline": "Uma escola recorreu à Justiça contra um pai enlutado. Qual medida foi pedida e por quê?",
+      "worst_case": "Se decisões restritivas e procedimentos da denúncia permanecerem sem esclarecimento documental, o debate sobre responsabilidade institucional pode continuar sem respostas e a defesa pode enfrentar novos atos processuais ainda não conhecidos.",
+      "threshold": "Nova ordem judicial, recurso, intimação, comunicação formal da escola ou desfecho da apuração interna, apenas quando houver fonte válida e contraditório.",
+      "resolution": "Decisões integrais, resultado das medidas cível e criminal, manifestações documentadas das partes e atualização da cronologia com estágio e situação corretos.",
+      "action": "Cobrar os fundamentos e o alcance dos pedidos judiciais e as providências institucionais verificáveis, sem envolver estudantes, familiares ou funcionários em campanhas."
     }
   ]
 }
