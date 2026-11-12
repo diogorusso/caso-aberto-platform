@@ -1,10 +1,11 @@
 import {readFileSync,existsSync} from 'node:fs';
 const read=name=>JSON.parse(readFileSync(new URL('../src/data/'+name+'.json',import.meta.url),'utf8'));
 const atlas=read('public-case-atlas'),cases=read('casos'),politics=read('political-observatory'),platform=read('platform-observatory'),cats=read('case-categories'),bench=read('research-benchmarks'),visual=read('impact-stories');
+const legal=read('cacofonias-escola-suico-brasileira');
 const failures=[],check=(condition,msg)=>{if(!condition)failures.push(msg)};
-const ids=[...cases.map(x=>x.id),...atlas.cases.map(x=>x.id),...politics.cases.map(x=>x.id),'PLAT-2026-CASE'];
+const ids=[...cases.map(x=>x.id),...atlas.cases.map(x=>x.id),...politics.cases.map(x=>x.id),'PLAT-2026-CASE',legal.id];
 const listed=cats.categories.flatMap(x=>x.case_ids);
-check(ids.length===24,'unexpected case count; reconcile source manifests');
+check(ids.length===25,'unexpected case count; reconcile source manifests');
 check(new Set(ids).size===ids.length,'duplicate case ids');
 check(listed.length===ids.length&&new Set(listed).size===ids.length,'case classified more or less than once');
 check(ids.every(id=>listed.includes(id)),'case missing category');
