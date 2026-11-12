@@ -17,6 +17,9 @@ Referências com identificação estável. **Notícia sobre um ato não substitu
 | F11 | Constituição Federal, Presidência/Câmara — consultada 12/11 | https://www4.planalto.gov.br/legislacao/legis-federal/constituicao | Base normativa para advogado examinar liberdade de expressão e proteção da honra; não decide litígio concreto. |
 | F12 | TJ-RJ consulta por número/nome — acesso 12/11 | https://www.tjrj.jus.br/web/guest/consultas/processos_jud/processos_jud | Explica quais dados são necessários e eventuais limitações por competência; publicidade e segredo dependem do processo. |
 
+| F13 | SIS Brasil — missão e ambiente escolar, consulta em 12/11/2026 | https://www.swissinternationalschool.com.br/sobre-nos | Compromisso primário da escola com ambiente seguro/cuidado; não prova que a instituição endossou mensagem de empregado. Página sem data própria visível. |
+| F14 | SIS Brasil — unidades e identidade institucional, consulta em 12/11/2026 | https://www.swissinternationalschool.com.br/localizacao | Evidência de existência de diferentes campi sob a marca. Não prova que duas pessoas jurídicas com nomes semelhantes são uma única entidade. |
+
 ## Evidência fornecida pelo solicitante (não publicada)
 
 **U01 — captura de tela de publicação Instagram atribuída a @cacofonias, disponibilizada diretamente para pesquisa.** Apresenta legenda pessoal dizendo que a escola teria mandado polícia à casa da mãe e que enfrenta processo civil e criminal; apresenta agradecimento a advogados. **É registro de uma afirmação pública do autor da postagem, não prova autônoma de quem requisitou intimação.** Data de postagem original e URL canônica não foram verificados; contagens de engajamento são instantâneas e não devem ser reproduzidas como métricas atuais. Original deve ser preservado privadamente com hash e hora de coleta, nunca enviado a este GitHub público.
