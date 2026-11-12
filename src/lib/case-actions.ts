@@ -17,9 +17,10 @@ export function caseActionPlan(id:string):CaseActionPlan{
  const entry=caseStudies.find(item=>item.id===id);
  if(!entry)throw new Error('Case without action plan: '+id);
  const own=cases.find(item=>item.id===id);
- const isCivic=id.startsWith('POL-')||id==='PLAT-2026-CASE';
+ const isLegal=id==='EXT-016';
+ const isCivic=id.startsWith('POL-')||id==='PLAT-2026-CASE'||isLegal;
  const region=regions[id]||'BR';
- const ids=isCivic?['falabr']:[...(related[id]||[]),...(paths[region]||[]).filter(x=>!x.startsWith('jec-')&&!x.startsWith('def-')),...(paths.BR||[]),...(paths[region]||[]).filter(x=>x.startsWith('jec-')||x.startsWith('def-'))];
+ const ids=isLegal?['tjrj-consulta-processual']:isCivic?['falabr']:[...(related[id]||[]),...(paths[region]||[]).filter(x=>!x.startsWith('jec-')&&!x.startsWith('def-')),...(paths.BR||[]),...(paths[region]||[]).filter(x=>x.startsWith('jec-')||x.startsWith('def-'))];
  const active=[...new Set(ids)].map(key=>({...channels[key],id:key,stage:stage(channels[key]?.step||'')})).filter(x=>x.url?.startsWith('https://')&&x.source_url?.startsWith('https://'));
  const subject=issues[id]||entry.title;
  const company=entry.company;
@@ -48,7 +49,28 @@ export function caseActionPlan(id:string):CaseActionPlan{
  tmpl('providencia','Pedir providência institucional','Ouvidoria pública','Solicite resposta sobre fato e serviço públicos.',publicRequest,['falabr']),
  tmpl('social','Compartilhar fatos e fontes','WhatsApp / redes','Convide a examinar os documentos e a resposta pública.',publicShare,[])
  ];
- return {id,title:entry.title,company,summary:entry.summary,href:entry.href,region,isCivic,channels:active,templates:isCivic?civicTemplates:consumerTemplates,
+ const legalTemplates=[
+  tmpl('autos','Conferir atos e decisões no TJRJ','Advogados / partes habilitadas',
+   'Pesquisar os autos por número; conteúdo sigiloso apenas por acesso legitimado.',
+   line(['MAPA DE CONFERÊNCIA PROCESSUAL — '+entry.title,'',
+    'Ação cível: 3219694-04.2026.8.19.0001',
+    'Agravo: 3035838-40.2026.8.19.0000',
+    'Confirmar via criminal, vigência das decisões e intimações nos autos, sem presumir resultado.',
+    'Consulta oficial: https://www.tjrj.jus.br/consultas/processos-jud/formas-dispo-consultas',
+    'Nenhum dado pessoal ou peça sigilosa deve ser publicado.']),['tjrj-consulta-processual']),
+  tmpl('perguntas','Preparar perguntas institucionais','Redação / representação jurídica',
+   'Texto único para revisão e envio autorizado, sem campanhas repetitivas ou assédio.',
+   line(['PERGUNTAS DOCUMENTAIS — ESCOLA SUÍÇO-BRASILEIRA','',
+    'Qual a data de recebimento e a providência geral adotada quanto às mensagens denunciadas?',
+    'Quais publicações e fundamentos específicos motivaram os pedidos judiciais divulgados pela imprensa?',
+    'Quais providências institucionais gerais podem ser informadas sem expor empregados ou alunos?',
+    'A escola tem registro de sua eventual participação na escolha do local de intimação? Se não, confirmar que desconhece.',
+    'Solicitamos esclarecimento por escrito com indicação das fontes públicas e preservação de privacidade.']),[]),
+  tmpl('fonte','Compartilhar o dossiê e as fontes','Leitores',
+   'Convite a consultar informação pública, sem pressionar pessoas físicas ou a comunidade escolar.',
+   line([entry.title,entry.summary,'',url,'Conferir reportagem original, posicionamento da escola e estágio judicial antes de compartilhar.']),[])
+ ];
+ return {id,title:entry.title,company,summary:entry.summary,href:entry.href,region,isCivic,channels:active,templates:isLegal?legalTemplates:isCivic?civicTemplates:consumerTemplates,
  judicialNote:own?.valor_brl&&own.valor_brl>50000?'Florense: o contrato informado é de R$ 190 mil. Consulte advogado ou Defensoria para identificar rito, competência, pedidos e valor da causa; não escolha renúncia de crédito por padrão.':records.guidance.court};
 }
 export const actionChannelRecords=channels;
