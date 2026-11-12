@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
+import registry from '../../../../data/sis-related-proceedings.json';
+
+const home='/casos/cacofonias-escola-suico-brasileira/';
+const groups=[
+ {id:'litigio-vinicius',title:'O conflito com Vinícius: separar ação, recurso e procedimento penal',description:'Quatro referências processuais indexadas para a mesma controvérsia de 2026. Um agravo não é uma nova denúncia, assim como recursos ou incidentes penais podem derivar de uma autuação já conhecida.'},
+ {id:'consumidor',title:'Litígio cível de consumo no Rio de Janeiro',description:'Registro distinto encontrado numa pauta oficial do TJRJ. É possível verificar classe, parte recorrente e assunto, mas não extrapolar resultado de julgamento que a pauta não divulga.'},
+ {id:'trabalhista',title:'Relações de trabalho: processos na mesma mantenedora',description:'Reclamações em diferentes varas do trabalho. Uma inclui mais de uma empresa; outra foi extinta sem julgamento do mérito. A causa de pedir, o resultado e a responsabilidade de cada ré precisam ser conferidos nos autos.'},
+ {id:'administrativo',title:'Fiscalização da educação — advertência administrativa oficial',description:'A Portaria 657/2024 do Distrito Federal autoriza ensino médio na unidade de Brasília, mas também adverte a instituição por inobservância de normas do sistema distrital e impõe providências. É outra unidade da mesma mantenedora.'},
+ {id:'civil-outras-unidades',title:'Outros litígios civis — Brasília',description:'Registros de recursos no Distrito Federal, sem documentação suficiente sobre causa original, culpa ou encerramento.'},
+ {id:'historico-legado',title:'Registros históricos e nomes semelhantes: identificação ainda necessária',description:'Processos de 2007, 2011 e 2013 com nomes jurídicos diferentes. Não se somam às demandas da SIS Brasil sem comprovação de identidade, sucessão ou obrigação correspondente.'}
+];
+const groupsData=groups.map(g=>({...g,items:registry.records.filter(x=>x.cluster===g.id)}));
+const total=registry.records.length;
+const current=registry.records.filter(x=>x.entity_id==='sis-brasil'||x.entity_id==='sis-group').length;
+const courtIds=new Set(registry.records.filter(x=>x.court.startsWith('TJRJ')).map(x=>x.family)).size;
+const review=(value:string)=>value.split('-').reverse().join('/');
+---
+<BaseLayout
+ title="Processos e fiscalizações relacionados à Escola Suíço-Brasileira | CasoAberto"
+ description="Mapa documental de ações, recursos, processos trabalhistas e registros administrativos da SIS Brasil e de entidades históricas, com números, fontes, ressalvas e perguntas para auditoria."
+ type="article"
+ dateModified={registry.reviewed_at}
+ datePublished={registry.reviewed_at}
+ breadcrumbs={[{name:'Início',item:'/'},{name:'Casos',item:'/casos/'},{name:'Cacofonias',item:home},{name:'Mapa documental',item:home+'processos-relacionados/'}]}
+>
+ <Breadcrumbs items={[{label:'Casos',href:'/casos/'},{label:'Cacofonias e SIS',href:home},{label:'Processos relacionados',href:home+'processos-relacionados/'}]}/>
+ <article class="pb-16">
+  <header class="bg-primary py-12 text-primary-foreground md:py-16">
+   <div class="container max-w-6xl space-y-6">
+    <p class="m-0 text-xs font-black uppercase tracking-[.16em] text-[#ff917e]">INVESTIGAÇÃO CORPORATIVA · CORRELAÇÃO PROCESSUAL</p>
+    <h1 class="m-0 max-w-5xl text-4xl leading-tight tracking-tight md:text-6xl">Que outros processos envolvem a Escola Suíço-Brasileira?</h1>
+    <p class="m-0 max-w-4xl text-lg leading-relaxed text-white/85">Reunimos ações identificadas por número, decisões administrativas e registros históricos. O objetivo é fazer a instituição responder a perguntas verificáveis — sem transformar cada processo, recurso ou nome semelhante em prova de culpa.</p>
+    <p class="m-0 text-xs font-semibold uppercase tracking-wide text-white/65">Recorte documental revisado em {review(registry.reviewed_at)} · amostra não exaustiva</p>
+   </div>
+  </header>
+  <div class="container max-w-6xl space-y-12 py-10">
+   <section class="grid gap-3 md:grid-cols-3" aria-label="Resumo da amostra">
+    <div class="rounded-lg border border-border bg-card p-5">
+     <p class="m-0 text-xs font-bold uppercase tracking-wider text-muted-foreground">Referências identificadas</p>
+     <strong class="my-2 block text-4xl font-black tabular-nums text-brand-strong">{total}</strong>
+     <p class="m-0 text-sm">Inclui recursos, procedimentos, atos administrativos e histórico. **Não** são {total} condenações ou processos independentes.</p>
+    </div>
+    <div class="rounded-lg border border-border bg-card p-5">
+     <p class="m-0 text-xs font-bold uppercase tracking-wider text-muted-foreground">Vínculo SIS Brasil / Group AG</p>
+     <strong class="my-2 block text-4xl font-black tabular-nums text-brand-strong">{current}</strong>
+     <p class="m-0 text-sm">Referências à mantenedora atual ou ao grupo suíço, incluindo instrumentos derivados do caso Vinícius.</p>
+    </div>
+    <div class="rounded-lg border border-border bg-card p-5">
+     <p class="m-0 text-xs font-bold uppercase tracking-wider text-muted-foreground">Núcleos distintos no TJRJ (amostra)</p>
+     <strong class="my-2 block text-4xl font-black tabular-nums text-brand-strong">{courtIds}</strong>
+     <p class="m-0 text-sm">Agrupamento por família de processo, não por publicação. A auditoria judicial pode alterar a deduplicação.</p>
+    </div>
+   </section>
+
+   <section class="space-y-4" aria-labelledby="entidades">
+    <h2 class="m-0 text-3xl" id="entidades">Antes de somar processos, confira quem é quem</h2>
+    <p class="m-0 max-w-4xl leading-relaxed text-muted-foreground">{registry.research_rule}</p>
+    <div class="grid gap-3 md:grid-cols-2">
+     {registry.entities.map(e=><article class="space-y-3 rounded-md border border-border bg-card p-5">
+      <h3 class="m-0 text-lg">{e.name}</h3>
+      <p class="m-0 text-sm font-bold text-brand-strong">CNPJ: {e.cnpj || 'Não se aplica a pessoa jurídica estrangeira nesta consulta'}</p>
+      <p class="m-0 text-sm leading-relaxed">{e.relation}</p>
+      <p class="m-0 text-sm leading-relaxed text-muted-foreground">{e.caution}</p>
+      <a class="text-sm font-semibold text-link" href={e.source} target="_blank" rel="noopener noreferrer">Documento de identificação ↗</a>
+     </article>)}
+    </div>
+   </section>
+
+   <nav aria-label="Blocos de processos e registros" class="flex flex-wrap gap-2 border-t border-border pt-6">
+    {groupsData.map(g=><a href={'#'+g.id} class="rounded-md border border-border bg-card px-3 py-2 text-xs font-semibold text-foreground no-underline hover:border-brand-strong">{g.title.split(':')[0]} · {g.items.length}</a>)}
+   </nav>
+
+   {groupsData.map(group=><section id={group.id} class="scroll-mt-24 space-y-6 border-t border-border pt-9" aria-labelledby={group.id+'-title'}>
+    <div class="space-y-3">
+     <p class="m-0 text-xs font-bold uppercase tracking-wider text-brand-strong">ARQUIVO · {group.items.length} {group.items.length===1?'referência':'referências'}</p>
+     <h2 id={group.id+'-title'} class="m-0 max-w-5xl text-2xl md:text-3xl">{group.title}</h2>
+     <p class="m-0 max-w-4xl leading-relaxed text-muted-foreground">{group.description}</p>
+    </div>
+    <div class="space-y-4">
+     {group.items.map(item=><article class="overflow-hidden rounded-lg border border-border bg-card" aria-label={item.number}>
+      <div class="flex flex-wrap items-start justify-between gap-4 border-b border-border bg-muted/50 p-5">
+       <div class="space-y-2">
+        <p class="m-0 text-[.7rem] font-bold uppercase tracking-[.12em] text-brand-strong">{item.id} · {item.type}</p>
+        <h3 class="m-0 break-all text-lg font-extrabold tabular-nums md:text-xl">{item.number}</h3>
+        <p class="m-0 text-xs text-muted-foreground">{item.court} · {item.place}</p>
+       </div>
+       <a class="inline-flex min-h-11 items-center rounded-md border border-brand-strong px-4 py-2 text-sm font-bold text-link no-underline hover:bg-brand-soft" href={item.source_url} target="_blank" rel="noopener noreferrer">Conferir registro original ↗</a>
+      </div>
+      <dl class="grid gap-4 p-5 text-sm md:grid-cols-2">
+       <div><dt class="font-bold text-muted-foreground">Assunto registrado</dt><dd class="mt-1">{item.subject}</dd></div>
+       <div><dt class="font-bold text-muted-foreground">Participação institucional</dt><dd class="mt-1">{item.position}</dd></div>
+       <div><dt class="font-bold text-muted-foreground">Última evidência considerada</dt><dd class="mt-1">{review(item.source_date)} · {item.source_kind}</dd></div>
+       <div><dt class="font-bold text-muted-foreground">Situação documentada</dt><dd class="mt-1">{item.status}</dd></div>
+       <div><dt class="font-bold text-muted-foreground">Resultado</dt><dd class="mt-1">{item.result}</dd></div>
+       <div><dt class="font-bold text-muted-foreground">O que o registro significa</dt><dd class="mt-1">{item.meaning}</dd></div>
+      </dl>
+      <div class="border-l-4 border-brand-strong bg-brand-soft/50 px-5 py-4">
+       <p class="m-0 text-xs font-bold uppercase tracking-wider text-brand-strong">QUAL DOCUMENTO FALTA?</p>
+       <p class="mb-0 mt-2 text-sm font-medium leading-relaxed">{item.question}</p>
+      </div>
+     </article>)}
+    </div>
+   </section>)}
+
+   <section class="space-y-5 border-t border-border pt-9" id="fora-contagem" aria-labelledby="exclusoes">
+    <h2 id="exclusoes" class="m-0 text-3xl">Exclusões que impedem contagens infladas</h2>
+    <p class="m-0 max-w-4xl text-muted-foreground">Os seguintes achados foram examinados e retirados da contagem, porque duplicam o processo-base, têm identidade jurídica distinta ou apresentam homônimos.</p>
+    <ul class="space-y-3">{registry.excluded.map(e=><li class="rounded-md border border-border bg-card p-4 text-sm">
+     <span class="font-bold text-brand-strong">{e.id} · </span>{e.reason}
+     <a href={e.source} class="ml-1 font-semibold text-link" target="_blank" rel="noopener noreferrer">Fonte ↗</a>
+    </li>)}</ul>
+   </section>
+
+   <section class="space-y-5 border-t border-border pt-9" aria-labelledby="cobrar">
+    <p class="m-0 text-xs font-bold uppercase tracking-wider text-brand-strong">PARA A DEFESA E PARA A COBRANÇA INSTITUCIONAL</p>
+    <h2 id="cobrar" class="m-0 text-3xl">Perguntas que exigem atos, não comunicados vagos</h2>
+    <ol class="list-decimal space-y-3 pl-6">{registry.questions_for_counsel.map(q=><li class="pl-1 leading-relaxed">{q}</li>)}</ol>
+    <div class="flex flex-wrap gap-3">
+     <a class="inline-flex min-h-11 items-center rounded-md bg-primary px-5 py-3 text-sm font-bold text-primary-foreground no-underline" href={home}>Voltar ao caso Vinícius ↗</a>
+     <a class="inline-flex min-h-11 items-center rounded-md border border-border px-5 py-3 text-sm font-bold text-link no-underline" href="https://www.tjrj.jus.br/consultas/processos-jud/formas-dispo-consultas" target="_blank" rel="noopener noreferrer">Consultar processos no TJRJ ↗</a>
+    </div>
+   </section>
+  </div>
+ </article>
+</BaseLayout>
