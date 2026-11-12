@@ -249,6 +249,45 @@
       "verified_at": "2026-11-12",
       "role": "empresa",
       "note": "Telefone corporativo publicado no rodapé da Mobly, não confirmado como WhatsApp ou SAC específico para pedidos."
+    },
+    {
+      "id": "sis-rio-contato-formulario",
+      "case_ids": [
+        "EXT-016"
+      ],
+      "organization": "Escola Suíço-Brasileira Rio de Janeiro by SIS",
+      "medium": "portal",
+      "value": "https://www.swissinternationalschool.com.br/contato",
+      "source_url": "https://www.swissinternationalschool.com.br/contato",
+      "verified_at": "2026-11-12",
+      "role": "empresa",
+      "note": "Formulário institucional oficial com seleção de localização. Atendimento geral da escola; não é protocolo processual, não substitui defensor, nem autoriza múltiplas mensagens repetidas."
+    },
+    {
+      "id": "sis-rio-email-institucional",
+      "case_ids": [
+        "EXT-016"
+      ],
+      "organization": "Escola Suíço-Brasileira Rio de Janeiro by SIS",
+      "medium": "email",
+      "value": "info@sis-rio.com.br",
+      "source_url": "https://www.swissinternationalschool.com.br/contato",
+      "verified_at": "2026-11-12",
+      "role": "empresa",
+      "note": "E-mail público de contato da unidade da Barra na página oficial. Uso para solicitação única de esclarecimento documentado; preservar direitos de resposta e privacidade."
+    },
+    {
+      "id": "sis-rio-telefone-institucional",
+      "case_ids": [
+        "EXT-016"
+      ],
+      "organization": "Escola Suíço-Brasileira Rio de Janeiro by SIS",
+      "medium": "phone",
+      "value": "+552133892089",
+      "source_url": "https://www.swissinternationalschool.com.br/contato",
+      "verified_at": "2026-11-12",
+      "role": "empresa",
+      "note": "Telefone institucional da Barra identificado no site SIS; não é WhatsApp confirmado nem canal de intimação. Evitar mobilização telefônica ou contato com terceiros."
     }
   ],
   "case_coverage": {
@@ -404,6 +443,15 @@
       "contact_ids": [],
       "status": "partial",
       "note": "Nenhum contato institucional específico confirmado nesta rodada; manter rotas oficiais existentes e pesquisar sem inventar destinatários."
+    },
+    "EXT-016": {
+      "contact_ids": [
+        "sis-rio-contato-formulario",
+        "sis-rio-email-institucional",
+        "sis-rio-telefone-institucional"
+      ],
+      "status": "partial",
+      "note": "Três vias institucionais verificadas na página de contato da própria escola (formulário, e-mail e telefone). Não há WhatsApp oficial confirmado para este litígio. Não usar para envios automáticos, assédio ou comunicações em nome da defesa."
     }
   }
 }
