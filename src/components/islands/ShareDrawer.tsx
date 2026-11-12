@@ -12,6 +12,7 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet'
 import { cn } from '@/lib/utils'
+import { absoluteShareUrl, buildSharePayload } from '@/lib/share-messages'
 
 type Props = {
   title: string
@@ -23,16 +24,10 @@ type Props = {
   triggerLabel?: string
   size?: 'sm' | 'default'
   className?: string
-}
-
-const siteOrigin = 'https://casoaberto.pages.dev'
-
-function absoluteUrl(href: string) {
-  try {
-    return new URL(href, siteOrigin).href
-  } catch {
-    return href
-  }
+  /** Ready confrontational message; when omitted, built from title/summary/caseId. */
+  message?: string
+  /** Absolute URL already resolved for OG; when omitted, derived from href. */
+  shareUrl?: string
 }
 
 export default function ShareDrawer({
@@ -45,34 +40,47 @@ export default function ShareDrawer({
   triggerLabel = 'Compartilhar o dossiê',
   size = 'default',
   className,
+  message: messageProp,
+  shareUrl: shareUrlProp,
 }: Props) {
   const [copied, setCopied] = useState(false)
-  const url = absoluteUrl(href)
-  const message = `CasoAberto | ${title}\n${summary.slice(0, 240)}\n\nLeia o caso completo: cronologia, fontes e respostas:\n${url}`
+  const payload = buildSharePayload({
+    title,
+    href,
+    summary,
+    caseId,
+  })
+  const url = shareUrlProp || payload.url || absoluteShareUrl(href)
+  const message = messageProp || payload.message
+  const whatsapp = `https://wa.me/?text=${encodeURIComponent(message)}`
   const channels = [
     {
       label: 'WhatsApp',
-      href: `https://wa.me/?text=${encodeURIComponent(message)}`,
+      href: whatsapp,
       icon: MessageCircle,
-      note: 'Envie o dossiê completo com link.',
+      note: 'Mensagem pronta + link com preview de imagem.',
+      emphasize: true,
     },
     {
       label: 'X',
-      href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(`Caso documentado: ${title.slice(0, 115)}`)}&url=${encodeURIComponent(url)}`,
+      href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(`${title.slice(0, 115)}`)}&url=${encodeURIComponent(url)}`,
       icon: Share2,
       note: 'Publicação curta com o endereço da pesquisa.',
+      emphasize: false,
     },
     {
       label: 'Facebook',
       href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
       icon: Share2,
-      note: 'Abre o compartilhador oficial.',
+      note: 'Abre o compartilhador oficial — a imagem OG acompanha o link.',
+      emphasize: false,
     },
     {
       label: 'Telegram',
-      href: `https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`,
+      href: `https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(message)}`,
       icon: Share2,
       note: 'Encaminhe o caso para um chat ou canal.',
+      emphasize: false,
     },
   ] as const
 
@@ -83,6 +91,16 @@ export default function ShareDrawer({
       window.setTimeout(() => setCopied(false), 2000)
     } catch {
       window.prompt('Copie o link do caso', url)
+    }
+  }
+
+  async function copyMessage() {
+    try {
+      await navigator.clipboard.writeText(message)
+      setCopied(true)
+      window.setTimeout(() => setCopied(false), 2000)
+    } catch {
+      window.prompt('Copie a mensagem', message)
     }
   }
 
@@ -101,16 +119,18 @@ export default function ShareDrawer({
       </SheetTrigger>
       <SheetContent side="right" className="w-full gap-0 overflow-y-auto sm:max-w-md">
         <SheetHeader className="border-b border-border text-left">
-          <SheetTitle>Enviar o dossiê completo</SheetTitle>
+          <SheetTitle>Espalhe o dossiê completo</SheetTitle>
           <SheetDescription>
-            Escolha um canal. O link abre a pesquisa com cronologia e fontes — não um resumo solto.
+            WhatsApp leva a mensagem pronta. O link no final abre a página com imagem de preview (OG 1200×630).
           </SheetDescription>
         </SheetHeader>
 
         <div className="space-y-6 px-4 py-5">
-          <div className="space-y-1 border-l-4 border-brand bg-muted p-4">
-            <p className="m-0 text-xs font-bold uppercase tracking-wider text-brand-strong">Caso</p>
-            <p className="m-0 text-sm font-semibold leading-snug text-foreground">{title}</p>
+          <div className="space-y-1 border-l-4 border-[#25D366] bg-muted p-4">
+            <p className="m-0 text-xs font-bold uppercase tracking-wider text-[#128C7E]">Mensagem pronta</p>
+            <pre className="m-0 whitespace-pre-wrap font-sans text-sm font-semibold leading-snug text-foreground">
+              {message}
+            </pre>
           </div>
 
           <div className="space-y-2">
@@ -124,9 +144,18 @@ export default function ShareDrawer({
                       href={channel.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-start gap-3 border border-border bg-card p-3 no-underline transition-colors hover:border-brand"
+                      className={cn(
+                        'flex items-start gap-3 border p-3 no-underline transition-colors',
+                        channel.emphasize
+                          ? 'border-[#25D366]/60 bg-[#25D366]/10 hover:border-[#128C7E]'
+                          : 'border-border bg-card hover:border-brand',
+                      )}
                     >
-                      <Icon size={18} className="mt-0.5 shrink-0 text-brand-strong" aria-hidden="true" />
+                      <Icon
+                        size={18}
+                        className={cn('mt-0.5 shrink-0', channel.emphasize ? 'text-[#128C7E]' : 'text-brand-strong')}
+                        aria-hidden="true"
+                      />
                       <span className="min-w-0">
                         <strong className="block text-sm text-foreground">{channel.label}</strong>
                         <span className="mt-0.5 block text-xs text-muted-foreground">{channel.note}</span>
@@ -141,9 +170,13 @@ export default function ShareDrawer({
           <div className="space-y-2">
             <p className="m-0 text-xs font-bold uppercase tracking-wider text-muted-foreground">No site</p>
             <div className="grid gap-2">
+              <Button type="button" variant="outline" className="min-h-11 justify-start" onClick={copyMessage}>
+                <Copy size={16} aria-hidden="true" />
+                {copied ? 'Copiado ✓' : 'Copiar mensagem + link'}
+              </Button>
               <Button type="button" variant="outline" className="min-h-11 justify-start" onClick={copyLink}>
                 <Link2 size={16} aria-hidden="true" />
-                {copied ? 'Link copiado ✓' : 'Copiar link da pesquisa'}
+                Copiar só o link (para preview OG)
               </Button>
               {printHref && (
                 <Button asChild variant="outline" className="min-h-11 justify-start">

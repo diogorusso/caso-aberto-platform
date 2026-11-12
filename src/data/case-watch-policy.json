@@ -346,6 +346,84 @@
         "2026-11-13"
       ],
       "closure_evidence": "Decisão final, acordo ou encerramento documentado nas duas vias noticiadas; confirmação de providências institucionais e atualização pública com a posição das partes, sem supor responsabilidade não comprovada."
+    },
+    {
+      "id": "EXT-017",
+      "mode": "active",
+      "priority": "high",
+      "interval_days": 7,
+      "focus": "Acompanhar atos novos da RJ UCAM, aditivos, STJ/TJRJ e alienações de UPIs.",
+      "watch_urls": [
+        "https://k2consultoria.com/candido-mendes",
+        "https://www.migalhas.com.br/quentes/446533/stj-mantem-recuperacao-judicial-do-grupo-candido-mendes"
+      ],
+      "deadlines": [],
+      "closure_evidence": "Quitação documental dos créditos relevantes, encerramento judicial da RJ ou decreto/arquivamento público com evidência URL."
+    },
+    {
+      "id": "EXT-018",
+      "mode": "active",
+      "priority": "high",
+      "interval_days": 7,
+      "focus": "Monitorar leilão/alienação da UPI Joana Angélica e desdobramentos do campus Ipanema.",
+      "watch_urls": [
+        "https://k2consultoria.com/candido-mendes",
+        "https://www.migalhas.com.br/quentes/446533/stj-mantem-recuperacao-judicial-do-grupo-candido-mendes"
+      ],
+      "deadlines": [],
+      "closure_evidence": "Quitação documental dos créditos relevantes, encerramento judicial da RJ ou decreto/arquivamento público com evidência URL."
+    },
+    {
+      "id": "EXT-019",
+      "mode": "active",
+      "priority": "high",
+      "interval_days": 7,
+      "focus": "Monitorar UPI Assembleia, AGCs e comunicados da sede Centro.",
+      "watch_urls": [
+        "https://k2consultoria.com/candido-mendes",
+        "https://www.migalhas.com.br/quentes/446533/stj-mantem-recuperacao-judicial-do-grupo-candido-mendes"
+      ],
+      "deadlines": [],
+      "closure_evidence": "Quitação documental dos créditos relevantes, encerramento judicial da RJ ou decreto/arquivamento público com evidência URL."
+    },
+    {
+      "id": "EXT-020",
+      "mode": "active",
+      "priority": "high",
+      "interval_days": 7,
+      "focus": "Monitorar UPI Campos e comunicados da unidade Campos dos Goytacazes.",
+      "watch_urls": [
+        "https://k2consultoria.com/candido-mendes",
+        "https://www.migalhas.com.br/quentes/446533/stj-mantem-recuperacao-judicial-do-grupo-candido-mendes"
+      ],
+      "deadlines": [],
+      "closure_evidence": "Quitação documental dos créditos relevantes, encerramento judicial da RJ ou decreto/arquivamento público com evidência URL."
+    },
+    {
+      "id": "EXT-021",
+      "mode": "active",
+      "priority": "high",
+      "interval_days": 7,
+      "focus": "Monitorar comunicados que afetem a unidade operacional de Niterói no grupo UCAM.",
+      "watch_urls": [
+        "https://k2consultoria.com/candido-mendes",
+        "https://www.migalhas.com.br/quentes/446533/stj-mantem-recuperacao-judicial-do-grupo-candido-mendes"
+      ],
+      "deadlines": [],
+      "closure_evidence": "Quitação documental dos créditos relevantes, encerramento judicial da RJ ou decreto/arquivamento público com evidência URL."
+    },
+    {
+      "id": "EXT-022",
+      "mode": "active",
+      "priority": "high",
+      "interval_days": 7,
+      "focus": "Monitorar pagamentos Classe I, informes a credores e manifestações do Sinpro/MP.",
+      "watch_urls": [
+        "https://k2consultoria.com/candido-mendes",
+        "https://www.migalhas.com.br/quentes/446533/stj-mantem-recuperacao-judicial-do-grupo-candido-mendes"
+      ],
+      "deadlines": [],
+      "closure_evidence": "Quitação documental dos créditos relevantes, encerramento judicial da RJ ou decreto/arquivamento público com evidência URL."
     }
   ]
 }

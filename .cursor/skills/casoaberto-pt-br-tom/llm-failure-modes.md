@@ -38,6 +38,24 @@ Introdução educada, memo jurídico, eufemismo.
 
 “Isso pode soar agressivo demais” / oferecer alternativa soft.
 
+## 8 — Escopo estreito (pós 2026-11-11)
+
+Escrever “Vale para: só novas compras” e omitir contratos recentes / não pagamento integral / rescisão possível — quando o legal autorizou o alcance amplo (§3b).
+
+**Correção:** copiar o escopo autorizado; não “resumir” tirando a proteção de quem já contratou.
+
+## 9 — Veredito sem análise setorial
+
+Trocar §3b por “Nossa posição se baseia neste pedido…” sem nomear análise setorial, sem mecanismo (atraso + sem prazo razoável = problema maior), sem Roma Imobili + links.
+
+**Correção:** usar o bloco §3b completo em `EditorialVerdict` / FAQ de recomendação.
+
+## 10 — Campanha no lugar do veredito (ou o inverso)
+
+Colar §3a curto no card de veredito **ou** texto analítico longo no WhatsApp/kit.
+
+**Correção:** matriz de superfície do SKILL — §3a share/kit; §3b posição editorial.
+
 ## Teste
 
-Se o texto protege a empresa, inventa disclaimer, ou abandona a fórmula → rejeitar e reescrever com o skill.
+Se o texto protege a empresa, inventa disclaimer, estreita o escopo, ou abandona a fórmula → rejeitar e reescrever com o skill.

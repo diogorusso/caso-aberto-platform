@@ -65,6 +65,24 @@ const jobs = [
   {out: 'public/media/stories/quarto-bebe-estoque-photo.jpg', commons: 'Ikea Frustration (27879380013).jpg'},
   {out: 'public/media/novo-mundo/neusa-microondas-photo.jpg', commons: 'Open microwave oven.jpg'},
   {out: 'public/media/novo-mundo/felipe-cama-photo.jpg', commons: 'Bedroom big bed.jpg'},
+  {out: 'public/media/ucam/ucam-centro-photo.jpg', commons: 'Universidade Candido Mendes.jpg'},
+  {out: 'public/media/ucam/campus-edificio-assembleia-photo.jpg', commons: 'Edifício Centro Cândido Mendes.jpg'},
+  {
+    out: 'public/media/ucam/campus-centro-fachada-photo.jpg',
+    commons: 'Centro, Rio de Janeiro - State of Rio de Janeiro, Brazil - panoramio (11).jpg',
+  },
+  {
+    out: 'public/media/ucam/campus-ipanema-fachada-photo.jpg',
+    url: 'https://static.suporteleiloes.com.br/rymerleiloescombr/bens/1218/arquivos/6a2c5d8c0962f-6a2c5d8c0ef2c.jpg',
+  },
+  {
+    out: 'public/media/ucam/campus-campos-photo.jpg',
+    url: 'https://api-site.candidomendes.edu.br/uploads/campos_4085f6c54b.jpg',
+  },
+  {
+    out: 'public/media/ucam/campus-niteroi-fachada-photo.jpg',
+    url: 'https://lh3.googleusercontent.com/grass-proxy/AIM7gW08Y_CuQ8wpUlHP-jL6RBrjjeZ9zljb-DVjnVe9iLPj_CtcudRFM2Y_QLTV2M14HOUooV9SsleJDO4nmbrhKnGMHmE07JLonFu18e9ytDzDgOVCQhhN-vKEs4JDQwcs1-ZRmzZ59mHNQdlGJJrGjvQV9woWEk4iIB9AvptpO-oFZ-FYSbIQg2OWU95yJ40jyp6d6i_Z=w2400',
+  },
 ];
 
 async function fetchBuffer(url) {

@@ -1,8 +1,12 @@
 ---
 import Identity from './Identity.astro';
+import WhatsAppShareButton from './WhatsAppShareButton.astro';
 import { cases, dateBR } from '@/lib/cases';
+import { platformSharePayload } from '@/lib/share-messages';
 import { Separator } from '@/components/ui/separator';
+import { copy } from '@/lib/copy';
 const latest = cases.reduce((a, b) => (a > b.status_data ? a : b.status_data), '');
+const platformShare = platformSharePayload();
 const groups = [
   {
     title: 'Casos',
@@ -12,7 +16,6 @@ const groups = [
       ['Empresas e avaliações', '/empresas/'],
       ['Precedentes judiciais', '/precedentes/'],
       ['Consulta de CNPJ', '/cnpj/'],
-      ['Não recomendamos', '/avaliacoes/nao-recomendamos/'],
       ['Kit Boca a Boca', '/kit-boca-a-boca/'],
     ],
   },
@@ -47,9 +50,16 @@ const groups = [
 <footer class="bg-[#0f1714] py-14 text-[#e3ebe2]" data-print-hide>
   <div class="container">
     <div class="grid gap-10 md:grid-cols-[2fr_1fr_1fr_1fr]">
-      <div class="space-y-4">
+      <div class="flex flex-col gap-6">
         <Identity />
         <p class="m-0 max-w-sm text-sm leading-relaxed text-white/60">Instituto e plataforma independentes para investigar, organizar demandas legítimas, proteger a autonomia digital e cobrar respostas com fontes verificáveis.</p>
+        <WhatsAppShareButton
+          href={platformShare.whatsappHref}
+          label={copy.share.whatsapp}
+          hint="Espalhe a plataforma"
+          variant="compact"
+          class="mt-1"
+        />
       </div>
       {groups.map((g) => (
         <nav aria-label={g.title} class="flex flex-col gap-2.5">

@@ -3,22 +3,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import CaseCard from '../components/CaseCard.astro';
 import {categories,featuredCase,caseStudies,personalStories,caseCountFor,categoryHref} from '../lib/case-catalog';
 import {casePath} from '../lib/cases';
-import { ratingDefinitions } from '../lib/brands';
 import registries from '../data/company-profiles.json';
 import Section from '../components/layout/Section.astro';
 import Eyebrow from '../components/layout/Eyebrow.astro';
 import ButtonLink from '../components/layout/ButtonLink.astro';
 import ResearchMetrics from '../components/ResearchMetrics.astro';
 import ResearchBenchmarks from '../components/ResearchBenchmarks.astro';
+import ViralShareRail from '../components/ViralShareRail.astro';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '../components/ui/card';
 
-const companyStatuses = ratingDefinitions.slice().sort((a,b) => b.sort - a.sort);
 const steps = [
   {number:'01',eyebrow:'PERFIS EMPRESARIAIS',title:'Conheça quem está por trás do contrato.',description:'Razão social, CNPJ, administradores, unidades, vínculos e histórico público — com fontes para consulta.',href:'/empresas/',link:'Explorar empresas'},
   {number:'02',eyebrow:'CASOS DOCUMENTADOS',title:'Entenda os fatos antes de decidir.',description:'Valores relatados, cronologias, registros, reclamações originais, atualizações e pedidos de resposta.',href:'/casos/',link:'Explorar casos'},
   {number:'03',eyebrow:'PRECEDENTES E CENÁRIOS',title:'Mostre onde uma disputa pode chegar.',description:'Comparamos processos de falência e recuperação, créditos de consumidores, datas e consequências reais — sem inventar previsões.',href:'/precedentes/',link:'Explorar processos e cenários'}
 ];
-const statusBorder: Record<string,string> = { nao_recomendamos: 'border-t-brand-strong', cautela: 'border-t-warning', recomendamos: 'border-t-success'};
 const pathways = [
   {number:'01',title:'Avaliações de empresas',description:'Consulte perfis e recomendações por empresa e unidade.',href:'/empresas/',link:'Buscar empresas'},
   {number:'02',title:'Casos e reclamações',description:'Leia os dossiês, as fontes originais e o histórico.',href:'/casos/',link:'Ver casos'},
@@ -48,7 +46,7 @@ const pathways = [
 
   <ResearchMetrics/>
 
-  {featuredCase&&<Section eyebrow="CASO EM DESTAQUE · A COBRANÇA COMEÇA AQUI" title="R$ 190 mil pagos. Prazo estourado. Cadê os móveis?" description="A contratação da unidade de Ipanema abriu o arquivo CasoAberto. O consumidor pagou. A entrega não ocorreu no prazo relatado. Contrato, cronologia, empresa e perguntas estão publicados.">
+  {featuredCase&&<Section eyebrow="CASO EM DESTAQUE · A COBRANÇA COMEÇA AQUI" title="R$ 190 mil pagos. Prazo estourado. Cadê os móveis?" description={`${featuredCase.empresa_resumo} não entregou no prazo relatado. Em análise setorial, atraso desse porte sem compromisso com prazo razoável pode denotar problema maior — quem conhece o setor lembra de quem pagou, não recebeu e ficou na fila. Será que você quer correr o mesmo risco? Busque outro fornecedor. Contrato, cronologia e perguntas estão publicados.`}>
     <a slot="action" class="text-link font-semibold" href={casePath(featuredCase)}>Abrir o caso em destaque ↗</a>
     <CaseCard item={featuredCase} featured/>
    </Section>}
@@ -115,19 +113,6 @@ const pathways = [
     </div>
   </Section>
 
-  <Section eyebrow="AVALIAÇÃO EDITORIAL" title="Uma recomendação. Com motivos e fontes." description="Classificações relacionadas a evidências e ao tipo de contratação analisado. Cada empresa tem sua própria página, documentos, escopo e data de revisão.">
-    <a slot="action" class="text-link text-sm" href="/metodologia/#avaliacao-editorial">Consultar os critérios ↗</a>
-    <div class="grid gap-4 md:grid-cols-3">
-      {companyStatuses.map(status => (
-        <Card className={'h-full border-t-4 bg-muted shadow-none '+ (statusBorder[status.code] ?? '')}>
-          <CardHeader><CardTitle className="text-lg">{status.label}</CardTitle></CardHeader>
-          <CardContent className="text-sm text-muted-foreground">{status.explanation}</CardContent>
-          <CardFooter className="mt-auto"><a class="text-link text-sm" href="/empresas/">Ver empresas e fundamentos <span aria-hidden="true">↗</span></a></CardFooter>
-        </Card>
-      ))}
-    </div>
-  </Section>
-
   <section class="bg-forest py-14 text-forest-foreground md:py-20" aria-labelledby="kit-home-title" data-print-hide>
     <div class="container grid gap-10 lg:grid-cols-[1.3fr_0.9fr] lg:items-center">
       <div class="space-y-4">
@@ -165,6 +150,10 @@ const pathways = [
         <a class="text-link text-sm" href="/metodologia/">Ler metodologia ↗</a>
       </aside>
     </div>
+  </Section>
+
+  <Section tone="muted" eyebrow="ESPALHE NO WHATSAPP" title="Brasil vive no WhatsApp. A cobrança também." description="Mande o CasoAberto com mensagem pronta. O link leva à home com preview de imagem — cada aviso pode impedir outro prejuízo.">
+    <ViralShareRail mode="platform" tone="dark" />
   </Section>
 
   <section class="bg-forest py-16 text-forest-foreground md:py-24">

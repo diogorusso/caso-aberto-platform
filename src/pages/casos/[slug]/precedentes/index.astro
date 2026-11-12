@@ -14,13 +14,13 @@ const comparable=linkedPrecedents(item.id);
 const crumbs=[...crumbFor(item),{label:'Precedentes de risco',href:comparisonPath(item.slug)}];
 ---
 <BaseLayout title={'Precedentes de falência e recuperação judicial: '+item.empresa_resumo+'| CasoAberto'}
- description={'Roma Mobili e Lojas KD faliram; Kitchens entrou em recuperação judicial com créditos de clientes por móveis não entregues. Análise setorial: atraso grave sem prazo razoável pode denotar problema maior. Compare com '+item.empresa_resumo+' antes de assinar — ou de continuar pagando.'}
+ description={'Roma Imobili e Lojas KD faliram; Kitchens entrou em recuperação judicial com créditos de clientes por móveis não entregues. Análise setorial: atraso grave sem prazo razoável pode denotar problema maior. Compare com '+item.empresa_resumo+' antes de assinar — ou de continuar pagando.'}
  type="article" dateModified={raw.updated_at} breadcrumbs={crumbs.map(c=>({name:c.label,item:c.href}))}>
  <Breadcrumbs items={crumbs}/>
  <header class="bg-forest py-14 text-forest-foreground md:py-20 [&_h1]:my-4 [&_h1_em]:text-brand [&_h1_em]:not-italic [&>div>p]:max-w-3xl [&>div>p]:text-lg [&>div>p]:text-white/75 [&_.eyebrow]:text-brand"><div class="container">
   <span class="eyebrow text-xs font-semibold uppercase tracking-[0.14em] text-brand-strong">PRECEDENTES DE RISCO E ESCALONAMENTO</span>
   <h1>A entrega pode atrasar. A disputa pode escalar. E o dinheiro?</h1>
-  <p>Roma Mobili e Lojas KD chegaram à falência; Kitchens entrou em recuperação judicial com centenas de créditos de clientes por móveis não entregues. Em análise setorial, quem pagou e não recebeu já entrou na fila — e atraso grave sem prazo razoável pode denotar problema maior. Será que você quer correr o mesmo risco?</p>
+  <p>Roma Imobili e Lojas KD chegaram à falência; Kitchens entrou em recuperação judicial com centenas de créditos de clientes por móveis não entregues. Em análise setorial, quem pagou e não recebeu já entrou na fila — e atraso grave sem prazo razoável pode denotar problema maior. Será que você quer correr o mesmo risco? Busque outro fornecedor.</p>
   <div class="mt-6 flex flex-wrap gap-2 [&>span]:border [&>span]:border-white/20 [&>span]:px-3 [&>span]:py-1 [&>span]:text-sm [&>span]:text-white/80"><span>{comparable.filter(p=>p.stage==='falencia_decretada').length} falências decretadas em precedentes</span><span>{comparable.filter(p=>p.stage==='recuperacao_judicial').length} recuperação judicial</span><span>{comparable.length} processos públicos documentados</span></div>
  </div></header>
  <CollapseSignalsMatrix item={item}/>

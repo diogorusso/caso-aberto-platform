@@ -49,7 +49,7 @@
         "headline": "Não recomendamos contratar a Florense enquanto este caso não for resolvido.",
         "lead": "Não assuma esse risco. Na dúvida, escolha outro fornecedor. Antes de assinar — ou de continuar pagando — você precisa saber quando vai receber e quem responde pelo contrato.",
         "question": "Análise setorial — Pode haver risco de quebra e mais clientes ficarem sem solução?",
-        "context": "Em nossa análise, um atraso deste tamanho sem que a empresa desse porte consiga sequer se comprometer com um prazo razoável pode denotar mais do que uma falha operacional e sim um problema maior. Quem conhece este setor se lembra logo do caso da Roma Mobili que quebrou depois de clientes pagarem e não receberem. Será que você quer correr o mesmo risco? Busque outro fornecedor. Relembre o caso da Roma Mobili nos links abaixo:",
+        "context": "Em nossa análise, um atraso deste tamanho sem que a empresa desse porte consiga sequer se comprometer com um prazo razoável pode denotar mais do que uma falha operacional e sim um problema maior. Quem conhece este setor se lembra logo do caso da Roma Imobili que quebrou depois de clientes pagarem e não receberem. Será que você quer correr o mesmo risco? Busque outro fornecedor. Relembre o caso da Roma Imobili nos links abaixo:",
         "basis": [
           "Caso Florense Ipanema: o consumidor relata R$ 190 mil pagos integralmente e prazo de entrega da primeira semana de outubro de 2026 descumprido.",
           "Empresa notificada extrajudicialmente em 30/10/2026; denúncia pública em 03/11/2026; Procon/RJ acionado, segundo o consumidor.",
@@ -73,7 +73,7 @@
         "kicker": "Alerta ao consumidor · Móveis planejados",
         "headline": "Será que seu móvel planejado será entregue?",
         "body": "A Florense não entregou o meu. Neste dossiê: R$ 190 mil pagos, segundo o consumidor, e prazo de entrega descumprido.",
-        "warning": "Será que está falindo como ocorreu há dois anos com a Roma Mobili?",
+        "warning": "Será que está falindo como ocorreu há dois anos com a Roma Imobili?",
         "cta": "Melhor não correr o risco. Busque outro fornecedor.",
         "disclaimer": "",
         "valid_as_of": "2026-11-09"
@@ -98,7 +98,7 @@
             "headline": "Não recomendamos comprar na Florense Ipanema enquanto este caso não for resolvido.",
             "lead": "Na dúvida, escolha outro fornecedor. Um consumidor relata R$ 190 mil pagos, prazo descumprido e nenhuma entrega confirmada até agora.",
             "question": "Análise setorial — Pode haver risco de quebra e mais clientes ficarem sem solução?",
-            "context": "Em nossa análise, um atraso deste tamanho sem que a empresa desse porte consiga sequer se comprometer com um prazo razoável pode denotar mais do que uma falha operacional e sim um problema maior. Quem conhece este setor se lembra logo do caso da Roma Mobili que quebrou depois de clientes pagarem e não receberem. Será que você quer correr o mesmo risco? Busque outro fornecedor. Relembre o caso da Roma Mobili nos links abaixo:",
+            "context": "Em nossa análise, um atraso deste tamanho sem que a empresa desse porte consiga sequer se comprometer com um prazo razoável pode denotar mais do que uma falha operacional e sim um problema maior. Quem conhece este setor se lembra logo do caso da Roma Imobili que quebrou depois de clientes pagarem e não receberem. Será que você quer correr o mesmo risco? Busque outro fornecedor. Relembre o caso da Roma Imobili nos links abaixo:",
             "basis": [
               "R$ 190 mil pagos integralmente em julho de 2026, segundo o consumidor.",
               "Entrega prometida para a primeira semana de outubro de 2026; equipe faltou a agendamentos depois disso, segundo o relato.",
@@ -121,7 +121,7 @@
             "kicker": "Alerta ao consumidor · Florense Ipanema",
             "headline": "Será que seu móvel planejado será entregue?",
             "body": "A Florense Ipanema não entregou o meu. R$ 190 mil pagos, segundo o consumidor, e prazo descumprido — sem conclusão confirmada até a última revisão.",
-            "warning": "Será que está falindo como ocorreu há dois anos com a Roma Mobili?",
+            "warning": "Será que está falindo como ocorreu há dois anos com a Roma Imobili?",
             "cta": "Melhor não correr o risco. Busque outro fornecedor.",
             "disclaimer": "",
             "valid_as_of": "2026-11-09"
@@ -131,7 +131,7 @@
       "faq": [
         {
           "question": "A Florense está falindo?",
-          "answer": "Em nossa análise setorial, um atraso deste tamanho sem compromisso com prazo razoável pode denotar mais do que falha operacional — e quem conhece o setor lembra da Roma Mobili, que quebrou depois de clientes pagarem e não receberem. Uma empresa não precisa estar falindo para ser risco sério: basta receber, não entregar e não apresentar solução verificável. Será que você quer correr o mesmo risco? Busque outro fornecedor enquanto este caso estiver aberto."
+          "answer": "Em nossa análise setorial, um atraso deste tamanho sem compromisso com prazo razoável pode denotar mais do que falha operacional — e quem conhece o setor lembra da Roma Imobili, que quebrou depois de clientes pagarem e não receberem. Uma empresa não precisa estar falindo para ser risco sério: basta receber, não entregar e não apresentar solução verificável. Será que você quer correr o mesmo risco? Busque outro fornecedor enquanto este caso estiver aberto."
         },
         {
           "question": "Qual é a empresa por trás da Florense Ipanema?",

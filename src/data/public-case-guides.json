@@ -403,6 +403,68 @@
       "related_case_slugs": [
         "amazon-prime-video-anuncios-adicional-senacon-2026"
       ]
+    },
+    {
+      "slug": "credito-trabalhista-universidade-recuperacao-judicial",
+      "title": "Universidade em recuperação judicial: como cobrar salário, FGTS e crédito trabalhista?",
+      "description": "Separe atraso corrente, crédito habilitado na recuperação e acordo com deságio. Um roteiro para professores e funcionários não misturarem datas nem perderem prazo de opção.",
+      "category": "Educação superior e créditos trabalhistas",
+      "updated_at": "2026-11-10",
+      "intro": "Uma universidade pediu recuperação judicial. O holerite atrasou. O FGTS não caiu. Agora aparece um plano com deságio e prazo de opção. São problemas diferentes: obrigação corrente, crédito concursal habilitado e proposta de quitação sob o plano. Se você misturar as três datas, aceita menos do que precisa — ou perde o prazo de reclamar o que já está nos autos.",
+      "sections": [
+        {
+          "heading": "01 · O que está atrasado agora e o que já virou crédito?",
+          "paragraphs": [
+            "Separe o mês de salário ou FGTS ainda devido como obrigação corrente do período em que a dívida já foi habilitada na recuperação judicial. Guarde holerite, extrato, TRCT e número do processo trabalhista, se houver.",
+            "Uma reportagem sobre o plano não atualiza o seu saldo. Só o quadro de credores, a decisão do juízo e o comprovante bancário mostram o que foi reconhecido e o que foi pago."
+          ]
+        },
+        {
+          "heading": "02 · Deságio do plano não é favor — é escolha com prazo",
+          "paragraphs": [
+            "Aditivos podem oferecer pagamento mais rápido com desconto ou manutenção de condições anteriores com prazo mais longo. Leia a cláusula, a data de início e o fim do prazo de opção.",
+            "Silêncio pode significar adesão automática ao deságio novo. Confirme o canal oficial da administração judicial e registre o e-mail enviado, com cópia."
+          ]
+        },
+        {
+          "heading": "03 · Compare quem já recebeu com o que ainda cobram de você",
+          "paragraphs": [
+            "No caso Cândido Mendes, a Microsoft fechou acordo civil anos antes da recuperação, enquanto créditos trabalhistas seguem no plano. Use essa cronologia para formular perguntas, não para inventar crime.",
+            "Peça valor, classe, parcela, data e responsável. Não publique CPF, conta bancária ou processo trabalhista completo em rede social."
+          ]
+        }
+      ],
+      "checklist": [
+        "Holerites, extrato de FGTS e comprovantes de atraso por competência.",
+        "Identificação da empregadora/mantenedora e do processo de recuperação.",
+        "Comprovante de habilitação ou impugnação do crédito.",
+        "Texto do plano/aditivo e prazo de opção contra deságio.",
+        "Protocolos de e-mail à administração judicial e resposta recebida."
+      ],
+      "request_example": "Sou credor trabalhista de [razão social/mantenedora], competência [meses], e mantenho holerites e extratos em arquivo privado. Solicito confirmação documental da habilitação do meu crédito, da classe, do valor atualizado, da regra de deságio aplicável e da data prevista de pagamento, com identificação do responsável. Não considero quitado qualquer valor sem comprovante bancário.",
+      "limits": "Este guia não calcula o seu crédito nem substitui advogado, sindicato ou a administração judicial. Recuperação judicial e falência são procedimentos distintos. Aceite de deságio, habilitação retardatária e execução trabalhista exigem análise do caso concreto e das datas vigentes nos autos.",
+      "sources": [
+        {
+          "name": "K2 Consultoria — opções de pagamento aos credores UCAM",
+          "url": "https://k2consultoria.com/candido-mendes"
+        },
+        {
+          "name": "Sinpro-Rio — atraso salarial na Cândido Mendes",
+          "url": "https://www.sinpro-rio.org.br/principal/a-existencia-da-candido-mendes-esta-em-jogo/"
+        },
+        {
+          "name": "Migalhas — STJ mantém recuperação do Grupo UCAM",
+          "url": "https://www.migalhas.com.br/quentes/446533/stj-mantem-recuperacao-judicial-do-grupo-candido-mendes"
+        }
+      ],
+      "related_case_slugs": [
+        "candido-mendes-recuperacao-judicial-cronologia-grupo-ucam",
+        "candido-mendes-ipanema-microsoft-upi-joana-angelica",
+        "candido-mendes-centro-upi-assembleia-creditos",
+        "candido-mendes-campos-upi-anita-pecanha",
+        "candido-mendes-niteroi-unidade-grupo-ucam",
+        "candido-mendes-professores-funcionarios-creditos-trabalhistas"
+      ]
     }
   ]
 }

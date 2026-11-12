@@ -252,6 +252,66 @@
       "threshold": "Nova ordem judicial, recurso, intimação, comunicação formal da escola ou desfecho da apuração interna, apenas quando houver fonte válida e contraditório.",
       "resolution": "Decisões integrais, resultado das medidas cível e criminal, manifestações documentadas das partes e atualização da cronologia com estágio e situação corretos.",
       "action": "Cobrar os fundamentos e o alcance dos pedidos judiciais e as providências institucionais verificáveis, sem envolver estudantes, familiares ou funcionários em campanhas."
+    },
+    {
+      "id": "EXT-017",
+      "audience": "Alunos, docentes e credores do Grupo UCAM",
+      "exposure": "Décadas de crise documental, recuperação judicial e alienação de ativos.",
+      "headline": "A crise atravessou décadas. Quem já recebeu — e quem ainda espera no deságio?",
+      "worst_case": "Se alienações e pagamentos do plano continuarem sem comprovação individual, credores trabalhistas seguem no deságio enquanto ativos estratégicos mudam de mão e a incerteza acadêmica permanece.",
+      "threshold": "Novo descumprimento de parcela do plano, convolação pedida de novo ou alienação sem destinação transparente à Classe I.",
+      "resolution": "Comprovantes bancários de pagamento conforme o plano, ou encerramento judicial documentado com quitação verificável.",
+      "action": "Separe o dossiê da unidade, o processo e o comprovante. Cobre valor, data e responsável."
+    },
+    {
+      "id": "EXT-018",
+      "audience": "Quem estuda ou trabalha no campus de Ipanema e credores da UPI",
+      "exposure": "Prédio penhorado na disputa Microsoft e depois ofertado como UPI no plano.",
+      "headline": "A Microsoft recebeu o acordo. O prédio de Ipanema voltou a leilão. Sobrou o salário?",
+      "worst_case": "Se a alienação ocorrer sem clareza sobre imissão na posse e destinação do preço, a comunidade acadêmica de Ipanema perde o endereço sem ver o crédito trabalhista correspondente liquidado.",
+      "threshold": "Arrematação homologada, imissão na posse ou ausência de depósito judicial comprovado.",
+      "resolution": "Documento de alienação, depósito do preço e destinação verificável aos credores do plano.",
+      "action": "Exija o status da UPI Joana Angélica e o vínculo do preço com a Classe I."
+    },
+    {
+      "id": "EXT-019",
+      "audience": "Docentes, funcionários e alunos da unidade Centro",
+      "exposure": "Sede administrativa e andares listados como UPI Assembleia.",
+      "headline": "O Centro virou UPI de R$ 52,5 milhões. O crédito de quem trabalhou acompanhou?",
+      "worst_case": "Se andares forem alienados sem transparência sobre continuidade operacional e rateio do preço, quem trabalha no Centro fica sem endereço estável e sem quitação proporcional documentada.",
+      "threshold": "Proposta vinculante homologada ou mudança de posse sem comunicação formal aos credores.",
+      "resolution": "Publicação do resultado da oferta, depósito e regra clara de rateio à Classe I.",
+      "action": "Leia a ficha da UPI Assembleia e cobre a ata do destino do dinheiro."
+    },
+    {
+      "id": "EXT-020",
+      "audience": "Comunidade acadêmica de Campos dos Goytacazes",
+      "exposure": "Campus em aula sob ASBI em recuperação e imóvel listado como UPI.",
+      "headline": "Em Campos a aula segue. O edital já precificou o prédio. Quem garante a continuidade?",
+      "worst_case": "Se a UPI Campos for alienada sem plano público de transição acadêmica, alunos e trabalhadores confrontam mudança de posse no meio do calendário sem solução contratual clara.",
+      "threshold": "Homologação de arrematação ou aviso de imissão na posse sem alternativas documentadas.",
+      "resolution": "Continuidade acadêmica formalizada ou realocação comprovada com preservação de direitos.",
+      "action": "Guarde o calendário com o CNPJ em RJ e cobre o status da UPI Anita Peçanha."
+    },
+    {
+      "id": "EXT-021",
+      "audience": "Alunos e trabalhadores da unidade Niterói",
+      "exposure": "Unidade operacional sob o mesmo processo de recuperação do grupo.",
+      "headline": "Niterói fora do edital de UPI. Dentro da mesma recuperação. Isso basta?",
+      "worst_case": "Se a unidade sofrer enxugamento operacional sem UPI própria publicada, a comunidade de Niterói pode perder serviços sem o mesmo destaque documental dos campi alienáveis.",
+      "threshold": "Fechamento, mudança de endereço ou demissões em massa sem ato publicado no processo.",
+      "resolution": "Comunicado formal da mantenedora e da AJ sobre a situação da unidade, com datas.",
+      "action": "Exija a mantenedora do contrato e o tratamento do crédito no processo único do grupo."
+    },
+    {
+      "id": "EXT-022",
+      "audience": "Professores e funcionários credores da UCAM",
+      "exposure": "Atrasos de salário/FGTS e pagamento via plano com deságio.",
+      "headline": "A Microsoft já tinha recebido. O deságio agora é para quem deu aula?",
+      "worst_case": "Se o credor trabalhista aceitar deságio sem conferir habilitação e prazo de opção, reduz o crédito e ainda assim pode continuar sem depósito comprovado nas parcelas seguintes.",
+      "threshold": "Fim do prazo de opção, nova parcela vencida sem pagamento ou FGTS sem depósito na conta vinculada.",
+      "resolution": "Comprovante bancário das parcelas e regularização do FGTS conforme o plano vigente.",
+      "action": "Confira habilitação, classe e opção de deságio antes de assinar quitação."
     }
   ]
 }

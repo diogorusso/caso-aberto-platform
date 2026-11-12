@@ -1,12 +1,15 @@
 ---
 /**
- * Clear case actions: write the demand, share the dossier, print the sheet.
- * Templates/channels open in a drawer; /casos/acoes/:id/ remains the SEO page.
+ * Clear case actions: write the demand, share on WhatsApp, print the sheet.
+ * WhatsApp is first and visible — ready confrontational message + OG URL.
  */
 import { FilePenLine, Share2, Printer, ArrowRight } from 'lucide-react';
 import ShareDrawer from './islands/ShareDrawer';
 import CaseActionDrawer from './CaseActionDrawer.astro';
+import WhatsAppShareButton from './WhatsAppShareButton.astro';
 import { caseActionPlan } from '../lib/case-actions';
+import { buildSharePayload, sharePayloadForCaseId } from '../lib/share-messages';
+import { copy } from '../lib/copy';
 
 interface Props {
   title: string;
@@ -16,16 +19,27 @@ interface Props {
   compact?: boolean;
   showComplaint?: boolean;
   caseId?: string;
+  company?: string;
 }
-const { title, href, summary = '', printHref, compact = false, showComplaint = true, caseId } = Astro.props;
+const { title, href, summary = '', printHref, compact = false, showComplaint = true, caseId, company } = Astro.props;
 const plan = caseId ? caseActionPlan(caseId) : null;
 const chargeLabel = plan?.isCivic ? 'Pedir informação pública' : 'Escrever cobrança';
 const chargeHint = plan?.isCivic
   ? `${plan.templates.length} textos prontos · canal oficial com fonte`
   : `${plan?.templates.length ?? 0} textos prontos · ${plan?.channels.length ?? 0} canais para enviar`;
+const share =
+  (caseId && sharePayloadForCaseId(caseId)) ||
+  buildSharePayload({ caseId, title, href, summary, company });
+const s = copy.share;
 ---
 {compact ? (
   <div class="flex flex-wrap items-center gap-3" data-print-hide aria-label={'Ações do caso: ' + title}>
+    <WhatsAppShareButton
+      href={share.whatsappHref}
+      label={s.whatsapp}
+      hint="Mensagem pronta"
+      variant="compact"
+    />
     {caseId ? (
       <CaseActionDrawer caseId={caseId} triggerLabel={chargeLabel} />
     ) : (
@@ -42,8 +56,10 @@ const chargeHint = plan?.isCivic
       printHref={printHref}
       caseId={caseId}
       showComplaint={showComplaint}
-      triggerLabel="Compartilhar o dossiê"
+      triggerLabel={s.moreChannels}
       size="default"
+      message={share.message}
+      shareUrl={share.url}
     />
     {printHref && (
       <a
@@ -62,22 +78,55 @@ const chargeHint = plan?.isCivic
       <p class="m-0 text-[0.68rem] font-extrabold uppercase tracking-[0.16em] text-brand-strong">O que fazer agora</p>
       <h2 id="case-action-board-title" class="m-0 text-2xl leading-tight md:text-3xl">
         {plan?.isCivic
-          ? 'Peça o documento. Espalhe as fontes. Imprima a ficha.'
-          : 'Escreva a cobrança. Espalhe o dossiê. Imprima a ficha.'}
+          ? 'Peça o documento. Espalhe no WhatsApp. Imprima a ficha.'
+          : 'Escreva a cobrança. Espalhe no WhatsApp. Imprima a ficha.'}
       </h2>
       <p class="m-0 max-w-3xl text-sm text-muted-foreground">
-        Cada botão abre uma ação diferente. Sem jargão. Sem gaveta escondida no meio do caminho.
+        WhatsApp leva a mensagem pronta com o link do dossiê — a imagem de preview acompanha o envio.
       </p>
     </header>
 
     <div class:list={['grid gap-3 p-4 md:p-5', printHref ? 'md:grid-cols-3' : 'md:grid-cols-2']}>
+      <article class="flex flex-col gap-3 rounded-lg border border-[#25D366]/50 bg-[#25D366]/5 p-4 ring-1 ring-[#25D366]/20">
+        <div class="flex items-start gap-3">
+          <span class="grid size-10 shrink-0 place-items-center rounded-md bg-[#128C7E] text-white" aria-hidden="true">
+            <Share2 size={18} />
+          </span>
+          <div class="space-y-1">
+            <p class="m-0 text-[0.65rem] font-extrabold uppercase tracking-[0.14em] text-[#128C7E]">1 · WhatsApp</p>
+            <h3 class="m-0 text-base font-bold">Mandar a cobrança agora</h3>
+            <p class="m-0 text-xs leading-relaxed text-muted-foreground">Mensagem pronta no tom CasoAberto + link com preview OG.</p>
+          </div>
+        </div>
+        <WhatsAppShareButton
+          href={share.whatsappHref}
+          label={s.whatsapp}
+          hint="Um toque · mensagem pronta"
+          variant="block"
+          class="mt-auto"
+        />
+        <ShareDrawer
+          client:visible
+          title={title}
+          href={href}
+          summary={summary}
+          printHref={printHref}
+          caseId={caseId}
+          showComplaint={showComplaint}
+          triggerLabel={s.moreChannels}
+          className="w-full justify-center"
+          message={share.message}
+          shareUrl={share.url}
+        />
+      </article>
+
       <article class="flex flex-col gap-3 rounded-lg border border-brand-strong/40 bg-background p-4 ring-1 ring-brand-strong/10">
         <div class="flex items-start gap-3">
           <span class="grid size-10 shrink-0 place-items-center rounded-md bg-brand-strong text-white" aria-hidden="true">
             <FilePenLine size={18} />
           </span>
           <div class="space-y-1">
-            <p class="m-0 text-[0.65rem] font-extrabold uppercase tracking-[0.14em] text-brand-strong">1 · Cobrar</p>
+            <p class="m-0 text-[0.65rem] font-extrabold uppercase tracking-[0.14em] text-brand-strong">2 · Cobrar</p>
             <h3 class="m-0 text-base font-bold">Escrever e enviar a cobrança</h3>
             <p class="m-0 text-xs leading-relaxed text-muted-foreground">{chargeHint}</p>
           </div>
@@ -90,30 +139,6 @@ const chargeHint = plan?.isCivic
             href={href}
           >Abrir o dossiê <ArrowRight size={15} aria-hidden="true" /></a>
         )}
-      </article>
-
-      <article class="flex flex-col gap-3 rounded-lg border border-border bg-background p-4">
-        <div class="flex items-start gap-3">
-          <span class="grid size-10 shrink-0 place-items-center rounded-md border border-border bg-muted" aria-hidden="true">
-            <Share2 size={18} />
-          </span>
-          <div class="space-y-1">
-            <p class="m-0 text-[0.65rem] font-extrabold uppercase tracking-[0.14em] text-muted-foreground">2 · Espalhar</p>
-            <h3 class="m-0 text-base font-bold">Enviar o link do caso</h3>
-            <p class="m-0 text-xs leading-relaxed text-muted-foreground">WhatsApp, X, Facebook, Telegram ou copiar o endereço completo.</p>
-          </div>
-        </div>
-        <ShareDrawer
-          client:visible
-          title={title}
-          href={href}
-          summary={summary}
-          printHref={printHref}
-          caseId={caseId}
-          showComplaint={showComplaint}
-          triggerLabel="Compartilhar o dossiê"
-          className="mt-auto w-full justify-center"
-        />
       </article>
 
       {printHref && (

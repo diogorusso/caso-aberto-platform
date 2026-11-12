@@ -6,13 +6,14 @@
  *
  * Legal skill (platform-wide tone — FTUE, app, every case, not one dossier):
  * `.cursor/skills/casoaberto-pt-br-tom/`
- * Example register: Florense/Roma canon lines. ZERO DISCLAIMERS — legal-only.
+ * §3a campaign + §3b sectorial verdict (2026-11-11). ZERO DISCLAIMERS — legal-only.
  *
- * Hard limits (AGENTS.md §5, §22, §26–27, §30) — aggressive ≠ invent:
+ * Hard limits (AGENTS.md §5, §22, §26–27, §30–31) — aggressive ≠ invent:
  *  - consumer claims keep attribution ("segundo o consumidor", "relatado");
  *  - no "golpe", "fraude", "calote", "estelionato", crime or bad-faith imputation;
  *  - never assert as fact that a company went bankrupt without a decree;
- *  - rhetorical Roma risk on alert surfaces is authorized; LLM-made disclaimers are not;
+ *  - rhetorical Roma Imobili risk + sectorial analysis are authorized; LLM disclaimers are not;
+ *  - "não recomendamos" covers new purchases AND recent contracts still rescindable;
  *  - a resolution gets the same prominence as the complaint.
  *
  * Markup owns layout; this file owns words. Components read from `copy.*`, never literals.
@@ -100,8 +101,8 @@ export const copy = {
     scopeLabel: 'Vale para:',
     evidenceLink: 'Ver as provas',
     methodLink: 'Como decidimos',
-    romaCaseLink: 'Relembre o caso da Roma Mobili — processo de falência',
-    romaVideoLink: 'Relembre o caso da Roma Mobili — vídeo',
+    romaCaseLink: 'Relembre o caso da Roma Imobili — processo de falência',
+    romaVideoLink: 'Relembre o caso da Roma Imobili — vídeo',
     basisTitle: 'Por que dizemos não',
     basisTitleNeutral: 'Em que nos baseamos',
     triggersTitle: 'Para mudar essa posição, a empresa precisa:',
@@ -166,7 +167,6 @@ export const copy = {
     more: {
       eyebrow: 'CONTINUE',
       directory: 'Outras empresas avaliadas',
-      notRecommended: 'Empresas que não recomendamos',
       topics: 'Problemas por tipo',
     },
   },
@@ -187,10 +187,16 @@ export const copy = {
   },
   share: {
     eyebrow: 'O SILÊNCIO PROTEGE A EMPRESA',
-    title: 'Compartilhe. Cada pessoa avisada é um consumidor a menos correndo esse risco.',
-    body: 'Mande para quem está pensando em comprar móveis planejados. Com fontes, sem boato.',
+    title: 'Mande no WhatsApp. Cada aviso pode impedir outro prejuízo.',
+    body: 'Mensagem pronta, no tom da cobrança, com o link do dossiê. A imagem de preview acompanha o link.',
+    platformTitle: 'Espalhe o CasoAberto no WhatsApp.',
+    platformBody: 'Antes de pagar, descubra quem responde. Mande o link da plataforma — com fontes, CNPJ e casos documentados.',
+    archiveTitle: 'Espalhe o arquivo de casos.',
+    archiveBody: 'Pagou e não recebeu? Mande o acervo completo: empresas, instituições, fontes e cronologia.',
     share: 'Compartilhar o caso',
     whatsapp: 'Mandar no WhatsApp',
+    moreChannels: 'Outras redes',
+    stickyLabel: 'WhatsApp',
     copied: 'Link copiado ✓',
   },
   metrics: {
@@ -233,14 +239,14 @@ export const copy = {
     lead: (cases: number, avgDays: number) =>
       `Atrasos, remarcações e consumidor sem resposta. Em ${cases} casos do setor terminou em falência decretada — em média ${avgDays} dias depois do primeiro sinal público identificado em cada um.`,
     signalsTitle: 'Os sinais que antecederam o colapso estão documentados.',
-    signalsBody: 'Roma Mobili, Lojas KD, Kitchens, Grupo Toky, Marabraz, Três Irmãos e Planearte. Veja quais desses sinais já aparecem neste caso.',
-    paidQuestion: 'Pagou R$ 190 mil. Não recebeu. Não teve resposta. Você assumiria esse risco?',
-    noBuy: 'Não compre enquanto este caso estiver aberto.',
+    signalsBody: 'Roma Imobili, Lojas KD, Kitchens, Grupo Toky, Marabraz, Três Irmãos e Planearte. Veja quais desses sinais já aparecem neste caso.',
+    paidQuestion: 'Pagou R$ 190 mil. Não recebeu. Sem prazo razoável. Você assumiria esse risco — ou sairia enquanto ainda dá?',
+    noBuy: 'Não compre enquanto este caso estiver aberto. Se ainda não pagou tudo e ainda dá para sair, considere a rescisão.',
     matrix: {
       eyebrow: 'SINAIS ANTES DO COLAPSO',
       title: 'Os mesmos sinais, lado a lado com quem quebrou.',
       description: 'Comparação de sinais públicos em empresas de móveis e decoração. Cada célula tem data e fonte — ou fica explicitamente em branco.',
-      caption: 'Os mesmos sinais públicos. Roma quebrou. Será que você quer correr o risco? Melhor buscar outro fornecedor.',
+      caption: 'Os mesmos sinais públicos. A Roma Imobili quebrou depois de clientes pagarem e não receberem. Em análise setorial, atraso grave sem prazo razoável pode denotar problema maior. Será que você quer correr o mesmo risco? Busque outro fornecedor.',
       columnCase: 'Caso Florense Ipanema',
       documented: 'documentado',
       notDocumented: 'não documentado',

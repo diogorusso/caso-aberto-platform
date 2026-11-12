@@ -1,5 +1,6 @@
 ---
 import {primaryImageForCase, visualAssetForCase} from '../lib/case-media';
+import CaseCardShareActions from './islands/CaseCardShareActions';
 import { ArrowUpRight, FolderOpen } from 'lucide-react';
 interface Props {
   study: {
@@ -18,46 +19,66 @@ if (study.id && !imageSrc) throw new Error('PublicCaseCard missing required phot
 const logo = visual?.logo;
 const sourceCount = study.sources?.length;
 ---
-<a
-  href={href}
-  target="_blank"
-  rel="noopener noreferrer"
+<article
   class:list={[
-    'group flex flex-col gap-4 border border-border bg-card p-6 text-inherit no-underline transition-[border-color,box-shadow,transform] duration-200',
+    'group flex flex-col gap-4 border border-border bg-card p-6 text-inherit transition-[border-color,box-shadow,transform] duration-200',
     'hover:-translate-y-0.5 hover:border-brand/60 hover:shadow-md',
-    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2',
   ]}
-  aria-label={'Abrir investigação: '+study.headline}
 >
-  <div class="relative overflow-hidden rounded-md border border-border">
-    <img src={imageSrc} alt="" class="aspect-[1200/630] w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" width="1200" height="630" loading="lazy" decoding="async"/>
-    {logo && (
-      <span class="absolute bottom-3 left-3 inline-flex h-11 max-w-[9.5rem] items-center justify-center border border-border bg-white px-2.5 shadow-sm">
-        <img src={logo} alt="" class="max-h-7 max-w-[8.5rem] object-contain" width="120" height="36" loading="lazy" decoding="async"/>
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="flex min-w-0 flex-1 flex-col gap-4 text-inherit no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
+    aria-label={'Abrir investigação: '+study.headline}
+  >
+    <div class="relative overflow-hidden rounded-md border border-border">
+      <img src={imageSrc} alt="" class="aspect-[1200/630] w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" width="1200" height="630" loading="lazy" decoding="async"/>
+      {logo && (
+        <span class="absolute bottom-3 left-3 inline-flex h-11 max-w-[9.5rem] items-center justify-center border border-border bg-white px-2.5 shadow-sm">
+          <img src={logo} alt="" class="max-h-7 max-w-[8.5rem] object-contain" width="120" height="36" loading="lazy" decoding="async"/>
+        </span>
+      )}
+    </div>
+    <div class="flex flex-wrap items-center justify-between gap-2 text-xs font-semibold uppercase tracking-wide">
+      <span class="text-brand-strong">{study.sector}</span>
+      <span class="text-muted-foreground">PESQUISA · {study.reviewed_at.split('-').reverse().join('/')}</span>
+    </div>
+    <h3 class:list={["m-0 leading-tight text-foreground transition-colors group-hover:text-brand-strong",compact?"text-xl":"text-2xl"]}>{study.headline}</h3>
+    <p class="m-0 text-sm font-semibold text-muted-foreground">{study.company}</p>
+    <p class="m-0 flex-1 text-muted-foreground">{study.deck}</p>
+    <div class="border-l-4 border-brand bg-muted p-4">
+      <strong class="text-2xl">{study.key_fact.metric}</strong>
+      <p class="m-0 text-sm">{study.key_fact.label}</p>
+      <p class="mt-2 mb-0 text-xs text-muted-foreground">{study.key_fact.period}</p>
+    </div>
+    <p class="m-0 text-xs text-muted-foreground">{study.status_label}</p>
+  </a>
+  <div class="mt-auto flex flex-col gap-3 border-t border-border pt-3">
+    <div class="flex items-center justify-between gap-3">
+      <span class="inline-flex items-center gap-2 text-xs text-muted-foreground">
+        <FolderOpen size={15} aria-hidden="true"/>
+        {typeof sourceCount === 'number' ? (sourceCount === 1 ? '1 fonte' : sourceCount+' fontes') : 'Investigação documentada'}
       </span>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1 text-sm font-bold text-brand-strong no-underline hover:underline"
+      >
+        Abrir investigação
+        <ArrowUpRight size={16} aria-hidden="true"/>
+      </a>
+    </div>
+    {study.id && (
+      <CaseCardShareActions
+        client:visible
+        caseId={study.id}
+        title={study.headline}
+        href={href}
+        summary={study.deck}
+        company={study.company}
+      />
     )}
   </div>
-  <div class="flex flex-wrap items-center justify-between gap-2 text-xs font-semibold uppercase tracking-wide">
-    <span class="text-brand-strong">{study.sector}</span>
-    <span class="text-muted-foreground">PESQUISA · {study.reviewed_at.split('-').reverse().join('/')}</span>
-  </div>
-  <h3 class:list={["m-0 leading-tight text-foreground transition-colors group-hover:text-brand-strong",compact?"text-xl":"text-2xl"]}>{study.headline}</h3>
-  <p class="m-0 text-sm font-semibold text-muted-foreground">{study.company}</p>
-  <p class="m-0 flex-1 text-muted-foreground">{study.deck}</p>
-  <div class="border-l-4 border-brand bg-muted p-4">
-    <strong class="text-2xl">{study.key_fact.metric}</strong>
-    <p class="m-0 text-sm">{study.key_fact.label}</p>
-    <p class="mt-2 mb-0 text-xs text-muted-foreground">{study.key_fact.period}</p>
-  </div>
-  <p class="m-0 text-xs text-muted-foreground">{study.status_label}</p>
-  <div class="mt-auto flex items-center justify-between gap-3 border-t border-border pt-3">
-    <span class="inline-flex items-center gap-2 text-xs text-muted-foreground">
-      <FolderOpen size={15} aria-hidden="true"/>
-      {typeof sourceCount === 'number' ? (sourceCount === 1 ? '1 fonte' : sourceCount+' fontes') : 'Investigação documentada'}
-    </span>
-    <span class="inline-flex items-center gap-1 text-sm font-bold text-brand-strong">
-      Abrir investigação
-      <ArrowUpRight size={16} className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true"/>
-    </span>
-  </div>
-</a>
+</article>

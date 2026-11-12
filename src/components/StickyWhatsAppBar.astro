@@ -1,0 +1,45 @@
+---
+/**
+ * Mobile-first sticky WhatsApp bar — always visible on case pages.
+ * Keeps one tap between the reader and a ready confrontational message.
+ */
+import WhatsAppShareButton from './WhatsAppShareButton.astro';
+import { copy } from '../lib/copy';
+import {
+  buildSharePayload,
+  sharePayloadForCaseId,
+} from '../lib/share-messages';
+
+interface Props {
+  caseId?: string;
+  title: string;
+  href: string;
+  summary?: string;
+  company?: string;
+}
+
+const { caseId, title, href, summary = '', company } = Astro.props;
+const payload =
+  (caseId && sharePayloadForCaseId(caseId)) ||
+  buildSharePayload({ caseId, title, href, summary, company });
+const s = copy.share;
+---
+<div
+  class="pointer-events-none fixed inset-x-0 bottom-0 z-40 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] md:hidden"
+  data-print-hide
+>
+  <div class="pointer-events-auto mx-auto flex max-w-lg items-center gap-2 rounded-xl border border-[#25D366]/40 bg-[#0f1714]/95 p-2 shadow-2xl backdrop-blur">
+    <WhatsAppShareButton
+      href={payload.whatsappHref}
+      label={s.stickyLabel}
+      hint="Mensagem pronta"
+      variant="compact"
+      class="min-w-0 flex-1 justify-center"
+    />
+    <a
+      href={href}
+      class="inline-flex min-h-11 shrink-0 items-center justify-center rounded-md border border-white/20 px-3 text-xs font-bold text-white no-underline"
+    >Dossiê</a>
+  </div>
+</div>
+<div class="h-20 md:hidden" aria-hidden="true" data-print-hide></div>

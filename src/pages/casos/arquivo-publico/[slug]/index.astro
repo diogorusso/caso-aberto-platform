@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import CaseVisualStory from '../../../../components/CaseVisualStory.astro';
-import CaseActionBar from '../../../../components/CaseActionBar.astro';
 import CaseActionHub from '../../../../components/CaseActionHub.astro';
-import CaseVisibilityBadge from '../../../../components/CaseVisibilityBadge.astro';
+import DocumentedCaseHeader from '../../../../components/DocumentedCaseHeader.astro';
+import StickyWhatsAppBar from '../../../../components/StickyWhatsAppBar.astro';
+import ViralShareRail from '../../../../components/ViralShareRail.astro';
 import atlas from '../../../../data/public-case-atlas.json';
 import {caseStudies,categoryHref} from '../../../../lib/case-catalog';
 import {primaryImageForCase, visualAssetForCase} from '../../../../lib/case-media';
@@ -22,31 +23,31 @@ const logo=visual?.logo;
 ---
 <BaseLayout image={'/og/casos/'+study.slug+'.png'} title={study.headline+' | Pesquisa CasoAberto'} description={study.deck} type="article" dateModified={study.reviewed_at} breadcrumbs={[{name:'Início',item:'/'},{name:'Casos',item:'/casos/'},{name:study.company,item:caseUrl}]}>
 <article>
-  <header class="bg-primary py-12 text-primary-foreground md:py-16">
-    <div class="container grid max-w-6xl items-start gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(16rem,0.85fr)]">
-      <div class="stack-tight max-w-5xl">
-        <p class="m-0 text-xs font-bold uppercase tracking-wider text-[#ff917e]">CASO DOCUMENTADO · {study.sector}</p>
-        <div class="space-y-5 md:space-y-6">
-          <h1 class="m-0 text-4xl leading-tight md:text-6xl">{study.headline}</h1>
-          <CaseVisibilityBadge caseId={study.id} variant="header" tone="inverse" />
-        </div>
-        <p class="m-0 max-w-4xl text-xl text-white/80">{study.deck}</p>
-        <p class="m-0 text-sm text-white/60">Caso pesquisado: {study.state} · Revisão: {study.reviewed_at.split('-').reverse().join('/')}</p>
-      </div>
-      <figure class="m-0 overflow-hidden border border-white/15 bg-black/20">
-        <img src={imageSrc} alt={'Imagem de reconhecimento do caso '+study.company} width="1200" height="630" class="aspect-[1200/630] w-full object-cover" loading="eager" decoding="async"/>
-        <figcaption class="flex items-start gap-3 border-t border-white/10 px-4 py-3 text-xs leading-snug text-white/70">
-          {logo && (
-            <span class="inline-flex h-10 shrink-0 items-center justify-center border border-white/15 bg-white px-2.5">
-              <img src={logo} alt="" class="max-h-6 max-w-[7.5rem] object-contain" width="120" height="24" loading="eager" decoding="async"/>
-            </span>
-          )}
-          <span class="min-w-0">{visual?.credit || 'Fotografia documentada do dossiê'}{visual?.photo_source && <> · <a class="text-[#ff917e] underline" href={visual.photo_source} target="_blank" rel="noopener noreferrer">Fonte da imagem ↗</a></>}</span>
-        </figcaption>
-      </figure>
-    </div>
-  </header>
-  <div class="container py-5"><CaseActionBar compact title={study.headline} summary={study.deck} href={caseUrl} caseId={study.id} printHref={'/casos/imprimir/'+study.slug+'/'} /></div>
+  <DocumentedCaseHeader
+    eyebrow={`CASO DOCUMENTADO · ${study.sector}`}
+    title={study.headline}
+    deck={study.deck}
+    caseId={study.id}
+    imageSrc={imageSrc}
+    imageAlt={'Imagem de reconhecimento do caso '+study.company}
+    logo={logo}
+    credit={visual?.credit ?? undefined}
+    photoSource={visual?.photo_source}
+    meta={`Caso pesquisado: ${study.state} · Revisão: ${study.reviewed_at.split('-').reverse().join('/')}`}
+  >
+    <ViralShareRail
+      slot="share"
+      embedded
+      compact
+      caseId={study.id}
+      title={study.headline}
+      href={caseUrl}
+      summary={study.deck}
+      company={study.company}
+      printHref={'/casos/imprimir/'+study.slug+'/'}
+      tone="dark"
+    />
+  </DocumentedCaseHeader>
   <CaseActionHub caseId={study.id} compact/>
   <CaseVisualStory caseId={study.id}/>
   <div class="container grid max-w-6xl gap-10 py-14 lg:grid-cols-[minmax(0,1fr)_17rem]">
@@ -63,4 +64,5 @@ const logo=visual?.logo;
     <aside class="h-fit space-y-4 border-t-4 border-brand bg-card p-6 lg:sticky lg:top-24"><h2 class="m-0 text-xl">Próximo passo</h2><p class="m-0 text-sm text-muted-foreground">{study.company}<span class="block">{study.status_label}</span></p><p class="m-0 text-sm text-muted-foreground">Role o dossiê para fatos, respostas e fontes. Use um link só quando quiser sair desta página.</p><a class="block text-link text-sm font-semibold" href={'/guias/casos-de-consumo/'+study.guide_slug+'/'}>Guia prático deste problema ↗</a>{catalogEntry&&<a class="block text-link text-sm font-semibold" href={categoryHref(catalogEntry.categorySlug)}>Mais casos: {catalogEntry.category} ↗</a>}<a class="block text-link text-sm font-semibold" href={"/casos/imprimir/"+study.slug+"/"}>Imprimir ficha A4 ↗</a></aside>
   </div>
 </article>
+<StickyWhatsAppBar caseId={study.id} title={study.headline} href={caseUrl} summary={study.deck} company={study.company} />
 </BaseLayout>

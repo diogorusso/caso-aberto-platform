@@ -410,6 +410,72 @@
       "credit": "Capa tipográfica e textual: exceção editorial para processo judicial envolvendo familiares de vítima menor de idade.",
       "is_incident_photo": false,
       "non_photo_reason": "Proteção da família e de terceiros em disputa judicial ainda em curso; evitar imagem de criança, pessoa afetada, escola com alunos e ilustração que sugira fato não comprovado."
+    },
+    {
+      "case_id": "EXT-017",
+      "company": "Universidade Cândido Mendes",
+      "cover": "/og/casos/candido-mendes-recuperacao-judicial-cronologia-grupo-ucam.png",
+      "photo": "/media/ucam/ucam-centro-photo.jpg",
+      "logo": "/media/ucam/ucam-logo.png",
+      "photo_source": "https://commons.wikimedia.org/wiki/File:Universidade_Candido_Mendes.jpg",
+      "logo_source": "https://www.candidomendes.edu.br/assets/images/logo-bordo-ucam.svg",
+      "credit": "Fachada do prédio da Universidade Cândido Mendes no Centro do Rio (Wikimedia Commons) e logotipo institucional UCAM.",
+      "is_incident_photo": false
+    },
+    {
+      "case_id": "EXT-018",
+      "company": "UCAM Ipanema · Microsoft",
+      "cover": "/og/casos/candido-mendes-ipanema-microsoft-upi-joana-angelica.png",
+      "photo": "/media/ucam/campus-ipanema-fachada-photo.jpg",
+      "logo": "/media/ucam/ucam-logo.png",
+      "photo_source": "https://static.suporteleiloes.com.br/rymerleiloescombr/bens/1218/arquivos/6a2c5d8c0962f-6a2c5d8c0ef2c.jpg",
+      "logo_source": "https://www.candidomendes.edu.br/assets/images/logo-bordo-ucam.svg",
+      "credit": "Fachada do prédio UCAM Ipanema na Rua Joana Angélica (foto do edital de leilão da UPI) e logotipo UCAM.",
+      "is_incident_photo": false
+    },
+    {
+      "case_id": "EXT-019",
+      "company": "UCAM Centro",
+      "cover": "/og/casos/candido-mendes-centro-upi-assembleia-creditos.png",
+      "photo": "/media/ucam/campus-centro-fachada-photo.jpg",
+      "logo": "/media/ucam/ucam-logo.png",
+      "photo_source": "https://commons.wikimedia.org/wiki/File:Centro,_Rio_de_Janeiro_-_State_of_Rio_de_Janeiro,_Brazil_-_panoramio_(11).jpg",
+      "logo_source": "https://www.candidomendes.edu.br/assets/images/logo-bordo-ucam.svg",
+      "credit": "Fachada do Edifício Centro Cândido Mendes visto da Praça XV (Wikimedia Commons/Panoramio) e logotipo UCAM — sede da UPI Assembleia.",
+      "is_incident_photo": false
+    },
+    {
+      "case_id": "EXT-020",
+      "company": "UCAM Campos",
+      "cover": "/og/casos/candido-mendes-campos-upi-anita-pecanha.png",
+      "photo": "/media/ucam/campus-campos-photo.jpg",
+      "logo": "/media/ucam/ucam-logo.png",
+      "photo_source": "https://api-site.candidomendes.edu.br/uploads/campos_4085f6c54b.jpg",
+      "logo_source": "https://www.candidomendes.edu.br/assets/images/logo-bordo-ucam.svg",
+      "credit": "Fachada/entrada do campus UCAM Campos dos Goytacazes — unidade Anita Peçanha (site institucional) e logotipo UCAM.",
+      "is_incident_photo": false
+    },
+    {
+      "case_id": "EXT-021",
+      "company": "UCAM Niterói",
+      "cover": "/og/casos/candido-mendes-niteroi-unidade-grupo-ucam.png",
+      "photo": "/media/ucam/campus-niteroi-fachada-photo.jpg",
+      "logo": "/media/ucam/ucam-logo.png",
+      "photo_source": "https://www.google.com/maps/search/?api=1&query=Universidade+Candido+Mendes+Niter%C3%B3i+Luiz+Leopoldo+Fernandes+Pinheiro+517",
+      "logo_source": "https://www.candidomendes.edu.br/assets/images/logo-bordo-ucam.svg",
+      "credit": "Fachada da unidade UCAM Niterói (Escola de Gastronomia) na Rua Luiz Leopoldo Fernandes Pinheiro — imagem pública do local no Google Maps — e logotipo UCAM.",
+      "is_incident_photo": false
+    },
+    {
+      "case_id": "EXT-022",
+      "company": "UCAM professores e funcionários",
+      "cover": "/og/casos/candido-mendes-professores-funcionarios-creditos-trabalhistas.png",
+      "photo": "/media/ucam/campus-edificio-assembleia-photo.jpg",
+      "logo": "/media/ucam/ucam-logo.png",
+      "photo_source": "https://commons.wikimedia.org/wiki/File:Edif%C3%ADcio_Centro_C%C3%A2ndido_Mendes.jpg",
+      "logo_source": "https://www.candidomendes.edu.br/assets/images/logo-bordo-ucam.svg",
+      "credit": "Exterior do Edifício Centro Cândido Mendes na Rua da Assembleia (Wikimedia Commons) e logotipo UCAM — prédio onde professores e funcionários trabalham enquanto o crédito trabalhista vira deságio no plano.",
+      "is_incident_photo": false
     }
   ]
 }

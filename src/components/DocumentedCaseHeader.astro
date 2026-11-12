@@ -1,0 +1,94 @@
+---
+/**
+ * Editorial case hero — site `container` shell + nested reading measure.
+ * Cover follows a magazine featured-photo pattern: constrained media (not
+ * ultrawide bleed), taller crop, logo badge on the cover (never between
+ * eyebrow and H1 — illustration skill).
+ * Refs: Tailwind editorial magazine hero; featured photo + logo overlay.
+ */
+import CaseVisibilityBadge from './CaseVisibilityBadge.astro';
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  deck: string;
+  caseId: string;
+  imageSrc: string;
+  imageAlt: string;
+  logo?: string | null;
+  credit?: string;
+  photoSource?: string | null;
+  meta: string;
+  status?: string;
+}
+
+const { eyebrow, title, deck, caseId, imageSrc, imageAlt, logo, credit, photoSource, meta, status } = Astro.props;
+---
+<header class="bg-primary text-primary-foreground">
+  <div class="container space-y-8 py-10 md:space-y-10 md:py-14">
+    <div class="max-w-3xl space-y-5 md:space-y-6">
+      <p class="m-0 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-[#ff917e]">{eyebrow}</p>
+      <h1 class="m-0 text-balance text-[1.85rem] font-bold leading-[1.15] tracking-tight sm:text-4xl md:text-[2.75rem] md:leading-[1.1]">
+        {title}
+      </h1>
+
+      <div class="space-y-2">
+        <CaseVisibilityBadge caseId={caseId} variant="header" tone="inverse" />
+        <p class="m-0 text-sm text-white/45">{meta}</p>
+      </div>
+
+      <p class="m-0 text-lg leading-relaxed text-white/75 md:text-xl md:leading-relaxed">
+        {deck}
+      </p>
+      {status && (
+        <p class="m-0 border-l-2 border-brand pl-4 text-sm font-medium leading-snug text-white/85">
+          {status}
+        </p>
+      )}
+    </div>
+
+    <div class="max-w-4xl space-y-6">
+      <figure class="m-0">
+        <div class="relative aspect-[4/3] overflow-hidden bg-black/25 sm:aspect-[16/10]">
+          <img
+            src={imageSrc}
+            alt={imageAlt}
+            width="1200"
+            height="750"
+            class="h-full w-full object-cover"
+            loading="eager"
+            decoding="async"
+          />
+          {logo && (
+            <span class="absolute bottom-3 left-3 inline-flex h-12 items-center justify-center bg-white px-3 shadow-lg sm:bottom-4 sm:left-4 sm:h-14 sm:px-4">
+              <img
+                src={logo}
+                alt=""
+                class="max-h-8 max-w-[9.5rem] object-contain sm:max-h-9 sm:max-w-[11rem]"
+                width="176"
+                height="36"
+                loading="eager"
+                decoding="async"
+              />
+            </span>
+          )}
+        </div>
+        <figcaption class="mt-3 text-[0.7rem] leading-relaxed text-white/50">
+          {credit || 'Fotografia documentada do dossiê'}
+          {photoSource && (
+            <>
+              {' · '}
+              <a class="text-[#ff917e]/90 underline-offset-2 hover:underline" href={photoSource} target="_blank" rel="noopener noreferrer">Fonte ↗</a>
+            </>
+          )}
+        </figcaption>
+      </figure>
+
+      {Astro.slots.has('share') && (
+        <div class="border-t border-white/10 pt-6">
+          <slot name="share" />
+        </div>
+      )}
+    </div>
+  </div>
+</header>

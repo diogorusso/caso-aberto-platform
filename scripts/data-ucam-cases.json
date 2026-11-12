@@ -1,0 +1,658 @@
+[
+  {
+    "id": "EXT-017",
+    "slug": "candido-mendes-recuperacao-judicial-cronologia-grupo-ucam",
+    "company": "Universidade Cândido Mendes · Grupo UCAM",
+    "sector": "Ensino superior · recuperação judicial",
+    "state": "Rio de Janeiro · 1999 a 2026",
+    "headline": "Quem cobrou primeiro na Cândido Mendes — a Microsoft ou quem deu aula sem salário?",
+    "deck": "Do processo de software nos anos 1990 ao pedido de recuperação em 2020, ao 4º aditivo de 2025 e ao leilão da UPI de Ipanema em 2026: a crise atravessou décadas. Credores trabalhistas seguem no plano com deságio. A Microsoft já tinha fechado acordo.",
+    "status_label": "Recuperação judicial em execução · 0093754-90.2020.8.19.0001",
+    "reviewed_at": "2026-11-10",
+    "first_record": "2017-01-10",
+    "record_type": "fontes-oficiais-e-reportagem",
+    "key_fact": {
+      "metric": "2020",
+      "label": "ano do pedido de recuperação judicial na 5ª Vara Empresarial do Rio",
+      "period": "Pedido em 11/05/2020. Em dezembro de 2025 o STJ manteve o processo (REsp 2.042.521). Não há decreto de falência neste recorte.",
+      "source_url": "https://www.migalhas.com.br/quentes/446533/stj-mantem-recuperacao-judicial-do-grupo-candido-mendes"
+    },
+    "lead": "A Cândido Mendes não sumiu de um dia para o outro. São anos de atraso salarial documentado, penhora do campus de Ipanema na briga com a Microsoft, pedido de recuperação judicial em 2020, tentativa do Ministério Público de convolar em falência em 2024, homologação do 4º aditivo em 2025 e leilão da UPI Joana Angélica em 2026. Abra os dossiês por unidade: /casos/arquivo-publico/candido-mendes-ipanema-microsoft-upi-joana-angelica/, /casos/arquivo-publico/candido-mendes-centro-upi-assembleia-creditos/, /casos/arquivo-publico/candido-mendes-campos-upi-anita-pecanha/, /casos/arquivo-publico/candido-mendes-niteroi-unidade-grupo-ucam/ e /casos/arquivo-publico/candido-mendes-professores-funcionarios-creditos-trabalhistas/.",
+    "verified": [
+      "Em 2017, reportagem do Globo registrou acordo que encerrou quase 20 anos de disputa com a Microsoft: a universidade pagaria cerca de R$ 6 milhões no total, sendo R$ 3,11 milhões à Microsoft sobre uma cobrança que chegava a R$ 43,16 milhões, com o prédio de Ipanema ainda penhorado em garantia.",
+      "Em 11/05/2020, ASBI e Instituto Cândido Mendes pediram recuperação judicial no processo 0093754-90.2020.8.19.0001. Reportagens da época citaram dívida na casa de R$ 400 milhões e milhares de alunos a menos desde 2014.",
+      "O Sinpro-Rio relatou, em 2023, que salários e depósitos de FGTS continuavam atrasando apesar da recuperação judicial em curso na 5ª Vara Empresarial.",
+      "Em março de 2024 o MPRJ opinou pela convolação em falência; em abril reconsiderou e a Justiça determinou o prosseguimento da recuperação judicial.",
+      "Em 12/03/2025 o TJRJ homologou o 4º aditivo ao plano (agravo 0085927-89.2024.8.19.0000). Em dezembro de 2025 o STJ manteve a recuperação sob a teoria do fato consumado."
+    ],
+    "timeline": [
+      {
+        "date": "2017-01-10",
+        "label": "Acordo Microsoft e penhora de Ipanema",
+        "description": "Reportagem registra acordo que suspende novo leilão do campus de Ipanema e define pagamento à Microsoft e ao escritório, com o imóvel ainda penhorado.",
+        "source_url": "https://oglobo.globo.com/economia/suspenso-leilao-do-predio-da-candido-mendes-de-ipanema-20893304"
+      },
+      {
+        "date": "2020-05-11",
+        "label": "Pedido de recuperação judicial",
+        "description": "Grupo protocola recuperação judicial na 5ª Vara Empresarial do Rio (0093754-90.2020.8.19.0001).",
+        "source_url": "https://www.migalhas.com.br/arquivos/2020/5/947D7D15C90C43_recuperacaocandidomendes.pdf"
+      },
+      {
+        "date": "2020-09-02",
+        "label": "TJRJ confirma a recuperação",
+        "description": "6ª Câmara Cível confirma o processamento da recuperação de instituição sem fins lucrativos, com dívida citada de cerca de R$ 400 milhões.",
+        "source_url": "https://www.estadao.com.br/economia/justica-confirma-recuperacao-judicial-da-universidade-candido-mendes/"
+      },
+      {
+        "date": "2021-06-02",
+        "label": "Assembleia aprova o plano",
+        "description": "Relatório sindical descreve aprovação do plano e aditivos na assembleia geral de credores de 02/06/2021.",
+        "source_url": "https://sinpro-rio.org.br/principal/wp-content/uploads/2023/03/RELATORIO-DE-SITUACAO-PROCESSUAL-CANDIDO-MENDES-MAR-23-1.pdf"
+      },
+      {
+        "date": "2024-03-06",
+        "label": "MP pede convolação em falência",
+        "description": "Ministério Público opina pela conversão da recuperação em falência; a universidade rebate a precipitação do parecer.",
+        "source_url": "https://oglobo.globo.com/blogs/ancelmo-gois/post/2024/03/ministerio-publico-do-rio-quer-falencia-da-universidade-candido-mendes-fundada-em-1902.ghtml"
+      },
+      {
+        "date": "2024-04-25",
+        "label": "Justiça manda a RJ seguir",
+        "description": "Após reconsideração do MP, a 5ª Vara Empresarial determina o prosseguimento da recuperação judicial.",
+        "source_url": "https://oglobo.globo.com/blogs/ancelmo-gois/post/2024/04/justica-determina-prosseguimento-de-recuperacao-judicial-da-universidade-candido-mendes.ghtml"
+      },
+      {
+        "date": "2025-03-12",
+        "label": "TJRJ homologa o 4º aditivo",
+        "description": "Quinta Câmara de Direito Privado homologa o quarto aditivo ao plano, com regras de deságio e pagamento a credores trabalhistas e quirografários.",
+        "source_url": "https://k2consultoria.com/candido-mendes"
+      },
+      {
+        "date": "2025-12-16",
+        "label": "STJ mantém a recuperação",
+        "description": "3ª Turma do STJ mantém o processo (REsp 2.042.521) pelo fato consumado, sem transformar o caso em decreto de falência.",
+        "source_url": "https://www.migalhas.com.br/quentes/446533/stj-mantem-recuperacao-judicial-do-grupo-candido-mendes"
+      },
+      {
+        "date": "2026-07-09",
+        "label": "Leilão de Ipanema mantido",
+        "description": "Juízo rejeita pedido da Fazenda Nacional e mantém o leilão da sede de Ipanema com lance mínimo de R$ 54 milhões.",
+        "source_url": "https://oglobo.globo.com/blogs/ancelmo-gois/post/2026/07/esta-mantido-o-leilao-de-sede-da-universidade-candido-mendes-em-ipanema.ghtml"
+      }
+    ],
+    "other_side": "A administração judicial (K2) publica opções de pagamento, prazos de opção contra deságio do 4º aditivo e canais de comunicação com credores. A universidade também contestou publicamente o parecer do MP pela falência em 2024.",
+    "other_side_url": "https://k2consultoria.com/candido-mendes",
+    "questions": [
+      "Qual crédito trabalhista individual já foi pago, com qual deságio e em qual data bancária verificável?",
+      "Quais UPIs já foram alienadas e qual valor líquido entrou para a Classe I?",
+      "O leilão da UPI Joana Angélica de 2026 gerou arrematação homologada e depósito judicial comprovado?"
+    ],
+    "steps": [
+      "Abra o dossiê da sua unidade e o dossiê trabalhista antes de aceitar qualquer proposta de deságio.",
+      "Consulte o processo 0093754-90.2020.8.19.0001 no TJRJ e os informes da K2 com a data do ato.",
+      "Separe holerites, FGTS, sentenças e habilitação de crédito; cobre resposta escrita com valor, parcela e responsável."
+    ],
+    "limits": "Este dossiê documenta recuperação judicial em curso, não falência decretada. Valores de dívida, deságio e leilão são os publicados nas fontes citadas e não equivalem a prejuízo individual comprovado de cada trabalhador ou aluno. O acordo Microsoft é processo civil histórico distinto do quadro atual de créditos no plano.",
+    "guide_slug": "credito-trabalhista-universidade-recuperacao-judicial",
+    "story_slugs": [],
+    "sources": [
+      {
+        "name": "O Globo — acordo Microsoft e leilão de Ipanema",
+        "url": "https://oglobo.globo.com/economia/suspenso-leilao-do-predio-da-candido-mendes-de-ipanema-20893304",
+        "published_at": "2017-01-10",
+        "kind": "Reportagem"
+      },
+      {
+        "name": "Migalhas — decisão de deferimento da recuperação judicial",
+        "url": "https://www.migalhas.com.br/arquivos/2020/5/947D7D15C90C43_recuperacaocandidomendes.pdf",
+        "published_at": "2020-05-17",
+        "kind": "Documento público"
+      },
+      {
+        "name": "Estadão — TJRJ confirma recuperação da UCAM",
+        "url": "https://www.estadao.com.br/economia/justica-confirma-recuperacao-judicial-da-universidade-candido-mendes/",
+        "published_at": "2020-09-03",
+        "kind": "Reportagem"
+      },
+      {
+        "name": "Sinpro-Rio — relatório de situação processual 2023",
+        "url": "https://sinpro-rio.org.br/principal/wp-content/uploads/2023/03/RELATORIO-DE-SITUACAO-PROCESSUAL-CANDIDO-MENDES-MAR-23-1.pdf",
+        "published_at": "2023-03-01",
+        "kind": "Documento sindical"
+      },
+      {
+        "name": "O Globo — MP pede falência da Cândido Mendes",
+        "url": "https://oglobo.globo.com/blogs/ancelmo-gois/post/2024/03/ministerio-publico-do-rio-quer-falencia-da-universidade-candido-mendes-fundada-em-1902.ghtml",
+        "published_at": "2024-03-06",
+        "kind": "Reportagem"
+      },
+      {
+        "name": "O Globo — Justiça determina prosseguimento da RJ",
+        "url": "https://oglobo.globo.com/blogs/ancelmo-gois/post/2024/04/justica-determina-prosseguimento-de-recuperacao-judicial-da-universidade-candido-mendes.ghtml",
+        "published_at": "2024-04-25",
+        "kind": "Reportagem"
+      },
+      {
+        "name": "K2 Consultoria — página oficial da RJ UCAM",
+        "url": "https://k2consultoria.com/candido-mendes",
+        "published_at": "2025-03-12",
+        "kind": "Administração judicial"
+      },
+      {
+        "name": "Migalhas — STJ mantém recuperação do Grupo UCAM",
+        "url": "https://www.migalhas.com.br/quentes/446533/stj-mantem-recuperacao-judicial-do-grupo-candido-mendes",
+        "published_at": "2025-12-16",
+        "kind": "Reportagem jurídica"
+      },
+      {
+        "name": "O Globo — leilão da sede de Ipanema mantido em 2026",
+        "url": "https://oglobo.globo.com/blogs/ancelmo-gois/post/2026/07/esta-mantido-o-leilao-de-sede-da-universidade-candido-mendes-em-ipanema.ghtml",
+        "published_at": "2026-07-09",
+        "kind": "Reportagem"
+      }
+    ]
+  },
+  {
+    "id": "EXT-018",
+    "slug": "candido-mendes-ipanema-microsoft-upi-joana-angelica",
+    "company": "UCAM Ipanema · Microsoft",
+    "sector": "Ensino superior · software · alienação de imóvel",
+    "state": "Ipanema · Rio de Janeiro · 1999 a 2026",
+    "headline": "A Microsoft cobrou o software. O prédio de Ipanema foi a garantia. E o salário?",
+    "deck": "Quase 20 anos de processo por cópias não autorizadas. Leilões em 2016. Acordo em 2017: a Microsoft recebeu R$ 3,11 milhões de uma cobrança de R$ 43 milhões. Em 2026, a mesma UPI Joana Angélica volta a leilão no plano de recuperação.",
+    "status_label": "UPI Joana Angélica sob alienação no plano · leilão 2026 mantido",
+    "reviewed_at": "2026-11-10",
+    "first_record": "2017-01-10",
+    "record_type": "fontes-oficiais-e-reportagem",
+    "key_fact": {
+      "metric": "R$ 3,11 mi",
+      "label": "valor acordado para a Microsoft em 2017 sobre cobrança de R$ 43,16 mi",
+      "period": "Acordo reportado pelo Globo; o prédio de Ipanema seguia penhorado em garantia até o cumprimento integral",
+      "source_url": "https://oglobo.globo.com/economia/suspenso-leilao-do-predio-da-candido-mendes-de-ipanema-20893304"
+    },
+    "lead": "Enquanto professores e funcionários acumulavam atraso, a Microsoft — credora de software — levou o caso até a penhora e o leilão do campus de Ipanema. Fechou acordo, recebeu. Anos depois, o mesmo imóvel vira UPI no plano de recuperação judicial. Cruzar com a cronologia geral em /casos/arquivo-publico/candido-mendes-recuperacao-judicial-cronologia-grupo-ucam/ e com o dossiê trabalhista em /casos/arquivo-publico/candido-mendes-professores-funcionarios-creditos-trabalhistas/.",
+    "verified": [
+      "O Globo descreveu disputa iniciada em 1999 por uso de cópias não autorizadas de softwares Microsoft, com o prédio da Rua Joana Angélica levado a leilão em 2016 sem interessados.",
+      "No acordo de 2017, a Microsoft concordou em receber o equivalente a US$ 1 milhão (R$ 3,11 milhões) sobre débito de R$ 43,16 milhões; o escritório representante também reduziu sua cobrança, totalizando cerca de R$ 6 milhões.",
+      "O 4º aditivo ao plano lista a UPI Imobiliária Joana Angélica (matrícula 33952) entre os ativos a alienar, com preço mínimo de R$ 42,5 milhões no edital anexo.",
+      "Em julho de 2026, a 5ª Vara Empresarial manteve o leilão eletrônico do imóvel com lance mínimo de R$ 54 milhões, rejeitando pedido da Fazenda Nacional de suspensão."
+    ],
+    "timeline": [
+      {
+        "date": "2017-01-10",
+        "label": "Acordo encerra leilão Microsoft",
+        "description": "Suspenso o leilão; Microsoft e escritório fecham valores reduzidos; penhora do prédio permanece até quitação.",
+        "source_url": "https://oglobo.globo.com/economia/suspenso-leilao-do-predio-da-candido-mendes-de-ipanema-20893304"
+      },
+      {
+        "date": "2025-03-01",
+        "label": "UPI Joana Angélica no 4º aditivo",
+        "description": "Plano e edital anexos descrevem a alienação do prédio de Ipanema como UPI imobiliária do Grupo UCAM.",
+        "source_url": "https://k2consultoria.com/wp-content/uploads/2025/03/4o-aditivo-ao-PRJ.pdf"
+      },
+      {
+        "date": "2026-07-09",
+        "label": "Leilão de 2026 mantido pela Justiça",
+        "description": "Juiz Arthur Eduardo Magalhães Ferreira rejeita suspensão pedida pela Fazenda; pregão marcado para 21/07/2026 com mínimo de R$ 54 milhões.",
+        "source_url": "https://oglobo.globo.com/blogs/ancelmo-gois/post/2026/07/esta-mantido-o-leilao-de-sede-da-universidade-candido-mendes-em-ipanema.ghtml"
+      },
+      {
+        "date": "2026-07-17",
+        "label": "Veja Rio confirma lance mínimo",
+        "description": "Reportagem confirma R$ 54 milhões como valor mínimo do leilão do prédio na Rua Joana Angélica.",
+        "source_url": "https://vejario.abril.com.br/cidade/leilao-universidade-candido-mendes-leilao-confirmado/"
+      }
+    ],
+    "other_side": "No acordo de 2017, a defesa da universidade afirmou que o cumprimento integral cancelaria a penhora e que leilões anteriores tinham afetado a demanda de alunos em Ipanema. No plano atual, a alienação é apresentada como meio de pagar credores do processo de recuperação.",
+    "other_side_url": "https://oglobo.globo.com/economia/suspenso-leilao-do-predio-da-candido-mendes-de-ipanema-20893304",
+    "questions": [
+      "O acordo Microsoft de 2017 foi integralmente cumprido e a penhora cancelada em cartório?",
+      "Houve arrematante homologado no leilão de julho de 2026 e depósito do preço?",
+      "Qual parcela do produto da UPI Joana Angélica está vinculada à Classe I trabalhista?"
+    ],
+    "steps": [
+      "Compare a data do acordo Microsoft com a data do seu crédito trabalhista ou contrato de matrícula.",
+      "Leia a cláusula de UPI Joana Angélica no 4º aditivo e os informes da K2.",
+      "Exija documento de alienação, valor líquido e destinação ao pagamento de credores — não aceite só anúncio de leilão."
+    ],
+    "limits": "O acordo Microsoft é litígio civil histórico; não prova falência. O leilão de 2026 integra o plano de recuperação judicial. Resultado de arrematação posterior à reportagem de manutenção do certame exige confirmação nos autos ou no leiloeiro oficial.",
+    "guide_slug": "credito-trabalhista-universidade-recuperacao-judicial",
+    "story_slugs": [],
+    "sources": [
+      {
+        "name": "O Globo — suspenso leilão e acordo com a Microsoft",
+        "url": "https://oglobo.globo.com/economia/suspenso-leilao-do-predio-da-candido-mendes-de-ipanema-20893304",
+        "published_at": "2017-01-10",
+        "kind": "Reportagem"
+      },
+      {
+        "name": "K2 — 4º aditamento ao plano de recuperação UCAM",
+        "url": "https://k2consultoria.com/wp-content/uploads/2025/03/4o-aditivo-ao-PRJ.pdf",
+        "published_at": "2025-03-01",
+        "kind": "Documento do processo"
+      },
+      {
+        "name": "O Globo — leilão da sede de Ipanema mantido",
+        "url": "https://oglobo.globo.com/blogs/ancelmo-gois/post/2026/07/esta-mantido-o-leilao-de-sede-da-universidade-candido-mendes-em-ipanema.ghtml",
+        "published_at": "2026-07-09",
+        "kind": "Reportagem"
+      },
+      {
+        "name": "Veja Rio — lance mínimo do leilão confirmado",
+        "url": "https://vejario.abril.com.br/cidade/leilao-universidade-candido-mendes-leilao-confirmado/",
+        "published_at": "2026-07-17",
+        "kind": "Reportagem"
+      }
+    ]
+  },
+  {
+    "id": "EXT-019",
+    "slug": "candido-mendes-centro-upi-assembleia-creditos",
+    "company": "UCAM Centro · Rua da Assembleia",
+    "sector": "Ensino superior · sede administrativa · UPI imobiliária",
+    "state": "Centro · Rio de Janeiro · 2015 a 2026",
+    "headline": "Na Rua da Assembleia a greve começou. A UPI do Centro agora vai a quanto?",
+    "deck": "Escadarias da unidade Centro já foram palco de ato por salários atrasados. O mesmo endereço abriga assembleias de credores e aparece no plano como UPI Assembleia, com preço mínimo de R$ 52,5 milhões.",
+    "status_label": "UPI Assembleia listada no 4º aditivo · sede da AGC",
+    "reviewed_at": "2026-11-10",
+    "first_record": "2020-05-11",
+    "record_type": "fontes-oficiais-e-reportagem",
+    "key_fact": {
+      "metric": "R$ 52,5 mi",
+      "label": "preço mínimo da UPI Assembleia no edital do 4º aditivo",
+      "period": "Edital anexo ao 4º aditamento: 1º ao 7º andar da Rua da Assembleia, 10 — matrícula 21920-2-AS",
+      "source_url": "https://k2consultoria.com/wp-content/uploads/2025/03/4o-aditivo-ao-PRJ.pdf"
+    },
+    "lead": "O Centro não é só endereço de secretaria. É onde docentes já cobraram salário em atraso, onde a AGC foi convocada no Teatro João Theotonio e onde o plano segrega andares inteiros para alienação. Ligue à cronologia em /casos/arquivo-publico/candido-mendes-recuperacao-judicial-cronologia-grupo-ucam/ e ao dossiê trabalhista em /casos/arquivo-publico/candido-mendes-professores-funcionarios-creditos-trabalhistas/.",
+    "verified": [
+      "O 4º aditivo descreve a UPI Imobiliária Assembleia como o 1º ao 7º andar do imóvel da Rua da Assembleia, 10, com preço mínimo de R$ 52,5 milhões.",
+      "Informes da K2 situam a Assembleia Geral de Credores de 2024 no Teatro João Theotonio, no próprio Edifício Centro Cândido Mendes, Rua da Assembleia 10.",
+      "O endereço Assembleia 10, sala 701-A, aparece como destino postal jurídico das recuperandas nos comunicados da administração judicial.",
+      "Reportagens e registros sindicais de anos anteriores situam paralisações e atos de professores na unidade do Centro, antes mesmo do pedido formal de recuperação em 2020."
+    ],
+    "timeline": [
+      {
+        "date": "2020-05-11",
+        "label": "RJ protocolada com sede no Centro",
+        "description": "Pedido de recuperação das mantenedoras na 5ª Vara Empresarial; o grupo opera com unidade administrativa na Rua da Assembleia.",
+        "source_url": "https://www.migalhas.com.br/arquivos/2020/5/947D7D15C90C43_recuperacaocandidomendes.pdf"
+      },
+      {
+        "date": "2024-06-05",
+        "label": "AGC no Teatro João Theotonio",
+        "description": "Administração judicial convoca assembleia híbrida no teatro do edifício da Assembleia 10 para deliberar o 4º aditivo.",
+        "source_url": "https://k2consultoria.com/candido-mendes"
+      },
+      {
+        "date": "2025-03-01",
+        "label": "UPI Assembleia no edital",
+        "description": "Edital de oferta pública de UPIs imobiliárias fixa preço mínimo de R$ 52,5 milhões para os andares da Assembleia.",
+        "source_url": "https://k2consultoria.com/wp-content/uploads/2025/03/4o-aditivo-ao-PRJ.pdf"
+      },
+      {
+        "date": "2025-03-12",
+        "label": "4º aditivo homologado",
+        "description": "TJRJ homologa o aditivo que sustenta o plano de alienações e pagamentos a credores.",
+        "source_url": "https://k2consultoria.com/candido-mendes"
+      }
+    ],
+    "other_side": "A administração judicial apresenta a alienação de UPIs e o percentual da receita líquida como caminhos para pagar Classes I e III, com opção de recusar o deságio do 4º aditivo em prazo determinado.",
+    "other_side_url": "https://k2consultoria.com/candido-mendes",
+    "questions": [
+      "A UPI Assembleia já tem proposta vinculante homologada ou continua só no edital?",
+      "Quais andares continuam em uso acadêmico após eventual alienação?",
+      "Como o produto da UPI Assembleia se divide entre reorganização operacional e Classe I?"
+    ],
+    "steps": [
+      "Confira no 4º aditivo a matrícula e o preço mínimo da UPI Assembleia.",
+      "Acompanhe atas de AGC e informes K2 com data do ato.",
+      "Se você é credor trabalhista da unidade Centro, documente lotação e períodos de atraso antes de optar por deságio."
+    ],
+    "limits": "Preço mínimo de edital não é valor arrematado. Atos e greves anteriores à RJ ilustram o conflito trabalhista na unidade, sem substituir a habilitação individual de crédito nem comprovar o saldo atual de cada trabalhador.",
+    "guide_slug": "credito-trabalhista-universidade-recuperacao-judicial",
+    "story_slugs": [],
+    "sources": [
+      {
+        "name": "Migalhas — deferimento da recuperação judicial UCAM",
+        "url": "https://www.migalhas.com.br/arquivos/2020/5/947D7D15C90C43_recuperacaocandidomendes.pdf",
+        "published_at": "2020-05-17",
+        "kind": "Documento público"
+      },
+      {
+        "name": "K2 Consultoria — comunicados e AGC da UCAM",
+        "url": "https://k2consultoria.com/candido-mendes",
+        "published_at": "2024-06-05",
+        "kind": "Administração judicial"
+      },
+      {
+        "name": "K2 — 4º aditamento e edital de UPIs imobiliárias",
+        "url": "https://k2consultoria.com/wp-content/uploads/2025/03/4o-aditivo-ao-PRJ.pdf",
+        "published_at": "2025-03-01",
+        "kind": "Documento do processo"
+      },
+      {
+        "name": "Sinpro-Rio — existência da Cândido Mendes em jogo",
+        "url": "https://www.sinpro-rio.org.br/principal/a-existencia-da-candido-mendes-esta-em-jogo/",
+        "published_at": "2023-03-28",
+        "kind": "Documento sindical"
+      }
+    ]
+  },
+  {
+    "id": "EXT-020",
+    "slug": "candido-mendes-campos-upi-anita-pecanha",
+    "company": "UCAM Campos dos Goytacazes",
+    "sector": "Ensino superior · campus interior · UPI imobiliária",
+    "state": "Campos dos Goytacazes · RJ · 2020 a 2026",
+    "headline": "Em Campos a aula continua. O prédio da Anita Peçanha está no edital. Quem fica?",
+    "deck": "O calendário de 2026.2 ainda carrega o CNPJ da ASBI em recuperação judicial. O mesmo campus da Rua Anita Peçanha, 100, é UPI imobiliária com preço mínimo de cerca de R$ 31,4 milhões no 4º aditivo.",
+    "status_label": "Campus em operação · UPI Campos listada no plano",
+    "reviewed_at": "2026-11-10",
+    "first_record": "2020-05-11",
+    "record_type": "fontes-oficiais-e-reportagem",
+    "key_fact": {
+      "metric": "R$ 31,4 mi",
+      "label": "preço mínimo da UPI Campos dos Goytacazes no edital",
+      "period": "Rua Anita Peçanha, 100, Parque São Caetano — matrícula 10.550 · 4º aditivo",
+      "source_url": "https://k2consultoria.com/wp-content/uploads/2025/03/4o-aditivo-ao-PRJ.pdf"
+    },
+    "lead": "Fora da capital, a crise não é abstrata: o campus de Campos opera sob a mesma recuperação judicial e aparece como ativo a alienar. Veja a cronologia do grupo em /casos/arquivo-publico/candido-mendes-recuperacao-judicial-cronologia-grupo-ucam/ e o impacto sobre quem trabalha em /casos/arquivo-publico/candido-mendes-professores-funcionarios-creditos-trabalhistas/.",
+    "verified": [
+      "O edital do 4º aditivo inclui a UPI Imobiliária Campos dos Goytacazes no endereço da Rua Anita Peçanha, 100, com preço mínimo de R$ 31.406.058,06.",
+      "O site da unidade Campos publica calendário acadêmico 2026.2 identificando a Associação Sociedade Brasileira de Instrução — em recuperação judicial — e o CNPJ 33.646.001/0001-67.",
+      "A página institucional de unidades da UCAM mantém Campos dos Goytacazes como campus ativo com contatos próprios.",
+      "O pedido original de recuperação, em 2020, já situava Campos entre as unidades do Estado do Rio afetadas pela reestruturação do grupo."
+    ],
+    "timeline": [
+      {
+        "date": "2020-05-11",
+        "label": "RJ alcança o grupo com campus em Campos",
+        "description": "Pedido de recuperação das mantenedoras abrange o agente econômico que opera o campus de Campos.",
+        "source_url": "https://oglobo.globo.com/economia/com-divida-de-400-milhoes-universidade-candido-mendes-pede-recuperacao-judicial-24421857"
+      },
+      {
+        "date": "2025-03-01",
+        "label": "UPI Campos entra no edital",
+        "description": "Edital de UPIs imobiliárias fixa preço mínimo superior a R$ 31 milhões para o imóvel da Anita Peçanha.",
+        "source_url": "https://k2consultoria.com/wp-content/uploads/2025/03/4o-aditivo-ao-PRJ.pdf"
+      },
+      {
+        "date": "2025-03-12",
+        "label": "Aditivo homologado no TJRJ",
+        "description": "Homologação do 4º aditivo mantém o marco de alienações e pagamento a credores.",
+        "source_url": "https://k2consultoria.com/candido-mendes"
+      },
+      {
+        "date": "2026-07-31",
+        "label": "Calendário 2026.2 sob ASBI em RJ",
+        "description": "Unidade Campos publica calendário acadêmico ainda sob a razão social em recuperação judicial.",
+        "source_url": "https://www.ucam-campos.br/calendarios/calendario-academico-2026-2/"
+      }
+    ],
+    "other_side": "A universidade segue divulgando a estrutura e o calendário do campus de Campos. O plano apresenta a alienação de UPIs como instrumento para soerguimento e pagamento de credores, não como encerramento automático das aulas.",
+    "other_side_url": "https://www.ucam-campos.br/calendarios/calendario-academico-2026-2/",
+    "questions": [
+      "Há arrematante ou proposta vinculante para a UPI Campos?",
+      "Qual garantia de continuidade acadêmica após eventual imissão na posse?",
+      "Créditos trabalhistas de Campos estão habilitados e em qual classe?"
+    ],
+    "steps": [
+      "Guarde o calendário, o contrato de trabalho ou matrícula e o CNPJ da ASBI que aparece nos documentos da unidade.",
+      "Leia a ficha da UPI Campos no 4º aditivo e cobreprazo de imissão na posse.",
+      "Acompanhe informes K2 e o processo principal antes de aceitar qualquer quitação com deságio."
+    ],
+    "limits": "Operação acadêmica em 2026 não prova quitação de créditos. Preço mínimo do edital não é venda concluída. Este dossiê não inventa demissão em massa específica de Campos sem fonte nominal.",
+    "guide_slug": "credito-trabalhista-universidade-recuperacao-judicial",
+    "story_slugs": [],
+    "sources": [
+      {
+        "name": "O Globo — pedido de RJ com dívida de R$ 400 milhões",
+        "url": "https://oglobo.globo.com/economia/com-divida-de-400-milhoes-universidade-candido-mendes-pede-recuperacao-judicial-24421857",
+        "published_at": "2020-05-11",
+        "kind": "Reportagem"
+      },
+      {
+        "name": "K2 — 4º aditamento com UPI Campos dos Goytacazes",
+        "url": "https://k2consultoria.com/wp-content/uploads/2025/03/4o-aditivo-ao-PRJ.pdf",
+        "published_at": "2025-03-01",
+        "kind": "Documento do processo"
+      },
+      {
+        "name": "K2 Consultoria — homologação e comunicados UCAM",
+        "url": "https://k2consultoria.com/candido-mendes",
+        "published_at": "2025-03-12",
+        "kind": "Administração judicial"
+      },
+      {
+        "name": "UCAM Campos — calendário acadêmico 2026.2",
+        "url": "https://www.ucam-campos.br/calendarios/calendario-academico-2026-2/",
+        "published_at": "2026-07-31",
+        "kind": "Documento institucional"
+      },
+      {
+        "name": "UCAM — página institucional de unidades",
+        "url": "https://www.candidomendes.edu.br/institucional/unidades/",
+        "published_at": "2026-11-10",
+        "kind": "Documento institucional"
+      }
+    ]
+  },
+  {
+    "id": "EXT-021",
+    "slug": "candido-mendes-niteroi-unidade-grupo-ucam",
+    "company": "UCAM Niterói",
+    "sector": "Ensino superior · unidade operacional",
+    "state": "Niterói · RJ · 2020 a 2026",
+    "headline": "Niterói também está sob a mesma recuperação. Quem responde por essa unidade?",
+    "deck": "A unidade de Niterói aparece no mapa oficial da UCAM. Não figura como UPI imobiliária separada no anexo do 4º aditivo — mas opera sob a mesma ASBI em recuperação judicial e o mesmo processo 0093754-90.2020.8.19.0001.",
+    "status_label": "Unidade operacional listada · mesma RJ do grupo",
+    "reviewed_at": "2026-11-10",
+    "first_record": "2020-05-11",
+    "record_type": "fontes-oficiais-e-reportagem",
+    "key_fact": {
+      "metric": "1 processo",
+      "label": "recuperação judicial do grupo que alcança a unidade de Niterói",
+      "period": "Processo 0093754-90.2020.8.19.0001 — 5ª Vara Empresarial do Rio; Niterói listada entre as unidades institucionais",
+      "source_url": "https://k2consultoria.com/candido-mendes"
+    },
+    "lead": "Não precisa existir leilão local para a conta chegar. Em Niterói, aluno e trabalhador convivem com a mesma recuperação judicial do grupo. Compare com Ipanema e Campos — onde o imóvel virou UPI — em /casos/arquivo-publico/candido-mendes-ipanema-microsoft-upi-joana-angelica/ e /casos/arquivo-publico/candido-mendes-campos-upi-anita-pecanha/. Cronologia completa: /casos/arquivo-publico/candido-mendes-recuperacao-judicial-cronologia-grupo-ucam/.",
+    "verified": [
+      "A página institucional de unidades da UCAM lista Niterói com endereço na Rua Visconde do Uruguai, 480, Centro.",
+      "ASBI, Instituto Cândido Mendes e Soplantel são as recuperandas do processo único acompanhado pela K2; não há processo de RJ separado publicado para Niterói.",
+      "O anexo de UPIs imobiliárias do 4º aditivo elenca Joana Angélica, Assembleia, Praça Pio X, Estrada das Canoas e Campos — sem UPI nominal de Niterói.",
+      "O Sinpro-Rio trata atrasos e a recuperação judicial da Cândido Mendes em chave coletiva da instituição, alcançando o quadro docente do grupo."
+    ],
+    "timeline": [
+      {
+        "date": "2020-05-11",
+        "label": "RJ do grupo alcança todas as unidades",
+        "description": "Pedido de recuperação das mantenedoras na 5ª Vara Empresarial; reportagens citam dezenas de unidades no Estado do Rio.",
+        "source_url": "https://oglobo.globo.com/economia/com-divida-de-400-milhoes-universidade-candido-mendes-pede-recuperacao-judicial-24421857"
+      },
+      {
+        "date": "2023-03-28",
+        "label": "Sinpro cobra atraso na instituição",
+        "description": "Sindicato denuncia salários e FGTS em atraso durante a execução do plano de recuperação.",
+        "source_url": "https://www.sinpro-rio.org.br/principal/a-existencia-da-candido-mendes-esta-em-jogo/"
+      },
+      {
+        "date": "2025-03-12",
+        "label": "4º aditivo homologado para o grupo",
+        "description": "Homologação do aditivo define regras de pagamento que valem para credores das recuperandas, inclusive lotados em unidades operacionais.",
+        "source_url": "https://k2consultoria.com/candido-mendes"
+      },
+      {
+        "date": "2026-11-10",
+        "label": "Niterói permanece no mapa institucional",
+        "description": "Site oficial continua listando a unidade de Niterói entre os campi da universidade.",
+        "source_url": "https://www.candidomendes.edu.br/institucional/unidades/"
+      }
+    ],
+    "other_side": "A universidade mantém página ativa da unidade e a administração judicial informa canais únicos de credores para todo o grupo, sem criar polo processual separado por campus.",
+    "other_side_url": "https://www.candidomendes.edu.br/institucional/unidades/",
+    "questions": [
+      "Qual CNPJ e qual polo processual respondem por contratos firmados em Niterói?",
+      "Há crédito trabalhista de Niterói habilitado e em qual classe?",
+      "Existe alienação operacional ou mudança de endereço da unidade não publicada no edital de UPIs?"
+    ],
+    "steps": [
+      "Guarde contrato, holerite ou matrícula com a identificação da unidade de Niterói.",
+      "Consulte o processo do grupo e a lista de credores pela K2 — não espere um processo municipal separado.",
+      "Cruze com o dossiê trabalhista antes de aceitar quitação com deságio."
+    ],
+    "limits": "Ausência de UPI nominal de Niterói no edital do 4º aditivo não significa ausência de risco operacional. Não há, neste recorte, reportagem específica de leilão do campus de Niterói; o vínculo é o processo e a mantenedora do grupo.",
+    "guide_slug": "credito-trabalhista-universidade-recuperacao-judicial",
+    "story_slugs": [],
+    "sources": [
+      {
+        "name": "O Globo — pedido de recuperação judicial da UCAM",
+        "url": "https://oglobo.globo.com/economia/com-divida-de-400-milhoes-universidade-candido-mendes-pede-recuperacao-judicial-24421857",
+        "published_at": "2020-05-11",
+        "kind": "Reportagem"
+      },
+      {
+        "name": "Sinpro-Rio — atraso salarial durante a recuperação",
+        "url": "https://www.sinpro-rio.org.br/principal/a-existencia-da-candido-mendes-esta-em-jogo/",
+        "published_at": "2023-03-28",
+        "kind": "Documento sindical"
+      },
+      {
+        "name": "K2 Consultoria — recuperação judicial do Grupo UCAM",
+        "url": "https://k2consultoria.com/candido-mendes",
+        "published_at": "2025-03-12",
+        "kind": "Administração judicial"
+      },
+      {
+        "name": "K2 — 4º aditamento e lista de UPIs imobiliárias",
+        "url": "https://k2consultoria.com/wp-content/uploads/2025/03/4o-aditivo-ao-PRJ.pdf",
+        "published_at": "2025-03-01",
+        "kind": "Documento do processo"
+      },
+      {
+        "name": "UCAM — unidades institucionais incluindo Niterói",
+        "url": "https://www.candidomendes.edu.br/institucional/unidades/",
+        "published_at": "2026-11-10",
+        "kind": "Documento institucional"
+      }
+    ]
+  },
+  {
+    "id": "EXT-022",
+    "slug": "candido-mendes-professores-funcionarios-creditos-trabalhistas",
+    "company": "UCAM · professores e funcionários",
+    "sector": "Ensino superior · créditos trabalhistas · Classe I",
+    "state": "Rio de Janeiro · 2015 a 2026",
+    "headline": "Salário atrasou. FGTS atrasou. A Microsoft já tinha recebido. E agora?",
+    "deck": "O Sinpro documenta atrasos e ações por férias, salários e FGTS. O plano oferece pagamento com deságio. Enquanto isso, a cronologia mostra a Microsoft fechando acordo anos antes. Quem esperou mais na fila?",
+    "status_label": "Créditos trabalhistas sob 4º aditivo · ações sindicais em curso",
+    "reviewed_at": "2026-11-10",
+    "first_record": "2017-01-10",
+    "record_type": "fontes-oficiais-e-reportagem",
+    "key_fact": {
+      "metric": "R$ 170 mi",
+      "label": "dívida trabalhista confessada citada na fase inicial do plano",
+      "period": "Estadão (2021): Classe I estimada em R$ 170 milhões, cerca de 71% da dívida então discutida no plano — não é pagamento individual comprovado",
+      "source_url": "https://www.estadao.com.br/economia/plano-de-recuperacao-da-candido-mendes-preve-venda-de-imoveis-e-desconto-em-divida-trabalhista/"
+    },
+    "lead": "A pergunta incômoda não é se a universidade 'tem história'. É quem recebeu primeiro. A Microsoft encerrou acordo em 2017. Docentes e funcionários ainda negociam deságio dentro da recuperação judicial. Veja Ipanema/Microsoft em /casos/arquivo-publico/candido-mendes-ipanema-microsoft-upi-joana-angelica/ e a cronologia em /casos/arquivo-publico/candido-mendes-recuperacao-judicial-cronologia-grupo-ucam/.",
+    "verified": [
+      "Em 2021, o Estadão reportou plano que previa deságio a credores trabalhistas e citou dívida confessada da Classe I em cerca de R$ 170 milhões.",
+      "O Sinpro-Rio afirmou em março de 2023 que, apesar da recuperação judicial, a UCAM continuava atrasando salários e depósitos de FGTS.",
+      "Em outubro de 2024, o Sinpro informou manter ações contra a Cândido Mendes cobrando férias, salários atrasados de diversos períodos e FGTS, além de acompanhar a recuperação judicial.",
+      "O 4º aditivo homologado em 2025 estabelece regras de deságio e pagamento prioritário para Classe I, com opção de recusar o novo deságio em 30 dias e permanecer nas condições do plano original.",
+      "Em março de 2024, a manifestação do MP pela falência apontou descumprimento do plano e encargos trabalhistas correntes sem quitação — pedido depois reconsiderado."
+    ],
+    "timeline": [
+      {
+        "date": "2017-01-10",
+        "label": "Microsoft recebe acordo antes da RJ",
+        "description": "Anos antes do pedido de recuperação, a Microsoft fecha acordo e recebe valor negociado com garantia no prédio de Ipanema.",
+        "source_url": "https://oglobo.globo.com/economia/suspenso-leilao-do-predio-da-candido-mendes-de-ipanema-20893304"
+      },
+      {
+        "date": "2021-03-15",
+        "label": "Plano cita dívida trabalhista de R$ 170 mi",
+        "description": "Reportagem descreve proposta de venda de imóveis e deságio a credores trabalhistas que concentravam a maior parte da dívida.",
+        "source_url": "https://www.estadao.com.br/economia/plano-de-recuperacao-da-candido-mendes-preve-venda-de-imoveis-e-desconto-em-divida-trabalhista/"
+      },
+      {
+        "date": "2023-03-28",
+        "label": "Sinpro denuncia atraso sob a RJ",
+        "description": "Sindicato publica que salários e FGTS seguem atrasados durante a execução do plano.",
+        "source_url": "https://www.sinpro-rio.org.br/principal/a-existencia-da-candido-mendes-esta-em-jogo/"
+      },
+      {
+        "date": "2024-03-06",
+        "label": "MP cita encargos trabalhistas na quebra",
+        "description": "Parecer pela convolação em falência menciona obrigações correntes com colaboradores sem quitação.",
+        "source_url": "https://oglobo.globo.com/blogs/ancelmo-gois/post/2024/03/ministerio-publico-do-rio-quer-falencia-da-universidade-candido-mendes-fundada-em-1902.ghtml"
+      },
+      {
+        "date": "2024-10-01",
+        "label": "Sinpro mantém ações coletivas",
+        "description": "Sindicato declara ações por férias, salários atrasados e FGTS contra a Cândido Mendes.",
+        "source_url": "https://www.sinpro-rio.org.br/principal/professores-as-da-ed-superior-nossa-convencao-coletiva-de-trabalho-esta-ameacada/"
+      },
+      {
+        "date": "2025-03-12",
+        "label": "4º aditivo redefine pagamento da Classe I",
+        "description": "Homologação do aditivo com deságios, faixas e opção de recusa em 30 dias para credores trabalhistas.",
+        "source_url": "https://k2consultoria.com/candido-mendes"
+      }
+    ],
+    "other_side": "A K2 e o plano aprovado apresentam calculadora de deságio, percentuais da receita líquida e alienação de ativos como vias de pagamento. A universidade contestou o parecer do MP pela falência e seguiu pedindo soerguimento via aditivos.",
+    "other_side_url": "https://k2consultoria.com/candido-mendes",
+    "questions": [
+      "Seu crédito está habilitado, em qual valor e em qual classe?",
+      "Você exerceu ou perdeu o prazo de opção contra o deságio do 4º aditivo?",
+      "Há depósito de FGTS na conta vinculada conforme a cláusula do plano?"
+    ],
+    "steps": [
+      "Reúna holerites, TRCT, extrato de FGTS e decisões da Justiça do Trabalho em arquivo privado.",
+      "Confira seu nome/crédito nos autos e nos canais rj@candidomendes.edu.br / rjcandidomendes@k2consultoria.com indicados pela AJ.",
+      "Antes de aceitar deságio, compare a proposta com o plano original e busque orientação jurídica independente."
+    ],
+    "limits": "R$ 170 milhões é cifra reportada na fase inicial do plano, não o saldo atual de cada credor. Atraso sindical documentado não substitui extrato individual. Acordo Microsoft é credora distinta em processo civil próprio; a comparação é cronológica e documental, não uma condenação criminal.",
+    "guide_slug": "credito-trabalhista-universidade-recuperacao-judicial",
+    "story_slugs": [],
+    "sources": [
+      {
+        "name": "Estadão — plano com deságio trabalhista e venda de imóveis",
+        "url": "https://www.estadao.com.br/economia/plano-de-recuperacao-da-candido-mendes-preve-venda-de-imoveis-e-desconto-em-divida-trabalhista/",
+        "published_at": "2021-03-15",
+        "kind": "Reportagem"
+      },
+      {
+        "name": "O Globo — acordo histórico com a Microsoft",
+        "url": "https://oglobo.globo.com/economia/suspenso-leilao-do-predio-da-candido-mendes-de-ipanema-20893304",
+        "published_at": "2017-01-10",
+        "kind": "Reportagem"
+      },
+      {
+        "name": "Sinpro-Rio — atraso de salários e FGTS na UCAM",
+        "url": "https://www.sinpro-rio.org.br/principal/a-existencia-da-candido-mendes-esta-em-jogo/",
+        "published_at": "2023-03-28",
+        "kind": "Documento sindical"
+      },
+      {
+        "name": "O Globo — MP pede falência citando descumprimento",
+        "url": "https://oglobo.globo.com/blogs/ancelmo-gois/post/2024/03/ministerio-publico-do-rio-quer-falencia-da-universidade-candido-mendes-fundada-em-1902.ghtml",
+        "published_at": "2024-03-06",
+        "kind": "Reportagem"
+      },
+      {
+        "name": "Sinpro-Rio — ações por férias, salários e FGTS",
+        "url": "https://www.sinpro-rio.org.br/principal/professores-as-da-ed-superior-nossa-convencao-coletiva-de-trabalho-esta-ameacada/",
+        "published_at": "2024-10-01",
+        "kind": "Documento sindical"
+      },
+      {
+        "name": "K2 Consultoria — regras do 4º aditivo aos credores",
+        "url": "https://k2consultoria.com/candido-mendes",
+        "published_at": "2025-03-12",
+        "kind": "Administração judicial"
+      }
+    ]
+  }
+]

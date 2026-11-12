@@ -1,24 +1,50 @@
 ---
 import Section from './layout/Section.astro';
-import CaseActionBar from './CaseActionBar.astro';
-interface Props {title?:string;summary?:string;caseHref?:string;caseId?:string}
-const {title='Compartilhe esta investigação',summary='',caseHref=Astro.url.pathname,caseId}=Astro.props;
+import ViralShareRail from './ViralShareRail.astro';
+import CaseActionDrawer from './CaseActionDrawer.astro';
+import { Printer } from 'lucide-react';
+
+interface Props {
+  title?: string;
+  summary?: string;
+  caseHref?: string;
+  caseId?: string;
+  company?: string;
+}
+const {
+  title = 'Compartilhe esta investigação',
+  summary = '',
+  caseHref = Astro.url.pathname,
+  caseId,
+  company,
+} = Astro.props;
 const slug = caseHref.split('/').filter(Boolean).pop() || '';
+const printHref = '/casos/imprimir/' + slug + '/';
 ---
 <div data-print-hide>
   <Section
     tone="dark"
     eyebrow="COMPARTILHE A COBRANÇA"
-    title="Um link. Fontes incluídas."
-    description="Escreva a cobrança com textos prontos ou envie o dossiê completo. Cada botão faz uma coisa só."
+    title="Um toque no WhatsApp. Fontes incluídas."
+    description="Mensagem pronta no tom da cobrança. O link leva ao dossiê completo — e a imagem de preview acompanha o envio."
   >
-    <CaseActionBar
-      compact
-      title={title}
-      summary={summary}
-      href={caseHref}
-      caseId={caseId}
-      printHref={'/casos/imprimir/'+slug+'/'}
-    />
+    <div class="space-y-5">
+      <ViralShareRail
+        caseId={caseId}
+        title={title}
+        href={caseHref}
+        summary={summary}
+        company={company}
+        printHref={printHref}
+        tone="dark"
+      />
+      <div class="flex flex-wrap items-center gap-3">
+        {caseId && <CaseActionDrawer caseId={caseId} triggerLabel="Escrever cobrança" />}
+        <a
+          class="inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-white/20 bg-transparent px-4 py-2 text-sm font-bold text-white no-underline hover:border-white/50"
+          href={printHref}
+        ><Printer size={16} aria-hidden="true" /> Imprimir ficha A4</a>
+      </div>
+    </div>
   </Section>
 </div>

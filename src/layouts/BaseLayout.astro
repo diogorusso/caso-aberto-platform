@@ -2,6 +2,7 @@
 import SiteHeader from '../components/SiteHeader.astro';
 import InstitutionSealWall from '../components/InstitutionSealWall.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import { siteOrigin } from '../lib/cases';
 import '../styles/tailwind.css';
 import '../styles/print-kit.css';
 interface Props {
@@ -24,13 +25,14 @@ const {
   breadcrumbs,
   schema,
 } = Astro.props;
-const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : undefined;
-const ogImage = Astro.site ? new URL(image, Astro.site).toString() : image;
+const origin = (Astro.site?.toString() || siteOrigin).replace(/\/$/, '');
+const canonical = new URL(Astro.url.pathname, origin + '/').toString();
+const ogImage = image.startsWith('http') ? image : new URL(image, origin + '/').toString();
 const org = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'CasoAberto',
-  url: Astro.site?.toString() || 'https://casoaberto.pages.dev/',
+  url: origin + '/',
   description: 'Publicação independente de accountability do consumidor no Brasil. Não é órgão do governo, regulador, tribunal ou escritório de advocacia.',
   inLanguage: 'pt-BR',
 };
@@ -45,8 +47,8 @@ const pageLd = {
   ...(datePublished ? { datePublished } : {}),
   isAccessibleForFree: true,
   publisher: { '@type': 'Organization', name: 'CasoAberto'},
-  ...(canonical ? { url: canonical } : {}),
-  ...(ogImage ? { image: ogImage } : {}),
+  url: canonical,
+  image: ogImage,
 };
 const crumbLd = breadcrumbs?.length
   ? {
@@ -56,7 +58,7 @@ const crumbLd = breadcrumbs?.length
         '@type': 'ListItem',
         position: i + 1,
         name: b.name,
-        item: Astro.site ? new URL(b.item, Astro.site).toString() : b.item,
+        item: new URL(b.item, origin + '/').toString(),
       })),
     }
   : null;
@@ -81,7 +83,8 @@ const crumbLd = breadcrumbs?.length
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={title} />
-    {canonical && <><link rel="canonical" href={canonical}/><meta property="og:url" content={canonical}/></>}
+    <link rel="canonical" href={canonical}/>
+    <meta property="og:url" content={canonical}/>
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />

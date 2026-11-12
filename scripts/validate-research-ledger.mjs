@@ -5,7 +5,7 @@ const legal=read('cacofonias-escola-suico-brasileira');
 const failures=[],check=(condition,msg)=>{if(!condition)failures.push(msg)};
 const ids=[...cases.map(x=>x.id),...atlas.cases.map(x=>x.id),...politics.cases.map(x=>x.id),'PLAT-2026-CASE',legal.id];
 const listed=cats.categories.flatMap(x=>x.case_ids);
-check(ids.length===25,'unexpected case count; reconcile source manifests');
+check(ids.length===31,'unexpected case count; reconcile source manifests');
 check(new Set(ids).size===ids.length,'duplicate case ids');
 check(listed.length===ids.length&&new Set(listed).size===ids.length,'case classified more or less than once');
 check(ids.every(id=>listed.includes(id)),'case missing category');

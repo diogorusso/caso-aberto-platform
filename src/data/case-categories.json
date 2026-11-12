@@ -177,6 +177,35 @@
         "lotacao",
         "portao"
       ]
+    },
+    {
+      "slug": "educacao-superior",
+      "title": "Educação superior",
+      "eyebrow": "UNIVERSIDADES · RECUPERAÇÃO JUDICIAL · TRABALHO DOCENTE",
+      "description": "A mensalidade entrou. O salário atrasou. O prédio foi a leilão. Quem recebeu primeiro — a credora de software ou quem deu aula?",
+      "case_ids": [
+        "EXT-017",
+        "EXT-018",
+        "EXT-019",
+        "EXT-020",
+        "EXT-021",
+        "EXT-022"
+      ],
+      "search_terms": [
+        "candido mendes",
+        "ucam",
+        "universidade",
+        "recuperacao judicial",
+        "professores",
+        "microsoft",
+        "ipanema",
+        "campos",
+        "niteroi",
+        "fgts",
+        "salario",
+        "ensino superior",
+        "asbi"
+      ]
     }
   ]
 }

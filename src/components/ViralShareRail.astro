@@ -1,0 +1,148 @@
+---
+/**
+ * Impact strip: WhatsApp first (ready message + OG URL), then other channels.
+ * Use under heroes, featured cases, and end-of-dossier share blocks.
+ */
+import WhatsAppShareButton from './WhatsAppShareButton.astro';
+import ShareDrawer from './islands/ShareDrawer';
+import {
+  archiveSharePayload,
+  buildSharePayload,
+  platformSharePayload,
+  sharePayloadForCaseId,
+} from '../lib/share-messages';
+import { copy } from '../lib/copy';
+
+interface Props {
+  caseId?: string;
+  title?: string;
+  href?: string;
+  summary?: string;
+  company?: string;
+  printHref?: string;
+  showComplaint?: boolean;
+  mode?: 'case' | 'platform' | 'archive';
+  tone?: 'dark' | 'brand' | 'muted';
+  compact?: boolean;
+  /** Borderless strip for embedding inside DocumentedCaseHeader */
+  embedded?: boolean;
+}
+
+const {
+  caseId,
+  title,
+  href,
+  summary = '',
+  company,
+  printHref,
+  showComplaint = true,
+  mode = 'case',
+  tone = 'dark',
+  compact = false,
+  embedded = false,
+} = Astro.props;
+
+const pathHref = href || (mode === 'platform' ? '/' : mode === 'archive' ? '/casos/' : '/');
+const resolved =
+  mode === 'platform'
+    ? platformSharePayload()
+    : mode === 'archive'
+      ? archiveSharePayload()
+      : caseId
+        ? sharePayloadForCaseId(caseId) ||
+          buildSharePayload({ caseId, title: title || 'CasoAberto', href: pathHref, summary, company })
+        : buildSharePayload({ title: title || 'CasoAberto', href: pathHref, summary, company });
+
+const s = copy.share;
+const shell = embedded
+  ? 'border-0 bg-transparent p-0 text-inherit shadow-none'
+  : tone === 'brand'
+    ? 'border border-brand-strong/40 bg-brand-strong p-5 text-white md:p-7'
+    : tone === 'muted'
+      ? 'border border-border bg-muted p-5 text-foreground md:p-7'
+      : 'border border-white/10 bg-[#0f1714] p-5 text-white md:p-7';
+const sub = tone === 'muted' && !embedded ? 'text-muted-foreground' : 'text-white/60';
+const eyebrow = embedded || tone !== 'muted' ? 'text-[#25D366]' : 'text-brand-strong';
+const drawerHref = href || pathHref;
+---
+<section
+  class:list={['overflow-hidden', shell, !embedded && !compact && 'shadow-sm']}
+  data-print-hide
+  aria-labelledby="viral-share-title"
+>
+  {compact || embedded ? (
+    <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+      <div class="min-w-0 space-y-1">
+        <p class:list={['m-0 text-[0.65rem] font-semibold uppercase tracking-[0.16em]', eyebrow]}>{s.eyebrow}</p>
+        <h2 id="viral-share-title" class:list={['m-0 font-semibold leading-snug', embedded ? 'text-base md:text-lg' : 'text-lg md:text-xl']}>
+          {mode === 'platform' ? s.platformTitle : mode === 'archive' ? s.archiveTitle : s.title}
+        </h2>
+      </div>
+      <div class="flex shrink-0 flex-wrap items-center gap-2">
+        <WhatsAppShareButton
+          href={resolved.whatsappHref}
+          label={s.whatsapp}
+          hint="Mensagem pronta · com imagem"
+          variant="compact"
+        />
+        <ShareDrawer
+          client:visible
+          title={resolved.title}
+          href={drawerHref}
+          summary={summary || resolved.message.split('\n')[1] || ''}
+          printHref={printHref}
+          caseId={caseId}
+          showComplaint={showComplaint}
+          triggerLabel={s.moreChannels}
+          size="sm"
+          message={resolved.message}
+          shareUrl={resolved.url}
+          className={
+            embedded || tone === 'dark'
+              ? 'border-white/25 bg-transparent text-white hover:bg-white/10 hover:text-white'
+              : undefined
+          }
+        />
+      </div>
+    </div>
+  ) : (
+    <div class="grid gap-5 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] lg:items-center">
+      <div class="space-y-2">
+        <p class:list={['m-0 text-[0.68rem] font-extrabold uppercase tracking-[0.16em]', eyebrow]}>{s.eyebrow}</p>
+        <h2 id="viral-share-title" class="m-0 text-2xl leading-tight md:text-3xl">
+          {mode === 'platform' ? s.platformTitle : mode === 'archive' ? s.archiveTitle : s.title}
+        </h2>
+        <p class:list={['m-0 max-w-2xl text-sm leading-relaxed', sub]}>
+          {mode === 'platform' ? s.platformBody : mode === 'archive' ? s.archiveBody : s.body}
+        </p>
+      </div>
+      <div class="flex flex-col gap-3 sm:items-stretch lg:items-end">
+        <WhatsAppShareButton
+          href={resolved.whatsappHref}
+          label={s.whatsapp}
+          hint="Mensagem pronta · preview com imagem"
+          variant="hero"
+          class="w-full lg:w-auto"
+        />
+        <div class="flex flex-wrap gap-2 lg:justify-end">
+          <ShareDrawer
+            client:visible
+            title={resolved.title}
+            href={drawerHref}
+            summary={summary || resolved.message.split('\n')[1] || ''}
+            printHref={printHref}
+            caseId={caseId}
+            showComplaint={showComplaint}
+            triggerLabel={s.moreChannels}
+            size="sm"
+            message={resolved.message}
+            shareUrl={resolved.url}
+          />
+        </div>
+        <p class:list={['m-0 text-[0.7rem] leading-snug', sub]}>
+          O link abre a página com imagem OG 1200×630. WhatsApp anexa o preview ao enviar.
+        </p>
+      </div>
+    </div>
+  )}
+</section>

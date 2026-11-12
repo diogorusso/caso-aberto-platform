@@ -21,7 +21,7 @@ for (const pattern of patterns) {
   const path=resolve(src,'pages',pattern);
   if (!existsSync(path) || !readFileSync(path,'utf8').includes('getStaticPaths')) {console.error('Missing static case route',pattern);bad++;}
 }
-const platform=['/','/empresas/','/cnpj/','/avaliacoes/nao-recomendamos/','/problemas/', '/casos/', '/como-funciona/', '/metodologia/', '/empresas/florense/', '/empresas/florense/ipanema-rj/', '/guias/risco-pagamento-antecipado-moveis-planejados/', '/guias/o-que-fazer-atraso-moveis-planejados/', '/rss.xml'];
+const platform=['/','/empresas/','/cnpj/','/problemas/', '/casos/', '/como-funciona/', '/metodologia/', '/empresas/florense/', '/empresas/florense/ipanema-rj/', '/guias/risco-pagamento-antecipado-moveis-planejados/', '/guias/o-que-fazer-atraso-moveis-planejados/', '/rss.xml'];
 for (const p of platform) {
   const file = p === '/' ? 'pages/index.astro' : p === '/rss.xml' ? 'pages/rss.xml.ts' : `pages${p}index.astro`;
   if (!existsSync(resolve(src, file))) {console.error('Missing platform route file', file);bad++;}

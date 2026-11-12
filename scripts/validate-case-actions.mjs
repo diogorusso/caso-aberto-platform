@@ -5,7 +5,7 @@ const legal=load('cacofonias-escola-suico-brasileira');
 const ids=[...cases.map(x=>x.id),...atlas.cases.map(x=>x.id),...politics.cases.map(x=>x.id),'PLAT-2026-CASE',legal.id];
 const errors=[],assert=(bool,msg)=>{if(!bool)errors.push(msg)};
 assert(records.version===1,'invalid schema');
-assert(ids.length===25,'case count changed; reconcile mapping');
+assert(ids.length===31,'case count changed; reconcile mapping');
 assert((media.assets||[]).length>=ids.length,'case-visual-assets must cover every research case');
 const mediaIds=new Set((media.assets||[]).map(item=>item.case_id));
 for(const id of ids)assert(mediaIds.has(id),'missing visual asset row for '+id);

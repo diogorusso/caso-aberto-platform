@@ -1,0 +1,67 @@
+---
+/**
+ * High-visibility WhatsApp CTA — plain <a>, works without JS.
+ * Opens wa.me with a ready confrontational message + case/site URL (OG attaches from the link).
+ */
+import { MessageCircle } from 'lucide-react';
+
+interface Props {
+  href: string;
+  label?: string;
+  hint?: string;
+  variant?: 'hero' | 'default' | 'compact' | 'block';
+  class?: string;
+}
+
+const {
+  href,
+  label = 'Mandar no WhatsApp',
+  hint,
+  variant = 'default',
+  class: className = '',
+} = Astro.props;
+
+const size =
+  variant === 'hero'
+    ? 'min-h-14 px-6 text-base md:text-lg'
+    : variant === 'compact'
+      ? 'min-h-11 px-4 text-sm'
+      : 'min-h-12 px-5 text-sm md:text-base';
+
+const width = variant === 'block' || variant === 'hero' ? 'w-full sm:w-auto justify-center' : '';
+---
+<a
+  href={href}
+  target="_blank"
+  rel="noopener noreferrer"
+  data-print-hide
+  class:list={[
+    'group inline-flex items-center gap-2.5 font-bold tracking-tight text-white no-underline',
+    'bg-[#128C7E] hover:bg-[#075E54] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2',
+    'transition-colors duration-150',
+    variant === 'compact' ? 'shadow-none' : 'shadow-sm',
+    size,
+    width,
+    className,
+  ]}
+  aria-label={hint ? `${label}. ${hint}` : label}
+>
+  <span
+    class:list={[
+      'grid shrink-0 place-items-center bg-[#25D366] text-[#075E54]',
+      variant === 'compact' ? 'size-7' : 'size-8',
+    ]}
+    aria-hidden="true"
+  >
+    <MessageCircle size={variant === 'compact' ? 16 : 18} strokeWidth={2.5} />
+  </span>
+  <span class="flex min-w-0 flex-col items-start leading-tight">
+    <span>{label}</span>
+    {hint && variant !== 'compact' && (
+      <span class="text-[0.68rem] font-semibold tracking-wide text-white/80">{hint}</span>
+    )}
+    {hint && variant === 'compact' && (
+      <span class="text-[0.62rem] font-medium tracking-wide text-white/75">{hint}</span>
+    )}
+  </span>
+</a>

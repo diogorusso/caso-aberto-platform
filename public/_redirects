@@ -1,3 +1,7 @@
 # Historical single-case URLs
 /relatos.html /casos/florense-ipanema-rj-atraso-moveis-planejados/reclamacoes-publicas/ 301
 /imprensa.html /casos/florense-ipanema-rj-atraso-moveis-planejados/imprensa/ 301
+
+# Suspended: dedicated “não recomendamos” company list (kept as 301)
+/avaliacoes/nao-recomendamos/ /empresas/ 301
+/avaliacoes/nao-recomendamos /empresas/ 301
