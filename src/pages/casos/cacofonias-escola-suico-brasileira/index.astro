@@ -61,6 +61,13 @@ const dateBR=(value:string)=>value.split('-').reverse().join('/');
      <p class="m-0 text-sm leading-relaxed text-muted-foreground">{dossier.institutional_response.still_open}</p>
      <a class="text-sm font-semibold text-link" href={sourceFor(dossier.institutional_response.source_id)!.url} target="_blank" rel="noopener noreferrer">Ler nota da escola reproduzida na reportagem ↗</a>
     </section>
+    <section class="space-y-5 rounded-lg border border-border bg-card p-6" aria-labelledby="compromissos-sis">
+     <p class="m-0 text-xs font-bold uppercase tracking-widest text-brand-strong">FONTE PRIMÁRIA · O QUE A ESCOLA PROMETE</p>
+     <h2 class="m-0 text-2xl md:text-3xl" id="compromissos-sis">{dossier.institutional_commitments.heading}</h2>
+     <p class="m-0 text-base leading-relaxed">{dossier.institutional_commitments.summary}</p>
+     <ul class="list-disc space-y-2 pl-5 text-sm leading-relaxed">{dossier.institutional_commitments.questions.map(question=><li>{question}</li>)}</ul>
+     <a class="inline-block text-sm font-bold text-link" href={sourceFor(dossier.institutional_commitments.source_id)!.url} target="_blank" rel="noopener noreferrer">Conferir o compromisso publicado pela própria SIS ↗</a>
+    </section>
     <section class="space-y-6" aria-labelledby="cronologia">
      <div class="space-y-2"><p class="m-0 text-xs font-bold uppercase tracking-widest text-brand-strong">DATAS ANTES DE ADJETIVOS</p><h2 id="cronologia" class="m-0 text-3xl md:text-4xl">Cronologia auditável</h2></div>
      <ol class="space-y-5 border-l-2 border-border pl-6">
