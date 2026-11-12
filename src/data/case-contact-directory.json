@@ -1,0 +1,351 @@
+{
+  "version": 1,
+  "reviewed_at": "2026-11-12",
+  "policy": "Somente canais públicos institucionais com fonte. Sem contatos privados, envios automáticos, campanhas coordenadas ou mensagens em nome de terceiros.",
+  "contacts": [
+    {
+      "id": "florense-ipanema-email",
+      "case_ids": [
+        "CA-001"
+      ],
+      "organization": "Florense Ipanema",
+      "medium": "email",
+      "value": "florense@florenseipanema.com.br",
+      "source_url": "https://florense.com.br/franquias/ipanema",
+      "verified_at": "2026-11-12",
+      "role": "empresa",
+      "note": "E-mail institucional listado pela própria unidade. Confirme a pessoa jurídica do contrato antes de atribuir responsabilidade."
+    },
+    {
+      "id": "florense-ipanema-instagram",
+      "case_ids": [
+        "CA-001"
+      ],
+      "organization": "Florense Ipanema",
+      "medium": "instagram",
+      "value": "florenseipanema",
+      "source_url": "https://florense.com.br/franquias/ipanema",
+      "verified_at": "2026-11-12",
+      "role": "social",
+      "note": "Perfil social apontado pela página oficial. Comentários públicos não substituem reclamação com protocolo."
+    },
+    {
+      "id": "florense-ipanema-telefone",
+      "case_ids": [
+        "CA-001"
+      ],
+      "organization": "Florense Ipanema",
+      "medium": "phone",
+      "value": "+552122479488",
+      "source_url": "https://florense.com.br/franquias/ipanema",
+      "verified_at": "2026-11-12",
+      "role": "empresa",
+      "note": "Telefone da unidade listado pelo site da rede; não é número WhatsApp confirmado."
+    },
+    {
+      "id": "enel-elena-whatsapp",
+      "case_ids": [
+        "EXT-004"
+      ],
+      "organization": "Enel Distribuição São Paulo",
+      "medium": "whatsapp",
+      "value": "5521996019608",
+      "source_url": "https://www.enel.com.br/pt-saopaulo/atendimento.html",
+      "verified_at": "2026-11-12",
+      "role": "empresa",
+      "note": "Atendimento automatizado Elena. Inicie com Oi; nem todo pedido é aceito por texto livre."
+    },
+    {
+      "id": "light-lia-whatsapp",
+      "case_ids": [
+        "EXT-008"
+      ],
+      "organization": "Light",
+      "medium": "whatsapp",
+      "value": "5521999816059",
+      "source_url": "https://www.light.com.br/SitePages/home.aspx",
+      "verified_at": "2026-11-12",
+      "role": "empresa",
+      "note": "Atendimento virtual Lia. Inicie com Oi e escolha o serviço no menu."
+    },
+    {
+      "id": "corsan-whatsapp-portal",
+      "case_ids": [
+        "EXT-013"
+      ],
+      "organization": "Corsan / Aegea",
+      "medium": "portal",
+      "value": "https://www.corsan.com.br/canais-de-relacionamento/",
+      "source_url": "https://www.corsan.com.br/canais-de-relacionamento/",
+      "verified_at": "2026-11-12",
+      "role": "empresa",
+      "note": "Canal oficial informa WhatsApp pelo 0800 646 6444; abrir a página oficial evita criar link wa.me para número 0800 não testado."
+    },
+    {
+      "id": "novo-mundo-email",
+      "case_ids": [
+        "EXT-007"
+      ],
+      "organization": "Novo Mundo",
+      "medium": "email",
+      "value": "faleconosco@novomundo.com.br",
+      "source_url": "https://www.novomundo.com.br/atendimento",
+      "verified_at": "2026-11-12",
+      "role": "empresa",
+      "note": "Endereço eletrônico da central de atendimento publicado no site oficial."
+    },
+    {
+      "id": "grao-de-gente-email",
+      "case_ids": [
+        "EXT-005"
+      ],
+      "organization": "Grão de Gente",
+      "medium": "email",
+      "value": "contato@graodegente.com.br",
+      "source_url": "https://www.graodegente.com.br/institucional/comunicado-ao-mercado/",
+      "verified_at": "2026-11-12",
+      "role": "empresa",
+      "note": "O comunicado diferencia compras anteriores e posteriores à recuperação judicial; informe os próprios dados só no atendimento privado."
+    },
+    {
+      "id": "123milhas-central",
+      "case_ids": [
+        "EXT-002"
+      ],
+      "organization": "123milhas",
+      "medium": "portal",
+      "value": "https://123milhas.custhelp.com/app/home",
+      "source_url": "https://123milhas.custhelp.com/app/home",
+      "verified_at": "2026-11-12",
+      "role": "empresa",
+      "note": "Central oficial com formulário, chat e suporte telefônico. Não confundir a posição de credor com uma nova compra."
+    },
+    {
+      "id": "123milhas-administracao",
+      "case_ids": [
+        "EXT-002"
+      ],
+      "organization": "Administração judicial — Grupo 123milhas",
+      "medium": "portal",
+      "value": "https://rj123milhas.com.br/",
+      "source_url": "https://123milhas.custhelp.com/app/answers/detail/a_id/1223/~/como-fica-o-atendimento-ao-consumidor-durante-o-per%C3%ADodo-da-recupera%C3%A7%C3%A3o-judicial%3F",
+      "verified_at": "2026-11-12",
+      "role": "administracao_judicial",
+      "note": "Via judicial informada pela central oficial para informações sobre crédito e recuperação; não é SAC."
+    },
+    {
+      "id": "viagogo-help",
+      "case_ids": [
+        "EXT-015"
+      ],
+      "organization": "viagogo",
+      "medium": "portal",
+      "value": "https://support.viagogo.com/br/articles/61000309344-falar-com-o-atendimento-ao-cliente",
+      "source_url": "https://support.viagogo.com/br/articles/61000309344-falar-com-o-atendimento-ao-cliente",
+      "verified_at": "2026-11-12",
+      "role": "empresa",
+      "note": "Portal oficial orienta contato por chat, e-mail ou telefone mediante fluxo de atendimento."
+    },
+    {
+      "id": "ticketmaster-help",
+      "case_ids": [
+        "EXT-012"
+      ],
+      "organization": "Ticketmaster Brasil",
+      "medium": "portal",
+      "value": "https://help.ticketmaster.com.br/hc/pt-br/articles/34669675343761-Como-entrar-em-contato-conosco-How-to-Contact-Us",
+      "source_url": "https://help.ticketmaster.com.br/hc/pt-br/articles/34669675343761-Como-entrar-em-contato-conosco-How-to-Contact-Us",
+      "verified_at": "2026-11-10",
+      "role": "empresa",
+      "note": "Formulário e instruções oficiais; não confundir e-mails automáticos de compra com endereços de atendimento."
+    },
+    {
+      "id": "tokstok-help",
+      "case_ids": [
+        "EXT-010"
+      ],
+      "organization": "Tok&Stok",
+      "medium": "portal",
+      "value": "https://atendimento.tokstok.com.br/",
+      "source_url": "https://atendimento.tokstok.com.br/",
+      "verified_at": "2026-11-10",
+      "role": "empresa",
+      "note": "Portal de atendimento a pedidos e entregas. Grupo empresarial não substitui a contratante do pedido."
+    },
+    {
+      "id": "casas-bahia-help",
+      "case_ids": [
+        "EXT-009"
+      ],
+      "organization": "Casas Bahia",
+      "medium": "portal",
+      "value": "https://www.casasbahia.com.br/",
+      "source_url": "https://support.banqi.com.br/hc/pt-br/articles/36487847297812-Como-falo-com-a-Casas-Bahia",
+      "verified_at": "2026-11-10",
+      "role": "empresa",
+      "note": "Página corporativa de entrada e fonte sobre SAC; conferir a razão social do fornecedor."
+    },
+    {
+      "id": "prime-video-help",
+      "case_ids": [
+        "EXT-014"
+      ],
+      "organization": "Prime Video",
+      "medium": "portal",
+      "value": "https://www.primevideo.com/help",
+      "source_url": "https://www.primevideo.com/help",
+      "verified_at": "2026-11-10",
+      "role": "empresa",
+      "note": "Central oficial para condições e alteração da assinatura. Acesso pode exigir conta."
+    }
+  ],
+  "case_coverage": {
+    "CA-001": {
+      "contact_ids": [
+        "florense-ipanema-email",
+        "florense-ipanema-instagram",
+        "florense-ipanema-telefone"
+      ],
+      "status": "partial",
+      "note": "Canais oficiais encontrados; pesquisa de outras vias ainda aberta."
+    },
+    "EXT-001": {
+      "contact_ids": [],
+      "status": "partial",
+      "note": "Nenhum contato institucional específico confirmado nesta rodada; manter rotas oficiais existentes e pesquisar sem inventar destinatários."
+    },
+    "EXT-002": {
+      "contact_ids": [
+        "123milhas-central",
+        "123milhas-administracao"
+      ],
+      "status": "partial",
+      "note": "Canais oficiais encontrados; pesquisa de outras vias ainda aberta."
+    },
+    "EXT-003": {
+      "contact_ids": [],
+      "status": "partial",
+      "note": "Nenhum contato institucional específico confirmado nesta rodada; manter rotas oficiais existentes e pesquisar sem inventar destinatários."
+    },
+    "EXT-004": {
+      "contact_ids": [
+        "enel-elena-whatsapp"
+      ],
+      "status": "partial",
+      "note": "Canais oficiais encontrados; pesquisa de outras vias ainda aberta."
+    },
+    "EXT-005": {
+      "contact_ids": [
+        "grao-de-gente-email"
+      ],
+      "status": "partial",
+      "note": "Canais oficiais encontrados; pesquisa de outras vias ainda aberta."
+    },
+    "EXT-006": {
+      "contact_ids": [],
+      "status": "partial",
+      "note": "Nenhum contato institucional específico confirmado nesta rodada; manter rotas oficiais existentes e pesquisar sem inventar destinatários."
+    },
+    "EXT-007": {
+      "contact_ids": [
+        "novo-mundo-email"
+      ],
+      "status": "partial",
+      "note": "Canais oficiais encontrados; pesquisa de outras vias ainda aberta."
+    },
+    "EXT-008": {
+      "contact_ids": [
+        "light-lia-whatsapp"
+      ],
+      "status": "partial",
+      "note": "Canais oficiais encontrados; pesquisa de outras vias ainda aberta."
+    },
+    "EXT-009": {
+      "contact_ids": [
+        "casas-bahia-help"
+      ],
+      "status": "partial",
+      "note": "Canais oficiais encontrados; pesquisa de outras vias ainda aberta."
+    },
+    "EXT-010": {
+      "contact_ids": [
+        "tokstok-help"
+      ],
+      "status": "partial",
+      "note": "Canais oficiais encontrados; pesquisa de outras vias ainda aberta."
+    },
+    "EXT-011": {
+      "contact_ids": [],
+      "status": "partial",
+      "note": "Nenhum contato institucional específico confirmado nesta rodada; manter rotas oficiais existentes e pesquisar sem inventar destinatários."
+    },
+    "EXT-012": {
+      "contact_ids": [
+        "ticketmaster-help"
+      ],
+      "status": "partial",
+      "note": "Canais oficiais encontrados; pesquisa de outras vias ainda aberta."
+    },
+    "EXT-013": {
+      "contact_ids": [
+        "corsan-whatsapp-portal"
+      ],
+      "status": "partial",
+      "note": "Canais oficiais encontrados; pesquisa de outras vias ainda aberta."
+    },
+    "EXT-014": {
+      "contact_ids": [
+        "prime-video-help"
+      ],
+      "status": "partial",
+      "note": "Canais oficiais encontrados; pesquisa de outras vias ainda aberta."
+    },
+    "EXT-015": {
+      "contact_ids": [
+        "viagogo-help"
+      ],
+      "status": "partial",
+      "note": "Canais oficiais encontrados; pesquisa de outras vias ainda aberta."
+    },
+    "POL-001": {
+      "contact_ids": [],
+      "status": "partial",
+      "note": "Nenhum contato institucional específico confirmado nesta rodada; manter rotas oficiais existentes e pesquisar sem inventar destinatários."
+    },
+    "POL-002": {
+      "contact_ids": [],
+      "status": "partial",
+      "note": "Nenhum contato institucional específico confirmado nesta rodada; manter rotas oficiais existentes e pesquisar sem inventar destinatários."
+    },
+    "POL-003": {
+      "contact_ids": [],
+      "status": "partial",
+      "note": "Nenhum contato institucional específico confirmado nesta rodada; manter rotas oficiais existentes e pesquisar sem inventar destinatários."
+    },
+    "POL-004": {
+      "contact_ids": [],
+      "status": "partial",
+      "note": "Nenhum contato institucional específico confirmado nesta rodada; manter rotas oficiais existentes e pesquisar sem inventar destinatários."
+    },
+    "POL-005": {
+      "contact_ids": [],
+      "status": "partial",
+      "note": "Nenhum contato institucional específico confirmado nesta rodada; manter rotas oficiais existentes e pesquisar sem inventar destinatários."
+    },
+    "POL-006": {
+      "contact_ids": [],
+      "status": "partial",
+      "note": "Nenhum contato institucional específico confirmado nesta rodada; manter rotas oficiais existentes e pesquisar sem inventar destinatários."
+    },
+    "POL-007": {
+      "contact_ids": [],
+      "status": "partial",
+      "note": "Nenhum contato institucional específico confirmado nesta rodada; manter rotas oficiais existentes e pesquisar sem inventar destinatários."
+    },
+    "PLAT-2026-CASE": {
+      "contact_ids": [],
+      "status": "partial",
+      "note": "Nenhum contato institucional específico confirmado nesta rodada; manter rotas oficiais existentes e pesquisar sem inventar destinatários."
+    }
+  }
+}
