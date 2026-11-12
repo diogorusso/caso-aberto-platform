@@ -44,7 +44,7 @@ export function caseContactPack(id:string):CaseContactPack{
   '',
   'Pesquisa documental de referência: '+caseUrl,
  ].join('\n');
- const contacts=records.filter(c=>coverage.contact_ids.includes(c.id));
+ const contacts=records.filter(c=>(coverage.contact_ids as string[]).includes(c.id));
  return {id,contacts,caption,publicMessage,privateRequest,
    posterHref:'/share/instagram/'+entry.slug+'.png',caseUrl,
    subject:'Solicitação de esclarecimento — '+entry.title,
