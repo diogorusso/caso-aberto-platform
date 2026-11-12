@@ -39,6 +39,19 @@
 
 **Fontes normativas:** https://www4.planalto.gov.br/legislacao/legis-federal/constituicao ; consulta estadual https://www.tjrj.jus.br/consultas/processos-jud/formas-dispo-consultas .
 
+### Matriz normativa a cotejar com os autos
+
+| Norma verificada | Objeto | Questão aplicável à defesa |
+| --- | --- | --- |
+| CF/88, art. 5º, IV, V, IX, X e XXXV; art. 220 | Liberdade de expressão, resposta, honra, intimidade e tutela jurisdicional | Qual é a ponderação efetivamente demonstrada na decisão, a partir de manifestações específicas? |
+| Código Civil, arts. **186 e 187** | Responsabilidade por ato ilícito e exercício abusivo de direito | Há elementos e requisitos para eventual discussão de dano ou abuso? A mera judicialização não constitui, por si, ilícito. |
+| CPC, arts. **296, 298 e 300** | Revogação/modificação, dever de fundamentar tutela provisória e urgência | Foram identificados probabilidade do direito, risco, fundamentação concreta e hipótese de revisão? |
+| CPC, arts. **497, 536 e 537** | Obrigações de fazer/não fazer, execução e multa coercitiva | O comando é claro e proporcional, com prazo e quantia adequados? Houve ciência e descumprimento comprovado? |
+| Código Penal, arts. **139, 140 e 147**, conforme redação vigente | Difamação, injúria e ameaça | Qual foi a imputação efetivamente realizada nos autos e quais atos foram atribuídos a cada pessoa? |
+| Normas sobre procedimento penal e intimações | Forma da convocação e garantias processuais | Qual é a natureza da intimação, a autoridade que a expediu e os elementos objetivos para sua entrega? |
+
+Fontes oficiais: [Código Civil — Lei 10.406/2002](https://www.planalto.gov.br/ccivil_03/leis/2002/l10406compilada.htm); [Código de Processo Civil — Lei 13.105/2015](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13105compilada.htm); [Código Penal — Câmara dos Deputados](https://www2.camara.leg.br/legin/fed/declei/1940-1949/decreto-lei-2848-7-dezembro-1940-412868-normaatualizada-pe.html). **Não pressupor que tais dispositivos foram invocados pelas partes ou pelo juízo.**
+
 ## 4. Perguntas sugeridas à escola — redação institucional e verificável
 
 - O colégio confirma que o fato foi levado ao conhecimento de sua direção? Qual foi a data de recebimento e qual resposta formal foi emitida?
