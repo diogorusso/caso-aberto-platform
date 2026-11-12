@@ -127,7 +127,7 @@ export default function ActionDrawer({
         await navigator.share({files: [file], text: captionDraft})
         return
       }
-      setShareMessage('Neste navegador, salve a imagem e copie a legenda para publicar no Camera.')
+      setShareMessage('Neste navegador, salve a imagem e copie a legenda para publicar no Instagram.')
     } catch {
       setShareMessage('Salve a imagem pelo botão abaixo e copie a legenda para publicar.')
     }
@@ -283,7 +283,7 @@ export default function ActionDrawer({
                       <div className="flex items-start justify-between gap-3">
                         <div>
                           <strong className="block text-base">{contact.organization}</strong>
-                          <span className="text-xs font-bold uppercase tracking-wide text-brand-strong">{contact.medium === 'whatsapp' ? 'WhatsApp oficial' : contact.medium === 'email' ? 'E-mail institucional' : contact.medium === 'instagram' ? 'Perfil Camera público' : contact.medium === 'phone' ? 'Telefone institucional' : 'Portal oficial'} · {contact.role}</span>
+                          <span className="text-xs font-bold uppercase tracking-wide text-brand-strong">{contact.medium === 'whatsapp' ? 'WhatsApp oficial' : contact.medium === 'email' ? 'E-mail institucional' : contact.medium === 'instagram' ? 'Perfil Instagram público' : contact.medium === 'phone' ? 'Telefone institucional' : 'Portal oficial'} · {contact.role}</span>
                         </div>
                         <span className="shrink-0 text-xs text-muted-foreground">{contact.verified_at}</span>
                       </div>
@@ -331,12 +331,12 @@ export default function ActionDrawer({
                 </div>
               </div>
               <div className="grid gap-4 rounded-lg border border-border bg-card p-4 md:grid-cols-[minmax(0,200px)_1fr]">
-                <a href={plan.posterHref} target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem Camera">
+                <a href={plan.posterHref} target="_blank" rel="noopener noreferrer" aria-label="Abrir imagem Instagram">
                   <img src={plan.posterHref} loading="lazy" alt={'Imagem 4:5 para compartilhar o dossiê '+plan.id} className="w-full rounded-md border border-border" />
                 </a>
                 <div className="min-w-0 space-y-3">
-                  <h3 className="m-0 text-lg">Camera · arte vertical 1080×1350</h3>
-                  <p className="m-0 text-sm text-muted-foreground">Imagem criada a partir da foto já documentada para este caso. O Camera não permite pré-preencher uma publicação pelo navegador; use compartilhar imagem ou salvar e copiar a legenda.</p>
+                  <h3 className="m-0 text-lg">Instagram · arte vertical 1080×1350</h3>
+                  <p className="m-0 text-sm text-muted-foreground">Imagem criada a partir da foto já documentada para este caso. O Instagram não permite pré-preencher uma publicação pelo navegador; use compartilhar imagem ou salvar e copiar a legenda.</p>
                   <Button type="button" onClick={shareInstagramImage}><Camera size={15}/> Compartilhar imagem</Button>
                   <Button asChild variant="outline"><a href={plan.posterHref} download={'casoaberto-'+plan.id+'-instagram.png'}><ImageDown size={15}/> Salvar PNG</a></Button>
                   {shareMessage && <p role="status" className="m-0 text-xs text-muted-foreground">{shareMessage}</p>}
