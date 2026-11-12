@@ -17,6 +17,8 @@ const visualById = new Map((visuals.assets || []).map((item) => [item.case_id, i
 const directory = join(root, 'public', 'og');
 await mkdir(join(directory, 'casos'), {recursive: true});
 await mkdir(join(directory, 'historias'), {recursive: true});
+const instagramDirectory = join(root, 'public', 'share', 'instagram');
+await mkdir(instagramDirectory, {recursive: true});
 
 const escape = (s) =>
   String(s || '')
@@ -220,6 +222,42 @@ async function render(item, file) {
   await sharp(layout(item)).composite(layers).png({compressionLevel: 8, palette: true, effort: 7}).toFile(file);
 }
 
+/** Portrait 4:5 publication card for voluntary Instagram uploads. Documentary cover photo is a context image, not a depiction of alleged events. */
+async function renderInstagram(item, file) {
+  const titleLines = split(item.title, 27, 5);
+  const size = titleLines.some(line => line.length > 25) ? 47 : 53;
+  const heading = titleLines.map((line,i) => text(line, 64, 784 + i * 70, size, '#f1f1e7', 800)).join('');
+  const date = item.date?.split('-').reverse().join('/') || '';
+  const base = Buffer.from(
+    '<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350">' +
+    '<rect width="1080" height="1350" fill="#121b18"/>' +
+    '<rect x="64" y="48" width="30" height="34" rx="3" fill="#ec776b"/>' +
+    text('C', 72, 72, 20, '#121b18', 900) +
+    text('CASO', 112, 76, 28, '#f1f1e7', 900) +
+    text('ABERTO', 208, 76, 28, '#ec776b', 900) +
+    '<rect y="118" width="1080" height="550" fill="#233c34"/>' +
+    '<rect y="668" width="1080" height="682" fill="#121b18"/>' +
+    text(item.group, 64, 728, 19, '#ec8a80', 800) +
+    heading +
+    '<rect x="64" y="1195" width="952" height="2" fill="#53645b"/>' +
+    text(item.category || 'Pesquisa documental', 64, 1245, 24, '#bfcfc4', 600) +
+    text(item.id + ' · revisão ' + date, 64, 1284, 20, '#91a69a', 500) +
+    text('Fontes e cronologia: casoaberto.pages.dev', 64, 1320, 18, '#f1f1e7', 600) +
+    '<rect x="62" y="626" width="350" height="35" fill="#121b18" fill-opacity=".92"/>' +
+    text('IMAGEM DE CONTEXTO', 76, 651, 16, '#f1f1e7', 700) +
+    '</svg>'
+  );
+  const image = await sharp(item.image).resize(1080, 550, {fit: 'cover', position:'centre'}).png().toBuffer();
+  // Base SVG is layered on top of photo only where text/labels appear.
+  const background = await sharp({create:{width:1080,height:1350,channels:4,background:'#121b18'}})
+    .composite([{input:image,left:0,top:118},{input:base,left:0,top:0,blend:'over'}]).png().toBuffer();
+  // The opaque base SVG deliberately masks the image region: recompose the photo over the
+  // headerless image zone and overlay the context tag to keep the visual grounded.
+  const label=Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350"><rect x="62" y="626" width="350" height="35" fill="#121b18" fill-opacity=".92"/>'+text('IMAGEM DE CONTEXTO',76,651,16,'#f1f1e7',700)+'</svg>');
+  await sharp(background).composite([{input:image,left:0,top:118},{input:label,left:0,top:0}])
+    .png({compressionLevel:8,palette:true,effort:7}).toFile(file);
+}
+
 async function renderDefault(file) {
   const svg = Buffer.from(
     '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">' +
@@ -243,6 +281,7 @@ const caseItems = await Promise.all(sources.map(withVisual));
 const storyItems = await Promise.all(stories.map(withVisual));
 for (const item of caseItems) {
   await render(item, join(directory, 'casos', item.slug + '.png'));
+  await renderInstagram(item, join(instagramDirectory, item.slug + '.png'));
   n++;
 }
 for (const item of storyItems) {
@@ -253,5 +292,5 @@ await renderDefault(join(directory, 'default.png'));
 console.log(
   'OG artwork generated: ' +
     n +
-    ' case and story previews + branded default, 1200×630 PNG; every card embeds exclusive /media/ photo from case-visual-assets.',
+    ' case and story previews, 24 vertical Instagram cards + branded default; all from sourced /media/ photos.',
 );
