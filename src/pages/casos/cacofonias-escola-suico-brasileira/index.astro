@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import CaseActionBar from '../../../components/CaseActionBar.astro';
+import CaseVisualStory from '../../../components/CaseVisualStory.astro';
 import dossier from '../../../data/cacofonias-escola-suico-brasileira.json';
 const permalink='/casos/cacofonias-escola-suico-brasileira/';
 const sourceMap=new Map(dossier.sources.map(source=>[source.id,source]));
@@ -34,6 +36,10 @@ const dateBR=(value:string)=>value.split('-').reverse().join('/');
     </div>
    </div>
   </header>
+  <div class="container max-w-6xl space-y-4 py-7">
+   <CaseActionBar compact caseId={dossier.id} title={dossier.title} summary={dossier.deck} href={permalink} printHref={'/casos/imprimir/'+dossier.slug+'/'} showComplaint={false}/>
+  </div>
+  <CaseVisualStory caseId={dossier.id}/>
   <div class="container grid max-w-6xl gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem]">
    <div class="space-y-12">
     <section aria-labelledby="marcos-titulo" class="space-y-5">
