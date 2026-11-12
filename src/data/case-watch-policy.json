@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-10",
+  "updated_at": "2026-11-12",
   "schedule": {
     "timezone": "America/Sao_Paulo",
     "daily_utc": "12:23",
@@ -331,6 +331,21 @@
       ],
       "deadlines": [],
       "closure_evidence": "Ato institucional conclusivo ou conclusão editorial formal, com fonte e histórico de correções."
+    },
+    {
+      "id": "EXT-016",
+      "mode": "active",
+      "priority": "high",
+      "interval_days": 1,
+      "focus": "Acompanhar desdobramentos processuais e a convocação noticiada para 13/11/2026, preservando o contraditório da SIS, sem inferir participação institucional na escolha de endereço de intimação ou publicar documentos privados.",
+      "watch_urls": [
+        "https://odia.ig.com.br/rio-de-janeiro/2026/11/7321593-humorista-cacofonias-critica-intimacao-entregue-a-mae-durante-a-noite.html",
+        "https://vejario.abril.com.br/cidade/escola-suico-brasileira-cacofonias/"
+      ],
+      "deadlines": [
+        "2026-11-13"
+      ],
+      "closure_evidence": "Decisão final, acordo ou encerramento documentado nas duas vias noticiadas; confirmação de providências institucionais e atualização pública com a posição das partes, sem supor responsabilidade não comprovada."
     }
   ]
 }
