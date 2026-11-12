@@ -1200,7 +1200,7 @@
         },
         {
           "date": "2020-05-17",
-          "event": "Processamento da recuperação judicial deferido, segundo histórico constante do quarto aditivo",
+          "event": "Aditivo informa deferimento do processamento em 17/05/2020; página institucional cita 18/05/2020 (data judicial originária a conferir)",
           "type": "decisao",
           "source_url": "https://www.candidomendes.edu.br/wp-content/uploads/2022/11/19.10.2022-4o-Aditivo-ao-PRJ-UCAM.pdf"
         },
@@ -1209,12 +1209,6 @@
           "event": "Documento do quarto aditivo identifica as três recuperandas e regras de reestruturação",
           "type": "plano",
           "source_url": "https://www.candidomendes.edu.br/wp-content/uploads/2022/11/19.10.2022-4o-Aditivo-ao-PRJ-UCAM.pdf"
-        },
-        {
-          "date": "2023-03-01",
-          "event": "Relatório jurídico disponibilizado pelo Sinpro-Rio descreve acompanhamento dos interesses trabalhistas (mês de referência; dia exato não indicado)",
-          "type": "relatorio",
-          "source_url": "https://site.sinpro-rio.org.br/wp-content/uploads/2023/03/RELATORIO-DE-SITUACAO-PROCESSUAL-CANDIDO-MENDES-MAR-23-1.pdf"
         },
         {
           "date": "2024-06-05",
@@ -1250,7 +1244,7 @@
       "metrics": [
         {
           "label": "6 dias",
-          "meaning": "Pedido de recuperação judicial (11/05/2020) → deferimento do processamento (17/05/2020)",
+          "meaning": "Do pedido de 11/05/2020 ao deferimento indicado como 17/05/2020 no quarto aditivo; página oficial da UCAM cita 18/05/2020 (verificar decisão original)",
           "kind": "calculated",
           "basis": [
             "2020-05-11",
@@ -1418,6 +1412,12 @@
           "title": "Sinpro-Rio — relatório processual sobre UCAM (março de 2023)",
           "url": "https://site.sinpro-rio.org.br/wp-content/uploads/2023/03/RELATORIO-DE-SITUACAO-PROCESSUAL-CANDIDO-MENDES-MAR-23-1.pdf",
           "scope": "Documento produzido em defesa dos professores; alegações processuais e histórico devem ser atribuídos à fonte."
+        },
+        {
+          "category": "Universidade e mantenedoras",
+          "title": "UCAM — página de recuperação judicial, decisões e comunicados",
+          "url": "https://www.candidomendes.edu.br/recuperacao-judicial/",
+          "scope": "A página da universidade registra deferimento em 18/05/2020; o quarto aditivo fala em 17/05/2020. Verificar inteiro teor e data de assinatura/publicação antes de resolver divergência."
         }
       ],
       "sources": [
@@ -1492,9 +1492,15 @@
           "url": "https://www4.tjrj.jus.br/camarasweb/listaPauta.aspx?pDataSessao=17%2F11%2F2026+12%3A00%3A00&pOJ=12265",
           "kind": "tribunal",
           "checked_at": "2026-11-12"
+        },
+        {
+          "title": "UCAM — acervo documental público da recuperação judicial e ordens processuais",
+          "url": "https://www.candidomendes.edu.br/recuperacao-judicial/",
+          "kind": "documento_da_instituicao",
+          "checked_at": "2026-11-12"
         }
       ],
-      "known_limits": "Recuperação judicial e homologação do aditivo não são decretação de falência, nem demonstram pagamento integral dos credores. Os R$ 54 milhões são valor de edital e não preço de arrematação confirmada. Recursos ligados ao mesmo processo matriz não são novas recuperações; pautas não equivalem a acórdãos. O relatório sindical tem a perspectiva dos docentes, e o e-MEC exige consulta por curso e modalidade. Nenhuma contagem de indivíduos é inferida de listas de credores ou indexadores privados.",
+      "known_limits": "Recuperação judicial e homologação do aditivo não são decretação de falência, nem demonstram pagamento integral dos credores. Os R$ 54 milhões são valor de edital e não preço de arrematação confirmada. Recursos ligados ao mesmo processo matriz não são novas recuperações; pautas não equivalem a acórdãos. O relatório sindical tem a perspectiva dos docentes, e o e-MEC exige consulta por curso e modalidade. Nenhuma contagem de indivíduos é inferida de listas de credores ou indexadores privados. Divergência de data: o quarto aditivo indica deferimento em 17/05/2020 e a página pública da UCAM indica 18/05/2020; a data usada no intervalo de 6 dias é a indicada no aditivo e requer conferência da decisão originária. O relatório de março de 2023 não foi convertido artificialmente em evento de dia 1º.",
       "relevance": "Precedente documental independente do setor educacional: permite rastrear mantenedoras, decisões, administração judicial, ativos, direitos dos credores, direitos dos estudantes e regulação acadêmica. Não possui vínculo societário, contratual ou causal com Florense nem com os precedentes do setor moveleiro."
     }
   ],
