@@ -13,7 +13,7 @@ const method=val('--method')||'human';
 const yes=args.includes('--apply');
 const repo='diogorusso/caso-aberto-platform';
 const read=name=>JSON.parse(readFileSync(new URL('../src/data/'+name+'.json',import.meta.url),'utf8'));
-const records=sourceCases(read('casos'),read('public-case-atlas'),read('political-observatory'),read('platform-observatory'));
+const records=sourceCases(read('casos'),read('public-case-atlas'),read('political-observatory'),read('platform-observatory'),read('cacofonias-escola-suico-brasileira'));
 const policy=read('case-watch-policy').cases.find(x=>x.id===id);
 const entry=records.find(x=>x.id===id);
 if(!entry||!policy)throw new Error('Unknown or unregistered case');
