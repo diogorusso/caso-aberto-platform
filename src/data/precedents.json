@@ -1189,8 +1189,8 @@
       "financial_amount_type": null,
       "customer_amounts_documented_brl": null,
       "consumer_claim_entries": null,
-      "headline": "A universidade pediu recuperação em 2020. Em 2025, o tribunal homologou novo plano; em 2026, novos recursos e leilão constavam dos registros públicos. Onde estão os comprovantes de pagamento aos credores?",
-      "summary": "O processo 0093754-90.2020.8.19.0001 reúne ASBI, ICAM e Soplantel. O processamento da recuperação foi deferido em maio de 2020. Em 12/03/2025 a Quinta Câmara de Direito Privado do TJRJ deu provimento ao recurso do comitê de credores e homologou o quarto aditivo ao plano. A administradora K2 publica regras de pagamento e fontes para conferir a relação de credores. Em 2026, o TJRJ publicou pautas de recursos ligados à recuperação e um edital programou leilão da UPI Joana Angélica. Não há, nas fontes aqui verificadas, decreto de falência ou comprovação da arrematação de julho de 2026.",
+      "headline": "A recuperação começou em 2020. Um quarto aditivo foi homologado em 2025. Recursos e leilão chegaram a 2026: o que os documentos provam sobre credores e patrimônio?",
+      "summary": "O processo 0093754-90.2020.8.19.0001 reúne ASBI, ICAM e Soplantel. O processamento da recuperação foi deferido em maio de 2020. Em 12/03/2025 a Quinta Câmara de Direito Privado do TJRJ deu provimento ao recurso do comitê de credores e homologou o quarto aditivo ao plano. A administradora K2 publica regras de pagamento e fontes para conferir a relação de credores. Em 2026, o TJRJ publicou pautas de recursos ligados à recuperação e um edital programou leilão da UPI Joana Angélica. Não há, nas fontes aqui verificadas, decreto de falência ou comprovação da arrematação de julho de 2026. Em maio de 2022, a UCAM declarou pagamentos específicos a credores e um acordo tributário; esse relato histórico não demonstra situação de quitação em 2026.",
       "timeline": [
         {
           "date": "2020-05-11",
@@ -1200,15 +1200,39 @@
         },
         {
           "date": "2020-05-17",
-          "event": "Aditivo informa deferimento do processamento em 17/05/2020; página institucional cita 18/05/2020 (data judicial originária a conferir)",
+          "event": "Histórico da UCAM usa 17/05/2020 como deferimento; outros documentos da própria instituição usam 16 e 18/05/2020 — data judicial ainda divergente",
           "type": "decisao",
           "source_url": "https://www.candidomendes.edu.br/wp-content/uploads/2022/11/19.10.2022-4o-Aditivo-ao-PRJ-UCAM.pdf"
+        },
+        {
+          "date": "2022-02-09",
+          "event": "UCAM informa pagamentos iniciais de R$ 267 mil a grupos específicos de credores em comunicado posterior",
+          "type": "comunicado",
+          "source_url": "https://www.candidomendes.edu.br/wp-content/uploads/2022/05/COMUNICADO-AOS-COLABORADORES-E-CREDORES-MAIO-DE-2022.pdf"
+        },
+        {
+          "date": "2022-04-11",
+          "event": "UCAM informa segunda rodada de R$ 932 mil a categorias específicas de credores em comunicado posterior",
+          "type": "comunicado",
+          "source_url": "https://www.candidomendes.edu.br/wp-content/uploads/2022/05/COMUNICADO-AOS-COLABORADORES-E-CREDORES-MAIO-DE-2022.pdf"
+        },
+        {
+          "date": "2022-04-14",
+          "event": "UCAM declara acordo de transação tributária com PGFN e redução aproximada de R$ 700 milhões de passivo fiscal; confirmação da PGFN pendente",
+          "type": "declaracao",
+          "source_url": "https://www.candidomendes.edu.br/wp-content/uploads/2022/05/COMUNICADO-AOS-COLABORADORES-E-CREDORES-MAIO-DE-2022.pdf"
         },
         {
           "date": "2022-10-19",
           "event": "Documento do quarto aditivo identifica as três recuperandas e regras de reestruturação",
           "type": "plano",
           "source_url": "https://www.candidomendes.edu.br/wp-content/uploads/2022/11/19.10.2022-4o-Aditivo-ao-PRJ-UCAM.pdf"
+        },
+        {
+          "date": "2022-11-17",
+          "event": "Recuperandas protocolam proposta de quarto aditivo antes das parcelas previstas para janeiro/2023, conforme petição de 2023",
+          "type": "peticao",
+          "source_url": "https://k2consultoria.com/wp-content/uploads/2023/11/Plano-de-Recuperacao-Judicial-Anexos-%E2%80%93-Grupo-Candido-Mendes-11102023.pdf"
         },
         {
           "date": "2024-06-05",
@@ -1243,13 +1267,16 @@
       ],
       "metrics": [
         {
-          "label": "6 dias",
-          "meaning": "Do pedido de 11/05/2020 ao deferimento indicado como 17/05/2020 no quarto aditivo; página oficial da UCAM cita 18/05/2020 (verificar decisão original)",
-          "kind": "calculated",
-          "basis": [
-            "2020-05-11",
-            "2020-05-17"
-          ]
+          "label": "R$ 267 mil",
+          "meaning": "Montante de pagamentos iniciais de 09/02/2022 informado pela universidade para verbas salariais e Classe IV; declaração institucional, não comprovante bancário individual.",
+          "kind": "reported_primary_judicial_material",
+          "source_url": "https://www.candidomendes.edu.br/wp-content/uploads/2022/05/COMUNICADO-AOS-COLABORADORES-E-CREDORES-MAIO-DE-2022.pdf"
+        },
+        {
+          "label": "R$ 932 mil",
+          "meaning": "Montante de pagamentos de 11/04/2022 informado pela UCAM para Classes I/IV; declaração institucional de 12/05/2022, não auditoria de quitação individual.",
+          "kind": "reported_primary_judicial_material",
+          "source_url": "https://www.candidomendes.edu.br/wp-content/uploads/2022/05/COMUNICADO-AOS-COLABORADORES-E-CREDORES-MAIO-DE-2022.pdf"
         },
         {
           "label": "R$ 54 milhões",
@@ -1418,6 +1445,12 @@
           "title": "UCAM — página de recuperação judicial, decisões e comunicados",
           "url": "https://www.candidomendes.edu.br/recuperacao-judicial/",
           "scope": "A página da universidade registra deferimento em 18/05/2020; o quarto aditivo fala em 17/05/2020. Verificar inteiro teor e data de assinatura/publicação antes de resolver divergência."
+        },
+        {
+          "category": "Assembleia de credores",
+          "title": "Ata de 05/06/2024 e anexos — K2",
+          "url": "https://k2consultoria.com/wp-content/uploads/2024/06/Ata-da-Assembleia-Geral-de-Credores.pdf",
+          "scope": "Duas modalidades de votação descritas pela administradora; verificar resultado homologado no acórdão e não projetar condições preliminares como vigentes."
         }
       ],
       "sources": [
@@ -1498,9 +1531,27 @@
           "url": "https://www.candidomendes.edu.br/recuperacao-judicial/",
           "kind": "documento_da_instituicao",
           "checked_at": "2026-11-12"
+        },
+        {
+          "title": "UCAM — comunicado de 12/05/2022 sobre pagamentos e acordo tributário alegados",
+          "url": "https://www.candidomendes.edu.br/wp-content/uploads/2022/05/COMUNICADO-AOS-COLABORADORES-E-CREDORES-MAIO-DE-2022.pdf",
+          "kind": "declaracao_da_instituicao",
+          "checked_at": "2026-11-12"
+        },
+        {
+          "title": "K2 — petição de 11/10/2023 explicando necessidade do 4º aditivo",
+          "url": "https://k2consultoria.com/wp-content/uploads/2023/11/Plano-de-Recuperacao-Judicial-Anexos-%E2%80%93-Grupo-Candido-Mendes-11102023.pdf",
+          "kind": "processo_judicial",
+          "checked_at": "2026-11-12"
+        },
+        {
+          "title": "K2 — ata e anexos da AGC de junho/2024",
+          "url": "https://k2consultoria.com/wp-content/uploads/2024/06/Ata-da-Assembleia-Geral-de-Credores.pdf",
+          "kind": "administrador_judicial",
+          "checked_at": "2026-11-12"
         }
       ],
-      "known_limits": "Recuperação judicial e homologação do aditivo não são decretação de falência, nem demonstram pagamento integral dos credores. Os R$ 54 milhões são valor de edital e não preço de arrematação confirmada. Recursos ligados ao mesmo processo matriz não são novas recuperações; pautas não equivalem a acórdãos. O relatório sindical tem a perspectiva dos docentes, e o e-MEC exige consulta por curso e modalidade. Nenhuma contagem de indivíduos é inferida de listas de credores ou indexadores privados. Divergência de data: o quarto aditivo indica deferimento em 17/05/2020 e a página pública da UCAM indica 18/05/2020; a data usada no intervalo de 6 dias é a indicada no aditivo e requer conferência da decisão originária. O relatório de março de 2023 não foi convertido artificialmente em evento de dia 1º.",
+      "known_limits": "Recuperação judicial e homologação do aditivo não são decretação de falência, nem demonstram pagamento integral dos credores. Os R$ 54 milhões são valor de edital e não preço de arrematação confirmada. Recursos ligados ao mesmo processo matriz não são novas recuperações; pautas não equivalem a acórdãos. O relatório sindical tem a perspectiva dos docentes, e o e-MEC exige consulta por curso e modalidade. Nenhuma contagem de indivíduos é inferida de listas de credores ou indexadores privados. Divergência de data: o quarto aditivo indica deferimento em 17/05/2020 e a página pública da UCAM indica 18/05/2020; a data usada no intervalo de 6 dias é a indicada no aditivo e requer conferência da decisão originária. O relatório de março de 2023 não foi convertido artificialmente em evento de dia 1º. Há três datas institucionais conflitantes para o processamento inicial: carta de 12/05/2022 menciona 16/05/2020, histórico de 2022 aponta 17/05/2020 e página da UCAM indica 18/05/2020. Não publicar contagem exata de dias até conferir o ato originário. Os R$ 267 mil e R$ 932 mil são pagamentos informados pela UCAM em 2022, não quitação integral certificada; os R$ 700 milhões de redução fiscal são afirmação da UCAM, não confirmação independente da PGFN.",
       "relevance": "Precedente documental independente do setor educacional: permite rastrear mantenedoras, decisões, administração judicial, ativos, direitos dos credores, direitos dos estudantes e regulação acadêmica. Não possui vínculo societário, contratual ou causal com Florense nem com os precedentes do setor moveleiro."
     }
   ],
