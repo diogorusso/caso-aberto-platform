@@ -1,10 +1,11 @@
 import {readFileSync,existsSync} from 'node:fs';
 const load=n=>JSON.parse(readFileSync(new URL('../src/data/'+n+'.json',import.meta.url),'utf8'));
 const records=load('case-action-channels'),cases=load('casos'),atlas=load('public-case-atlas'),politics=load('political-observatory'),media=load('case-visual-assets');
-const ids=[...cases.map(x=>x.id),...atlas.cases.map(x=>x.id),...politics.cases.map(x=>x.id),'PLAT-2026-CASE'];
+const ids=[...cases.map(x=>x.id),...atlas.cases.map(x=>x.id),...politics.cases.map(x=>x.id),'PLAT-2026-CASE',legal.id];
+const legal=load('cacofonias-escola-suico-brasileira');
 const errors=[],assert=(bool,msg)=>{if(!bool)errors.push(msg)};
 assert(records.version===1,'invalid schema');
-assert(ids.length===24,'case count changed; reconcile mapping');
+assert(ids.length===25,'case count changed; reconcile mapping');
 assert((media.assets||[]).length>=ids.length,'case-visual-assets must cover every research case');
 const mediaIds=new Set((media.assets||[]).map(item=>item.case_id));
 for(const id of ids)assert(mediaIds.has(id),'missing visual asset row for '+id);
@@ -26,6 +27,13 @@ for(const id of ids){
 }
 for(const item of media.assets||[]){
  assert(Boolean(item.case_id&&item.company),'visual asset incomplete '+item.case_id);
+ if(item.case_id==='EXT-016'){
+  assert(item.photo===null&&item.logo===null,'Sensitive legal dossier must not publish portraits or unrelated imagery.');
+  assert(typeof item.non_photo_reason==='string'&&item.non_photo_reason.length>100,'Document the legal privacy exception.');
+  assert(item.cover==='/og/default.png','Sensitive legal dossier uses source-first text card and default OG.');
+  assert(item.is_incident_photo===false,'No incident photograph allowed.');
+  continue;
+ }
  // On-page cards/heroes MUST use a real exclusive photo under /media/. OG PNGs are share/meta only.
  assert(Boolean(item.photo)&&String(item.photo).startsWith('/media/'),'missing required on-page photo for '+item.case_id);
  assert(existsSync(new URL('../public'+item.photo,import.meta.url)),'missing photo file '+item.photo);
