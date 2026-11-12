@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-11-09",
+  "updated_at": "2026-11-12",
   "title": "Precedentes documentados: móveis pagos, entregas frustradas, recuperação judicial e falência",
   "editorial_scope": "Sete precedentes do setor com fontes públicas — amostra intencional, não censo. Recuperação judicial, encerramento operacional, conflito de consumidor e falência decretada são estágios distintos. O aviso ao comprador: quem pagou e não recebeu já entrou na fila.",
   "stage_definitions": {
@@ -10,16 +10,46 @@
     "conflito_consumidor": "Reclamação/atraso documentado."
   },
   "signal_rows": [
-    { "key": "pagamento_integral", "label": "Pagamento integral antes da entrega" },
-    { "key": "atraso_entrega", "label": "Atraso na entrega além do prazo" },
-    { "key": "remarcacao", "label": "Remarcação / nova data empurrada" },
-    { "key": "equipe_faltou", "label": "Equipe de instalação não comparece" },
-    { "key": "sem_resposta", "label": "Reclamação sem resposta" },
-    { "key": "reputacao", "label": "Alta de reclamações e queda de reputação" },
-    { "key": "cobranca_formal", "label": "Notificação e órgão de defesa do consumidor" },
-    { "key": "fechamento", "label": "Fechamento de loja, unidade ou fábrica paralisada" },
-    { "key": "dividas_protestos", "label": "Dívidas, protestos e cobranças" },
-    { "key": "acao_judicial", "label": "Ações judiciais e pedido de recuperação/falência" }
+    {
+      "key": "pagamento_integral",
+      "label": "Pagamento integral antes da entrega"
+    },
+    {
+      "key": "atraso_entrega",
+      "label": "Atraso na entrega além do prazo"
+    },
+    {
+      "key": "remarcacao",
+      "label": "Remarcação / nova data empurrada"
+    },
+    {
+      "key": "equipe_faltou",
+      "label": "Equipe de instalação não comparece"
+    },
+    {
+      "key": "sem_resposta",
+      "label": "Reclamação sem resposta"
+    },
+    {
+      "key": "reputacao",
+      "label": "Alta de reclamações e queda de reputação"
+    },
+    {
+      "key": "cobranca_formal",
+      "label": "Notificação e órgão de defesa do consumidor"
+    },
+    {
+      "key": "fechamento",
+      "label": "Fechamento de loja, unidade ou fábrica paralisada"
+    },
+    {
+      "key": "dividas_protestos",
+      "label": "Dívidas, protestos e cobranças"
+    },
+    {
+      "key": "acao_judicial",
+      "label": "Ações judiciais e pedido de recuperação/falência"
+    }
   ],
   "common_analysis": {
     "strong_claim": "O risco de ficar sem os móveis e ter de buscar restituição é concreto: há casos públicos com clientes credores em falência e recuperação judicial, com atrasos e reclamações sem resposta documentados antes do desfecho.",
@@ -1128,6 +1158,344 @@
       ],
       "known_limits": "Não foi identificado número de processo judicial único: há ações cíveis individuais e boletins de ocorrência noticiados. Encerramento operacional. Os valores são relatos de clientes à imprensa, não perdas certificadas judicialmente.",
       "relevance": "É o precedente mais próximo do consumidor de móveis planejados: pagamento antecipado, atraso, atendimento ausente e paralisação sem aviso — sem, no entanto, haver falência decretada nos autos."
+    },
+    {
+      "id": "P-008",
+      "slug": "universidade-candido-mendes-recuperacao-judicial-2020-2026",
+      "brand": "Universidade Candido Mendes (UCAM)",
+      "entities": [
+        "Associação Sociedade Brasileira de Instrução (ASBI; CNPJ 33.646.001/0001-67)",
+        "Instituto Candido Mendes (ICAM; CNPJ 04.153.412/0001-12)",
+        "Soplantel Planejamento e Assistência Técnica Especializada S.A. (CNPJ 42.516.757/0001-82)"
+      ],
+      "segment": "Ensino superior privado · recuperação judicial, credores e regulação",
+      "geography": "Rio de Janeiro, RJ · operações e credores em outras localidades",
+      "stage": "recuperacao_judicial",
+      "stage_label": "Recuperação judicial com plano aditado homologado em 2025",
+      "process_number": "0093754-90.2020.8.19.0001",
+      "court": "5ª Vara Empresarial da Capital — TJRJ",
+      "start_kind": "Protocolo do pedido de recuperação judicial",
+      "start_date": "2020-05-11",
+      "first_public_signal": {
+        "date": "2020-05-11",
+        "source_url": "https://www.candidomendes.edu.br/wp-content/uploads/2020/07/2020-05-11-comunicado-a-imprensa.pdf",
+        "note": "Pedido oficialmente comunicado pela universidade em 12/05/2020; não é a data inicial da crise financeira."
+      },
+      "recovery_request_date": "2020-05-11",
+      "recovery_acceptance_date": "2020-05-17",
+      "bankruptcy_decree_date": null,
+      "comparison_period_kind": "Do protocolo em 11/05/2020 ao deferimento do processamento em 17/05/2020; não representa duração da crise nem prazo dos credores",
+      "financial_exposure_reported_brl": null,
+      "financial_amount_type": null,
+      "customer_amounts_documented_brl": null,
+      "consumer_claim_entries": null,
+      "headline": "A universidade pediu recuperação em 2020. Em 2025, o tribunal homologou novo plano; em 2026, novos recursos e leilão constavam dos registros públicos. Onde estão os comprovantes de pagamento aos credores?",
+      "summary": "O processo 0093754-90.2020.8.19.0001 reúne ASBI, ICAM e Soplantel. O processamento da recuperação foi deferido em maio de 2020. Em 12/03/2025 a Quinta Câmara de Direito Privado do TJRJ deu provimento ao recurso do comitê de credores e homologou o quarto aditivo ao plano. A administradora K2 publica regras de pagamento e fontes para conferir a relação de credores. Em 2026, o TJRJ publicou pautas de recursos ligados à recuperação e um edital programou leilão da UPI Joana Angélica. Não há, nas fontes aqui verificadas, decreto de falência ou comprovação da arrematação de julho de 2026.",
+      "timeline": [
+        {
+          "date": "2020-05-11",
+          "event": "Universidade comunica pedido de recuperação judicial (nota publicada em 12/05)",
+          "type": "pedido",
+          "source_url": "https://www.candidomendes.edu.br/wp-content/uploads/2020/07/2020-05-11-comunicado-a-imprensa.pdf"
+        },
+        {
+          "date": "2020-05-17",
+          "event": "Processamento da recuperação judicial deferido, segundo histórico constante do quarto aditivo",
+          "type": "decisao",
+          "source_url": "https://www.candidomendes.edu.br/wp-content/uploads/2022/11/19.10.2022-4o-Aditivo-ao-PRJ-UCAM.pdf"
+        },
+        {
+          "date": "2022-10-19",
+          "event": "Documento do quarto aditivo identifica as três recuperandas e regras de reestruturação",
+          "type": "plano",
+          "source_url": "https://www.candidomendes.edu.br/wp-content/uploads/2022/11/19.10.2022-4o-Aditivo-ao-PRJ-UCAM.pdf"
+        },
+        {
+          "date": "2023-03-01",
+          "event": "Relatório jurídico disponibilizado pelo Sinpro-Rio descreve acompanhamento dos interesses trabalhistas (mês de referência; dia exato não indicado)",
+          "type": "relatorio",
+          "source_url": "https://site.sinpro-rio.org.br/wp-content/uploads/2023/03/RELATORIO-DE-SITUACAO-PROCESSUAL-CANDIDO-MENDES-MAR-23-1.pdf"
+        },
+        {
+          "date": "2024-06-05",
+          "event": "Assembleia geral de credores em segunda convocação, conforme relato da administradora judicial",
+          "type": "assembleia",
+          "source_url": "https://k2consultoria.com/candido-mendes"
+        },
+        {
+          "date": "2025-03-12",
+          "event": "TJRJ acolhe recurso do comitê e homologa o quarto aditivo ao plano",
+          "type": "acordao",
+          "source_url": "https://k2consultoria.com/wp-content/uploads/2025/03/Acordao-Homologacao-do-PRJ.pdf"
+        },
+        {
+          "date": "2025-03-17",
+          "event": "Publicação indicada pela K2 para início de opção de pagamento até 16/04/2025 (prazo histórico, expirado)",
+          "type": "credores",
+          "source_url": "https://k2consultoria.com/candido-mendes"
+        },
+        {
+          "date": "2026-07-21",
+          "event": "Edital prevê leilão da UPI Joana Angélica por proposta acima de R$ 54 milhões; arrematação não confirmada por este edital",
+          "type": "edital",
+          "source_url": "https://sindicatodosleiloeirosrj.com.br/editais/candido-mendes-ipanema-upi-joana-angelica/"
+        },
+        {
+          "date": "2026-09-29",
+          "event": "Pauta oficial do TJRJ relaciona o agravo 0049250-89.2026 ao processo de recuperação",
+          "type": "pauta",
+          "source_url": "https://www4.tjrj.jus.br/camarasweb/listaPauta.aspx?pDataSessao=29%2F09%2F2026+12%3A00%3A00&pOJ=12265"
+        }
+      ],
+      "metrics": [
+        {
+          "label": "6 dias",
+          "meaning": "Pedido de recuperação judicial (11/05/2020) → deferimento do processamento (17/05/2020)",
+          "kind": "calculated",
+          "basis": [
+            "2020-05-11",
+            "2020-05-17"
+          ]
+        },
+        {
+          "label": "R$ 54 milhões",
+          "meaning": "Valor de referência do edital da UPI Joana Angélica em julho de 2026; não é valor de venda realizada nem pagamento comprovado",
+          "kind": "reported_primary_judicial_material",
+          "source_url": "https://sindicatodosleiloeirosrj.com.br/editais/candido-mendes-ipanema-upi-joana-angelica/"
+        },
+        {
+          "label": "16/04/2025",
+          "meaning": "Data final da opção ordinária comunicada pela K2 em 2025; não é prazo aberto atualmente para novos credores",
+          "kind": "reported_primary_judicial_material",
+          "source_url": "https://k2consultoria.com/candido-mendes"
+        }
+      ],
+      "signals": [
+        {
+          "key": "dividas_protestos",
+          "date": "2020-05-11",
+          "source_url": "https://www.candidomendes.edu.br/wp-content/uploads/2020/07/2020-05-11-comunicado-a-imprensa.pdf",
+          "note": "A própria universidade comunicou dificuldades financeiras e o pedido de reorganização."
+        },
+        {
+          "key": "acao_judicial",
+          "date": "2020-05-11",
+          "source_url": "https://www.candidomendes.edu.br/wp-content/uploads/2020/07/2020-05-11-comunicado-a-imprensa.pdf",
+          "note": "Pedido de recuperação; não confundir com sentença de falência."
+        },
+        {
+          "key": "acao_judicial",
+          "date": "2025-03-12",
+          "source_url": "https://k2consultoria.com/wp-content/uploads/2025/03/Acordao-Homologacao-do-PRJ.pdf",
+          "note": "Julgamento do quarto aditivo; não prova integral cumprimento do plano."
+        },
+        {
+          "key": "acao_judicial",
+          "date": "2026-09-29",
+          "source_url": "https://www4.tjrj.jus.br/camarasweb/listaPauta.aspx?pDataSessao=29%2F09%2F2026+12%3A00%3A00&pOJ=12265",
+          "note": "Recurso de 2026 aparece em pauta, sem desfecho inferido da pauta."
+        }
+      ],
+      "related_proceedings": [
+        {
+          "number": "0093754-90.2020.8.19.0001",
+          "kind": "Recuperação judicial principal",
+          "role": "Processo matriz das três recuperandas",
+          "institution": "TJRJ · 5ª Vara Empresarial",
+          "observed_at": "2026-11-12",
+          "source_url": "https://www3.tjrj.jus.br/consultaprocessual/",
+          "verification": "Consultar movimentações de 1º grau, cumprimento do plano, atos de alienação e eventual encerramento."
+        },
+        {
+          "number": "0031515-53.2020.8.19.0000",
+          "kind": "Agravo do Ministério Público",
+          "role": "Relacionado à discussão do processamento da recuperação; mencionado no edital de alienação",
+          "institution": "TJRJ · 2º grau",
+          "observed_at": "2026-11-12",
+          "source_url": "https://sindicatodosleiloeirosrj.com.br/editais/candido-mendes-ipanema-upi-joana-angelica/",
+          "verification": "Consultar acórdão e recursos; o edital não demonstra o desfecho deste agravo."
+        },
+        {
+          "number": "0040133-16.2022.8.19.0000",
+          "kind": "Agravo do Banco do Brasil",
+          "role": "Recurso mencionado entre os feitos associados à recuperação",
+          "institution": "TJRJ · 2º grau",
+          "observed_at": "2026-11-12",
+          "source_url": "https://sindicatodosleiloeirosrj.com.br/editais/candido-mendes-ipanema-upi-joana-angelica/",
+          "verification": "Conferir objeto, decisão e trânsito em julgado nos autos."
+        },
+        {
+          "number": "0042075-15.2024.8.19.0000",
+          "kind": "Agravo do comitê de credores",
+          "role": "Recurso sobre manutenção da assembleia de credores de 05/06/2024",
+          "institution": "TJRJ · 2º grau",
+          "observed_at": "2026-11-12",
+          "source_url": "https://k2consultoria.com/candido-mendes",
+          "verification": "Verificar decisão e eventual superação posterior."
+        },
+        {
+          "number": "0042152-24.2024.8.19.0000",
+          "kind": "Agravo das recuperandas",
+          "role": "Recurso relacionado à assembleia geral de credores de junho de 2024",
+          "institution": "TJRJ · 2º grau",
+          "observed_at": "2026-11-12",
+          "source_url": "https://k2consultoria.com/candido-mendes",
+          "verification": "Verificar o teor do provimento e posteriores medidas."
+        },
+        {
+          "number": "0085927-89.2024.8.19.0000",
+          "kind": "Agravo do comitê de credores",
+          "role": "Acórdão de 12/03/2025 homologou o quarto aditivo ao plano",
+          "institution": "TJRJ · Quinta Câmara de Direito Privado",
+          "observed_at": "2026-11-12",
+          "source_url": "https://k2consultoria.com/wp-content/uploads/2025/03/Acordao-Homologacao-do-PRJ.pdf",
+          "verification": "Checar decisões posteriores e eventual recurso contra o acórdão."
+        },
+        {
+          "number": "0086093-24.2024.8.19.0000",
+          "kind": "Agravo relacionado ao quarto aditivo",
+          "role": "Acórdão do recurso 0085927 registra este agravo como prejudicado",
+          "institution": "TJRJ · 2º grau",
+          "observed_at": "2026-11-12",
+          "source_url": "https://k2consultoria.com/wp-content/uploads/2025/03/Acordao-Homologacao-do-PRJ.pdf",
+          "verification": "Não contar como nova homologação."
+        },
+        {
+          "number": "0056567-75.2025.8.19.0000",
+          "kind": "Agravo ligado ao valor da UPI",
+          "role": "Edital de 2026 menciona julgamento que manteve valor de referência da UPI Joana Angélica",
+          "institution": "TJRJ · 2º grau",
+          "observed_at": "2026-11-12",
+          "source_url": "https://sindicatodosleiloeirosrj.com.br/editais/candido-mendes-ipanema-upi-joana-angelica/",
+          "verification": "Conferir acórdão integral; preço de referência não comprova venda."
+        },
+        {
+          "number": "0049250-89.2026.8.19.0000",
+          "kind": "Agravo sobre administração judicial",
+          "role": "Pauta do TJRJ identifica como agravadas questões do condomínio do Edifício Centro Cândido Mendes",
+          "institution": "TJRJ · Quinta Câmara de Direito Privado",
+          "observed_at": "2026-09-29",
+          "source_url": "https://www4.tjrj.jus.br/camarasweb/listaPauta.aspx?pDataSessao=29%2F09%2F2026+12%3A00%3A00&pOJ=12265",
+          "verification": "Pauta é convocação de julgamento, não resultado; conferir andamento."
+        },
+        {
+          "number": "0046501-02.2026.8.19.0000",
+          "kind": "Agravo da União/PGFN",
+          "role": "Recurso listado em pauta de 17/11/2026, data posterior à pesquisa",
+          "institution": "TJRJ · Quinta Câmara de Direito Privado",
+          "observed_at": "2026-11-12",
+          "source_url": "https://www4.tjrj.jus.br/camarasweb/listaPauta.aspx?pDataSessao=17%2F11%2F2026+12%3A00%3A00&pOJ=12265",
+          "verification": "Pauta futura, sem decisão conhecida em 12/11/2026; reexaminar após a sessão."
+        }
+      ],
+      "institutional_records": [
+        {
+          "category": "Credores",
+          "title": "Relação consolidada de credores — TJRJ, 5ª Vara Empresarial",
+          "url": "https://portaltj.tjrj.jus.br/consultas/relacao-nominal-de-credores/5-vara-empresarial",
+          "scope": "Lista disponibilizada pelo tribunal; contar lançamentos por classe, não pessoas únicas nem pagamentos realizados."
+        },
+        {
+          "category": "Administrador judicial",
+          "title": "K2 — relatórios mensais, relação de credores e comunicados",
+          "url": "https://k2consultoria.com/candido-mendes",
+          "scope": "Portal de acompanhamento e condições do plano; versões podem mudar."
+        },
+        {
+          "category": "Regulação acadêmica",
+          "title": "MEC/e-MEC — cadastro e situação de cada instituição e curso",
+          "url": "https://emec.mec.gov.br/",
+          "scope": "Verificar atos autorizativos por curso/campus/modalidade; recuperação judicial não determina automaticamente status de diploma."
+        },
+        {
+          "category": "Metadados judiciais",
+          "title": "CNJ/DataJud — API Pública de metadados processuais",
+          "url": "https://www.cnj.jus.br/sistemas/datajud/api-publica/",
+          "scope": "Não reúne peças integrais nem comprova identidade de partes só por nomes semelhantes."
+        },
+        {
+          "category": "Trabalhistas",
+          "title": "Sinpro-Rio — relatório processual sobre UCAM (março de 2023)",
+          "url": "https://site.sinpro-rio.org.br/wp-content/uploads/2023/03/RELATORIO-DE-SITUACAO-PROCESSUAL-CANDIDO-MENDES-MAR-23-1.pdf",
+          "scope": "Documento produzido em defesa dos professores; alegações processuais e histórico devem ser atribuídos à fonte."
+        }
+      ],
+      "sources": [
+        {
+          "title": "TJRJ — consulta processual oficial (informar CNJ 0093754-90.2020.8.19.0001)",
+          "url": "https://www3.tjrj.jus.br/consultaprocessual/",
+          "kind": "tribunal",
+          "checked_at": "2026-11-12"
+        },
+        {
+          "title": "TJRJ — acórdão de 12/03/2025 no agravo 0085927-89.2024",
+          "url": "https://k2consultoria.com/wp-content/uploads/2025/03/Acordao-Homologacao-do-PRJ.pdf",
+          "kind": "tribunal",
+          "checked_at": "2026-11-12"
+        },
+        {
+          "title": "TJRJ — pauta de 29/09/2026 com agravo 0049250-89.2026",
+          "url": "https://www4.tjrj.jus.br/camarasweb/listaPauta.aspx?pDataSessao=29%2F09%2F2026+12%3A00%3A00&pOJ=12265",
+          "kind": "tribunal",
+          "checked_at": "2026-11-12"
+        },
+        {
+          "title": "Administradora judicial K2 — caso Candido Mendes, comunicados e pagamentos",
+          "url": "https://k2consultoria.com/candido-mendes",
+          "kind": "administrador_judicial",
+          "checked_at": "2026-11-12"
+        },
+        {
+          "title": "UCAM — quarto aditivo ao plano, recuperandas e CNPJ (2022)",
+          "url": "https://www.candidomendes.edu.br/wp-content/uploads/2022/11/19.10.2022-4o-Aditivo-ao-PRJ-UCAM.pdf",
+          "kind": "documento_da_instituicao",
+          "checked_at": "2026-11-12"
+        },
+        {
+          "title": "Edital judicial — UPI Joana Angélica / leilão programado para 21/07/2026",
+          "url": "https://sindicatodosleiloeirosrj.com.br/editais/candido-mendes-ipanema-upi-joana-angelica/",
+          "kind": "edital_judicial",
+          "checked_at": "2026-11-12"
+        },
+        {
+          "title": "TJRJ — relação de credores da 5ª Vara Empresarial",
+          "url": "https://portaltj.tjrj.jus.br/consultas/relacao-nominal-de-credores/5-vara-empresarial",
+          "kind": "tribunal",
+          "checked_at": "2026-11-12"
+        },
+        {
+          "title": "Sinpro-Rio — relatório de acompanhamento processual, março/2023",
+          "url": "https://site.sinpro-rio.org.br/wp-content/uploads/2023/03/RELATORIO-DE-SITUACAO-PROCESSUAL-CANDIDO-MENDES-MAR-23-1.pdf",
+          "kind": "sindicato",
+          "checked_at": "2026-11-12"
+        },
+        {
+          "title": "MEC — consulta pública e-MEC, status dos cursos e IES",
+          "url": "https://emec.mec.gov.br/",
+          "kind": "regulador",
+          "checked_at": "2026-11-12"
+        },
+        {
+          "title": "UCAM — comunicado oficial de 12/05/2020 sobre pedido de recuperação",
+          "url": "https://www.candidomendes.edu.br/wp-content/uploads/2020/07/2020-05-11-comunicado-a-imprensa.pdf",
+          "kind": "declaracao_da_instituicao",
+          "checked_at": "2026-11-12"
+        },
+        {
+          "title": "Sindicato dos Leiloeiros RJ — edital da UPI Praça Pio X em janeiro/2024",
+          "url": "https://sindicatodosleiloeirosrj.com.br/editais/upi-imobiliaria-praca-pio-x/",
+          "kind": "edital_judicial",
+          "checked_at": "2026-11-12"
+        },
+        {
+          "title": "TJRJ — pauta para 17/11/2026 com recurso 0046501-02.2026",
+          "url": "https://www4.tjrj.jus.br/camarasweb/listaPauta.aspx?pDataSessao=17%2F11%2F2026+12%3A00%3A00&pOJ=12265",
+          "kind": "tribunal",
+          "checked_at": "2026-11-12"
+        }
+      ],
+      "known_limits": "Recuperação judicial e homologação do aditivo não são decretação de falência, nem demonstram pagamento integral dos credores. Os R$ 54 milhões são valor de edital e não preço de arrematação confirmada. Recursos ligados ao mesmo processo matriz não são novas recuperações; pautas não equivalem a acórdãos. O relatório sindical tem a perspectiva dos docentes, e o e-MEC exige consulta por curso e modalidade. Nenhuma contagem de indivíduos é inferida de listas de credores ou indexadores privados.",
+      "relevance": "Precedente documental independente do setor educacional: permite rastrear mantenedoras, decisões, administração judicial, ativos, direitos dos credores, direitos dos estudantes e regulação acadêmica. Não possui vínculo societário, contratual ou causal com Florense nem com os precedentes do setor moveleiro."
     }
   ],
   "case_links": [
