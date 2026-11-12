@@ -1,8 +1,8 @@
 import {readFileSync,existsSync} from 'node:fs';
 const load=n=>JSON.parse(readFileSync(new URL('../src/data/'+n+'.json',import.meta.url),'utf8'));
 const records=load('case-action-channels'),cases=load('casos'),atlas=load('public-case-atlas'),politics=load('political-observatory'),media=load('case-visual-assets');
-const ids=[...cases.map(x=>x.id),...atlas.cases.map(x=>x.id),...politics.cases.map(x=>x.id),'PLAT-2026-CASE',legal.id];
 const legal=load('cacofonias-escola-suico-brasileira');
+const ids=[...cases.map(x=>x.id),...atlas.cases.map(x=>x.id),...politics.cases.map(x=>x.id),'PLAT-2026-CASE',legal.id];
 const errors=[],assert=(bool,msg)=>{if(!bool)errors.push(msg)};
 assert(records.version===1,'invalid schema');
 assert(ids.length===25,'case count changed; reconcile mapping');
