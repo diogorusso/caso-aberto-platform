@@ -8,7 +8,7 @@
     "build": "npm run verify:data && npm run og:build && astro build && npm run verify:public-bundle",
     "preview": "astro preview",
     "check": "astro check",
-    "verify:data": "node scripts/validate-data.mjs && node scripts/validate-structure.mjs && node scripts/validate-civic-research.mjs && npm run verify:publications && npm run verify:content-packs && npm run verify:curated-content && npm run verify:education-coverage && npm run verify:lead-magnets && npm run verify:editorial-preview && npm run verify:course-crypto && npm run verify:cause-api && npm run verify:public-case-atlas && npm run verify:politics && npm run verify:case-catalog && npm run verify:visual-stories && npm run verify:research-ledger && npm run verify:case-actions && npm run verify:case-watch && npm run verify:institution-seals",
+    "verify:data": "node scripts/validate-data.mjs && node scripts/validate-structure.mjs && node scripts/validate-civic-research.mjs && npm run verify:publications && npm run verify:content-packs && npm run verify:curated-content && npm run verify:education-coverage && npm run verify:lead-magnets && npm run verify:editorial-preview && npm run verify:course-crypto && npm run verify:cause-api && npm run verify:public-case-atlas && npm run verify:politics && npm run verify:case-catalog && npm run verify:visual-stories && npm run verify:research-ledger && npm run verify:case-actions && npm run verify:case-watch && npm run verify:sis-dossier && npm run verify:institution-seals",
     "new:company": "node scripts/new-company.mjs",
     "verify:structure": "node scripts/validate-structure.mjs",
     "verify:civic": "node scripts/validate-civic-research.mjs",
@@ -38,7 +38,8 @@
     "case:review": "node scripts/case-review-packet.mjs",
     "verify:case-watch": "node scripts/case-watch.mjs --validate && node --test scripts/test-case-watch.mjs",
     "verify:institution-seals": "node scripts/validate-institution-seals.mjs",
-    "case:complete": "node scripts/case-review-complete.mjs"
+    "case:complete": "node scripts/case-review-complete.mjs",
+    "verify:sis-dossier": "node scripts/validate-sis-proceedings.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^7.1.5",
