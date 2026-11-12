@@ -1,5 +1,5 @@
 import {useEffect,useMemo,useState} from 'react';
-import {Search,ArrowUpRight,RotateCcw,FolderOpen,BookOpen} from 'lucide-react';
+import {Search,ArrowUpRight,RotateCcw,FolderOpen,BookOpen,Scale} from 'lucide-react';
 import type {CaseCategory,CaseResearchEntry} from '../../lib/case-catalog';
 import {visibilityInputFromEntry} from '../../lib/case-visibility';
 import {cn} from '../../lib/utils';
@@ -132,22 +132,32 @@ export default function CaseResearchExplorer({entries,categories,lockedCategory}
      )}
      aria-label={(entry.kind==='caso'?'Abrir caso: ':'Ler história: ')+entry.title}
     >
-     <div className="relative overflow-hidden rounded-md border border-border">
-      <img
-       src={entry.image}
-       alt=""
-       width={1200}
-       height={630}
-       loading="lazy"
-       decoding="async"
-       className="aspect-[1200/630] w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-      />
-      {entry.logo&&(
-       <span className="absolute bottom-3 left-3 inline-flex h-11 max-w-[9.5rem] items-center justify-center border border-border bg-white px-2.5 shadow-sm">
-        <img src={entry.logo} alt="" width={120} height={36} loading="lazy" decoding="async" className="max-h-7 max-w-[8.5rem] object-contain"/>
-       </span>
-      )}
-     </div>
+     {entry.image ? (
+      <div className="relative overflow-hidden rounded-md border border-border">
+       <img
+        src={entry.image}
+        alt=""
+        width={1200}
+        height={630}
+        loading="lazy"
+        decoding="async"
+        className="aspect-[1200/630] w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+       />
+       {entry.logo&&(
+        <span className="absolute bottom-3 left-3 inline-flex h-11 max-w-[9.5rem] items-center justify-center border border-border bg-white px-2.5 shadow-sm">
+         <img src={entry.logo} alt="" width={120} height={36} loading="lazy" decoding="async" className="max-h-7 max-w-[8.5rem] object-contain"/>
+        </span>
+       )}
+      </div>
+     ) : (
+      <div className="flex aspect-[1200/630] flex-col justify-between rounded-md border border-border bg-primary p-5 text-primary-foreground" aria-label="Investigação documental sem retrato de pessoas envolvidas">
+       <div className="flex items-center gap-2 text-xs font-black uppercase tracking-[.15em] text-[#ff917e]"><Scale size={17} aria-hidden="true"/> CASOABERTO · DOCUMENTAÇÃO</div>
+       <div className="space-y-2">
+        <p className="m-0 text-xl font-extrabold leading-snug md:text-2xl">Quem responde pelos fatos?</p>
+        <p className="m-0 max-w-md text-sm leading-relaxed text-white/70">Cronologia. Contraditório. Documentos. Sem retratos de familiares ou conteúdo privado.</p>
+       </div>
+      </div>
+     )}
      <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs font-bold uppercase tracking-wider">
       {entry.featured&&<span className="rounded bg-brand-strong px-2.5 py-1 text-white">CASO EM DESTAQUE</span>}
       <span className="text-brand-strong">{resultLabel(entry)}</span>
