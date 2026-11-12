@@ -5,6 +5,9 @@ import CaseCard from '../../components/CaseCard.astro';
 import CaseActionBar from '../../components/CaseActionBar.astro';
 import CaseResearchExplorer from '../../components/islands/CaseResearchExplorer';
 import {categories,featuredCase,caseStudies,personalStories,allResearch,caseCountFor,categoryHref} from '../../lib/case-catalog';
+import {precedents,precedentPath} from '../../lib/precedents';
+const educationPrecedents=precedents.filter(p=>p.segment.includes('Ensino superior'));
+
 ---
 <BaseLayout title="Casos documentados: empresas, problemas e histórias | CasoAberto" description="Pesquise todos os casos documentados do CasoAberto: Florense em destaque, viagens, móveis, compras online, energia, doze histórias e provas para conferir.">
  <Breadcrumbs items={[{label:'Início',href:'/'},{label:'Casos',href:'/casos/'}]}/>
@@ -42,6 +45,10 @@ import {categories,featuredCase,caseStudies,personalStories,allResearch,caseCoun
  <section class="container space-y-7 py-14" id="pesquisar-casos">
   <CaseResearchExplorer client:idle entries={allResearch} categories={categories}/>
  </section>
+ {educationPrecedents.length>0&&<section class="border-t bg-muted py-12" aria-labelledby="dossies-educacao"><div class="container space-y-6">
+  <div class="flex flex-wrap items-end justify-between gap-4"><div class="space-y-2"><p class="m-0 text-xs font-bold uppercase tracking-widest text-brand-strong">JUSTIÇA · ENSINO SUPERIOR</p><h2 id="dossies-educacao" class="m-0 text-3xl">Universidades, recuperação judicial e direitos dos credores</h2><p class="m-0 max-w-3xl text-muted-foreground">Processos judiciais, recursos, documentos do administrador, leilões e decisões. Estes são precedentes documentais, não contratos pessoais acompanhados pelo CasoAberto.</p></div><a class="text-link font-semibold" href="/precedentes/">Ver todos os precedentes ↗</a></div>
+  <div class="grid gap-4 md:grid-cols-2">{educationPrecedents.map(p=><article class="border bg-card p-6 shadow-sm"><span class="text-xs font-bold uppercase tracking-wider text-brand-strong">{p.stage_label}</span><h3 class="mt-3 text-2xl"><a href={precedentPath(p)}>{p.brand}</a></h3><p class="font-mono text-xs text-muted-foreground">{p.process_number}</p><p class="text-sm text-muted-foreground">{p.summary}</p><a class="text-link font-semibold" href={precedentPath(p)}>Explorar conexões com a Justiça e documentos ↗</a></article>)}</div>
+ </div></section>}
  <section class="border-t bg-card py-10"><div class="container flex flex-wrap items-center justify-between gap-5"><div><p class="m-0 text-xs font-bold uppercase tracking-wider text-brand-strong">PODER E INSTITUIÇÕES</p><h2 class="mb-2 mt-3 text-2xl">Quando o poder decide, quem presta contas?</h2><p class="m-0 max-w-3xl text-muted-foreground">Bets, recursos públicos, direitos eleitorais e instituições. Cada investigação tem documentos, datas, perguntas e responsáveis identificados.</p></div><a class="text-link font-semibold" href="/observatorio/politica/">Examinar as investigações ↗</a></div></section>
 <section class="border-t bg-card py-12"><div class="container grid gap-6 md:grid-cols-[1fr_auto] md:items-center"><div><h2 class="m-0 text-2xl">O consumidor cobra. A empresa precisa responder.</h2><p class="mb-0 mt-2 max-w-3xl text-muted-foreground">Cada caso liga o problema à sua cronologia e às fontes para consulta. Cada história ajuda a entender o custo de uma promessa não cumprida.</p></div><div class="flex flex-wrap gap-4"><a class="text-link font-semibold" href="/sobre/">Conheça o projeto ↗</a><a class="text-link font-semibold" href="/organizar/caderno-de-acao/">Registre seu problema ↗</a></div></div></section>
 </BaseLayout>

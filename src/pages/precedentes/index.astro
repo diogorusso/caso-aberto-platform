@@ -7,23 +7,23 @@ import raw from '../../data/precedents.json';
 const bankrupt=precedents.filter(p=>p.stage==='falencia_decretada').length;
 const recovery=precedents.filter(p=>p.stage==='recuperacao_judicial').length;
 ---
-<BaseLayout title="Móveis planejados: falências, recuperações judiciais e dinheiro de clientes | CasoAberto"
- description="Observatório de precedentes: Roma Mobili, Lojas KD e Kitchens. Processos, cronologias, duração entre marcos, créditos de consumidores e fontes judiciais verificáveis." dateModified={raw.updated_at}
+<BaseLayout title="Justiça e recuperação judicial: decisões, credores e cronologias | CasoAberto"
+ description="Observatório judicial e empresarial: recuperações e falências de fornecedores e instituições como a Universidade Candido Mendes, com processos, recursos e fontes oficiais." dateModified={raw.updated_at}
  breadcrumbs={[{name:'Início',item:'/'},{name:'Precedentes',item:'/precedentes/'}]}>
  <Breadcrumbs items={[{label:'Início',href:'/'},{label:'Precedentes',href:'/precedentes/'}]}/>
  <section class="bg-forest py-14 text-forest-foreground md:py-20 [&_h1]:my-4 [&_h1_em]:text-brand [&_h1_em]:not-italic [&>div>p]:max-w-3xl [&>div>p]:text-lg [&>div>p]:text-white/75 [&_.eyebrow]:text-brand"><div class="container">
    <span class="eyebrow text-xs font-semibold uppercase tracking-[0.14em] text-brand-strong text-brand!">OBSERVATÓRIO DE PRECEDENTES · DADOS PÚBLICOS</span>
-   <h1>Dinheiro pago. Móveis não entregues. <em>O que aconteceu depois?</em></h1>
-   <p>{raw.common_analysis.strong_claim} Leia os registros judiciais, compare datas e veja o que aconteceu com quem pagou e não recebeu.</p>
+   <h1>Recuperação judicial, dívidas e direitos. <em>O que dizem os autos?</em></h1>
+   <p>Da universidade aos fornecedores de produtos, confira o que os documentos efetivamente demonstram. Explore números de processos, decisões, relatórios de credores e marcos datados — sem transformar alegações em sentenças.</p>
    <div class="mt-6 flex flex-wrap gap-2.5"><a class="inline-flex shrink-0 items-center justify-center gap-2 min-h-10 max-w-full px-5 py-2 text-center text-sm font-medium whitespace-normal sm:whitespace-nowrap no-underline transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 bg-white text-foreground hover:bg-white/90" href="/precedentes/indice.csv" download>Exportar tabela dos processos (CSV) ↗</a><a class="inline-flex shrink-0 items-center justify-center gap-2 min-h-10 max-w-full px-5 py-2 text-center text-sm font-medium whitespace-normal sm:whitespace-nowrap no-underline transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 border border-white/40 text-white hover:bg-white/10" href="/metodologia/#precedentes-e-cenarios">Critérios da comparação ↗</a></div>
    <div class="mt-8 grid gap-3 sm:grid-cols-3 [&>*]:border [&>*]:border-white/15 [&>*]:bg-white/5 [&>*]:p-4 [&_strong]:block [&_strong]:text-3xl [&_strong]:text-white [&_span]:text-sm [&_span]:text-white/70">
      <div><strong>{bankrupt}</strong><span>Precedentes com falência judicial decretada</span></div>
-     <div><strong>{recovery}</strong><span>Precedente com recuperação judicial deferida</span></div>
-     <div><strong>{precedents.length}</strong><span>Processos identificados e vinculados a fontes</span></div>
+     <div><strong>{recovery}</strong><span>Precedentes em recuperação judicial</span></div>
+     <div><strong>{precedents.length}</strong><span>Dossiês judiciais e empresariais documentados</span></div>
    </div>
  </div></section>
  <section class="py-14 md:py-20"><div class="container">
-   <div class="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between [&_h2]:my-3 [&_p]:max-w-3xl [&_p]:text-muted-foreground"><div><span class="eyebrow text-xs font-semibold uppercase tracking-[0.14em] text-brand-strong">PROCESSOS E LINHAS DO TEMPO</span><h2>O desfecho real de cada empresa.</h2><p>Os casos foram selecionados pela semelhança do setor e pela disponibilidade de documentação. Não formam uma amostra estatística do mercado.</p></div></div>
+   <div class="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between [&_h2]:my-3 [&_p]:max-w-3xl [&_p]:text-muted-foreground"><div><span class="eyebrow text-xs font-semibold uppercase tracking-[0.14em] text-brand-strong">PROCESSOS E LINHAS DO TEMPO</span><h2>O desfecho real de cada empresa.</h2><p>Os casos foram selecionados pela disponibilidade de atos judiciais e relevância pública. Setores diferentes aparecem em painéis independentes: não são uma amostra estatística do mercado, nem têm vínculo causal ou societário entre si.</p></div></div>
    <div class="mt-6 grid gap-4 lg:grid-cols-3">{precedents.map(p=><PrecedentCard precedent={p}/>)}</div>
  </div></section>
  <section class="py-14 md:py-20 bg-muted"><div class="container">
@@ -39,6 +39,6 @@ const recovery=precedents.filter(p=>p.stage==='recuperacao_judicial').length;
  <section class="py-14 md:py-20"><div class="container">
    <span class="eyebrow text-xs font-semibold uppercase tracking-[0.14em] text-brand-strong">A DIFERENÇA DO CASOABERTO</span><h2>Uma denúncia documentada também pode mapear o risco.</h2>
    <div class="my-6 grid gap-4 md:grid-cols-2 [&>div]:border [&>div]:bg-card [&>div]:p-6 [&>div]:shadow-sm [&_h3]:mt-0 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-5 [&_ul]:text-sm"><div><h3>O que o precedente comprova</h3><ul>{raw.common_analysis.comparison_dimensions.map(s=><li>{s}</li>)}</ul></div><div><h3>O que o precedente exige do comprador</h3><ul>{raw.common_analysis.limitations.map(s=><li>{s}</li>)}</ul></div></div>
-   <div class="mt-10 flex flex-col gap-4 bg-forest p-6 text-forest-foreground md:flex-row md:items-center md:justify-between md:p-8 [&_h3]:mt-0 [&_p]:mb-0 [&_p]:text-white/75 [&_a]:bg-white! [&_a]:text-foreground!"><div><h3>Será que seu móvel planejado será entregue?</h3><p>Organizamos pagamentos, cronologia, registros públicos e perguntas que a empresa precisa responder. Melhor não correr o risco sem conferir os fatos.</p></div><a class="inline-flex shrink-0 items-center justify-center gap-2 min-h-10 max-w-full px-5 py-2 text-center text-sm font-medium whitespace-normal sm:whitespace-nowrap no-underline transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 bg-primary text-primary-foreground hover:bg-primary/90" href="/casos/florense-ipanema-rj-atraso-moveis-planejados/">Abrir o dossiê Florense Ipanema ↗</a></div>
+   <div class="mt-10 flex flex-col gap-4 bg-forest p-6 text-forest-foreground md:flex-row md:items-center md:justify-between md:p-8 [&_h3]:mt-0 [&_p]:mb-0 [&_p]:text-white/75 [&_a]:bg-white! [&_a]:text-foreground!"><div><h3>Quer acompanhar a origem de cada afirmação?</h3><p>Os dossiês ligam fontes, datas e status a cada caso. Compare o que está provado, o que está em disputa e o que ainda exige atualização.</p></div><a class="inline-flex shrink-0 items-center justify-center gap-2 min-h-10 max-w-full px-5 py-2 text-center text-sm font-medium whitespace-normal sm:whitespace-nowrap no-underline transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 bg-primary text-primary-foreground hover:bg-primary/90" href="/casos/">Explorar todos os casos ↗</a></div>
  </div></section>
 </BaseLayout>
