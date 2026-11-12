@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-11",
+  "updated_at": "2026-11-12",
   "notes": "Cada caso e história DEVE ter foto real exclusiva em /media/ (path + photo_source únicos). Capas on-page/cards/heróis usam só photo — nunca OG tipográfico. /og/ é só meta social/share. Sem retrato inventado nem pessoa ameaçada.",
   "assets": [
     {
@@ -398,6 +398,18 @@
       "logo_source": "https://commons.wikimedia.org/wiki/File:Light_Servi%C3%A7os_Eletricidade.svg",
       "credit": "Elevador (Wikimedia) — ilustração temática",
       "is_incident_photo": false
+    },
+    {
+      "case_id": "EXT-016",
+      "company": "SIS Swiss International Schools do Brasil · Vinícius Antunes",
+      "cover": "/og/default.png",
+      "photo": null,
+      "logo": null,
+      "photo_source": null,
+      "logo_source": null,
+      "credit": "Capa tipográfica e textual: exceção editorial para processo judicial envolvendo familiares de vítima menor de idade.",
+      "is_incident_photo": false,
+      "non_photo_reason": "Proteção da família e de terceiros em disputa judicial ainda em curso; evitar imagem de criança, pessoa afetada, escola com alunos e ilustração que sugira fato não comprovado."
     }
   ]
 }
