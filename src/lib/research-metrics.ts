@@ -3,6 +3,7 @@ import {cases,reports} from './cases';
 import atlas from '../data/public-case-atlas.json';
 import politics from '../data/political-observatory.json';
 import platforms from '../data/platform-observatory.json';
+import legal from '../data/cacofonias-escola-suico-brasileira.json';
 import precedents from '../data/precedents.json';
 import categories from '../data/case-categories.json';
 import {caseStudies,personalStories} from './case-catalog';
@@ -11,19 +12,20 @@ const urls=[
  ...cases.flatMap(c=>c.fontes.map(f=>f.url)),
  ...atlas.cases.flatMap(c=>c.sources.map(s=>s.url)),
  ...politics.cases.flatMap(c=>c.source_ids.map(id=>politicalById.get(id))),
- ...platforms.records.map(r=>r.source_url)
+ ...platforms.records.map(r=>r.source_url),
+ ...legal.sources.map(s=>s.url)
 ].filter((url):url is string=>typeof url==='string'&&/^https:\/\//.test(url));
 export const metrics={
  cases:caseStudies.length,
  sourceUrls:new Set(urls).size,
- timelineEvents:cases.reduce((n,c)=>n+c.cronologia.length,0)+atlas.cases.reduce((n,c)=>n+c.timeline.length,0)+politics.cases.reduce((n,c)=>n+c.timeline.length,0)+platforms.records.length,
- publicQuestions:cases.reduce((n,c)=>n+c.pedidos.length+(c.imprensa_perguntas?.length||0),0)+atlas.cases.reduce((n,c)=>n+c.questions.length,0)+politics.cases.reduce((n,c)=>n+c.questions.length,0),
+ timelineEvents:cases.reduce((n,c)=>n+c.cronologia.length,0)+atlas.cases.reduce((n,c)=>n+c.timeline.length,0)+politics.cases.reduce((n,c)=>n+c.timeline.length,0)+platforms.records.length+legal.timeline.filter(e=>!('pending' in e && e.pending)).length,
+ publicQuestions:cases.reduce((n,c)=>n+c.pedidos.length+(c.imprensa_perguntas?.length||0),0)+atlas.cases.reduce((n,c)=>n+c.questions.length,0)+politics.cases.reduce((n,c)=>n+c.questions.length,0)+legal.questions.length,
  stories:personalStories.length,
  complaints:reports.length,
  precedents:precedents.precedents.length,
  categories:categories.categories.length,
- reviewedAt:atlas.updated_at,
- sourceGroups:{detailed:cases.length,consumer:atlas.cases.length,civic:politics.cases.length,platform:1},
+ reviewedAt:[atlas.updated_at,legal.reviewed_at].sort().at(-1)!,
+ sourceGroups:{detailed:cases.length,consumer:atlas.cases.length,civic:politics.cases.length,platform:1,legal:1},
 };
 const display=(n:number)=>n.toLocaleString('pt-BR');
 export const metricCards=[
