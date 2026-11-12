@@ -9,6 +9,9 @@ interface Props{precedent:Precedent}
 const {precedent:p}=Astro.props;
 const url=precedentPath(p);
 const isBankrupt=p.stage==='falencia_decretada';
+const relatedProceedings='related_proceedings' in p ? p.related_proceedings ?? [] : [];
+const institutionalRecords='institutional_records' in p ? p.institutional_records ?? [] : [];
+const hasLinkedCase=raw.case_links.some(link=>link.precedent_ids.includes(p.id));
 const schema={'@context':'https://schema.org','@type':'Article',headline:p.brand+': cronologia judicial e precedente de risco',dateModified:raw.updated_at,citation:p.sources.map(s=>s.url),about:{'@type':'Organization',name:p.brand}};
 ---
 <BaseLayout title={p.brand+': '+p.stage_label.toLowerCase()+', processo e cronologia documentada | CasoAberto'}
@@ -33,9 +36,31 @@ const schema={'@context':'https://schema.org','@type':'Article',headline:p.brand
   <span class="eyebrow text-xs font-semibold uppercase tracking-[0.14em] text-brand-strong">REGISTRO PÚBLICO</span><h2>O que está estabelecido?</h2><p>{p.summary}</p><ul class="m-0 grid list-none gap-4 p-0">{p.signals.map(s=>{const label=signalRows.find(r=>r.key===s.key)?.label||s.key;return <li class="border-l-2 border-brand-strong pl-4"><strong class="block">{label}</strong><time datetime={s.date} class="text-sm font-semibold text-brand-strong">{formatDate(s.date)}</time>{s.note&&<span class="block text-sm text-muted-foreground">{s.note}</span>}<a class="text-sm font-semibold text-brand-strong" href={s.source_url} target="_blank" rel="noopener noreferrer">Fonte do sinal ↗</a></li>;})}</ul></div>
   <aside class="self-start border bg-card p-6 shadow-sm"><h3>Estágio processual</h3><p>{stageDescription(p.stage)}</p><strong>{isBankrupt?'Sentença de falência':'Recuperação judicial'}</strong><p>{isBankrupt&&p.bankruptcy_decree_date?formatDate(p.bankruptcy_decree_date):p.recovery_acceptance_date?formatDate(p.recovery_acceptance_date):'—'}</p><strong>Por que este precedente é relevante?</strong><p>{p.relevance}</p></aside>
  </div></section>
+
+ {relatedProceedings.length>0&&<section class="py-14 md:py-20 bg-muted" id="processos-relacionados"><div class="container">
+  <span class="eyebrow text-xs font-semibold uppercase tracking-[0.14em] text-brand-strong">CONEXÕES COM A JUSTIÇA</span>
+  <h2>Processo principal e recursos relacionados</h2>
+  <p class="max-w-3xl text-muted-foreground">Cada número identifica um procedimento documentado. Agravos do mesmo processo de recuperação não são novas recuperações judiciais. Pauta de sessão não significa julgamento concluído.</p>
+  <div class="mt-7 grid gap-3 md:grid-cols-2">{relatedProceedings.map(d=><article class="min-w-0 border bg-card p-5 shadow-sm">
+    <p class="m-0 text-xs font-semibold uppercase tracking-wider text-muted-foreground">{d.kind} · {d.institution}</p>
+    <h3 class="my-2 break-all font-mono text-lg">{d.number}</h3>
+    <p class="my-2">{d.role}</p>
+    <p class="m-0 text-sm text-muted-foreground"><strong>Conferência necessária:</strong> {d.verification}</p>
+    <a class="mt-3 inline-block text-sm font-semibold text-brand-strong" href={d.source_url} target="_blank" rel="noopener noreferrer">Abrir fonte do vínculo ↗</a>
+  </article>)}</div>
+ </div></section>}
+ {institutionalRecords.length>0&&<section class="py-14 md:py-20" id="fontes-institucionais"><div class="container">
+  <span class="eyebrow text-xs font-semibold uppercase tracking-[0.14em] text-brand-strong">TRIBUNAL · CREDORES · REGULAÇÃO</span>
+  <h2>Onde verificar cada parte do caso?</h2>
+  <div class="mt-6 grid gap-4 md:grid-cols-2">{institutionalRecords.map(source=><article class="border bg-card p-5">
+   <p class="m-0 text-xs font-semibold uppercase tracking-wide text-muted-foreground">{source.category}</p>
+   <h3 class="my-2 text-lg"><a href={source.url} target="_blank" rel="noopener noreferrer">{source.title} ↗</a></h3>
+   <p class="m-0 text-sm text-muted-foreground">{source.scope}</p>
+  </article>)}</div>
+ </div></section>}
  <section class="py-14 md:py-20"><div class="container">
   <span class="eyebrow text-xs font-semibold uppercase tracking-[0.14em] text-brand-strong">AUDITORIA DE FONTES</span><h2>Documentos e reportagens para conferência.</h2>
   <ol class="m-0 list-none divide-y p-0 [&>li]:flex [&>li]:flex-col [&>li]:gap-1 [&>li]:py-3 [&_a]:font-semibold [&_a]:break-words [&_a]:text-brand-strong [&_small]:text-xs [&_small]:text-muted-foreground">{p.sources.map(s=><li><span class="w-fit bg-muted px-2 py-0.5 text-xs font-medium uppercase text-muted-foreground">{s.kind.replaceAll('_','')}</span><a href={s.url} target="_blank" rel="noopener noreferrer">{s.title} ↗</a><small>Consultado em {formatDate(s.checked_at)}</small></li>)}</ol>
-  <div class="mt-10 flex flex-col gap-4 bg-forest p-6 text-forest-foreground md:flex-row md:items-center md:justify-between md:p-8 [&_h3]:mt-0 [&_p]:mb-0 [&_p]:text-white/75 [&_a]:bg-white! [&_a]:text-foreground!"><div><h3>Compare com o CasoAberto.</h3><p>Quem conhece o setor lembra da Roma Mobili: quem pagou e não recebeu já entrou na fila. Será que você quer correr o mesmo risco? Busque outro fornecedor — e, se ainda não pagou tudo, considere sair antes. Exija respostas no dossiê Florense Ipanema.</p></div><a class="inline-flex shrink-0 items-center justify-center gap-2 min-h-10 max-w-full px-5 py-2 text-center text-sm font-medium whitespace-normal sm:whitespace-nowrap no-underline transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 bg-primary text-primary-foreground hover:bg-primary/90" href="/casos/florense-ipanema-rj-atraso-moveis-planejados/precedentes/">Comparação documentada com o dossiê Florense Ipanema ↗</a></div>
+  {hasLinkedCase&&<div class="mt-10 flex flex-col gap-4 bg-forest p-6 text-forest-foreground md:flex-row md:items-center md:justify-between md:p-8 [&_h3]:mt-0 [&_p]:mb-0 [&_p]:text-white/75 [&_a]:bg-white! [&_a]:text-foreground!"><div><h3>Compare com o dossiê relacionado.</h3><p>O setor de móveis planejados reúne situações documentadas de atraso, recuperação e falência. Compare datas e fatos antes de contratar.</p></div><a class="inline-flex shrink-0 items-center justify-center gap-2 min-h-10 max-w-full px-5 py-2 text-center text-sm font-medium whitespace-normal sm:whitespace-nowrap no-underline transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 bg-primary text-primary-foreground hover:bg-primary/90" href="/casos/florense-ipanema-rj-atraso-moveis-planejados/precedentes/">Abrir comparação com Florense Ipanema ↗</a></div>}
  </div></section>
 </BaseLayout>
