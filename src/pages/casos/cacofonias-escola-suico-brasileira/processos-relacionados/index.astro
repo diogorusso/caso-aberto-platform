@@ -41,7 +41,7 @@ const review=(value:string)=>value.split('-').reverse().join('/');
     <div class="rounded-lg border border-border bg-card p-5">
      <p class="m-0 text-xs font-bold uppercase tracking-wider text-muted-foreground">Referências identificadas</p>
      <strong class="my-2 block text-4xl font-black tabular-nums text-brand-strong">{total}</strong>
-     <p class="m-0 text-sm">Inclui recursos, procedimentos, atos administrativos e histórico. **Não** são {total} condenações ou processos independentes.</p>
+     <p class="m-0 text-sm">Inclui recursos, procedimentos, atos administrativos e histórico. <strong>Não</strong> são {total} condenações ou processos independentes.</p>
     </div>
     <div class="rounded-lg border border-border bg-card p-5">
      <p class="m-0 text-xs font-bold uppercase tracking-wider text-muted-foreground">Vínculo SIS Brasil / Group AG</p>
@@ -55,6 +55,10 @@ const review=(value:string)=>value.split('-').reverse().join('/');
     </div>
    </section>
 
+   <div class="flex flex-wrap items-center justify-between gap-4 rounded-md border border-border bg-muted p-5">
+    <div class="space-y-1"><h2 class="m-0 text-lg font-extrabold">Audite os registros sem perder a origem</h2><p class="m-0 text-sm text-muted-foreground">Planilha UTF-8 com 16 referências, número, órgão, situação relatada, família processual, entidade vinculada e URL da fonte.</p></div>
+    <a class="inline-flex min-h-11 items-center rounded-md bg-primary px-5 py-3 text-sm font-bold text-primary-foreground no-underline hover:bg-brand-strong" href="/casos/cacofonias-escola-suico-brasileira/processos-relacionados/indice.csv">Baixar índice CSV ↗</a>
+   </div>
    <section class="space-y-4" aria-labelledby="entidades">
     <h2 class="m-0 text-3xl" id="entidades">Antes de somar processos, confira quem é quem</h2>
     <p class="m-0 max-w-4xl leading-relaxed text-muted-foreground">{registry.research_rule}</p>
