@@ -197,6 +197,58 @@
       "verified_at": "2026-11-10",
       "role": "empresa",
       "note": "Central oficial para condições e alteração da assinatura. Acesso pode exigir conta."
+    },
+    {
+      "id": "yeesco-ouvidoria",
+      "case_ids": [
+        "EXT-003"
+      ],
+      "organization": "Yeesco — ouvidoria",
+      "medium": "portal",
+      "value": "https://ouvidoria.yeesco.com.br/",
+      "source_url": "https://ouvidoria.yeesco.com.br/",
+      "verified_at": "2026-11-12",
+      "role": "empresa",
+      "note": "Canal oficial direcionado a denúncia, sugestão e elogio, não substitui o atendimento regular de pedidos. O próprio portal informa avaliação pela diretoria."
+    },
+    {
+      "id": "ladofit-atendimento",
+      "case_ids": [
+        "EXT-006"
+      ],
+      "organization": "Grupo Lado / Lado Fit — suporte",
+      "medium": "portal",
+      "value": "https://ladohelp.com.br/",
+      "source_url": "https://www.ladofit.com.br/",
+      "verified_at": "2026-11-12",
+      "role": "empresa",
+      "note": "Portal de abertura de solicitações, referenciado pelo site da Lado Fit. Confirme que a empresa do pedido corresponde à empresa do caso."
+    },
+    {
+      "id": "mobly-autoatendimento",
+      "case_ids": [
+        "EXT-010"
+      ],
+      "organization": "Mobly — autoatendimento",
+      "medium": "portal",
+      "value": "https://www.mobly.com.br/auto-atendimento",
+      "source_url": "https://www.mobly.com.br/auto-atendimento",
+      "verified_at": "2026-11-12",
+      "role": "empresa",
+      "note": "Canal para pedidos e entregas da Mobly. O caso também menciona Tok&Stok; são contratos e operações que devem ser identificados separadamente."
+    },
+    {
+      "id": "mobly-telefone-institucional",
+      "case_ids": [
+        "EXT-010"
+      ],
+      "organization": "Mobly — telefone corporativo",
+      "medium": "phone",
+      "value": "+551149330341",
+      "source_url": "https://www.mobly.com.br/auto-atendimento",
+      "verified_at": "2026-11-12",
+      "role": "empresa",
+      "note": "Telefone corporativo publicado no rodapé da Mobly, não confirmado como WhatsApp ou SAC específico para pedidos."
     }
   ],
   "case_coverage": {
@@ -223,9 +275,11 @@
       "note": "Canais oficiais encontrados; pesquisa de outras vias ainda aberta."
     },
     "EXT-003": {
-      "contact_ids": [],
+      "contact_ids": [
+        "yeesco-ouvidoria"
+      ],
       "status": "partial",
-      "note": "Nenhum contato institucional específico confirmado nesta rodada; manter rotas oficiais existentes e pesquisar sem inventar destinatários."
+      "note": "Contato(s) institucionais verificados. Continuar pesquisa de WhatsApp, e-mail, perfis sociais e demais destinatários sem inventar canais."
     },
     "EXT-004": {
       "contact_ids": [
@@ -242,9 +296,11 @@
       "note": "Canais oficiais encontrados; pesquisa de outras vias ainda aberta."
     },
     "EXT-006": {
-      "contact_ids": [],
+      "contact_ids": [
+        "ladofit-atendimento"
+      ],
       "status": "partial",
-      "note": "Nenhum contato institucional específico confirmado nesta rodada; manter rotas oficiais existentes e pesquisar sem inventar destinatários."
+      "note": "Contato(s) institucionais verificados. Continuar pesquisa de WhatsApp, e-mail, perfis sociais e demais destinatários sem inventar canais."
     },
     "EXT-007": {
       "contact_ids": [
@@ -269,10 +325,12 @@
     },
     "EXT-010": {
       "contact_ids": [
-        "tokstok-help"
+        "tokstok-help",
+        "mobly-autoatendimento",
+        "mobly-telefone-institucional"
       ],
       "status": "partial",
-      "note": "Canais oficiais encontrados; pesquisa de outras vias ainda aberta."
+      "note": "Contato(s) institucionais verificados. Continuar pesquisa de WhatsApp, e-mail, perfis sociais e demais destinatários sem inventar canais."
     },
     "EXT-011": {
       "contact_ids": [],

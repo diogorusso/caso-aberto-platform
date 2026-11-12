@@ -169,7 +169,7 @@ export default function ActionDrawer({
 
         <Tabs defaultValue="modelos" className="flex min-h-0 flex-1 flex-col gap-0">
           <div className="border-b border-border px-5 pt-3 md:px-6">
-            <TabsList variant="line" className="w-full justify-start">
+            <TabsList variant="line" className="w-full justify-start overflow-x-auto">
               <TabsTrigger value="modelos">Textos prontos</TabsTrigger>
               <TabsTrigger value="canais">Órgãos e portais</TabsTrigger>
               <TabsTrigger value="contatos">Contatos diretos</TabsTrigger>
@@ -295,6 +295,7 @@ export default function ActionDrawer({
                             {contact.medium === 'email' ? 'Abrir e-mail com texto' : contact.medium === 'whatsapp' ? 'Abrir WhatsApp oficial' : contact.medium === 'instagram' ? 'Abrir perfil' : contact.medium === 'phone' ? 'Ligar' : 'Abrir atendimento'}
                           </a>
                         </Button>
+                        <Button type="button" size="sm" variant="outline" onClick={() => copyText(contact.id, privateDraft)}><Copy size={15}/>{copiedId === contact.id ? 'Copiada ✓' : 'Copiar cobrança'}</Button>
                         <Button asChild size="sm" variant="outline"><a href={contact.source_url} target="_blank" rel="noopener noreferrer">Conferir fonte ↗</a></Button>
                       </div>
                     </article>
@@ -325,7 +326,7 @@ export default function ActionDrawer({
                 <textarea id={'share-message-'+plan.id} rows={7} value={publicDraft} onChange={e=>setPublicDraft(e.target.value)} className="w-full rounded-md border border-border bg-background p-3 text-sm leading-relaxed" />
                 <div className="flex flex-wrap gap-2">
                   <Button asChild><a href={'https://wa.me/?text='+encodeURIComponent(publicDraft)} target="_blank" rel="noopener noreferrer"><MessageCircle size={15}/> Compartilhar no WhatsApp</a></Button>
-                  <Button asChild variant="outline"><a href={'https://twitter.com/intent/tweet?text='+encodeURIComponent(publicDraft.slice(0,245))} target="_blank" rel="noopener noreferrer"><Share2 size={15}/> Abrir X</a></Button>
+                  <Button asChild variant="outline"><a href={'https://twitter.com/intent/tweet?text='+encodeURIComponent(publicDraft.slice(0,170)) + '&url=' + encodeURIComponent(plan.caseUrl)} target="_blank" rel="noopener noreferrer"><Share2 size={15}/> Abrir X</a></Button>
                   <Button type="button" variant="outline" onClick={()=>copyText('social',publicDraft)}><Copy size={15}/>{copiedId === 'social' ? 'Copiado ✓' : 'Copiar texto'}</Button>
                 </div>
               </div>
