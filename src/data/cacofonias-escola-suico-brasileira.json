@@ -143,6 +143,20 @@
       "date": "2026-11-12",
       "url": "https://www.tjrj.jus.br/consultas/processos-jud/formas-dispo-consultas",
       "kind": "Órgão oficial"
+    },
+    {
+      "id": "F13",
+      "name": "SIS Brasil — Sobre o grupo e missão institucional",
+      "date": "2026-11-12",
+      "url": "https://www.swissinternationalschool.com.br/sobre-nos",
+      "kind": "Fonte primária da instituição · página sem data de publicação; consultada em 12/11"
+    },
+    {
+      "id": "F14",
+      "name": "SIS Brasil — Escolas e vínculo entre unidades",
+      "date": "2026-11-12",
+      "url": "https://www.swissinternationalschool.com.br/localizacao",
+      "kind": "Fonte primária da instituição · página sem data de publicação; consultada em 12/11"
     }
   ],
   "editorial_steps": [
@@ -151,5 +165,15 @@
     "Para a intimação, peça esclarecimento documental sobre procedimento e autoridade responsável, não atribua culpa à escola sem registro.",
     "Não publique fotos do filho, endereços de familiares, áudios ou documentos privados.",
     "Se surgir decisão, resposta ou correção, registre data da ocorrência, data da fonte e revisão."
-  ]
+  ],
+  "institutional_commitments": {
+    "heading": "O que a própria SIS promete publicamente?",
+    "summary": "Em seu site institucional, a SIS Brasil afirma buscar um ambiente seguro, no qual alunos recebam cuidado e incentivo. Trata-se de compromisso público da escola — não de prova sobre o que ocorreu no perfil pessoal do empregado.",
+    "source_id": "F13",
+    "questions": [
+      "Que padrões gerais de conduta pública, redes sociais e acolhimento orientam profissionais associados à escola?",
+      "Existe procedimento institucional documentado para receber e responder denúncias sobre mensagens atribuídas a empregados, mesmo quando publicadas fora do serviço?",
+      "A SIS pode informar a cronologia da apuração e o que mudou nos processos internos, respeitando direitos trabalhistas e pessoais?"
+    ]
+  }
 }
